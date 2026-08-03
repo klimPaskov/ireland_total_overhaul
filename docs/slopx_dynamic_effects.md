@@ -4,6 +4,20 @@ Feature slug: `ireland_focus_tree`.
 
 This file records reusable dynamic helpers added for the Ireland runtime. Inputs and outputs are explicit so later route files do not duplicate arithmetic, scope-sensitive cleanup, or material gates.
 
+## Historical-AI route guard
+
+### `slopx_ireland_alternate_focus_ai_allowed`
+
+- Scope: country/focus availability.
+- Inputs: the current AI state and the global Historical AI Focuses game rule.
+- Output: true for a human-controlled country or for non-historical AI; false
+  for an AI country while Historical AI Focuses is enabled.
+- Usage: add `slopx_ireland_alternate_focus_ai_allowed = yes` to the
+  `available` block of every alternate route-entry focus. This preserves
+  player choice while preventing a historical AI profile from entering an
+  alternate route.
+- Side effects: none.
+
 ## Ireland action scarcity charges
 
 ### `slopx_ireland_apply_action_scarcity_severe_surcharge`

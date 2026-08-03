@@ -33,6 +33,16 @@ slopx_ireland_is_ireland = {
 	tag = IRE
 }
 
+# Alternate route entry focuses remain available to players, but a historical
+# AI profile cannot select them. The focus tree also keeps a zero-weight AI
+# modifier on those entries as a defensive second layer.
+slopx_ireland_alternate_focus_ai_allowed = {
+	OR = {
+		NOT = { is_ai = yes }
+		NOT = { is_historical_focus_on = yes }
+	}
+}
+
 # Category and action reveal contracts keep public, recovery, route, dated,
 # and concealed entry separate from temporary affordability and capacity.
 slopx_ireland_reveal_category_settlement = {

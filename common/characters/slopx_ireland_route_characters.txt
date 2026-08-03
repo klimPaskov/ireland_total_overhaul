@@ -18,7 +18,7 @@ characters = {
 		name = "Richard Mulcahy"
 		portraits = {
 			civilian = { large = GFX_slopx_ireland_portrait_richard_mulcahy }
-			army = { small = GFX_slopx_ireland_portrait_richard_mulcahy }
+			army = { small = GFX_slopx_ireland_advisor_richard_mulcahy }
 		}
 		country_leader = {
 			ideology = conservatism
@@ -108,7 +108,7 @@ characters = {
 		portraits = {
 			civilian = {
 				large = GFX_slopx_ireland_portrait_sean_lemass
-				small = GFX_slopx_ireland_portrait_sean_lemass
+				small = GFX_slopx_ireland_advisor_sean_lemass
 			}
 		}
 		country_leader = {
@@ -234,7 +234,7 @@ characters = {
 	slopx_ireland_oscar_traynor = {
 		name = "Oscar Traynor"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_oscar_traynor small = GFX_slopx_ireland_portrait_oscar_traynor }
+			civilian = { large = GFX_slopx_ireland_portrait_oscar_traynor small = GFX_slopx_ireland_advisor_oscar_traynor }
 		}
 		advisor = {
 			slot = theorist
@@ -261,7 +261,7 @@ characters = {
 	slopx_ireland_douglas_hyde = {
 		name = "Douglas Hyde"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_douglas_hyde small = GFX_slopx_ireland_portrait_douglas_hyde }
+			civilian = { large = GFX_slopx_ireland_portrait_douglas_hyde small = GFX_slopx_ireland_advisor_douglas_hyde }
 		}
 		advisor = {
 			slot = political_advisor
@@ -287,7 +287,7 @@ characters = {
 	slopx_ireland_sean_t_okelly = {
 		name = "Seán T. O'Kelly"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_sean_t_okelly small = GFX_slopx_ireland_portrait_sean_t_okelly }
+			civilian = { large = GFX_slopx_ireland_portrait_sean_t_okelly small = GFX_slopx_ireland_advisor_sean_t_okelly }
 		}
 		advisor = {
 			slot = political_advisor
@@ -313,7 +313,7 @@ characters = {
 	slopx_ireland_frank_aiken_advisor = {
 		name = "Frank Aiken"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_frank_aiken small = GFX_slopx_ireland_portrait_frank_aiken }
+			civilian = { large = GFX_slopx_ireland_portrait_frank_aiken small = GFX_slopx_ireland_advisor_frank_aiken }
 		}
 		advisor = {
 			slot = political_advisor
@@ -340,7 +340,7 @@ characters = {
 	slopx_ireland_sean_macentee_advisor = {
 		name = "Seán MacEntee"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_sean_macentee small = GFX_slopx_ireland_portrait_sean_macentee }
+			civilian = { large = GFX_slopx_ireland_portrait_sean_macentee small = GFX_slopx_ireland_advisor_sean_macentee }
 		}
 		advisor = {
 			slot = political_advisor
@@ -364,7 +364,7 @@ characters = {
 	slopx_ireland_joseph_walshe_advisor = {
 		name = "Joseph Walshe"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_joseph_walshe small = GFX_slopx_ireland_portrait_joseph_walshe }
+			civilian = { large = GFX_slopx_ireland_portrait_joseph_walshe small = GFX_slopx_ireland_advisor_joseph_walshe }
 		}
 		advisor = {
 			slot = political_advisor
@@ -391,7 +391,7 @@ characters = {
 	slopx_ireland_sean_mac_eoin_advisor = {
 		name = "Seán Mac Eoin"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_sean_mac_eoin small = GFX_slopx_ireland_portrait_sean_mac_eoin }
+			civilian = { large = GFX_slopx_ireland_portrait_sean_mac_eoin small = GFX_slopx_ireland_advisor_sean_mac_eoin }
 		}
 		advisor = {
 			slot = army_chief
@@ -419,7 +419,7 @@ characters = {
 	slopx_ireland_thomas_f_ohiggins_advisor = {
 		name = "Thomas F. O'Higgins"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_thomas_f_ohiggins small = GFX_slopx_ireland_portrait_thomas_f_ohiggins }
+			civilian = { large = GFX_slopx_ireland_portrait_thomas_f_ohiggins small = GFX_slopx_ireland_advisor_thomas_f_ohiggins }
 		}
 		advisor = {
 			slot = political_advisor
@@ -445,7 +445,7 @@ characters = {
 	slopx_ireland_patrick_mcgilligan_advisor = {
 		name = "Patrick McGilligan"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_patrick_mcgilligan small = GFX_slopx_ireland_portrait_patrick_mcgilligan }
+			civilian = { large = GFX_slopx_ireland_portrait_patrick_mcgilligan small = GFX_slopx_ireland_advisor_patrick_mcgilligan }
 		}
 		advisor = {
 			slot = political_advisor
@@ -469,7 +469,7 @@ characters = {
 	slopx_ireland_james_everett_advisor = {
 		name = "James Everett"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_james_everett small = GFX_slopx_ireland_portrait_james_everett }
+			civilian = { large = GFX_slopx_ireland_portrait_james_everett small = GFX_slopx_ireland_advisor_james_everett }
 		}
 		advisor = {
 			slot = political_advisor
@@ -493,7 +493,7 @@ characters = {
 	slopx_ireland_william_obrien_advisor = {
 		name = "William O'Brien"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_p_20 small = GFX_slopx_ireland_portrait_p_20 }
+			civilian = { large = GFX_slopx_ireland_portrait_p_20 small = GFX_slopx_ireland_advisor_p_20 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -517,7 +517,7 @@ characters = {
 	slopx_ireland_james_hickey_advisor = {
 		name = "James Hickey"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_james_hickey small = GFX_slopx_ireland_portrait_james_hickey }
+			civilian = { large = GFX_slopx_ireland_portrait_james_hickey small = GFX_slopx_ireland_advisor_james_hickey }
 		}
 		advisor = {
 			slot = political_advisor
@@ -541,7 +541,7 @@ characters = {
 	slopx_ireland_william_davin_advisor = {
 		name = "William Davin"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_william_davin small = GFX_slopx_ireland_portrait_william_davin }
+			civilian = { large = GFX_slopx_ireland_portrait_william_davin small = GFX_slopx_ireland_advisor_william_davin }
 		}
 		advisor = {
 			slot = political_advisor
@@ -565,7 +565,7 @@ characters = {
 	slopx_ireland_michael_donnellan_advisor = {
 		name = "Michael Donnellan"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_michael_donnellan small = GFX_slopx_ireland_portrait_michael_donnellan }
+			civilian = { large = GFX_slopx_ireland_portrait_michael_donnellan small = GFX_slopx_ireland_advisor_michael_donnellan }
 		}
 		advisor = {
 			slot = political_advisor
@@ -591,7 +591,7 @@ characters = {
 	slopx_ireland_edward_joseph_byrne_advisor = {
 		name = "Edward Joseph Byrne"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_edward_joseph_byrne small = GFX_slopx_ireland_portrait_edward_joseph_byrne }
+			civilian = { large = GFX_slopx_ireland_portrait_edward_joseph_byrne small = GFX_slopx_ireland_advisor_edward_joseph_byrne }
 		}
 		advisor = {
 			slot = political_advisor
@@ -615,7 +615,7 @@ characters = {
 	slopx_ireland_michael_browne_advisor = {
 		name = "Michael Browne"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_31 small = GFX_ireland_portrait_p_31 }
+			civilian = { large = GFX_ireland_portrait_p_31 small = GFX_slopx_ireland_advisor_ireland_p_31 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -641,7 +641,7 @@ characters = {
 	slopx_ireland_john_charles_mcquaid_advisor = {
 		name = "John Charles McQuaid"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_john_charles_mcquaid small = GFX_slopx_ireland_portrait_john_charles_mcquaid }
+			civilian = { large = GFX_slopx_ireland_portrait_john_charles_mcquaid small = GFX_slopx_ireland_advisor_john_charles_mcquaid }
 		}
 		advisor = {
 			slot = political_advisor
@@ -665,7 +665,7 @@ characters = {
 	slopx_ireland_joseph_macrory_advisor = {
 		name = "Joseph MacRory"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_joseph_macrory small = GFX_slopx_ireland_portrait_joseph_macrory }
+			civilian = { large = GFX_slopx_ireland_portrait_joseph_macrory small = GFX_slopx_ireland_advisor_joseph_macrory }
 		}
 		advisor = {
 			slot = political_advisor
@@ -689,7 +689,7 @@ characters = {
 	slopx_ireland_frank_duff_advisor = {
 		name = "Frank Duff"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_frank_duff small = GFX_slopx_ireland_portrait_frank_duff }
+			civilian = { large = GFX_slopx_ireland_portrait_frank_duff small = GFX_slopx_ireland_advisor_frank_duff }
 		}
 		advisor = {
 			slot = political_advisor
@@ -713,7 +713,7 @@ characters = {
 	slopx_ireland_john_hayes_advisor = {
 		name = "John Hayes"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_p_33 small = GFX_slopx_ireland_portrait_p_33 }
+			civilian = { large = GFX_slopx_ireland_portrait_p_33 small = GFX_slopx_ireland_advisor_p_33 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -737,7 +737,7 @@ characters = {
 	slopx_ireland_maurice_twomey_advisor = {
 		name = "Maurice Twomey"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_maurice_twomey small = GFX_slopx_ireland_portrait_maurice_twomey }
+			civilian = { large = GFX_slopx_ireland_portrait_maurice_twomey small = GFX_slopx_ireland_advisor_maurice_twomey }
 		}
 		advisor = {
 			slot = political_advisor
@@ -761,7 +761,7 @@ characters = {
 	slopx_ireland_tom_barry_advisor = {
 		name = "Tom Barry"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_tom_barry small = GFX_slopx_ireland_portrait_tom_barry }
+			civilian = { large = GFX_slopx_ireland_portrait_tom_barry small = GFX_slopx_ireland_advisor_tom_barry }
 		}
 		advisor = {
 			slot = high_command
@@ -787,7 +787,7 @@ characters = {
 	slopx_ireland_sean_russell_advisor = {
 		name = "Seán Russell"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_p_37 small = GFX_slopx_ireland_portrait_p_37 }
+			civilian = { large = GFX_slopx_ireland_portrait_p_37 small = GFX_slopx_ireland_advisor_p_37 }
 		}
 		advisor = {
 			slot = high_command
@@ -819,7 +819,7 @@ characters = {
 	slopx_ireland_jim_odonovan_advisor = {
 		name = "Jim O'Donovan"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_p_42 small = GFX_slopx_ireland_portrait_p_42 }
+			civilian = { large = GFX_slopx_ireland_portrait_p_42 small = GFX_slopx_ireland_advisor_p_42 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -843,7 +843,7 @@ characters = {
 	slopx_ireland_sean_macbride_advisor = {
 		name = "Seán MacBride"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_sean_macbride small = GFX_slopx_ireland_portrait_sean_macbride }
+			civilian = { large = GFX_slopx_ireland_portrait_sean_macbride small = GFX_slopx_ireland_advisor_sean_macbride }
 		}
 		advisor = {
 			slot = political_advisor
@@ -867,7 +867,7 @@ characters = {
 	slopx_ireland_george_gilmore_advisor = {
 		name = "George Gilmore"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_george_gilmore small = GFX_slopx_ireland_portrait_george_gilmore }
+			civilian = { large = GFX_slopx_ireland_portrait_george_gilmore small = GFX_slopx_ireland_advisor_george_gilmore }
 		}
 		advisor = {
 			slot = political_advisor
@@ -891,7 +891,7 @@ characters = {
 	slopx_ireland_nora_connolly_obrien_advisor = {
 		name = "Nora Connolly O'Brien"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_nora_connolly_obrien small = GFX_slopx_ireland_portrait_nora_connolly_obrien }
+			civilian = { large = GFX_slopx_ireland_portrait_nora_connolly_obrien small = GFX_slopx_ireland_advisor_nora_connolly_obrien }
 		}
 		advisor = {
 			slot = political_advisor
@@ -915,7 +915,7 @@ characters = {
 	slopx_ireland_sean_murray_advisor = {
 		name = "Seán Murray"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_p_51 small = GFX_slopx_ireland_portrait_p_51 }
+			civilian = { large = GFX_slopx_ireland_portrait_p_51 small = GFX_slopx_ireland_advisor_p_51 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -939,7 +939,7 @@ characters = {
 	slopx_ireland_patrick_belton_advisor = {
 		name = "Patrick Belton"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_patrick_belton small = GFX_slopx_ireland_portrait_patrick_belton }
+			civilian = { large = GFX_slopx_ireland_portrait_patrick_belton small = GFX_slopx_ireland_advisor_patrick_belton }
 		}
 		advisor = {
 			slot = political_advisor
@@ -963,7 +963,7 @@ characters = {
 	slopx_ireland_ernest_blythe_advisor = {
 		name = "Ernest Blythe"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_ernest_blythe small = GFX_slopx_ireland_portrait_ernest_blythe }
+			civilian = { large = GFX_slopx_ireland_portrait_ernest_blythe small = GFX_slopx_ireland_advisor_ernest_blythe }
 		}
 		advisor = {
 			slot = political_advisor
@@ -987,7 +987,7 @@ characters = {
 	slopx_ireland_j_j_walsh_patron = {
 		name = "J. J. Walsh"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_59 small = GFX_ireland_portrait_p_59 }
+			civilian = { large = GFX_ireland_portrait_p_59 small = GFX_slopx_ireland_advisor_ireland_p_59 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -1013,7 +1013,7 @@ characters = {
 	slopx_ireland_oliver_flanagan_advisor = {
 		name = "Oliver J. Flanagan"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_p_60 small = GFX_slopx_ireland_portrait_p_60 }
+			civilian = { large = GFX_slopx_ireland_portrait_p_60 small = GFX_slopx_ireland_advisor_p_60 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -1039,7 +1039,7 @@ characters = {
 	slopx_ireland_charles_kerins_advisor = {
 		name = "Charles Kerins"
 		portraits = {
-			civilian = { large = GFX_slopx_ireland_portrait_charlie_kerins small = GFX_slopx_ireland_portrait_charlie_kerins }
+			civilian = { large = GFX_slopx_ireland_portrait_charlie_kerins small = GFX_slopx_ireland_advisor_charlie_kerins }
 		}
 		advisor = {
 			slot = high_command
@@ -1069,7 +1069,7 @@ characters = {
 	slopx_ireland_thekla_beere_advisor = {
 		name = "Thekla Beere"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_16 small = GFX_ireland_portrait_p_16 }
+			civilian = { large = GFX_ireland_portrait_p_16 small = GFX_slopx_ireland_advisor_ireland_p_16 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -1093,7 +1093,7 @@ characters = {
 	slopx_ireland_luke_duffy_advisor = {
 		name = "Luke Duffy"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_24 small = GFX_ireland_portrait_p_24 }
+			civilian = { large = GFX_ireland_portrait_p_24 small = GFX_slopx_ireland_advisor_ireland_p_24 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -1117,7 +1117,7 @@ characters = {
 	slopx_ireland_alfred_orahilly_advisor = {
 		name = "Alfred O'Rahilly"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_32 small = GFX_ireland_portrait_p_32 }
+			civilian = { large = GFX_ireland_portrait_p_32 small = GFX_slopx_ireland_advisor_ireland_p_32 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -1141,7 +1141,7 @@ characters = {
 	slopx_ireland_stephen_hayes_advisor = {
 		name = "Stephen Hayes"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_38 small = GFX_ireland_portrait_p_38 }
+			civilian = { large = GFX_ireland_portrait_p_38 small = GFX_slopx_ireland_advisor_ireland_p_38 }
 		}
 		advisor = {
 			slot = high_command
@@ -1170,7 +1170,7 @@ characters = {
 	slopx_ireland_hugh_mcateer_advisor = {
 		name = "Hugh McAteer"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_39 small = GFX_ireland_portrait_p_39 }
+			civilian = { large = GFX_ireland_portrait_p_39 small = GFX_slopx_ireland_advisor_ireland_p_39 }
 		}
 		advisor = {
 			slot = high_command
@@ -1199,7 +1199,7 @@ characters = {
 	slopx_ireland_harry_white_advisor = {
 		name = "Harry White"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_41 small = GFX_ireland_portrait_p_41 }
+			civilian = { large = GFX_ireland_portrait_p_41 small = GFX_slopx_ireland_advisor_ireland_p_41 }
 		}
 		advisor = {
 			slot = high_command
@@ -1228,7 +1228,7 @@ characters = {
 	slopx_ireland_roddy_connolly_advisor = {
 		name = "Roddy Connolly"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_48 small = GFX_ireland_portrait_p_48 }
+			civilian = { large = GFX_ireland_portrait_p_48 small = GFX_slopx_ireland_advisor_ireland_p_48 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -1252,7 +1252,7 @@ characters = {
 	slopx_ireland_michael_price_advisor = {
 		name = "Michael Price"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_50 small = GFX_ireland_portrait_p_50 }
+			civilian = { large = GFX_ireland_portrait_p_50 small = GFX_slopx_ireland_advisor_ireland_p_50 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -1278,7 +1278,7 @@ characters = {
 	slopx_ireland_pj_coughlan_advisor = {
 		name = "P. J. Coughlan"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_54 small = GFX_ireland_portrait_p_54 }
+			civilian = { large = GFX_ireland_portrait_p_54 small = GFX_slopx_ireland_advisor_ireland_p_54 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -1302,7 +1302,7 @@ characters = {
 	slopx_ireland_tomas_o_dochartaigh_advisor = {
 		name = "Tomás Ó Dochartaigh"
 		portraits = {
-			civilian = { large = GFX_ireland_portrait_p_57 small = GFX_ireland_portrait_p_57 }
+			civilian = { large = GFX_ireland_portrait_p_57 small = GFX_slopx_ireland_advisor_ireland_p_57 }
 		}
 		advisor = {
 			slot = political_advisor

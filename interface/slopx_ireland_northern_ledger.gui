@@ -66,34 +66,34 @@ guiTypes = {
 			name = "slopx_ireland_northern_ledger_status_ready"
 			spriteType = "GFX_slopx_ireland_gui_status_ready"
 			position = { x = 850 y = 22 }
-			context_aware_tooltip = "slopx_ireland_northern_status_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_status_tooltip"
 		}
 
 		iconType = {
 			name = "slopx_ireland_northern_ledger_status_locked"
 			spriteType = "GFX_slopx_ireland_gui_status_locked"
 			position = { x = 850 y = 22 }
-			context_aware_tooltip = "slopx_ireland_northern_locked_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_locked_tooltip"
 		}
 
 		iconType = {
 			name = "slopx_ireland_northern_ledger_status_warning"
 			spriteType = "GFX_slopx_ireland_gui_status_warning"
 			position = { x = 850 y = 22 }
-			context_aware_tooltip = "slopx_ireland_northern_warning_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_warning_tooltip"
 		}
 
 		iconType = {
 			name = "slopx_ireland_northern_ledger_status_critical"
 			spriteType = "GFX_slopx_ireland_gui_status_critical"
 			position = { x = 850 y = 22 }
-			context_aware_tooltip = "slopx_ireland_northern_critical_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_critical_tooltip"
 		}
 
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_ledger_available_state"
 			position = { x = 666 y = 25 }
-			context_aware_text = "slopx_ireland_northern_available_state"
+			text = "slopx_ireland_northern_available_state"
 			font = "hoi_16mbs"
 			format = right
 			maxWidth = 170
@@ -103,7 +103,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_ledger_locked_state"
 			position = { x = 666 y = 25 }
-			context_aware_text = "slopx_ireland_northern_locked_state"
+			text = "slopx_ireland_northern_locked_state"
 			font = "hoi_16mbs"
 			format = right
 			maxWidth = 170
@@ -114,7 +114,7 @@ guiTypes = {
 			name = "slopx_ireland_northern_model"
 			position = { x = 34 y = 72 }
 			context_aware_text = "[GetSlopxIrelandNorthernModel]"
-			context_aware_tooltip = "slopx_ireland_northern_model_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_model_tooltip"
 			font = "hoi_18b"
 			format = left
 			maxWidth = 400
@@ -124,8 +124,8 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_stage"
 			position = { x = 470 y = 72 }
-			context_aware_text = "slopx_ireland_northern_stage"
-			context_aware_tooltip = "slopx_ireland_northern_stage_tooltip"
+			text = "slopx_ireland_northern_stage"
+			pdx_tooltip = "slopx_ireland_northern_stage_tooltip"
 			font = "hoi_18b"
 			format = left
 			maxWidth = 416
@@ -136,7 +136,7 @@ guiTypes = {
 			name = "slopx_ireland_northern_region"
 			position = { x = 34 y = 105 }
 			context_aware_text = "[GetSlopxIrelandNorthernRegion]"
-			context_aware_tooltip = "slopx_ireland_northern_region_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_region_tooltip"
 			font = "hoi_18b"
 			format = left
 			maxWidth = 400
@@ -147,7 +147,7 @@ guiTypes = {
 			name = "slopx_ireland_northern_failure_state"
 			position = { x = 470 y = 105 }
 			context_aware_text = "[GetSlopxIrelandNorthernFailureState]"
-			context_aware_tooltip = "slopx_ireland_northern_failure_state_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_failure_state_tooltip"
 			font = "hoi_18b"
 			format = left
 			maxWidth = 210
@@ -157,8 +157,8 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_ledger_target_requirement"
 			position = { x = 34 y = 136 }
-			context_aware_text = "slopx_ireland_northern_target_requirement"
-			context_aware_tooltip = "slopx_ireland_northern_target_requirement_tooltip"
+			text = "slopx_ireland_northern_target_requirement"
+			pdx_tooltip = "slopx_ireland_northern_target_requirement_tooltip"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 640
@@ -181,13 +181,13 @@ guiTypes = {
 			position = { x = 32 y = 198 }
 			buttonText = ""
 			buttonFont = "hoi_16mbs"
-			context_aware_tooltip = "slopx_ireland_northern_unionist_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_unionist_tooltip"
 		}
 
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_unionist_value"
 			position = { x = 48 y = 203 }
-			context_aware_text = "slopx_ireland_northern_unionist_value"
+			text = "slopx_ireland_northern_unionist_value"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 396
@@ -200,13 +200,13 @@ guiTypes = {
 			position = { x = 468 y = 198 }
 			buttonText = ""
 			buttonFont = "hoi_16mbs"
-			context_aware_tooltip = "slopx_ireland_northern_nationalist_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_nationalist_tooltip"
 		}
 
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_nationalist_value"
 			position = { x = 484 y = 203 }
-			context_aware_text = "slopx_ireland_northern_nationalist_value"
+			text = "slopx_ireland_northern_nationalist_value"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 396
@@ -219,13 +219,13 @@ guiTypes = {
 			position = { x = 32 y = 232 }
 			buttonText = ""
 			buttonFont = "hoi_16mbs"
-			context_aware_tooltip = "slopx_ireland_northern_labour_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_labour_tooltip"
 		}
 
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_labour_value"
 			position = { x = 48 y = 237 }
-			context_aware_text = "slopx_ireland_northern_labour_value"
+			text = "slopx_ireland_northern_labour_value"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 396
@@ -238,13 +238,13 @@ guiTypes = {
 			position = { x = 468 y = 232 }
 			buttonText = ""
 			buttonFont = "hoi_16mbs"
-			context_aware_tooltip = "slopx_ireland_northern_british_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_british_tooltip"
 		}
 
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_british_value"
 			position = { x = 484 y = 237 }
-			context_aware_text = "slopx_ireland_northern_british_value"
+			text = "slopx_ireland_northern_british_value"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 396
@@ -257,13 +257,13 @@ guiTypes = {
 			position = { x = 32 y = 266 }
 			buttonText = ""
 			buttonFont = "hoi_16mbs"
-			context_aware_tooltip = "slopx_ireland_northern_security_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_security_tooltip"
 		}
 
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_security_value"
 			position = { x = 48 y = 271 }
-			context_aware_text = "slopx_ireland_northern_security_value"
+			text = "slopx_ireland_northern_security_value"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 396
@@ -276,13 +276,13 @@ guiTypes = {
 			position = { x = 468 y = 266 }
 			buttonText = ""
 			buttonFont = "hoi_16mbs"
-			context_aware_tooltip = "slopx_ireland_northern_integration_tooltip"
+			pdx_tooltip = "slopx_ireland_northern_integration_tooltip"
 		}
 
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_integration_value"
 			position = { x = 484 y = 271 }
-			context_aware_text = "slopx_ireland_northern_integration_value"
+			text = "slopx_ireland_northern_integration_value"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 396
@@ -292,8 +292,8 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_process"
 			position = { x = 34 y = 310 }
-			context_aware_text = "slopx_ireland_northern_process"
-			context_aware_tooltip = "slopx_ireland_northern_process_tooltip"
+			text = "slopx_ireland_northern_process"
+			pdx_tooltip = "slopx_ireland_northern_process_tooltip"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 852
@@ -303,8 +303,8 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_next_gate"
 			position = { x = 34 y = 348 }
-			context_aware_text = "slopx_ireland_northern_next_gate"
-			context_aware_tooltip = "slopx_ireland_northern_next_gate_tooltip"
+			text = "slopx_ireland_northern_next_gate"
+			pdx_tooltip = "slopx_ireland_northern_next_gate_tooltip"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 852
@@ -314,8 +314,8 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_warning_message"
 			position = { x = 34 y = 390 }
-			context_aware_text = "slopx_ireland_northern_warning_message"
-			context_aware_tooltip = "slopx_ireland_northern_warning_message_tooltip"
+			text = "slopx_ireland_northern_warning_message"
+			pdx_tooltip = "slopx_ireland_northern_warning_message_tooltip"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 852
@@ -325,8 +325,8 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_failure_message"
 			position = { x = 34 y = 422 }
-			context_aware_text = "slopx_ireland_northern_failure_message"
-			context_aware_tooltip = "slopx_ireland_northern_failure_message_tooltip"
+			text = "slopx_ireland_northern_failure_message"
+			pdx_tooltip = "slopx_ireland_northern_failure_message_tooltip"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 852
@@ -336,8 +336,8 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_review_requirement"
 			position = { x = 34 y = 457 }
-			context_aware_text = "slopx_ireland_northern_review_requirement"
-			context_aware_tooltip = "slopx_ireland_northern_review_requirement_tooltip"
+			text = "slopx_ireland_northern_review_requirement"
+			pdx_tooltip = "slopx_ireland_northern_review_requirement_tooltip"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 852
@@ -376,7 +376,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "slopx_ireland_northern_ledger_footer"
 			position = { x = 34 y = 590 }
-			context_aware_text = "slopx_ireland_northern_ledger_footer"
+			text = "slopx_ireland_northern_ledger_footer"
 			font = "hoi_16mbs"
 			format = left
 			maxWidth = 852

@@ -124,8 +124,9 @@ scripted_gui = {
 			slopx_ireland_conditions_neutrality_critical_slot_click_enabled = { original_tag = IRE }
 			slopx_ireland_conditions_review_button_click_enabled = { original_tag = IRE }
 			slopx_ireland_conditions_close_button_click_enabled = { original_tag = IRE }
+		}
+
 	}
-}
 
 	slopx_ireland_northern_settlement_ledger_scripted_gui = {
 		context_type = decision_category
