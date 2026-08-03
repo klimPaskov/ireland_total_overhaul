@@ -1,0 +1,225 @@
+# Ireland office registry. Offices are separate from characters, parties,
+# route spirits and country identity. This registry records occupancy and
+# vacancy without granting authority, equipment, territory, or recognition.
+
+slopx_ireland_sync_office_registry = {
+	# Rebuild occupancy from valid government, route, Northern, and constitutional
+	# records. The opening government is deliberately explicit because the 1936
+	# country history predates the later route leader transitions.
+	set_variable = { var = slopx_ireland_office_president_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_taoiseach_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_tanaiste_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_party_leader_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_parliamentary_leader_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_cabinet_minister_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_chief_of_staff_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_security_chief_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_movement_leader_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_armed_wing_commander_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_council_chair_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_provincial_chair_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_high_king_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_compact_steward_occupied value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_transitional_administrator_occupied value = constant:slopx_ireland.zero }
+
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = slopx_ireland_office_opening_government
+				has_country_flag = slopx_ireland_route_leader_transition_complete
+			}
+			NOT = { has_country_flag = slopx_ireland_government_vacancy }
+		}
+		set_variable = { var = slopx_ireland_office_taoiseach_occupied value = constant:slopx_ireland.one }
+		set_variable = { var = slopx_ireland_office_party_leader_occupied value = constant:slopx_ireland.one }
+		set_variable = { var = slopx_ireland_office_parliamentary_leader_occupied value = constant:slopx_ireland.one }
+		set_variable = { var = slopx_ireland_office_cabinet_minister_occupied value = constant:slopx_ireland.one }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = slopx_ireland_constitutional_calendar_restored
+				has_country_flag = slopx_ireland_presidency_inauguration_complete
+			}
+		}
+		set_variable = { var = slopx_ireland_office_president_occupied value = constant:slopx_ireland.one }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = slopx_ireland_cabinet_compact_complete
+				has_country_flag = slopx_ireland_production_cabinet_ready
+				has_country_flag = slopx_ireland_route_costello_coalition
+				has_country_flag = slopx_ireland_route_norton_parliamentary
+			}
+		}
+		set_variable = { var = slopx_ireland_office_tanaiste_occupied value = constant:slopx_ireland.one }
+	}
+	if = {
+		limit = {
+			NOT = { has_country_flag = slopx_ireland_military_command_collapse }
+			check_variable = { var = slopx_ireland_readiness_command value = constant:slopx_ireland.one compare = greater_than_or_equals }
+		}
+		set_variable = { var = slopx_ireland_office_chief_of_staff_occupied value = constant:slopx_ireland.one }
+	}
+	if = {
+		limit = {
+			NOT = { has_country_flag = slopx_ireland_security_command_collapse }
+			check_variable = { var = slopx_ireland_readiness_intelligence value = constant:slopx_ireland.one compare = greater_than_or_equals }
+		}
+		set_variable = { var = slopx_ireland_office_security_chief_occupied value = constant:slopx_ireland.one }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = slopx_ireland_route_ira_republican
+				has_country_flag = slopx_ireland_route_congress
+				has_country_flag = slopx_ireland_route_oduffy
+				has_country_flag = slopx_ireland_route_ailtiri_total_state
+				has_country_flag = slopx_ireland_route_clerical_producer
+				has_country_flag = slopx_ireland_route_high_king
+				has_country_flag = slopx_ireland_route_five_provinces
+				has_country_flag = slopx_ireland_route_otherworld
+			}
+		}
+		set_variable = { var = slopx_ireland_office_movement_leader_occupied value = constant:slopx_ireland.one }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = slopx_ireland_ira_army_council_path
+				has_country_flag = slopx_ireland_route_oduffy
+				has_country_flag = slopx_ireland_route_ailtiri_total_state
+			}
+		}
+		set_variable = { var = slopx_ireland_office_armed_wing_commander_occupied value = constant:slopx_ireland.one }
+	}
+	if = {
+		limit = {
+			has_country_flag = slopx_ireland_route_committed
+			OR = {
+				has_country_flag = slopx_ireland_route_constitutional_vocational
+				has_country_flag = slopx_ireland_route_clerical_producer
+				has_country_flag = slopx_ireland_route_high_king
+				has_country_flag = slopx_ireland_route_five_provinces
+				has_country_flag = slopx_ireland_route_otherworld
+				has_country_flag = slopx_ireland_route_congress
+			}
+		}
+		set_variable = { var = slopx_ireland_office_council_chair_occupied value = constant:slopx_ireland.one }
+	}
+	if = {
+		limit = {
+			has_country_flag = slopx_ireland_route_five_provinces
+			OR = {
+				has_country_flag = slopx_ireland_five_provinces_ratified
+				has_country_flag = slopx_ireland_route_leader_activated_five_provinces
+			}
+		}
+		set_variable = { var = slopx_ireland_office_provincial_chair_occupied value = constant:slopx_ireland.one }
+	}
+	if = {
+		limit = {
+			has_country_flag = slopx_ireland_route_high_king
+			has_country_flag = slopx_ireland_high_king_concluded
+		}
+		set_variable = { var = slopx_ireland_office_high_king_occupied value = constant:slopx_ireland.one }
+	}
+	if = {
+		limit = {
+			has_country_flag = slopx_ireland_route_otherworld
+			has_country_flag = slopx_ireland_route_leader_activated_otherworld
+		}
+		set_variable = { var = slopx_ireland_office_compact_steward_occupied value = constant:slopx_ireland.one }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = slopx_ireland_northern_occupation_active
+				has_country_flag = slopx_ireland_northern_integration_active
+				has_country_flag = slopx_ireland_provisional_northern_authority
+			}
+		}
+		set_variable = { var = slopx_ireland_office_transitional_administrator_occupied value = constant:slopx_ireland.one }
+	}
+
+	set_variable = { var = slopx_ireland_office_occupied_count value = constant:slopx_ireland.zero }
+	set_variable = { var = slopx_ireland_office_vacancy_count value = constant:slopx_ireland.zero }
+	clr_country_flag = slopx_ireland_office_vacancy
+	clr_country_flag = slopx_ireland_leadership_vacancy
+	clr_country_flag = slopx_ireland_office_president_vacant
+	clr_country_flag = slopx_ireland_office_taoiseach_vacant
+	clr_country_flag = slopx_ireland_office_tanaiste_vacant
+	clr_country_flag = slopx_ireland_office_party_leader_vacant
+	clr_country_flag = slopx_ireland_office_parliamentary_leader_vacant
+	clr_country_flag = slopx_ireland_office_cabinet_minister_vacant
+	clr_country_flag = slopx_ireland_office_chief_of_staff_vacant
+	clr_country_flag = slopx_ireland_office_security_chief_vacant
+	clr_country_flag = slopx_ireland_office_movement_leader_vacant
+	clr_country_flag = slopx_ireland_office_armed_wing_commander_vacant
+	clr_country_flag = slopx_ireland_office_council_chair_vacant
+	clr_country_flag = slopx_ireland_office_provincial_chair_vacant
+	clr_country_flag = slopx_ireland_office_high_king_vacant
+	clr_country_flag = slopx_ireland_office_compact_steward_vacant
+	clr_country_flag = slopx_ireland_office_transitional_administrator_vacant
+
+	# The registry keeps the office-level flags concrete while variables remain
+	# the source used by GUI projections and achievements.
+	if = { limit = { check_variable = { var = slopx_ireland_office_president_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else_if = { limit = { has_country_flag = slopx_ireland_constitutional_calendar_restored } add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_president_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_taoiseach_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else = { add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_taoiseach_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_tanaiste_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else_if = { limit = { has_country_flag = slopx_ireland_route_committed } add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_tanaiste_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_party_leader_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else = { add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_party_leader_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_parliamentary_leader_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else = { add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_parliamentary_leader_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_cabinet_minister_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else = { add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_cabinet_minister_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_chief_of_staff_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else = { add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_chief_of_staff_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_security_chief_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else = { add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_security_chief_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_movement_leader_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else_if = { limit = { has_country_flag = slopx_ireland_route_committed } add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_movement_leader_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_armed_wing_commander_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else_if = { limit = { has_country_flag = slopx_ireland_armed_wing_active } add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_armed_wing_commander_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_council_chair_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else_if = { limit = { has_country_flag = slopx_ireland_route_committed } add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_council_chair_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_provincial_chair_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else_if = { limit = { has_country_flag = slopx_ireland_route_five_provinces } add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_provincial_chair_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_high_king_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else_if = { limit = { has_country_flag = slopx_ireland_high_king_concluded } add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_high_king_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_compact_steward_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else_if = { limit = { has_country_flag = slopx_ireland_route_otherworld } add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_compact_steward_vacant }
+	if = { limit = { check_variable = { var = slopx_ireland_office_transitional_administrator_occupied value = constant:slopx_ireland.one compare = equals } } add_to_variable = { slopx_ireland_office_occupied_count = constant:slopx_ireland.one } }
+	else_if = { limit = { OR = { has_country_flag = slopx_ireland_northern_occupation_active has_country_flag = slopx_ireland_northern_integration_active } } add_to_variable = { slopx_ireland_office_vacancy_count = constant:slopx_ireland.one } set_country_flag = slopx_ireland_office_transitional_administrator_vacant }
+
+	if = {
+		limit = {
+			has_country_flag = slopx_ireland_route_committed
+			OR = {
+				has_country_flag = slopx_ireland_office_taoiseach_vacant
+				has_country_flag = slopx_ireland_office_party_leader_vacant
+				has_country_flag = slopx_ireland_office_parliamentary_leader_vacant
+				has_country_flag = slopx_ireland_office_cabinet_minister_vacant
+			}
+		}
+		set_country_flag = slopx_ireland_office_vacancy
+		set_country_flag = slopx_ireland_leadership_vacancy
+	}
+	if = {
+		limit = {
+			has_country_flag = slopx_ireland_route_committed
+			OR = {
+				has_country_flag = slopx_ireland_office_chief_of_staff_vacant
+				has_country_flag = slopx_ireland_office_security_chief_vacant
+				has_country_flag = slopx_ireland_office_armed_wing_commander_vacant
+				has_country_flag = slopx_ireland_office_transitional_administrator_vacant
+			}
+		}
+		set_country_flag = slopx_ireland_office_vacancy
+	}
+	set_country_flag = slopx_ireland_office_registry_active
+}

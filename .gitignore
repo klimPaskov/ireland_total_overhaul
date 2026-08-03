@@ -1,0 +1,16 @@
+# HOI4 / local generated clutter
+*.log
+.DS_Store
+Thumbs.db
+/tmp/
+/.cwtools-cache/
+/.hoi4-agent/
+
+# Local staging and research material. Runtime assets belong under gfx/;
+# source packages remain available in the local worktree for provenance review.
+/assets/
+/.tmp/
+/docs/portraits/*/
+/docs/plans/ireland_focus_tree/assets/source_research_handoffs/
+/docs/plans/ireland_focus_tree/assets/retired_icon_candidates/
+/docs/plans/ireland_focus_tree/assets/__pycache__/

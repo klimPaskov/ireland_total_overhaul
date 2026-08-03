@@ -1,0 +1,4855 @@
+# Ireland Total Overhaul national focus tree
+# Overview: one non-linear IRE tree spanning the 1936 institutional opening, the 1937 constitutional
+# campaign and plebiscite/election gateway, the 1938 sovereignty/trade and Treaty Port gateway, the
+# 1939 Emergency/neutrality opening, material support lanes, constitutional H/P routes, concealed
+# revolutionary/corporate routes, dated Ailtirí route, hidden cultural restorations and final convergence.
+# Route class legend: H = documented historical route; P = plausible constitutional or institutional route;
+# A = deliberate absurdity, concealed behind independent evidence, state-interface failure and rare conditions.
+# Focuses set route/proof flags and hand off lifecycle work to the parent scripted systems. This file grants
+# no Northern territory, cores, free industry, equipment, units, fuel, shipping, administration, alignment
+# or recognition. Treaty Port and Northern work remains a project, decision, mission and integration surface.
+# Route capstones call the conclusion-review helper only after material, readiness, foreign, Northern and
+# postwar proof flags are present. Recovery bridges call cleanup so failed routes can be re-entered lawfully.
+focus_tree = {
+	id = slopx_ireland_focus_tree
+	default = no
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = IRE
+		}
+	}
+	initial_show_position = { x = 0 y = 0 }
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+		FOCUS_FILTER_MANPOWER
+		FOCUS_FILTER_RESEARCH
+		FOCUS_FILTER_INDUSTRY
+		FOCUS_FILTER_NAVY
+		FOCUS_FILTER_INTERNATIONAL_TRADE
+	}
+
+# Shared H/P opening, constitutional gateway, sovereignty gateway and Emergency opening
+	focus = {
+		id = slopx_ireland_state_still_defined
+		icon = GFX_focus_slopx_ireland_state_still_defined
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 0
+		completion_reward = {
+			set_country_flag = slopx_ireland_state_still_defined_complete
+			set_country_flag = slopx_ireland_campaign_open
+			slopx_ireland_initialize_campaign = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_institutional_survey
+		icon = GFX_focus_slopx_ireland_institutional_survey
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -8
+		y = 2
+		prerequisite = {
+			focus = slopx_ireland_state_still_defined
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_institutional_survey_complete
+			set_country_flag = slopx_ireland_institutional_baseline_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_national_settlement
+		icon = GFX_focus_slopx_ireland_national_settlement
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 3
+		prerequisite = {
+			focus = slopx_ireland_state_still_defined
+		}
+		prerequisite = {
+			focus = slopx_ireland_institutional_survey
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_national_settlement_complete
+			set_country_flag = slopx_ireland_settlement_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_civil_war_memory
+		icon = GFX_focus_slopx_ireland_civil_war_memory
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -14
+		y = 4
+		available = {
+			has_completed_focus = slopx_ireland_national_settlement
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_civil_war_memory_complete
+			set_country_flag = slopx_ireland_civil_war_memory_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_republican_veterans
+		icon = GFX_focus_slopx_ireland_republican_veterans
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -14
+		y = 5
+		prerequisite = {
+			focus = slopx_ireland_civil_war_memory
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_republican_veterans_complete
+			set_country_flag = slopx_ireland_veterans_ledger_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_public_order_review
+		icon = GFX_focus_slopx_ireland_public_order_review
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -14
+		y = 6
+		prerequisite = {
+			focus = slopx_ireland_republican_veterans
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_public_order_review_complete
+			set_country_flag = slopx_ireland_security_baseline_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_economic_war_review
+		icon = GFX_focus_slopx_ireland_economic_war_review
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 10
+		y = 4
+		available = {
+			has_completed_focus = slopx_ireland_institutional_survey
+			has_completed_focus = slopx_ireland_national_settlement
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_economic_war_review_complete
+			set_country_flag = slopx_ireland_economic_war_open
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_rural_price_board
+		icon = GFX_focus_slopx_ireland_rural_price_board
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 10
+		y = 5
+		prerequisite = {
+			focus = slopx_ireland_economic_war_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_rural_price_board_complete
+			set_country_flag = slopx_ireland_rural_price_review_ready
+			set_country_flag = slopx_ireland_rural_credit_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_domestic_industry_review
+		icon = GFX_focus_slopx_ireland_domestic_industry_review
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 10
+		y = 6
+		prerequisite = {
+			focus = slopx_ireland_rural_price_board
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_domestic_industry_review_complete
+			set_country_flag = slopx_ireland_domestic_industry_review_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_defence_estimates
+		icon = GFX_focus_slopx_ireland_defence_estimates
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 20
+		y = 4
+		available = {
+			has_completed_focus = slopx_ireland_institutional_survey
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_defence_estimates_complete
+			set_country_flag = slopx_ireland_defence_estimates_open
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_command_audit
+		icon = GFX_focus_slopx_ireland_command_audit
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 20
+		y = 5
+		prerequisite = {
+			focus = slopx_ireland_defence_estimates
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_command_audit_complete
+			set_country_flag = slopx_ireland_command_baseline_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_port_and_coast_audit
+		icon = GFX_focus_slopx_ireland_port_and_coast_audit
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 20
+		y = 6
+		prerequisite = {
+			focus = slopx_ireland_command_audit
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_port_and_coast_audit_complete
+			set_country_flag = slopx_ireland_maritime_baseline_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_church_labour_consultation
+		icon = GFX_focus_slopx_ireland_church_labour_consultation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -6
+		y = 6
+		prerequisite = {
+			focus = slopx_ireland_national_settlement
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_church_labour_consultation_complete
+			set_country_flag = slopx_ireland_social_consultation_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_minority_guarantees
+		icon = GFX_focus_slopx_ireland_minority_guarantees
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -14
+		y = 7
+		prerequisite = {
+			focus = slopx_ireland_church_labour_consultation
+		}
+		available = {
+			has_completed_focus = slopx_ireland_church_labour_consultation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_minority_guarantees_complete
+			set_country_flag = slopx_ireland_minority_review_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_language_service
+		icon = GFX_focus_slopx_ireland_language_service
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -22
+		y = 7
+		prerequisite = {
+			focus = slopx_ireland_public_order_review
+		}
+		available = {
+			has_completed_focus = slopx_ireland_church_labour_consultation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_language_service_complete
+			set_country_flag = slopx_ireland_language_baseline_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_border_observation
+		icon = GFX_focus_slopx_ireland_border_observation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 6
+		y = 5
+		available = {
+			has_completed_focus = slopx_ireland_institutional_survey
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_border_observation_complete
+			set_country_flag = slopx_ireland_northern_observation_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_northern_contacts
+		icon = GFX_focus_slopx_ireland_northern_contacts
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 6
+		y = 6
+		prerequisite = {
+			focus = slopx_ireland_border_observation
+		}
+		available = {
+			has_completed_focus = slopx_ireland_border_observation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_contacts_complete
+			set_country_flag = slopx_ireland_northern_contacts_open
+			set_country_flag = slopx_ireland_northern_contact
+		}
+	}
+	focus = {
+		id = slopx_ireland_election_timetable
+		icon = GFX_focus_slopx_ireland_election_timetable
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 5
+		prerequisite = {
+			focus = slopx_ireland_national_settlement
+		}
+		available = {
+			has_completed_focus = slopx_ireland_institutional_survey
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_election_timetable_complete
+			set_country_flag = slopx_ireland_election_calendar_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_constitutional_draft
+		icon = GFX_focus_slopx_ireland_constitutional_draft
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 8
+		prerequisite = {
+			focus = slopx_ireland_election_timetable
+		}
+		available = {
+			has_completed_focus = slopx_ireland_minority_guarantees
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_constitutional_draft_complete
+			set_country_flag = slopx_ireland_constitutional_draft_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_presidential_settlement
+		icon = GFX_focus_slopx_ireland_presidential_settlement
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -6
+		y = 9
+		prerequisite = {
+			focus = slopx_ireland_constitutional_draft
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_presidential_settlement_complete
+			set_country_flag = slopx_ireland_presidency_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_seanad_panels
+		icon = GFX_focus_slopx_ireland_seanad_panels
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 8
+		y = 9
+		prerequisite = {
+			focus = slopx_ireland_constitutional_draft
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_seanad_panels_complete
+			set_country_flag = slopx_ireland_seanad_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_plebiscite_campaign
+		icon = GFX_focus_slopx_ireland_plebiscite_campaign
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -12
+		y = 10
+		prerequisite = {
+			focus = slopx_ireland_presidential_settlement
+		}
+		available = {
+			has_completed_focus = slopx_ireland_constitutional_draft
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_plebiscite_campaign_complete
+			set_country_flag = slopx_ireland_plebiscite_campaign_open
+			set_country_flag = slopx_ireland_plebiscite_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_general_election_campaign
+		icon = GFX_focus_slopx_ireland_general_election_campaign
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 4
+		y = 9
+		prerequisite = {
+			focus = slopx_ireland_constitutional_draft
+		}
+		available = {
+			has_completed_focus = slopx_ireland_election_timetable
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_general_election_campaign_complete
+			set_country_flag = slopx_ireland_general_election_campaign_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_plebiscite_mandate
+		icon = GFX_focus_slopx_ireland_plebiscite_mandate
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -12
+		y = 11
+		prerequisite = {
+			focus = slopx_ireland_plebiscite_campaign
+		}
+		available = {
+			OR = { has_country_flag = slopx_ireland_plebiscite_passed has_country_flag = slopx_ireland_plebiscite_recovered }
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_plebiscite_mandate_complete
+			set_country_flag = slopx_ireland_plebiscite_mandate
+		}
+	}
+	focus = {
+		id = slopx_ireland_election_mandate
+		icon = GFX_focus_slopx_ireland_election_mandate
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 4
+		y = 10
+		prerequisite = {
+			focus = slopx_ireland_general_election_campaign
+		}
+		available = {
+			has_country_flag = slopx_ireland_election_result_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_election_mandate_complete
+			set_country_flag = slopx_ireland_election_mandate
+		}
+	}
+	focus = {
+		id = slopx_ireland_government_formation
+		icon = GFX_focus_slopx_ireland_government_formation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 12
+		prerequisite = {
+			focus = slopx_ireland_election_mandate
+		}
+		available = {
+			has_completed_focus = slopx_ireland_plebiscite_mandate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_government_formation_complete
+			set_country_flag = slopx_ireland_government_formation_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_replacement_charter
+		icon = GFX_focus_slopx_ireland_replacement_charter
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -9
+		y = 11
+		prerequisite = {
+			focus = slopx_ireland_plebiscite_campaign
+		}
+		available = {
+			has_country_flag = slopx_ireland_plebiscite_rejected
+			has_completed_focus = slopx_ireland_plebiscite_campaign
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_replacement_charter_complete
+			set_country_flag = slopx_ireland_replacement_charter_open
+			set_country_flag = slopx_ireland_plebiscite_recovered
+		}
+	}
+	focus = {
+		id = slopx_ireland_1938_trade_settlement
+		icon = GFX_focus_slopx_ireland_1938_trade_settlement
+		cost = 12
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 13
+		prerequisite = {
+			focus = slopx_ireland_government_formation
+		}
+		available = {
+			date > 1938.2.1
+			has_completed_focus = slopx_ireland_economic_war_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_1938_trade_settlement_complete
+			set_country_flag = slopx_ireland_trade_settlement_ready
+			set_country_flag = slopx_ireland_port_transfer_open
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_treaty_port_transfer
+		icon = GFX_focus_slopx_ireland_treaty_port_transfer
+		cost = 12
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 4
+		y = 14
+		prerequisite = {
+			focus = slopx_ireland_1938_trade_settlement
+		}
+		available = {
+			# Port-and-coast audit remains a hard route gate without a long
+			# cross-branch connector in the authored layout.
+			OR = { has_country_flag = slopx_ireland_port_transfer_open date > 1938.7.1 }
+			has_completed_focus = slopx_ireland_1938_trade_settlement
+			has_completed_focus = slopx_ireland_port_and_coast_audit
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_treaty_port_transfer_complete
+			set_country_flag = slopx_ireland_treaty_port_project_open
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_sovereignty_mandate
+		icon = GFX_focus_slopx_ireland_sovereignty_mandate
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -3
+		y = 15
+		prerequisite = {
+			focus = slopx_ireland_treaty_port_transfer
+		}
+		available = {
+			# Presidential settlement remains a hard route gate without a long
+			# cross-branch connector in the authored layout.
+			has_completed_focus = slopx_ireland_treaty_port_transfer
+			has_completed_focus = slopx_ireland_presidential_settlement
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_sovereignty_mandate_complete
+			set_country_flag = slopx_ireland_sovereignty_mandate_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_emergency_opening
+		icon = GFX_focus_slopx_ireland_emergency_opening
+		cost = 12
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 17
+		prerequisite = {
+			focus = slopx_ireland_sovereignty_mandate
+		}
+		available = {
+			date > 1939.9.1
+			has_completed_focus = slopx_ireland_active_neutrality
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_emergency_opening_complete
+			set_country_flag = slopx_ireland_emergency_opening
+			set_country_flag = slopx_ireland_emergency_review_started
+		}
+	}
+	focus = {
+		id = slopx_ireland_active_neutrality
+		icon = GFX_focus_slopx_ireland_active_neutrality
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 4
+		y = 16
+		prerequisite = {
+			focus = slopx_ireland_treaty_port_transfer
+		}
+		available = {
+			has_completed_focus = slopx_ireland_sovereignty_mandate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_active_neutrality_complete
+			set_country_flag = slopx_ireland_neutrality_open
+		}
+	}
+
+# H/P de Valera stewardship, reconciliation and Emergency routes
+	focus = {
+		id = slopx_ireland_republican_government
+		icon = GFX_focus_slopx_ireland_republican_government
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -36
+		y = 15
+		available = {
+			has_government = democratic
+			has_completed_focus = slopx_ireland_government_formation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_republican_government_complete
+			set_country_flag = slopx_ireland_republican_government_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_party_of_government
+		icon = GFX_focus_slopx_ireland_party_of_government
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -36
+		y = 16
+		prerequisite = {
+			focus = slopx_ireland_republican_government
+		}
+		available = {
+			has_country_flag = slopx_ireland_election_mandate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_party_of_government_complete
+			set_country_flag = slopx_ireland_ff_governing_mandate
+		}
+	}
+	focus = {
+		id = slopx_ireland_republican_legitimacy
+		icon = GFX_focus_slopx_ireland_republican_legitimacy
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -44
+		y = 17
+		prerequisite = {
+			focus = slopx_ireland_party_of_government
+		}
+		available = {
+			has_completed_focus = slopx_ireland_civil_war_memory
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_republican_legitimacy_complete
+			set_country_flag = slopx_ireland_republican_legitimacy_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_neutrality_by_irish_decision
+		icon = GFX_focus_slopx_ireland_neutrality_by_irish_decision
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -28
+		y = 17
+		prerequisite = {
+			focus = slopx_ireland_party_of_government
+		}
+		available = {
+			has_completed_focus = slopx_ireland_active_neutrality
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_neutrality_by_irish_decision_complete
+			set_country_flag = slopx_ireland_neutrality_by_irish_decision_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_de_valera_stewardship
+		icon = GFX_focus_slopx_ireland_de_valera_stewardship
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -36
+		y = 18
+		prerequisite = {
+			focus = slopx_ireland_party_of_government
+		}
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			not = { has_country_flag = slopx_ireland_armed_takeover }
+			has_completed_focus = slopx_ireland_constitutional_draft
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_de_valera_stewardship_complete
+			set_country_flag = slopx_ireland_route_de_valera_stewardship
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_secure_plebiscite_mandate
+		icon = GFX_focus_slopx_ireland_secure_plebiscite_mandate
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -44
+		y = 19
+		prerequisite = {
+			focus = slopx_ireland_de_valera_stewardship
+		}
+		available = {
+			has_completed_focus = slopx_ireland_plebiscite_mandate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_secure_plebiscite_mandate_complete
+			set_country_flag = slopx_ireland_plebiscite_legitimacy_secured
+		}
+	}
+	focus = {
+		id = slopx_ireland_govern_through_dail
+		icon = GFX_focus_slopx_ireland_govern_through_dail
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -36
+		y = 20
+		prerequisite = {
+			focus = slopx_ireland_secure_plebiscite_mandate
+		}
+		available = {
+			has_completed_focus = slopx_ireland_election_mandate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_govern_through_dail_complete
+			set_country_flag = slopx_ireland_dail_authority_secured
+		}
+	}
+	focus = {
+		id = slopx_ireland_constitutional_stewardship
+		icon = GFX_focus_slopx_ireland_constitutional_stewardship
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -36
+		y = 21
+		prerequisite = {
+			focus = slopx_ireland_govern_through_dail
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_route_de_valera_stewardship
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_constitutional_stewardship_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_de_valera_reconciliation
+		icon = GFX_focus_slopx_ireland_de_valera_reconciliation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -52
+		y = 18
+		prerequisite = {
+			focus = slopx_ireland_republican_legitimacy
+		}
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			has_country_flag = slopx_ireland_republican_network_strength_ready
+			has_country_flag = slopx_ireland_security_loyalty_ready
+			not = { has_country_flag = slopx_ireland_armed_takeover }
+			has_completed_focus = slopx_ireland_republican_veterans
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_de_valera_reconciliation_complete
+			set_country_flag = slopx_ireland_route_de_valera_reconciliation
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_distinguish_prisoners
+		icon = GFX_focus_slopx_ireland_distinguish_prisoners
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -60
+		y = 19
+		prerequisite = {
+			focus = slopx_ireland_de_valera_reconciliation
+		}
+		available = {
+			has_country_flag = slopx_ireland_reintegration_capacity_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_distinguish_prisoners_complete
+			set_country_flag = slopx_ireland_republican_prisoner_review_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_amnesty_under_law
+		icon = GFX_focus_slopx_ireland_amnesty_under_law
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -52
+		y = 20
+		prerequisite = {
+			focus = slopx_ireland_distinguish_prisoners
+		}
+		available = {
+			has_country_flag = slopx_ireland_security_review_ready
+			has_completed_focus = slopx_ireland_public_order_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_amnesty_under_law_complete
+			set_country_flag = slopx_ireland_amnesty_process_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_reconciliation_mandate
+		icon = GFX_focus_slopx_ireland_reconciliation_mandate
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -52
+		y = 21
+		prerequisite = {
+			focus = slopx_ireland_amnesty_under_law
+		}
+		available = {
+			has_completed_focus = slopx_ireland_northern_contacts
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_reconciliation_mandate_complete
+			set_country_flag = slopx_ireland_reconciliation_mandate_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_de_valera_reconciliation_capstone
+		icon = GFX_focus_slopx_ireland_de_valera_reconciliation_capstone
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -52
+		y = 22
+		prerequisite = {
+			focus = slopx_ireland_reconciliation_mandate
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_route_de_valera_reconciliation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_de_valera_reconciliation_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_emergency_direction
+		icon = GFX_focus_slopx_ireland_emergency_direction
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -20
+		y = 18
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			date > 1939.9.1
+			has_completed_focus = slopx_ireland_party_of_government
+			has_completed_focus = slopx_ireland_emergency_opening
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_emergency_direction_complete
+			set_country_flag = slopx_ireland_route_de_valera_emergency
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_statutory_emergency
+		icon = GFX_focus_slopx_ireland_statutory_emergency
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -20
+		y = 19
+		prerequisite = {
+			focus = slopx_ireland_emergency_direction
+		}
+		available = {
+			OR = {
+				has_country_flag = slopx_ireland_external_emergency
+				has_country_flag = slopx_ireland_national_emergency_active
+			}
+			has_completed_focus = slopx_ireland_emergency_opening
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_statutory_emergency_complete
+			set_country_flag = slopx_ireland_statutory_emergency_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_emergency_review
+		icon = GFX_focus_slopx_ireland_emergency_review
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -20
+		y = 20
+		prerequisite = {
+			focus = slopx_ireland_statutory_emergency
+		}
+		available = {
+			has_country_flag = slopx_ireland_emergency_review_ready
+			has_completed_focus = slopx_ireland_active_neutrality
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_emergency_review_complete
+			set_country_flag = slopx_ireland_emergency_law_reviewed
+		}
+	}
+	focus = {
+		id = slopx_ireland_emergency_repeal
+		icon = GFX_focus_slopx_ireland_emergency_repeal
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -20
+		y = 27
+		available = {
+			has_completed_focus = slopx_ireland_recovery_bridge
+			has_completed_focus = slopx_ireland_emergency_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_emergency_repeal_complete
+			set_country_flag = slopx_ireland_emergency_review_complete
+		}
+	}
+	focus = {
+		id = slopx_ireland_de_valera_emergency_capstone
+		icon = GFX_focus_slopx_ireland_de_valera_emergency_capstone
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -20
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_emergency_repeal
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_route_de_valera_emergency
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_de_valera_emergency_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# P Lemass developmental succession route
+	focus = {
+		id = slopx_ireland_lemass_developmental
+		icon = GFX_focus_slopx_ireland_lemass_developmental
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -2
+		y = 18
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			has_country_flag = slopx_ireland_valid_succession
+			has_country_flag = slopx_ireland_developmental_standing_ready
+			has_completed_focus = slopx_ireland_economic_war_review
+			has_completed_focus = slopx_ireland_party_of_government
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_lemass_developmental_complete
+			set_country_flag = slopx_ireland_route_lemass_developmental
+			# The achievement records the dated, peaceful installation itself;
+			# the four-region and leverage history checks remain independent.
+			if = {
+				limit = { date < 1943.1.1 }
+				set_country_flag = slopx_ireland_achievement_lemass_peaceful_succession
+			}
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_cabinet_compact
+		icon = GFX_focus_slopx_ireland_cabinet_compact
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -2
+		y = 19
+		prerequisite = {
+			focus = slopx_ireland_lemass_developmental
+		}
+		available = {
+			has_country_flag = slopx_ireland_succession_cabinet_ready
+			has_completed_focus = slopx_ireland_domestic_industry_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_cabinet_compact_complete
+			set_country_flag = slopx_ireland_lemass_cabinet_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_party_conference
+		icon = GFX_focus_slopx_ireland_party_conference
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -2
+		y = 20
+		prerequisite = {
+			focus = slopx_ireland_cabinet_compact
+		}
+		available = {
+			has_country_flag = slopx_ireland_party_conference_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_party_conference_complete
+			set_country_flag = slopx_ireland_lemass_party_mandate_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_dail_nomination
+		icon = GFX_focus_slopx_ireland_dail_nomination
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -2
+		y = 21
+		prerequisite = {
+			focus = slopx_ireland_party_conference
+		}
+		available = {
+			has_country_flag = slopx_ireland_dail_nomination_ready
+			has_completed_focus = slopx_ireland_election_mandate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_dail_nomination_complete
+			set_country_flag = slopx_ireland_lemass_dail_mandate_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_cabinet_of_production
+		icon = GFX_focus_slopx_ireland_cabinet_of_production
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 7
+		y = 30
+		prerequisite = {
+			focus = slopx_ireland_development_authority
+		}
+		available = {
+			has_country_flag = slopx_ireland_route_lemass_developmental
+			has_completed_focus = slopx_ireland_cabinet_compact
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_cabinet_of_production_complete
+			set_country_flag = slopx_ireland_production_cabinet_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_labour_industrial_discipline
+		icon = GFX_focus_slopx_ireland_labour_industrial_discipline
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 7
+		y = 31
+		prerequisite = {
+			focus = slopx_ireland_cabinet_of_production
+		}
+		available = {
+			has_country_flag = slopx_ireland_labour_bargain_ready
+			has_completed_focus = slopx_ireland_church_labour_consultation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_labour_industrial_discipline_complete
+			set_country_flag = slopx_ireland_lemass_labour_compact_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_rural_compensation
+		icon = GFX_focus_slopx_ireland_rural_compensation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 6
+		y = 32
+		prerequisite = {
+			focus = slopx_ireland_labour_industrial_discipline
+		}
+		available = {
+			has_completed_focus = slopx_ireland_rural_price_board
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_rural_compensation_complete
+			set_country_flag = slopx_ireland_lemass_rural_compact_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_lemass_developmental_capstone
+		icon = GFX_focus_slopx_ireland_lemass_developmental_capstone
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 6
+		y = 33
+		prerequisite = {
+			focus = slopx_ireland_rural_compensation
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_route_lemass_developmental
+			has_country_flag = slopx_ireland_lemass_dail_mandate_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_lemass_developmental_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# H/P Fine Gael, Cosgrave, Mulcahy, Costello and Dillon routes
+	focus = {
+		id = slopx_ireland_constitutional_opposition
+		icon = GFX_focus_slopx_ireland_constitutional_opposition
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 32
+		y = 15
+		available = {
+			OR = { has_country_flag = slopx_ireland_fine_gael_mandate has_country_flag = slopx_ireland_opposition_gateway }
+			has_completed_focus = slopx_ireland_government_formation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_constitutional_opposition_complete
+			set_country_flag = slopx_ireland_fine_gael_opposition_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_close_oduffy_chapter
+		icon = GFX_focus_slopx_ireland_close_oduffy_chapter
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 32
+		y = 16
+		prerequisite = {
+			focus = slopx_ireland_constitutional_opposition
+		}
+		available = {
+			OR = { has_country_flag = slopx_ireland_oduffy_chapter_open has_country_flag = slopx_ireland_fine_gael_mandate }
+			has_completed_focus = slopx_ireland_civil_war_memory
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_close_oduffy_chapter_complete
+			set_country_flag = slopx_ireland_oduffy_chapter_closed
+		}
+	}
+	focus = {
+		id = slopx_ireland_government_from_opposition
+		icon = GFX_focus_slopx_ireland_government_from_opposition
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 32
+		y = 17
+		prerequisite = {
+			focus = slopx_ireland_close_oduffy_chapter
+		}
+		available = {
+			has_country_flag = slopx_ireland_fine_gael_government_ready
+			has_completed_focus = slopx_ireland_election_mandate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_government_from_opposition_complete
+			set_country_flag = slopx_ireland_fine_gael_government_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_state_we_built
+		icon = GFX_focus_slopx_ireland_state_we_built
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 32
+		y = 18
+		prerequisite = {
+			focus = slopx_ireland_government_from_opposition
+		}
+		available = {
+			has_completed_focus = slopx_ireland_minority_guarantees
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_state_we_built_complete
+			set_country_flag = slopx_ireland_state_institutional_compact_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_cosgrave_institutional
+		icon = GFX_focus_slopx_ireland_cosgrave_institutional
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 32
+		y = 19
+		prerequisite = {
+			focus = slopx_ireland_state_we_built
+		}
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			not = { has_country_flag = slopx_ireland_armed_takeover }
+			has_completed_focus = slopx_ireland_government_from_opposition
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_cosgrave_institutional_complete
+			set_country_flag = slopx_ireland_route_cosgrave_institutional
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_restore_parliamentary_confidence
+		icon = GFX_focus_slopx_ireland_restore_parliamentary_confidence
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 32
+		y = 20
+		prerequisite = {
+			focus = slopx_ireland_cosgrave_institutional
+		}
+		available = {
+			has_completed_focus = slopx_ireland_public_order_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_restore_parliamentary_confidence_complete
+			set_country_flag = slopx_ireland_parliamentary_confidence_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_civil_service_and_courts
+		icon = GFX_focus_slopx_ireland_civil_service_and_courts
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 32
+		y = 21
+		prerequisite = {
+			focus = slopx_ireland_restore_parliamentary_confidence
+		}
+		available = {
+			has_country_flag = slopx_ireland_judicial_review_ready
+			has_completed_focus = slopx_ireland_minority_guarantees
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_civil_service_and_courts_complete
+			set_country_flag = slopx_ireland_civil_service_court_compact_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_security_under_law
+		icon = GFX_focus_slopx_ireland_security_under_law
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 32
+		y = 22
+		prerequisite = {
+			focus = slopx_ireland_civil_service_and_courts
+		}
+		available = {
+			has_completed_focus = slopx_ireland_command_audit
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_security_under_law_complete
+			set_country_flag = slopx_ireland_security_under_law_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_cosgrave_capstone
+		icon = GFX_focus_slopx_ireland_cosgrave_capstone
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 32
+		y = 23
+		prerequisite = {
+			focus = slopx_ireland_security_under_law
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_route_cosgrave_institutional
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_cosgrave_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_mulcahy_succession
+		icon = GFX_focus_slopx_ireland_mulcahy_succession
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 44
+		y = 19
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			has_country_flag = slopx_ireland_civilian_succession_ready
+			has_completed_focus = slopx_ireland_government_from_opposition
+			has_completed_focus = slopx_ireland_defence_estimates
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_mulcahy_succession_complete
+			set_country_flag = slopx_ireland_route_mulcahy_civil_defence
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_professional_defence_council
+		icon = GFX_focus_slopx_ireland_professional_defence_council
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 44
+		y = 20
+		prerequisite = {
+			focus = slopx_ireland_mulcahy_succession
+		}
+		available = {
+			has_country_flag = slopx_ireland_civilian_defence_review_ready
+			has_completed_focus = slopx_ireland_command_audit
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_professional_defence_council_complete
+			set_country_flag = slopx_ireland_mulcahy_defence_council_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_army_serves_dail
+		icon = GFX_focus_slopx_ireland_army_serves_dail
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 44
+		y = 23
+		prerequisite = {
+			focus = slopx_ireland_professional_defence_council
+		}
+		available = {
+			has_completed_focus = slopx_ireland_security_under_law
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_army_serves_dail_complete
+			set_country_flag = slopx_ireland_civilian_command_compact_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_face_civil_war_record
+		icon = GFX_focus_slopx_ireland_face_civil_war_record
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 44
+		y = 24
+		prerequisite = {
+			focus = slopx_ireland_army_serves_dail
+		}
+		available = {
+			has_completed_focus = slopx_ireland_republican_veterans
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_face_civil_war_record_complete
+			set_country_flag = slopx_ireland_civil_war_record_reviewed
+		}
+	}
+	focus = {
+		id = slopx_ireland_mulcahy_capstone
+		icon = GFX_focus_slopx_ireland_mulcahy_capstone
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 44
+		y = 25
+		prerequisite = {
+			focus = slopx_ireland_face_civil_war_record
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_route_mulcahy_civil_defence
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_mulcahy_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_costello_coalition
+		icon = GFX_focus_slopx_ireland_costello_coalition
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 56
+		y = 19
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			has_country_flag = slopx_ireland_coalition_arithmetic_ready
+			has_completed_focus = slopx_ireland_government_from_opposition
+			has_completed_focus = slopx_ireland_minority_guarantees
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_costello_coalition_complete
+			set_country_flag = slopx_ireland_route_costello_coalition
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_written_coalition_charter
+		icon = GFX_focus_slopx_ireland_written_coalition_charter
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 56
+		y = 20
+		prerequisite = {
+			focus = slopx_ireland_costello_coalition
+		}
+		available = {
+			has_country_flag = slopx_ireland_coalition_charter_mandate_ready
+			has_completed_focus = slopx_ireland_state_we_built
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_written_coalition_charter_complete
+			set_country_flag = slopx_ireland_costello_charter_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_unwind_exceptional_state
+		icon = GFX_focus_slopx_ireland_unwind_exceptional_state
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 56
+		y = 21
+		prerequisite = {
+			focus = slopx_ireland_written_coalition_charter
+		}
+		available = {
+			has_country_flag = slopx_ireland_emergency_review_complete
+			has_completed_focus = slopx_ireland_emergency_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_unwind_exceptional_state_complete
+			set_country_flag = slopx_ireland_coalition_exception_review_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_costello_capstone
+		icon = GFX_focus_slopx_ireland_costello_capstone
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 56
+		y = 22
+		prerequisite = {
+			focus = slopx_ireland_unwind_exceptional_state
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_route_costello_coalition
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_costello_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_dillon_public_dissent
+		icon = GFX_focus_slopx_ireland_dillon_public_dissent
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 68
+		y = 19
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			date > 1942.1.1
+			has_completed_focus = slopx_ireland_constitutional_opposition
+			has_completed_focus = slopx_ireland_active_neutrality
+			slopx_ireland_dillon_democratic_allied_war = yes
+			check_variable = { var = slopx_ireland_dail_mandate value = constant:slopx_ireland.political_gate_dail_min compare = greater_than_or_equals }
+			check_variable = { var = slopx_ireland_social_consent value = constant:slopx_ireland.political_gate_social_min compare = greater_than_or_equals }
+			OR = {
+				has_country_flag = slopx_ireland_p04_platform_result_a
+				has_country_flag = slopx_ireland_p04_platform_result_b
+			}
+			NOT = {
+				OR = {
+					has_country_flag = slopx_ireland_route_ira_republican
+					has_country_flag = slopx_ireland_route_congress
+					has_country_flag = slopx_ireland_route_oduffy
+					has_country_flag = slopx_ireland_route_ailtiri_total_state
+				}
+			}
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_dillon_public_dissent_complete
+			set_country_flag = slopx_ireland_route_dillon_intervention
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_dillon_intervention_caucus
+		icon = GFX_focus_slopx_ireland_dillon_intervention_caucus
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 68
+		y = 20
+		prerequisite = {
+			focus = slopx_ireland_dillon_public_dissent
+		}
+		available = {
+			has_country_flag = slopx_ireland_dillon_mandate_complete
+			check_variable = { var = slopx_ireland_intervention_mandate value = constant:slopx_ireland.dillon_caucus_mandate compare = greater_than_or_equals }
+			OR = {
+				has_country_flag = slopx_ireland_p04_platform_result_a
+				has_country_flag = slopx_ireland_p04_platform_result_b
+			}
+			check_variable = {
+				var = slopx_ireland_british_leverage
+				value = constant:slopx_ireland.dillon_british_leverage_max
+				compare = less_than
+			}
+			has_completed_focus = slopx_ireland_sovereignty_mandate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_dillon_intervention_caucus_complete
+		}
+	}
+	focus = {
+		id = slopx_ireland_dillon_war_assent
+		icon = GFX_focus_slopx_ireland_dillon_war_assent
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 68
+		y = 21
+		prerequisite = {
+			focus = slopx_ireland_dillon_intervention_caucus
+		}
+		available = {
+			has_country_flag = slopx_ireland_dillon_vote_passed
+			OR = {
+				has_country_flag = slopx_ireland_northern_policy_selected
+				has_country_flag = slopx_ireland_northern_deferment_accepted
+			}
+			has_country_flag = slopx_ireland_foreign_safeguards_ready
+			slopx_ireland_can_dillon = yes
+			slopx_ireland_has_dillon_safeguards = yes
+			NOT = { has_country_flag = slopx_ireland_emergency_overreach }
+			NOT = { has_country_flag = slopx_ireland_constitutional_crisis_active }
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_dillon_war_assent_complete
+			set_country_flag = slopx_ireland_dillon_wartime_state
+			set_country_flag = slopx_ireland_dillon_democracy_at_war
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# P Norton parliamentary route
+	focus = {
+		id = slopx_ireland_norton_parliamentary
+		icon = GFX_focus_slopx_ireland_norton_parliamentary
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -78
+		y = 18
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			has_country_flag = slopx_ireland_labour_organisation_ready
+			has_completed_focus = slopx_ireland_government_formation
+			has_completed_focus = slopx_ireland_church_labour_consultation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_norton_parliamentary_complete
+			set_country_flag = slopx_ireland_route_norton_parliamentary
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_labour_as_conscience
+		icon = GFX_focus_slopx_ireland_labour_as_conscience
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -78
+		y = 19
+		prerequisite = {
+			focus = slopx_ireland_norton_parliamentary
+		}
+		available = {
+			has_completed_focus = slopx_ireland_emergency_opening
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_labour_as_conscience_complete
+			set_country_flag = slopx_ireland_labour_scrutiny_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_support_without_surrender
+		icon = GFX_focus_slopx_ireland_support_without_surrender
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -78
+		y = 20
+		prerequisite = {
+			focus = slopx_ireland_labour_as_conscience
+		}
+		available = {
+			has_country_flag = slopx_ireland_labour_neutrality_mandate
+			has_completed_focus = slopx_ireland_active_neutrality
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_support_without_surrender_complete
+			set_country_flag = slopx_ireland_labour_neutral_support_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_labour_social_law
+		icon = GFX_focus_slopx_ireland_labour_social_law
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -78
+		y = 21
+		prerequisite = {
+			focus = slopx_ireland_support_without_surrender
+		}
+		available = {
+			has_country_flag = slopx_ireland_labour_social_mandate
+			has_completed_focus = slopx_ireland_church_labour_consultation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_labour_social_law_complete
+			set_country_flag = slopx_ireland_labour_social_law_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_norton_parliamentary_capstone
+		icon = GFX_focus_slopx_ireland_norton_parliamentary_capstone
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -78
+		y = 22
+		prerequisite = {
+			focus = slopx_ireland_labour_social_law
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_route_norton_parliamentary
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_norton_parliamentary_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# P Clann na Talmhan and constitutional vocational route
+	focus = {
+		id = slopx_ireland_clann_founding
+		icon = GFX_focus_slopx_ireland_clann_founding
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -92
+		y = 18
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			date > 1939.6.29
+			has_completed_focus = slopx_ireland_rural_price_board
+			has_completed_focus = slopx_ireland_election_timetable
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_clann_founding_complete
+			set_country_flag = slopx_ireland_route_clann_agrarian_broker
+			set_country_flag = slopx_ireland_clann_founded
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_agrarian_support_bloc
+		icon = GFX_focus_slopx_ireland_agrarian_support_bloc
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -92
+		y = 19
+		prerequisite = {
+			focus = slopx_ireland_clann_founding
+		}
+		available = {
+			has_country_flag = slopx_ireland_agrarian_bloc_ready
+			has_completed_focus = slopx_ireland_rural_price_board
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_agrarian_support_bloc_complete
+			set_country_flag = slopx_ireland_agrarian_support_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_clann_by_election
+		icon = GFX_focus_slopx_ireland_clann_by_election
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -92
+		y = 20
+		prerequisite = {
+			focus = slopx_ireland_agrarian_support_bloc
+		}
+		available = {
+			date > 1940.1.1
+			has_country_flag = slopx_ireland_clann_by_election_open
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_clann_by_election_complete
+			set_country_flag = slopx_ireland_clann_breakthrough_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_rural_producer_compact
+		icon = GFX_focus_slopx_ireland_rural_producer_compact
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -92
+		y = 21
+		prerequisite = {
+			focus = slopx_ireland_clann_by_election
+		}
+		available = {
+			has_completed_focus = slopx_ireland_rural_price_board
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_rural_producer_compact_complete
+			set_country_flag = slopx_ireland_rural_producer_compact_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_vocational_constitution
+		icon = GFX_focus_slopx_ireland_vocational_constitution
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -104
+		y = 18
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			has_country_flag = slopx_ireland_vocational_mandate_ready
+			has_completed_focus = slopx_ireland_church_labour_consultation
+			has_completed_focus = slopx_ireland_constitutional_draft
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_vocational_constitution_complete
+			set_country_flag = slopx_ireland_route_constitutional_vocational
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_dail_supremacy_clause
+		icon = GFX_focus_slopx_ireland_dail_supremacy_clause
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -104
+		y = 19
+		prerequisite = {
+			focus = slopx_ireland_vocational_constitution
+		}
+		available = {
+			has_country_flag = slopx_ireland_judicial_review_ready
+			has_completed_focus = slopx_ireland_minority_guarantees
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_dail_supremacy_clause_complete
+			set_country_flag = slopx_ireland_vocational_dail_clause_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_council_government_rejected
+		icon = GFX_focus_slopx_ireland_council_government_rejected
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -104
+		y = 22
+		prerequisite = {
+			focus = slopx_ireland_dail_supremacy_clause
+		}
+		available = {
+			not = { has_country_flag = slopx_ireland_vocational_dail_supremacy_failed }
+			has_completed_focus = slopx_ireland_civil_service_and_courts
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_council_government_rejected_complete
+			set_country_flag = slopx_ireland_vocational_dail_supremacy_failed
+			set_country_flag = slopx_ireland_vocational_failure_bridge_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_vocational_constitution_capstone
+		icon = GFX_focus_slopx_ireland_vocational_constitution_capstone
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -104
+		y = 23
+		prerequisite = {
+			focus = slopx_ireland_council_government_rejected
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_route_constitutional_vocational
+			has_country_flag = slopx_ireland_vocational_domains_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_vocational_constitution_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# H/P serious culture and independent evidence capacity
+	focus = {
+		id = slopx_ireland_cultural_survey
+		icon = GFX_focus_slopx_ireland_cultural_survey
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -116
+		y = 15
+		available = {
+			has_completed_focus = slopx_ireland_language_service
+			has_completed_focus = slopx_ireland_church_labour_consultation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_cultural_survey_complete
+			set_country_flag = slopx_ireland_cultural_survey_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_language_institutions
+		icon = GFX_focus_slopx_ireland_language_institutions
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -116
+		y = 16
+		prerequisite = {
+			focus = slopx_ireland_cultural_survey
+		}
+		available = {
+			has_country_flag = slopx_ireland_language_capacity_ready
+			has_completed_focus = slopx_ireland_language_service
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_language_institutions_complete
+			set_country_flag = slopx_ireland_language_institutions_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_archival_record
+		icon = GFX_focus_slopx_ireland_archival_record
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -124
+		y = 16
+		prerequisite = {
+			focus = slopx_ireland_cultural_survey
+		}
+		available = {
+			has_country_flag = slopx_ireland_archival_capacity_ready
+			has_completed_focus = slopx_ireland_civil_war_memory
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_archival_record_complete
+			set_country_flag = slopx_ireland_archival_record_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_regional_participation
+		icon = GFX_focus_slopx_ireland_regional_participation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -108
+		y = 16
+		prerequisite = {
+			focus = slopx_ireland_cultural_survey
+		}
+		available = {
+			has_country_flag = slopx_ireland_regional_institutions_ready
+			has_completed_focus = slopx_ireland_border_observation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_regional_participation_complete
+			set_country_flag = slopx_ireland_regional_participation_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_site_stewardship
+		icon = GFX_focus_slopx_ireland_site_stewardship
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -116
+		y = 17
+		prerequisite = {
+			focus = slopx_ireland_archival_record
+		}
+		available = {
+			has_country_flag = slopx_ireland_site_stewardship_ready
+			has_completed_focus = slopx_ireland_regional_participation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_site_stewardship_complete
+		}
+	}
+	focus = {
+		id = slopx_ireland_diaspora_exchange
+		icon = GFX_focus_slopx_ireland_diaspora_exchange
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -108
+		y = 18
+		prerequisite = {
+			focus = slopx_ireland_site_stewardship
+		}
+		available = {
+			has_country_flag = slopx_ireland_diaspora_network_ready
+			has_completed_focus = slopx_ireland_northern_contacts
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_diaspora_exchange_complete
+			set_country_flag = slopx_ireland_diaspora_exchange_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_serious_cultural_stewardship
+		icon = GFX_focus_slopx_ireland_serious_cultural_stewardship
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -116
+		y = 18
+		prerequisite = {
+			focus = slopx_ireland_archival_record
+		}
+		available = {
+			has_completed_focus = slopx_ireland_language_institutions
+			has_completed_focus = slopx_ireland_regional_participation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_serious_cultural_stewardship_complete
+			set_country_flag = slopx_ireland_serious_culture_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_cultural_service
+		icon = GFX_focus_slopx_ireland_cultural_service
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -116
+		y = 19
+		prerequisite = {
+			focus = slopx_ireland_serious_cultural_stewardship
+		}
+		available = {
+			has_completed_focus = slopx_ireland_site_stewardship
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_cultural_service_complete
+			set_country_flag = slopx_ireland_cultural_service_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_cultural_evidence_ledger
+		icon = GFX_focus_slopx_ireland_cultural_evidence_ledger
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -116
+		y = 20
+		prerequisite = {
+			focus = slopx_ireland_cultural_service
+		}
+		prerequisite = {
+			focus = slopx_ireland_diaspora_exchange
+		}
+		available = {
+			has_country_flag = slopx_ireland_independent_evidence_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_cultural_evidence_ledger_complete
+			set_country_flag = slopx_ireland_cultural_evidence_ledger_ready
+			set_country_flag = slopx_ireland_hidden_permission
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_culture_completion
+		icon = GFX_focus_slopx_ireland_culture_completion
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -116
+		y = 21
+		prerequisite = {
+			focus = slopx_ireland_cultural_evidence_ledger
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_culture_completion_complete
+			set_country_flag = slopx_ireland_culture_support_complete
+		}
+	}
+
+# P support economy and National Provision lane
+	focus = {
+		id = slopx_ireland_provision_baseline
+		icon = GFX_focus_slopx_ireland_provision_baseline
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -4
+		y = 26
+		available = {
+			has_completed_focus = slopx_ireland_1938_trade_settlement
+			has_completed_focus = slopx_ireland_rural_price_board
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_provision_baseline_complete
+			set_country_flag = slopx_ireland_provision_baseline_ready
+			set_country_flag = slopx_ireland_provision_plan
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_food_ledger
+		icon = GFX_focus_slopx_ireland_food_ledger
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -12
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_provision_baseline
+		}
+		available = {
+			has_completed_focus = slopx_ireland_rural_price_board
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_food_ledger_complete
+			set_country_flag = slopx_ireland_provision_food_project_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_energy_board
+		icon = GFX_focus_slopx_ireland_energy_board
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 4
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_provision_baseline
+		}
+		available = {
+			has_completed_focus = slopx_ireland_domestic_industry_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_energy_board_complete
+			set_country_flag = slopx_ireland_provision_energy_project_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_transport_priority
+		icon = GFX_focus_slopx_ireland_transport_priority
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 12
+		y = 27
+		available = {
+			has_completed_focus = slopx_ireland_provision_baseline
+			has_completed_focus = slopx_ireland_command_audit
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_transport_priority_complete
+			set_country_flag = slopx_ireland_transport_project_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_maritime_reserve
+		icon = GFX_focus_slopx_ireland_maritime_reserve
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 12
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_transport_priority
+		}
+		available = {
+			has_completed_focus = slopx_ireland_provision_baseline
+			has_completed_focus = slopx_ireland_port_and_coast_audit
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_maritime_reserve_complete
+			set_country_flag = slopx_ireland_provision_maritime_project_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_domestic_manufacturing
+		icon = GFX_focus_slopx_ireland_domestic_manufacturing
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 4
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_energy_board
+		}
+		available = {
+			has_completed_focus = slopx_ireland_domestic_industry_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_domestic_manufacturing_complete
+			set_country_flag = slopx_ireland_material_projects_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_rural_credit
+		icon = GFX_focus_slopx_ireland_rural_credit
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -12
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_food_ledger
+		}
+		available = {
+			has_country_flag = slopx_ireland_rural_credit_ready
+			has_completed_focus = slopx_ireland_rural_price_board
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_rural_credit_complete
+			set_country_flag = slopx_ireland_rural_credit_project_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_emergency_stockpiles
+		icon = GFX_focus_slopx_ireland_emergency_stockpiles
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 12
+		y = 29
+		prerequisite = {
+			focus = slopx_ireland_energy_board
+		}
+		available = {
+			has_country_flag = slopx_ireland_emergency_opening
+			has_completed_focus = slopx_ireland_food_ledger
+			has_completed_focus = slopx_ireland_transport_priority
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_emergency_stockpiles_complete
+			set_country_flag = slopx_ireland_emergency_stockpile_project_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_development_authority
+		icon = GFX_focus_slopx_ireland_development_authority
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 4
+		y = 29
+		prerequisite = {
+			focus = slopx_ireland_domestic_manufacturing
+		}
+		available = {
+			has_completed_focus = slopx_ireland_transport_priority
+			has_country_flag = slopx_ireland_development_authority_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_development_authority_complete
+			set_country_flag = slopx_ireland_development_authority_open
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_social_cooperatives
+		icon = GFX_focus_slopx_ireland_social_cooperatives
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -4
+		y = 29
+		prerequisite = {
+			focus = slopx_ireland_rural_credit
+		}
+		available = {
+			has_country_flag = slopx_ireland_cooperative_service_ready
+			has_completed_focus = slopx_ireland_church_labour_consultation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_social_cooperatives_complete
+			set_country_flag = slopx_ireland_social_cooperative_project_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_producer_accounting
+		icon = GFX_focus_slopx_ireland_producer_accounting
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 4
+		y = 30
+		prerequisite = {
+			focus = slopx_ireland_development_authority
+		}
+		prerequisite = {
+			focus = slopx_ireland_social_cooperatives
+		}
+		available = {
+			has_country_flag = slopx_ireland_producer_accounting_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_producer_accounting_complete
+			set_country_flag = slopx_ireland_producer_accounting_project_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_provision_conclusion
+		icon = GFX_focus_slopx_ireland_provision_conclusion
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 4
+		y = 31
+		prerequisite = {
+			focus = slopx_ireland_producer_accounting
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_plan
+			check_variable = {
+				var = slopx_ireland_provision_display
+				value = constant:slopx_ireland.provision_display_opening
+				compare = greater_than_or_equals
+			}
+			not = { slopx_ireland_has_provision_severe_bottleneck = yes }
+			not = { slopx_ireland_has_provision_dual_bottleneck = yes }
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_provision_conclusion_complete
+			set_country_flag = slopx_ireland_provision_conclusion_ready
+			slopx_ireland_recompute_provision = yes
+		}
+	}
+
+# P support defence, maritime, air and National Readiness lane
+	focus = {
+		id = slopx_ireland_readiness_baseline
+		icon = GFX_focus_slopx_ireland_readiness_baseline
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 28
+		y = 26
+		available = {
+			has_completed_focus = slopx_ireland_defence_estimates
+			has_completed_focus = slopx_ireland_command_audit
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_readiness_baseline_complete
+			set_country_flag = slopx_ireland_readiness_baseline_ready
+			set_country_flag = slopx_ireland_readiness_plan
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_readiness_command
+		icon = GFX_focus_slopx_ireland_readiness_command
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 36
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_readiness_baseline
+		}
+		available = {
+			has_country_flag = slopx_ireland_command_structure_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_readiness_command_complete
+			set_country_flag = slopx_ireland_readiness_command_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_territorial_reserve
+		icon = GFX_focus_slopx_ireland_territorial_reserve
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 28
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_readiness_baseline
+		}
+		available = {
+			has_country_flag = slopx_ireland_territorial_defence_ready
+			has_completed_focus = slopx_ireland_public_order_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_territorial_reserve_complete
+			set_country_flag = slopx_ireland_territorial_reserve_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_coastwatch
+		icon = GFX_focus_slopx_ireland_coastwatch
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 44
+		y = 27
+		available = {
+			has_country_flag = slopx_ireland_coastwatch_network_ready
+			has_completed_focus = slopx_ireland_port_and_coast_audit
+			has_completed_focus = slopx_ireland_border_observation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_coastwatch_complete
+			set_country_flag = slopx_ireland_coastwatch_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_air_warning
+		icon = GFX_focus_slopx_ireland_air_warning
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 44
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_coastwatch
+		}
+		available = {
+			has_completed_focus = slopx_ireland_readiness_command
+			has_country_flag = slopx_ireland_civilian_defence_review_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_air_warning_complete
+			set_country_flag = slopx_ireland_air_warning_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_port_defence_project
+		icon = GFX_focus_slopx_ireland_port_defence_project
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 36
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_coastwatch
+		}
+		available = {
+			has_country_flag = slopx_ireland_port_defence_authority_ready
+			has_completed_focus = slopx_ireland_treaty_port_transfer
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_port_defence_project_complete
+			set_country_flag = slopx_ireland_port_defence_project_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_maritime_protection
+		icon = GFX_focus_slopx_ireland_maritime_protection
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 36
+		y = 29
+		prerequisite = {
+			focus = slopx_ireland_port_defence_project
+		}
+		available = {
+			has_country_flag = slopx_ireland_port_defence_authority_ready
+			has_completed_focus = slopx_ireland_maritime_reserve
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_maritime_protection_complete
+			set_country_flag = slopx_ireland_maritime_protection_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_professional_army
+		icon = GFX_focus_slopx_ireland_professional_army
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 28
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_readiness_command
+		}
+		available = {
+			has_country_flag = slopx_ireland_professional_command_ready
+			has_completed_focus = slopx_ireland_civil_service_and_courts
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_professional_army_complete
+			set_country_flag = slopx_ireland_professional_army_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_civilian_oversight
+		icon = GFX_focus_slopx_ireland_civilian_oversight
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 28
+		y = 29
+		prerequisite = {
+			focus = slopx_ireland_professional_army
+		}
+		available = {
+			has_country_flag = slopx_ireland_civilian_defence_review_ready
+			has_completed_focus = slopx_ireland_army_serves_dail
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_civilian_oversight_complete
+			set_country_flag = slopx_ireland_civilian_oversight_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_interoperability
+		icon = GFX_focus_slopx_ireland_interoperability
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 56
+		y = 31
+		prerequisite = {
+			focus = slopx_ireland_foreign_safeguards
+		}
+		available = {
+			has_country_flag = slopx_ireland_interoperability_ready
+			has_completed_focus = slopx_ireland_civilian_oversight
+			has_completed_focus = slopx_ireland_foreign_safeguards
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_interoperability_complete
+			set_country_flag = slopx_ireland_interoperability_project_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_emergency_mobilisation
+		icon = GFX_focus_slopx_ireland_emergency_mobilisation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 44
+		y = 30
+		prerequisite = {
+			focus = slopx_ireland_air_warning
+		}
+		available = {
+			has_country_flag = slopx_ireland_emergency_review_started
+			has_completed_focus = slopx_ireland_emergency_opening
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_emergency_mobilisation_complete
+			set_country_flag = slopx_ireland_emergency_mobilisation_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_readiness_conclusion
+		icon = GFX_focus_slopx_ireland_readiness_conclusion
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 36
+		y = 32
+		prerequisite = {
+			focus = slopx_ireland_maritime_protection
+		}
+		prerequisite = {
+			focus = slopx_ireland_emergency_mobilisation
+		}
+		available = {
+			has_country_flag = slopx_ireland_readiness_plan
+			check_variable = {
+				var = slopx_ireland_readiness_display
+				value = constant:slopx_ireland.readiness_display_opening
+				compare = greater_than_or_equals
+			}
+			not = { slopx_ireland_has_any_readiness_bottleneck = yes }
+			has_completed_focus = slopx_ireland_interoperability
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_readiness_conclusion_complete
+			set_country_flag = slopx_ireland_readiness_conclusion_ready
+			slopx_ireland_recompute_readiness = yes
+		}
+	}
+
+# P/H active neutrality, diplomacy and foreign safeguards lane
+	focus = {
+		id = slopx_ireland_strict_neutrality
+		icon = GFX_focus_slopx_ireland_strict_neutrality
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 64
+		y = 26
+		available = {
+			has_completed_focus = slopx_ireland_sovereignty_mandate
+			has_completed_focus = slopx_ireland_active_neutrality
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_strict_neutrality_complete
+			set_country_flag = slopx_ireland_strict_neutrality_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_armed_neutrality
+		icon = GFX_focus_slopx_ireland_armed_neutrality
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 64
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_strict_neutrality
+		}
+		available = {
+			has_country_flag = slopx_ireland_armed_neutralty_mandate
+			has_completed_focus = slopx_ireland_readiness_baseline
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_armed_neutrality_complete
+			set_country_flag = slopx_ireland_armed_neutrality_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_treaty_port_diplomacy
+		icon = GFX_focus_slopx_ireland_treaty_port_diplomacy
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 72
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_strict_neutrality
+		}
+		available = {
+			has_country_flag = slopx_ireland_port_diplomacy_ready
+			has_completed_focus = slopx_ireland_treaty_port_transfer
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_treaty_port_diplomacy_complete
+			set_country_flag = slopx_ireland_treaty_port_diplomacy_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_british_leverage_management
+		icon = GFX_focus_slopx_ireland_british_leverage_management
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 72
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_treaty_port_diplomacy
+		}
+		available = {
+			has_country_flag = slopx_ireland_british_safeguards_ready
+			has_completed_focus = slopx_ireland_sovereignty_mandate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_british_leverage_management_complete
+			set_country_flag = slopx_ireland_british_leverage_managed
+			set_country_flag = slopx_ireland_british_channel_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_american_diaspora_mission
+		icon = GFX_focus_slopx_ireland_american_diaspora_mission
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 56
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_strict_neutrality
+		}
+		available = {
+			slopx_ireland_american_partner_valid = yes
+			has_completed_focus = slopx_ireland_minority_guarantees
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_american_diaspora_mission_complete
+			set_country_flag = slopx_ireland_american_mission_ready
+			set_country_flag = slopx_ireland_american_channel_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_vatican_small_state_mediation
+		icon = GFX_focus_slopx_ireland_vatican_small_state_mediation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 56
+		y = 29
+		available = {
+			slopx_ireland_vatican_partner_valid = yes
+			has_completed_focus = slopx_ireland_strict_neutrality
+			has_completed_focus = slopx_ireland_minority_guarantees
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_vatican_small_state_mediation_complete
+			set_country_flag = slopx_ireland_vatican_mediation_ready
+			set_country_flag = slopx_ireland_vatican_channel_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_foreign_safeguards
+		icon = GFX_focus_slopx_ireland_foreign_safeguards
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 64
+		y = 30
+		prerequisite = {
+			focus = slopx_ireland_british_leverage_management
+		}
+		prerequisite = {
+			focus = slopx_ireland_american_diaspora_mission
+		}
+		prerequisite = {
+			focus = slopx_ireland_vatican_small_state_mediation
+		}
+		available = {
+			has_country_flag = slopx_ireland_british_channel_open
+			has_country_flag = slopx_ireland_american_channel_open
+			has_country_flag = slopx_ireland_vatican_channel_open
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_foreign_safeguards_complete
+			set_country_flag = slopx_ireland_foreign_safeguards_ready
+			set_country_flag = slopx_ireland_neutral_states_channel_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_neutrality_posture
+		icon = GFX_focus_slopx_ireland_neutrality_posture
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 64
+		y = 31
+		prerequisite = {
+			focus = slopx_ireland_foreign_safeguards
+		}
+		available = {
+			OR = { has_country_flag = slopx_ireland_strict_neutrality_ready has_country_flag = slopx_ireland_armed_neutrality_ready }
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_neutrality_posture_complete
+			set_country_flag = slopx_ireland_foreign_posture_selected
+		}
+	}
+
+# H/P Northern Ireland ledger, settlement models and integration review
+	focus = {
+		id = slopx_ireland_northern_settlement_ledger
+		icon = GFX_focus_slopx_ireland_northern_settlement_ledger
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 84
+		y = 26
+		available = {
+			has_completed_focus = slopx_ireland_northern_contacts
+			has_completed_focus = slopx_ireland_border_observation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_ledger_open
+			set_country_flag = slopx_ireland_northern_negotiation_open
+			119 = {
+				add_claim_by = ROOT
+			}
+		}
+	}
+	focus = {
+		id = slopx_ireland_northern_local_authorities
+		icon = GFX_focus_slopx_ireland_northern_local_authorities
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 84
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_northern_settlement_ledger
+		}
+		available = {
+			has_country_flag = slopx_ireland_northern_ledger_open
+			has_completed_focus = slopx_ireland_public_order_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_local_authorities_complete
+			set_country_flag = slopx_ireland_northern_local_authority_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_northern_trade_corridor
+		icon = GFX_focus_slopx_ireland_northern_trade_corridor
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 92
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_northern_local_authorities
+		}
+		available = {
+			has_country_flag = slopx_ireland_northern_local_authorities_complete
+			has_completed_focus = slopx_ireland_1938_trade_settlement
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_trade_corridor_complete
+			set_country_flag = slopx_ireland_northern_trade_corridor_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_northern_labour_social_bridge
+		icon = GFX_focus_slopx_ireland_northern_labour_social_bridge
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 76
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_northern_local_authorities
+		}
+		available = {
+			has_country_flag = slopx_ireland_northern_local_authorities_complete
+			has_completed_focus = slopx_ireland_church_labour_consultation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_labour_social_bridge_complete
+			set_country_flag = slopx_ireland_northern_labour_bridge_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_northern_federal_preparation
+		icon = GFX_focus_slopx_ireland_northern_federal_preparation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 84
+		y = 29
+		prerequisite = {
+			focus = slopx_ireland_northern_local_authorities
+		}
+		available = {
+			has_country_flag = slopx_ireland_northern_federal_option
+			has_completed_focus = slopx_ireland_northern_settlement_ledger
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_federal_preparation_complete
+			set_country_flag = slopx_ireland_northern_federal_prepared
+		}
+	}
+	focus = {
+		id = slopx_ireland_northern_unitary_preparation
+		icon = GFX_focus_slopx_ireland_northern_unitary_preparation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 94
+		y = 29
+		prerequisite = {
+			focus = slopx_ireland_northern_trade_corridor
+		}
+		available = {
+			has_country_flag = slopx_ireland_northern_unitary_option
+			has_completed_focus = slopx_ireland_northern_settlement_ledger
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_unitary_preparation_complete
+			set_country_flag = slopx_ireland_northern_unitary_prepared
+		}
+	}
+	focus = {
+		id = slopx_ireland_northern_wartime_bargain
+		icon = GFX_focus_slopx_ireland_northern_wartime_bargain
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 92
+		y = 30
+		prerequisite = {
+			focus = slopx_ireland_northern_trade_corridor
+		}
+		available = {
+			has_country_flag = slopx_ireland_northern_wartime_bargain_ready
+			OR = {
+				has_country_flag = slopx_ireland_h14_postwar_unity_pledge
+				has_country_flag = slopx_ireland_h14_federal_transition
+				has_country_flag = slopx_ireland_h14_unitary_transition
+			}
+			has_country_flag = slopx_ireland_h14_success
+			has_completed_focus = slopx_ireland_sovereignty_mandate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_wartime_bargain_complete
+			clr_country_flag = slopx_ireland_northern_wartime_bargain_ready
+			set_country_flag = slopx_ireland_northern_war_plan
+		}
+	}
+	focus = {
+		id = slopx_ireland_northern_recovery_bridge
+		icon = GFX_focus_slopx_ireland_northern_recovery_bridge
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 82
+		y = 30
+		prerequisite = {
+			focus = slopx_ireland_northern_labour_social_bridge
+		}
+		available = {
+			OR = { has_country_flag = slopx_ireland_northern_settlement_failure has_country_flag = slopx_ireland_northern_deferment_accepted }
+			has_completed_focus = slopx_ireland_public_order_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_recovery_bridge_complete
+			set_country_flag = slopx_ireland_northern_recovery_bridge_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_northern_regional_review
+		icon = GFX_focus_slopx_ireland_northern_regional_review
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 88
+		y = 33
+		prerequisite = {
+			focus = slopx_ireland_northern_federal_preparation
+			focus = slopx_ireland_northern_unitary_preparation
+			focus = slopx_ireland_northern_wartime_bargain
+			focus = slopx_ireland_northern_recovery_bridge
+		}
+		available = {
+			has_country_flag = slopx_ireland_northern_regional_review_ready
+			check_variable = { var = slopx_ireland_northern_integration_stage value = constant:slopx_ireland.northern_stage_core_eligible compare = greater_than_or_equals }
+			has_completed_focus = slopx_ireland_readiness_conclusion
+			OR = {
+				has_completed_focus = slopx_ireland_northern_federal_preparation
+				has_completed_focus = slopx_ireland_northern_unitary_preparation
+				has_completed_focus = slopx_ireland_northern_wartime_bargain
+				has_completed_focus = slopx_ireland_northern_recovery_bridge
+			}
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_regional_review_started
+			set_country_flag = slopx_ireland_northern_stage_review
+		}
+	}
+	focus = {
+		id = slopx_ireland_northern_policy_proof
+		icon = GFX_focus_slopx_ireland_northern_policy_proof
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 84
+		y = 34
+		prerequisite = {
+			focus = slopx_ireland_northern_regional_review
+		}
+		available = {
+			OR = { has_country_flag = slopx_ireland_northern_integration_complete has_country_flag = slopx_ireland_northern_deferment_accepted }
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_policy_proof_complete
+			set_country_flag = slopx_ireland_northern_policy_selected
+			set_country_flag = slopx_ireland_northern_policy_active
+		}
+	}
+
+# H/P recovery bridges, postwar review and material conclusion proof
+	focus = {
+		id = slopx_ireland_recovery_bridge
+		icon = GFX_focus_slopx_ireland_recovery_bridge
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 108
+		y = 26
+		available = {
+			OR = {
+				has_country_flag = slopx_ireland_route_failure
+				has_country_flag = slopx_ireland_emergency_review_started
+				has_country_flag = slopx_ireland_otherworld_human_restoration_open
+			}
+			has_completed_focus = slopx_ireland_public_order_review
+			has_completed_focus = slopx_ireland_emergency_opening
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_recovery_bridge_complete
+			set_country_flag = slopx_ireland_postwar_review_started
+			if = {
+				limit = {
+					has_country_flag = slopx_ireland_route_failure
+					NOT = { has_country_flag = slopx_ireland_emergency_overreach }
+					NOT = { has_country_flag = slopx_ireland_military_command_collapse }
+					NOT = { has_country_flag = slopx_ireland_northern_settlement_failure }
+				}
+				clr_country_flag = slopx_ireland_route_failure
+				set_country_flag = slopx_ireland_route_failure_recovered
+				if = {
+					limit = { has_country_flag = slopx_ireland_high_king_captured_crown_path }
+					clr_country_flag = slopx_ireland_high_king_captured_crown_path
+					clr_country_flag = slopx_ireland_high_king_captured_crown_failure
+					set_country_flag = slopx_ireland_high_king_royal_household_path
+					set_country_flag = slopx_ireland_high_king_constitutional_path
+					set_country_flag = slopx_ireland_high_king_crown_rescued
+				}
+			}
+			slopx_ireland_cleanup_route_state = yes
+			# The shared cleanup helper clears transient action state. Re-open the
+			# named constitutional review after that cleanup so the rejection branch
+			# cannot be mistaken for an ordinary route failure or lose its handoff.
+			if = {
+				limit = {
+					has_country_flag = slopx_ireland_otherworld_human_restoration
+					NOT = { has_country_flag = slopx_ireland_otherworld_human_restoration_complete }
+				}
+				set_country_flag = slopx_ireland_otherworld_human_restoration_review_started
+				clr_country_flag = slopx_ireland_otherworld_human_restoration_open
+			}
+		}
+	}
+	focus = {
+		id = slopx_ireland_restore_constitutional_calendar
+		icon = GFX_focus_slopx_ireland_restore_constitutional_calendar
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 108
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_recovery_bridge
+		}
+		available = {
+			has_completed_focus = slopx_ireland_emergency_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_restore_constitutional_calendar_complete
+			set_country_flag = slopx_ireland_constitutional_calendar_restored
+			if = {
+				limit = { has_country_flag = slopx_ireland_otherworld_human_restoration_review_started }
+				set_country_flag = slopx_ireland_otherworld_human_restoration_complete
+				clr_country_flag = slopx_ireland_otherworld_human_restoration_review_started
+			}
+		}
+	}
+	focus = {
+		id = slopx_ireland_emergency_accounting
+		icon = GFX_focus_slopx_ireland_emergency_accounting
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 116
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_restore_constitutional_calendar
+		}
+		available = {
+			has_country_flag = slopx_ireland_emergency_accounting_ready
+			has_completed_focus = slopx_ireland_emergency_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_emergency_accounting_complete
+		}
+	}
+	focus = {
+		id = slopx_ireland_demobilisation_charter
+		icon = GFX_focus_slopx_ireland_demobilisation_charter
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 108
+		y = 33
+		available = {
+			has_country_flag = slopx_ireland_demobilisation_ready
+			has_completed_focus = slopx_ireland_emergency_accounting
+			has_completed_focus = slopx_ireland_readiness_conclusion
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_demobilisation_charter_complete
+			set_country_flag = slopx_ireland_demobilisation_charter_ready
+			set_country_flag = slopx_ireland_reconstruction_mandate_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_reconstruction_mandate
+		icon = GFX_focus_slopx_ireland_reconstruction_mandate
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 108
+		y = 34
+		prerequisite = {
+			focus = slopx_ireland_demobilisation_charter
+		}
+		available = {
+			has_country_flag = slopx_ireland_reconstruction_mandate_ready
+			has_completed_focus = slopx_ireland_provision_conclusion
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_reconstruction_mandate_complete
+			set_country_flag = slopx_ireland_reconstruction_ready
+			set_country_flag = slopx_ireland_postwar_foreign_review_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_foreign_postwar_review
+		icon = GFX_focus_slopx_ireland_foreign_postwar_review
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 116
+		y = 35
+		prerequisite = {
+			focus = slopx_ireland_reconstruction_mandate
+		}
+		available = {
+			has_country_flag = slopx_ireland_postwar_foreign_review_ready
+			has_completed_focus = slopx_ireland_neutrality_posture
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_foreign_postwar_review_complete
+			set_country_flag = slopx_ireland_postwar_foreign_review_complete
+		}
+	}
+	focus = {
+		id = slopx_ireland_material_conclusion_proof
+		icon = GFX_focus_slopx_ireland_material_conclusion_proof
+		cost = 14
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 108
+		y = 36
+		prerequisite = {
+			focus = slopx_ireland_foreign_postwar_review
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_completed_focus = slopx_ireland_northern_policy_proof
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_material_conclusion_proof_complete
+			set_country_flag = slopx_ireland_conclusion_proof
+		}
+	}
+
+# P IRA civil-republican and Army Council routes; A escalation requires proof
+	focus = {
+		id = slopx_ireland_ira_republican_bridge
+		icon = GFX_focus_slopx_ireland_ira_republican_bridge
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -132
+		y = 26
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		allow_branch = {
+			has_country_flag = slopx_ireland_ira_organization_ready
+			has_country_flag = slopx_ireland_ira_transition_ready
+		}
+		available = {
+			has_country_flag = slopx_ireland_ira_organization_ready
+			has_country_flag = slopx_ireland_ira_transition_ready
+			has_country_flag = slopx_ireland_ira_public_base_ready
+			has_country_flag = slopx_ireland_ira_state_interface_broken
+			has_completed_focus = slopx_ireland_public_order_review
+			has_completed_focus = slopx_ireland_republican_veterans
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_ira_republican_bridge_complete
+			set_country_flag = slopx_ireland_route_ira_republican
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_reassemble_ghq
+		icon = GFX_focus_slopx_ireland_reassemble_ghq
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -132
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_ira_republican_bridge
+		}
+		available = {
+			has_country_flag = slopx_ireland_security_exposure_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_reassemble_ghq_complete
+			set_country_flag = slopx_ireland_ira_ghq_reassembled
+		}
+	}
+	focus = {
+		id = slopx_ireland_convention_of_commands
+		icon = GFX_focus_slopx_ireland_convention_of_commands
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -132
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_reassemble_ghq
+		}
+		available = {
+			has_country_flag = slopx_ireland_security_exposure_ready
+			has_completed_focus = slopx_ireland_northern_contacts
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_convention_of_commands_complete
+			set_country_flag = slopx_ireland_ira_command_convention_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_republic_in_districts
+		icon = GFX_focus_slopx_ireland_republic_in_districts
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -140
+		y = 29
+		prerequisite = {
+			focus = slopx_ireland_convention_of_commands
+		}
+		available = {
+			has_country_flag = slopx_ireland_ira_local_mandates_ready
+			has_completed_focus = slopx_ireland_northern_settlement_ledger
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_republic_in_districts_complete
+			set_country_flag = slopx_ireland_ira_district_authority_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_arms_before_authority
+		icon = GFX_focus_slopx_ireland_arms_before_authority
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -148
+		y = 30
+		mutually_exclusive = {
+			focus = slopx_ireland_authority_before_arms
+		}
+		available = {
+			has_country_flag = slopx_ireland_ira_command_ready
+			has_completed_focus = slopx_ireland_convention_of_commands
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_arms_before_authority_complete
+			set_country_flag = slopx_ireland_ira_army_council_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_authority_before_arms
+		icon = GFX_focus_slopx_ireland_authority_before_arms
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -132
+		y = 30
+		mutually_exclusive = {
+			focus = slopx_ireland_arms_before_authority
+		}
+		prerequisite = {
+			focus = slopx_ireland_republic_in_districts
+		}
+		available = {
+			has_country_flag = slopx_ireland_ira_civil_authority_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_authority_before_arms_complete
+			set_country_flag = slopx_ireland_ira_civil_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_german_channel
+		icon = GFX_focus_slopx_ireland_german_channel
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -148
+		y = 31
+		prerequisite = {
+			focus = slopx_ireland_arms_before_authority
+		}
+		available = {
+			has_country_flag = slopx_ireland_ira_foreign_channel_ready
+			has_completed_focus = slopx_ireland_foreign_safeguards
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_german_channel_complete
+			set_country_flag = slopx_ireland_ira_foreign_channel_open
+			set_country_flag = slopx_ireland_german_channel_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_northern_question_in_arms
+		icon = GFX_focus_slopx_ireland_northern_question_in_arms
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -140
+		y = 31
+		prerequisite = {
+			focus = slopx_ireland_arms_before_authority
+			focus = slopx_ireland_authority_before_arms
+		}
+		available = {
+			has_country_flag = slopx_ireland_ira_northern_command_ready
+			has_completed_focus = slopx_ireland_northern_settlement_ledger
+			OR = {
+				has_completed_focus = slopx_ireland_arms_before_authority
+				has_completed_focus = slopx_ireland_authority_before_arms
+			}
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_northern_question_in_arms_complete
+			set_country_flag = slopx_ireland_ira_northern_policy_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_ira_civil_authority
+		icon = GFX_focus_slopx_ireland_ira_civil_authority
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -132
+		y = 32
+		prerequisite = {
+			focus = slopx_ireland_authority_before_arms
+		}
+		available = {
+			has_country_flag = slopx_ireland_ira_civil_authority_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_ira_civil_authority_complete
+			set_country_flag = slopx_ireland_ira_civil_transition_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_ira_army_council
+		icon = GFX_focus_slopx_ireland_ira_army_council
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -148
+		y = 32
+		prerequisite = {
+			focus = slopx_ireland_german_channel
+		}
+		available = {
+			has_country_flag = slopx_ireland_ira_command_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_ira_army_council_complete
+			set_country_flag = slopx_ireland_ira_army_council_transition_ready
+			set_country_flag = slopx_ireland_armed_takeover
+		}
+	}
+	focus = {
+		id = slopx_ireland_ira_route_capstone
+		icon = GFX_focus_slopx_ireland_ira_route_capstone
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -140
+		y = 33
+		prerequisite = {
+			focus = slopx_ireland_ira_civil_authority
+			focus = slopx_ireland_ira_army_council
+		}
+		prerequisite = {
+			focus = slopx_ireland_northern_question_in_arms
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			OR = { has_country_flag = slopx_ireland_ira_civil_transition_ready has_country_flag = slopx_ireland_ira_army_council_transition_ready }
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_ira_route_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# P Republican Congress plural and vanguard routes; A escalation requires proof
+	focus = {
+		id = slopx_ireland_congress_reform_bridge
+		icon = GFX_focus_slopx_ireland_congress_reform_bridge
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -166
+		y = 26
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		allow_branch = {
+			has_country_flag = slopx_ireland_congress_organization_ready
+			has_country_flag = slopx_ireland_congress_transition_ready
+		}
+		available = {
+			has_country_flag = slopx_ireland_congress_organization_ready
+			has_country_flag = slopx_ireland_congress_transition_ready
+			has_country_flag = slopx_ireland_labour_organisation_decisive
+			has_completed_focus = slopx_ireland_public_order_review
+			has_completed_focus = slopx_ireland_church_labour_consultation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_congress_reform_bridge_complete
+			set_country_flag = slopx_ireland_route_congress
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_organise_congress
+		icon = GFX_focus_slopx_ireland_organise_congress
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -166
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_congress_reform_bridge
+		}
+		available = {
+			has_country_flag = slopx_ireland_union_local_mandate_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_organise_congress_complete
+			set_country_flag = slopx_ireland_congress_organised
+		}
+	}
+	focus = {
+		id = slopx_ireland_union_local_mandate
+		icon = GFX_focus_slopx_ireland_union_local_mandate
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -166
+		y = 29
+		prerequisite = {
+			focus = slopx_ireland_organise_congress
+		}
+		available = {
+			has_country_flag = slopx_ireland_union_local_mandate_ready
+			has_completed_focus = slopx_ireland_northern_labour_social_bridge
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_union_local_mandate_complete
+			set_country_flag = slopx_ireland_congress_union_mandate_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_congress_plural_republic
+		icon = GFX_focus_slopx_ireland_congress_plural_republic
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -174
+		y = 30
+		mutually_exclusive = {
+			focus = slopx_ireland_congress_vanguard_cell
+		}
+		prerequisite = {
+			focus = slopx_ireland_union_local_mandate
+		}
+		available = {
+			has_country_flag = slopx_ireland_congress_plural_mandate_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_congress_plural_republic_complete
+			set_country_flag = slopx_ireland_congress_plural_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_congress_vanguard_cell
+		icon = GFX_focus_slopx_ireland_congress_vanguard_cell
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -158
+		y = 30
+		mutually_exclusive = {
+			focus = slopx_ireland_congress_plural_republic
+		}
+		prerequisite = {
+			focus = slopx_ireland_union_local_mandate
+		}
+		available = {
+			has_country_flag = slopx_ireland_congress_vanguard_capture_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_congress_vanguard_cell_complete
+			set_country_flag = slopx_ireland_congress_vanguard_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_extra_parliamentary_transition
+		icon = GFX_focus_slopx_ireland_extra_parliamentary_transition
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -166
+		y = 31
+		prerequisite = {
+			focus = slopx_ireland_union_local_mandate
+		}
+		available = {
+			has_country_flag = slopx_ireland_congress_transition_ready
+			has_completed_focus = slopx_ireland_public_order_review
+			OR = {
+				has_completed_focus = slopx_ireland_congress_plural_republic
+				has_completed_focus = slopx_ireland_congress_vanguard_cell
+			}
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_extra_parliamentary_transition_complete
+			set_country_flag = slopx_ireland_congress_transition_complete
+		}
+	}
+	focus = {
+		id = slopx_ireland_congress_plural_capstone
+		icon = GFX_focus_slopx_ireland_congress_plural_capstone
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -174
+		y = 32
+		prerequisite = {
+			focus = slopx_ireland_extra_parliamentary_transition
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_congress_plural_path
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_congress_plural_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_congress_vanguard_capstone
+		icon = GFX_focus_slopx_ireland_congress_vanguard_capstone
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -158
+		y = 32
+		prerequisite = {
+			focus = slopx_ireland_extra_parliamentary_transition
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_congress_vanguard_path
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_congress_vanguard_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# P O'Duffy personal-command and corporate-order routes; A escalation requires proof
+	focus = {
+		id = slopx_ireland_oduffy_network_revival
+		icon = GFX_focus_slopx_ireland_oduffy_network_revival
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 136
+		y = 26
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		allow_branch = {
+			has_country_flag = slopx_ireland_oduffy_network_ready
+			has_country_flag = slopx_ireland_oduffy_crisis_ready
+		}
+		available = {
+			has_country_flag = slopx_ireland_oduffy_network_ready
+			has_country_flag = slopx_ireland_oduffy_crisis_ready
+			has_country_flag = slopx_ireland_oduffy_state_interface_broken
+			has_completed_focus = slopx_ireland_public_order_review
+			has_completed_focus = slopx_ireland_close_oduffy_chapter
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_oduffy_network_revival_complete
+			set_country_flag = slopx_ireland_route_oduffy
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_oduffy_personal_command
+		icon = GFX_focus_slopx_ireland_oduffy_personal_command
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 136
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_oduffy_network_revival
+		}
+		available = {
+			date < 1944.11.30
+			has_country_flag = slopx_ireland_oduffy_personal_command_ready
+		}
+		bypass = {
+			date > 1944.11.29
+		}
+		bypass_effect = {
+			set_country_flag = slopx_ireland_oduffy_personal_command_expired
+			clr_country_flag = slopx_ireland_oduffy_personal_command_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_oduffy_personal_command_complete
+			set_country_flag = slopx_ireland_oduffy_personal_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_veteran_employer_league
+		icon = GFX_focus_slopx_ireland_veteran_employer_league
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 128
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_oduffy_network_revival
+		}
+		available = {
+			has_country_flag = slopx_ireland_oduffy_network_ready
+			has_completed_focus = slopx_ireland_agrarian_support_bloc
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_veteran_employer_league_complete
+			set_country_flag = slopx_ireland_veteran_employer_base_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_corporate_estates
+		icon = GFX_focus_slopx_ireland_corporate_estates
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 144
+		y = 31
+		available = {
+			has_country_flag = slopx_ireland_corporate_estates_ready
+			has_completed_focus = slopx_ireland_producer_accounting
+			has_completed_focus = slopx_ireland_veteran_employer_league
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_corporate_estates_complete
+			set_country_flag = slopx_ireland_oduffy_estates_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_army_acceptance
+		icon = GFX_focus_slopx_ireland_army_acceptance
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 136
+		y = 32
+		prerequisite = {
+			focus = slopx_ireland_corporate_estates
+		}
+		available = {
+			has_country_flag = slopx_ireland_oduffy_army_acceptance_ready
+			has_completed_focus = slopx_ireland_veteran_employer_league
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_army_acceptance_complete
+			set_country_flag = slopx_ireland_oduffy_army_acceptance_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_corporate_order
+		icon = GFX_focus_slopx_ireland_corporate_order
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 144
+		y = 33
+		prerequisite = {
+			focus = slopx_ireland_corporate_estates
+		}
+		prerequisite = {
+			focus = slopx_ireland_army_acceptance
+		}
+		available = {
+			has_country_flag = slopx_ireland_corporate_order_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_corporate_order_complete
+			set_country_flag = slopx_ireland_oduffy_corporate_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_oduffy_personal_capstone
+		icon = GFX_focus_slopx_ireland_oduffy_personal_capstone
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 128
+		y = 31
+		mutually_exclusive = {
+			focus = slopx_ireland_oduffy_corporate_capstone
+		}
+		prerequisite = {
+			focus = slopx_ireland_veteran_employer_league
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_oduffy_personal_path
+			has_completed_focus = slopx_ireland_oduffy_personal_command
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_oduffy_personal_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_oduffy_corporate_capstone
+		icon = GFX_focus_slopx_ireland_oduffy_corporate_capstone
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 144
+		y = 34
+		mutually_exclusive = {
+			focus = slopx_ireland_oduffy_personal_capstone
+		}
+		prerequisite = {
+			focus = slopx_ireland_corporate_order
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_oduffy_corporate_path
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_oduffy_corporate_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# P clerical guardianship and producer-council route
+	focus = {
+		id = slopx_ireland_clerical_failure_bridge
+		icon = GFX_focus_slopx_ireland_clerical_failure_bridge
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 166
+		y = 31
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_ailtiri_cell_network
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		allow_branch = {
+			has_country_flag = slopx_ireland_clerical_failure_ready
+			has_country_flag = slopx_ireland_service_state_ready
+		}
+		available = {
+			has_country_flag = slopx_ireland_clerical_failure_ready
+			has_country_flag = slopx_ireland_producer_mandate_ready
+			has_completed_focus = slopx_ireland_producer_accounting
+			has_completed_focus = slopx_ireland_church_labour_consultation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_clerical_failure_bridge_complete
+			set_country_flag = slopx_ireland_route_clerical_producer
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_service_state
+		icon = GFX_focus_slopx_ireland_service_state
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 166
+		y = 32
+		prerequisite = {
+			focus = slopx_ireland_clerical_failure_bridge
+		}
+		available = {
+			has_country_flag = slopx_ireland_service_state_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_service_state_complete
+			set_country_flag = slopx_ireland_service_state_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_producer_councils
+		icon = GFX_focus_slopx_ireland_producer_councils
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 174
+		y = 32
+		prerequisite = {
+			focus = slopx_ireland_clerical_failure_bridge
+		}
+		available = {
+			has_country_flag = slopx_ireland_producer_councils_ready
+			has_completed_focus = slopx_ireland_producer_accounting
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_producer_councils_complete
+			set_country_flag = slopx_ireland_producer_councils_open
+		}
+	}
+	focus = {
+		id = slopx_ireland_clerical_guardianship
+		icon = GFX_focus_slopx_ireland_clerical_guardianship
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 166
+		y = 33
+		prerequisite = {
+			focus = slopx_ireland_service_state
+		}
+		available = {
+			has_country_flag = slopx_ireland_clerical_guardianship_ready
+			has_completed_focus = slopx_ireland_minority_guarantees
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_clerical_guardianship_complete
+			set_country_flag = slopx_ireland_clerical_guardianship_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_producer_constitution
+		icon = GFX_focus_slopx_ireland_producer_constitution
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 174
+		y = 34
+		prerequisite = {
+			focus = slopx_ireland_producer_councils
+		}
+		prerequisite = {
+			focus = slopx_ireland_clerical_guardianship
+		}
+		available = {
+			has_country_flag = slopx_ireland_producer_constitution_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_producer_constitution_complete
+			set_country_flag = slopx_ireland_producer_constitution_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_clerical_route_capstone
+		icon = GFX_focus_slopx_ireland_clerical_route_capstone
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 166
+		y = 35
+		prerequisite = {
+			focus = slopx_ireland_clerical_guardianship
+			focus = slopx_ireland_producer_constitution
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			OR = { has_country_flag = slopx_ireland_clerical_guardianship_path has_country_flag = slopx_ireland_producer_constitution_path }
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_clerical_route_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# P dated Ailtirí na hAiséirghe total-state route
+	focus = {
+		id = slopx_ireland_ailtiri_cell_network
+		icon = GFX_focus_slopx_ireland_ailtiri_cell_network
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 194
+		y = 26
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_high_king_evidence_gate
+			focus = slopx_ireland_five_province_mandates
+			focus = slopx_ireland_otherworld_investigation
+		}
+		allow_branch = {
+			date > 1940.9.1
+			has_country_flag = slopx_ireland_ailtiri_cells_ready
+			OR = {
+				has_country_flag = slopx_ireland_hidden_content_permission
+				has_country_flag = slopx_ireland_hidden_content_game_rule_enabled
+				has_country_flag = slopx_ireland_ailtiri_rare_ai_permission
+			}
+		}
+		available = {
+			date > 1940.9.1
+			has_country_flag = slopx_ireland_ailtiri_cells_ready
+			has_completed_focus = slopx_ireland_public_order_review
+			NOT = { has_country_flag = slopx_ireland_ailtiri_public_launch }
+			OR = {
+				has_country_flag = slopx_ireland_hidden_content_permission
+				has_country_flag = slopx_ireland_hidden_content_game_rule_enabled
+				has_country_flag = slopx_ireland_ailtiri_rare_ai_permission
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_country_flag = slopx_ireland_profile_historical_de_valera
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_country_flag = slopx_ireland_hidden_content_game_rule_enabled
+						has_country_flag = slopx_ireland_ailtiri_rare_ai_permission
+					}
+				}
+			}
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_ailtiri_cell_network_complete
+			set_country_flag = slopx_ireland_route_ailtiri_total_state
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_language_cells
+		icon = GFX_focus_slopx_ireland_language_cells
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 194
+		y = 27
+		prerequisite = {
+			focus = slopx_ireland_ailtiri_cell_network
+		}
+		available = {
+			has_country_flag = slopx_ireland_ailtiri_cells_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_language_cells_complete
+			set_country_flag = slopx_ireland_ailtiri_language_network_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_june_1942_public_launch
+		icon = GFX_focus_slopx_ireland_june_1942_public_launch
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 202
+		y = 28
+		prerequisite = {
+			focus = slopx_ireland_language_cells
+		}
+		available = {
+			date > 1942.6.1
+			has_country_flag = slopx_ireland_ailtiri_public_launch_ready
+			has_country_flag = slopx_ireland_language_cells_complete
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_june_1942_public_launch_complete
+			set_country_flag = slopx_ireland_ailtiri_public_launch
+			set_country_flag = slopx_ireland_ailtiri_crisis
+			set_country_flag = slopx_ireland_ailtiri_public_phase_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_ceannaire_state
+		icon = GFX_focus_slopx_ireland_ceannaire_state
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 194
+		y = 29
+		prerequisite = {
+			focus = slopx_ireland_june_1942_public_launch
+		}
+		available = {
+			has_country_flag = slopx_ireland_ailtiri_leadership_ready
+			has_completed_focus = slopx_ireland_public_order_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_ceannaire_state_complete
+			set_country_flag = slopx_ireland_ailtiri_ceannaire_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_corporate_gaelic_nation
+		icon = GFX_focus_slopx_ireland_corporate_gaelic_nation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 202
+		y = 31
+		prerequisite = {
+			focus = slopx_ireland_ceannaire_state
+		}
+		available = {
+			has_country_flag = slopx_ireland_ailtiri_state_capture_ready
+			has_completed_focus = slopx_ireland_producer_accounting
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_corporate_gaelic_nation_complete
+			set_country_flag = slopx_ireland_ailtiri_corporate_state_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_ailtiri_total_state_capstone
+		icon = GFX_focus_slopx_ireland_ailtiri_total_state_capstone
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 194
+		y = 32
+		prerequisite = {
+			focus = slopx_ireland_corporate_gaelic_nation
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_route_ailtiri_total_state
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_ailtiri_total_state_capstone_complete
+			set_country_flag = slopx_ireland_ailtiri_total_state_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# P High Kingship constitutional route with A sacral escalation
+	focus = {
+		id = slopx_ireland_high_king_evidence_gate
+		icon = GFX_focus_slopx_ireland_high_king_evidence_gate
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -188
+		y = 36
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+		}
+		allow_branch = {
+			has_country_flag = slopx_ireland_high_king_evidence_verified
+			has_country_flag = slopx_ireland_high_king_convention_ready
+		}
+		available = {
+			has_country_flag = slopx_ireland_high_king_evidence_verified
+			has_country_flag = slopx_ireland_high_king_convention_ready
+			has_completed_focus = slopx_ireland_cultural_evidence_ledger
+			has_completed_focus = slopx_ireland_serious_cultural_stewardship
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_high_king_evidence_gate_complete
+			set_country_flag = slopx_ireland_route_high_king
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_high_king_convention
+		icon = GFX_focus_slopx_ireland_high_king_convention
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -188
+		y = 37
+		prerequisite = {
+			focus = slopx_ireland_high_king_evidence_gate
+		}
+		available = {
+			has_country_flag = slopx_ireland_high_king_convention_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_high_king_convention_complete
+		}
+	}
+	focus = {
+		id = slopx_ireland_elective_crown
+		icon = GFX_focus_slopx_ireland_elective_crown
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -196
+		y = 38
+		mutually_exclusive = {
+			focus = slopx_ireland_guardian_crown
+		}
+		prerequisite = {
+			focus = slopx_ireland_high_king_convention
+		}
+		available = {
+			has_country_flag = slopx_ireland_high_king_constitutional_mandate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_elective_crown_complete
+			set_country_flag = slopx_ireland_high_king_constitutional_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_guardian_crown
+		icon = GFX_focus_slopx_ireland_guardian_crown
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -180
+		y = 38
+		mutually_exclusive = {
+			focus = slopx_ireland_elective_crown
+		}
+		prerequisite = {
+			focus = slopx_ireland_high_king_convention
+		}
+		available = {
+			has_country_flag = slopx_ireland_high_king_rare_condition
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_guardian_crown_complete
+			set_country_flag = slopx_ireland_high_king_constitutional_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_crown_powers_charter
+		icon = GFX_focus_slopx_ireland_crown_powers_charter
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -188
+		y = 39
+		prerequisite = {
+			focus = slopx_ireland_high_king_convention
+		}
+		available = {
+			has_country_flag = slopx_ireland_high_king_ratification_ready
+			has_completed_focus = slopx_ireland_dail_supremacy_clause
+			OR = {
+				has_completed_focus = slopx_ireland_elective_crown
+				has_completed_focus = slopx_ireland_guardian_crown
+				has_country_flag = slopx_ireland_high_king_royal_household_path
+				has_country_flag = slopx_ireland_high_king_sacral_path
+				has_country_flag = slopx_ireland_high_king_captured_crown_path
+			}
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_crown_powers_charter_complete
+			set_country_flag = slopx_ireland_crown_conclusion_valid
+			if = {
+				limit = {
+					has_country_flag = slopx_ireland_high_king_royal_household_path
+					NOT = { has_country_flag = slopx_ireland_high_king_captured_crown_path }
+				}
+				set_country_flag = slopx_ireland_high_king_constitutional_path
+				set_country_flag = slopx_ireland_high_king_household_conclusion_valid
+			}
+			if = {
+				limit = { has_country_flag = slopx_ireland_high_king_sacral_path }
+				set_country_flag = slopx_ireland_high_king_sacral_crown_conclusion_valid
+			}
+			if = {
+				limit = { has_country_flag = slopx_ireland_high_king_captured_crown_path }
+				set_country_flag = slopx_ireland_high_king_captured_crown_conclusion_valid
+			}
+		}
+	}
+	focus = {
+		id = slopx_ireland_high_king_capstone
+		icon = GFX_focus_slopx_ireland_high_king_capstone
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -188
+		y = 41
+		prerequisite = {
+			focus = slopx_ireland_crown_powers_charter
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_crown_conclusion_valid
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_high_king_capstone_complete
+			country_event = { id = slopx_ireland_events.432 }
+		}
+	}
+
+# P Five Provinces federal route with A pentarchic escalation
+	focus = {
+		id = slopx_ireland_five_province_mandates
+		icon = GFX_focus_slopx_ireland_five_province_mandates
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -214
+		y = 36
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+		}
+		allow_branch = {
+			has_country_flag = slopx_ireland_five_provinces_mandates_ready
+			has_country_flag = slopx_ireland_five_provinces_convention_ready
+		}
+		available = {
+			has_country_flag = slopx_ireland_five_provinces_mandates_ready
+			has_country_flag = slopx_ireland_five_provinces_convention_ready
+			has_completed_focus = slopx_ireland_northern_settlement_ledger
+			has_completed_focus = slopx_ireland_regional_participation
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_five_province_mandates_complete
+			set_country_flag = slopx_ireland_route_five_provinces
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_federal_convention
+		icon = GFX_focus_slopx_ireland_federal_convention
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -214
+		y = 37
+		prerequisite = {
+			focus = slopx_ireland_five_province_mandates
+		}
+		available = {
+			has_country_flag = slopx_ireland_five_provinces_convention_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_federal_convention_complete
+		}
+	}
+	focus = {
+		id = slopx_ireland_federal_republic
+		icon = GFX_focus_slopx_ireland_federal_republic
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -218
+		y = 38
+		prerequisite = {
+			focus = slopx_ireland_federal_convention
+		}
+		available = {
+			has_country_flag = slopx_ireland_federal_powers_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_federal_republic_complete
+			set_country_flag = slopx_ireland_federal_republic_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_ulster_rule
+		icon = GFX_focus_slopx_ireland_ulster_rule
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -206
+		y = 38
+		prerequisite = {
+			focus = slopx_ireland_federal_convention
+		}
+		available = {
+			has_country_flag = slopx_ireland_ulster_rule_ready
+			has_completed_focus = slopx_ireland_northern_policy_proof
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_ulster_rule_complete
+		}
+	}
+	focus = {
+		id = slopx_ireland_pentarchy_guardians
+		icon = GFX_focus_slopx_ireland_pentarchy_guardians
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -214
+		y = 39
+		prerequisite = {
+			focus = slopx_ireland_ulster_rule
+		}
+		prerequisite = {
+			focus = slopx_ireland_federal_convention
+		}
+		available = {
+			has_country_flag = slopx_ireland_five_provinces_impossible_confirmed
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_pentarchy_guardians_complete
+			set_country_flag = slopx_ireland_pentarchy_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_five_provinces_capstone
+		icon = GFX_focus_slopx_ireland_five_provinces_capstone
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -214
+		y = 41
+		prerequisite = {
+			focus = slopx_ireland_federal_republic
+			focus = slopx_ireland_pentarchy_guardians
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_five_provinces_mandate_conclusion_valid
+			OR = {
+				has_completed_focus = slopx_ireland_federal_republic
+				has_completed_focus = slopx_ireland_pentarchy_guardians
+			}
+			has_completed_focus = slopx_ireland_ulster_rule
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_five_provinces_capstone_complete
+			set_country_flag = slopx_ireland_five_provinces_conclusion_valid
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# P Otherworld compact/containment routes with A dominion escalation
+	focus = {
+		id = slopx_ireland_otherworld_investigation
+		icon = GFX_focus_slopx_ireland_otherworld_investigation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 224
+		y = 36
+		mutually_exclusive = {
+			focus = slopx_ireland_de_valera_stewardship
+			focus = slopx_ireland_de_valera_reconciliation
+			focus = slopx_ireland_emergency_direction
+			focus = slopx_ireland_lemass_developmental
+			focus = slopx_ireland_cosgrave_institutional
+			focus = slopx_ireland_mulcahy_succession
+			focus = slopx_ireland_costello_coalition
+			focus = slopx_ireland_dillon_public_dissent
+			focus = slopx_ireland_norton_parliamentary
+			focus = slopx_ireland_clann_founding
+			focus = slopx_ireland_vocational_constitution
+			focus = slopx_ireland_ira_republican_bridge
+			focus = slopx_ireland_congress_reform_bridge
+			focus = slopx_ireland_oduffy_network_revival
+			focus = slopx_ireland_clerical_failure_bridge
+			focus = slopx_ireland_ailtiri_cell_network
+		}
+		allow_branch = {
+			has_country_flag = slopx_ireland_hidden_content_permission
+			has_country_flag = slopx_ireland_hidden_content_game_rule_enabled
+			has_country_flag = slopx_ireland_otherworld_investigation_ready
+			has_country_flag = slopx_ireland_otherworld_evidence_verified
+			has_country_flag = slopx_ireland_otherworld_rare_condition
+		}
+		available = {
+			has_country_flag = slopx_ireland_hidden_content_game_rule_enabled
+			has_country_flag = slopx_ireland_otherworld_investigation_ready
+			has_country_flag = slopx_ireland_otherworld_evidence_verified
+			has_country_flag = slopx_ireland_otherworld_rare_condition
+			has_completed_focus = slopx_ireland_site_stewardship
+			has_completed_focus = slopx_ireland_serious_cultural_stewardship
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_otherworld_investigation_complete
+			set_country_flag = slopx_ireland_route_otherworld
+			set_variable = { var = slopx_ireland_route_commitment_input value = slopx_ireland_national_settlement }
+			slopx_ireland_commit_route = yes
+		}
+	}
+	focus = {
+		id = slopx_ireland_otherworld_witnesses
+		icon = GFX_focus_slopx_ireland_otherworld_witnesses
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 224
+		y = 37
+		prerequisite = {
+			focus = slopx_ireland_otherworld_investigation
+		}
+		available = {
+			has_country_flag = slopx_ireland_independent_witnesses_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_otherworld_witnesses_complete
+			set_country_flag = slopx_ireland_otherworld_witnesses_verified
+		}
+	}
+	focus = {
+		id = slopx_ireland_otherworld_evidence_ledger
+		icon = GFX_focus_slopx_ireland_otherworld_evidence_ledger
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 232
+		y = 38
+		prerequisite = {
+			focus = slopx_ireland_otherworld_investigation
+		}
+		prerequisite = {
+			focus = slopx_ireland_otherworld_witnesses
+		}
+		available = {
+			has_country_flag = slopx_ireland_otherworld_evidence_verified
+			has_country_flag = slopx_ireland_otherworld_witnesses_verified
+			has_completed_focus = slopx_ireland_cultural_evidence_ledger
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_otherworld_evidence_ledger_complete
+			set_country_flag = slopx_ireland_otherworld_evidence_ledger_ready
+			set_country_flag = slopx_ireland_otherworld_verified
+			set_country_flag = slopx_ireland_achievement_otherworld_full_evidence_standard
+			set_country_flag = slopx_ireland_achievement_independent_evidence_provenance
+		}
+	}
+	focus = {
+		id = slopx_ireland_compact_with_otherworld
+		icon = GFX_focus_slopx_ireland_compact_with_otherworld
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 224
+		y = 39
+		prerequisite = {
+			focus = slopx_ireland_otherworld_witnesses
+		}
+		prerequisite = {
+			focus = slopx_ireland_otherworld_evidence_ledger
+		}
+		available = {
+			has_country_flag = slopx_ireland_otherworld_compact_ready
+			has_country_flag = slopx_ireland_otherworld_archive_reveal_complete
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_compact_with_otherworld_complete
+			set_country_flag = slopx_ireland_otherworld_compact_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_containment_protocol
+		icon = GFX_focus_slopx_ireland_containment_protocol
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 216
+		y = 39
+		available = {
+			has_country_flag = slopx_ireland_otherworld_containment_ready
+			has_country_flag = slopx_ireland_otherworld_archive_reveal_complete
+			has_completed_focus = slopx_ireland_security_under_law
+			has_completed_focus = slopx_ireland_otherworld_evidence_ledger
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_containment_protocol_complete
+			set_country_flag = slopx_ireland_otherworld_containment_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_dominion_claim
+		icon = GFX_focus_slopx_ireland_dominion_claim
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 232
+		y = 40
+		prerequisite = {
+			focus = slopx_ireland_compact_with_otherworld
+		}
+		available = {
+			has_country_flag = slopx_ireland_otherworld_dominion_ready
+			has_country_flag = slopx_ireland_otherworld_impossible_confirmed
+			has_completed_focus = slopx_ireland_containment_protocol
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_dominion_claim_complete
+			set_country_flag = slopx_ireland_otherworld_dominion_path
+		}
+	}
+	focus = {
+		id = slopx_ireland_otherworld_guardians
+		icon = GFX_focus_slopx_ireland_otherworld_guardians
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 224
+		y = 40
+		prerequisite = {
+			focus = slopx_ireland_compact_with_otherworld
+		}
+		prerequisite = {
+			focus = slopx_ireland_containment_protocol
+		}
+		available = {
+			has_country_flag = slopx_ireland_otherworld_guardian_order_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_otherworld_guardians_complete
+			set_country_flag = slopx_ireland_otherworld_guardian_order_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_regional_thresholds
+		icon = GFX_focus_slopx_ireland_regional_thresholds
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 216
+		y = 41
+		prerequisite = {
+			focus = slopx_ireland_otherworld_guardians
+		}
+		available = {
+			has_country_flag = slopx_ireland_otherworld_regional_thresholds_ready
+			has_completed_focus = slopx_ireland_northern_policy_proof
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_regional_thresholds_complete
+			set_country_flag = slopx_ireland_otherworld_regional_thresholds_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_otherworld_statecraft
+		icon = GFX_focus_slopx_ireland_otherworld_statecraft
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 232
+		y = 42
+		available = {
+			OR = { has_country_flag = slopx_ireland_otherworld_compact_path has_country_flag = slopx_ireland_otherworld_containment_path has_country_flag = slopx_ireland_otherworld_dominion_path }
+			has_completed_focus = slopx_ireland_foreign_safeguards
+			OR = {
+				has_completed_focus = slopx_ireland_dominion_claim
+				has_completed_focus = slopx_ireland_regional_thresholds
+			}
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_otherworld_statecraft_complete
+			set_country_flag = slopx_ireland_otherworld_conclusion_valid
+		}
+	}
+	focus = {
+		id = slopx_ireland_otherworld_capstone
+		icon = GFX_focus_slopx_ireland_otherworld_capstone
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 224
+		y = 43
+		prerequisite = {
+			focus = slopx_ireland_otherworld_statecraft
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_otherworld_conclusion_valid
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_otherworld_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+
+# A final convergence and obligations route
+	focus = {
+		id = slopx_ireland_crown_province_convergence
+		icon = GFX_focus_slopx_ireland_crown_province_convergence
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 45
+		available = {
+			has_country_flag = slopx_ireland_crown_conclusion_valid
+			has_country_flag = slopx_ireland_five_provinces_conclusion_valid
+			has_country_flag = slopx_ireland_otherworld_conclusion_valid
+			has_completed_focus = slopx_ireland_five_province_mandates
+			has_completed_focus = slopx_ireland_otherworld_investigation
+			has_completed_focus = slopx_ireland_high_king_evidence_gate
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_crown_province_convergence_complete
+			set_country_flag = slopx_ireland_convergence_components_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_fivefold_obligation
+		icon = GFX_focus_slopx_ireland_fivefold_obligation
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 46
+		prerequisite = {
+			focus = slopx_ireland_crown_province_convergence
+		}
+		available = {
+			has_country_flag = slopx_ireland_northern_integration_complete
+			has_country_flag = slopx_ireland_convergence_material_ready
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_fivefold_obligation_complete
+			set_country_flag = slopx_ireland_fivefold_obligation_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_otherworld_convergence
+		icon = GFX_focus_slopx_ireland_otherworld_convergence
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 47
+		prerequisite = {
+			focus = slopx_ireland_fivefold_obligation
+		}
+		available = {
+			has_country_flag = slopx_ireland_convergence_foreign_ready
+			has_completed_focus = slopx_ireland_foreign_postwar_review
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_otherworld_convergence_complete
+			set_country_flag = slopx_ireland_otherworld_convergence_ready
+		}
+	}
+	focus = {
+		id = slopx_ireland_convergence_order_capstone
+		icon = GFX_focus_slopx_ireland_convergence_order_capstone
+		cost = 20
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 49
+		prerequisite = {
+			focus = slopx_ireland_otherworld_convergence
+		}
+		available = {
+			has_country_flag = slopx_ireland_provision_conclusion_ready
+			has_country_flag = slopx_ireland_readiness_conclusion_ready
+			has_country_flag = slopx_ireland_northern_policy_selected
+			has_country_flag = slopx_ireland_foreign_posture_selected
+			has_country_flag = slopx_ireland_conclusion_proof
+			has_country_flag = slopx_ireland_otherworld_convergence_ready
+			has_country_flag = slopx_ireland_crown_conclusion_valid
+			has_country_flag = slopx_ireland_five_provinces_conclusion_valid
+			has_country_flag = slopx_ireland_otherworld_conclusion_valid
+		}
+		completion_reward = {
+			set_country_flag = slopx_ireland_convergence_order_capstone_complete
+			slopx_ireland_begin_conclusion_review = yes
+		}
+	}
+}

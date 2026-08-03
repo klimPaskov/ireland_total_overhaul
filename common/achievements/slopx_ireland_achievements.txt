@@ -1,0 +1,955 @@
+# Overview: Ireland Total Overhaul's canonical 32-achievement set.
+# The possible block is the immutable campaign eligibility gate. Every happened block also
+# requires the Ireland runtime initializer, the original/current Ireland tag, and the shared
+# campaign disqualification flag. Route owners must write the durable achievement history
+# flags and variables named below; end-state values alone are intentionally insufficient.
+
+unique_id = ireland_total_overhaul_ireland_focus_tree
+
+@slopx_ireland_achievement_floor_40 = 40
+@slopx_ireland_achievement_floor_55 = 55
+@slopx_ireland_achievement_floor_60 = 60
+@slopx_ireland_achievement_floor_65 = 65
+@slopx_ireland_achievement_floor_70 = 70
+@slopx_ireland_achievement_leverage_ceiling = 60
+@slopx_ireland_achievement_mission_floor = 3
+@slopx_ireland_achievement_neutrality_incident_floor = 6
+@slopx_ireland_achievement_coastwatch_days = 180
+@slopx_ireland_achievement_office_days = 365
+@slopx_ireland_achievement_league_members = 4
+@slopx_ireland_achievement_partner_depth_ceiling = 4
+@slopx_ireland_achievement_zero = 0
+
+# A-01 | Constitution with confidence | H/P | visible | Hard
+slopx_ireland_constitution_with_confidence = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_1937_constitution_passed
+		check_variable = { var = slopx_ireland_achievement_constitution_approval value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_achievement_minority_confidence_at_commencement value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		NOT = { has_country_flag = slopx_ireland_achievement_constitution_rejected }
+		NOT = { has_country_flag = slopx_ireland_achievement_minority_confidence_below_60_at_commencement }
+		NOT = { has_country_flag = slopx_ireland_achievement_clerical_veto_state }
+	}
+}
+
+# A-02 | An Emergency with an end | H/P | visible | Hard
+slopx_ireland_emergency_with_an_end = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_de_valera_constitutional_conclusion
+		has_country_flag = {
+			flag = slopx_ireland_achievement_emergency_ended
+			date < 1946.01.01
+		}
+		NOT = { has_country_flag = slopx_ireland_achievement_indefinite_emergency_rule }
+		NOT = { has_country_flag = slopx_ireland_achievement_permanent_emergency_failure }
+		NOT = { has_country_flag = slopx_ireland_achievement_route_overthrown }
+	}
+}
+
+# A-03 | Neutrality under fire | H/P | visible | Very Hard
+slopx_ireland_neutrality_under_fire = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		check_variable = { var = slopx_ireland_achievement_high_severity_neutrality_incidents_closed value = @slopx_ireland_achievement_neutrality_incident_floor compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_achievement_neutrality_integrity_min value = @slopx_ireland_achievement_floor_65 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_achievement_neutrality_partner_depth_max value = @slopx_ireland_achievement_partner_depth_ceiling compare = less_than }
+		NOT = { has_country_flag = slopx_ireland_achievement_formal_belligerency }
+		NOT = { has_country_flag = slopx_ireland_achievement_formal_war_entered }
+		NOT = { has_country_flag = slopx_ireland_achievement_neutrality_integrity_below_65 }
+	}
+}
+
+# A-04 | Watchers on every coast | H | visible | Hard
+slopx_ireland_watchers_on_every_coast = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_coastwatch_sector_1_operational
+		has_country_flag = slopx_ireland_achievement_coastwatch_sector_2_operational
+		has_country_flag = slopx_ireland_achievement_coastwatch_sector_3_operational
+		has_country_flag = slopx_ireland_achievement_coastwatch_sector_4_operational
+		has_country_flag = slopx_ireland_achievement_coastwatch_sector_5_operational
+		has_country_flag = slopx_ireland_achievement_coastwatch_sector_6_operational
+		has_country_flag = slopx_ireland_achievement_coastwatch_streak_during_emergency
+		check_variable = { var = slopx_ireland_achievement_coastwatch_warning_floor_streak value = @slopx_ireland_achievement_coastwatch_days compare = greater_than_or_equals }
+		NOT = { has_country_flag = slopx_ireland_achievement_coastwatch_sector_abandoned }
+		NOT = { has_country_flag = slopx_ireland_achievement_coastwatch_free_radar_shortcut }
+	}
+}
+
+# A-05 | The neutral merchant service | H/P | visible | Hard
+slopx_ireland_neutral_merchant_service = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_irish_shipping_created
+		check_variable = { var = slopx_ireland_achievement_rescue_recovery_missions_completed value = @slopx_ireland_achievement_mission_floor compare = greater_than_or_equals }
+		has_country_flag = slopx_ireland_achievement_major_war_finished
+		check_variable = { var = slopx_ireland_achievement_maritime_access_at_major_war_end value = @slopx_ireland_achievement_floor_40 compare = greater_than_or_equals }
+		NOT = { has_country_flag = slopx_ireland_achievement_merchant_service_dissolved }
+		NOT = { has_country_flag = slopx_ireland_achievement_deliberate_belligerent_misuse }
+	}
+}
+
+# A-06 | Defence without hunger | P | visible | Very Hard
+slopx_ireland_defence_without_hunger = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		check_variable = { var = slopx_ireland_readiness_display value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_provision_display value = @slopx_ireland_achievement_floor_55 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_provision_food value = @slopx_ireland_achievement_floor_40 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_provision_energy value = @slopx_ireland_achievement_floor_40 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_provision_transport value = @slopx_ireland_achievement_floor_40 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_provision_maritime value = @slopx_ireland_achievement_floor_40 compare = greater_than_or_equals }
+		NOT = { has_country_flag = slopx_ireland_achievement_component_collapse_during_review }
+		NOT = { has_country_flag = slopx_ireland_achievement_client_security_state }
+	}
+}
+
+# A-07 | No client of any capital | P | visible | Very Hard
+slopx_ireland_no_client_of_any_capital = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_nonhidden_route_conclusion
+		check_variable = { var = slopx_ireland_achievement_british_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_vatican_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_american_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_german_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		NOT = { has_country_flag = slopx_ireland_achievement_client_pressure_ever }
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_appointed_government }
+		NOT = { has_country_flag = slopx_ireland_achievement_protected_dependency_ever }
+	}
+}
+
+# A-08 | A generation of industry | P | visible | Hard
+slopx_ireland_generation_of_industry = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = {
+			flag = slopx_ireland_achievement_lemass_peaceful_succession
+			date < 1943.01.01
+		}
+		has_country_flag = slopx_ireland_achievement_four_region_balanced_development
+		check_variable = { var = slopx_ireland_achievement_british_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_vatican_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_american_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_german_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		NOT = { has_country_flag = slopx_ireland_achievement_party_seizure }
+		NOT = { has_country_flag = slopx_ireland_achievement_state_monopoly }
+		NOT = { has_country_flag = slopx_ireland_achievement_imported_development_failure }
+	}
+}
+
+# A-09 | Civil War memory settled | P | visible | Hard
+slopx_ireland_civil_war_memory_settled = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_fine_gael_in_government
+		has_country_flag = slopx_ireland_achievement_paramilitary_influence_removed
+		has_country_flag = slopx_ireland_achievement_civil_war_reconciliation_completed
+		NOT = { has_country_flag = slopx_ireland_achievement_corporate_rupture }
+		NOT = { has_country_flag = slopx_ireland_achievement_army_shadow }
+		NOT = { has_country_flag = slopx_ireland_achievement_retaliatory_purge }
+	}
+}
+
+# A-10 | Party leader and Taoiseach | P | visible | Very Hard
+slopx_ireland_party_leader_and_taoiseach = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_mulcahy_fine_gael_leader
+		has_country_flag = slopx_ireland_achievement_costello_taoiseach
+		check_variable = { var = slopx_ireland_achievement_mulcahy_costello_continuous_days value = @slopx_ireland_achievement_office_days compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_achievement_coalition_cohesion_min value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		NOT = { has_country_flag = slopx_ireland_achievement_mulcahy_removed_outside_party_process }
+		NOT = { has_country_flag = slopx_ireland_achievement_coalition_collapse }
+		NOT = { has_country_flag = slopx_ireland_achievement_duplicate_offices }
+	}
+}
+
+# A-11 | Vote for war, vote for sovereignty | P | visible | Very Hard
+slopx_ireland_vote_for_war_vote_for_sovereignty = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_dillon_gate_snapshot_valid
+		has_country_flag = slopx_ireland_achievement_dillon_allied_war_entered
+		has_country_flag = slopx_ireland_achievement_dillon_safeguards_enforced
+		NOT = { has_country_flag = slopx_ireland_achievement_war_entry_event_shortcut }
+		NOT = { has_country_flag = slopx_ireland_achievement_client_pressure_ever }
+		NOT = { has_country_flag = slopx_ireland_achievement_missing_home_defence_reserve }
+		NOT = { has_country_flag = slopx_ireland_achievement_missing_military_contribution }
+	}
+}
+
+# A-12 | Labour stays together | P | visible | Hard
+slopx_ireland_labour_stays_together = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_norton_led_government
+		has_country_flag = slopx_ireland_achievement_1944_labour_split_prevented
+		check_variable = { var = slopx_ireland_achievement_movement_unity_min value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		has_country_flag = slopx_ireland_achievement_parliamentary_social_conclusion
+		NOT = { has_country_flag = slopx_ireland_achievement_workers_republic_bridge }
+		NOT = { has_country_flag = slopx_ireland_achievement_affiliate_purge }
+		NOT = { has_country_flag = slopx_ireland_achievement_national_labour_split_unresolved }
+	}
+}
+
+# A-13 | Councils under law | P | visible | Very Hard
+slopx_ireland_councils_under_law = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_constitutional_vocational_conclusion
+		has_country_flag = slopx_ireland_achievement_council_tier_1_functioning
+		has_country_flag = slopx_ireland_achievement_council_tier_2_functioning
+		has_country_flag = slopx_ireland_achievement_council_tier_3_functioning
+		has_country_flag = slopx_ireland_achievement_dail_sovereignty_preserved
+		has_country_flag = slopx_ireland_achievement_judicial_review_preserved
+		NOT = { has_country_flag = slopx_ireland_achievement_captured_panel }
+		NOT = { has_country_flag = slopx_ireland_achievement_corporate_estates }
+		NOT = { has_country_flag = slopx_ireland_achievement_clerical_veto_state }
+		NOT = { has_country_flag = slopx_ireland_achievement_council_government_without_dail }
+	}
+}
+
+# A-14 | The President said no | P | visible | Very Hard
+slopx_ireland_president_said_no = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_presidential_refusal_of_dissolution
+		has_country_flag = slopx_ireland_achievement_lawful_alternative_government
+		has_country_flag = slopx_ireland_achievement_office_continuity_after_refusal
+		NOT = { has_country_flag = slopx_ireland_achievement_coup }
+		NOT = { has_country_flag = slopx_ireland_achievement_unlawful_appointment }
+		NOT = { has_country_flag = slopx_ireland_achievement_failed_dail_nomination }
+	}
+}
+
+# A-15 | From minority to mandate | P | visible | Hard
+slopx_ireland_minority_to_mandate = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_minority_government_started
+		has_country_flag = slopx_ireland_achievement_confidence_agreement_recorded
+		has_country_flag = slopx_ireland_achievement_minority_route_conclusion
+		NOT = { has_country_flag = slopx_ireland_achievement_opportunistic_snap_election }
+		NOT = { has_country_flag = slopx_ireland_achievement_support_agreement_expired }
+		NOT = { has_country_flag = slopx_ireland_achievement_caretaker_seizure }
+	}
+}
+
+# A-16 | The smallholders decide | H/P | visible | Very Hard
+slopx_ireland_smallholders_decide = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_clann_na_talmhan_founded_dated_path
+		has_country_flag = slopx_ireland_achievement_clann_1943_merger_completed
+		check_variable = { var = slopx_ireland_achievement_agrarian_cohesion_min value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		has_country_flag = slopx_ireland_achievement_national_government_programme_decided
+		NOT = { has_country_flag = slopx_ireland_achievement_farmer_independents_silently_converted }
+		NOT = { has_country_flag = slopx_ireland_achievement_clann_merger_skipped }
+		NOT = { has_country_flag = slopx_ireland_achievement_party_collapse }
+	}
+}
+
+# A-17 | The Republic submits the army | P | visible | Very Hard
+slopx_ireland_republic_submits_army = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_ira_civil_republican_conclusion
+		has_country_flag = slopx_ireland_achievement_armed_wing_subordinate
+		has_country_flag = slopx_ireland_achievement_republican_networks_organised
+		NOT = { has_country_flag = slopx_ireland_achievement_ghq_dictatorship }
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_command }
+		NOT = { has_country_flag = slopx_ireland_achievement_civil_authority_below_threshold }
+	}
+}
+
+# A-18 | Congress of workers and smallholders | P | visible | Very Hard
+slopx_ireland_workers_smallholders_congress = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_plural_congress_conclusion
+		check_variable = { var = slopx_ireland_achievement_coalition_cohesion value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_achievement_union_commitment value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_achievement_rural_mandate value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		NOT = { has_country_flag = slopx_ireland_achievement_vanguard_purge }
+		NOT = { has_country_flag = slopx_ireland_achievement_committee_fragmentation }
+		NOT = { has_country_flag = slopx_ireland_achievement_militia_republic }
+	}
+}
+
+# A-19 | No second Salamanca | P | visible | Very Hard
+slopx_ireland_no_second_salamanca = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_corporate_movement_reconstructed
+		has_country_flag = slopx_ireland_achievement_oduffy_removed_lawful_succession
+		has_country_flag = slopx_ireland_achievement_constitutional_restoration_conclusion
+		check_variable = { var = slopx_ireland_achievement_british_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_vatican_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_american_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_german_leverage_max value = @slopx_ireland_achievement_leverage_ceiling compare = less_than }
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_appointed_government }
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_client }
+		NOT = { has_country_flag = slopx_ireland_achievement_personal_dictatorship }
+		NOT = { has_country_flag = slopx_ireland_achievement_fine_gael_coup_shortcut }
+	}
+}
+
+# A-20 | The estates outlive the leader | P | visible | Campaign
+slopx_ireland_estates_outlive_leader = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_corporate_institutional_conclusion
+		has_country_flag = slopx_ireland_achievement_oduffy_left_office_lawfully
+		check_variable = { var = slopx_ireland_achievement_army_acceptance value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		# Sponsor Dependence is a historical high-water mark across all four
+		# source ledgers; current leverage after recovery is not sufficient.
+		check_variable = { var = slopx_ireland_achievement_british_leverage_max value = @slopx_ireland_achievement_floor_40 compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_vatican_leverage_max value = @slopx_ireland_achievement_floor_40 compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_american_leverage_max value = @slopx_ireland_achievement_floor_40 compare = less_than }
+		check_variable = { var = slopx_ireland_achievement_german_leverage_max value = @slopx_ireland_achievement_floor_40 compare = less_than }
+		NOT = { has_country_flag = slopx_ireland_achievement_personal_cult_remains }
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_client }
+		NOT = { has_country_flag = slopx_ireland_achievement_ghost_movement }
+	}
+}
+
+# A-21 | The Constitution restored | P | visible | Very Hard
+slopx_ireland_constitution_restored = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		OR = {
+			has_country_flag = slopx_ireland_achievement_failure_army_council
+			has_country_flag = slopx_ireland_achievement_failure_vanguard
+			has_country_flag = slopx_ireland_achievement_failure_corporate
+			has_country_flag = slopx_ireland_achievement_failure_clerical
+			has_country_flag = slopx_ireland_achievement_failure_ailtiri
+			has_country_flag = slopx_ireland_achievement_failure_permanent_emergency
+		}
+		has_country_flag = slopx_ireland_achievement_ordinary_constitutional_restoration_conclusion
+		has_country_flag = slopx_ireland_achievement_ordinary_law_restored
+		has_country_flag = slopx_ireland_achievement_election_after_restoration
+		has_country_flag = slopx_ireland_achievement_restoration_cleanup_complete
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_occupation_appointed_restoration }
+		NOT = { has_country_flag = slopx_ireland_achievement_exceptional_office_unresolved }
+		# A recovered emergency failure remains valid history. Only a live abuse
+		# signal or an unresolved emergency-law failure blocks restoration.
+		NOT = { has_country_flag = slopx_ireland_emergency_overreach }
+		NOT = { has_country_flag = slopx_ireland_emergency_powers_crisis }
+		NOT = {
+			check_variable = {
+				var = slopx_ireland_law_emergency_authority_stage
+				value = constant:slopx_ireland.law_stage_failure
+				compare = greater_than_or_equals
+			}
+		}
+	}
+}
+
+# A-22 | Resurrection without a sponsor | P | hidden until public Ailtirí launch | Campaign
+slopx_ireland_resurrection_without_sponsor = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_reveal_ailtiri_public_launch
+		has_country_flag = slopx_ireland_achievement_post_axis_ailtiri_crisis_survived
+		has_country_flag = slopx_ireland_achievement_ailtiri_state_conclusion
+		check_variable = { var = slopx_ireland_german_leverage value = @slopx_ireland_achievement_floor_40 compare = less_than }
+		is_puppet = no
+		NOT = { has_country_flag = slopx_ireland_achievement_pre_1942_shortcut }
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_installed_leader }
+	}
+	hidden = yes
+}
+
+# A-23 | A federal island by consent | P | visible | Campaign
+slopx_ireland_federal_island_consent = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_federal_settlement_conclusion
+		check_variable = { var = slopx_ireland_northern_unionist_consent value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_northern_nationalist_consent value = @slopx_ireland_achievement_floor_70 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_northern_labour_cooperation value = @slopx_ireland_achievement_floor_55 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_northern_security_stability value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		has_country_flag = slopx_ireland_achievement_federal_six_value_ledger_passed
+		check_variable = { var = slopx_ireland_northern_integration_stage value = constant:slopx_ireland.northern_stage_core_eligible compare = greater_than_or_equals }
+		has_country_flag = slopx_ireland_northern_final_review_passed
+		NOT = { has_country_flag = slopx_ireland_achievement_northern_war }
+		NOT = { has_country_flag = slopx_ireland_achievement_imposed_boundaries }
+		NOT = { has_country_flag = slopx_ireland_achievement_blanket_cores }
+	}
+}
+
+# A-24 | One state by consent | P | visible | Campaign
+slopx_ireland_one_state_consent = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_negotiated_unitary_settlement
+		has_country_flag = slopx_ireland_achievement_northern_consent_ledger_passed
+		has_country_flag = slopx_ireland_achievement_northern_rights_review_passed
+		check_variable = { var = slopx_ireland_northern_integration_stage value = constant:slopx_ireland.northern_stage_core_eligible compare = greater_than_or_equals }
+		has_country_flag = slopx_ireland_northern_final_review_passed
+		NOT = { has_country_flag = slopx_ireland_achievement_coercive_northern_war }
+		NOT = { has_country_flag = slopx_ireland_achievement_coercive_occupation }
+		NOT = { has_country_flag = slopx_ireland_achievement_imposed_plebiscite }
+		NOT = { has_country_flag = slopx_ireland_achievement_invalid_plebiscite }
+		NOT = { has_country_flag = slopx_ireland_achievement_rights_failure }
+	}
+}
+
+# A-25 | Victory is not integration | P | visible | Campaign
+slopx_ireland_victory_not_integration = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_northern_coercive_war_victory
+		has_country_flag = slopx_ireland_achievement_northern_rights_completed
+		has_country_flag = slopx_ireland_achievement_northern_services_completed
+		has_country_flag = slopx_ireland_achievement_northern_policing_completed
+		has_country_flag = slopx_ireland_achievement_northern_finance_completed
+		has_country_flag = slopx_ireland_achievement_northern_demobilisation_completed
+		check_variable = { var = slopx_ireland_northern_integration_stage value = constant:slopx_ireland.northern_stage_core_eligible compare = greater_than_or_equals }
+		has_country_flag = slopx_ireland_northern_final_review_passed
+		NOT = { has_country_flag = slopx_ireland_achievement_atrocity }
+		NOT = { has_country_flag = slopx_ireland_achievement_blanket_cores }
+		NOT = { has_country_flag = slopx_ireland_achievement_military_government_unresolved }
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_client }
+	}
+}
+
+# A-26 | A seat at the Atlantic table | P | visible | Campaign
+slopx_ireland_atlantic_table = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_atlantic_league_formed
+		check_variable = { var = slopx_ireland_achievement_atlantic_league_sovereign_members value = @slopx_ireland_achievement_league_members compare = greater_than_or_equals }
+		has_country_flag = slopx_ireland_achievement_atlantic_contributions_funded
+		has_country_flag = slopx_ireland_achievement_atlantic_league_cohesion_three_years
+		NOT = { has_country_flag = slopx_ireland_achievement_paper_members }
+		NOT = { has_country_flag = slopx_ireland_achievement_subjects_counted_as_sovereign }
+		NOT = { has_country_flag = slopx_ireland_achievement_common_defence_unpaid }
+	}
+}
+
+# A-27 | A crown without conquest | P | hidden until royal convention | Campaign
+slopx_ireland_crown_without_conquest = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_reveal_royal_convention
+		has_country_flag = slopx_ireland_achievement_constitutional_high_kingship
+		has_country_flag = slopx_ireland_achievement_royal_public_ratification
+		has_country_flag = slopx_ireland_achievement_royal_provincial_ratification
+		has_country_flag = slopx_ireland_achievement_royal_foreign_recognition
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_appointed_claimant }
+		NOT = { has_country_flag = slopx_ireland_achievement_captive_crown }
+		NOT = { has_country_flag = slopx_ireland_achievement_offensive_annexation }
+	}
+	hidden = yes
+}
+
+# A-28 | Five provinces, one compact | P/A | hidden until fivefold convention | Campaign
+slopx_ireland_five_provinces_compact = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_reveal_fivefold_convention
+		has_country_flag = slopx_ireland_achievement_five_provinces_federation_conclusion
+		has_country_flag = slopx_ireland_achievement_five_provinces_mandates_valid
+		has_country_flag = slopx_ireland_achievement_five_provinces_rights_review_passed
+		has_country_flag = slopx_ireland_achievement_five_provinces_finance_review_passed
+		has_country_flag = slopx_ireland_achievement_ulster_rule_lawful
+		check_variable = { var = slopx_ireland_northern_integration_stage value = constant:slopx_ireland.northern_stage_core_eligible compare = greater_than_or_equals }
+		has_country_flag = slopx_ireland_northern_final_review_passed
+		NOT = { has_country_flag = slopx_ireland_achievement_painted_provinces }
+		NOT = { has_country_flag = slopx_ireland_achievement_rival_sovereignties }
+		NOT = { has_country_flag = slopx_ireland_achievement_automatic_ulster_claim }
+	}
+	hidden = yes
+}
+
+# A-29 | Every geis kept | A | hidden | Hidden Mastery
+slopx_ireland_every_geis_kept = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_reveal_sacral_or_otherworld
+		OR = {
+			has_country_flag = slopx_ireland_achievement_sacral_crown_conclusion
+			has_country_flag = slopx_ireland_achievement_otherworld_conclusion
+		}
+		check_variable = { var = slopx_ireland_achievement_accepted_obligation_count value = @slopx_ireland_achievement_zero compare = greater_than }
+		has_country_flag = slopx_ireland_achievement_all_accepted_obligations_fulfilled
+		NOT = { has_country_flag = slopx_ireland_achievement_accepted_obligation_failed }
+		NOT = { has_country_flag = slopx_ireland_achievement_accepted_obligation_breached }
+		NOT = { has_country_flag = slopx_ireland_achievement_fabricated_obligation_removed }
+	}
+	hidden = yes
+}
+
+# A-30 | The archive was correct | A | hidden | Hidden Mastery
+slopx_ireland_archive_was_correct = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_reveal_otherworld_evidence_review
+		has_country_flag = slopx_ireland_otherworld_verified
+		has_country_flag = slopx_ireland_achievement_otherworld_full_evidence_standard
+		has_country_flag = slopx_ireland_achievement_independent_evidence_provenance
+		has_country_flag = slopx_ireland_achievement_public_capacities_verified
+		NOT = { has_country_flag = slopx_ireland_achievement_hoax }
+		NOT = { has_country_flag = slopx_ireland_achievement_government_fabrication }
+		NOT = { has_country_flag = slopx_ireland_achievement_witness_persecution }
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_control }
+	}
+	hidden = yes
+}
+
+# A-31 | Two Irelands, one law | A | hidden | Hidden Mastery
+slopx_ireland_two_irelands_one_law = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_reveal_two_irelands_compact
+		has_country_flag = slopx_ireland_achievement_compact_of_two_irelands_conclusion
+		has_country_flag = slopx_ireland_achievement_compact_human_rights_passed
+		check_variable = { var = slopx_ireland_achievement_compact_trust value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		check_variable = { var = slopx_ireland_achievement_veil_stability value = @slopx_ireland_achievement_floor_60 compare = greater_than_or_equals }
+		NOT = { has_country_flag = slopx_ireland_achievement_dominion }
+		NOT = { has_country_flag = slopx_ireland_achievement_permanent_sealing }
+		NOT = { has_country_flag = slopx_ireland_achievement_compact_broken }
+		NOT = { has_country_flag = slopx_ireland_achievement_rights_violation }
+	}
+	hidden = yes
+}
+
+# A-32 | The Fivefold High Kingdom of Two Irelands | A | hidden until completion | Hidden Mastery
+slopx_ireland_fivefold_high_kingdom_two_irelands = {
+	possible = {
+		is_ironman = yes
+		difficulty > 1
+		has_start_date > 1935.12.31
+		has_start_date < 1936.01.02
+		has_any_custom_difficulty_setting = no
+		game_rules_allow_achievements = yes
+		tag = IRE
+		original_tag = IRE
+	}
+	happened = {
+		tag = IRE
+		original_tag = IRE
+		has_country_flag = slopx_ireland_initialized
+		NOT = { has_country_flag = slopx_ireland_achievement_campaign_disqualified }
+		has_country_flag = slopx_ireland_achievement_fivefold_high_kingdom_two_irelands_conclusion
+		has_country_flag = slopx_ireland_achievement_constitutional_high_kingship
+		has_country_flag = slopx_ireland_achievement_five_provinces_federation_conclusion
+		has_country_flag = slopx_ireland_achievement_otherworld_conclusion
+		check_variable = { var = slopx_ireland_northern_integration_stage value = constant:slopx_ireland.northern_stage_core_eligible compare = greater_than_or_equals }
+		has_country_flag = slopx_ireland_northern_final_review_passed
+		NOT = { has_country_flag = slopx_ireland_achievement_captive_crown }
+		NOT = { has_country_flag = slopx_ireland_achievement_warlord_province }
+		NOT = { has_country_flag = slopx_ireland_achievement_fabricated_evidence }
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_patron_control }
+		NOT = { has_country_flag = slopx_ireland_achievement_foreign_client }
+		NOT = { has_country_flag = slopx_ireland_achievement_compact_broken }
+	}
+	hidden = yes
+}

@@ -1,0 +1,207 @@
+# Ireland generated report/news event art. Runtime static DDS fallbacks live under gfx/event_pictures/ireland/; source packages remain under assets/.
+spriteTypes = {
+	spriteType = {
+		name = "GFX_news_event_ireland_news_army_council_broadcast"
+		texturefile = "gfx/event_pictures/ireland/ireland_news_army_council_broadcast.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_ireland_news_convergence_three_orders"
+		texturefile = "gfx/event_pictures/ireland/ireland_news_convergence_three_orders.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_ireland_news_five_provinces_compact"
+		texturefile = "gfx/event_pictures/ireland/ireland_news_five_provinces_compact.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_ireland_news_high_king_crowned_tara"
+		texturefile = "gfx/event_pictures/ireland/ireland_news_high_king_crowned_tara.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_ireland_news_northern_unity_settlement"
+		texturefile = "gfx/event_pictures/ireland/ireland_news_northern_unity_settlement.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_ireland_news_otherworld_envoy_dublin"
+		texturefile = "gfx/event_pictures/ireland/ireland_news_otherworld_envoy_dublin.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_agrarian_producer_settlement"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_agrarian_producer_settlement.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_ailtiri_cultural_capture"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_ailtiri_cultural_capture.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_ailtiri_exposure"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_ailtiri_exposure.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_ailtiri_state"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_ailtiri_state.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_army_council_radio_seizure"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_army_council_radio_seizure.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_army_council_state"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_army_council_state.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_clerical_guardianship"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_clerical_guardianship.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_congress_plural"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_congress_plural.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_congress_vanguard"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_congress_vanguard.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_constitutional_republic_settlement"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_constitutional_republic_settlement.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_convergence_reveal"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_convergence_reveal.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_corporate_estate"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_corporate_estate.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_corporate_estate_proclamation"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_corporate_estate_proclamation.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_crown_evidence"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_crown_evidence.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_district_courts"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_district_courts.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_dominion_failure"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_dominion_failure.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_five_provinces_federation"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_five_provinces_federation.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_five_provinces_reveal"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_five_provinces_reveal.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_ailtiri_cells"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_ailtiri_cells.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_army_council"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_army_council.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_breach_aftermath"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_breach_aftermath.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_compact_stewards"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_compact_stewards.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_convergence_council"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_convergence_council.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_corporate_council"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_corporate_council.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_crown_guard"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_crown_guard.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_federal_works"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_federal_works.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_guardianship_service"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_guardianship_service.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_northern_bridge"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_northern_bridge.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_otherworld_guardians"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_otherworld_guardians.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_provincial_delegates"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_provincial_delegates.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_public_ritual"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_public_ritual.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_rebel_courier"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_rebel_courier.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_royal_circuit"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_royal_circuit.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_flavour_sealed_archive"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_flavour_sealed_archive.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_hidden_fianna_return"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_hidden_fianna_return.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_hidden_living_land"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_hidden_living_land.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_hidden_sealed_sites"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_hidden_sealed_sites.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_high_king_constitutional"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_high_king_constitutional.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_ira_civil_republic"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_ira_civil_republic.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_oduffy_personal"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_oduffy_personal.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_otherworld_compact"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_otherworld_compact.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_otherworld_rath_breach"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_otherworld_rath_breach.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_otherworld_verification"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_otherworld_verification.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_social_republic"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_social_republic.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_report_workers_smallholders_strike"
+		texturefile = "gfx/event_pictures/ireland/ireland_report_workers_smallholders_strike.dds"
+	}
+}

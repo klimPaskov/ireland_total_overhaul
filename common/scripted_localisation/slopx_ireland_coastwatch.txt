@@ -1,0 +1,33 @@
+# Ireland Coastwatch scripted localisation.
+# The active sector is a live mission pointer; it is cleared on every terminal result.
+
+defined_text = {
+	name = GetSlopxIrelandCoastwatchActiveSector
+	text = {
+		trigger = { check_variable = { var = slopx_ireland_coastwatch_active_sector value = 1 compare = equals } }
+		localization_key = slopx_ireland_coastwatch_sector_1
+	}
+	text = {
+		trigger = { check_variable = { var = slopx_ireland_coastwatch_active_sector value = 2 compare = equals } }
+		localization_key = slopx_ireland_coastwatch_sector_2
+	}
+	text = {
+		trigger = { check_variable = { var = slopx_ireland_coastwatch_active_sector value = 3 compare = equals } }
+		localization_key = slopx_ireland_coastwatch_sector_3
+	}
+	text = {
+		trigger = { check_variable = { var = slopx_ireland_coastwatch_active_sector value = 4 compare = equals } }
+		localization_key = slopx_ireland_coastwatch_sector_4
+	}
+	text = {
+		trigger = { check_variable = { var = slopx_ireland_coastwatch_active_sector value = 5 compare = equals } }
+		localization_key = slopx_ireland_coastwatch_sector_5
+	}
+	text = {
+		trigger = { check_variable = { var = slopx_ireland_coastwatch_active_sector value = 6 compare = equals } }
+		localization_key = slopx_ireland_coastwatch_sector_6
+	}
+	text = {
+		localization_key = slopx_ireland_coastwatch_sector_pending
+	}
+}
