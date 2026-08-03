@@ -18406,9 +18406,7 @@ slopx_ireland_provision = {
 				}
 				any_owned_state = {
 					state = 135
-					building_count_trigger = {
 						naval_base > 0
-					}
 				}
 			has_equipment = {
 				convoy > @SLOPX_IRELAND_CHARTER_TONNAGE_CONVOY_GATE
@@ -18779,15 +18777,11 @@ slopx_ireland_provision = {
 				}
 				any_owned_state = {
 					state = 135
-					building_count_trigger = {
 						industrial_complex > 0
-					}
 				}
 				any_owned_state = {
 					state = 135
-					building_count_trigger = {
 						dockyard > 0
-					}
 				}
 			has_equipment = {
 				convoy > @SLOPX_IRELAND_MERCHANT_VESSEL_CONVOY_GATE
@@ -22950,7 +22944,7 @@ slopx_ireland_readiness = {
 			has_equipment = {
 				support_equipment > @SLOPX_IRELAND_STANDARDISATION_SUPPORT_EQUIPMENT_GATE
 			}
-			army_experience > 9
+			has_army_experience > 9
 			OR = {
 				AND = {
 					check_variable = {
@@ -23047,7 +23041,7 @@ slopx_ireland_readiness = {
 				type = support_equipment
 				amount = @SLOPX_IRELAND_STANDARDISATION_SUPPORT_EQUIPMENT_CHARGE
 			}
-			add_army_experience = -10
+			army_experience = -10
 			add_to_variable = {
 				var = slopx_ireland_readiness_equipment
 				value = 4
@@ -25211,15 +25205,15 @@ slopx_ireland_readiness = {
 				has_full_control_of_state = 135
 				any_owned_state = {
 					state = 135
-					building_count_trigger = { industrial_complex > 0 }
+					industrial_complex > 0
 				}
 				any_owned_state = {
 					state = 135
-					building_count_trigger = { naval_base > 0 }
+					naval_base > 0
 				}
 				has_fuel > @SLOPX_IRELAND_MARINE_FUEL_GATE
 				has_manpower > @SLOPX_IRELAND_MARINE_MANPOWER_GATE
-				navy_experience > @SLOPX_IRELAND_MARINE_NAVY_EXPERIENCE_GATE
+				has_navy_experience > @SLOPX_IRELAND_MARINE_NAVY_EXPERIENCE_GATE
 			has_equipment = {
 				convoy > @SLOPX_IRELAND_MARINE_CONVOY_GATE
 			}
@@ -25320,7 +25314,7 @@ slopx_ireland_readiness = {
 			}
 			add_fuel = @SLOPX_IRELAND_MARINE_FUEL_CHARGE
 			add_manpower = @SLOPX_IRELAND_MARINE_MANPOWER_CHARGE
-			add_navy_experience = @SLOPX_IRELAND_MARINE_NAVY_EXPERIENCE_CHARGE
+			navy_experience = @SLOPX_IRELAND_MARINE_NAVY_EXPERIENCE_CHARGE
 	
 			clr_country_flag = slopx_ireland_action_organise_marine_patrols_material_refund_recorded
 			# Bind one dedicated patrol-craft coverage allocation to the convoy
@@ -28730,7 +28724,7 @@ slopx_ireland_neutrality_incidents = {
 			check_variable = { slopx_ireland_neutrality_integrity < 95 }
 				any_owned_state = {
 					state = 135
-					building_count_trigger = { air_base > 0 }
+					air_base > 0
 				}
 			OR = {
 				AND = {
@@ -29580,15 +29574,11 @@ slopx_ireland_neutrality_incidents = {
 				}
 				any_owned_state = {
 					state = 135
-					building_count_trigger = {
 						industrial_complex > 0
-					}
 				}
 				any_owned_state = {
 					state = 113
-					building_count_trigger = {
 						naval_base > 0
-					}
 				}
 			OR = {
 				AND = {
@@ -41852,7 +41842,7 @@ slopx_ireland_occupation_integration = {
 			has_equipment = {
 				support_equipment > @SLOPX_IRELAND_MILITARY_COMMAND_SUPPORT_EQUIPMENT_GATE
 			}
-			army_experience > @SLOPX_IRELAND_MILITARY_COMMAND_ARMY_EXPERIENCE_GATE
+			has_army_experience > @SLOPX_IRELAND_MILITARY_COMMAND_ARMY_EXPERIENCE_GATE
 			OR = {
 				AND = {
 					check_variable = {
@@ -41948,7 +41938,7 @@ slopx_ireland_occupation_integration = {
 				type = support_equipment
 				amount = @SLOPX_IRELAND_MILITARY_COMMAND_SUPPORT_EQUIPMENT_CHARGE
 			}
-			add_army_experience = @SLOPX_IRELAND_MILITARY_COMMAND_ARMY_EXPERIENCE_CHARGE
+			army_experience = @SLOPX_IRELAND_MILITARY_COMMAND_ARMY_EXPERIENCE_CHARGE
 			add_to_variable = {
 				var = slopx_ireland_readiness_command
 				value = 5
@@ -47808,9 +47798,7 @@ slopx_ireland_postwar = {
 				}
 				any_owned_state = {
 					state = 135
-					building_count_trigger = {
 						dockyard > 0
-					}
 				}
 			has_equipment = {
 				convoy > 4

@@ -180,7 +180,7 @@ characters = {
 			civilian = { large = GFX_slopx_ireland_portrait_daniel_morrissey }
 		}
 		country_leader = {
-			ideology = social_democrat
+			ideology = socialism
 			expire = "1965.1.1.1"
 			id = -1
 		}

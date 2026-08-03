@@ -565,7 +565,6 @@ slopx_ireland_initialize_campaign = {
 		set_country_flag = slopx_ireland_initialized
 		set_power_balance = {
 			id = slopx_ireland_national_settlement
-			set_default = yes
 			set_value = constant:slopx_ireland_fixed.settlement_bop_opening
 		}
 		slopx_ireland_recompute_provision = yes
@@ -1202,7 +1201,7 @@ slopx_ireland_update_mission_capacity = {
 						compare = less_than
 					}
 				}
-				add_to_variable = { slopx_ireland_mission_stable_days value = constant:slopx_ireland.one }
+				add_to_variable = { var = slopx_ireland_mission_stable_days value = constant:slopx_ireland.one }
 			}
 			if = {
 				limit = {
@@ -1480,7 +1479,7 @@ slopx_ireland_open_foreign_reaction_window = {
 		}
 		slopx_ireland_clear_foreign_reaction_subjects = yes
 		slopx_ireland_clear_foreign_reaction_node_resolutions = yes
-		add_to_variable = { slopx_ireland_foreign_reaction_digest_resolved value = constant:slopx_ireland.one }
+		add_to_variable = { var = slopx_ireland_foreign_reaction_digest_resolved value = constant:slopx_ireland.one }
 		clr_country_flag = slopx_ireland_foreign_reaction_window_closed
 		clr_country_flag = slopx_ireland_foreign_reaction_digest_required
 		clr_country_flag = slopx_ireland_foreign_digest_reviewed
@@ -3608,7 +3607,7 @@ slopx_ireland_refund_cancelled_material_inputs = {
 		set_temp_variable = { var = slopx_ireland_refund_amount value = constant:slopx_ireland.mission_refund_marine_patrol_manpower }
 		add_manpower = slopx_ireland_refund_amount
 		set_temp_variable = { var = slopx_ireland_refund_amount value = constant:slopx_ireland.mission_refund_marine_patrol_navy_experience }
-		add_navy_experience = slopx_ireland_refund_amount
+		navy_experience = slopx_ireland_refund_amount
 		set_country_flag = slopx_ireland_action_organise_marine_patrols_material_refund_recorded
 	}
 	if = {

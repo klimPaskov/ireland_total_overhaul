@@ -3729,51 +3729,6 @@ slopx_ireland_refresh_route_spirits = {
 	}
 }
 
-slopx_ireland_recruit_route_advisors = {
-	# Recruitment adds an eligible historical person to the route roster; the
-	# player still pays the normal advisor cost when hiring the role.
-	if = { limit = { slopx_ireland_route_advisor_de_valera_lemass = yes NOT = { has_character = slopx_ireland_frank_aiken_advisor } } recruit_character = slopx_ireland_frank_aiken_advisor }
-	if = { limit = { slopx_ireland_route_advisor_de_valera_lemass = yes NOT = { has_character = slopx_ireland_sean_macentee_advisor } } recruit_character = slopx_ireland_sean_macentee_advisor }
-	if = { limit = { slopx_ireland_route_advisor_fine_gael_coalition = yes NOT = { has_character = slopx_ireland_joseph_walshe_advisor } } recruit_character = slopx_ireland_joseph_walshe_advisor }
-	if = { limit = { slopx_ireland_route_advisor_fine_gael_coalition = yes NOT = { has_character = slopx_ireland_sean_mac_eoin_advisor } } recruit_character = slopx_ireland_sean_mac_eoin_advisor }
-	if = { limit = { slopx_ireland_route_advisor_fine_gael_coalition = yes date > "1943.1.1" NOT = { has_character = slopx_ireland_thomas_f_ohiggins_advisor } } recruit_character = slopx_ireland_thomas_f_ohiggins_advisor }
-	if = { limit = { slopx_ireland_route_advisor_fine_gael_coalition = yes NOT = { has_character = slopx_ireland_patrick_mcgilligan_advisor } } recruit_character = slopx_ireland_patrick_mcgilligan_advisor }
-	if = { limit = { slopx_ireland_route_advisor_norton = yes NOT = { has_character = slopx_ireland_james_everett_advisor } } recruit_character = slopx_ireland_james_everett_advisor }
-	if = { limit = { slopx_ireland_route_advisor_norton = yes NOT = { has_character = slopx_ireland_william_obrien_advisor } } recruit_character = slopx_ireland_william_obrien_advisor }
-	if = { limit = { slopx_ireland_route_advisor_norton = yes NOT = { has_character = slopx_ireland_james_hickey_advisor } } recruit_character = slopx_ireland_james_hickey_advisor }
-	if = { limit = { slopx_ireland_route_advisor_norton = yes NOT = { has_character = slopx_ireland_william_davin_advisor } } recruit_character = slopx_ireland_william_davin_advisor }
-	if = { limit = { slopx_ireland_route_advisor_clann = yes date > "1939.6.28" NOT = { has_character = slopx_ireland_michael_donnellan_advisor } } recruit_character = slopx_ireland_michael_donnellan_advisor }
-	if = { limit = { slopx_ireland_route_advisor_vocational = yes NOT = { has_character = slopx_ireland_edward_joseph_byrne_advisor } } recruit_character = slopx_ireland_edward_joseph_byrne_advisor }
-	if = { limit = { slopx_ireland_route_advisor_vocational = yes date > "1939.1.1" NOT = { has_character = slopx_ireland_michael_browne_advisor } } recruit_character = slopx_ireland_michael_browne_advisor }
-	if = { limit = { slopx_ireland_route_advisor_clerical = yes NOT = { has_character = slopx_ireland_john_charles_mcquaid_advisor } } recruit_character = slopx_ireland_john_charles_mcquaid_advisor }
-	if = { limit = { slopx_ireland_route_advisor_clerical = yes NOT = { has_character = slopx_ireland_joseph_macrory_advisor } } recruit_character = slopx_ireland_joseph_macrory_advisor }
-	if = { limit = { slopx_ireland_route_advisor_vocational = yes NOT = { has_character = slopx_ireland_frank_duff_advisor } } recruit_character = slopx_ireland_frank_duff_advisor }
-	if = { limit = { slopx_ireland_route_advisor_vocational = yes NOT = { has_character = slopx_ireland_john_hayes_advisor } } recruit_character = slopx_ireland_john_hayes_advisor }
-	if = { limit = { slopx_ireland_route_advisor_ira_civil = yes NOT = { has_character = slopx_ireland_maurice_twomey_advisor } } recruit_character = slopx_ireland_maurice_twomey_advisor }
-	if = { limit = { slopx_ireland_route_advisor_ira_civil = yes NOT = { has_character = slopx_ireland_sean_macbride_advisor } } recruit_character = slopx_ireland_sean_macbride_advisor }
-	if = { limit = { slopx_ireland_route_advisor_ira_command = yes NOT = { has_character = slopx_ireland_tom_barry_advisor } } recruit_character = slopx_ireland_tom_barry_advisor }
-	if = { limit = { slopx_ireland_route_advisor_ira_command = yes NOT = { has_character = slopx_ireland_jim_odonovan_advisor } } recruit_character = slopx_ireland_jim_odonovan_advisor }
-	if = { limit = { slopx_ireland_route_advisor_ira_command = yes has_country_flag = slopx_ireland_ira_command_ready date > "1938.3.31" date < "1940.8.15" NOT = { has_character = slopx_ireland_sean_russell_advisor } } recruit_character = slopx_ireland_sean_russell_advisor }
-	if = { limit = { slopx_ireland_route_advisor_ira_command = yes date > "1942.1.1" NOT = { has_character = slopx_ireland_charles_kerins_advisor } } recruit_character = slopx_ireland_charles_kerins_advisor }
-	if = { limit = { slopx_ireland_route_advisor_congress_plural = yes NOT = { has_character = slopx_ireland_george_gilmore_advisor } } recruit_character = slopx_ireland_george_gilmore_advisor }
-	if = { limit = { slopx_ireland_route_advisor_congress_plural = yes NOT = { has_character = slopx_ireland_nora_connolly_obrien_advisor } } recruit_character = slopx_ireland_nora_connolly_obrien_advisor }
-	if = { limit = { slopx_ireland_route_advisor_congress_vanguard = yes NOT = { has_character = slopx_ireland_sean_murray_advisor } } recruit_character = slopx_ireland_sean_murray_advisor }
-	if = { limit = { slopx_ireland_route_advisor_oduffy = yes NOT = { has_character = slopx_ireland_patrick_belton_advisor } } recruit_character = slopx_ireland_patrick_belton_advisor }
-	if = { limit = { slopx_ireland_route_advisor_oduffy = yes NOT = { has_character = slopx_ireland_ernest_blythe_advisor } } recruit_character = slopx_ireland_ernest_blythe_advisor }
-	if = { limit = { slopx_ireland_route_advisor_ailtiri = yes date > "1942.5.31" NOT = { has_character = slopx_ireland_j_j_walsh_patron } } recruit_character = slopx_ireland_j_j_walsh_patron }
-	if = { limit = { slopx_ireland_route_advisor_ailtiri = yes date > "1945.1.1" NOT = { has_character = slopx_ireland_oliver_flanagan_advisor } } recruit_character = slopx_ireland_oliver_flanagan_advisor }
-	if = { limit = { slopx_ireland_route_advisor_de_valera_lemass = yes NOT = { has_character = slopx_ireland_thekla_beere_advisor } } recruit_character = slopx_ireland_thekla_beere_advisor }
-	if = { limit = { slopx_ireland_route_advisor_fine_gael_coalition = yes NOT = { has_character = slopx_ireland_luke_duffy_advisor } } recruit_character = slopx_ireland_luke_duffy_advisor }
-	if = { limit = { slopx_ireland_route_advisor_vocational = yes NOT = { has_character = slopx_ireland_alfred_orahilly_advisor } } recruit_character = slopx_ireland_alfred_orahilly_advisor }
-	if = { limit = { slopx_ireland_route_advisor_ira_command = yes has_country_flag = slopx_ireland_ira_command_ready date > "1939.1.1" NOT = { has_character = slopx_ireland_stephen_hayes_advisor } } recruit_character = slopx_ireland_stephen_hayes_advisor }
-	if = { limit = { slopx_ireland_route_advisor_ira_command = yes has_country_flag = slopx_ireland_ira_northern_command_ready date > "1941.1.1" NOT = { has_character = slopx_ireland_hugh_mcateer_advisor } } recruit_character = slopx_ireland_hugh_mcateer_advisor }
-	if = { limit = { slopx_ireland_route_advisor_ira_command = yes has_country_flag = slopx_ireland_ira_ghq_reassembled date > "1943.1.1" NOT = { has_character = slopx_ireland_harry_white_advisor } } recruit_character = slopx_ireland_harry_white_advisor }
-	if = { limit = { slopx_ireland_route_advisor_congress_plural = yes NOT = { has_character = slopx_ireland_roddy_connolly_advisor } } recruit_character = slopx_ireland_roddy_connolly_advisor }
-	if = { limit = { slopx_ireland_route_advisor_congress_vanguard = yes date < "1944.1.18" NOT = { has_character = slopx_ireland_michael_price_advisor } } recruit_character = slopx_ireland_michael_price_advisor }
-	if = { limit = { slopx_ireland_route_advisor_oduffy = yes NOT = { has_character = slopx_ireland_pj_coughlan_advisor } } recruit_character = slopx_ireland_pj_coughlan_advisor }
-	if = { limit = { slopx_ireland_route_advisor_ailtiri = yes date > "1945.1.1" NOT = { has_character = slopx_ireland_tomas_o_dochartaigh_advisor } } recruit_character = slopx_ireland_tomas_o_dochartaigh_advisor }
-}
-
 slopx_ireland_sync_route_advisor_lifecycle = {
 	# Static advisor roles retain their scripted gates; this only dismisses an
 	# already-hired advisor after an incompatible office or route transition.
@@ -4087,7 +4042,7 @@ slopx_ireland_activate_route_leader = {
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_lemass_developmental NOT = { has_country_flag = slopx_ireland_route_leader_activated_lemass_developmental } }
 		deactivate_advisor = slopx_ireland_sean_lemass
-		recruit_character = slopx_ireland_sean_lemass
+		# slopx_ireland_sean_lemass is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_sean_lemass
 			ideology = centrism
@@ -4105,7 +4060,7 @@ slopx_ireland_activate_route_leader = {
 	}
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_cosgrave_institutional NOT = { has_country_flag = slopx_ireland_route_leader_activated_cosgrave_institutional } }
-		recruit_character = slopx_ireland_w_t_cosgrave
+		# slopx_ireland_w_t_cosgrave is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_w_t_cosgrave
 			ideology = conservatism
@@ -4124,7 +4079,7 @@ slopx_ireland_activate_route_leader = {
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_mulcahy_civil_defence NOT = { has_country_flag = slopx_ireland_route_leader_activated_mulcahy_civil_defence } }
 		deactivate_advisor = slopx_ireland_richard_mulcahy
-		recruit_character = slopx_ireland_richard_mulcahy
+		# slopx_ireland_richard_mulcahy is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_richard_mulcahy
 			ideology = conservatism
@@ -4142,7 +4097,7 @@ slopx_ireland_activate_route_leader = {
 	}
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_costello_coalition NOT = { has_country_flag = slopx_ireland_route_leader_activated_costello_coalition } }
-		recruit_character = slopx_ireland_john_costello
+		# slopx_ireland_john_costello is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_john_costello
 			ideology = conservatism
@@ -4160,7 +4115,7 @@ slopx_ireland_activate_route_leader = {
 	}
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_dillon_intervention NOT = { has_country_flag = slopx_ireland_route_leader_activated_dillon_intervention } }
-		recruit_character = slopx_ireland_james_dillon
+		# slopx_ireland_james_dillon is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_james_dillon
 			ideology = conservatism
@@ -4185,7 +4140,7 @@ slopx_ireland_activate_route_leader = {
 		}
 		promote_character = {
 			character = IRE_william_norton
-			ideology = social_democrat
+			ideology = socialism
 		}
 		set_politics = {
 			ruling_party = democratic
@@ -4200,7 +4155,7 @@ slopx_ireland_activate_route_leader = {
 	}
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_clann_agrarian_broker NOT = { has_country_flag = slopx_ireland_route_leader_activated_clann_agrarian_broker } }
-		recruit_character = slopx_ireland_joseph_blowick
+		# slopx_ireland_joseph_blowick is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_joseph_blowick
 			ideology = conservatism
@@ -4218,10 +4173,10 @@ slopx_ireland_activate_route_leader = {
 	}
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_constitutional_vocational NOT = { has_country_flag = slopx_ireland_route_leader_activated_constitutional_vocational } }
-		recruit_character = slopx_ireland_daniel_morrissey
+		# slopx_ireland_daniel_morrissey is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_daniel_morrissey
-			ideology = social_democrat
+			ideology = socialism
 		}
 		set_politics = {
 			ruling_party = democratic
@@ -4236,7 +4191,7 @@ slopx_ireland_activate_route_leader = {
 	}
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_ira_republican NOT = { has_country_flag = slopx_ireland_ira_army_council_path } NOT = { has_country_flag = slopx_ireland_route_leader_activated_ira_republican } }
-		recruit_character = slopx_ireland_civil_republican_directorate
+		# slopx_ireland_civil_republican_directorate is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_civil_republican_directorate
 			ideology = socialism
@@ -4261,14 +4216,13 @@ slopx_ireland_activate_route_leader = {
 			has_country_flag = slopx_ireland_frank_ryan_axis_tutelage_broken
 			has_country_flag = slopx_ireland_frank_ryan_political_recovery_complete
 			NOT = { has_country_flag = slopx_ireland_route_closed }
-			NOT = { has_character = slopx_ireland_frank_ryan }
 		}
-		recruit_character = slopx_ireland_frank_ryan
+		# slopx_ireland_frank_ryan is recruited by country history.
 		set_country_flag = slopx_ireland_frank_ryan_recruited_after_recovery
 	}
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_ira_republican has_country_flag = slopx_ireland_ira_army_council_path NOT = { has_country_flag = slopx_ireland_route_leader_activated_ira_army_council } }
-		recruit_character = slopx_ireland_ira_army_council
+		# slopx_ireland_ira_army_council is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_ira_army_council
 			ideology = despotism
@@ -4286,10 +4240,10 @@ slopx_ireland_activate_route_leader = {
 	}
 	if = {
 		limit = { OR = { has_country_flag = slopx_ireland_congress_plural_path has_country_flag = slopx_ireland_congress_vanguard_path } NOT = { has_country_flag = slopx_ireland_route_leader_activated_congress } }
-		recruit_character = slopx_ireland_peadar_odonnell
+		# slopx_ireland_peadar_odonnell is recruited by country history.
 		if = {
 			limit = { has_country_flag = slopx_ireland_congress_vanguard_path }
-			recruit_character = slopx_ireland_workers_party_executive
+			# slopx_ireland_workers_party_executive is recruited by country history.
 			promote_character = {
 				character = slopx_ireland_workers_party_executive
 				ideology = socialism
@@ -4297,7 +4251,7 @@ slopx_ireland_activate_route_leader = {
 		}
 		if = {
 			limit = { NOT = { has_country_flag = slopx_ireland_congress_vanguard_path } }
-			recruit_character = slopx_ireland_workers_smallholders_congress
+			# slopx_ireland_workers_smallholders_congress is recruited by country history.
 			promote_character = {
 				character = slopx_ireland_workers_smallholders_congress
 				ideology = socialism
@@ -4318,7 +4272,7 @@ slopx_ireland_activate_route_leader = {
 		limit = { has_country_flag = slopx_ireland_route_oduffy NOT = { has_country_flag = slopx_ireland_route_leader_activated_oduffy } }
 		if = {
 			limit = { has_country_flag = slopx_ireland_oduffy_corporate_path }
-			recruit_character = slopx_ireland_corporate_estate_council
+			# slopx_ireland_corporate_estate_council is recruited by country history.
 			promote_character = {
 				character = slopx_ireland_corporate_estate_council
 				ideology = fascism
@@ -4326,7 +4280,7 @@ slopx_ireland_activate_route_leader = {
 		}
 		if = {
 			limit = { NOT = { has_country_flag = slopx_ireland_oduffy_corporate_path } }
-			recruit_character = slopx_ireland_oduffy_command
+			# slopx_ireland_oduffy_command is recruited by country history.
 			promote_character = {
 				character = IRE_eoin_oduffy
 				ideology = fascism
@@ -4347,7 +4301,7 @@ slopx_ireland_activate_route_leader = {
 		limit = { has_country_flag = slopx_ireland_route_clerical_producer NOT = { has_country_flag = slopx_ireland_route_leader_activated_clerical_producer } }
 		if = {
 			limit = { has_country_flag = slopx_ireland_clerical_guardianship_path }
-			recruit_character = slopx_ireland_clerical_guardianship
+			# slopx_ireland_clerical_guardianship is recruited by country history.
 			promote_character = {
 				character = slopx_ireland_clerical_guardianship
 				ideology = despotism
@@ -4355,7 +4309,7 @@ slopx_ireland_activate_route_leader = {
 		}
 		if = {
 			limit = { has_country_flag = slopx_ireland_producer_constitution_path }
-			recruit_character = slopx_ireland_gaelic_producer_council
+			# slopx_ireland_gaelic_producer_council is recruited by country history.
 			promote_character = {
 				character = slopx_ireland_gaelic_producer_council
 				ideology = despotism
@@ -4366,7 +4320,7 @@ slopx_ireland_activate_route_leader = {
 				NOT = { has_country_flag = slopx_ireland_clerical_guardianship_path }
 				NOT = { has_country_flag = slopx_ireland_producer_constitution_path }
 			}
-			recruit_character = slopx_ireland_christian_national_council
+			# slopx_ireland_christian_national_council is recruited by country history.
 			promote_character = {
 				character = slopx_ireland_christian_national_council
 				ideology = despotism
@@ -4385,10 +4339,10 @@ slopx_ireland_activate_route_leader = {
 	}
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_ailtiri_total_state NOT = { has_country_flag = slopx_ireland_route_leader_activated_ailtiri_total_state } }
-		recruit_character = slopx_ireland_gearoid_o_cuinneagain
+		# slopx_ireland_gearoid_o_cuinneagain is recruited by country history.
 		if = {
 			limit = { has_country_flag = slopx_ireland_ailtiri_corporate_state_ready }
-			recruit_character = slopx_ireland_regional_ailtiri_council
+			# slopx_ireland_regional_ailtiri_council is recruited by country history.
 			promote_character = {
 				character = slopx_ireland_regional_ailtiri_council
 				ideology = fascism
@@ -4396,7 +4350,7 @@ slopx_ireland_activate_route_leader = {
 		}
 		if = {
 			limit = { NOT = { has_country_flag = slopx_ireland_ailtiri_corporate_state_ready } }
-			recruit_character = slopx_ireland_ailtiri_state_directorate
+			# slopx_ireland_ailtiri_state_directorate is recruited by country history.
 			promote_character = {
 				character = slopx_ireland_ailtiri_state_directorate
 				ideology = fascism
@@ -4415,7 +4369,7 @@ slopx_ireland_activate_route_leader = {
 	}
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_high_king NOT = { has_country_flag = slopx_ireland_route_leader_activated_high_king } }
-		recruit_character = slopx_ireland_high_king
+		# slopx_ireland_high_king is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_high_king
 			ideology = despotism
@@ -4433,7 +4387,7 @@ slopx_ireland_activate_route_leader = {
 	}
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_five_provinces NOT = { has_country_flag = slopx_ireland_route_leader_activated_five_provinces } }
-		recruit_character = slopx_ireland_five_provinces_steward
+		# slopx_ireland_five_provinces_steward is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_five_provinces_steward
 			ideology = despotism
@@ -4451,7 +4405,7 @@ slopx_ireland_activate_route_leader = {
 	}
 	if = {
 		limit = { has_country_flag = slopx_ireland_route_otherworld NOT = { has_country_flag = slopx_ireland_route_leader_activated_otherworld } }
-		recruit_character = slopx_ireland_compact_steward
+		# slopx_ireland_compact_steward is recruited by country history.
 		promote_character = {
 			character = slopx_ireland_compact_steward
 			ideology = despotism
@@ -4467,7 +4421,6 @@ slopx_ireland_activate_route_leader = {
 		}
 		set_country_flag = slopx_ireland_route_leader_activated_otherworld
 	}
-	slopx_ireland_recruit_route_advisors = yes
 	slopx_ireland_sync_route_advisor_lifecycle = yes
 }
 

@@ -787,7 +787,7 @@ slopx_ireland_reveal_postwar_conclusion = {
 # sovereign, non-capitulated partner. These triggers are shared by actions,
 # missions, map objectives, and the daily channel lifecycle helper.
 slopx_ireland_british_partner_valid = {
-	GBR = {
+	ENG = {
 		exists = yes
 		has_capitulated = no
 		is_subject = no
@@ -1201,11 +1201,11 @@ slopx_ireland_member_contribution_infrastructure_available = {
 		has_equipment = { motorized_equipment > @SLOPX_IRELAND_MEMBER_INFRASTRUCTURE_TRUCK_GATE }
 		any_owned_state = {
 			state = 113
-			building_count_trigger = { infrastructure > 0 }
+			infrastructure > 0
 		}
 		any_owned_state = {
 			state = 135
-			building_count_trigger = { infrastructure > 0 }
+			infrastructure > 0
 		}
 	}
 }
@@ -1337,8 +1337,8 @@ slopx_ireland_member_contribution_full = {
 				has_country_flag = slopx_ireland_member_contribution_class_infrastructure
 				check_variable = { var = slopx_ireland_provision_transport value = constant:slopx_ireland.member_contribution_infrastructure_full_transport_floor compare = greater_than_or_equals }
 				check_variable = { var = slopx_ireland_readiness_supply value = constant:slopx_ireland.member_contribution_infrastructure_full_supply_floor compare = greater_than_or_equals }
-				any_owned_state = { state = 113 building_count_trigger = { infrastructure > 1 } }
-				any_owned_state = { state = 135 building_count_trigger = { infrastructure > 1 } }
+				any_owned_state = { state = 113 infrastructure > 1 }
+				any_owned_state = { state = 135 infrastructure > 1 }
 			}
 		}
 	}
@@ -2007,7 +2007,7 @@ slopx_ireland_air_intercept_response_authority = {
 			has_country_flag = slopx_ireland_command_structure_ready
 			any_owned_state = {
 				state = 113
-				building_count_trigger = { air_base > 0 }
+				air_base > 0
 			}
 		}
 	}
@@ -2022,7 +2022,7 @@ slopx_ireland_treaty_port_operational_authority = {
 		slopx_ireland_harbour_defence_authority = yes
 		any_owned_state = {
 			state = 135
-			building_count_trigger = { naval_base > 0 }
+			naval_base > 0
 		}
 		OR = {
 			has_country_flag = slopx_ireland_treaty_port_project_open
@@ -2719,7 +2719,7 @@ slopx_ireland_map_dublin_administrative_objective = {
 		has_full_control_of_state = 113
 		any_owned_state = {
 			state = 113
-			building_count_trigger = { naval_base > 0 }
+			naval_base > 0
 		}
 	}
 }
@@ -2729,7 +2729,7 @@ slopx_ireland_map_dublin_institutional_objective = {
 		has_full_control_of_state = 113
 		any_owned_state = {
 			state = 113
-			building_count_trigger = { industrial_complex > 0 }
+			industrial_complex > 0
 		}
 	}
 }
@@ -2739,7 +2739,7 @@ slopx_ireland_map_southern_supply_objective = {
 		has_full_control_of_state = 135
 		any_owned_state = {
 			state = 135
-			building_count_trigger = { infrastructure > 0 }
+			infrastructure > 0
 		}
 	}
 }
@@ -2749,7 +2749,7 @@ slopx_ireland_map_western_seaboard_objective = {
 		has_full_control_of_state = 134
 		any_owned_state = {
 			state = 134
-			building_count_trigger = { infrastructure > 0 }
+			infrastructure > 0
 		}
 	}
 }
@@ -2785,7 +2785,7 @@ slopx_ireland_map_cork_treaty_port_objective = {
 		has_full_control_of_state = 135
 		any_owned_state = {
 			state = 135
-			building_count_trigger = { industrial_complex > 0 }
+			industrial_complex > 0
 		}
 	}
 }
@@ -2795,7 +2795,7 @@ slopx_ireland_map_blacksod_station_objective = {
 		has_full_control_of_state = 134
 		any_owned_state = {
 			state = 134
-			building_count_trigger = { infrastructure > 0 }
+			infrastructure > 0
 		}
 	}
 }
@@ -2811,7 +2811,7 @@ slopx_ireland_map_cultural_five_region_objective = {
 				state = 134
 				state = 135
 			}
-			building_count_trigger = { infrastructure > 0 }
+			infrastructure > 0
 		}
 	}
 }
@@ -2821,7 +2821,7 @@ slopx_ireland_map_northern_security_objective = {
 		has_full_control_of_state = 119
 		any_owned_state = {
 			state = 119
-			building_count_trigger = { arms_factory > 0 }
+			arms_factory > 0
 		}
 	}
 }
@@ -2840,7 +2840,7 @@ slopx_ireland_map_reconstruction_corridor_objective = {
 				state = 113
 				state = 135
 			}
-			building_count_trigger = { industrial_complex > 0 }
+			industrial_complex > 0
 		}
 	}
 }
@@ -2848,64 +2848,64 @@ slopx_ireland_map_reconstruction_corridor_objective = {
 slopx_ireland_map_objective_maintain_cabinet_discipline_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
 		check_variable = { var = slopx_ireland_social_consent value = 45 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_assemble_seventy_routine_votes_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 113 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_dail_mandate value = 60 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_complete_six_month_settlement_review_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { naval_base > 0 } }
+		any_owned_state = { state = 113 naval_base > 0 }
 		check_variable = { var = slopx_ireland_national_settlement value = -30 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_conduct_a_free_general_election_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 113 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_dail_mandate value = 50 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_form_a_government_after_the_poll_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
 		check_variable = { var = slopx_ireland_dail_mandate value = 60 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_conduct_a_free_general_election_by_election_met = {
 	AND = {
 		has_full_control_of_state = 135
-		any_owned_state = { state = 135 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 135 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_dail_mandate value = 35 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_deliver_the_education_settlement_met = {
 	AND = {
 		has_full_control_of_state = 134
-		any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 134 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_social_consent value = 35 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_keep_essential_services_running_parish_audit_met = {
 	AND = {
 		has_full_control_of_state = 135
-		any_owned_state = { state = 135 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 135 industrial_complex > 0 }
 		check_variable = { var = slopx_ireland_provision_transport value = 25 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_keep_essential_services_running_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { air_base > 0 } }
+		any_owned_state = { state = 113 infrastructure > 0 }
+		any_owned_state = { state = 113 air_base > 0 }
 	}
 }
 slopx_ireland_map_objective_consolidate_the_movement_network_met = {
@@ -2913,25 +2913,25 @@ slopx_ireland_map_objective_consolidate_the_movement_network_met = {
 		AND = {
 			has_country_flag = slopx_ireland_radical_org_ira_mode
 			has_full_control_of_state = 113
-			any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 113 infrastructure > 0 }
 			check_variable = { var = slopx_ireland_republican_network_strength value = 40 compare = greater_than }
 		}
 		AND = {
 			has_country_flag = slopx_ireland_radical_org_congress_mode
 			has_full_control_of_state = 113
-			any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+			any_owned_state = { state = 113 industrial_complex > 0 }
 			check_variable = { var = slopx_ireland_congress_coalition_cohesion value = 40 compare = greater_than }
 		}
 		AND = {
 			has_country_flag = slopx_ireland_radical_org_corporate_mode
 			has_full_control_of_state = 113
-			any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 113 infrastructure > 0 }
 			check_variable = { var = slopx_ireland_corporate_network_strength value = 40 compare = greater_than }
 		}
 		AND = {
 			has_country_flag = slopx_ireland_radical_org_ailtiri_mode
 			has_full_control_of_state = 134
-			any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 134 infrastructure > 0 }
 			check_variable = { var = slopx_ireland_ailtiri_cell_strength value = 40 compare = greater_than }
 		}
 	}
@@ -2941,25 +2941,25 @@ slopx_ireland_map_objective_secure_constituent_authority_met = {
 		AND = {
 			has_country_flag = slopx_ireland_radical_constituent_ira_mode
 			has_full_control_of_state = 113
-			any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 113 infrastructure > 0 }
 			check_variable = { var = slopx_ireland_army_council_cohesion value = 45 compare = greater_than }
 		}
 		AND = {
 			has_country_flag = slopx_ireland_radical_constituent_congress_mode
 			has_full_control_of_state = 113
-			any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+			any_owned_state = { state = 113 industrial_complex > 0 }
 			check_variable = { var = slopx_ireland_social_consent value = 45 compare = greater_than }
 		}
 		AND = {
 			has_country_flag = slopx_ireland_radical_constituent_corporate_mode
 			has_full_control_of_state = 113
-			any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 113 infrastructure > 0 }
 			check_variable = { var = slopx_ireland_corporate_network_strength value = 45 compare = greater_than }
 		}
 		AND = {
 			has_country_flag = slopx_ireland_radical_constituent_ailtiri_mode
 			has_full_control_of_state = 113
-			any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+			any_owned_state = { state = 113 industrial_complex > 0 }
 			check_variable = { var = slopx_ireland_national_settlement value = 45 compare = greater_than }
 		}
 	}
@@ -3002,7 +3002,7 @@ slopx_ireland_map_objective_collect_a_national_folklore_cycle_met = {
 		has_country_flag = slopx_ireland_action_expand_folklore_collection_active
 		has_country_flag = slopx_ireland_mission_collect_a_national_folklore_cycle_active
 		slopx_ireland_folklore_collection_authority = yes
-		any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 134 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_concealed_evidence_region_count value = 0 compare = greater_than }
 	}
 }
@@ -3014,9 +3014,9 @@ slopx_ireland_map_objective_hold_a_five_region_cultural_congress_met = {
 		has_country_flag = slopx_ireland_action_hold_a_provincial_cultural_congress_active
 		has_country_flag = slopx_ireland_mission_hold_a_five_region_cultural_congress_active
 		slopx_ireland_cultural_congress_authority = yes
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
-		any_owned_state = { state = 135 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
+		any_owned_state = { state = 134 infrastructure > 0 }
+		any_owned_state = { state = 135 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_concealed_evidence_region_count value = 1 compare = greater_than }
 	}
 }
@@ -3026,22 +3026,22 @@ slopx_ireland_map_objective_verify_the_restoration_evidence_met = {
 		has_country_flag = slopx_ireland_action_test_a_restoration_claim_active
 		has_country_flag = slopx_ireland_mission_verify_the_restoration_evidence_active
 		slopx_ireland_restoration_evidence_authority = yes
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { naval_base > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
+		any_owned_state = { state = 113 naval_base > 0 }
 		check_variable = { var = slopx_ireland_concealed_evidence_region_count value = 1 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_meet_the_county_tillage_schedule_met = {
 	AND = {
 		has_full_control_of_state = 135
-		any_owned_state = { state = 135 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 135 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_provision_food value = 25 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_bring_the_harvest_to_market_met = {
 	AND = {
 		has_full_control_of_state = 135
-		any_owned_state = { state = 135 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 135 industrial_complex > 0 }
 		check_variable = { var = slopx_ireland_provision_transport value = 20 compare = greater_than }
 	}
 }
@@ -3049,14 +3049,14 @@ slopx_ireland_map_objective_commission_the_protected_workshop_network_met = {
 	AND = {
 		has_full_control_of_state = 113
 		has_full_control_of_state = 135
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 135 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
+		any_owned_state = { state = 135 industrial_complex > 0 }
 	}
 }
 slopx_ireland_map_objective_complete_a_developmental_plant_met = {
 	AND = {
 		has_full_control_of_state = 134
-		any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 134 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_provision_energy value = 15 compare = greater_than }
 		check_variable = { var = slopx_ireland_provision_transport value = 0 compare = greater_than }
 	}
@@ -3064,14 +3064,14 @@ slopx_ireland_map_objective_complete_a_developmental_plant_met = {
 slopx_ireland_map_objective_supply_the_capital_through_winter_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { naval_base > 0 } }
+		any_owned_state = { state = 113 naval_base > 0 }
 		check_variable = { var = slopx_ireland_provision_food value = 25 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_cut_and_dry_the_turf_met = {
 	AND = {
 		has_full_control_of_state = 134
-		any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 134 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_provision_energy value = 15 compare = greater_than }
 		check_variable = { var = slopx_ireland_provision_food value = 0 compare = greater_than }
 	}
@@ -3098,8 +3098,8 @@ slopx_ireland_rail_corridor_admission_valid = {
 		check_variable = { var = slopx_ireland_provision_transport value = 95 compare = less_than }
 		has_full_control_of_state = 113
 		has_full_control_of_state = 135
-		any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
-		any_owned_state = { state = 135 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 113 infrastructure > 0 }
+		any_owned_state = { state = 135 infrastructure > 0 }
 		has_equipment = { train_equipment > @SLOPX_IRELAND_RAIL_CORRIDOR_TRAIN_GATE }
 		has_manpower > @SLOPX_IRELAND_RAIL_CORRIDOR_MANPOWER_GATE
 		has_fuel > @SLOPX_IRELAND_RAIL_CORRIDOR_FUEL_GATE
@@ -3142,7 +3142,7 @@ slopx_ireland_essential_cargo_route_capacity_valid = {
 		original_tag = IRE
 		NOT = { has_country_flag = slopx_ireland_route_archived }
 		has_full_control_of_state = 135
-		any_owned_state = { state = 135 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 135 industrial_complex > 0 }
 		has_railway_connection = { start_state = 135 target_state = 113 }
 		OR = {
 			has_country_flag = slopx_ireland_irish_shipping_created
@@ -3158,7 +3158,7 @@ slopx_ireland_essential_cargo_route_capacity_valid = {
 			AND = {
 				NOT = { has_country_flag = slopx_ireland_mission_patrol_the_neutral_approaches_active }
 				NOT = { has_country_flag = slopx_ireland_mission_replace_a_lost_merchant_vessel_active }
-				any_owned_state = { state = 135 building_count_trigger = { naval_base > 0 } }
+				any_owned_state = { state = 135 naval_base > 0 }
 			}
 			AND = {
 				OR = {
@@ -3171,12 +3171,12 @@ slopx_ireland_essential_cargo_route_capacity_valid = {
 						has_country_flag = slopx_ireland_mission_replace_a_lost_merchant_vessel_active
 					}
 				}
-				any_owned_state = { state = 135 building_count_trigger = { naval_base > 1 } }
+				any_owned_state = { state = 135 naval_base > 1 }
 			}
 			AND = {
 				has_country_flag = slopx_ireland_mission_patrol_the_neutral_approaches_active
 				has_country_flag = slopx_ireland_mission_replace_a_lost_merchant_vessel_active
-				any_owned_state = { state = 135 building_count_trigger = { naval_base > 2 } }
+				any_owned_state = { state = 135 naval_base > 2 }
 			}
 		}
 	}
@@ -3196,7 +3196,7 @@ slopx_ireland_essential_cargo_partial_valid = {
 		has_country_flag = slopx_ireland_action_reroute_an_essential_cargo_active
 		has_country_flag = slopx_ireland_mission_keep_an_essential_cargo_route_open_active
 		has_full_control_of_state = 135
-		any_owned_state = { state = 135 building_count_trigger = { naval_base > 0 } }
+		any_owned_state = { state = 135 naval_base > 0 }
 		check_variable = { var = slopx_ireland_provision_maritime value = constant:slopx_ireland.essential_cargo_maritime_partial compare = greater_than_or_equals }
 		OR = {
 			has_country_flag = slopx_ireland_irish_shipping_created
@@ -3227,8 +3227,8 @@ slopx_ireland_command_district_force_commitment_valid = {
 		check_variable = { var = slopx_ireland_readiness_command value = 95 compare = less_than }
 		has_full_control_of_state = 113
 		num_divisions_in_states = { count > 0 states = { 113 } }
-		any_owned_state = { state = 113 building_count_trigger = { arms_factory > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 113 arms_factory > 0 }
+		any_owned_state = { state = 113 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_readiness_supply value = constant:slopx_ireland.readiness_supply_bottleneck compare = greater_than_or_equals }
 		has_equipment = { infantry_equipment > @SLOPX_IRELAND_COMMAND_EXERCISE_INFANTRY_EQUIPMENT_GATE }
 		has_fuel > @SLOPX_IRELAND_COMMAND_EXERCISE_FUEL_GATE
@@ -3240,8 +3240,8 @@ slopx_ireland_command_district_exercise_full_valid = {
 		has_country_flag = slopx_ireland_action_run_a_command_district_exercise_active
 		has_country_flag = slopx_ireland_mission_prove_the_command_district_active
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { arms_factory > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 113 arms_factory > 0 }
+		any_owned_state = { state = 113 infrastructure > 0 }
 		num_divisions_in_states = { count > 1 states = { 113 } }
 		check_variable = { var = slopx_ireland_readiness_command value = constant:slopx_ireland.command_district_command_full compare = greater_than_or_equals }
 		check_variable = { var = slopx_ireland_readiness_supply value = constant:slopx_ireland.command_district_supply_full compare = greater_than_or_equals }
@@ -3253,8 +3253,8 @@ slopx_ireland_command_district_exercise_partial_valid = {
 		has_country_flag = slopx_ireland_action_run_a_command_district_exercise_active
 		has_country_flag = slopx_ireland_mission_prove_the_command_district_active
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { arms_factory > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 113 arms_factory > 0 }
+		any_owned_state = { state = 113 infrastructure > 0 }
 		num_divisions_in_states = { count > 0 states = { 113 } }
 		check_variable = { var = slopx_ireland_readiness_command value = constant:slopx_ireland.command_district_command_partial compare = greater_than_or_equals }
 		check_variable = { var = slopx_ireland_readiness_supply value = constant:slopx_ireland.command_district_supply_partial compare = greater_than_or_equals }
@@ -3276,8 +3276,8 @@ slopx_ireland_belfast_contract_admission_valid = {
 		slopx_ireland_can_launch_reopen_belfast_industry_mission = yes
 		check_variable = { var = slopx_ireland_industrial_capacity value = 95 compare = less_than }
 		has_full_control_of_state = 119
-		any_owned_state = { state = 119 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 119 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 119 industrial_complex > 0 }
+		any_owned_state = { state = 119 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_northern_labour_cooperation value = 30 compare = greater_than_or_equals }
 		num_of_civilian_factories_available_for_projects > 1
 		has_equipment = { support_equipment > @SLOPX_IRELAND_BELFAST_INDUSTRY_SUPPORT_EQUIPMENT_GATE }
@@ -3291,8 +3291,8 @@ slopx_ireland_belfast_industry_full_valid = {
 		has_country_flag = slopx_ireland_action_restore_belfast_industrial_contracts_active
 		has_country_flag = slopx_ireland_mission_reopen_belfast_industry_active
 		has_full_control_of_state = 119
-		any_owned_state = { state = 119 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 119 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 119 industrial_complex > 0 }
+		any_owned_state = { state = 119 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_northern_labour_cooperation value = constant:slopx_ireland.northern_core_labour_floor compare = greater_than_or_equals }
 		check_variable = { var = slopx_ireland_industrial_capacity value = constant:slopx_ireland.industrial_capacity_belfast_full compare = greater_than_or_equals }
 	}
@@ -3303,8 +3303,8 @@ slopx_ireland_belfast_industry_partial_valid = {
 		has_country_flag = slopx_ireland_action_restore_belfast_industrial_contracts_active
 		has_country_flag = slopx_ireland_mission_reopen_belfast_industry_active
 		has_full_control_of_state = 119
-		any_owned_state = { state = 119 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 119 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 119 industrial_complex > 0 }
+		any_owned_state = { state = 119 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_northern_labour_cooperation value = 30 compare = greater_than_or_equals }
 		check_variable = { var = slopx_ireland_industrial_capacity value = constant:slopx_ireland.industrial_capacity_belfast_partial compare = greater_than_or_equals }
 	}
@@ -3325,15 +3325,15 @@ slopx_ireland_map_objective_keep_an_essential_cargo_route_open_met = {
 slopx_ireland_map_objective_replace_a_lost_merchant_vessel_met = {
 	AND = {
 		has_full_control_of_state = 135
-		any_owned_state = { state = 135 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 135 building_count_trigger = { dockyard > 0 } }
+		any_owned_state = { state = 135 industrial_complex > 0 }
+		any_owned_state = { state = 135 dockyard > 0 }
 		check_variable = { var = slopx_ireland_readiness_maritime value = 0 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_deliver_a_western_regional_portfolio_met = {
 	AND = {
 		has_full_control_of_state = 134
-		any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 134 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_provision_transport value = 20 compare = greater_than }
 	}
 }
@@ -3346,8 +3346,8 @@ slopx_ireland_map_objective_prove_the_command_district_met = {
 slopx_ireland_map_objective_equip_a_reserve_brigade_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { arms_factory > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 arms_factory > 0 }
+		any_owned_state = { state = 113 industrial_complex > 0 }
 		check_variable = { var = slopx_ireland_readiness_equipment value = 5 compare = greater_than }
 	}
 }
@@ -3377,20 +3377,20 @@ slopx_ireland_coastwatch_next_sector_platform_valid = {
 		AND = {
 			NOT = { has_country_flag = slopx_ireland_coastwatch_sector_1_operational }
 			has_full_control_of_state = 134
-			any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 134 infrastructure > 0 }
 		}
 		AND = {
 			has_country_flag = slopx_ireland_coastwatch_sector_1_operational
 			NOT = { has_country_flag = slopx_ireland_coastwatch_sector_2_operational }
 			has_full_control_of_state = 134
-			any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 134 infrastructure > 0 }
 		}
 		AND = {
 			has_country_flag = slopx_ireland_coastwatch_sector_1_operational
 			has_country_flag = slopx_ireland_coastwatch_sector_2_operational
 			NOT = { has_country_flag = slopx_ireland_coastwatch_sector_3_operational }
 			has_full_control_of_state = 135
-			any_owned_state = { state = 135 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 135 infrastructure > 0 }
 		}
 		AND = {
 			has_country_flag = slopx_ireland_coastwatch_sector_1_operational
@@ -3398,7 +3398,7 @@ slopx_ireland_coastwatch_next_sector_platform_valid = {
 			has_country_flag = slopx_ireland_coastwatch_sector_3_operational
 			NOT = { has_country_flag = slopx_ireland_coastwatch_sector_4_operational }
 			has_full_control_of_state = 135
-			any_owned_state = { state = 135 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 135 infrastructure > 0 }
 		}
 		AND = {
 			has_country_flag = slopx_ireland_coastwatch_sector_1_operational
@@ -3407,7 +3407,7 @@ slopx_ireland_coastwatch_next_sector_platform_valid = {
 			has_country_flag = slopx_ireland_coastwatch_sector_4_operational
 			NOT = { has_country_flag = slopx_ireland_coastwatch_sector_5_operational }
 			has_full_control_of_state = 113
-			any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 113 infrastructure > 0 }
 		}
 		AND = {
 			has_country_flag = slopx_ireland_coastwatch_sector_1_operational
@@ -3417,7 +3417,7 @@ slopx_ireland_coastwatch_next_sector_platform_valid = {
 			has_country_flag = slopx_ireland_coastwatch_sector_5_operational
 			NOT = { has_country_flag = slopx_ireland_coastwatch_sector_6_operational }
 			has_full_control_of_state = 113
-			any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 113 infrastructure > 0 }
 			has_country_flag = slopx_ireland_border_observation_complete
 		}
 	}
@@ -3428,32 +3428,32 @@ slopx_ireland_coastwatch_active_sector_platform_valid = {
 		AND = {
 			check_variable = { var = slopx_ireland_coastwatch_active_sector value = 1 compare = equals }
 			has_full_control_of_state = 134
-			any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 134 infrastructure > 0 }
 		}
 		AND = {
 			check_variable = { var = slopx_ireland_coastwatch_active_sector value = 2 compare = equals }
 			has_full_control_of_state = 134
-			any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 134 infrastructure > 0 }
 		}
 		AND = {
 			check_variable = { var = slopx_ireland_coastwatch_active_sector value = 3 compare = equals }
 			has_full_control_of_state = 135
-			any_owned_state = { state = 135 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 135 infrastructure > 0 }
 		}
 		AND = {
 			check_variable = { var = slopx_ireland_coastwatch_active_sector value = 4 compare = equals }
 			has_full_control_of_state = 135
-			any_owned_state = { state = 135 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 135 infrastructure > 0 }
 		}
 		AND = {
 			check_variable = { var = slopx_ireland_coastwatch_active_sector value = 5 compare = equals }
 			has_full_control_of_state = 113
-			any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 113 infrastructure > 0 }
 		}
 		AND = {
 			check_variable = { var = slopx_ireland_coastwatch_active_sector value = 6 compare = equals }
 			has_full_control_of_state = 113
-			any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+			any_owned_state = { state = 113 infrastructure > 0 }
 			has_country_flag = slopx_ireland_border_observation_complete
 		}
 	}
@@ -3485,7 +3485,7 @@ slopx_ireland_map_objective_defend_a_treaty_port_met = {
 		has_country_flag = slopx_ireland_action_install_harbour_defences_active
 		has_country_flag = slopx_ireland_mission_defend_a_treaty_port_active
 		slopx_ireland_treaty_port_operational_authority = yes
-		any_owned_state = { state = 135 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 135 industrial_complex > 0 }
 		check_variable = {
 			var = slopx_ireland_readiness_command
 			value = constant:slopx_ireland.readiness_operational_component_floor
@@ -3505,8 +3505,8 @@ slopx_ireland_map_objective_patrol_the_neutral_approaches_met = {
 		has_country_flag = slopx_ireland_mission_patrol_the_neutral_approaches_active
 		slopx_ireland_marine_patrol_craft_coverage_valid = yes
 		slopx_ireland_neutral_approaches_operational_authority = yes
-		any_owned_state = { state = 135 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { naval_base > 0 } }
+		any_owned_state = { state = 135 industrial_complex > 0 }
+		any_owned_state = { state = 113 naval_base > 0 }
 		check_variable = {
 			var = slopx_ireland_readiness_maritime_protection
 			value = constant:slopx_ireland.readiness_operational_component_floor
@@ -3517,8 +3517,8 @@ slopx_ireland_map_objective_patrol_the_neutral_approaches_met = {
 slopx_ireland_map_objective_protect_plan_w_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { arms_factory > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { air_base > 0 } }
+		any_owned_state = { state = 113 arms_factory > 0 }
+		any_owned_state = { state = 113 air_base > 0 }
 		slopx_ireland_operational_plan_authority = yes
 		slopx_ireland_has_northern_operational_force = yes
 		has_country_flag = slopx_ireland_action_establish_a_strategic_depot_complete
@@ -3532,7 +3532,7 @@ slopx_ireland_map_objective_protect_plan_w_met = {
 slopx_ireland_map_objective_demobilise_without_losing_the_cadre_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { arms_factory > 0 } }
+		any_owned_state = { state = 113 arms_factory > 0 }
 		slopx_ireland_demobilisation_authority = yes
 		slopx_ireland_has_demobilisable_cadre = yes
 		check_variable = {
@@ -3555,16 +3555,16 @@ slopx_ireland_map_objective_resolve_an_aircrew_internment_case_met = {
 			has_country_flag = slopx_ireland_airspace_forced_landing_pending
 		}
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { air_base > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { naval_base > 0 } }
+		any_owned_state = { state = 113 air_base > 0 }
+		any_owned_state = { state = 113 naval_base > 0 }
 		check_variable = { var = slopx_ireland_neutrality_integrity value = 25 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_investigate_a_merchant_sinking_met = {
 	AND = {
 		has_full_control_of_state = 135
-		any_owned_state = { state = 135 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { naval_base > 0 } }
+		any_owned_state = { state = 135 industrial_complex > 0 }
+		any_owned_state = { state = 113 naval_base > 0 }
 		check_variable = {
 			var = slopx_ireland_readiness_maritime_protection
 			value = constant:slopx_ireland.neutrality_shipping_investigation_readiness_floor
@@ -3580,14 +3580,14 @@ slopx_ireland_map_objective_investigate_a_merchant_sinking_met = {
 slopx_ireland_map_objective_maintain_equal_belligerent_rules_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
 		check_variable = { var = slopx_ireland_neutrality_integrity value = 50 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_keep_the_blacksod_station_reporting_met = {
 	AND = {
 		has_full_control_of_state = 134
-		any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 134 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_readiness_warning value = 5 compare = greater_than }
 		check_variable = { var = slopx_ireland_readiness_intelligence value = 5 compare = greater_than }
 	}
@@ -3595,8 +3595,8 @@ slopx_ireland_map_objective_keep_the_blacksod_station_reporting_met = {
 slopx_ireland_map_objective_deliver_a_british_supply_agreement_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { naval_base > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 113 naval_base > 0 }
+		any_owned_state = { state = 113 infrastructure > 0 }
 		has_country_flag = slopx_ireland_mission_deliver_a_british_supply_agreement_active
 		OR = {
 			has_country_flag = slopx_ireland_action_renegotiate_a_british_supply_contract_active
@@ -3617,8 +3617,8 @@ slopx_ireland_map_objective_deliver_a_british_supply_agreement_met = {
 slopx_ireland_map_objective_complete_an_american_procurement_mission_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { naval_base > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
+		any_owned_state = { state = 113 naval_base > 0 }
 		has_country_flag = slopx_ireland_mission_complete_an_american_procurement_mission_active
 		OR = {
 			has_country_flag = slopx_ireland_action_send_an_american_procurement_mission_active
@@ -3642,8 +3642,8 @@ slopx_ireland_map_objective_complete_an_american_procurement_mission_met = {
 slopx_ireland_map_objective_test_a_german_arms_promise_met = {
 	AND = {
 		has_full_control_of_state = 134
-		any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { arms_factory > 0 } }
+		any_owned_state = { state = 134 infrastructure > 0 }
+		any_owned_state = { state = 113 arms_factory > 0 }
 		has_country_flag = slopx_ireland_mission_test_a_german_arms_promise_active
 		slopx_ireland_german_delivery_authority = yes
 		has_country_flag = slopx_ireland_german_channel_open
@@ -3653,7 +3653,7 @@ slopx_ireland_map_objective_test_a_german_arms_promise_met = {
 slopx_ireland_map_objective_conclude_a_vatican_relief_mediation_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
 		has_country_flag = slopx_ireland_mission_conclude_a_vatican_relief_mediation_active
 		has_country_flag = slopx_ireland_action_seek_vatican_humanitarian_mediation_active
 		has_country_flag = slopx_ireland_vatican_humanitarian_case_recorded
@@ -3682,7 +3682,7 @@ slopx_ireland_northern_health_service_full_proof = {
 slopx_ireland_map_objective_open_the_cross_border_health_service_met = {
 	AND = {
 		has_full_control_of_state = 134
-		any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 134 infrastructure > 0 }
 		OR = {
 			has_country_flag = slopx_ireland_northern_contact
 			has_country_flag = slopx_ireland_northern_trade_corridor_complete
@@ -3693,7 +3693,7 @@ slopx_ireland_map_objective_open_the_cross_border_health_service_met = {
 slopx_ireland_map_objective_secure_a_representative_northern_convention_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
 		OR = {
 			has_country_flag = slopx_ireland_northern_negotiation_open
 			has_country_flag = slopx_ireland_northern_stage_review
@@ -3703,7 +3703,7 @@ slopx_ireland_map_objective_secure_a_representative_northern_convention_met = {
 slopx_ireland_map_objective_conduct_a_supervised_plebiscite_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 113 infrastructure > 0 }
 		has_country_flag = slopx_ireland_northern_negotiation_open
 		check_variable = { var = slopx_ireland_northern_security_stability value = 30 compare = greater_than }
 	}
@@ -3711,7 +3711,7 @@ slopx_ireland_map_objective_conduct_a_supervised_plebiscite_met = {
 slopx_ireland_map_objective_ratify_the_federal_settlement_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
 		has_country_flag = slopx_ireland_northern_federal_prepared
 		check_variable = { var = slopx_ireland_northern_integration_capacity value = 20 compare = greater_than }
 	}
@@ -3723,8 +3723,8 @@ slopx_ireland_map_objective_take_and_hold_belfast_met = {
 		has_railway_connection = { start_state = 113 target_state = 119 }
 		has_railway_level = { state = 113 level = 1 }
 		has_railway_level = { state = 119 level = 1 }
-		any_owned_state = { state = 119 building_count_trigger = { naval_base > 0 } }
-		any_owned_state = { state = 119 building_count_trigger = { arms_factory > 0 } }
+		any_owned_state = { state = 119 naval_base > 0 }
+		any_owned_state = { state = 119 arms_factory > 0 }
 		slopx_ireland_has_northern_operational_force = yes
 		has_country_flag = slopx_ireland_action_establish_a_strategic_depot_complete
 		has_country_flag = slopx_ireland_action_plan_a_coercive_northern_campaign_complete
@@ -3738,7 +3738,7 @@ slopx_ireland_map_objective_take_and_hold_belfast_met = {
 slopx_ireland_map_objective_restore_ordinary_policing_met = {
 	AND = {
 		has_full_control_of_state = 119
-		any_owned_state = { state = 119 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 119 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_northern_security_stability value = 35 compare = greater_than }
 	}
 }
@@ -3751,7 +3751,7 @@ slopx_ireland_map_objective_reopen_belfast_industry_met = {
 slopx_ireland_map_objective_complete_the_stage_five_integration_review_met = {
 	AND = {
 		has_full_control_of_state = 119
-		any_owned_state = { state = 119 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 119 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_northern_integration_stage value = constant:slopx_ireland.northern_stage_core_eligible compare = greater_than_or_equals }
 		check_variable = { var = slopx_ireland_northern_integration_capacity value = 35 compare = greater_than }
 	}
@@ -3761,9 +3761,9 @@ slopx_ireland_map_objective_ratify_a_regional_charter_met = {
 		has_full_control_of_state = 113
 		has_full_control_of_state = 134
 		has_full_control_of_state = 135
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
-		any_owned_state = { state = 135 building_count_trigger = { infrastructure > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
+		any_owned_state = { state = 134 infrastructure > 0 }
+		any_owned_state = { state = 135 infrastructure > 0 }
 		check_variable = { var = slopx_ireland_dail_mandate value = 0 compare = greater_than }
 	}
 }
@@ -3776,8 +3776,8 @@ slopx_ireland_map_objective_meet_the_member_contribution_schedule_met = {
 		has_country_flag = slopx_ireland_military_contribution_defined
 		has_country_flag = slopx_ireland_sovereignty_safeguards_active
 		has_country_flag = slopx_ireland_mission_ratify_a_regional_charter_full_recorded
-		any_owned_state = { state = 113 building_count_trigger = { arms_factory > 0 } }
-		any_owned_state = { state = 135 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 arms_factory > 0 }
+		any_owned_state = { state = 135 industrial_complex > 0 }
 		check_variable = { var = slopx_ireland_readiness_equipment value = 5 compare = greater_than }
 	}
 }
@@ -3786,9 +3786,9 @@ slopx_ireland_map_objective_fulfil_the_compact_at_five_sites_met = {
 		has_full_control_of_state = 113
 		has_full_control_of_state = 134
 		has_full_control_of_state = 135
-		any_owned_state = { state = 113 building_count_trigger = { infrastructure > 0 } }
-		any_owned_state = { state = 134 building_count_trigger = { infrastructure > 0 } }
-		any_owned_state = { state = 135 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 infrastructure > 0 }
+		any_owned_state = { state = 134 infrastructure > 0 }
+		any_owned_state = { state = 135 industrial_complex > 0 }
 		check_variable = { var = slopx_ireland_social_consent value = 35 compare = greater_than }
 		slopx_ireland_has_compact_stewardship_force = yes
 		slopx_ireland_compact_cultural_capacity = yes
@@ -3797,7 +3797,7 @@ slopx_ireland_map_objective_fulfil_the_compact_at_five_sites_met = {
 slopx_ireland_map_objective_end_wartime_rationing_safely_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
 		check_variable = { var = slopx_ireland_provision_food value = 35 compare = greater_than }
 		check_variable = { var = slopx_ireland_provision_energy value = 15 compare = greater_than }
 	}
@@ -3805,15 +3805,15 @@ slopx_ireland_map_objective_end_wartime_rationing_safely_met = {
 slopx_ireland_map_objective_settle_the_demobilised_forces_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { arms_factory > 0 } }
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 arms_factory > 0 }
+		any_owned_state = { state = 113 industrial_complex > 0 }
 		check_variable = { var = slopx_ireland_readiness_mobilisation value = 0 compare = greater_than }
 	}
 }
 slopx_ireland_map_objective_bring_the_republic_settlement_into_force_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { naval_base > 0 } }
+		any_owned_state = { state = 113 naval_base > 0 }
 		check_variable = { var = slopx_ireland_dail_mandate value = 60 compare = greater_than }
 		has_country_flag = slopx_ireland_sovereignty_mandate_complete
 	}
@@ -3821,7 +3821,7 @@ slopx_ireland_map_objective_bring_the_republic_settlement_into_force_met = {
 slopx_ireland_map_objective_build_support_for_united_nations_admission_met = {
 	AND = {
 		has_full_control_of_state = 113
-		any_owned_state = { state = 113 building_count_trigger = { naval_base > 0 } }
+		any_owned_state = { state = 113 naval_base > 0 }
 		check_variable = { var = slopx_ireland_neutrality_integrity value = 50 compare = greater_than }
 		has_country_flag = slopx_ireland_foreign_posture_selected
 	}
@@ -3832,8 +3832,8 @@ slopx_ireland_map_objective_complete_national_reconstruction_met = {
 		has_full_control_of_state = 134
 		has_full_control_of_state = 135
 		has_railway_connection = { start_state = 113 target_state = 135 }
-		any_owned_state = { state = 113 building_count_trigger = { industrial_complex > 0 } }
-		any_owned_state = { state = 135 building_count_trigger = { industrial_complex > 0 } }
+		any_owned_state = { state = 113 industrial_complex > 0 }
+		any_owned_state = { state = 135 industrial_complex > 0 }
 	}
 }
 

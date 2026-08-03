@@ -36,7 +36,7 @@ slopx_ireland_lemass_developmental = {
 	enable = { OR = { has_country_flag = slopx_ireland_profile_lemass_developmental has_country_flag = slopx_ireland_route_lemass_developmental } }
 	abort_when_not_enabled = yes
 	ai_strategy = { type = build_building id = industrial_complex value = 100 }
-	ai_strategy = { type = factory_build_score_factor id = industrial_complex value = 35 }
+	ai_strategy = { type = factory_build_score_factor value = 35 }
 	ai_strategy = { type = research_weight_factor id = basic_machine_tools value = 80 }
 }
 
@@ -193,7 +193,7 @@ slopx_ireland_producer_council_state = {
 	abort_when_not_enabled = yes
 	ai_strategy = { type = build_building id = industrial_complex value = 90 }
 	ai_strategy = { type = build_building id = infrastructure value = 75 }
-	ai_strategy = { type = equipment_production_factor id = infantry_equipment value = 45 }
+	ai_strategy = { type = equipment_production_factor id = infantry value = 45 }
 }
 
 slopx_ireland_emergency_admin_restoration = {
@@ -329,7 +329,7 @@ slopx_ireland_overlay_provision_breakdown = {
 	allowed = { original_tag = IRE }
 	enable = { OR = { has_country_flag = slopx_ireland_overlay_provision_breakdown has_country_flag = slopx_ireland_provision_severe_bottleneck has_country_flag = slopx_ireland_provision_dual_bottleneck has_country_flag = slopx_ireland_provision_zero_component } }
 	abort_when_not_enabled = yes
-	ai_strategy = { type = equipment_production_factor id = infantry_equipment value = 55 }
+	ai_strategy = { type = equipment_production_factor id = infantry value = 55 }
 	ai_strategy = { type = build_building id = infrastructure value = 120 }
 }
 
