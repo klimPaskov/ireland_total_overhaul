@@ -31,6 +31,7 @@ focus_tree = {
 		x = 0
 		y = 0
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_state_still_defined_complete
 			set_country_flag = ireland_campaign_open
 			ireland_initialize_campaign = yes
@@ -47,6 +48,7 @@ focus_tree = {
 			focus = ireland_state_still_defined
 		}
 		completion_reward = {
+			ireland_grant_technical_focus_reward = yes
 			set_country_flag = ireland_institutional_survey_complete
 			set_country_flag = ireland_institutional_baseline_ready
 		}
@@ -65,6 +67,7 @@ focus_tree = {
 			focus = ireland_institutional_survey
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_national_settlement_complete
 			set_country_flag = ireland_settlement_open
 		}
@@ -80,6 +83,7 @@ focus_tree = {
 			has_completed_focus = ireland_national_settlement
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_civil_war_memory_complete
 			set_country_flag = ireland_civil_war_memory_open
 		}
@@ -95,6 +99,7 @@ focus_tree = {
 			focus = ireland_civil_war_memory
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_republican_veterans_complete
 			set_country_flag = ireland_veterans_ledger_open
 		}
@@ -110,6 +115,7 @@ focus_tree = {
 			focus = ireland_republican_veterans
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_public_order_review_complete
 			set_country_flag = ireland_security_baseline_ready
 		}
@@ -126,6 +132,7 @@ focus_tree = {
 			has_completed_focus = ireland_national_settlement
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_economic_war_review_complete
 			set_country_flag = ireland_economic_war_open
 			ireland_recompute_provision = yes
@@ -142,6 +149,7 @@ focus_tree = {
 			focus = ireland_economic_war_review
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_rural_price_board_complete
 			set_country_flag = ireland_rural_price_review_ready
 			set_country_flag = ireland_rural_credit_ready
@@ -159,6 +167,7 @@ focus_tree = {
 			focus = ireland_rural_price_board
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_domestic_industry_review_complete
 			set_country_flag = ireland_domestic_industry_review_ready
 			ireland_recompute_provision = yes
@@ -175,6 +184,7 @@ focus_tree = {
 			has_completed_focus = ireland_institutional_survey
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_defence_estimates_complete
 			set_country_flag = ireland_defence_estimates_open
 			ireland_recompute_readiness = yes
@@ -191,6 +201,7 @@ focus_tree = {
 			focus = ireland_defence_estimates
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_command_audit_complete
 			set_country_flag = ireland_command_baseline_ready
 			ireland_recompute_readiness = yes
@@ -207,6 +218,7 @@ focus_tree = {
 			focus = ireland_command_audit
 		}
 		completion_reward = {
+			ireland_grant_maritime_focus_reward = yes
 			set_country_flag = ireland_port_and_coast_audit_complete
 			set_country_flag = ireland_maritime_baseline_ready
 			ireland_recompute_readiness = yes
@@ -223,6 +235,7 @@ focus_tree = {
 			focus = ireland_national_settlement
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_church_labour_consultation_complete
 			set_country_flag = ireland_social_consultation_ready
 		}
@@ -241,6 +254,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_minority_guarantees_complete
 			set_country_flag = ireland_minority_review_ready
 		}
@@ -259,6 +273,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			ireland_grant_technical_focus_reward = yes
 			set_country_flag = ireland_language_service_complete
 			set_country_flag = ireland_language_baseline_ready
 		}
@@ -274,6 +289,7 @@ focus_tree = {
 			has_completed_focus = ireland_institutional_survey
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_border_observation_complete
 			set_country_flag = ireland_northern_observation_open
 		}
@@ -292,6 +308,7 @@ focus_tree = {
 			has_completed_focus = ireland_border_observation
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_northern_contacts_complete
 			set_country_flag = ireland_northern_contacts_open
 			set_country_flag = ireland_northern_contact
@@ -311,6 +328,7 @@ focus_tree = {
 			has_completed_focus = ireland_institutional_survey
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_election_timetable_complete
 			set_country_flag = ireland_election_calendar_ready
 		}
@@ -329,6 +347,7 @@ focus_tree = {
 			has_completed_focus = ireland_minority_guarantees
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_constitutional_draft_complete
 			set_country_flag = ireland_constitutional_draft_ready
 		}
@@ -344,6 +363,7 @@ focus_tree = {
 			focus = ireland_constitutional_draft
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_presidential_settlement_complete
 			set_country_flag = ireland_presidency_ready
 		}
@@ -359,6 +379,7 @@ focus_tree = {
 			focus = ireland_constitutional_draft
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_seanad_panels_complete
 			set_country_flag = ireland_seanad_ready
 		}
@@ -377,6 +398,7 @@ focus_tree = {
 			has_completed_focus = ireland_constitutional_draft
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_plebiscite_campaign_complete
 			set_country_flag = ireland_plebiscite_campaign_open
 			set_country_flag = ireland_plebiscite_open
@@ -396,6 +418,7 @@ focus_tree = {
 			has_completed_focus = ireland_election_timetable
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_general_election_campaign_complete
 			set_country_flag = ireland_general_election_campaign_open
 		}
@@ -414,6 +437,7 @@ focus_tree = {
 			OR = { has_country_flag = ireland_plebiscite_passed has_country_flag = ireland_plebiscite_recovered }
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_plebiscite_mandate_complete
 			set_country_flag = ireland_plebiscite_mandate
 		}
@@ -432,6 +456,7 @@ focus_tree = {
 			has_country_flag = ireland_election_result_ready
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_election_mandate_complete
 			set_country_flag = ireland_election_mandate
 		}
@@ -450,6 +475,7 @@ focus_tree = {
 			has_completed_focus = ireland_plebiscite_mandate
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_government_formation_complete
 			set_country_flag = ireland_government_formation_ready
 		}
@@ -469,6 +495,7 @@ focus_tree = {
 			has_completed_focus = ireland_plebiscite_campaign
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_replacement_charter_complete
 			set_country_flag = ireland_replacement_charter_open
 			set_country_flag = ireland_plebiscite_recovered
@@ -489,6 +516,7 @@ focus_tree = {
 			has_completed_focus = ireland_economic_war_review
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_1938_trade_settlement_complete
 			set_country_flag = ireland_trade_settlement_ready
 			set_country_flag = ireland_port_transfer_open
@@ -513,6 +541,7 @@ focus_tree = {
 			has_completed_focus = ireland_port_and_coast_audit
 		}
 		completion_reward = {
+			ireland_grant_maritime_focus_reward = yes
 			set_country_flag = ireland_treaty_port_transfer_complete
 			set_country_flag = ireland_treaty_port_project_open
 			ireland_recompute_readiness = yes
@@ -535,6 +564,7 @@ focus_tree = {
 			has_completed_focus = ireland_presidential_settlement
 		}
 		completion_reward = {
+			ireland_grant_diplomatic_focus_reward = yes
 			set_country_flag = ireland_sovereignty_mandate_complete
 			set_country_flag = ireland_sovereignty_mandate_ready
 		}
@@ -554,6 +584,7 @@ focus_tree = {
 			has_completed_focus = ireland_active_neutrality
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_emergency_opening_complete
 			set_country_flag = ireland_emergency_opening
 			set_country_flag = ireland_emergency_review_started
@@ -573,6 +604,7 @@ focus_tree = {
 			has_completed_focus = ireland_sovereignty_mandate
 		}
 		completion_reward = {
+			ireland_grant_diplomatic_focus_reward = yes
 			set_country_flag = ireland_active_neutrality_complete
 			set_country_flag = ireland_neutrality_open
 		}
@@ -591,6 +623,7 @@ focus_tree = {
 			has_completed_focus = ireland_government_formation
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_republican_government_complete
 			set_country_flag = ireland_republican_government_ready
 		}
@@ -609,6 +642,7 @@ focus_tree = {
 			has_country_flag = ireland_election_mandate
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_party_of_government_complete
 			set_country_flag = ireland_ff_governing_mandate
 		}
@@ -627,6 +661,7 @@ focus_tree = {
 			has_completed_focus = ireland_civil_war_memory
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_republican_legitimacy_complete
 			set_country_flag = ireland_republican_legitimacy_ready
 		}
@@ -645,6 +680,7 @@ focus_tree = {
 			has_completed_focus = ireland_active_neutrality
 		}
 		completion_reward = {
+			ireland_grant_diplomatic_focus_reward = yes
 			set_country_flag = ireland_neutrality_by_irish_decision_complete
 			set_country_flag = ireland_neutrality_by_irish_decision_ready
 		}
@@ -684,6 +720,7 @@ focus_tree = {
 			has_completed_focus = ireland_constitutional_draft
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_de_valera_stewardship_complete
 			set_country_flag = ireland_route_de_valera_stewardship
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -704,6 +741,7 @@ focus_tree = {
 			has_completed_focus = ireland_plebiscite_mandate
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_secure_plebiscite_mandate_complete
 			set_country_flag = ireland_plebiscite_legitimacy_secured
 		}
@@ -722,6 +760,7 @@ focus_tree = {
 			has_completed_focus = ireland_election_mandate
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_govern_through_dail_complete
 			set_country_flag = ireland_dail_authority_secured
 		}
@@ -745,6 +784,7 @@ focus_tree = {
 			has_country_flag = ireland_route_de_valera_stewardship
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_constitutional_stewardship_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -794,6 +834,7 @@ focus_tree = {
 			has_completed_focus = ireland_republican_veterans
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_de_valera_reconciliation_complete
 			set_country_flag = ireland_route_de_valera_reconciliation
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -814,6 +855,7 @@ focus_tree = {
 			has_country_flag = ireland_reintegration_capacity_ready
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_distinguish_prisoners_complete
 			set_country_flag = ireland_republican_prisoner_review_ready
 		}
@@ -833,6 +875,7 @@ focus_tree = {
 			has_completed_focus = ireland_public_order_review
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_amnesty_under_law_complete
 			set_country_flag = ireland_amnesty_process_ready
 		}
@@ -851,6 +894,7 @@ focus_tree = {
 			has_completed_focus = ireland_northern_contacts
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_reconciliation_mandate_complete
 			set_country_flag = ireland_reconciliation_mandate_ready
 		}
@@ -874,6 +918,7 @@ focus_tree = {
 			has_country_flag = ireland_route_de_valera_reconciliation
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_de_valera_reconciliation_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -919,6 +964,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_opening
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_emergency_direction_complete
 			set_country_flag = ireland_route_de_valera_emergency
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -943,6 +989,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_opening
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_statutory_emergency_complete
 			set_country_flag = ireland_statutory_emergency_ready
 		}
@@ -962,6 +1009,7 @@ focus_tree = {
 			has_completed_focus = ireland_active_neutrality
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_emergency_review_complete
 			set_country_flag = ireland_emergency_law_reviewed
 		}
@@ -978,6 +1026,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_review
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_emergency_repeal_complete
 			set_country_flag = ireland_emergency_review_complete
 		}
@@ -1001,6 +1050,7 @@ focus_tree = {
 			has_country_flag = ireland_route_de_valera_emergency
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_de_valera_emergency_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -1049,6 +1099,7 @@ focus_tree = {
 			has_completed_focus = ireland_party_of_government
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_lemass_developmental_complete
 			set_country_flag = ireland_route_lemass_developmental
 			# The achievement records the dated, peaceful installation itself;
@@ -1076,6 +1127,7 @@ focus_tree = {
 			has_completed_focus = ireland_domestic_industry_review
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_cabinet_compact_complete
 			set_country_flag = ireland_lemass_cabinet_ready
 		}
@@ -1094,6 +1146,7 @@ focus_tree = {
 			has_country_flag = ireland_party_conference_ready
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_party_conference_complete
 			set_country_flag = ireland_lemass_party_mandate_ready
 		}
@@ -1113,6 +1166,7 @@ focus_tree = {
 			has_completed_focus = ireland_election_mandate
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_dail_nomination_complete
 			set_country_flag = ireland_lemass_dail_mandate_ready
 		}
@@ -1132,6 +1186,7 @@ focus_tree = {
 			has_completed_focus = ireland_cabinet_compact
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_cabinet_of_production_complete
 			set_country_flag = ireland_production_cabinet_ready
 		}
@@ -1151,6 +1206,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_labour_industrial_discipline_complete
 			set_country_flag = ireland_lemass_labour_compact_ready
 		}
@@ -1169,6 +1225,7 @@ focus_tree = {
 			has_completed_focus = ireland_rural_price_board
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_rural_compensation_complete
 			set_country_flag = ireland_lemass_rural_compact_ready
 		}
@@ -1193,6 +1250,7 @@ focus_tree = {
 			has_country_flag = ireland_lemass_dail_mandate_ready
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_lemass_developmental_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -1211,6 +1269,7 @@ focus_tree = {
 			has_completed_focus = ireland_government_formation
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_constitutional_opposition_complete
 			set_country_flag = ireland_fine_gael_opposition_ready
 		}
@@ -1230,6 +1289,7 @@ focus_tree = {
 			has_completed_focus = ireland_civil_war_memory
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_close_oduffy_chapter_complete
 			set_country_flag = ireland_oduffy_chapter_closed
 		}
@@ -1249,6 +1309,7 @@ focus_tree = {
 			has_completed_focus = ireland_election_mandate
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_government_from_opposition_complete
 			set_country_flag = ireland_fine_gael_government_ready
 		}
@@ -1267,6 +1328,7 @@ focus_tree = {
 			has_completed_focus = ireland_minority_guarantees
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_state_we_built_complete
 			set_country_flag = ireland_state_institutional_compact_ready
 		}
@@ -1314,6 +1376,7 @@ focus_tree = {
 			has_completed_focus = ireland_government_from_opposition
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_cosgrave_institutional_complete
 			set_country_flag = ireland_route_cosgrave_institutional
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -1334,6 +1397,7 @@ focus_tree = {
 			has_completed_focus = ireland_public_order_review
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_restore_parliamentary_confidence_complete
 			set_country_flag = ireland_parliamentary_confidence_ready
 		}
@@ -1353,6 +1417,7 @@ focus_tree = {
 			has_completed_focus = ireland_minority_guarantees
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_civil_service_and_courts_complete
 			set_country_flag = ireland_civil_service_court_compact_ready
 		}
@@ -1371,6 +1436,7 @@ focus_tree = {
 			has_completed_focus = ireland_command_audit
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_security_under_law_complete
 			set_country_flag = ireland_security_under_law_ready
 		}
@@ -1394,6 +1460,7 @@ focus_tree = {
 			has_country_flag = ireland_route_cosgrave_institutional
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_cosgrave_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -1439,6 +1506,7 @@ focus_tree = {
 			has_completed_focus = ireland_defence_estimates
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_mulcahy_succession_complete
 			set_country_flag = ireland_route_mulcahy_civil_defence
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -1460,6 +1528,7 @@ focus_tree = {
 			has_completed_focus = ireland_command_audit
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_professional_defence_council_complete
 			set_country_flag = ireland_mulcahy_defence_council_ready
 		}
@@ -1478,6 +1547,7 @@ focus_tree = {
 			has_completed_focus = ireland_security_under_law
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_army_serves_dail_complete
 			set_country_flag = ireland_civilian_command_compact_ready
 		}
@@ -1496,6 +1566,7 @@ focus_tree = {
 			has_completed_focus = ireland_republican_veterans
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_face_civil_war_record_complete
 			set_country_flag = ireland_civil_war_record_reviewed
 		}
@@ -1519,6 +1590,7 @@ focus_tree = {
 			has_country_flag = ireland_route_mulcahy_civil_defence
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_mulcahy_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -1564,6 +1636,7 @@ focus_tree = {
 			has_completed_focus = ireland_minority_guarantees
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_costello_coalition_complete
 			set_country_flag = ireland_route_costello_coalition
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -1585,6 +1658,7 @@ focus_tree = {
 			has_completed_focus = ireland_state_we_built
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_written_coalition_charter_complete
 			set_country_flag = ireland_costello_charter_ready
 		}
@@ -1604,6 +1678,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_review
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_unwind_exceptional_state_complete
 			set_country_flag = ireland_coalition_exception_review_ready
 		}
@@ -1627,6 +1702,7 @@ focus_tree = {
 			has_country_flag = ireland_route_costello_coalition
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_costello_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -1687,6 +1763,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_dillon_public_dissent_complete
 			set_country_flag = ireland_route_dillon_intervention
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -1718,6 +1795,7 @@ focus_tree = {
 			has_completed_focus = ireland_sovereignty_mandate
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_dillon_intervention_caucus_complete
 		}
 	}
@@ -1748,6 +1826,7 @@ focus_tree = {
 			has_country_flag = ireland_conclusion_proof
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_dillon_war_assent_complete
 			set_country_flag = ireland_dillon_wartime_state
 			set_country_flag = ireland_dillon_democracy_at_war
@@ -1797,6 +1876,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_norton_parliamentary_complete
 			set_country_flag = ireland_route_norton_parliamentary
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -1817,6 +1897,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_opening
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_labour_as_conscience_complete
 			set_country_flag = ireland_labour_scrutiny_ready
 		}
@@ -1836,6 +1917,7 @@ focus_tree = {
 			has_completed_focus = ireland_active_neutrality
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_support_without_surrender_complete
 			set_country_flag = ireland_labour_neutral_support_ready
 		}
@@ -1855,6 +1937,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_labour_social_law_complete
 			set_country_flag = ireland_labour_social_law_ready
 		}
@@ -1878,6 +1961,7 @@ focus_tree = {
 			has_country_flag = ireland_route_norton_parliamentary
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_norton_parliamentary_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -1925,6 +2009,7 @@ focus_tree = {
 			has_completed_focus = ireland_election_timetable
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_clann_founding_complete
 			set_country_flag = ireland_route_clann_agrarian_broker
 			set_country_flag = ireland_clann_founded
@@ -1947,6 +2032,7 @@ focus_tree = {
 			has_completed_focus = ireland_rural_price_board
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_agrarian_support_bloc_complete
 			set_country_flag = ireland_agrarian_support_ready
 		}
@@ -1966,6 +2052,7 @@ focus_tree = {
 			has_country_flag = ireland_clann_by_election_open
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_clann_by_election_complete
 			set_country_flag = ireland_clann_breakthrough_ready
 		}
@@ -1984,6 +2071,7 @@ focus_tree = {
 			has_completed_focus = ireland_rural_price_board
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_rural_producer_compact_complete
 			set_country_flag = ireland_rural_producer_compact_ready
 		}
@@ -2029,6 +2117,7 @@ focus_tree = {
 			has_completed_focus = ireland_constitutional_draft
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_vocational_constitution_complete
 			set_country_flag = ireland_route_constitutional_vocational
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -2050,6 +2139,7 @@ focus_tree = {
 			has_completed_focus = ireland_minority_guarantees
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_dail_supremacy_clause_complete
 			set_country_flag = ireland_vocational_dail_clause_ready
 		}
@@ -2069,6 +2159,7 @@ focus_tree = {
 			has_completed_focus = ireland_civil_service_and_courts
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_council_government_rejected_complete
 			set_country_flag = ireland_vocational_dail_supremacy_failed
 			set_country_flag = ireland_vocational_failure_bridge_ready
@@ -2094,6 +2185,7 @@ focus_tree = {
 			has_country_flag = ireland_vocational_domains_ready
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_vocational_constitution_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -2112,6 +2204,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			ireland_grant_cultural_focus_reward = yes
 			set_country_flag = ireland_cultural_survey_complete
 			set_country_flag = ireland_cultural_survey_ready
 		}
@@ -2131,6 +2224,7 @@ focus_tree = {
 			has_completed_focus = ireland_language_service
 		}
 		completion_reward = {
+			ireland_grant_cultural_focus_reward = yes
 			set_country_flag = ireland_language_institutions_complete
 			set_country_flag = ireland_language_institutions_ready
 		}
@@ -2150,6 +2244,7 @@ focus_tree = {
 			has_completed_focus = ireland_civil_war_memory
 		}
 		completion_reward = {
+			ireland_grant_cultural_focus_reward = yes
 			set_country_flag = ireland_archival_record_complete
 			set_country_flag = ireland_archival_record_ready
 		}
@@ -2169,6 +2264,7 @@ focus_tree = {
 			has_completed_focus = ireland_border_observation
 		}
 		completion_reward = {
+			ireland_grant_cultural_focus_reward = yes
 			set_country_flag = ireland_regional_participation_complete
 			set_country_flag = ireland_regional_participation_ready
 		}
@@ -2188,6 +2284,7 @@ focus_tree = {
 			has_completed_focus = ireland_regional_participation
 		}
 		completion_reward = {
+			ireland_grant_cultural_focus_reward = yes
 			set_country_flag = ireland_site_stewardship_complete
 		}
 	}
@@ -2206,6 +2303,7 @@ focus_tree = {
 			has_completed_focus = ireland_northern_contacts
 		}
 		completion_reward = {
+			ireland_grant_cultural_focus_reward = yes
 			set_country_flag = ireland_diaspora_exchange_complete
 			set_country_flag = ireland_diaspora_exchange_ready
 		}
@@ -2225,6 +2323,7 @@ focus_tree = {
 			has_completed_focus = ireland_regional_participation
 		}
 		completion_reward = {
+			ireland_grant_cultural_focus_reward = yes
 			set_country_flag = ireland_serious_cultural_stewardship_complete
 			set_country_flag = ireland_serious_culture_ready
 		}
@@ -2243,6 +2342,7 @@ focus_tree = {
 			has_completed_focus = ireland_site_stewardship
 		}
 		completion_reward = {
+			ireland_grant_cultural_focus_reward = yes
 			set_country_flag = ireland_cultural_service_complete
 			set_country_flag = ireland_cultural_service_ready
 		}
@@ -2264,6 +2364,7 @@ focus_tree = {
 			has_country_flag = ireland_independent_evidence_ready
 		}
 		completion_reward = {
+			ireland_grant_cultural_focus_reward = yes
 			set_country_flag = ireland_cultural_evidence_ledger_complete
 			set_country_flag = ireland_cultural_evidence_ledger_ready
 			set_country_flag = ireland_hidden_permission
@@ -2281,6 +2382,7 @@ focus_tree = {
 			focus = ireland_cultural_evidence_ledger
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_culture_completion_complete
 			set_country_flag = ireland_culture_support_complete
 		}
@@ -2299,6 +2401,7 @@ focus_tree = {
 			has_completed_focus = ireland_rural_price_board
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_provision_baseline_complete
 			set_country_flag = ireland_provision_baseline_ready
 			set_country_flag = ireland_provision_plan
@@ -2319,6 +2422,7 @@ focus_tree = {
 			has_completed_focus = ireland_rural_price_board
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_food_ledger_complete
 			set_country_flag = ireland_provision_food_project_ready
 			ireland_recompute_provision = yes
@@ -2338,6 +2442,7 @@ focus_tree = {
 			has_completed_focus = ireland_domestic_industry_review
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_energy_board_complete
 			set_country_flag = ireland_provision_energy_project_ready
 			ireland_recompute_provision = yes
@@ -2355,6 +2460,7 @@ focus_tree = {
 			has_completed_focus = ireland_command_audit
 		}
 		completion_reward = {
+			ireland_grant_maritime_focus_reward = yes
 			set_country_flag = ireland_transport_priority_complete
 			set_country_flag = ireland_transport_project_ready
 			ireland_recompute_provision = yes
@@ -2375,6 +2481,7 @@ focus_tree = {
 			has_completed_focus = ireland_port_and_coast_audit
 		}
 		completion_reward = {
+			ireland_grant_maritime_focus_reward = yes
 			set_country_flag = ireland_maritime_reserve_complete
 			set_country_flag = ireland_provision_maritime_project_ready
 			ireland_recompute_provision = yes
@@ -2394,6 +2501,7 @@ focus_tree = {
 			has_completed_focus = ireland_domestic_industry_review
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_domestic_manufacturing_complete
 			set_country_flag = ireland_material_projects_ready
 			ireland_recompute_provision = yes
@@ -2414,6 +2522,7 @@ focus_tree = {
 			has_completed_focus = ireland_rural_price_board
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_rural_credit_complete
 			set_country_flag = ireland_rural_credit_project_ready
 			ireland_recompute_provision = yes
@@ -2435,6 +2544,7 @@ focus_tree = {
 			has_completed_focus = ireland_transport_priority
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_emergency_stockpiles_complete
 			set_country_flag = ireland_emergency_stockpile_project_ready
 			ireland_recompute_provision = yes
@@ -2455,6 +2565,7 @@ focus_tree = {
 			has_country_flag = ireland_development_authority_ready
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_development_authority_complete
 			set_country_flag = ireland_development_authority_open
 			ireland_recompute_provision = yes
@@ -2475,6 +2586,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_social_cooperatives_complete
 			set_country_flag = ireland_social_cooperative_project_ready
 			ireland_recompute_provision = yes
@@ -2497,6 +2609,7 @@ focus_tree = {
 			has_country_flag = ireland_producer_accounting_ready
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_producer_accounting_complete
 			set_country_flag = ireland_producer_accounting_project_ready
 			ireland_recompute_provision = yes
@@ -2523,6 +2636,7 @@ focus_tree = {
 			not = { ireland_has_provision_dual_bottleneck = yes }
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_provision_conclusion_complete
 			set_country_flag = ireland_provision_conclusion_ready
 			ireland_recompute_provision = yes
@@ -2542,6 +2656,7 @@ focus_tree = {
 			has_completed_focus = ireland_command_audit
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_readiness_baseline_complete
 			set_country_flag = ireland_readiness_baseline_ready
 			set_country_flag = ireland_readiness_plan
@@ -2562,6 +2677,7 @@ focus_tree = {
 			has_country_flag = ireland_command_structure_ready
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_readiness_command_complete
 			set_country_flag = ireland_readiness_command_ready
 			ireland_recompute_readiness = yes
@@ -2582,6 +2698,7 @@ focus_tree = {
 			has_completed_focus = ireland_public_order_review
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_territorial_reserve_complete
 			set_country_flag = ireland_territorial_reserve_ready
 			ireland_recompute_readiness = yes
@@ -2600,6 +2717,7 @@ focus_tree = {
 			has_completed_focus = ireland_border_observation
 		}
 		completion_reward = {
+			ireland_grant_maritime_focus_reward = yes
 			set_country_flag = ireland_coastwatch_complete
 			set_country_flag = ireland_coastwatch_ready
 			ireland_recompute_readiness = yes
@@ -2620,6 +2738,7 @@ focus_tree = {
 			has_country_flag = ireland_civilian_defence_review_ready
 		}
 		completion_reward = {
+			ireland_grant_air_focus_reward = yes
 			set_country_flag = ireland_air_warning_complete
 			set_country_flag = ireland_air_warning_ready
 			ireland_recompute_readiness = yes
@@ -2640,6 +2759,7 @@ focus_tree = {
 			has_completed_focus = ireland_treaty_port_transfer
 		}
 		completion_reward = {
+			ireland_grant_maritime_focus_reward = yes
 			set_country_flag = ireland_port_defence_project_complete
 			set_country_flag = ireland_port_defence_project_ready
 			ireland_recompute_readiness = yes
@@ -2660,6 +2780,7 @@ focus_tree = {
 			has_completed_focus = ireland_maritime_reserve
 		}
 		completion_reward = {
+			ireland_grant_maritime_focus_reward = yes
 			set_country_flag = ireland_maritime_protection_complete
 			set_country_flag = ireland_maritime_protection_ready
 			ireland_recompute_readiness = yes
@@ -3116,6 +3237,7 @@ focus_tree = {
 			has_completed_focus = ireland_civil_service_and_courts
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_professional_army_complete
 			set_country_flag = ireland_professional_army_ready
 			ireland_recompute_readiness = yes
@@ -3136,6 +3258,7 @@ focus_tree = {
 			has_completed_focus = ireland_army_serves_dail
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_civilian_oversight_complete
 			set_country_flag = ireland_civilian_oversight_ready
 			ireland_recompute_readiness = yes
@@ -3157,6 +3280,7 @@ focus_tree = {
 			has_completed_focus = ireland_foreign_safeguards
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_interoperability_complete
 			set_country_flag = ireland_interoperability_project_ready
 			ireland_recompute_readiness = yes
@@ -3177,6 +3301,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_opening
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_emergency_mobilisation_complete
 			set_country_flag = ireland_emergency_mobilisation_ready
 			ireland_recompute_readiness = yes
@@ -3206,6 +3331,7 @@ focus_tree = {
 			has_completed_focus = ireland_interoperability
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_readiness_conclusion_complete
 			set_country_flag = ireland_readiness_conclusion_ready
 			ireland_recompute_readiness = yes
@@ -3225,6 +3351,7 @@ focus_tree = {
 			has_completed_focus = ireland_active_neutrality
 		}
 		completion_reward = {
+			ireland_grant_diplomatic_focus_reward = yes
 			set_country_flag = ireland_strict_neutrality_complete
 			set_country_flag = ireland_strict_neutrality_ready
 		}
@@ -3244,6 +3371,7 @@ focus_tree = {
 			has_completed_focus = ireland_readiness_baseline
 		}
 		completion_reward = {
+			ireland_grant_diplomatic_focus_reward = yes
 			set_country_flag = ireland_armed_neutrality_complete
 			set_country_flag = ireland_armed_neutrality_ready
 		}
@@ -3263,6 +3391,7 @@ focus_tree = {
 			has_completed_focus = ireland_treaty_port_transfer
 		}
 		completion_reward = {
+			ireland_grant_maritime_focus_reward = yes
 			set_country_flag = ireland_treaty_port_diplomacy_complete
 			set_country_flag = ireland_treaty_port_diplomacy_ready
 		}
@@ -3282,6 +3411,7 @@ focus_tree = {
 			has_completed_focus = ireland_sovereignty_mandate
 		}
 		completion_reward = {
+			ireland_grant_diplomatic_focus_reward = yes
 			set_country_flag = ireland_british_leverage_management_complete
 			set_country_flag = ireland_british_leverage_managed
 			set_country_flag = ireland_british_channel_open
@@ -3302,6 +3432,7 @@ focus_tree = {
 			has_completed_focus = ireland_minority_guarantees
 		}
 		completion_reward = {
+			ireland_grant_diplomatic_focus_reward = yes
 			set_country_flag = ireland_american_diaspora_mission_complete
 			set_country_flag = ireland_american_mission_ready
 			set_country_flag = ireland_american_channel_open
@@ -3320,6 +3451,7 @@ focus_tree = {
 			has_completed_focus = ireland_minority_guarantees
 		}
 		completion_reward = {
+			ireland_grant_diplomatic_focus_reward = yes
 			set_country_flag = ireland_vatican_small_state_mediation_complete
 			set_country_flag = ireland_vatican_mediation_ready
 			set_country_flag = ireland_vatican_channel_open
@@ -3347,6 +3479,7 @@ focus_tree = {
 			has_country_flag = ireland_vatican_channel_open
 		}
 		completion_reward = {
+			ireland_grant_diplomatic_focus_reward = yes
 			set_country_flag = ireland_foreign_safeguards_complete
 			set_country_flag = ireland_foreign_safeguards_ready
 			set_country_flag = ireland_neutral_states_channel_open
@@ -3366,6 +3499,7 @@ focus_tree = {
 			OR = { has_country_flag = ireland_strict_neutrality_ready has_country_flag = ireland_armed_neutrality_ready }
 		}
 		completion_reward = {
+			ireland_grant_diplomatic_focus_reward = yes
 			set_country_flag = ireland_neutrality_posture_complete
 			set_country_flag = ireland_foreign_posture_selected
 		}
@@ -3384,6 +3518,7 @@ focus_tree = {
 			has_completed_focus = ireland_border_observation
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_northern_ledger_open
 			set_country_flag = ireland_northern_negotiation_open
 			119 = {
@@ -3406,6 +3541,7 @@ focus_tree = {
 			has_completed_focus = ireland_public_order_review
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_northern_local_authorities_complete
 			set_country_flag = ireland_northern_local_authority_ready
 		}
@@ -3425,6 +3561,7 @@ focus_tree = {
 			has_completed_focus = ireland_1938_trade_settlement
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_northern_trade_corridor_complete
 			set_country_flag = ireland_northern_trade_corridor_ready
 		}
@@ -3444,6 +3581,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			ireland_grant_military_focus_reward = yes
 			set_country_flag = ireland_northern_labour_social_bridge_complete
 			set_country_flag = ireland_northern_labour_bridge_ready
 		}
@@ -3463,6 +3601,7 @@ focus_tree = {
 			has_completed_focus = ireland_northern_settlement_ledger
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_northern_federal_preparation_complete
 			set_country_flag = ireland_northern_federal_prepared
 		}
@@ -3482,6 +3621,7 @@ focus_tree = {
 			has_completed_focus = ireland_northern_settlement_ledger
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_northern_unitary_preparation_complete
 			set_country_flag = ireland_northern_unitary_prepared
 		}
@@ -3507,6 +3647,7 @@ focus_tree = {
 			has_completed_focus = ireland_sovereignty_mandate
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_northern_wartime_bargain_complete
 			clr_country_flag = ireland_northern_wartime_bargain_ready
 			set_country_flag = ireland_northern_war_plan
@@ -3527,6 +3668,7 @@ focus_tree = {
 			has_completed_focus = ireland_public_order_review
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_northern_recovery_bridge_complete
 			set_country_flag = ireland_northern_recovery_bridge_ready
 		}
@@ -3556,6 +3698,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_northern_regional_review_started
 			set_country_flag = ireland_northern_stage_review
 		}
@@ -3574,6 +3717,7 @@ focus_tree = {
 			OR = { has_country_flag = ireland_northern_integration_complete has_country_flag = ireland_northern_deferment_accepted }
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_northern_policy_proof_complete
 			set_country_flag = ireland_northern_policy_selected
 			set_country_flag = ireland_northern_policy_active
@@ -3598,6 +3742,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_opening
 		}
 		completion_reward = {
+			ireland_grant_recovery_focus_reward = yes
 			set_country_flag = ireland_recovery_bridge_complete
 			set_country_flag = ireland_postwar_review_started
 			if = {
@@ -3646,6 +3791,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_review
 		}
 		completion_reward = {
+			ireland_grant_recovery_focus_reward = yes
 			set_country_flag = ireland_restore_constitutional_calendar_complete
 			set_country_flag = ireland_constitutional_calendar_restored
 			if = {
@@ -3670,6 +3816,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_review
 		}
 		completion_reward = {
+			ireland_grant_recovery_focus_reward = yes
 			set_country_flag = ireland_emergency_accounting_complete
 		}
 	}
@@ -3686,6 +3833,7 @@ focus_tree = {
 			has_completed_focus = ireland_readiness_conclusion
 		}
 		completion_reward = {
+			ireland_grant_recovery_focus_reward = yes
 			set_country_flag = ireland_demobilisation_charter_complete
 			set_country_flag = ireland_demobilisation_charter_ready
 			set_country_flag = ireland_reconstruction_mandate_ready
@@ -3706,6 +3854,7 @@ focus_tree = {
 			has_completed_focus = ireland_provision_conclusion
 		}
 		completion_reward = {
+			ireland_grant_recovery_focus_reward = yes
 			set_country_flag = ireland_reconstruction_mandate_complete
 			set_country_flag = ireland_reconstruction_ready
 			set_country_flag = ireland_postwar_foreign_review_ready
@@ -3726,6 +3875,7 @@ focus_tree = {
 			has_completed_focus = ireland_neutrality_posture
 		}
 		completion_reward = {
+			ireland_grant_recovery_focus_reward = yes
 			set_country_flag = ireland_foreign_postwar_review_complete
 			set_country_flag = ireland_postwar_foreign_review_complete
 		}
@@ -3748,6 +3898,7 @@ focus_tree = {
 			has_completed_focus = ireland_northern_policy_proof
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_material_conclusion_proof_complete
 			set_country_flag = ireland_conclusion_proof
 		}
@@ -3802,6 +3953,7 @@ focus_tree = {
 			has_completed_focus = ireland_republican_veterans
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_ira_republican_bridge_complete
 			set_country_flag = ireland_route_ira_republican
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -3822,6 +3974,7 @@ focus_tree = {
 			has_country_flag = ireland_security_exposure_ready
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_reassemble_ghq_complete
 			set_country_flag = ireland_ira_ghq_reassembled
 		}
@@ -3841,6 +3994,7 @@ focus_tree = {
 			has_completed_focus = ireland_northern_contacts
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_convention_of_commands_complete
 			set_country_flag = ireland_ira_command_convention_ready
 		}
@@ -3860,6 +4014,7 @@ focus_tree = {
 			has_completed_focus = ireland_northern_settlement_ledger
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_republic_in_districts_complete
 			set_country_flag = ireland_ira_district_authority_ready
 		}
@@ -3879,6 +4034,7 @@ focus_tree = {
 			has_completed_focus = ireland_convention_of_commands
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_arms_before_authority_complete
 			set_country_flag = ireland_ira_army_council_path
 		}
@@ -3900,6 +4056,7 @@ focus_tree = {
 			has_country_flag = ireland_ira_civil_authority_ready
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_authority_before_arms_complete
 			set_country_flag = ireland_ira_civil_path
 		}
@@ -3919,6 +4076,7 @@ focus_tree = {
 			has_completed_focus = ireland_foreign_safeguards
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_german_channel_complete
 			set_country_flag = ireland_ira_foreign_channel_open
 			set_country_flag = ireland_german_channel_open
@@ -3944,6 +4102,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_northern_question_in_arms_complete
 			set_country_flag = ireland_ira_northern_policy_ready
 		}
@@ -3962,6 +4121,7 @@ focus_tree = {
 			has_country_flag = ireland_ira_civil_authority_ready
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_ira_civil_authority_complete
 			set_country_flag = ireland_ira_civil_transition_ready
 		}
@@ -3980,6 +4140,7 @@ focus_tree = {
 			has_country_flag = ireland_ira_command_ready
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_ira_army_council_complete
 			set_country_flag = ireland_ira_army_council_transition_ready
 			set_country_flag = ireland_armed_takeover
@@ -4008,6 +4169,7 @@ focus_tree = {
 			OR = { has_country_flag = ireland_ira_civil_transition_ready has_country_flag = ireland_ira_army_council_transition_ready }
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_ira_route_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -4061,6 +4223,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_congress_reform_bridge_complete
 			set_country_flag = ireland_route_congress
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -4081,6 +4244,7 @@ focus_tree = {
 			has_country_flag = ireland_union_local_mandate_ready
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_organise_congress_complete
 			set_country_flag = ireland_congress_organised
 		}
@@ -4100,6 +4264,7 @@ focus_tree = {
 			has_completed_focus = ireland_northern_labour_social_bridge
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_union_local_mandate_complete
 			set_country_flag = ireland_congress_union_mandate_ready
 		}
@@ -4121,6 +4286,7 @@ focus_tree = {
 			has_country_flag = ireland_congress_plural_mandate_ready
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_congress_plural_republic_complete
 			set_country_flag = ireland_congress_plural_path
 		}
@@ -4142,6 +4308,7 @@ focus_tree = {
 			has_country_flag = ireland_congress_vanguard_capture_ready
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_congress_vanguard_cell_complete
 			set_country_flag = ireland_congress_vanguard_path
 		}
@@ -4165,6 +4332,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_extra_parliamentary_transition_complete
 			set_country_flag = ireland_congress_transition_complete
 		}
@@ -4188,6 +4356,7 @@ focus_tree = {
 			has_country_flag = ireland_congress_plural_path
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_congress_plural_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -4211,6 +4380,7 @@ focus_tree = {
 			has_country_flag = ireland_congress_vanguard_path
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_congress_vanguard_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -4264,6 +4434,7 @@ focus_tree = {
 			has_completed_focus = ireland_close_oduffy_chapter
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_oduffy_network_revival_complete
 			set_country_flag = ireland_route_oduffy
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -4292,6 +4463,7 @@ focus_tree = {
 			clr_country_flag = ireland_oduffy_personal_command_ready
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_oduffy_personal_command_complete
 			set_country_flag = ireland_oduffy_personal_path
 		}
@@ -4311,6 +4483,7 @@ focus_tree = {
 			has_completed_focus = ireland_agrarian_support_bloc
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_veteran_employer_league_complete
 			set_country_flag = ireland_veteran_employer_base_ready
 		}
@@ -4328,6 +4501,7 @@ focus_tree = {
 			has_completed_focus = ireland_veteran_employer_league
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_corporate_estates_complete
 			set_country_flag = ireland_oduffy_estates_ready
 		}
@@ -4347,6 +4521,7 @@ focus_tree = {
 			has_completed_focus = ireland_veteran_employer_league
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_army_acceptance_complete
 			set_country_flag = ireland_oduffy_army_acceptance_ready
 		}
@@ -4368,6 +4543,7 @@ focus_tree = {
 			has_country_flag = ireland_corporate_order_ready
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_corporate_order_complete
 			set_country_flag = ireland_oduffy_corporate_path
 		}
@@ -4395,6 +4571,7 @@ focus_tree = {
 			has_completed_focus = ireland_oduffy_personal_command
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_oduffy_personal_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -4421,6 +4598,7 @@ focus_tree = {
 			has_country_flag = ireland_oduffy_corporate_path
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_oduffy_corporate_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -4473,6 +4651,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_clerical_failure_bridge_complete
 			set_country_flag = ireland_route_clerical_producer
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -4493,6 +4672,7 @@ focus_tree = {
 			has_country_flag = ireland_service_state_ready
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_service_state_complete
 			set_country_flag = ireland_service_state_open
 		}
@@ -4512,6 +4692,7 @@ focus_tree = {
 			has_completed_focus = ireland_producer_accounting
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_producer_councils_complete
 			set_country_flag = ireland_producer_councils_open
 		}
@@ -4531,6 +4712,7 @@ focus_tree = {
 			has_completed_focus = ireland_minority_guarantees
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_clerical_guardianship_complete
 			set_country_flag = ireland_clerical_guardianship_path
 		}
@@ -4552,6 +4734,7 @@ focus_tree = {
 			has_country_flag = ireland_producer_constitution_ready
 		}
 		completion_reward = {
+			ireland_grant_economic_focus_reward = yes
 			set_country_flag = ireland_producer_constitution_complete
 			set_country_flag = ireland_producer_constitution_path
 		}
@@ -4576,6 +4759,7 @@ focus_tree = {
 			OR = { has_country_flag = ireland_clerical_guardianship_path has_country_flag = ireland_producer_constitution_path }
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_clerical_route_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -4651,6 +4835,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_ailtiri_cell_network_complete
 			set_country_flag = ireland_route_ailtiri_total_state
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -4671,6 +4856,7 @@ focus_tree = {
 			has_country_flag = ireland_ailtiri_cells_ready
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_language_cells_complete
 			set_country_flag = ireland_ailtiri_language_network_ready
 		}
@@ -4691,6 +4877,7 @@ focus_tree = {
 			has_country_flag = ireland_language_cells_complete
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_june_1942_public_launch_complete
 			set_country_flag = ireland_ailtiri_public_launch
 			set_country_flag = ireland_ailtiri_crisis
@@ -4712,6 +4899,7 @@ focus_tree = {
 			has_completed_focus = ireland_public_order_review
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_ceannaire_state_complete
 			set_country_flag = ireland_ailtiri_ceannaire_ready
 		}
@@ -4731,6 +4919,7 @@ focus_tree = {
 			has_completed_focus = ireland_producer_accounting
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_corporate_gaelic_nation_complete
 			set_country_flag = ireland_ailtiri_corporate_state_ready
 		}
@@ -4754,6 +4943,7 @@ focus_tree = {
 			has_country_flag = ireland_route_ailtiri_total_state
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_ailtiri_total_state_capstone_complete
 			set_country_flag = ireland_ailtiri_total_state_complete
 			ireland_begin_conclusion_review = yes
@@ -4805,6 +4995,7 @@ focus_tree = {
 			has_completed_focus = ireland_serious_cultural_stewardship
 		}
 		completion_reward = {
+			ireland_grant_technical_focus_reward = yes
 			set_country_flag = ireland_high_king_evidence_gate_complete
 			set_country_flag = ireland_route_high_king
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -4825,6 +5016,7 @@ focus_tree = {
 			has_country_flag = ireland_high_king_convention_ready
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_high_king_convention_complete
 		}
 	}
@@ -4845,6 +5037,7 @@ focus_tree = {
 			has_country_flag = ireland_high_king_constitutional_mandate
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_elective_crown_complete
 			set_country_flag = ireland_high_king_constitutional_path
 		}
@@ -4866,6 +5059,7 @@ focus_tree = {
 			has_country_flag = ireland_high_king_rare_condition
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_guardian_crown_complete
 			set_country_flag = ireland_high_king_constitutional_path
 		}
@@ -4892,6 +5086,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_crown_powers_charter_complete
 			set_country_flag = ireland_crown_conclusion_valid
 			if = {
@@ -4931,6 +5126,7 @@ focus_tree = {
 			has_country_flag = ireland_crown_conclusion_valid
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_high_king_capstone_complete
 			country_event = { id = ireland_events.432 }
 		}
@@ -4981,6 +5177,7 @@ focus_tree = {
 			has_completed_focus = ireland_regional_participation
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_five_province_mandates_complete
 			set_country_flag = ireland_route_five_provinces
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -5001,6 +5198,7 @@ focus_tree = {
 			has_country_flag = ireland_five_provinces_convention_ready
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_federal_convention_complete
 		}
 	}
@@ -5018,6 +5216,7 @@ focus_tree = {
 			has_country_flag = ireland_federal_powers_ready
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_federal_republic_complete
 			set_country_flag = ireland_federal_republic_path
 		}
@@ -5037,6 +5236,7 @@ focus_tree = {
 			has_completed_focus = ireland_northern_policy_proof
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_ulster_rule_complete
 		}
 	}
@@ -5057,6 +5257,7 @@ focus_tree = {
 			has_country_flag = ireland_five_provinces_impossible_confirmed
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_pentarchy_guardians_complete
 			set_country_flag = ireland_pentarchy_path
 		}
@@ -5086,6 +5287,7 @@ focus_tree = {
 			has_completed_focus = ireland_ulster_rule
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_five_provinces_capstone_complete
 			set_country_flag = ireland_five_provinces_conclusion_valid
 			ireland_begin_conclusion_review = yes
@@ -5142,6 +5344,7 @@ focus_tree = {
 			has_completed_focus = ireland_serious_cultural_stewardship
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_otherworld_investigation_complete
 			set_country_flag = ireland_route_otherworld
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -5162,6 +5365,7 @@ focus_tree = {
 			has_country_flag = ireland_independent_witnesses_ready
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_otherworld_witnesses_complete
 			set_country_flag = ireland_otherworld_witnesses_verified
 		}
@@ -5185,6 +5389,7 @@ focus_tree = {
 			has_completed_focus = ireland_cultural_evidence_ledger
 		}
 		completion_reward = {
+			ireland_grant_technical_focus_reward = yes
 			set_country_flag = ireland_otherworld_evidence_ledger_complete
 			set_country_flag = ireland_otherworld_evidence_ledger_ready
 			set_country_flag = ireland_otherworld_verified
@@ -5210,6 +5415,7 @@ focus_tree = {
 			has_country_flag = ireland_otherworld_archive_reveal_complete
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_compact_with_otherworld_complete
 			set_country_flag = ireland_otherworld_compact_path
 		}
@@ -5228,6 +5434,7 @@ focus_tree = {
 			has_completed_focus = ireland_otherworld_evidence_ledger
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_containment_protocol_complete
 			set_country_flag = ireland_otherworld_containment_path
 		}
@@ -5248,6 +5455,7 @@ focus_tree = {
 			has_completed_focus = ireland_containment_protocol
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_dominion_claim_complete
 			set_country_flag = ireland_otherworld_dominion_path
 		}
@@ -5269,6 +5477,7 @@ focus_tree = {
 			has_country_flag = ireland_otherworld_guardian_order_ready
 		}
 		completion_reward = {
+			ireland_grant_radical_focus_reward = yes
 			set_country_flag = ireland_otherworld_guardians_complete
 			set_country_flag = ireland_otherworld_guardian_order_ready
 		}
@@ -5288,6 +5497,7 @@ focus_tree = {
 			has_completed_focus = ireland_northern_policy_proof
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_regional_thresholds_complete
 			set_country_flag = ireland_otherworld_regional_thresholds_ready
 		}
@@ -5308,6 +5518,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_otherworld_statecraft_complete
 			set_country_flag = ireland_otherworld_conclusion_valid
 		}
@@ -5331,6 +5542,7 @@ focus_tree = {
 			has_country_flag = ireland_otherworld_conclusion_valid
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_otherworld_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -5353,6 +5565,7 @@ focus_tree = {
 			has_completed_focus = ireland_high_king_evidence_gate
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_crown_province_convergence_complete
 			set_country_flag = ireland_convergence_components_ready
 		}
@@ -5372,6 +5585,7 @@ focus_tree = {
 			has_country_flag = ireland_convergence_material_ready
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_fivefold_obligation_complete
 			set_country_flag = ireland_fivefold_obligation_ready
 		}
@@ -5391,6 +5605,7 @@ focus_tree = {
 			has_completed_focus = ireland_foreign_postwar_review
 		}
 		completion_reward = {
+			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_otherworld_convergence_complete
 			set_country_flag = ireland_otherworld_convergence_ready
 		}
@@ -5417,6 +5632,7 @@ focus_tree = {
 			has_country_flag = ireland_otherworld_conclusion_valid
 		}
 		completion_reward = {
+			ireland_grant_capstone_focus_reward = yes
 			set_country_flag = ireland_convergence_order_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}

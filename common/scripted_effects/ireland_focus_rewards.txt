@@ -1,0 +1,122 @@
+# Immediate, visible focus rewards. These profiles supplement authored route
+# state and unlock effects; they never replace or infer route progression.
+
+ireland_grant_institutional_focus_reward = {
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.political_power_standard }
+	add_political_power = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.stability_standard }
+	add_stability = ireland_focus_reward_value
+}
+
+ireland_grant_economic_focus_reward = {
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.political_power_economic }
+	add_political_power = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.support_equipment }
+	add_equipment_to_stockpile = {
+		type = support_equipment
+		amount = ireland_focus_reward_value
+	}
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.train_equipment }
+	add_equipment_to_stockpile = {
+		type = train_equipment
+		amount = ireland_focus_reward_value
+	}
+}
+
+ireland_grant_military_focus_reward = {
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.service_experience }
+	army_experience = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.command_power_standard }
+	add_command_power = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.infantry_equipment }
+	add_equipment_to_stockpile = {
+		type = infantry_equipment
+		amount = ireland_focus_reward_value
+	}
+}
+
+ireland_grant_maritime_focus_reward = {
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.service_experience }
+	navy_experience = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.convoys_standard }
+	add_equipment_to_stockpile = {
+		type = convoy
+		amount = ireland_focus_reward_value
+	}
+}
+
+ireland_grant_air_focus_reward = {
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.service_experience }
+	air_experience = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.command_power_standard }
+	add_command_power = ireland_focus_reward_value
+}
+
+ireland_grant_technical_focus_reward = {
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.political_power_technical }
+	add_political_power = ireland_focus_reward_value
+	add_tech_bonus = {
+		name = ireland_serious_focus_reward
+		bonus = ireland_focus_reward.technical_bonus
+		uses = ireland_focus_reward_int.technical_bonus_uses
+		category = industry
+	}
+}
+
+ireland_grant_diplomatic_focus_reward = {
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.political_power_standard }
+	add_political_power = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.stability_standard }
+	add_stability = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.convoys_diplomatic }
+	add_equipment_to_stockpile = {
+		type = convoy
+		amount = ireland_focus_reward_value
+	}
+}
+
+ireland_grant_cultural_focus_reward = {
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.political_power_cultural }
+	add_political_power = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.stability_standard }
+	add_stability = ireland_focus_reward_value
+}
+
+ireland_grant_radical_focus_reward = {
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.war_support_radical }
+	add_war_support = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.service_experience }
+	army_experience = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.infantry_equipment }
+	add_equipment_to_stockpile = {
+		type = infantry_equipment
+		amount = ireland_focus_reward_value
+	}
+}
+
+ireland_grant_recovery_focus_reward = {
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.political_power_recovery }
+	add_political_power = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.stability_recovery }
+	add_stability = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.manpower_recovery }
+	add_manpower = ireland_focus_reward_value
+}
+
+ireland_grant_capstone_focus_reward = {
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.political_power_capstone }
+	add_political_power = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.stability_recovery }
+	add_stability = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.command_power_capstone }
+	add_command_power = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.service_experience }
+	army_experience = ireland_focus_reward_value
+	navy_experience = ireland_focus_reward_value
+	air_experience = ireland_focus_reward_value
+	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.capstone_support_equipment }
+	add_equipment_to_stockpile = {
+		type = support_equipment
+		amount = ireland_focus_reward_value
+	}
+}
