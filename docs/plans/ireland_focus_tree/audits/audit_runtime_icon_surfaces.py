@@ -19,11 +19,11 @@ OUT = ROOT / "docs/plans/ireland_focus_tree/audits/ireland_runtime_icon_surface_
 
 
 SURFACES = [
-    ("focus_goals", ROOT / "gfx/interface/goals/ireland", (100, 88), 216, True),
+    ("focus_goals", ROOT / "gfx/interface/goals/ireland", (100, 88), 226, True),
     ("law_stages", ROOT / "gfx/interface/ideas/ireland/laws", (60, 68), 51, True),
-    ("route_spirits", ROOT / "gfx/interface/ideas/ireland/spirits", (60, 68), 63, True),
+    ("route_spirits", ROOT / "gfx/interface/ideas/ireland/spirits", (60, 68), 93, True),
     ("decision_categories", ROOT / "gfx/interface/decisions/categories/ireland", (52, 40), 14, True),
-    ("decision_actions", ROOT / "gfx/interface/decisions/ireland/actions", (32, 32), 70, True),
+    ("decision_actions", ROOT / "gfx/interface/decisions/ireland/actions", (32, 32), 144, True),
     ("missions", ROOT / "gfx/interface/decisions/ireland/missions", (33, 32), 54, True),
     ("mechanic_ledger", ROOT / "gfx/interface/ireland/mechanic_ledger", (64, 64), 45, True),
     ("temporary_overlays", ROOT / "gfx/interface/ireland/temporary_overlays", (32, 32), 27, True),

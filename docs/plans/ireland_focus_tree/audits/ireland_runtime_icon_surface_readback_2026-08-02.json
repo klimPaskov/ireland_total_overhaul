@@ -4,8 +4,8 @@
     {
       "name": "focus_goals",
       "directory": "gfx/interface/goals/ireland",
-      "expected_count": 216,
-      "actual_count": 216,
+      "expected_count": 226,
+      "actual_count": 226,
       "count_ok": true,
       "rows": [
         {
@@ -214,6 +214,23 @@
         },
         {
           "path": "gfx/interface/goals/ireland/goal_ireland_army_serves_dail.dds",
+          "dimensions": [
+            100,
+            88
+          ],
+          "expected_dimensions": [
+            100,
+            88
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/goals/ireland/goal_ireland_atlantic_convoy_office.dds",
           "dimensions": [
             100,
             88
@@ -502,7 +519,41 @@
           "complete": true
         },
         {
+          "path": "gfx/interface/goals/ireland/goal_ireland_coastal_patrol_flotilla.dds",
+          "dimensions": [
+            100,
+            88
+          ],
+          "expected_dimensions": [
+            100,
+            88
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
           "path": "gfx/interface/goals/ireland/goal_ireland_coastwatch.dds",
+          "dimensions": [
+            100,
+            88
+          ],
+          "expected_dimensions": [
+            100,
+            88
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/goals/ireland/goal_ireland_cobh_dockyard_programme.dds",
           "dimensions": [
             100,
             88
@@ -1471,6 +1522,23 @@
           "complete": true
         },
         {
+          "path": "gfx/interface/goals/ireland/goal_ireland_establish_naval_staff.dds",
+          "dimensions": [
+            100,
+            88
+          ],
+          "expected_dimensions": [
+            100,
+            88
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
           "path": "gfx/interface/goals/ireland/goal_ireland_extra_parliamentary_transition.dds",
           "dimensions": [
             100,
@@ -1727,6 +1795,23 @@
         },
         {
           "path": "gfx/interface/goals/ireland/goal_ireland_guardian_crown.dds",
+          "dimensions": [
+            100,
+            88
+          ],
+          "expected_dimensions": [
+            100,
+            88
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/goals/ireland/goal_ireland_harbour_defence_board.dds",
           "dimensions": [
             100,
             88
@@ -2033,6 +2118,40 @@
         },
         {
           "path": "gfx/interface/goals/ireland/goal_ireland_lemass_developmental_capstone.dds",
+          "dimensions": [
+            100,
+            88
+          ],
+          "expected_dimensions": [
+            100,
+            88
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/goals/ireland/goal_ireland_lough_swilly_watch.dds",
+          "dimensions": [
+            100,
+            88
+          ],
+          "expected_dimensions": [
+            100,
+            88
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/goals/ireland/goal_ireland_marine_service_reserve.dds",
           "dimensions": [
             100,
             88
@@ -2984,6 +3103,23 @@
           "complete": true
         },
         {
+          "path": "gfx/interface/goals/ireland/goal_ireland_rebuild_marine_service.dds",
+          "dimensions": [
+            100,
+            88
+          ],
+          "expected_dimensions": [
+            100,
+            88
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
           "path": "gfx/interface/goals/ireland/goal_ireland_reconciliation_mandate.dds",
           "dimensions": [
             100,
@@ -3019,6 +3155,23 @@
         },
         {
           "path": "gfx/interface/goals/ireland/goal_ireland_recovery_bridge.dds",
+          "dimensions": [
+            100,
+            88
+          ],
+          "expected_dimensions": [
+            100,
+            88
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/goals/ireland/goal_ireland_regional_maritime_defence_pact.dds",
           "dimensions": [
             100,
             88
@@ -3138,6 +3291,23 @@
         },
         {
           "path": "gfx/interface/goals/ireland/goal_ireland_republican_veterans.dds",
+          "dimensions": [
+            100,
+            88
+          ],
+          "expected_dimensions": [
+            100,
+            88
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/goals/ireland/goal_ireland_requisition_trawler_hulls.dds",
           "dimensions": [
             100,
             88
@@ -4563,10 +4733,520 @@
     {
       "name": "route_spirits",
       "directory": "gfx/interface/ideas/ireland/spirits",
-      "expected_count": 63,
-      "actual_count": 63,
+      "expected_count": 93,
+      "actual_count": 93,
       "count_ok": true,
       "rows": [
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_governing_congress_vanguard.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_governing_convergence_order.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_governing_five_provinces_pentarchy.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_governing_high_king_sacral.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_governing_historical_de_valera.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_governing_ira_ghq_command.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_governing_oduffy_corporate.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_governing_otherworld_containment.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_governing_otherworld_dominion.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_governing_producer_council.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_security_congress_vanguard.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_security_convergence_order.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_security_five_provinces_pentarchy.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_security_high_king_sacral.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_security_historical_de_valera.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_security_ira_ghq_command.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_security_oduffy_corporate.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_security_otherworld_containment.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_security_otherworld_dominion.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_security_producer_council.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_society_congress_vanguard.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_society_convergence_order.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_society_five_provinces_pentarchy.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_society_high_king_sacral.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_society_historical_de_valera.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_society_ira_ghq_command.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_society_oduffy_corporate.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_society_otherworld_containment.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_society_otherworld_dominion.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/ideas/ireland/spirits/ireland_spirit_society_producer_council.dds",
+          "dimensions": [
+            60,
+            68
+          ],
+          "expected_dimensions": [
+            60,
+            68
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
         {
           "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_001.dds",
           "dimensions": [
@@ -5892,8 +6572,8 @@
     {
       "name": "decision_actions",
       "directory": "gfx/interface/decisions/ireland/actions",
-      "expected_count": 70,
-      "actual_count": 70,
+      "expected_count": 144,
+      "actual_count": 144,
       "count_ok": true,
       "rows": [
         {
@@ -7071,6 +7751,1264 @@
         },
         {
           "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_080.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_accept_or_refuse_reconstruction_aid.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_activate_a_cadre_reserve.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_answer_a_foreign_access_request.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_apply_for_united_nations_membership.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_build_a_coastwatch_sector_network.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_build_a_labour_industrial_settlement.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_commission_patrol_craft.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_complete_the_route_conclusion_review.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_conduct_the_core_eligibility_review.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_convene_a_crown_association.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_convene_a_federal_powers_conference.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_convene_a_neutral_states_consultation.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_defer_the_constitutional_claim_lawfully.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_demand_proof_of_german_delivery.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_demobilise_and_settle_veterans.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_disarm_paramilitary_organisations.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_dissolve_a_failed_regional_order.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_draft_a_unitary_safeguards_charter.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_draft_an_atlantic_consultation_charter.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_establish_a_transitional_authority.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_expand_the_local_defence_force.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_expand_the_local_security_force.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_formalise_plan_w_liaison.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_fulfil_a_compact_obligation.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_install_harbour_defences.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_integrate_a_voluntary_member_contribution.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_integrate_or_devolve_military_command.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_intercept_an_airspace_violation.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_intern_a_belligerent_crew.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_investigate_a_neutral_shipping_loss.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_invite_a_celtic_cultural_partner.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_invite_northern_delegations.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_launch_a_reconstruction_portfolio.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_maintain_welfare_and_pensions.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_mark_and_publicise_neutral_shipping.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_merge_tax_and_debt_administration.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_mobilise_diaspora_relief.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_motorise_a_strategic_route.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_negotiate_british_flexibility.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_offer_a_protectorate_treaty.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_open_a_border_corridor.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_open_cross_border_confidence_measures.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_organise_marine_patrols.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_plan_a_coercive_northern_campaign.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_prepare_a_wartime_unity_bargain.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_procure_rifles_and_support_equipment.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_propose_a_regional_defence_league.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_protect_atlantic_route.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_protect_northern_campaign_freedom.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_receive_a_german_emissary.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_recognise_a_liberated_authority.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_release_or_exchange_internees.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_renegotiate_a_british_supply_contract.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_renew_the_fivefold_compact.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_renew_the_merchant_fleet.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_repair_cobh_dockyard.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_replace_emergency_supply_orders.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_restore_belfast_industrial_contracts.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_restore_neutrality_integrity.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_review_commonwealth_relations.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_review_foreign_guarantees.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_review_the_emergency_declaration.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_run_a_command_district_exercise.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_seek_vatican_humanitarian_mediation.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_send_an_american_procurement_mission.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_settle_education_and_religious_safeguards.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_settle_the_republic_question.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_share_a_controlled_weather_report.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_standardise_infantry_equipment.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_terminate_a_failed_sponsor_agreement.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_tighten_or_narrow_censorship.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_train_marine_service_reserve.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_vet_and_rebuild_policing.dds",
+          "dimensions": [
+            32,
+            32
+          ],
+          "expected_dimensions": [
+            32,
+            32
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/ireland/actions/decision_ireland_write_anti_dependency_clauses.dds",
           "dimensions": [
             32,
             32

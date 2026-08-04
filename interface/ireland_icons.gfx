@@ -108,16 +108,16 @@ spriteTypes = {
 	spriteType = { name = GFX_focus_ireland_transport_priority texturefile = "gfx/interface/goals/ireland/goal_ireland_transport_priority.dds" }
 	spriteType = { name = GFX_focus_ireland_maritime_reserve texturefile = "gfx/interface/goals/ireland/goal_ireland_maritime_reserve.dds" }
 	# Naval Service lane aliases use the same native-sized Ireland goal art family.
-	spriteType = { name = GFX_focus_ireland_rebuild_marine_service texturefile = "gfx/interface/goals/ireland/goal_ireland_maritime_reserve.dds" }
-	spriteType = { name = GFX_focus_ireland_requisition_trawler_hulls texturefile = "gfx/interface/goals/ireland/goal_ireland_transport_priority.dds" }
-	spriteType = { name = GFX_focus_ireland_coastal_patrol_flotilla texturefile = "gfx/interface/goals/ireland/goal_ireland_coastwatch.dds" }
-	spriteType = { name = GFX_focus_ireland_marine_service_reserve texturefile = "gfx/interface/goals/ireland/goal_ireland_territorial_reserve.dds" }
-	spriteType = { name = GFX_focus_ireland_establish_naval_staff texturefile = "gfx/interface/goals/ireland/goal_ireland_command_audit.dds" }
-	spriteType = { name = GFX_focus_ireland_harbour_defence_board texturefile = "gfx/interface/goals/ireland/goal_ireland_port_defence_project.dds" }
-	spriteType = { name = GFX_focus_ireland_cobh_dockyard_programme texturefile = "gfx/interface/goals/ireland/goal_ireland_treaty_port_transfer.dds" }
-	spriteType = { name = GFX_focus_ireland_lough_swilly_watch texturefile = "gfx/interface/goals/ireland/goal_ireland_air_warning.dds" }
-	spriteType = { name = GFX_focus_ireland_atlantic_convoy_office texturefile = "gfx/interface/goals/ireland/goal_ireland_treaty_port_diplomacy.dds" }
-	spriteType = { name = GFX_focus_ireland_regional_maritime_defence_pact texturefile = "gfx/interface/goals/ireland/goal_ireland_interoperability.dds" }
+	spriteType = { name = GFX_focus_ireland_rebuild_marine_service texturefile = "gfx/interface/goals/ireland/goal_ireland_rebuild_marine_service.dds" }
+	spriteType = { name = GFX_focus_ireland_requisition_trawler_hulls texturefile = "gfx/interface/goals/ireland/goal_ireland_requisition_trawler_hulls.dds" }
+	spriteType = { name = GFX_focus_ireland_coastal_patrol_flotilla texturefile = "gfx/interface/goals/ireland/goal_ireland_coastal_patrol_flotilla.dds" }
+	spriteType = { name = GFX_focus_ireland_marine_service_reserve texturefile = "gfx/interface/goals/ireland/goal_ireland_marine_service_reserve.dds" }
+	spriteType = { name = GFX_focus_ireland_establish_naval_staff texturefile = "gfx/interface/goals/ireland/goal_ireland_establish_naval_staff.dds" }
+	spriteType = { name = GFX_focus_ireland_harbour_defence_board texturefile = "gfx/interface/goals/ireland/goal_ireland_harbour_defence_board.dds" }
+	spriteType = { name = GFX_focus_ireland_cobh_dockyard_programme texturefile = "gfx/interface/goals/ireland/goal_ireland_cobh_dockyard_programme.dds" }
+	spriteType = { name = GFX_focus_ireland_lough_swilly_watch texturefile = "gfx/interface/goals/ireland/goal_ireland_lough_swilly_watch.dds" }
+	spriteType = { name = GFX_focus_ireland_atlantic_convoy_office texturefile = "gfx/interface/goals/ireland/goal_ireland_atlantic_convoy_office.dds" }
+	spriteType = { name = GFX_focus_ireland_regional_maritime_defence_pact texturefile = "gfx/interface/goals/ireland/goal_ireland_regional_maritime_defence_pact.dds" }
 	spriteType = { name = GFX_focus_ireland_domestic_manufacturing texturefile = "gfx/interface/goals/ireland/goal_ireland_domestic_manufacturing.dds" }
 	spriteType = { name = GFX_focus_ireland_rural_credit texturefile = "gfx/interface/goals/ireland/goal_ireland_rural_credit.dds" }
 	spriteType = { name = GFX_focus_ireland_emergency_stockpiles texturefile = "gfx/interface/goals/ireland/goal_ireland_emergency_stockpiles.dds" }
@@ -296,84 +296,84 @@ spriteTypes = {
 	spriteType = { name = GFX_decision_ireland_reroute_an_essential_cargo texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_064.dds" }
 	spriteType = { name = GFX_decision_ireland_launch_an_emergency_housing_scheme texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_065.dds" }
 	spriteType = { name = GFX_decision_ireland_fund_a_western_regional_portfolio texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_066.dds" }
-	spriteType = { name = GFX_decision_ireland_run_a_command_district_exercise texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_051.dds" }
-	spriteType = { name = GFX_decision_ireland_standardise_infantry_equipment texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_052.dds" }
-	spriteType = { name = GFX_decision_ireland_procure_rifles_and_support_equipment texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_053.dds" }
-	spriteType = { name = GFX_decision_ireland_activate_a_cadre_reserve texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_054.dds" }
-	spriteType = { name = GFX_decision_ireland_expand_the_local_security_force texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_055.dds" }
-	spriteType = { name = GFX_decision_ireland_expand_the_local_defence_force texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_056.dds" }
-	spriteType = { name = GFX_decision_ireland_motorise_a_strategic_route texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_057.dds" }
-	spriteType = { name = GFX_decision_ireland_build_a_coastwatch_sector_network texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_058.dds" }
-	spriteType = { name = GFX_decision_ireland_install_harbour_defences texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_059.dds" }
-	spriteType = { name = GFX_decision_ireland_organise_marine_patrols texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_060.dds" }
+	spriteType = { name = GFX_decision_ireland_run_a_command_district_exercise texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_run_a_command_district_exercise.dds" }
+	spriteType = { name = GFX_decision_ireland_standardise_infantry_equipment texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_standardise_infantry_equipment.dds" }
+	spriteType = { name = GFX_decision_ireland_procure_rifles_and_support_equipment texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_procure_rifles_and_support_equipment.dds" }
+	spriteType = { name = GFX_decision_ireland_activate_a_cadre_reserve texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_activate_a_cadre_reserve.dds" }
+	spriteType = { name = GFX_decision_ireland_expand_the_local_security_force texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_expand_the_local_security_force.dds" }
+	spriteType = { name = GFX_decision_ireland_expand_the_local_defence_force texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_expand_the_local_defence_force.dds" }
+	spriteType = { name = GFX_decision_ireland_motorise_a_strategic_route texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_motorise_a_strategic_route.dds" }
+	spriteType = { name = GFX_decision_ireland_build_a_coastwatch_sector_network texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_build_a_coastwatch_sector_network.dds" }
+	spriteType = { name = GFX_decision_ireland_install_harbour_defences texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_install_harbour_defences.dds" }
+	spriteType = { name = GFX_decision_ireland_organise_marine_patrols texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_organise_marine_patrols.dds" }
 	spriteType = { name = GFX_decision_ireland_open_a_g2_liaison_channel texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_077.dds" }
 	spriteType = { name = GFX_decision_ireland_turn_or_intern_a_foreign_agent texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_078.dds" }
 	spriteType = { name = GFX_decision_ireland_protect_an_operational_plan texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_079.dds" }
 	spriteType = { name = GFX_decision_ireland_demobilise_a_force_tier texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_080.dds" }
-	spriteType = { name = GFX_decision_ireland_intercept_an_airspace_violation texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_061.dds" }
-	spriteType = { name = GFX_decision_ireland_intern_a_belligerent_crew texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_062.dds" }
-	spriteType = { name = GFX_decision_ireland_release_or_exchange_internees texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_063.dds" }
-	spriteType = { name = GFX_decision_ireland_investigate_a_neutral_shipping_loss texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_064.dds" }
-	spriteType = { name = GFX_decision_ireland_mark_and_publicise_neutral_shipping texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_065.dds" }
-	spriteType = { name = GFX_decision_ireland_share_a_controlled_weather_report texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_066.dds" }
-	spriteType = { name = GFX_decision_ireland_answer_a_foreign_access_request texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_077.dds" }
-	spriteType = { name = GFX_decision_ireland_tighten_or_narrow_censorship texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_078.dds" }
-	spriteType = { name = GFX_decision_ireland_open_a_border_corridor texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_079.dds" }
-	spriteType = { name = GFX_decision_ireland_restore_neutrality_integrity texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_080.dds" }
-	spriteType = { name = GFX_decision_ireland_renegotiate_a_british_supply_contract texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_021.dds" }
-	spriteType = { name = GFX_decision_ireland_formalise_plan_w_liaison texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_022.dds" }
-	spriteType = { name = GFX_decision_ireland_send_an_american_procurement_mission texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_023.dds" }
-	spriteType = { name = GFX_decision_ireland_mobilise_diaspora_relief texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_024.dds" }
-	spriteType = { name = GFX_decision_ireland_receive_a_german_emissary texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_025.dds" }
-	spriteType = { name = GFX_decision_ireland_demand_proof_of_german_delivery texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_026.dds" }
-	spriteType = { name = GFX_decision_ireland_seek_vatican_humanitarian_mediation texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_027.dds" }
-	spriteType = { name = GFX_decision_ireland_convene_a_neutral_states_consultation texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_028.dds" }
-	spriteType = { name = GFX_decision_ireland_write_anti_dependency_clauses texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_029.dds" }
-	spriteType = { name = GFX_decision_ireland_terminate_a_failed_sponsor_agreement texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_030.dds" }
-	spriteType = { name = GFX_decision_ireland_open_cross_border_confidence_measures texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_041.dds" }
-	spriteType = { name = GFX_decision_ireland_invite_northern_delegations texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_042.dds" }
-	spriteType = { name = GFX_decision_ireland_negotiate_british_flexibility texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_043.dds" }
-	spriteType = { name = GFX_decision_ireland_protect_northern_campaign_freedom texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_044.dds" }
-	spriteType = { name = GFX_decision_ireland_convene_a_federal_powers_conference texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_045.dds" }
-	spriteType = { name = GFX_decision_ireland_draft_a_unitary_safeguards_charter texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_046.dds" }
-	spriteType = { name = GFX_decision_ireland_build_a_labour_industrial_settlement texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_047.dds" }
-	spriteType = { name = GFX_decision_ireland_prepare_a_wartime_unity_bargain texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_048.dds" }
-	spriteType = { name = GFX_decision_ireland_plan_a_coercive_northern_campaign texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_049.dds" }
-	spriteType = { name = GFX_decision_ireland_defer_the_constitutional_claim_lawfully texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_050.dds" }
-	spriteType = { name = GFX_decision_ireland_establish_a_transitional_authority texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_011.dds" }
-	spriteType = { name = GFX_decision_ireland_vet_and_rebuild_policing texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_012.dds" }
-	spriteType = { name = GFX_decision_ireland_disarm_paramilitary_organisations texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_013.dds" }
-	spriteType = { name = GFX_decision_ireland_maintain_welfare_and_pensions texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_014.dds" }
-	spriteType = { name = GFX_decision_ireland_restore_belfast_industrial_contracts texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_015.dds" }
-	spriteType = { name = GFX_decision_ireland_settle_education_and_religious_safeguards texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_016.dds" }
-	spriteType = { name = GFX_decision_ireland_merge_tax_and_debt_administration texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_017.dds" }
-	spriteType = { name = GFX_decision_ireland_integrate_or_devolve_military_command texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_018.dds" }
-	spriteType = { name = GFX_decision_ireland_review_foreign_guarantees texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_019.dds" }
-	spriteType = { name = GFX_decision_ireland_conduct_the_core_eligibility_review texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_020.dds" }
-	spriteType = { name = GFX_decision_ireland_invite_a_celtic_cultural_partner texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_031.dds" }
-	spriteType = { name = GFX_decision_ireland_draft_an_atlantic_consultation_charter texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_032.dds" }
-	spriteType = { name = GFX_decision_ireland_propose_a_regional_defence_league texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_033.dds" }
-	spriteType = { name = GFX_decision_ireland_recognise_a_liberated_authority texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_034.dds" }
-	spriteType = { name = GFX_decision_ireland_offer_a_protectorate_treaty texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_035.dds" }
-	spriteType = { name = GFX_decision_ireland_convene_a_crown_association texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_036.dds" }
-	spriteType = { name = GFX_decision_ireland_renew_the_fivefold_compact texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_037.dds" }
-	spriteType = { name = GFX_decision_ireland_fulfil_a_compact_obligation texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_038.dds" }
-	spriteType = { name = GFX_decision_ireland_dissolve_a_failed_regional_order texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_039.dds" }
-	spriteType = { name = GFX_decision_ireland_integrate_a_voluntary_member_contribution texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_040.dds" }
-	spriteType = { name = GFX_decision_ireland_review_the_emergency_declaration texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_001.dds" }
-	spriteType = { name = GFX_decision_ireland_replace_emergency_supply_orders texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_002.dds" }
-	spriteType = { name = GFX_decision_ireland_demobilise_and_settle_veterans texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_003.dds" }
-	spriteType = { name = GFX_decision_ireland_renew_the_merchant_fleet texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_004.dds" }
-	spriteType = { name = GFX_decision_ireland_launch_a_reconstruction_portfolio texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_005.dds" }
-	spriteType = { name = GFX_decision_ireland_settle_the_republic_question texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_006.dds" }
-	spriteType = { name = GFX_decision_ireland_review_commonwealth_relations texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_007.dds" }
-	spriteType = { name = GFX_decision_ireland_apply_for_united_nations_membership texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_008.dds" }
-	spriteType = { name = GFX_decision_ireland_accept_or_refuse_reconstruction_aid texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_009.dds" }
-	spriteType = { name = GFX_decision_ireland_complete_the_route_conclusion_review texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_010.dds" }
-	spriteType = { name = GFX_decision_ireland_commission_patrol_craft texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_004.dds" }
-	spriteType = { name = GFX_decision_ireland_train_marine_service_reserve texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_018.dds" }
-	spriteType = { name = GFX_decision_ireland_repair_cobh_dockyard texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_005.dds" }
-	spriteType = { name = GFX_decision_ireland_protect_atlantic_route texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_033.dds" }
+	spriteType = { name = GFX_decision_ireland_intercept_an_airspace_violation texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_intercept_an_airspace_violation.dds" }
+	spriteType = { name = GFX_decision_ireland_intern_a_belligerent_crew texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_intern_a_belligerent_crew.dds" }
+	spriteType = { name = GFX_decision_ireland_release_or_exchange_internees texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_release_or_exchange_internees.dds" }
+	spriteType = { name = GFX_decision_ireland_investigate_a_neutral_shipping_loss texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_investigate_a_neutral_shipping_loss.dds" }
+	spriteType = { name = GFX_decision_ireland_mark_and_publicise_neutral_shipping texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_mark_and_publicise_neutral_shipping.dds" }
+	spriteType = { name = GFX_decision_ireland_share_a_controlled_weather_report texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_share_a_controlled_weather_report.dds" }
+	spriteType = { name = GFX_decision_ireland_answer_a_foreign_access_request texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_answer_a_foreign_access_request.dds" }
+	spriteType = { name = GFX_decision_ireland_tighten_or_narrow_censorship texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_tighten_or_narrow_censorship.dds" }
+	spriteType = { name = GFX_decision_ireland_open_a_border_corridor texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_open_a_border_corridor.dds" }
+	spriteType = { name = GFX_decision_ireland_restore_neutrality_integrity texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_restore_neutrality_integrity.dds" }
+	spriteType = { name = GFX_decision_ireland_renegotiate_a_british_supply_contract texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_renegotiate_a_british_supply_contract.dds" }
+	spriteType = { name = GFX_decision_ireland_formalise_plan_w_liaison texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_formalise_plan_w_liaison.dds" }
+	spriteType = { name = GFX_decision_ireland_send_an_american_procurement_mission texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_send_an_american_procurement_mission.dds" }
+	spriteType = { name = GFX_decision_ireland_mobilise_diaspora_relief texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_mobilise_diaspora_relief.dds" }
+	spriteType = { name = GFX_decision_ireland_receive_a_german_emissary texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_receive_a_german_emissary.dds" }
+	spriteType = { name = GFX_decision_ireland_demand_proof_of_german_delivery texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_demand_proof_of_german_delivery.dds" }
+	spriteType = { name = GFX_decision_ireland_seek_vatican_humanitarian_mediation texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_seek_vatican_humanitarian_mediation.dds" }
+	spriteType = { name = GFX_decision_ireland_convene_a_neutral_states_consultation texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_convene_a_neutral_states_consultation.dds" }
+	spriteType = { name = GFX_decision_ireland_write_anti_dependency_clauses texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_write_anti_dependency_clauses.dds" }
+	spriteType = { name = GFX_decision_ireland_terminate_a_failed_sponsor_agreement texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_terminate_a_failed_sponsor_agreement.dds" }
+	spriteType = { name = GFX_decision_ireland_open_cross_border_confidence_measures texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_open_cross_border_confidence_measures.dds" }
+	spriteType = { name = GFX_decision_ireland_invite_northern_delegations texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_invite_northern_delegations.dds" }
+	spriteType = { name = GFX_decision_ireland_negotiate_british_flexibility texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_negotiate_british_flexibility.dds" }
+	spriteType = { name = GFX_decision_ireland_protect_northern_campaign_freedom texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_protect_northern_campaign_freedom.dds" }
+	spriteType = { name = GFX_decision_ireland_convene_a_federal_powers_conference texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_convene_a_federal_powers_conference.dds" }
+	spriteType = { name = GFX_decision_ireland_draft_a_unitary_safeguards_charter texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_draft_a_unitary_safeguards_charter.dds" }
+	spriteType = { name = GFX_decision_ireland_build_a_labour_industrial_settlement texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_build_a_labour_industrial_settlement.dds" }
+	spriteType = { name = GFX_decision_ireland_prepare_a_wartime_unity_bargain texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_prepare_a_wartime_unity_bargain.dds" }
+	spriteType = { name = GFX_decision_ireland_plan_a_coercive_northern_campaign texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_plan_a_coercive_northern_campaign.dds" }
+	spriteType = { name = GFX_decision_ireland_defer_the_constitutional_claim_lawfully texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_defer_the_constitutional_claim_lawfully.dds" }
+	spriteType = { name = GFX_decision_ireland_establish_a_transitional_authority texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_establish_a_transitional_authority.dds" }
+	spriteType = { name = GFX_decision_ireland_vet_and_rebuild_policing texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_vet_and_rebuild_policing.dds" }
+	spriteType = { name = GFX_decision_ireland_disarm_paramilitary_organisations texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_disarm_paramilitary_organisations.dds" }
+	spriteType = { name = GFX_decision_ireland_maintain_welfare_and_pensions texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_maintain_welfare_and_pensions.dds" }
+	spriteType = { name = GFX_decision_ireland_restore_belfast_industrial_contracts texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_restore_belfast_industrial_contracts.dds" }
+	spriteType = { name = GFX_decision_ireland_settle_education_and_religious_safeguards texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_settle_education_and_religious_safeguards.dds" }
+	spriteType = { name = GFX_decision_ireland_merge_tax_and_debt_administration texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_merge_tax_and_debt_administration.dds" }
+	spriteType = { name = GFX_decision_ireland_integrate_or_devolve_military_command texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_integrate_or_devolve_military_command.dds" }
+	spriteType = { name = GFX_decision_ireland_review_foreign_guarantees texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_review_foreign_guarantees.dds" }
+	spriteType = { name = GFX_decision_ireland_conduct_the_core_eligibility_review texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_conduct_the_core_eligibility_review.dds" }
+	spriteType = { name = GFX_decision_ireland_invite_a_celtic_cultural_partner texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_invite_a_celtic_cultural_partner.dds" }
+	spriteType = { name = GFX_decision_ireland_draft_an_atlantic_consultation_charter texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_draft_an_atlantic_consultation_charter.dds" }
+	spriteType = { name = GFX_decision_ireland_propose_a_regional_defence_league texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_propose_a_regional_defence_league.dds" }
+	spriteType = { name = GFX_decision_ireland_recognise_a_liberated_authority texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_recognise_a_liberated_authority.dds" }
+	spriteType = { name = GFX_decision_ireland_offer_a_protectorate_treaty texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_offer_a_protectorate_treaty.dds" }
+	spriteType = { name = GFX_decision_ireland_convene_a_crown_association texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_convene_a_crown_association.dds" }
+	spriteType = { name = GFX_decision_ireland_renew_the_fivefold_compact texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_renew_the_fivefold_compact.dds" }
+	spriteType = { name = GFX_decision_ireland_fulfil_a_compact_obligation texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_fulfil_a_compact_obligation.dds" }
+	spriteType = { name = GFX_decision_ireland_dissolve_a_failed_regional_order texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_dissolve_a_failed_regional_order.dds" }
+	spriteType = { name = GFX_decision_ireland_integrate_a_voluntary_member_contribution texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_integrate_a_voluntary_member_contribution.dds" }
+	spriteType = { name = GFX_decision_ireland_review_the_emergency_declaration texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_review_the_emergency_declaration.dds" }
+	spriteType = { name = GFX_decision_ireland_replace_emergency_supply_orders texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_replace_emergency_supply_orders.dds" }
+	spriteType = { name = GFX_decision_ireland_demobilise_and_settle_veterans texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_demobilise_and_settle_veterans.dds" }
+	spriteType = { name = GFX_decision_ireland_renew_the_merchant_fleet texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_renew_the_merchant_fleet.dds" }
+	spriteType = { name = GFX_decision_ireland_launch_a_reconstruction_portfolio texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_launch_a_reconstruction_portfolio.dds" }
+	spriteType = { name = GFX_decision_ireland_settle_the_republic_question texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_settle_the_republic_question.dds" }
+	spriteType = { name = GFX_decision_ireland_review_commonwealth_relations texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_review_commonwealth_relations.dds" }
+	spriteType = { name = GFX_decision_ireland_apply_for_united_nations_membership texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_apply_for_united_nations_membership.dds" }
+	spriteType = { name = GFX_decision_ireland_accept_or_refuse_reconstruction_aid texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_accept_or_refuse_reconstruction_aid.dds" }
+	spriteType = { name = GFX_decision_ireland_complete_the_route_conclusion_review texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_complete_the_route_conclusion_review.dds" }
+	spriteType = { name = GFX_decision_ireland_commission_patrol_craft texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_commission_patrol_craft.dds" }
+	spriteType = { name = GFX_decision_ireland_train_marine_service_reserve texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_train_marine_service_reserve.dds" }
+	spriteType = { name = GFX_decision_ireland_repair_cobh_dockyard texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_repair_cobh_dockyard.dds" }
+	spriteType = { name = GFX_decision_ireland_protect_atlantic_route texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_protect_atlantic_route.dds" }
 	spriteType = { name = GFX_decision_category_ireland_settlement_government texturefile = "gfx/interface/decisions/categories/ireland/decision_category_ireland_001.dds" }
 	spriteType = { name = GFX_decision_category_ireland_elections texturefile = "gfx/interface/decisions/categories/ireland/decision_category_ireland_002.dds" }
 	spriteType = { name = GFX_decision_category_ireland_organised_society texturefile = "gfx/interface/decisions/categories/ireland/decision_category_ireland_003.dds" }

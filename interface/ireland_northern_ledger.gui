@@ -33,37 +33,10 @@ guiTypes = {
 			position = { x = 456 y = 10 }
 			pdx_tooltip = "ireland_northern_status_tooltip"
 		}
-		iconType = {
-			name = "ireland_northern_ledger_status_locked"
-			spriteType = "GFX_ireland_gui_status_locked"
-			position = { x = 456 y = 10 }
-			pdx_tooltip = "ireland_northern_locked_tooltip"
-		}
-		iconType = {
-			name = "ireland_northern_ledger_status_warning"
-			spriteType = "GFX_ireland_gui_status_warning"
-			position = { x = 456 y = 10 }
-			pdx_tooltip = "ireland_northern_warning_tooltip"
-		}
-		iconType = {
-			name = "ireland_northern_ledger_status_critical"
-			spriteType = "GFX_ireland_gui_status_critical"
-			position = { x = 456 y = 10 }
-			pdx_tooltip = "ireland_northern_critical_tooltip"
-		}
 		instantTextBoxType = {
 			name = "ireland_northern_ledger_available_state"
 			position = { x = 292 y = 40 }
 			text = "ireland_northern_available_state"
-			font = "hoi_16mbs"
-			format = right
-			maxWidth = 154
-			maxHeight = 22
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_ledger_locked_state"
-			position = { x = 292 y = 40 }
-			text = "ireland_northern_locked_state"
 			font = "hoi_16mbs"
 			format = right
 			maxWidth = 154
@@ -146,180 +119,60 @@ guiTypes = {
 			name = "ireland_northern_unionist_row"
 			quadTextureSprite = "GFX_button_238x38"
 			position = { x = 12 y = 172 }
-			buttonText = ""
+			buttonText = "ireland_northern_unionist_row_text"
 			buttonFont = "hoi_16mbs"
 			clicksound = click_default
 			pdx_tooltip = "ireland_northern_unionist_tooltip"
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_unionist_label"
-			position = { x = 24 y = 181 }
-			text = "ireland_northern_unionist_label"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 164
-			maxHeight = 22
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_unionist_value"
-			position = { x = 184 y = 181 }
-			text = "ireland_northern_unionist_value"
-			font = "hoi_16mbs"
-			format = right
-			maxWidth = 54
-			maxHeight = 22
-			alwaystransparent = yes
 		}
 
 		buttonType = {
 			name = "ireland_northern_nationalist_row"
 			quadTextureSprite = "GFX_button_238x38"
 			position = { x = 258 y = 172 }
-			buttonText = ""
+			buttonText = "ireland_northern_nationalist_row_text"
 			buttonFont = "hoi_16mbs"
 			clicksound = click_default
 			pdx_tooltip = "ireland_northern_nationalist_tooltip"
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_nationalist_label"
-			position = { x = 270 y = 181 }
-			text = "ireland_northern_nationalist_label"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 164
-			maxHeight = 22
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_nationalist_value"
-			position = { x = 430 y = 181 }
-			text = "ireland_northern_nationalist_value"
-			font = "hoi_16mbs"
-			format = right
-			maxWidth = 54
-			maxHeight = 22
-			alwaystransparent = yes
 		}
 
 		buttonType = {
 			name = "ireland_northern_labour_row"
 			quadTextureSprite = "GFX_button_238x38"
 			position = { x = 12 y = 210 }
-			buttonText = ""
+			buttonText = "ireland_northern_labour_row_text"
 			buttonFont = "hoi_16mbs"
 			clicksound = click_default
 			pdx_tooltip = "ireland_northern_labour_tooltip"
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_labour_label"
-			position = { x = 24 y = 219 }
-			text = "ireland_northern_labour_label"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 164
-			maxHeight = 22
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_labour_value"
-			position = { x = 184 y = 219 }
-			text = "ireland_northern_labour_value"
-			font = "hoi_16mbs"
-			format = right
-			maxWidth = 54
-			maxHeight = 22
-			alwaystransparent = yes
 		}
 
 		buttonType = {
 			name = "ireland_northern_british_row"
 			quadTextureSprite = "GFX_button_238x38"
 			position = { x = 258 y = 210 }
-			buttonText = ""
+			buttonText = "ireland_northern_british_row_text"
 			buttonFont = "hoi_16mbs"
 			clicksound = click_default
 			pdx_tooltip = "ireland_northern_british_tooltip"
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_british_label"
-			position = { x = 270 y = 219 }
-			text = "ireland_northern_british_label"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 164
-			maxHeight = 22
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_british_value"
-			position = { x = 430 y = 219 }
-			text = "ireland_northern_british_value"
-			font = "hoi_16mbs"
-			format = right
-			maxWidth = 54
-			maxHeight = 22
-			alwaystransparent = yes
 		}
 
 		buttonType = {
 			name = "ireland_northern_security_row"
 			quadTextureSprite = "GFX_button_238x38"
 			position = { x = 12 y = 248 }
-			buttonText = ""
+			buttonText = "ireland_northern_security_row_text"
 			buttonFont = "hoi_16mbs"
 			clicksound = click_default
 			pdx_tooltip = "ireland_northern_security_tooltip"
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_security_label"
-			position = { x = 24 y = 257 }
-			text = "ireland_northern_security_label"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 164
-			maxHeight = 22
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_security_value"
-			position = { x = 184 y = 257 }
-			text = "ireland_northern_security_value"
-			font = "hoi_16mbs"
-			format = right
-			maxWidth = 54
-			maxHeight = 22
-			alwaystransparent = yes
 		}
 
 		buttonType = {
 			name = "ireland_northern_integration_row"
 			quadTextureSprite = "GFX_button_238x38"
 			position = { x = 258 y = 248 }
-			buttonText = ""
+			buttonText = "ireland_northern_integration_row_text"
 			buttonFont = "hoi_16mbs"
 			clicksound = click_default
 			pdx_tooltip = "ireland_northern_integration_tooltip"
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_integration_label"
-			position = { x = 270 y = 257 }
-			text = "ireland_northern_integration_label"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 164
-			maxHeight = 22
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_northern_integration_value"
-			position = { x = 430 y = 257 }
-			text = "ireland_northern_integration_value"
-			font = "hoi_16mbs"
-			format = right
-			maxWidth = 54
-			maxHeight = 22
-			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
@@ -398,15 +251,6 @@ guiTypes = {
 			clicksound = click_default
 			pdx_tooltip = "ireland_northern_review_button_tooltip"
 		}
-		buttonType = {
-			name = "ireland_northern_close_button"
-			quadTextureSprite = "GFX_closebutton"
-			position = { x = 462 y = 443 }
-			buttonFont = "Main_14_black"
-			shortcut = "ESCAPE"
-			clicksound = click_close
-			pdx_tooltip = "ireland_gui_close_tooltip"
-		}
 		instantTextBoxType = {
 			name = "ireland_northern_ledger_footer"
 			position = { x = 16 y = 482 }
@@ -419,23 +263,9 @@ guiTypes = {
 		}
 
 		iconType = {
-			name = "ireland_northern_ailtiri_animation"
-			spriteType = "GFX_ireland_ailtiri_takeover_seal_animated"
-			position = { x = 414 y = 76 }
-			scale = 0.28
-			alwaystransparent = yes
-		}
-		iconType = {
 			name = "ireland_northern_ailtiri_fallback"
 			spriteType = "GFX_ireland_ailtiri_takeover_seal"
 			position = { x = 414 y = 76 }
-			scale = 0.28
-			alwaystransparent = yes
-		}
-		iconType = {
-			name = "ireland_northern_compact_breach_animation"
-			spriteType = "GFX_ireland_compact_breach_warning_animated"
-			position = { x = 458 y = 76 }
 			scale = 0.28
 			alwaystransparent = yes
 		}

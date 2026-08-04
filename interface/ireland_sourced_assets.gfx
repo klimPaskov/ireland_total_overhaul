@@ -71,7 +71,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_ireland_historical_tricolour_reference"
-		texturefile = "gfx/interface/ireland/sourced/symbol_irish_republican_flag.dds"
+		texturefile = "gfx/interface/ireland/sourced/historical_tricolour_reference.dds"
 	}
 	spriteType = {
 		name = "GFX_ireland_symbol_constitution_1937"
@@ -79,7 +79,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_ireland_constitution_1937_document"
-		texturefile = "gfx/interface/ireland/sourced/symbol_constitution_1937.dds"
+		texturefile = "gfx/interface/ireland/sourced/constitution_1937_document.dds"
 	}
 	spriteType = {
 		name = "GFX_report_event_ireland_report_constitution_1937"
@@ -157,7 +157,7 @@ spriteTypes = {
 	# image substitute.
 	spriteType = {
 		name = "GFX_report_event_ireland_report_historical_chain_report_01"
-		texturefile = "gfx/event_pictures/ireland/report_constitution_1937.dds"
+		texturefile = "gfx/event_pictures/ireland/report_historical_chain_report_01.dds"
 	}
 	# Complete source-backed event/news slots. Each slot keeps its manifest
 	# identity and controlled-reuse boundary; no blocked slot is substituted.
