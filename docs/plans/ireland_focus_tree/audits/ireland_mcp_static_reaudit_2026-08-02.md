@@ -12,9 +12,9 @@ Workspace: `mod_ireland_total_overhaul_65a6b5f140a7`.
 ## Focus tree
 
 The national-focus inspection of
-`common/national_focus/slopx_ireland_focus_tree.txt` returned
+`common/national_focus/ireland_focus_tree.txt` returned
 `FOCUS_INSPECTED` with status `ok` for tree
-`slopx_ireland_focus_tree`:
+`ireland_focus_tree`:
 
 | metric | result |
 |---|---:|
@@ -42,7 +42,7 @@ the authored Ireland source and were not changed.
 
 ## Event namespace
 
-The bounded namespace lint for `slopx_ireland_events` returned
+The bounded namespace lint for `ireland_events` returned
 `EVENT_INSPECTED_PARTIAL` with status `ok` and `blockingDiagnostics: 0`.
 The partial result is the MCP large-workspace boundary: helper and lifecycle
 projections are deferred in the global inventory, not reported as Ireland-local
@@ -52,7 +52,7 @@ flavour event families documented by the final non-live audit.
 Latest event scan artifact: `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/48c2d9ad12e37f2bb0b186e45c09493e1fb2a86c9b5b1568bafbe736d61322e6/ac82e97b5f276b6950a0bb2b8256687ddd1879a4c8a3b883f897bba4b3284067/event-scan-6e096b930451.json` (graph hash `984a16...`; blocking diagnostics 0; workspace projection remains partial by design).
 
 The focused event lint and options render were rerun for the repaired
-`slopx_ireland_events.437` node. Both returned `status: ok` with
+`ireland_events.437` node. Both returned `status: ok` with
 `blockingDiagnostics: 0`. The render manifest is
 `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/59266970286f4d7453198686570cd0dbe0e7fbba4990eb2284fcfb9a2475bd74/47b3414aa7338331911bc47bfce656efae3838c8bb814224aae4ef0beb9ba985/event-options-6e096b930451-manifest.json`;
 the bounded options JSON is
@@ -130,7 +130,7 @@ The following source-level repairs are included in this re-audit:
   Tier-1 folklore/archive lane retain the historical `H` profile. The
   Otherworld AI opening is also `H`; the Otherworld investigation focus is the
   explicit transition to plausible `P`, and only
-  `slopx_ireland_events.437` can move the route into `A`. An AI preference alone
+  `ireland_events.437` can move the route into `A`. An AI preference alone
   cannot reveal the hidden route.
 - The canonical four-choice event `The Archive Records What Has Not Yet
   Happened` requires the independent witness ledger, rare-condition threshold,
@@ -141,15 +141,15 @@ The following source-level repairs are included in this re-audit:
   completion record is durable, and the route remains classified A throughout.
   Cleanup clears the transient event and restoration-review flags after the
   durable choice is stored.
-- The shared `slopx_ireland_verified_impossible_reveal` flag remains a
+- The shared `ireland_verified_impossible_reveal` flag remains a
   High-King/Five-Provinces and convergence result. It is not an Otherworld
   admission gate: the Otherworld profile, guardian readiness, focus gates, and
   `.437` dispatch use the route-specific
-  `slopx_ireland_otherworld_impossible_confirmed` or
-  `slopx_ireland_otherworld_archive_reveal_complete` flags. A different hidden
+  `ireland_otherworld_impossible_confirmed` or
+  `ireland_otherworld_archive_reveal_complete` flags. A different hidden
   route therefore cannot suppress or bypass the canonical Otherworld event.
 - The Dillon named-vote gate is supplied by
-  `common/scripted_triggers/slopx_ireland_dillon_gate_repair.txt` and is used
+  `common/scripted_triggers/ireland_dillon_gate_repair.txt` and is used
   by both the named decision gate and the final event war-entry gate. The
   invasion-danger exception is not allowed to synthesize the named vote.
 - The 140 decision actions now call two documented shared scarcity helpers for

@@ -1,16 +1,16 @@
 # Ireland localisation handoff
 
-Historical handoff note (reconciled 2026-07-22): this worker snapshot reports 3,015 expected keys and no scripted-localisation dependency. The current audit reports 3,193 YML keys and the source contains scripted-localisation definitions and GUI projections, so this handoff is not the current runtime status. Retain it as coverage-worker evidence; use `docs/plans/ireland_focus_tree/audits/ireland_localisation_audit_2026-07-18.md`, `common/scripted_localisation/slopx_ireland_localisation.txt`, and `docs/plans/ireland_focus_tree/source_of_truth_map.md` for reconciliation.
+Historical handoff note (reconciled 2026-07-22): this worker snapshot reports 3,015 expected keys and no scripted-localisation dependency. The current audit reports 3,193 YML keys and the source contains scripted-localisation definitions and GUI projections, so this handoff is not the current runtime status. Retain it as coverage-worker evidence; use `docs/plans/ireland_focus_tree/audits/ireland_localisation_audit_2026-07-18.md`, `common/scripted_localisation/ireland_localisation.txt`, and `docs/plans/ireland_focus_tree/source_of_truth_map.md` for reconciliation.
 
 ## Status
 
-The Ireland localisation file now covers every source-derived player-facing key in the audited focus, decision, mission, event, spirit, achievement, GUI, and National Settlement BOP surfaces. The key audit is exact: 3,015 expected Ireland keys, 3,015 definitions, zero missing keys, zero extra `slopx_ireland` keys, and zero duplicate definitions.
+The Ireland localisation file now covers every source-derived player-facing key in the audited focus, decision, mission, event, spirit, achievement, GUI, and National Settlement BOP surfaces. The key audit is exact: 3,015 expected Ireland keys, 3,015 definitions, zero missing keys, zero extra `ireland` keys, and zero duplicate definitions.
 
 This is a localisation coverage completion, not a claim that the whole Ireland package is runtime-complete. The Northern Settlement Ledger still has a source-side scripted-localisation dependency described below.
 
 ## Files changed
 
-- `localisation/english/slopx_ireland_l_english.yml`
+- `localisation/english/ireland_l_english.yml`
 - `docs/plans/ireland_focus_tree/localisation/localisation_handoff.md`
 
 No gameplay, interface, GFX, asset, or other localisation file was edited.
@@ -47,10 +47,10 @@ The main-event suffix audit is 218 standard four-key blocks (`.t`, `.d`, `.a`, `
 - BOP side and range IDs: 9 raw, 9 unique.
 - Localisation definitions: 3,015 parsed, zero duplicate keys.
 - Expected source-derived keys missing from localisation: none.
-- Extra `slopx_ireland` localisation keys: none.
+- Extra `ireland` localisation keys: none.
 - Malformed single-line localisation entries: none.
 
-The BOP's `slopx_ireland_national_settlement` key is intentionally shared with the national focus of the same ID. It is defined once and counted once in the focus coverage, while the two BOP sides and seven BOP ranges receive their own labels and descriptions.
+The BOP's `ireland_national_settlement` key is intentionally shared with the national focus of the same ID. It is defined once and counted once in the focus coverage, while the two BOP sides and seven BOP ranges receive their own labels and descriptions.
 
 ## Dynamic localisation and route wording
 
@@ -67,7 +67,7 @@ Focus, decision, main-event, and flavour-event wording was reviewed against the 
 
 ## Scripted-localisation issue list
 
-The Northern GUI source contract states that `slopx_ireland_northern_model`, `slopx_ireland_northern_region`, and `slopx_ireland_northern_failure_state` should be scripted-localisation projections from route flags, integration stage, and active review/failure state. The repository currently has an empty `common/scripted_localisation/` directory and no Ireland definitions for those projections.
+The Northern GUI source contract states that `ireland_northern_model`, `ireland_northern_region`, and `ireland_northern_failure_state` should be scripted-localisation projections from route flags, integration stage, and active review/failure state. The repository currently has an empty `common/scripted_localisation/` directory and no Ireland definitions for those projections.
 
 The YML file therefore supplies non-spoiler, stable labels and tooltips for all three referenced keys, but cannot make their displayed model, region, or failure value dynamic inside the localisation-only ownership boundary. This remains unresolved and should be implemented by the parent in a source-owned scripted-localisation file, then checked with the Northern GUI render or an engine parse.
 
@@ -81,7 +81,7 @@ The YML file therefore supplies non-spoiler, stable labels and tooltips for all 
 
 ## Encoding and wording checks
 
-- `slopx_ireland_l_english.yml` starts with the UTF-8 BOM bytes `EF BB BF`.
+- `ireland_l_english.yml` starts with the UTF-8 BOM bytes `EF BB BF`.
 - No `:0` localisation keys were introduced.
 - No em dash or semicolon appears in the player-facing YML text.
 - No update-history or implementation/meta wording was found in the player-facing values.
@@ -89,7 +89,7 @@ The YML file therefore supplies non-spoiler, stable labels and tooltips for all 
 
 ## Recommended parent fixes
 
-1. Add the three Northern scripted-localisation projections in the parent-owned `common/scripted_localisation/` surface for `slopx_ireland_northern_model`, `slopx_ireland_northern_region`, and `slopx_ireland_northern_failure_state`.
+1. Add the three Northern scripted-localisation projections in the parent-owned `common/scripted_localisation/` surface for `ireland_northern_model`, `ireland_northern_region`, and `ireland_northern_failure_state`.
 2. Re-run a read-only Northern GUI inspection/render after those definitions are wired, checking that locked states remain non-spoiler and that the live model, region, and failure state change with the active route and review state.
 3. Keep the localisation file as the single definition site for the 3,015 audited keys. Do not duplicate the shared GUI close-button key or the BOP/focus shared National Settlement key.
 

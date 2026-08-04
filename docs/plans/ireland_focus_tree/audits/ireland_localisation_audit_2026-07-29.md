@@ -26,7 +26,7 @@ The required offline wiki pages and installed vanilla documentation for localisa
 - Ideas: 63 source blocks; all 126 name/description keys present.
 - Laws: 17 live law matrix families; all current law-review scripted-localisation outputs resolve. The current contract exposes four review states (`abuse`, `due`, `active`, `open`) and has no missing family/stage key requested by source.
 - Achievements: 32; all 64 name/description keys present. Public conclusion event titles, descriptions, and options are covered.
-- Events: 494 raw `country_event` blocks, consisting of 493 top-level player-facing definitions plus one nested dispatch block (`slopx_ireland_events.219`). The 493 top-level IDs are unique and all 1,978 title/description/option localisation references resolve. Main event source has 512 options; flavour source has 473 options.
+- Events: 494 raw `country_event` blocks, consisting of 493 top-level player-facing definitions plus one nested dispatch block (`ireland_events.219`). The 493 top-level IDs are unique and all 1,978 title/description/option localisation references resolve. Main event source has 512 options; flavour source has 473 options.
 - GUIs: exactly three Ireland windows. Their 135 static localisation references resolve; all seven scripted-localisation calls resolve to the eight defined-text contracts. Existing offline GUI audits report the conditions, Northern settlement, and concealed-evidence surfaces as covered; no live render was run here.
 - Game rules: the one Ireland hidden-content rule has all six expected localisation keys semantically present.
 
@@ -38,17 +38,17 @@ None found in the requested focus, category, action, mission, idea, law-review, 
 
 ### Duplicate keys
 
-None found in `localisation/english/slopx_ireland_l_english.yml` or the Ireland game-rule localisation. Ireland source IDs for focuses, decisions/missions, ideas, achievements, and top-level events were also unique.
+None found in `localisation/english/ireland_l_english.yml` or the Ireland game-rule localisation. Ireland source IDs for focuses, decisions/missions, ideas, achievements, and top-level events were also unique.
 
 ### Scripted-localisation issues
 
-None found. `common/scripted_localisation/slopx_ireland_localisation.txt` and `common/scripted_localisation/slopx_ireland_coastwatch.txt` contain eight defined-text contracts with 84 output branches (57 unique output keys); all outputs exist and all seven GUI calls resolve. The current Northern failure-state branches and plebiscite model branch are distinct, and concealed-evidence values remain generic before reveal.
+None found. `common/scripted_localisation/ireland_localisation.txt` and `common/scripted_localisation/ireland_coastwatch.txt` contain eight defined-text contracts with 84 output branches (57 unique output keys); all outputs exist and all seven GUI calls resolve. The current Northern failure-state branches and plebiscite model branch are distinct, and concealed-evidence values remain generic before reveal.
 
 ### Dynamic-text opportunities
 
 - Existing action cost text covers 140 actions through 51 cost localisation keys and exposes current ledgers, values, Political Power, Command Power, and burden bands. The member-contribution requirement was brought into that same readable contract by the patch below.
 - Numeric dynamic values use formatted `|0` tokens and current GUI/event ledgers expose current values, timers, selections, regions, and outcomes.
-- The 60 route-variant spirit descriptions under `slopx_ireland_spirit_governing_*`, `*_society_*`, and `*_security_*` use a shared sentence scaffold. Making each route spirit more individually voiced is a broad text/design pass, not a narrow correction, so it remains queued.
+- The 60 route-variant spirit descriptions under `ireland_spirit_governing_*`, `*_society_*`, and `*_security_*` use a shared sentence scaffold. Making each route spirit more individually voiced is a broad text/design pass, not a narrow correction, so it remains queued.
 - Law localisation currently exposes review status rather than every family/stage. A future source-level request for family-specific law display should add a dynamic contract then; no missing key was invented here.
 
 ### Cross-surface mismatch notes and blockers
@@ -56,16 +56,16 @@ None found. `common/scripted_localisation/slopx_ireland_localisation.txt` and `c
 - Radical wording and mission ownership are settled by the approved M2 ruling: the current source has ten Radical and Underground actions plus the two physically nested ordinal 006/009 mission families, while the by-election and parish-audit modes remain distinct modes of their base missions. No route wording was silently substituted.
 - Achievement staging is settled by the approved A2 ruling. A-22, A-27, A-28, and A-29 through A-32 remain source-hidden (seven hidden achievements total); A-22, A-27, and A-28 retain their canonical reveal-related `happened` flags. The local schema provides no supported dynamic visibility contract, so the implementation claims the documented static-hidden form and does not invent a trigger-valued field.
 - Follow-up complete: twelve player-facing strings that exposed raw state numbers (`113`, `119`, and `134/135`) now name Ireland, Northern Ireland, Connaught, and Munster as appropriate. The engine-facing state checks are unchanged.
-- Follow-up complete: the six keys in `localisation/english/slopx_ireland_game_rules_l_english.yml` no longer have a leading space.
+- Follow-up complete: the six keys in `localisation/english/ireland_game_rules_l_english.yml` no longer have a leading space.
 - No generic filler or update-history wording was found in the reviewed player-facing text. Focus, action, mission, and event prose remained route-distinct in the static comparison; the spirit scaffold noted above is the only broad sameness concern.
 - Concealed GUI and Northern model text does not statically reveal hidden route names before reveal. Runtime reveal timing remains unverified because live HOI4 testing was excluded.
 
 ## Exact changes applied
 
-Changed file: `localisation/english/slopx_ireland_l_english.yml`
+Changed file: `localisation/english/ireland_l_english.yml`
 
-- `slopx_ireland_action_prepare_a_wartime_unity_bargain_requirements_tt` (line 1082): added the missing `Category: Northern Settlement.` label.
-- `slopx_ireland_action_integrate_a_voluntary_member_contribution_requirements_tt` (line 1104): added the standard named-ledger surcharge explanation, including current-value display and the existing +10/+5/+0 Political Power and Command Power bands with matching burden values.
+- `ireland_action_prepare_a_wartime_unity_bargain_requirements_tt` (line 1082): added the missing `Category: Northern Settlement.` label.
+- `ireland_action_integrate_a_voluntary_member_contribution_requirements_tt` (line 1104): added the standard named-ledger surcharge explanation, including current-value display and the existing +10/+5/+0 Political Power and Command Power bands with matching burden values.
 
 Before these edits, the first action omitted its category and the second described a surcharge without telling the player how the selected action's current ledger and bands are displayed. After the edits, both requirements follow the established action tooltip contract; gameplay values and effects are unchanged.
 

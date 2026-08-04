@@ -12,7 +12,7 @@ The Part 5 decision map requires invasion danger, Readiness, and a legal-coopera
 
 ## Current implementation
 
-`common/decisions/slopx_ireland_decisions.txt` now requires all of the following before the existing dynamic Political Power and Command Power scarcity gate can pass:
+`common/decisions/ireland_decisions.txt` now requires all of the following before the existing dynamic Political Power and Command Power scarcity gate can pass:
 
 - invasion danger or an active war;
 - the British channel and a valid British partner, with Border Belt state 113 controlled;
@@ -25,7 +25,7 @@ The Part 5 decision map requires invasion danger, Readiness, and a legal-coopera
 
 The completion effect preserves the existing 25 Command Power charge, records the action, adds the authored British-leverage exposure, and opens the foreign-reaction window. No political-victory shortcut is introduced.
 
-`localisation/english/slopx_ireland_l_english.yml` exposes the same conditions in the action description and requirements tooltip, including the distinct command, intelligence, supply, law, safeguard, and Border Belt checks.
+`localisation/english/ireland_l_english.yml` exposes the same conditions in the action description and requirements tooltip, including the distinct command, intelligence, supply, law, safeguard, and Border Belt checks.
 
 ## Validation boundary
 

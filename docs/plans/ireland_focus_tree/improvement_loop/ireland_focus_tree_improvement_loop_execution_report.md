@@ -38,7 +38,7 @@ The H/P/A boundary remains binding. H covers documented history and institutions
 
 | ID | Severity | Finding | Evidence | Disposition |
 | --- | --- | --- | --- | --- |
-| ILR-01 | Critical | The runtime implementation is absent. The only gameplay script is `events/slopx_events.txt`, which contains only `add_namespace = slopx`. | Current repository file inventory under `common/`, `history/`, `localisation/`, `interface/`, `music/`, and `sound/` is empty. | Implement the canonical package in the dependency order already defined by `ireland_focus_tree_coding_prompt.md`. This is not a new design route. |
+| ILR-01 | Critical | The runtime implementation is absent. The only gameplay script is `events/ireland_events.txt`, which contains only `add_namespace = ireland`. | Current repository file inventory under `common/`, `history/`, `localisation/`, `interface/`, `music/`, and `sound/` is empty. | Implement the canonical package in the dependency order already defined by `ireland_focus_tree_coding_prompt.md`. This is not a new design route. |
 | ILR-02 | High | Existing All-Island flags are not a country package. They have no tag registration, country history, cosmetic identity, party lifecycle, leader, units, focus loading, or route trigger. | `gfx/flags/IRE_ALL_ISLAND*.tga` and their medium and small variants are the only Ireland-specific runtime assets. | Treat them as an asset lead requiring source and identity verification. Do not expose a formation or transformed country until the country package and map checks exist. |
 | ILR-03 | Critical | The central mechanic can become a disconnected reward ladder if the National Settlement and companion values are implemented after route content. | Canonical Part 2, the National Settlement map, the mechanic reconciliation map, and the Part 5 lifecycle matrix require shared values to gate leaders, laws, offices, decisions, missions, events, AI, and conclusions. | Build identifiers, constants, scopes, flags, variables, cleanup helpers, and value presentation before focus rewards and route branches. |
 | ILR-04 | Critical | Northern content is especially vulnerable to shortcut implementation. Claims, control, occupation, settlement, integration, and core review are distinct canonical surfaces. | Statecraft matrix, Northern Settlement map, lifecycle matrix, and route coverage matrix. | Require a separate state ledger and separate decision, mission, event, AI, and cleanup hooks for each stage. Cores remain post-integration only. |
@@ -249,7 +249,7 @@ Canonical specifications, maps, matrices, research, prompts, and supporting plan
 
 Current implementation surfaces inspected:
 
-- `events/slopx_events.txt`
+- `events/ireland_events.txt`
 - `gfx/flags/IRE_ALL_ISLAND_communism.tga`
 - `gfx/flags/IRE_ALL_ISLAND_democratic.tga`
 - `gfx/flags/IRE_ALL_ISLAND_fascism.tga`

@@ -34,7 +34,7 @@ field after rebuilding.
 
 The fourteen runtime files were rebuilt under the standard mod tree:
 
-`gfx/interface/animated/slopx_ireland/<family>/`
+`gfx/interface/animated/ireland/<family>/`
 
 Each family has one static fallback DDS and one horizontal sheet DDS. DDS
 readback reports the declared static/sheet dimensions for all fourteen files,

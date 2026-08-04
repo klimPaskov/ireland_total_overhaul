@@ -12,11 +12,11 @@ underground mission rows:
 
 | Asset | Visual brief | Existing runtime sprite | Related mission |
 | --- | --- | --- | --- |
-| `mission_ireland_006` | centered dark command hub with three linked underground cell nodes and taut network cords | `GFX_mission_slopx_ireland_consolidate_the_movement_network` | `mission_slopx_ireland_consolidate_the_movement_network` |
-| `mission_ireland_009` | broad constituent charter claimed by a dark leather-gloved hand, central brass civic seal, deep-red ribbon | `GFX_mission_slopx_ireland_secure_constituent_authority` | `mission_slopx_ireland_secure_constituent_authority` |
+| `mission_ireland_006` | centered dark command hub with three linked underground cell nodes and taut network cords | `GFX_mission_ireland_consolidate_the_movement_network` | `mission_ireland_consolidate_the_movement_network` |
+| `mission_ireland_009` | broad constituent charter claimed by a dark leather-gloved hand, central brass civic seal, deep-red ribbon | `GFX_mission_ireland_secure_constituent_authority` | `mission_ireland_secure_constituent_authority` |
 
 The canonical replacement sprite definitions are expected in
-`interface/slopx_ireland_secondary_assets.gfx`; no `.gfx` file was edited by
+`interface/ireland_secondary_assets.gfx`; no `.gfx` file was edited by
 this subagent.
 
 ## Changed files
@@ -25,8 +25,8 @@ this subagent.
 - `assets/ireland_focus_tree/icons/source_png/missions/mission_ireland_009.png`
 - `assets/ireland_focus_tree/icons/processed_png/missions/mission_ireland_006.png`
 - `assets/ireland_focus_tree/icons/processed_png/missions/mission_ireland_009.png`
-- `gfx/interface/decisions/slopx_ireland/missions/mission_ireland_006.dds`
-- `gfx/interface/decisions/slopx_ireland/missions/mission_ireland_009.dds`
+- `gfx/interface/decisions/ireland/missions/mission_ireland_006.dds`
+- `gfx/interface/decisions/ireland/missions/mission_ireland_009.dds`
 - `assets/ireland_focus_tree/icons/contact_sheets/mission_ireland_006_009_replacement_contact_sheet.png`
 - `assets/ireland_focus_tree/icons/regenerated_mission_icons_individual_2026-07-29_v1/manifest.md`
 - `assets/ireland_focus_tree/icons/regenerated_mission_icons_individual_2026-07-29_v1/gfx_handoff.md`
@@ -73,18 +73,18 @@ achievement file was changed.
 
 Canonical M2 runtime handoff:
 
-- `GFX_mission_slopx_ireland_consolidate_the_movement_network` ->
-  `gfx/interface/decisions/slopx_ireland/missions/mission_ireland_006.dds`
-- `GFX_mission_slopx_ireland_secure_constituent_authority` ->
-  `gfx/interface/decisions/slopx_ireland/missions/mission_ireland_009.dds`
+- `GFX_mission_ireland_consolidate_the_movement_network` ->
+  `gfx/interface/decisions/ireland/missions/mission_ireland_006.dds`
+- `GFX_mission_ireland_secure_constituent_authority` ->
+  `gfx/interface/decisions/ireland/missions/mission_ireland_009.dds`
 
 The following two names are retained only as historical pre-M2 handoff text;
 the canonical implementation uses the merged/new names above:
 
-- `GFX_mission_slopx_ireland_protect_a_by_election` →
-  `gfx/interface/decisions/slopx_ireland/missions/mission_ireland_006.dds`
-- `GFX_mission_slopx_ireland_audit_parish_service_contracts` →
-  `gfx/interface/decisions/slopx_ireland/missions/mission_ireland_009.dds`
+- `GFX_mission_ireland_protect_a_by_election` →
+  `gfx/interface/decisions/ireland/missions/mission_ireland_006.dds`
+- `GFX_mission_ireland_audit_parish_service_contracts` →
+  `gfx/interface/decisions/ireland/missions/mission_ireland_009.dds`
 
 The user-requested source paths intentionally omit the older `_source` suffix:
 

@@ -16,7 +16,7 @@ This is a parent-owned implementation handoff from the 2026-07-18 decision/missi
 
 2. **Result and escalation telemetry**
    - Choose one model: (a) escalation is a second telemetry flag counted alongside failure, or (b) escalation is an exclusive terminal result with its own player-facing outcome.
-   - Align all 54 timeout paths, `slopx_ireland_record_mission_result`, and localisation with that model. The current per-family `_escalated` flags must not disagree with a permanently-zero shared escalation counter.
+   - Align all 54 timeout paths, `ireland_record_mission_result`, and localisation with that model. The current per-family `_escalated` flags must not disagree with a permanently-zero shared escalation counter.
 
 3. **Player-facing requirements and dynamic costs**
    - Create one reusable decision availability/cost presentation pattern rather than hand-writing 194 custom blocks.

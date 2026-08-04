@@ -1,0 +1,66 @@
+# Ireland generated public-conclusion event records. The main Ireland event
+# programme owns the namespace; this file owns the two generated news-image
+# consumers that sit outside the fixed H/P/N/NR/FR/PW registries.
+
+country_event = {
+	id = ireland_events.432
+	title = ireland_events.high_king_public_conclusion.title
+	desc = ireland_events.high_king_public_conclusion.desc
+	picture = GFX_news_event_ireland_news_high_king_crowned_tara
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		original_tag = IRE
+		has_country_flag = ireland_initialized
+		has_country_flag = ireland_high_king_capstone_complete
+		has_country_flag = ireland_crown_conclusion_valid
+		NOT = { has_country_flag = ireland_event_seen_432 }
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = ireland_event_seen_432
+			set_country_flag = ireland_event_432_open
+		}
+	}
+	option = {
+		name = ireland_events.high_king_public_conclusion.accept
+		ai_chance = { base = 100 }
+		set_country_flag = ireland_high_king_public_conclusion
+		ireland_begin_conclusion_review = yes
+	}
+	after = {
+		clr_country_flag = ireland_event_432_open
+		set_country_flag = ireland_followup_high_king_public_conclusion_closed
+	}
+}
+
+country_event = {
+	id = ireland_events.433
+	title = ireland_events.northern_unity_public_settlement.title
+	desc = ireland_events.northern_unity_public_settlement.desc
+	picture = GFX_news_event_ireland_news_northern_unity_settlement
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		original_tag = IRE
+		has_country_flag = ireland_initialized
+		has_country_flag = ireland_h14_full_unity
+		has_country_flag = ireland_h14_success
+		NOT = { has_country_flag = ireland_event_seen_433 }
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = ireland_event_seen_433
+			set_country_flag = ireland_event_433_open
+		}
+	}
+	option = {
+		name = ireland_events.northern_unity_public_settlement.accept
+		ai_chance = { base = 100 }
+		set_country_flag = ireland_northern_unity_settlement_public
+	}
+	after = {
+		clr_country_flag = ireland_event_433_open
+		set_country_flag = ireland_followup_northern_unity_public_settlement_closed
+	}
+}

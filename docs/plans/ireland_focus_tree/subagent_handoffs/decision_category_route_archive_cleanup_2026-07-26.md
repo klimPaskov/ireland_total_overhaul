@@ -8,26 +8,26 @@ This handoff repairs only category visibility after the existing Ireland route-a
 
 ## Changed file and identifiers
 
-- `common/decisions/categories/slopx_ireland_categories.txt`
-  - `slopx_ireland_settlement_government`
-  - `slopx_ireland_elections`
-  - `slopx_ireland_organised_society`
-  - `slopx_ireland_cultural_archival`
-  - `slopx_ireland_radical_underground`
-  - `slopx_ireland_provision`
-  - `slopx_ireland_readiness`
-  - `slopx_ireland_neutrality_incidents`
-  - `slopx_ireland_foreign`
-  - `slopx_ireland_northern`
-  - `slopx_ireland_occupation_integration`
-  - `slopx_ireland_regional_external`
-  - `slopx_ireland_postwar`
+- `common/decisions/categories/ireland_categories.txt`
+  - `ireland_settlement_government`
+  - `ireland_elections`
+  - `ireland_organised_society`
+  - `ireland_cultural_archival`
+  - `ireland_radical_underground`
+  - `ireland_provision`
+  - `ireland_readiness`
+  - `ireland_neutrality_incidents`
+  - `ireland_foreign`
+  - `ireland_northern`
+  - `ireland_occupation_integration`
+  - `ireland_regional_external`
+  - `ireland_postwar`
 
 ## Before and after
 
-Before, all 140 Ireland actions hid when `slopx_ireland_route_archived` was set, but all thirteen `visible_when_empty = yes` category headers remained visible. This left empty Ireland decision panels after route cleanup.
+Before, all 140 Ireland actions hid when `ireland_route_archived` was set, but all thirteen `visible_when_empty = yes` category headers remained visible. This left empty Ireland decision panels after route cleanup.
 
-After, every category uses the same `NOT = { has_country_flag = slopx_ireland_route_archived }` gate as its actions. Active route categories remain unchanged. Route archival hides the empty category surface while durable history remains available to script, events, and achievements.
+After, every category uses the same `NOT = { has_country_flag = ireland_route_archived }` gate as its actions. Active route categories remain unchanged. Route archival hides the empty category surface while durable history remains available to script, events, and achievements.
 
 ## Why this is bounded
 
@@ -35,7 +35,7 @@ The canonical Part 5 lifecycle defines an archived category as zero active objec
 
 ## Validation
 
-- Static inventory confirmed 13 category wrappers and 140 action-level `slopx_ireland_route_archived` visibility gates before the patch.
+- Static inventory confirmed 13 category wrappers and 140 action-level `ireland_route_archived` visibility gates before the patch.
 - After the patch, all 13 category wrappers carry the matching route-archive visibility gate.
 - No localisation change was needed because no visible wording or identifier changed.
 

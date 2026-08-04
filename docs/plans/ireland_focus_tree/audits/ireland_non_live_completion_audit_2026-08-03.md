@@ -2,7 +2,7 @@
 
 ## Scope and authority
 
-This is the current source-level audit for `ireland_focus_tree` / `slopx`.
+This is the current source-level audit for `ireland_focus_tree` / `ireland`.
 The canonical index and its listed specifications, maps, matrices, research
 notes, and coding prompt remain authoritative. The offline Paradox wiki pages,
 local vanilla documentation, vanilla precedents, and existing Ireland Total Overhaul
@@ -208,7 +208,7 @@ was invented.
   to the unrelated vanilla continuous-focus palette and are not part of the
   Ireland tree.
 - A fresh `hoi4.focus_render` returned `FOCUS_RENDERED` for
-  `slopx_ireland_focus_tree` from the Ireland source. The retained artifact is
+  `ireland_focus_tree` from the Ireland source. The retained artifact is
   the expected Ireland tree render; the 14 reported blocking messages are the
   same unrelated vanilla continuous-focus sprite references, not Ireland-tree
   diagnostics. This is offline reference evidence, not live game validation.

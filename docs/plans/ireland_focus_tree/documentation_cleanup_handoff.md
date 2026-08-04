@@ -38,7 +38,7 @@ The cleanup distinguishes structural implementation evidence from live proof. Th
 - `docs/plans/ireland_focus_tree/repo_explorer_handoff.md` — marked the stale empty-checkout exploration superseded.
 - `docs/plans/ireland_focus_tree/assets/ireland_generated_gfx_handoff.md` and `docs/plans/ireland_focus_tree/assets/gfx_handoff.md` — clarified worker scope versus current registration evidence.
 - `docs/plans/ireland_focus_tree/ireland_decision_mission_gui_reaudit_followup.md` — added a resume/status note so completed structural work is not repeated.
-- `docs/slopx_ireland_systems.md` — added the current status and evidence boundary.
+- `docs/ireland_systems.md` — added the current status and evidence boundary.
 
 ## Disposition summary
 

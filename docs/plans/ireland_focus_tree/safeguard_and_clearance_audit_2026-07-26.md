@@ -2,7 +2,7 @@
 
 Feature slug: `ireland_focus_tree`
 
-Namespace: `slopx`
+Namespace: `ireland`
 
 Status: source-level reconciliation; live engine, GUI, AI, and fresh-save scenarios remain not-run.
 
@@ -12,7 +12,7 @@ This bounded audit reconciles the current canonical decision/mission map, the co
 
 ## Source-level findings
 
-- The concealed A-route handoff is present in current source. `slopx_ireland_concealed_transition_authority` requires the completed restoration review, independent evidence, hidden-content permission and game rule, and a clean failure/archive state. The Hidden Evidence Council uses that helper without creating evidence; impossible High Kingship, Five Provinces, Otherworld, and derived reveal states require the durable council completion.
+- The concealed A-route handoff is present in current source. `ireland_concealed_transition_authority` requires the completed restoration review, independent evidence, hidden-content permission and game rule, and a clean failure/archive state. The Hidden Evidence Council uses that helper without creating evidence; impossible High Kingship, Five Provinces, Otherworld, and derived reveal states require the durable council completion.
 - The historic-site and patrol-craft findings from the bounded decision risk audit are closed at source level. Historic-site work has local-support, Social Consent, manpower, transport, and maintenance-supply gates; patrol work binds a dedicated craft-coverage flag to the charged convoy allocation and rechecks it in the neutral-approaches objective and terminal cleanup.
 - The current decision source still contains exactly 13 categories, 140 actions, and 54 mission families. The bounded material/safeguard sweep found no additional completion-time physical charge without a same-action stockpile or capacity gate beyond the already documented rows. This does not replace a full per-ID canonical audit or live execution.
 - Northern claim, control, occupation, settlement, integration, final review, and core surfaces remain separate in the current source. The only core writer is the idempotent final-review effect, which calls the strict stage-five and review trigger.
@@ -24,7 +24,7 @@ The authoritative manifest remains the source-clearance authority. Current total
 
 The regenerated focus-goal package is a separate generated-art tranche. Its final DDS files live under:
 
-`C:\Users\klimp\OneDrive\Documents\Paradox Interactive\Hearts of Iron IV\mod\ireland_total_overhaul\gfx\interface\goals\slopx_ireland\`
+`C:\Users\klimp\OneDrive\Documents\Paradox Interactive\Hearts of Iron IV\mod\ireland_total_overhaul\gfx\interface\goals\ireland\`
 
 Temporary source and audit material remains under `assets/ireland_focus_tree/`; no runtime `.gfx` texture path points there. The current regenerated contact sheet is:
 

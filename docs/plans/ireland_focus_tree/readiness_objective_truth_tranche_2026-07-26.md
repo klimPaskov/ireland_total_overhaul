@@ -32,19 +32,19 @@ The bounded rows are:
 
 ### Reusable triggers
 
-`common/scripted_triggers/slopx_ireland_triggers.txt` adds:
+`common/scripted_triggers/ireland_triggers.txt` adds:
 
-- `slopx_ireland_has_northern_operational_force`: requires a real Irish division in state 113 or 119.
-- `slopx_ireland_demobilisation_force_tier_selected`: requires completion of one of the three named mobilisation-tier actions.
-- `slopx_ireland_has_demobilisable_cadre`: combines a selected tier, a real division in states 113/119/134/135, and the completed Strategic Depot record.
-- `slopx_ireland_operational_plan_authority`: accepts only a fully linked Plan W/G2/British authority, a Northern plan with a local partner, a cause-valid coercive campaign, or a live occupation authority with provisional/integration review.
-- `slopx_ireland_demobilisation_authority`: requires no active war and a postwar review, recorded major-war end, or the demobilisation-ready milestone with invasion danger and war spillover cleared.
+- `ireland_has_northern_operational_force`: requires a real Irish division in state 113 or 119.
+- `ireland_demobilisation_force_tier_selected`: requires completion of one of the three named mobilisation-tier actions.
+- `ireland_has_demobilisable_cadre`: combines a selected tier, a real division in states 113/119/134/135, and the completed Strategic Depot record.
+- `ireland_operational_plan_authority`: accepts only a fully linked Plan W/G2/British authority, a Northern plan with a local partner, a cause-valid coercive campaign, or a live occupation authority with provisional/integration review.
+- `ireland_demobilisation_authority`: requires no active war and a postwar review, recorded major-war end, or the demobilisation-ready milestone with invasion danger and war spillover cleared.
 
-These helpers are documented in `docs/slopx_dynamic_effects.md`. They are proof triggers only and have no side effects.
+These helpers are documented in `docs/ireland_dynamic_effects.md`. They are proof triggers only and have no side effects.
 
 ### Actions
 
-`common/decisions/slopx_ireland_decisions.txt` now makes the two actions consume the proof triggers rather than the former generic low-component OR block. Motorise a Strategic Route reuses the real operational-force proof. The new gates leave the existing dynamic Political Power/Command Power, material, category-capacity, law, route, and mission-capacity checks intact.
+`common/decisions/ireland_decisions.txt` now makes the two actions consume the proof triggers rather than the former generic low-component OR block. Motorise a Strategic Route reuses the real operational-force proof. The new gates leave the existing dynamic Political Power/Command Power, material, category-capacity, law, route, and mission-capacity checks intact.
 
 ### Missions and map objectives
 
@@ -52,14 +52,14 @@ The four linked map-objective triggers now recheck the physical and documentary 
 
 The demobilisation mission writes durable outcome records:
 
-- Partial: `slopx_ireland_demobilised_cadre_partial` and `slopx_ireland_veteran_settlement_pending`.
-- Full: `slopx_ireland_demobilised_cadre_preserved` and `slopx_ireland_force_records_archived`.
+- Partial: `ireland_demobilised_cadre_partial` and `ireland_veteran_settlement_pending`.
+- Full: `ireland_demobilised_cadre_preserved` and `ireland_force_records_archived`.
 
 These records are separate from the postwar `Demobilise and Settle Veterans` action and do not silently settle veterans or delete the readiness ledger. Existing full/partial/failure/escalation deadlines and cleanup remain in the mission source.
 
 ### Localisation and tuning
 
-`localisation/english/slopx_ireland_l_english.yml` explains the authored-plan, formation, depot, command, route, supply, civilian-passage, and security requirements with current dynamic values. `common/script_constants/slopx_ireland_constants.txt` centralises the command-readiness floor used by the demobilisation objective.
+`localisation/english/ireland_l_english.yml` explains the authored-plan, formation, depot, command, route, supply, civilian-passage, and security requirements with current dynamic values. `common/script_constants/ireland_constants.txt` centralises the command-readiness floor used by the demobilisation objective.
 
 ## Validation evidence
 

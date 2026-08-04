@@ -1,0 +1,928 @@
+# Ireland law registry. The seventeen matrix families are live staged ledgers,
+# not passive ideas. Each stage has an entry signal, a review clock, an abuse
+# state and an exit signal; actions and events remain responsible for material
+# consequences and public law changes.
+
+ireland_sync_law_registry = {
+	# Constitutional government: Executive Council, 1937 government, emergency
+	# constitution, route order, and restored ordinary government.
+	set_variable = { var = ireland_law_constitutional_government_stage value = constant:ireland.zero }
+	if = {
+		limit = { has_country_flag = ireland_constitutional_calendar_restored }
+		set_variable = { var = ireland_law_constitutional_government_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_route_committed }
+		set_variable = { var = ireland_law_constitutional_government_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_emergency_review_started }
+		set_variable = { var = ireland_law_constitutional_government_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_constitutional_draft_complete }
+		set_variable = { var = ireland_law_constitutional_government_stage value = constant:ireland.law_stage_entry }
+	}
+
+	# Emergency authority: ordinary law through reviewed powers, repeal, or the
+	# explicit permanent-emergency failure form.
+	set_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_emergency_overreach
+				has_country_flag = ireland_emergency_powers_crisis
+				has_country_flag = ireland_indefinite_emergency_rule
+			}
+		}
+		set_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.law_stage_failure }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_emergency_repeal_complete }
+		set_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_de_valera_emergency_concluded }
+		set_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_emergency_review_complete
+				has_country_flag = ireland_emergency_law_reviewed
+			}
+		}
+		set_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_emergency_opening
+				has_country_flag = ireland_statutory_emergency_complete
+				has_country_flag = ireland_national_emergency_active
+			}
+		}
+		set_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.law_stage_entry }
+	}
+
+	# Censorship: a neutral press, security controls, reviewed narrow controls,
+	# repeal, and the party or clerical failure form.
+	set_variable = { var = ireland_law_censorship_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_censorship_abuse
+				has_country_flag = ireland_party_censorship_failure
+				has_country_flag = ireland_clerical_censorship_failure
+			}
+		}
+		set_variable = { var = ireland_law_censorship_stage value = constant:ireland.law_stage_failure }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_followup_censorship_sunset_closed }
+		set_variable = { var = ireland_law_censorship_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_action_tighten_or_narrow_censorship_complete }
+		set_variable = { var = ireland_law_censorship_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_followup_censorship_subject_closed
+				has_country_flag = ireland_censorship_incident_active
+			}
+		}
+		set_variable = { var = ireland_law_censorship_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_national_emergency_active }
+		set_variable = { var = ireland_law_censorship_stage value = constant:ireland.law_stage_entry }
+	}
+
+	# Rationing: market allocation, priority controls, books, comprehensive
+	# allocation, postwar selective controls, repeal, and corrupt distribution.
+	set_variable = { var = ireland_law_rationing_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_ration_distribution_failure
+				has_country_flag = ireland_ration_corruption_failure
+			}
+		}
+		set_variable = { var = ireland_law_rationing_stage value = constant:ireland.law_stage_max }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_mission_end_wartime_rationing_safely_full_recorded }
+		set_variable = { var = ireland_law_rationing_stage value = constant:ireland.law_stage_5 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_mission_end_wartime_rationing_safely_partial_recorded }
+		set_variable = { var = ireland_law_rationing_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_action_issue_ration_books_complete }
+		set_variable = { var = ireland_law_rationing_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_action_replace_emergency_supply_orders_complete
+				has_country_flag = ireland_emergency_stockpiles_complete
+			}
+		}
+		set_variable = { var = ireland_law_rationing_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_national_emergency_active }
+		set_variable = { var = ireland_law_rationing_stage value = constant:ireland.law_stage_entry }
+	}
+
+	# Tillage: voluntary production through guaranteed prices, quotas,
+	# compulsory tillage, the postwar programme, and requisition failure.
+	set_variable = { var = ireland_law_tillage_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_tillage_coercion_failure
+				has_country_flag = ireland_tillage_requisition_failure
+			}
+		}
+		set_variable = { var = ireland_law_tillage_stage value = constant:ireland.law_stage_failure }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_mission_meet_the_county_tillage_schedule_full_recorded }
+		set_variable = { var = ireland_law_tillage_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_mission_meet_the_county_tillage_schedule_partial_recorded }
+		set_variable = { var = ireland_law_tillage_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_action_set_county_tillage_quotas_complete }
+		set_variable = { var = ireland_law_tillage_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_economic_war_review_complete
+				has_country_flag = ireland_national_emergency_active
+			}
+		}
+		set_variable = { var = ireland_law_tillage_stage value = constant:ireland.law_stage_entry }
+	}
+
+	# Mobilisation: regulars, cadre, Local Security Force, Local Defence Force,
+	# general war mobilisation, sustained mobilisation, and demobilised cadre.
+	set_variable = { var = ireland_law_mobilisation_stage value = constant:ireland.zero }
+	if = {
+		limit = { has_country_flag = ireland_demobilisation_charter_complete }
+		set_variable = { var = ireland_law_mobilisation_stage value = constant:ireland.law_stage_max }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_national_emergency_active }
+		set_variable = { var = ireland_law_mobilisation_stage value = constant:ireland.law_stage_5 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_emergency_mobilisation_complete }
+		set_variable = { var = ireland_law_mobilisation_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_emergency_mobilisation_ready }
+		set_variable = { var = ireland_law_mobilisation_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_emergency_opening }
+		set_variable = { var = ireland_law_mobilisation_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_constitutional_draft_complete }
+		set_variable = { var = ireland_law_mobilisation_stage value = constant:ireland.law_stage_entry }
+	}
+
+	# Internment: ordinary process, belligerent and security detention, reviewed
+	# camps, release/prosecution, and indefinite detention failure.
+	set_variable = { var = ireland_law_internment_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_internment_abuse
+				has_country_flag = ireland_indefinite_detention_failure
+			}
+		}
+		set_variable = { var = ireland_law_internment_stage value = constant:ireland.law_stage_failure }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_action_release_or_exchange_internees_complete
+				has_country_flag = ireland_mission_resolve_an_aircrew_internment_case_full_recorded
+			}
+		}
+		set_variable = { var = ireland_law_internment_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_followup_internment_equal_treatment_review_closed
+				has_country_flag = ireland_followup_internment_camps_and_parole_closed
+			}
+		}
+		set_variable = { var = ireland_law_internment_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_internment_incident_active }
+		set_variable = { var = ireland_law_internment_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_external_emergency }
+		set_variable = { var = ireland_law_internment_stage value = constant:ireland.law_stage_entry }
+	}
+
+	# Public order and policing: ordinary Garda authority, emergency support,
+	# route security, transitional policing, civil restoration, and failure.
+	set_variable = { var = ireland_law_public_order_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_policing_failure
+				has_country_flag = ireland_ailtiri_police_exposure
+				has_country_flag = ireland_sectarian_policing_failure
+			}
+		}
+		set_variable = { var = ireland_law_public_order_stage value = constant:ireland.law_stage_max }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_mission_restore_ordinary_policing_full_recorded }
+		set_variable = { var = ireland_law_public_order_stage value = constant:ireland.law_stage_5 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_occupation_active }
+		set_variable = { var = ireland_law_public_order_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_route_committed }
+		set_variable = { var = ireland_law_public_order_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_national_emergency_active }
+		set_variable = { var = ireland_law_public_order_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_security_under_law_complete }
+		set_variable = { var = ireland_law_public_order_stage value = constant:ireland.law_stage_entry }
+	}
+
+	# Occupation law follows actual control and the distinct Northern stages.
+	set_variable = { var = ireland_law_occupation_stage value = constant:ireland.zero }
+	if = {
+		limit = { has_country_flag = ireland_northern_settlement_failure }
+		set_variable = { var = ireland_law_occupation_stage value = constant:ireland.law_stage_max }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_northern_final_review_passed
+				has_country_flag = ireland_northern_integration_complete
+			}
+		}
+		set_variable = { var = ireland_law_occupation_stage value = constant:ireland.law_stage_5 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				var = ireland_northern_integration_stage
+				value = constant:ireland.northern_settlement_stage_services
+				compare = greater_than_or_equals
+			}
+		}
+		set_variable = { var = ireland_law_occupation_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_provisional_northern_authority }
+		set_variable = { var = ireland_law_occupation_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_northern_occupation_active }
+		set_variable = { var = ireland_law_occupation_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_northern_control_ledger_active
+				has_country_flag = ireland_northern_claim_issued
+			}
+		}
+		set_variable = { var = ireland_law_occupation_stage value = constant:ireland.law_stage_entry }
+	}
+
+	# Education and religion keep service, inspection, minority protection and
+	# route capture as separate law ledgers.
+	set_variable = { var = ireland_law_education_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_education_crisis
+				has_country_flag = ireland_forced_assimilation_failure
+			}
+		}
+		set_variable = { var = ireland_law_education_stage value = constant:ireland.law_stage_failure }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_language_institutions_complete }
+		set_variable = { var = ireland_law_education_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_northern_federal_prepared
+				has_country_flag = ireland_northern_unitary_prepared
+				has_country_flag = ireland_action_settle_education_and_religious_safeguards_complete
+			}
+		}
+		set_variable = { var = ireland_law_education_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_action_negotiate_an_education_compact_complete }
+		set_variable = { var = ireland_law_education_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_minority_guarantees_complete
+				has_country_flag = ireland_constitutional_draft_complete
+			}
+		}
+		set_variable = { var = ireland_law_education_stage value = constant:ireland.law_stage_entry }
+	}
+
+	set_variable = { var = ireland_law_religion_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_clerical_veto_failure
+				has_country_flag = ireland_religious_persecution_failure
+			}
+		}
+		set_variable = { var = ireland_law_religion_stage value = constant:ireland.law_stage_failure }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_route_constitutional_vocational
+				has_country_flag = ireland_route_congress
+				has_country_flag = ireland_route_high_king
+			}
+		}
+		set_variable = { var = ireland_law_religion_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_minority_guarantees_complete }
+		set_variable = { var = ireland_law_religion_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_action_settle_education_and_religious_safeguards_complete }
+		set_variable = { var = ireland_law_religion_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_church_labour_consultation_complete }
+		set_variable = { var = ireland_law_religion_stage value = constant:ireland.law_stage_entry }
+	}
+
+	set_variable = { var = ireland_law_language_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_ailtiri_total_state_complete
+				has_country_flag = ireland_compulsory_language_failure
+			}
+		}
+		set_variable = { var = ireland_law_language_stage value = constant:ireland.law_stage_failure }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_high_king_constitutional_path
+				has_country_flag = ireland_route_five_provinces
+				has_country_flag = ireland_route_otherworld
+			}
+		}
+		set_variable = { var = ireland_law_language_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_language_institutions_complete }
+		set_variable = { var = ireland_law_language_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_language_service_complete }
+		set_variable = { var = ireland_law_language_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_language_baseline_ready }
+		set_variable = { var = ireland_law_language_stage value = constant:ireland.law_stage_entry }
+	}
+
+	# Economic control and trade/shipping remain distinct from foreign access.
+	set_variable = { var = ireland_law_economic_control_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_captured_boards_failure
+			}
+		}
+		set_variable = { var = ireland_law_economic_control_stage value = constant:ireland.law_stage_max }
+	}
+	else_if = {
+		limit = {
+			has_country_flag = ireland_producer_constitution_complete
+		}
+		set_variable = { var = ireland_law_economic_control_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_domestic_industry_review_complete }
+		set_variable = { var = ireland_law_economic_control_stage value = constant:ireland.law_stage_5 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_national_emergency_active }
+		set_variable = { var = ireland_law_economic_control_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_domestic_industry_review_ready }
+		set_variable = { var = ireland_law_economic_control_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_economic_war_review_complete }
+		set_variable = { var = ireland_law_economic_control_stage value = constant:ireland.law_stage_entry }
+	}
+
+	set_variable = { var = ireland_law_trade_shipping_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_sponsor_dependence_failure
+				has_country_flag = ireland_foreign_access_failure
+			}
+		}
+		set_variable = { var = ireland_law_trade_shipping_stage value = constant:ireland.law_stage_failure }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_followup_shipping_incorporation_closed
+				has_country_flag = ireland_irish_shipping_created
+			}
+		}
+		set_variable = { var = ireland_law_trade_shipping_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_followup_access_irish_command_closed }
+		set_variable = { var = ireland_law_trade_shipping_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_followup_access_time_limit_closed
+				has_country_flag = ireland_action_mark_and_publicise_neutral_shipping_complete
+				has_country_flag = ireland_shipping_incident_active
+			}
+		}
+		set_variable = { var = ireland_law_trade_shipping_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_economic_war_review_complete }
+		set_variable = { var = ireland_law_trade_shipping_stage value = constant:ireland.law_stage_entry }
+	}
+
+	set_variable = { var = ireland_law_foreign_access_stage value = constant:ireland.zero }
+	if = {
+		limit = { has_country_flag = ireland_followup_access_withdrawal_closed }
+		set_variable = { var = ireland_law_foreign_access_stage value = constant:ireland.law_stage_max }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_foreign_access_failure
+				has_country_flag = ireland_occupation_active
+			}
+		}
+		set_variable = { var = ireland_law_foreign_access_stage value = constant:ireland.law_stage_failure }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_followup_access_facility_closed
+				has_country_flag = ireland_followup_access_shared_defence_closed
+			}
+		}
+		set_variable = { var = ireland_law_foreign_access_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_followup_access_irish_command_closed }
+		set_variable = { var = ireland_law_foreign_access_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_followup_access_time_limit_closed }
+		set_variable = { var = ireland_law_foreign_access_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_access_incident_active }
+		set_variable = { var = ireland_law_foreign_access_stage value = constant:ireland.law_stage_entry }
+	}
+
+	# Northern settlement law deliberately reads the separate integration ledger.
+	set_variable = { var = ireland_law_northern_settlement_stage value = constant:ireland.zero }
+	if = {
+		limit = { has_country_flag = ireland_northern_settlement_failure }
+		set_variable = { var = ireland_law_northern_settlement_stage value = constant:ireland.law_stage_max }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_northern_final_review_passed
+				has_country_flag = ireland_northern_integration_complete
+			}
+		}
+		set_variable = { var = ireland_law_northern_settlement_stage value = constant:ireland.law_stage_5 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				var = ireland_northern_integration_stage
+				value = constant:ireland.northern_settlement_stage_services
+				compare = greater_than_or_equals
+			}
+		}
+		set_variable = { var = ireland_law_northern_settlement_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_northern_federal_prepared
+				has_country_flag = ireland_northern_unitary_prepared
+				has_country_flag = ireland_northern_labour_bridge_ready
+			}
+		}
+		set_variable = { var = ireland_law_northern_settlement_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_provisional_northern_authority }
+		set_variable = { var = ireland_law_northern_settlement_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_northern_contacts_complete
+				has_country_flag = ireland_northern_local_authorities_complete
+			}
+		}
+		set_variable = { var = ireland_law_northern_settlement_stage value = constant:ireland.law_stage_entry }
+	}
+
+	set_variable = { var = ireland_law_guarantee_stage value = constant:ireland.zero }
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_permanent_foreign_veto_failure
+				has_country_flag = ireland_sponsor_dependence_failure
+			}
+		}
+		set_variable = { var = ireland_law_guarantee_stage value = constant:ireland.law_stage_max }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_action_review_foreign_guarantees_complete }
+		set_variable = { var = ireland_law_guarantee_stage value = constant:ireland.law_stage_5 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_followup_foreign_fr01_uk_northern_guarantee_closed }
+		set_variable = { var = ireland_law_guarantee_stage value = constant:ireland.law_stage_4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_foreign_fr01_uk_northern_guarantee_accepted }
+		set_variable = { var = ireland_law_guarantee_stage value = constant:ireland.law_stage_3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_followup_foreign_fr01_uk_northern_guarantee_closed }
+		set_variable = { var = ireland_law_guarantee_stage value = constant:ireland.law_stage_2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_foreign_reaction_window_active }
+		set_variable = { var = ireland_law_guarantee_stage value = constant:ireland.law_stage_entry }
+	}
+
+	ireland_refresh_law_registry_metadata = yes
+	ireland_refresh_law_meta_constitutional_government = yes
+	ireland_refresh_law_meta_emergency_authority = yes
+	ireland_refresh_law_meta_censorship = yes
+	ireland_refresh_law_meta_rationing = yes
+	ireland_refresh_law_meta_tillage = yes
+	ireland_refresh_law_meta_mobilisation = yes
+	ireland_refresh_law_meta_internment = yes
+	ireland_refresh_law_meta_public_order = yes
+	ireland_refresh_law_meta_occupation = yes
+	ireland_refresh_law_meta_education = yes
+	ireland_refresh_law_meta_religion = yes
+	ireland_refresh_law_meta_language = yes
+	ireland_refresh_law_meta_economic_control = yes
+	ireland_refresh_law_meta_trade_shipping = yes
+	ireland_refresh_law_meta_foreign_access = yes
+	ireland_refresh_law_meta_northern_settlement = yes
+	ireland_refresh_law_meta_guarantee = yes
+}
+
+ireland_refresh_law_meta_constitutional_government = {
+	clr_country_flag = ireland_law_constitutional_government_active
+	clr_country_flag = ireland_law_constitutional_government_review_due
+	clr_country_flag = ireland_law_constitutional_government_exit_available
+	if = { limit = { check_variable = { var = ireland_law_constitutional_government_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_constitutional_government_active }
+	if = { limit = { check_variable = { var = ireland_law_constitutional_government_stage value = ireland_law_constitutional_government_last_stage compare = not_equals } } set_variable = { var = ireland_law_constitutional_government_review_days value = constant:ireland.zero } set_country_flag = ireland_law_constitutional_government_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_constitutional_government_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_constitutional_government_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_constitutional_government_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_constitutional_government_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_constitutional_government_stage value = constant:ireland.law_stage_failure compare = greater_than_or_equals } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_constitutional_government_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_constitutional_government_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_constitutional_government_exit_available }
+	set_variable = { var = ireland_law_constitutional_government_last_stage value = ireland_law_constitutional_government_stage }
+}
+
+ireland_refresh_law_meta_emergency_authority = {
+	clr_country_flag = ireland_law_emergency_authority_active
+	clr_country_flag = ireland_law_emergency_authority_review_due
+	clr_country_flag = ireland_law_emergency_authority_exit_available
+	if = { limit = { check_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_emergency_authority_active }
+	if = { limit = { check_variable = { var = ireland_law_emergency_authority_stage value = ireland_law_emergency_authority_last_stage compare = not_equals } } set_variable = { var = ireland_law_emergency_authority_review_days value = constant:ireland.zero } set_country_flag = ireland_law_emergency_authority_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_emergency_authority_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_emergency_authority_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_emergency_authority_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_emergency_authority_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.law_stage_failure compare = greater_than_or_equals } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_emergency_authority_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_emergency_authority_exit_available }
+	set_variable = { var = ireland_law_emergency_authority_last_stage value = ireland_law_emergency_authority_stage }
+}
+
+ireland_refresh_law_meta_censorship = {
+	clr_country_flag = ireland_law_censorship_active
+	clr_country_flag = ireland_law_censorship_review_due
+	clr_country_flag = ireland_law_censorship_exit_available
+	if = { limit = { check_variable = { var = ireland_law_censorship_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_censorship_active }
+	if = { limit = { check_variable = { var = ireland_law_censorship_stage value = ireland_law_censorship_last_stage compare = not_equals } } set_variable = { var = ireland_law_censorship_review_days value = constant:ireland.zero } set_country_flag = ireland_law_censorship_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_censorship_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_censorship_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_censorship_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_censorship_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_censorship_stage value = constant:ireland.law_stage_failure compare = greater_than_or_equals } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_censorship_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_censorship_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_censorship_exit_available }
+	set_variable = { var = ireland_law_censorship_last_stage value = ireland_law_censorship_stage }
+}
+
+ireland_refresh_law_meta_rationing = {
+	clr_country_flag = ireland_law_rationing_active
+	clr_country_flag = ireland_law_rationing_review_due
+	clr_country_flag = ireland_law_rationing_exit_available
+	if = { limit = { check_variable = { var = ireland_law_rationing_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_rationing_active }
+	if = { limit = { check_variable = { var = ireland_law_rationing_stage value = ireland_law_rationing_last_stage compare = not_equals } } set_variable = { var = ireland_law_rationing_review_days value = constant:ireland.zero } set_country_flag = ireland_law_rationing_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_rationing_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_rationing_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_rationing_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_rationing_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_rationing_stage value = constant:ireland.law_stage_failure compare = greater_than } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_rationing_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_rationing_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_rationing_exit_available }
+	set_variable = { var = ireland_law_rationing_last_stage value = ireland_law_rationing_stage }
+}
+
+ireland_refresh_law_meta_tillage = {
+	clr_country_flag = ireland_law_tillage_active
+	clr_country_flag = ireland_law_tillage_review_due
+	clr_country_flag = ireland_law_tillage_exit_available
+	if = { limit = { check_variable = { var = ireland_law_tillage_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_tillage_active }
+	if = { limit = { check_variable = { var = ireland_law_tillage_stage value = ireland_law_tillage_last_stage compare = not_equals } } set_variable = { var = ireland_law_tillage_review_days value = constant:ireland.zero } set_country_flag = ireland_law_tillage_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_tillage_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_tillage_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_tillage_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_tillage_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_tillage_stage value = constant:ireland.law_stage_failure compare = greater_than_or_equals } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_tillage_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_tillage_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_tillage_exit_available }
+	set_variable = { var = ireland_law_tillage_last_stage value = ireland_law_tillage_stage }
+}
+
+ireland_refresh_law_meta_mobilisation = {
+	clr_country_flag = ireland_law_mobilisation_active
+	clr_country_flag = ireland_law_mobilisation_review_due
+	clr_country_flag = ireland_law_mobilisation_exit_available
+	if = { limit = { check_variable = { var = ireland_law_mobilisation_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_mobilisation_active }
+	if = { limit = { check_variable = { var = ireland_law_mobilisation_stage value = ireland_law_mobilisation_last_stage compare = not_equals } } set_variable = { var = ireland_law_mobilisation_review_days value = constant:ireland.zero } set_country_flag = ireland_law_mobilisation_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_mobilisation_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_mobilisation_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_mobilisation_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_mobilisation_review_due set_country_flag = ireland_law_review_due }
+	# Stage 5 is sustained mobilisation; stage 6 is the deliberate demobilised cadre.
+	# Neither is a failure state. Only an explicit command breakdown or failed review
+	# may mark the mobilisation law as abuse.
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_mobilisation_failure
+				has_country_flag = ireland_mobilisation_command_collapse
+			}
+		}
+		set_country_flag = ireland_law_abuse_active
+	}
+	if = { limit = { check_variable = { var = ireland_law_mobilisation_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_mobilisation_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_mobilisation_exit_available }
+	set_variable = { var = ireland_law_mobilisation_last_stage value = ireland_law_mobilisation_stage }
+}
+
+ireland_refresh_law_meta_internment = {
+	clr_country_flag = ireland_law_internment_active
+	clr_country_flag = ireland_law_internment_review_due
+	clr_country_flag = ireland_law_internment_exit_available
+	if = { limit = { check_variable = { var = ireland_law_internment_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_internment_active }
+	if = { limit = { check_variable = { var = ireland_law_internment_stage value = ireland_law_internment_last_stage compare = not_equals } } set_variable = { var = ireland_law_internment_review_days value = constant:ireland.zero } set_country_flag = ireland_law_internment_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_internment_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_internment_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_internment_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_internment_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_internment_stage value = constant:ireland.law_stage_failure compare = greater_than_or_equals } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_internment_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_internment_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_internment_exit_available }
+	set_variable = { var = ireland_law_internment_last_stage value = ireland_law_internment_stage }
+}
+
+ireland_refresh_law_meta_public_order = {
+	clr_country_flag = ireland_law_public_order_active
+	clr_country_flag = ireland_law_public_order_review_due
+	clr_country_flag = ireland_law_public_order_exit_available
+	if = { limit = { check_variable = { var = ireland_law_public_order_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_public_order_active }
+	if = { limit = { check_variable = { var = ireland_law_public_order_stage value = ireland_law_public_order_last_stage compare = not_equals } } set_variable = { var = ireland_law_public_order_review_days value = constant:ireland.zero } set_country_flag = ireland_law_public_order_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_public_order_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_public_order_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_public_order_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_public_order_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_public_order_stage value = constant:ireland.law_stage_failure compare = greater_than } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_public_order_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_public_order_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_public_order_exit_available }
+	set_variable = { var = ireland_law_public_order_last_stage value = ireland_law_public_order_stage }
+}
+
+ireland_refresh_law_meta_occupation = {
+	clr_country_flag = ireland_law_occupation_active
+	clr_country_flag = ireland_law_occupation_review_due
+	clr_country_flag = ireland_law_occupation_exit_available
+	if = { limit = { check_variable = { var = ireland_law_occupation_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_occupation_active }
+	if = { limit = { check_variable = { var = ireland_law_occupation_stage value = ireland_law_occupation_last_stage compare = not_equals } } set_variable = { var = ireland_law_occupation_review_days value = constant:ireland.zero } set_country_flag = ireland_law_occupation_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_occupation_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_occupation_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_occupation_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_occupation_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_occupation_stage value = constant:ireland.law_stage_failure compare = greater_than } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_occupation_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_occupation_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_occupation_exit_available }
+	set_variable = { var = ireland_law_occupation_last_stage value = ireland_law_occupation_stage }
+}
+
+ireland_refresh_law_meta_education = {
+	clr_country_flag = ireland_law_education_active
+	clr_country_flag = ireland_law_education_review_due
+	clr_country_flag = ireland_law_education_exit_available
+	if = { limit = { check_variable = { var = ireland_law_education_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_education_active }
+	if = { limit = { check_variable = { var = ireland_law_education_stage value = ireland_law_education_last_stage compare = not_equals } } set_variable = { var = ireland_law_education_review_days value = constant:ireland.zero } set_country_flag = ireland_law_education_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_education_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_education_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_education_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_education_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_education_stage value = constant:ireland.law_stage_failure compare = greater_than_or_equals } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_education_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_education_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_education_exit_available }
+	set_variable = { var = ireland_law_education_last_stage value = ireland_law_education_stage }
+}
+
+ireland_refresh_law_meta_religion = {
+	clr_country_flag = ireland_law_religion_active
+	clr_country_flag = ireland_law_religion_review_due
+	clr_country_flag = ireland_law_religion_exit_available
+	if = { limit = { check_variable = { var = ireland_law_religion_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_religion_active }
+	if = { limit = { check_variable = { var = ireland_law_religion_stage value = ireland_law_religion_last_stage compare = not_equals } } set_variable = { var = ireland_law_religion_review_days value = constant:ireland.zero } set_country_flag = ireland_law_religion_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_religion_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_religion_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_religion_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_religion_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_religion_stage value = constant:ireland.law_stage_failure compare = greater_than_or_equals } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_religion_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_religion_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_religion_exit_available }
+	set_variable = { var = ireland_law_religion_last_stage value = ireland_law_religion_stage }
+}
+
+ireland_refresh_law_meta_language = {
+	clr_country_flag = ireland_law_language_active
+	clr_country_flag = ireland_law_language_review_due
+	clr_country_flag = ireland_law_language_exit_available
+	if = { limit = { check_variable = { var = ireland_law_language_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_language_active }
+	if = { limit = { check_variable = { var = ireland_law_language_stage value = ireland_law_language_last_stage compare = not_equals } } set_variable = { var = ireland_law_language_review_days value = constant:ireland.zero } set_country_flag = ireland_law_language_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_language_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_language_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_language_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_language_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_language_stage value = constant:ireland.law_stage_failure compare = greater_than_or_equals } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_language_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_language_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_language_exit_available }
+	set_variable = { var = ireland_law_language_last_stage value = ireland_law_language_stage }
+}
+
+ireland_refresh_law_meta_economic_control = {
+	clr_country_flag = ireland_law_economic_control_active
+	clr_country_flag = ireland_law_economic_control_review_due
+	clr_country_flag = ireland_law_economic_control_exit_available
+	if = { limit = { check_variable = { var = ireland_law_economic_control_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_economic_control_active }
+	if = { limit = { check_variable = { var = ireland_law_economic_control_stage value = ireland_law_economic_control_last_stage compare = not_equals } } set_variable = { var = ireland_law_economic_control_review_days value = constant:ireland.zero } set_country_flag = ireland_law_economic_control_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_economic_control_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_economic_control_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_economic_control_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_economic_control_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_economic_control_stage value = constant:ireland.law_stage_failure compare = greater_than } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_economic_control_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_economic_control_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_economic_control_exit_available }
+	set_variable = { var = ireland_law_economic_control_last_stage value = ireland_law_economic_control_stage }
+}
+
+ireland_refresh_law_meta_trade_shipping = {
+	clr_country_flag = ireland_law_trade_shipping_active
+	clr_country_flag = ireland_law_trade_shipping_review_due
+	clr_country_flag = ireland_law_trade_shipping_exit_available
+	if = { limit = { check_variable = { var = ireland_law_trade_shipping_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_trade_shipping_active }
+	if = { limit = { check_variable = { var = ireland_law_trade_shipping_stage value = ireland_law_trade_shipping_last_stage compare = not_equals } } set_variable = { var = ireland_law_trade_shipping_review_days value = constant:ireland.zero } set_country_flag = ireland_law_trade_shipping_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_trade_shipping_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_trade_shipping_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_trade_shipping_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_trade_shipping_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_trade_shipping_stage value = constant:ireland.law_stage_failure compare = greater_than_or_equals } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_trade_shipping_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_trade_shipping_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_trade_shipping_exit_available }
+	set_variable = { var = ireland_law_trade_shipping_last_stage value = ireland_law_trade_shipping_stage }
+}
+
+ireland_refresh_law_meta_foreign_access = {
+	clr_country_flag = ireland_law_foreign_access_active
+	clr_country_flag = ireland_law_foreign_access_review_due
+	clr_country_flag = ireland_law_foreign_access_exit_available
+	if = { limit = { check_variable = { var = ireland_law_foreign_access_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_foreign_access_active }
+	if = { limit = { check_variable = { var = ireland_law_foreign_access_stage value = ireland_law_foreign_access_last_stage compare = not_equals } } set_variable = { var = ireland_law_foreign_access_review_days value = constant:ireland.zero } set_country_flag = ireland_law_foreign_access_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_foreign_access_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_foreign_access_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_foreign_access_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_foreign_access_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { has_country_flag = ireland_foreign_access_failure } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_foreign_access_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_foreign_access_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_foreign_access_exit_available }
+	set_variable = { var = ireland_law_foreign_access_last_stage value = ireland_law_foreign_access_stage }
+}
+
+ireland_refresh_law_meta_northern_settlement = {
+	clr_country_flag = ireland_law_northern_settlement_active
+	clr_country_flag = ireland_law_northern_settlement_review_due
+	clr_country_flag = ireland_law_northern_settlement_exit_available
+	if = { limit = { check_variable = { var = ireland_law_northern_settlement_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_northern_settlement_active }
+	if = { limit = { check_variable = { var = ireland_law_northern_settlement_stage value = ireland_law_northern_settlement_last_stage compare = not_equals } } set_variable = { var = ireland_law_northern_settlement_review_days value = constant:ireland.zero } set_country_flag = ireland_law_northern_settlement_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_northern_settlement_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_northern_settlement_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_northern_settlement_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_northern_settlement_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { has_country_flag = ireland_northern_settlement_failure } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_northern_settlement_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_northern_settlement_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_northern_settlement_exit_available }
+	set_variable = { var = ireland_law_northern_settlement_last_stage value = ireland_law_northern_settlement_stage }
+}
+
+ireland_refresh_law_meta_guarantee = {
+	clr_country_flag = ireland_law_guarantee_active
+	clr_country_flag = ireland_law_guarantee_review_due
+	clr_country_flag = ireland_law_guarantee_exit_available
+	if = { limit = { check_variable = { var = ireland_law_guarantee_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals } } set_country_flag = ireland_law_guarantee_active }
+	if = { limit = { check_variable = { var = ireland_law_guarantee_stage value = ireland_law_guarantee_last_stage compare = not_equals } } set_variable = { var = ireland_law_guarantee_review_days value = constant:ireland.zero } set_country_flag = ireland_law_guarantee_entry_public }
+	else_if = { limit = { check_variable = { var = ireland_law_guarantee_review_days value = constant:ireland.law_review_days compare = less_than } } add_to_variable = { ireland_law_guarantee_review_days = constant:ireland.law_review_tick } }
+	if = { limit = { check_variable = { var = ireland_law_guarantee_review_days value = constant:ireland.law_review_days compare = greater_than_or_equals } } set_country_flag = ireland_law_guarantee_review_due set_country_flag = ireland_law_review_due }
+	if = { limit = { check_variable = { var = ireland_law_guarantee_stage value = constant:ireland.law_stage_failure compare = greater_than } } set_country_flag = ireland_law_abuse_active }
+	if = { limit = { check_variable = { var = ireland_law_guarantee_stage value = constant:ireland.zero compare = equals } check_variable = { var = ireland_law_guarantee_last_stage value = constant:ireland.zero compare = greater_than } } set_country_flag = ireland_law_guarantee_exit_available }
+	set_variable = { var = ireland_law_guarantee_last_stage value = ireland_law_guarantee_stage }
+}
+
+ireland_refresh_law_registry_metadata = {
+	# The metadata pass is deliberately explicit so each law exposes its own
+	# active, entry, due-review, abuse and exit state to decisions and GUI text.
+	clr_country_flag = ireland_law_review_due
+	clr_country_flag = ireland_law_abuse_active
+	if = {
+		limit = {
+			OR = {
+				check_variable = { var = ireland_law_constitutional_government_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_censorship_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_rationing_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_tillage_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_mobilisation_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_internment_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_public_order_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_occupation_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_education_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_religion_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_language_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_economic_control_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_trade_shipping_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_foreign_access_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_northern_settlement_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+				check_variable = { var = ireland_law_guarantee_stage value = constant:ireland.law_stage_entry compare = greater_than_or_equals }
+			}
+		}
+		set_country_flag = ireland_laws_active
+	}
+	else = {
+		clr_country_flag = ireland_laws_active
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_emergency_overreach
+				has_country_flag = ireland_emergency_powers_crisis
+				has_country_flag = ireland_indefinite_emergency_rule
+				has_country_flag = ireland_censorship_abuse
+				has_country_flag = ireland_party_censorship_failure
+				has_country_flag = ireland_clerical_censorship_failure
+				has_country_flag = ireland_ration_distribution_failure
+				has_country_flag = ireland_ration_corruption_failure
+				has_country_flag = ireland_tillage_coercion_failure
+				has_country_flag = ireland_tillage_requisition_failure
+				has_country_flag = ireland_indefinite_detention_failure
+				has_country_flag = ireland_policing_failure
+				has_country_flag = ireland_ailtiri_police_exposure
+				has_country_flag = ireland_sectarian_policing_failure
+				has_country_flag = ireland_northern_settlement_failure
+				has_country_flag = ireland_education_crisis
+				has_country_flag = ireland_forced_assimilation_failure
+				has_country_flag = ireland_clerical_veto_failure
+				has_country_flag = ireland_religious_persecution_failure
+				has_country_flag = ireland_ailtiri_total_state_complete
+				has_country_flag = ireland_compulsory_language_failure
+				has_country_flag = ireland_captured_boards_failure
+				has_country_flag = ireland_sponsor_dependence_failure
+				has_country_flag = ireland_foreign_access_failure
+				has_country_flag = ireland_permanent_foreign_veto_failure
+			}
+		}
+		set_country_flag = ireland_law_abuse_active
+	}
+}

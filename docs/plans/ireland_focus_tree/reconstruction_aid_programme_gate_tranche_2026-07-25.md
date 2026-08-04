@@ -10,12 +10,12 @@ The decision and lifecycle specifications define **Accept or Refuse Reconstructi
 
 ## Source wiring
 
-`common/decisions/slopx_ireland_decisions.txt` now requires one of the existing FR11/RC07 reconstruction-offer states before the action can be selected:
+`common/decisions/ireland_decisions.txt` now requires one of the existing FR11/RC07 reconstruction-offer states before the action can be selected:
 
-- `slopx_ireland_foreign_reaction_event_426_available` — the foreign-reaction scheduler has produced the reconstruction-conditions offer;
-- `slopx_ireland_event_426_open` — the offer is currently being resolved;
-- `slopx_ireland_foreign_fr11_postwar_reconstruction_conditions_accepted` — the programme was accepted under the recorded terms; or
-- `slopx_ireland_foreign_fr11_postwar_reconstruction_conditions_refused` — the programme was refused and the refusal remains part of the postwar record.
+- `ireland_foreign_reaction_event_426_available` — the foreign-reaction scheduler has produced the reconstruction-conditions offer;
+- `ireland_event_426_open` — the offer is currently being resolved;
+- `ireland_foreign_fr11_postwar_reconstruction_conditions_accepted` — the programme was accepted under the recorded terms; or
+- `ireland_foreign_fr11_postwar_reconstruction_conditions_refused` — the programme was refused and the refusal remains part of the postwar record.
 
 This keeps the action coupled to the named foreign-reaction chain while preserving recovery and refusal play. The action still pays its dynamic Political Power and Command Power costs, increases Foreign Exposure only through its authored effect, and does not grant equipment, factories, shipping, units, territory, cores, recognition, or passive political power.
 

@@ -9,21 +9,21 @@ the full Ireland country-package audit or the full feature goal.
 
 ## Current package
 
-`common/characters/slopx_ireland_route_characters.txt` contains exactly 32
+`common/characters/ireland_route_characters.txt` contains exactly 32
 advisor blocks and 32 unique `idea_token` values:
 
 | Portfolio family | Advisor tokens |
 | --- | --- |
-| Starting constitutional roster | `slopx_ireland_oscar_traynor`, `slopx_ireland_douglas_hyde`, `slopx_ireland_sean_t_okelly` |
-| Existing constitutional package | `slopx_ireland_sean_lemass`, `slopx_ireland_richard_mulcahy` |
-| Fianna Fáil / development | `slopx_ireland_frank_aiken_advisor`, `slopx_ireland_sean_macentee_advisor` |
-| Fine Gael / coalition / intervention | `slopx_ireland_joseph_walshe_advisor`, `slopx_ireland_sean_mac_eoin_advisor`, `slopx_ireland_thomas_f_ohiggins_advisor`, `slopx_ireland_patrick_mcgilligan_advisor` |
-| Labour / unions | `slopx_ireland_james_everett_advisor`, `slopx_ireland_william_obrien_advisor`, `slopx_ireland_james_hickey_advisor`, `slopx_ireland_william_davin_advisor` |
-| Clann na Talmhan | `slopx_ireland_michael_donnellan_advisor` |
-| Church / service / vocational | `slopx_ireland_edward_joseph_byrne_advisor`, `slopx_ireland_john_charles_mcquaid_advisor`, `slopx_ireland_joseph_macrory_advisor`, `slopx_ireland_frank_duff_advisor`, `slopx_ireland_john_hayes_advisor` |
-| IRA civil / command | `slopx_ireland_maurice_twomey_advisor`, `slopx_ireland_tom_barry_advisor`, `slopx_ireland_jim_odonovan_advisor`, `slopx_ireland_sean_macbride_advisor`, `slopx_ireland_charles_kerins_advisor` |
-| Republican Congress | `slopx_ireland_george_gilmore_advisor`, `slopx_ireland_nora_connolly_obrien_advisor`, `slopx_ireland_sean_murray_advisor` |
-| O'Duffy / Ailtirí | `slopx_ireland_patrick_belton_advisor`, `slopx_ireland_ernest_blythe_advisor`, `slopx_ireland_oliver_flanagan_advisor` |
+| Starting constitutional roster | `ireland_oscar_traynor`, `ireland_douglas_hyde`, `ireland_sean_t_okelly` |
+| Existing constitutional package | `ireland_sean_lemass`, `ireland_richard_mulcahy` |
+| Fianna Fáil / development | `ireland_frank_aiken_advisor`, `ireland_sean_macentee_advisor` |
+| Fine Gael / coalition / intervention | `ireland_joseph_walshe_advisor`, `ireland_sean_mac_eoin_advisor`, `ireland_thomas_f_ohiggins_advisor`, `ireland_patrick_mcgilligan_advisor` |
+| Labour / unions | `ireland_james_everett_advisor`, `ireland_william_obrien_advisor`, `ireland_james_hickey_advisor`, `ireland_william_davin_advisor` |
+| Clann na Talmhan | `ireland_michael_donnellan_advisor` |
+| Church / service / vocational | `ireland_edward_joseph_byrne_advisor`, `ireland_john_charles_mcquaid_advisor`, `ireland_joseph_macrory_advisor`, `ireland_frank_duff_advisor`, `ireland_john_hayes_advisor` |
+| IRA civil / command | `ireland_maurice_twomey_advisor`, `ireland_tom_barry_advisor`, `ireland_jim_odonovan_advisor`, `ireland_sean_macbride_advisor`, `ireland_charles_kerins_advisor` |
+| Republican Congress | `ireland_george_gilmore_advisor`, `ireland_nora_connolly_obrien_advisor`, `ireland_sean_murray_advisor` |
+| O'Duffy / Ailtirí | `ireland_patrick_belton_advisor`, `ireland_ernest_blythe_advisor`, `ireland_oliver_flanagan_advisor` |
 
 The historical roster is used for sourced real people only. Ryan, Peadar
 O'Donnell, Gearóid Ó Cuinneagáin, O'Duffy, and collective councils remain
@@ -31,16 +31,16 @@ movement or country-leader offices, not ordinary advisor duplicates.
 
 ## Route and lifecycle wiring
 
-- `common/scripted_triggers/slopx_ireland_triggers.txt` defines the route
+- `common/scripted_triggers/ireland_triggers.txt` defines the route
   helper gates for constitutional, de Valera/Lemass, Fine Gael/Dillon, Norton,
   Clann, vocational, clerical, IRA civil, IRA command, Congress plural,
   Congress vanguard, O'Duffy, and Ailtirí portfolios.
-- `slopx_ireland_recruit_route_advisors` is called from route-leader activation
+- `ireland_recruit_route_advisors` is called from route-leader activation
   and recruits only the roster permitted by the selected route and date.
 - Hiring remains an ordinary advisor appointment: route activation does not
   call `activate_advisor` and does not grant political power or bypass the
   normal appointment cost.
-- `slopx_ireland_sync_route_advisor_lifecycle` dismisses invalid hired roles
+- `ireland_sync_route_advisor_lifecycle` dismisses invalid hired roles
   when route, office, archive, command, closure, or date conditions fail, then
   retires invalid route characters so a later valid recovery can recruit them
   without stacking duplicate identities.
@@ -60,7 +60,7 @@ clearance (C3 or C4 as recorded in the manifest):
 | P-47, P-49, P-51, P-53, P-58, P-60 | Republican Congress, O'Duffy, and Ailtirí advisors |
 
 Runtime DDS files remain in the standard mod `gfx/` tree and GFX definitions
-remain in `interface/slopx_ireland_sourced_assets.gfx`. Source masters remain
+remain in `interface/ireland_sourced_assets.gfx`. Source masters remain
 preserved under `docs/portraits/`; the temporary `assets/` tree is not a
 runtime destination. No real-person portrait was generated or used as a
 substitute for a missing source.

@@ -13,24 +13,24 @@ The interrupted 30-focus AI insertion was not desirable as an ordered queue
 change. `ai_national_focuses` is a strict ordered list: while any listed focus
 is possible, the AI follows that order and ignores node `ai_will_do`. The
 insertion placed all 30 review, branch-specific, optional foreign, and
-operational focuses ahead of the route opening in `IRE_slopx_historical` and
+operational focuses ahead of the route opening in `IRE_ireland_historical` and
 ahead of provision, readiness, Northern, recovery, and conclusion gates in
-`IRE_slopx_route_reactive`.
+`IRE_ireland_route_reactive`.
 
 The worst semantic cases are not merely theoretical:
 
-- `slopx_ireland_party_conference`, `slopx_ireland_dail_nomination`, and
-  `slopx_ireland_replacement_charter` are conditional route/recovery content,
+- `ireland_party_conference`, `ireland_dail_nomination`, and
+  `ireland_replacement_charter` are conditional route/recovery content,
   not universal route-reactive work.
-- `slopx_ireland_interoperability` is listed before its required
-  `slopx_ireland_foreign_safeguards`; `slopx_ireland_maritime_reserve` is
-  listed before its required `slopx_ireland_transport_priority`; several
+- `ireland_interoperability` is listed before its required
+  `ireland_foreign_safeguards`; `ireland_maritime_reserve` is
+  listed before its required `ireland_transport_priority`; several
   others depend on upstream route or material focuses absent from the same
   queue.
 - In the historical plan the block was placed before
-  `slopx_ireland_republican_government` and the de Valera route sequence. In
-  the reactive plan it was placed before `slopx_ireland_provision_conclusion`
-  and `slopx_ireland_readiness_conclusion`. Any eligible item therefore
+  `ireland_republican_government` and the de Valera route sequence. In
+  the reactive plan it was placed before `ireland_provision_conclusion`
+  and `ireland_readiness_conclusion`. Any eligible item therefore
   pre-empted those route/conclusion candidates for another ten-focus cycle.
 
 The direct correction removes the 30 IDs from both strict ordered lists and
@@ -45,7 +45,7 @@ external partner state.
 
 | File | Change |
 | --- | --- |
-| `common/ai_strategy_plans/IRE_slopx_ireland_strategy_plans.txt` | Removed the same 30 IDs from the ordered list of `IRE_slopx_historical` and `IRE_slopx_route_reactive`; retained all 60 plan-level factor entries. |
+| `common/ai_strategy_plans/IRE_ireland_strategy_plans.txt` | Removed the same 30 IDs from the ordered list of `IRE_ireland_historical` and `IRE_ireland_route_reactive`; retained all 60 plan-level factor entries. |
 | `docs/plans/ireland_focus_tree/ireland_focus_tree_focus_audit_handoff_2026-07-29.md` | This dated audit and handoff. |
 
 No focus source, focus localisation, icon registration, runtime, decision,
@@ -102,7 +102,7 @@ All 30 canonical durable profiles have a focus plan. `H` is historical,
 | `otherworld_containment` | P/A | Otherworld investigation/containment | Otherworld capstone | `route_otherworld` |
 | `convergence_order` | A | convergence components | convergence order capstone | `route_convergence` |
 
-Shared opening evidence is `slopx_ireland_state_still_defined`,
+Shared opening evidence is `ireland_state_still_defined`,
 `institutional_survey`, and `national_settlement`, followed by the
 constitutional, sovereignty, Emergency, material, Readiness, neutrality,
 Northern, recovery, and conclusion lanes. The source contains exactly 216
@@ -117,21 +117,21 @@ authored focus blocks; the `focus_tree` wrapper is not counted.
   plans. Ailtirí has a dated launch and explicit hidden/rare-AI permission;
   its only node-level `ai_will_do` is deliberately zeroed for historical or
   unpermitted AI states at
-  `common/national_focus/slopx_ireland_focus_tree.txt:4050`.
+  `common/national_focus/ireland_focus_tree.txt:4050`.
 - High Kingship, Five Provinces pentarchy, Otherworld commitment, and
   convergence retain their hidden/reveal boundaries. The focus tree does not
   turn cultural study or evidence work into automatic sovereignty.
 - The source parser found one true no-prerequisite/no-gate focus only:
-  `slopx_ireland_state_still_defined`. The other 38 no-prerequisite focus
+  `ireland_state_still_defined`. The other 38 no-prerequisite focus
   blocks have explicit availability, allow-branch, or bypass gates. The
   parser found 165 focuses with one prerequisite block, 11 with two, and one
   with three; separate prerequisite blocks are treated as AND.
 
 ## Dillon intervention audit
 
-`slopx_ireland_dillon_public_dissent`,
-`slopx_ireland_dillon_intervention_caucus`, and
-`slopx_ireland_dillon_war_assent` form the dedicated intervention sequence in
+`ireland_dillon_public_dissent`,
+`ireland_dillon_intervention_caucus`, and
+`ireland_dillon_war_assent` form the dedicated intervention sequence in
 the focus source. The route plan lists the constitutional opposition,
 sovereignty, active neutrality, dissent, caucus, and assent sequence. The
 focus source keeps war behind the authored material, Dáil, sovereignty, home
@@ -139,17 +139,17 @@ reserve, contribution, command, and consent gates; the AI profile also
 requires the Dillon predicate and the canonical Readiness/Provision floors.
 The audit found no local prerequisite or mutual-exclusion defect in this
 sequence. The runtime writer for the existing
-`slopx_ireland_armed_neutralty_mandate` spelling matches the focus trigger;
+`ireland_armed_neutralty_mandate` spelling matches the focus trigger;
 that spelling is preserved because correcting it would cross the permitted
 focus-AI scope without changing behavior.
 
 ## Northern boundary
 
 The focus source does not grant Northern territory, cores, or occupation
-control. `slopx_ireland_northern_regional_review` requires the authored core-
+control. `ireland_northern_regional_review` requires the authored core-
 eligible integration-stage threshold, Readiness conclusion, and one completed
 federal, unitary, wartime, or recovery preparation. It is followed by
-`slopx_ireland_northern_policy_proof`, which records policy selection only
+`ireland_northern_policy_proof`, which records policy selection only
 after integration or deferment. Core/occupation execution remains outside
 this focus audit and is not weakened by the AI queue correction.
 
@@ -161,7 +161,7 @@ this focus audit and is not weakened by the AI queue correction.
   recognition, or alignment.
 - Provision and Readiness conclusion focuses retain their explicit bottleneck
   and display floors. Readiness conclusion also requires
-  `slopx_ireland_interoperability`.
+  `ireland_interoperability`.
 - Route capstones call the existing conclusion-review helper only after the
   source-level government/law, Provision, Readiness, foreign, Northern,
   emergency/identity, and cleanup proofs. No conclusion reward was changed.
@@ -173,26 +173,26 @@ this focus audit and is not weakened by the AI queue correction.
 
 | Surface | Result | Evidence |
 | --- | --- | --- |
-| Focus IDs | 216 unique authored IDs | `common/national_focus/slopx_ireland_focus_tree.txt` |
-| Focus icon references | 216 unique references | source `icon = GFX_focus_slopx_ireland_*` scan |
-| Base GFX registrations | 216 matching names | `interface/slopx_ireland_icons.gfx` |
-| Shine registrations | 216 paired definitions | `interface/slopx_ireland_focus_shine.gfx` |
-| Runtime goal textures | 216 DDS files | `gfx/interface/goals/slopx_ireland/` |
-| Focus title/description localisation | 216/216 direct pairs | `localisation/english/slopx_ireland_l_english.yml` |
+| Focus IDs | 216 unique authored IDs | `common/national_focus/ireland_focus_tree.txt` |
+| Focus icon references | 216 unique references | source `icon = GFX_focus_ireland_*` scan |
+| Base GFX registrations | 216 matching names | `interface/ireland_icons.gfx` |
+| Shine registrations | 216 paired definitions | `interface/ireland_focus_shine.gfx` |
+| Runtime goal textures | 216 DDS files | `gfx/interface/goals/ireland/` |
+| Focus title/description localisation | 216/216 direct pairs | `localisation/english/ireland_l_english.yml` |
 | Localisation encoding | UTF-8 with BOM; no `:0` keys | same file |
 
 The first icon scan counted the focus-tree wrapper as a pseudo-ID and used a
 too-narrow shine-name pattern; the authoritative focus surface count is 216,
 and the paired-shine registration is confirmed by the existing icon ledger
-and `interface/slopx_ireland_focus_shine.gfx`. No icon or localisation file
+and `interface/ireland_focus_shine.gfx`. No icon or localisation file
 was edited.
 
 ## AI behaviour before and after
 
 | Plan | Before this correction | After this correction |
 | --- | --- | --- |
-| `IRE_slopx_historical` | 77 ordered focuses, with the 30 shared IDs between neutrality posture and republican government; 41 factor entries | 47 ordered focuses; same 30 IDs remain factors only; route opening resumes after neutrality posture |
-| `IRE_slopx_route_reactive` | 69 ordered focuses, with the 30 shared IDs before provision/readiness/conclusion work; 64 factor entries | 39 ordered focuses; same 30 IDs remain factors only; conclusion/Northern/recovery spine retains strict priority |
+| `IRE_ireland_historical` | 77 ordered focuses, with the 30 shared IDs between neutrality posture and republican government; 41 factor entries | 47 ordered focuses; same 30 IDs remain factors only; route opening resumes after neutrality posture |
+| `IRE_ireland_route_reactive` | 69 ordered focuses, with the 30 shared IDs before provision/readiness/conclusion work; 64 factor entries | 39 ordered focuses; same 30 IDs remain factors only; conclusion/Northern/recovery spine retains strict priority |
 
 All 30 IDs resolve to source focus blocks. No duplicate ordered IDs or factor
 IDs were found in the two edited plans. The profile/overlay registry remains
@@ -223,12 +223,12 @@ Completed task-specific validation:
   authored 79,504-pixel width; the prior valid 14,288-pixel raster artifact
   remains recorded in `docs/plans/ireland_focus_tree/focus_layout_inspection_2026-07-28.md`.
   Fresh HTML artifact:
-  `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/3288b4b5daa821daba242dc3b6d1c76c6ca8e7c4d8ee2321ae2955742941191f/a8ea252387b448096cf78be59128c018988e769ce8336cdb2249ea16cdddc6ef/slopx_ireland_focus_tree.focus.html`.
+  `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/3288b4b5daa821daba242dc3b6d1c76c6ca8e7c4d8ee2321ae2955742941191f/a8ea252387b448096cf78be59128c018988e769ce8336cdb2249ea16cdddc6ef/ireland_focus_tree.focus.html`.
 - Source parser: exactly 216 focus blocks and 216 unique focus IDs after
   excluding the `focus_tree` wrapper; 216 icon refs;
   216 base GFX names; 216 shine registrations; 216 goal DDS files; 216
   title/description pairs; no duplicate localisation keys; no `:0` keys.
-- AI-plan parser: 31 `IRE_slopx_*` plans; edited historical/reactive ordered
+- AI-plan parser: 31 `IRE_ireland_*` plans; edited historical/reactive ordered
   counts are 47 and 39; all factor and ordered identifiers resolve; the 30
   reviewed IDs occur only in factor blocks after the correction.
 - Profile/overlay roster scan: exactly 30 durable profile keys and 10

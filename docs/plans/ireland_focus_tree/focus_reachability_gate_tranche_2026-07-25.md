@@ -12,17 +12,17 @@ an already-owned prerequisite, route milestone, or live partner check.
 
 | Focus | Circular gate removed | Authoritative gate used |
 | --- | --- | --- |
-| `slopx_ireland_air_warning` | `slopx_ireland_air_warning_ready` | `slopx_ireland_civilian_defence_review_ready` plus completed readiness command |
-| `slopx_ireland_maritime_protection` | `slopx_ireland_maritime_protection_ready` | `slopx_ireland_port_defence_authority_ready` plus completed maritime reserve |
-| `slopx_ireland_emergency_mobilisation` | `slopx_ireland_emergency_mobilisation_ready` | `slopx_ireland_emergency_review_started` plus completed emergency opening |
-| `slopx_ireland_american_diaspora_mission` | `slopx_ireland_american_mission_ready` | `slopx_ireland_american_partner_valid` plus completed minority guarantees |
-| `slopx_ireland_vatican_small_state_mediation` | `slopx_ireland_vatican_mediation_ready` | `slopx_ireland_vatican_partner_valid` plus neutrality and minority guarantees |
-| `slopx_ireland_foreign_safeguards` | `slopx_ireland_foreign_safeguards_ready` | British, American, and Vatican channel-open flags |
-| `slopx_ireland_northern_local_authorities` | `slopx_ireland_northern_local_authority_ready` | `slopx_ireland_northern_ledger_open` plus public-order review |
-| `slopx_ireland_northern_trade_corridor` | `slopx_ireland_northern_trade_corridor_ready` | completed Northern local authorities plus 1938 trade settlement |
-| `slopx_ireland_northern_labour_social_bridge` | `slopx_ireland_northern_labour_bridge_ready` | completed Northern local authorities plus church-labour consultation |
-| `slopx_ireland_convention_of_commands` | `slopx_ireland_ira_command_convention_ready` | `slopx_ireland_security_exposure_ready` plus Northern contacts |
-| `slopx_ireland_language_cells` | `slopx_ireland_ailtiri_language_network_ready` | `slopx_ireland_ailtiri_cells_ready` |
+| `ireland_air_warning` | `ireland_air_warning_ready` | `ireland_civilian_defence_review_ready` plus completed readiness command |
+| `ireland_maritime_protection` | `ireland_maritime_protection_ready` | `ireland_port_defence_authority_ready` plus completed maritime reserve |
+| `ireland_emergency_mobilisation` | `ireland_emergency_mobilisation_ready` | `ireland_emergency_review_started` plus completed emergency opening |
+| `ireland_american_diaspora_mission` | `ireland_american_mission_ready` | `ireland_american_partner_valid` plus completed minority guarantees |
+| `ireland_vatican_small_state_mediation` | `ireland_vatican_mediation_ready` | `ireland_vatican_partner_valid` plus neutrality and minority guarantees |
+| `ireland_foreign_safeguards` | `ireland_foreign_safeguards_ready` | British, American, and Vatican channel-open flags |
+| `ireland_northern_local_authorities` | `ireland_northern_local_authority_ready` | `ireland_northern_ledger_open` plus public-order review |
+| `ireland_northern_trade_corridor` | `ireland_northern_trade_corridor_ready` | completed Northern local authorities plus 1938 trade settlement |
+| `ireland_northern_labour_social_bridge` | `ireland_northern_labour_bridge_ready` | completed Northern local authorities plus church-labour consultation |
+| `ireland_convention_of_commands` | `ireland_ira_command_convention_ready` | `ireland_security_exposure_ready` plus Northern contacts |
+| `ireland_language_cells` | `ireland_ailtiri_language_network_ready` | `ireland_ailtiri_cells_ready` |
 
 The completion rewards retain the historical `*_ready` and `*_complete`
 markers where they are used by downstream runtime systems. They are no longer
@@ -55,5 +55,5 @@ are not part of the dead chain identified by the auditor.
 
 ## Files
 
-- `common/national_focus/slopx_ireland_focus_tree.txt`
+- `common/national_focus/ireland_focus_tree.txt`
 - `docs/plans/ireland_focus_tree/project_status.md`

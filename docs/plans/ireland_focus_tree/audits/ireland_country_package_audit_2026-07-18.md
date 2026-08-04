@@ -2,7 +2,7 @@
 
 Status: **blocked for package completion; parent implementation handoff**.
 
-Historical snapshot note (reconciled 2026-07-22): the package-wiring gaps in this audit are not the current status for route activation, spirits, cosmetic identity, or focus-icon registration. Current structural evidence is in `common/scripted_effects/slopx_ireland_runtime.txt`, `common/countries/slopx_ireland_cosmetic.txt`, and `interface/slopx_ireland_icons.gfx`. Source clearance and live route/scenario validation remain partial or blocked; use `docs/plans/ireland_focus_tree/source_of_truth_map.md` and `docs/plans/ireland_focus_tree/audits/ireland_completion_followup_2026-07-18.md`.
+Historical snapshot note (reconciled 2026-07-22): the package-wiring gaps in this audit are not the current status for route activation, spirits, cosmetic identity, or focus-icon registration. Current structural evidence is in `common/scripted_effects/ireland_runtime.txt`, `common/countries/ireland_cosmetic.txt`, and `interface/ireland_icons.gfx`. Source clearance and live route/scenario validation remain partial or blocked; use `docs/plans/ireland_focus_tree/source_of_truth_map.md` and `docs/plans/ireland_focus_tree/audits/ireland_completion_followup_2026-07-18.md`.
 
 This is an audit-only handoff. No gameplay, asset, localisation, or existing documentation file was patched by this audit. The worktree contained substantial unrelated Ireland implementation and asset changes before the audit; those changes were preserved.
 
@@ -35,7 +35,7 @@ The opening package is mostly coherent and the Northern Ireland opening boundary
 - `IRE` starts in capital state `113`, with vanilla Ireland home-state cores only.
 - State `119` is `ENG`-owned and has only `ENG` and `NIR` historical cores in the mod override.
 - Ireland does not start with state `119`, an Ireland core on state `119`, or an actual map claim before the dedicated claim focus.
-- `slopx_ireland_northern_settlement_ledger` grants only an Ireland claim to state `119`.
+- `ireland_northern_settlement_ledger` grants only an Ireland claim to state `119`.
 - Focus loading is natively assigned to `IRE`, and all 216 focus icon references are registered with existing DDS files.
 - The three starting spirit slots and the documented opening values are initialized through one idempotent country-scoped effect.
 
@@ -43,7 +43,7 @@ The package is not completion-ready. The material blockers are runtime wiring, n
 
 1. Fifteen route country-leader characters are declared but never recruited, activated, transitioned to, or retired.
 2. The three starting idea families have 60 route/failure variants, but no route lifecycle swaps or removes any variant; all 63 idea picture names are also absent from live GFX registration.
-3. The Northern core-review trigger exists, but no caller grants an Ireland core. The final-review focus only sets flags. Two prerequisite flags (`slopx_ireland_dillon_mandate_complete` and `slopx_ireland_northern_regional_review_ready`) have no setters.
+3. The Northern core-review trigger exists, but no caller grants an Ireland core. The final-review focus only sets flags. Two prerequisite flags (`ireland_dillon_mandate_complete` and `ireland_northern_regional_review_ready`) have no setters.
 4. Route flags and AI profiles do not produce corresponding party, ideology, popularity, country-leader, cosmetic-tag, or country-name changes. The mod has no Ireland-specific `common/countries`, `common/parties`, `common/cosmetic_tags`, or route identity surface.
 5. The AI registry has the canonical 30 durable profiles and 10 overlays, but only two generic AI national-focus plans, both with empty `focus_factors`; route-specific focus selection is therefore not proven.
 6. Only the 216 focus and 153 decision sprites are live. Eleven personal route portraits, four institutional route portraits, 63 spirit sprites, and the other planned asset classes have no live registration/final package.
@@ -56,13 +56,13 @@ These gaps require coordinated focus, event, character, idea, AI, identity, and 
 |---|---|---|
 | Tag registration | Partial/pass for base game | `IRE` and `NIR` are vanilla-registered in `common/country_tags/00_countries.txt`; no mod-side tag override is needed for the base country. |
 | Country definition | Partial | Vanilla `common/countries/Ireland.txt` and `Northern Ireland.txt` supply graphics/culture/colors. Route identities have no mod-side country/cosmetic definition. |
-| History/opening | Pass with vanilla dependencies | `history/countries/IRE - Ireland.txt` sets the opening history and calls `slopx_ireland_initialize_campaign`. |
+| History/opening | Pass with vanilla dependencies | `history/countries/IRE - Ireland.txt` sets the opening history and calls `ireland_initialize_campaign`. |
 | State 119 | Pass at game start | `history/states/119-Northern Ireland.txt` leaves `owner = ENG` and cores `ENG`/`NIR`; no `IRE` core or opening transfer. |
-| Claim/core progression | Blocked | The claim focus is claim-only, but the documented final core grant is absent; see `slopx_ireland_can_northern_core_review`. |
-| Route characters/leaders | Blocked | 15 custom route characters exist in `common/characters/slopx_ireland_route_characters.txt`, but no lifecycle caller exists. |
+| Claim/core progression | Blocked | The claim focus is claim-only, but the documented final core grant is absent; see `ireland_can_northern_core_review`. |
+| Route characters/leaders | Blocked | 15 custom route characters exist in `common/characters/ireland_route_characters.txt`, but no lifecycle caller exists. |
 | Ideas/spirits | Partial/blocked | Three opening ideas are initialized correctly; 60 variants are declared but never transitioned, and all 63 pictures lack live GFX entries. |
 | Politics/parties/identity | Blocked | Only initial/1939 history politics are set. Route runtime has no party, country-leader, ideology, cosmetic-tag, country-name, or popularity transition. |
-| Focus loading | Pass | `slopx_ireland_focus_tree` uses `country = { factor = 0 modifier = { add = 100 tag = IRE } }`; the tree is not default-loaded for other tags. |
+| Focus loading | Pass | `ireland_focus_tree` uses `country = { factor = 0 modifier = { add = 100 tag = IRE } }`; the tree is not default-loaded for other tags. |
 | Focus route completion | Blocked | Many route gates are flags, but required setters and leader/idea/identity effects are not wired; Northern final review does not grant a core. |
 | Decisions/events | Partial | The state-119 ledgers and review events exist, but the core-review action/event chain stops at flags, variables, and reactions. |
 | AI | Partial/blocked | 30 profiles and 10 overlays exist; focus plans are only historical/reactive generic lists with empty `focus_factors`. |
@@ -84,13 +84,13 @@ These gaps require coordinated focus, event, character, idea, AI, identity, and 
 - 21 vanilla Ireland characters recruited, beginning with `IRE_Éamon_de_valera`; this is the correct vanilla de Valera token, not a mojibake ID.
 - `set_politics`: `ruling_party = democratic`, `last_election = "1933.1.24"`, `election_frequency = 48`, and `elections_allowed = yes`.
 - `set_popularities`: `democratic = 98`, `fascism = 1`, `communism = 1`.
-- `slopx_ireland_initialize_campaign = yes`.
+- `ireland_initialize_campaign = yes`.
 
 The later `1939.1.1` block adds `1198` political power and `100` command power, completes the listed generic focuses, switches to `IRE_1939`, and applies the later vanilla technology/politics block. It is not part of the 1936 opening state but should remain consistent with the route lifecycle when that lifecycle is wired.
 
 ### Campaign variables and flags
 
-`common/script_constants/slopx_ireland_constants.txt` and `common/scripted_effects/slopx_ireland_effects.txt:12-121` agree on the following opening values:
+`common/script_constants/ireland_constants.txt` and `common/scripted_effects/ireland_effects.txt:12-121` agree on the following opening values:
 
 | System | Opening values |
 |---|---|
@@ -104,9 +104,9 @@ The later `1939.1.1` block adds `1198` political power and `100` command power, 
 | Foreign reaction | reaction window `0` days at opening; visible count `0`; reaction score `0` |
 | Spirit slots | all three slot state variables `0`; exactly three opening ideas are added |
 | Northern map ledgers | claim ledger `1`; control, occupation, settlement, and integration ledgers `0`; claim ledger active/open flags set; later ledger-active flags clear |
-| Profile | `slopx_ireland_profile_historical_de_valera` and `slopx_ireland_initialized` set |
+| Profile | `ireland_profile_historical_de_valera` and `ireland_initialized` set |
 
-The initialization effect is guarded by `slopx_ireland_initialized`, and is invoked by country history, `on_startup` for `IRE`, and the opening focus path. That is a good idempotency pattern; parent work should preserve the guard rather than duplicate setup.
+The initialization effect is guarded by `ireland_initialized`, and is invoked by country history, `on_startup` for `IRE`, and the opening focus path. That is a good idempotency pattern; parent work should preserve the guard rather than duplicate setup.
 
 ### State 119 and no-free-territory proof
 
@@ -120,18 +120,18 @@ The initialization effect is guarded by `slopx_ireland_initialized`, and is invo
 
 The state override intentionally differs from vanilla by removing vanilla's opening `IRE` core. The other Ireland home states remain vanilla-owned/cored by `IRE` in states `113`, `134`, and `135`. The current package therefore passes the opening claims/cores separation requirement.
 
-`common/national_focus/slopx_ireland_focus_tree.txt:2834-2856` (`slopx_ireland_northern_settlement_ledger`) uses only `add_claim_by = ROOT` in state `119`; it does not transfer the state or add a core. This is the correct claim step.
+`common/national_focus/ireland_focus_tree.txt:2834-2856` (`ireland_northern_settlement_ledger`) uses only `add_claim_by = ROOT` in state `119`; it does not transfer the state or add a core. This is the correct claim step.
 
-The progression is incomplete, however. `common/scripted_triggers/slopx_ireland_triggers.txt:130-136` defines `slopx_ireland_can_northern_core_review` as the stage/final-review gate, but that trigger has no caller. `slopx_ireland_northern_regional_review` at `common/national_focus/slopx_ireland_focus_tree.txt:2992-3016` sets `slopx_ireland_northern_final_review_passed` and review flags only. `events/slopx_ireland_events.txt` final/core-review events and `common/decisions/slopx_ireland_decisions.txt:25363` likewise stop at variables, flags, missions, and foreign reactions. No mod source contains an Ireland `add_core` effect. The parent must design one idempotent final-review effect with explicit state-119 control/occupation/integration checks and cleanup; do not solve this by giving an opening core.
+The progression is incomplete, however. `common/scripted_triggers/ireland_triggers.txt:130-136` defines `ireland_can_northern_core_review` as the stage/final-review gate, but that trigger has no caller. `ireland_northern_regional_review` at `common/national_focus/ireland_focus_tree.txt:2992-3016` sets `ireland_northern_final_review_passed` and review flags only. `events/ireland_events.txt` final/core-review events and `common/decisions/ireland_decisions.txt:25363` likewise stop at variables, flags, missions, and foreign reactions. No mod source contains an Ireland `add_core` effect. The parent must design one idempotent final-review effect with explicit state-119 control/occupation/integration checks and cleanup; do not solve this by giving an opening core.
 
 ## Route characters, leaders, politics, and identity
 
 ### Declared characters
 
-`common/characters/slopx_ireland_route_characters.txt` declares 15 country-leader roles with `id = -1`, expiry `1965.1.1.1`, and the following route IDs:
+`common/characters/ireland_route_characters.txt` declares 15 country-leader roles with `id = -1`, expiry `1965.1.1.1`, and the following route IDs:
 
-- Personal: `slopx_ireland_w_t_cosgrave`, `slopx_ireland_richard_mulcahy`, `slopx_ireland_john_costello`, `slopx_ireland_james_dillon`, `slopx_ireland_sean_lemass`, `slopx_ireland_daniel_morrissey`, `slopx_ireland_joseph_blowick`, `slopx_ireland_frank_ryan`, `slopx_ireland_peadar_odonnell`, `slopx_ireland_gearoid_o_cuinneagain`, and `slopx_ireland_father_edward_cahill`.
-- Institutional: `slopx_ireland_ira_army_council` (`The Army Council`), `slopx_ireland_high_king` (`The High King`), `slopx_ireland_five_provinces_steward` (`The Steward of the Five Provinces`), and `slopx_ireland_compact_steward` (`The Compact Steward`). Institutional names correctly avoid personal random-name pools.
+- Personal: `ireland_w_t_cosgrave`, `ireland_richard_mulcahy`, `ireland_john_costello`, `ireland_james_dillon`, `ireland_sean_lemass`, `ireland_daniel_morrissey`, `ireland_joseph_blowick`, `ireland_frank_ryan`, `ireland_peadar_odonnell`, `ireland_gearoid_o_cuinneagain`, and `ireland_father_edward_cahill`.
+- Institutional: `ireland_ira_army_council` (`The Army Council`), `ireland_high_king` (`The High King`), `ireland_five_provinces_steward` (`The Steward of the Five Provinces`), and `ireland_compact_steward` (`The Compact Steward`). Institutional names correctly avoid personal random-name pools.
 
 The starting `IRE_Éamon_de_valera` role is correctly supplied by vanilla `common/characters/IRE.txt` and recruited by `history/countries/IRE - Ireland.txt:20`. The custom route IDs occur only in the declaration file (apart from incidental flag/focus text matches): no `recruit_character`, `add_country_leader_role`, `create_country_leader`, `set_politics`, `retire_country_leader`, or equivalent route transition call references them. The custom portrait refs are consequently both lifecycle-dead and asset-unresolved.
 
@@ -143,27 +143,27 @@ Search of mod `common`, `events`, and `history` surfaces found only the opening 
 
 ## Ideas and spirits
 
-`common/ideas/slopx_ireland_spirits.txt` declares exactly 63 country ideas, all restricted with `allowed = { original_tag = IRE }`:
+`common/ideas/ireland_spirits.txt` declares exactly 63 country ideas, all restricted with `allowed = { original_tag = IRE }`:
 
-- Opening family members: `slopx_ireland_spirit_governing_order`, `slopx_ireland_spirit_organised_society`, and `slopx_ireland_spirit_security_external_position`.
+- Opening family members: `ireland_spirit_governing_order`, `ireland_spirit_organised_society`, and `ireland_spirit_security_external_position`.
 - 60 additional route/failure variants across the same three persistent family slots.
 
-`slopx_ireland_initialize_campaign` adds exactly the three opening ideas. This matches the canonical three-family rule and does not create a fourth starting spirit for National Settlement.
+`ireland_initialize_campaign` adds exactly the three opening ideas. This matches the canonical three-family rule and does not create a fourth starting spirit for National Settlement.
 
 No `swap_ideas`, `remove_ideas`, or route/failure `add_ideas` call exists anywhere in the mod beyond the opening three additions. The 60 variant declarations are inert, so route locks cannot produce the documented persistent-spirit lifecycle. This requires coordinated route transition effects, not a safe local idea-file edit.
 
-All 63 idea `picture` values use custom `GFX_slopx_ireland_spirit_*` names, but `interface/slopx_ireland_icons.gfx` registers only focus and decision sprites. No final spirit DDS package is present in `assets/ireland_focus_tree/icons`; the source-atlas/asset manifests mark spirits as incomplete. Do not substitute generic vanilla icons without parent approval because the asset instructions require explicit fallback discussion and the current package has no approved fallback.
+All 63 idea `picture` values use custom `GFX_ireland_spirit_*` names, but `interface/ireland_icons.gfx` registers only focus and decision sprites. No final spirit DDS package is present in `assets/ireland_focus_tree/icons`; the source-atlas/asset manifests mark spirits as incomplete. Do not substitute generic vanilla icons without parent approval because the asset instructions require explicit fallback discussion and the current package has no approved fallback.
 
 ## Focus loading and route wiring
 
-`common/national_focus/slopx_ireland_focus_tree.txt` is `slopx_ireland_focus_tree`, `default = no`, and applies only to `IRE` through the tag modifier. It contains 216 focus nodes and 216 unique icon references. The live GFX file registers all focus refs, and all corresponding DDS paths exist. This part is a pass.
+`common/national_focus/ireland_focus_tree.txt` is `ireland_focus_tree`, `default = no`, and applies only to `IRE` through the tag modifier. It contains 216 focus nodes and 216 unique icon references. The live GFX file registers all focus refs, and all corresponding DDS paths exist. This part is a pass.
 
 The focus tree is not a complete country package merely because it loads. Current route wiring has concrete dead gates:
 
-- `common/national_focus/slopx_ireland_focus_tree.txt:1616` checks `slopx_ireland_dillon_mandate_complete`, but no setter exists in the mod.
-- `common/national_focus/slopx_ireland_focus_tree.txt:3008` checks `slopx_ireland_northern_regional_review_ready`, but no setter exists.
-- `:3014` sets `slopx_ireland_northern_final_review_passed`, but no subsequent map-core effect consumes the final-review state.
-- The core-review trigger `slopx_ireland_can_northern_core_review` is defined but unused.
+- `common/national_focus/ireland_focus_tree.txt:1616` checks `ireland_dillon_mandate_complete`, but no setter exists in the mod.
+- `common/national_focus/ireland_focus_tree.txt:3008` checks `ireland_northern_regional_review_ready`, but no setter exists.
+- `:3014` sets `ireland_northern_final_review_passed`, but no subsequent map-core effect consumes the final-review state.
+- The core-review trigger `ireland_can_northern_core_review` is defined but unused.
 
 The older `docs/plans/ireland_focus_tree/audits/focus_tree_audit_2026-07-18.md` is stale for the current live icon and AI-plan surfaces: it predates the 369 registered focus/decision sprites and the two current AI plans. Its findings about unresolved focus icons and absent AI plans should not be copied forward; the missing lifecycle/gate/core findings remain relevant.
 
@@ -171,20 +171,20 @@ The older `docs/plans/ireland_focus_tree/audits/focus_tree_audit_2026-07-18.md` 
 
 The current decision/event package contains the Northern ledger, review, mission, and reaction surfaces and consistently references state `119`; this is useful integration coverage. It does not mutate ownership/controller/core state. In particular:
 
-- `common/decisions/slopx_ireland_decisions.txt:25363` (`slopx_ireland_action_conduct_the_core_eligibility_review`) activates the review mission but does not add a core.
-- `events/slopx_ireland_events.txt` contains the final-review/core-eligibility event family around events `292-295`; the effects set memory/acceptance/defer flags, ledger values, and foreign reactions only.
-- `common/scripted_triggers/slopx_ireland_triggers.txt:130-136` is the intended final eligibility gate, but no effect path invokes it to produce map state.
+- `common/decisions/ireland_decisions.txt:25363` (`ireland_action_conduct_the_core_eligibility_review`) activates the review mission but does not add a core.
+- `events/ireland_events.txt` contains the final-review/core-eligibility event family around events `292-295`; the effects set memory/acceptance/defer flags, ledger values, and foreign reactions only.
+- `common/scripted_triggers/ireland_triggers.txt:130-136` is the intended final eligibility gate, but no effect path invokes it to produce map state.
 
 The parent should reconcile the decision, mission, event, focus, and scripted-effect paths before adding a core. The final review must be one idempotent, explicitly gated map mutation, not a new unconditional event option.
 
 ## AI and playability
 
-`common/ai_strategy/slopx_ireland_ai_strategy.txt` contains the canonical 30 durable profile registry and 10 overlay registry, all restricted to `original_tag = IRE` with route/profile abort behavior. The profiles include historical de Valera, constitutional, interventionist, radical, clerical, high-king, five-provinces, otherworld, and convergence identities; the registry itself is broad enough for the spec.
+`common/ai_strategy/ireland_ai_strategy.txt` contains the canonical 30 durable profile registry and 10 overlay registry, all restricted to `original_tag = IRE` with route/profile abort behavior. The profiles include historical de Valera, constitutional, interventionist, radical, clerical, high-king, five-provinces, otherworld, and convergence identities; the registry itself is broad enough for the spec.
 
-`common/ai_strategy_plans/IRE_slopx_ireland_strategy_plans.txt` has only:
+`common/ai_strategy_plans/IRE_ireland_strategy_plans.txt` has only:
 
-- `IRE_slopx_historical` (`:6`), with a generic opening `ai_national_focuses` list and an empty `focus_factors` block at `:87`.
-- `IRE_slopx_route_reactive` (`:91`), with a shared reactive list and an empty `focus_factors` block at `:161`.
+- `IRE_ireland_historical` (`:6`), with a generic opening `ai_national_focuses` list and an empty `focus_factors` block at `:87`.
+- `IRE_ireland_route_reactive` (`:91`), with a shared reactive list and an empty `focus_factors` block at `:161`.
 
 The focus tree has no `ai_will_do` weighting. Therefore the 30 profile registry is not enough to prove the canonical AI matrix: profile-specific route ordering, route lock behavior, Northern review behavior, and capstone selection are not represented in focus selection. This can leave AI Ireland on shared material/Northern focuses without committing to its profile route, or make route branches unreliable. Add profile/overlay-aware focus plans or focus weights only after the route and leader lifecycle contract is settled.
 
@@ -194,33 +194,33 @@ The inherited military baseline is coherent but small: vanilla `IRE_1936` suppli
 
 ### Live asset coverage
 
-`interface/slopx_ireland_icons.gfx` currently registers 369 sprite definitions with existing texture paths:
+`interface/ireland_icons.gfx` currently registers 369 sprite definitions with existing texture paths:
 
-- 216 focus icons (`GFX_focus_slopx_ireland_*`).
+- 216 focus icons (`GFX_focus_ireland_*`).
 - 13 decision-category icons.
 - 140 decision-action icons.
 
 The current asset package therefore covers the visible focus/decision surface. The asset manifests under `docs/plans/ireland_focus_tree/assets/` mark missions, spirits, overlays, laws, mechanic icons, achievements, GUI, and animations incomplete or blocked.
 
-The following character/portrait refs in `common/characters/slopx_ireland_route_characters.txt` are not registered by any live mod GFX file:
+The following character/portrait refs in `common/characters/ireland_route_characters.txt` are not registered by any live mod GFX file:
 
-- `GFX_slopx_ireland_portrait_w_t_cosgrave`
-- `GFX_slopx_ireland_portrait_richard_mulcahy`
-- `GFX_slopx_ireland_portrait_john_costello`
-- `GFX_slopx_ireland_portrait_james_dillon`
-- `GFX_slopx_ireland_portrait_sean_lemass`
-- `GFX_slopx_ireland_portrait_daniel_morrissey`
-- `GFX_slopx_ireland_portrait_joseph_blowick`
-- `GFX_slopx_ireland_portrait_frank_ryan`
-- `GFX_slopx_ireland_portrait_peadar_odonnell`
-- `GFX_slopx_ireland_portrait_gearoid_o_cuinneagain`
-- `GFX_slopx_ireland_portrait_father_edward_cahill`
+- `GFX_ireland_portrait_w_t_cosgrave`
+- `GFX_ireland_portrait_richard_mulcahy`
+- `GFX_ireland_portrait_john_costello`
+- `GFX_ireland_portrait_james_dillon`
+- `GFX_ireland_portrait_sean_lemass`
+- `GFX_ireland_portrait_daniel_morrissey`
+- `GFX_ireland_portrait_joseph_blowick`
+- `GFX_ireland_portrait_frank_ryan`
+- `GFX_ireland_portrait_peadar_odonnell`
+- `GFX_ireland_portrait_gearoid_o_cuinneagain`
+- `GFX_ireland_portrait_father_edward_cahill`
 
-The institutional refs are also unregistered: `GFX_slopx_ireland_symbol_army_council`, `GFX_slopx_ireland_symbol_high_kingship`, `GFX_slopx_ireland_symbol_five_provinces`, and `GFX_slopx_ireland_symbol_otherworld_compact`. The sourced asset package has a de Valera portrait and a small set of cleared symbols, but it does not satisfy these route refs. Real-person portraits need sourced/cleared handling; generated fictional/institutional art must retain the institutional naming rule.
+The institutional refs are also unregistered: `GFX_ireland_symbol_army_council`, `GFX_ireland_symbol_high_kingship`, `GFX_ireland_symbol_five_provinces`, and `GFX_ireland_symbol_otherworld_compact`. The sourced asset package has a de Valera portrait and a small set of cleared symbols, but it does not satisfy these route refs. Real-person portraits need sourced/cleared handling; generated fictional/institutional art must retain the institutional naming rule.
 
 ### Localisation
 
-`localisation/english/slopx_ireland_l_english.yml` has a UTF-8 BOM and contains the current 216 focus title/description keys and 63 idea keys/descriptions. Raw UTF-8 names such as `Seán Lemass` and `Gearóid Ó Cuinneagáin` decode correctly. Literal `name =` values in the character file are therefore not a character-localisation defect by themselves.
+`localisation/english/ireland_l_english.yml` has a UTF-8 BOM and contains the current 216 focus title/description keys and 63 idea keys/descriptions. Raw UTF-8 names such as `Seán Lemass` and `Gearóid Ó Cuinneagáin` decode correctly. Literal `name =` values in the character file are therefore not a character-localisation defect by themselves.
 
 The missing surface is route identity: there are no mod-side party names, cosmetic tags, country names/adjectives, or route leader localisation keys tied to an actual transition. Once leaders/parties are wired, localisation must be added in the same change. Do not “fix” this by replacing proper UTF-8 names with ASCII or console-mojibake strings.
 
@@ -240,7 +240,7 @@ Completed read-only checks:
 
 - Cross-referenced the canonical specs, lifecycle/route/AI/asset matrices, offline wiki pages, vanilla documentation, and vanilla Ireland history/country/character/OOB files.
 - Counted the current focus/asset surfaces: 216 focus nodes, 216 focus icons, 153 decision sprites, and 369 live GFX sprite definitions.
-- Traced all mod `add_core`, `add_claim_by`, state-transfer, owner/controller, annexation, release, and puppet references. The only Ireland map mutation is the claim in `slopx_ireland_northern_settlement_ledger`; the only state-119 cores are `ENG` and `NIR` in the state history override.
+- Traced all mod `add_core`, `add_claim_by`, state-transfer, owner/controller, annexation, release, and puppet references. The only Ireland map mutation is the claim in `ireland_northern_settlement_ledger`; the only state-119 cores are `ENG` and `NIR` in the state history override.
 - Traced route character IDs and leader lifecycle effects; no custom route character has a runtime recruiter/transition/retirement caller.
 - Traced idea add/swap/remove calls; only the three opening ideas are added.
 - Verified the localisation BOM and current focus/idea key coverage.

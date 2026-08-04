@@ -1,7 +1,7 @@
 # Northern local-partner gate tranche
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`  
+Namespace: `ireland`  
 Date: 2026-07-25
 
 ## Purpose
@@ -10,12 +10,12 @@ The canonical Northern map requires Cross-Border Confidence Measures to have at 
 
 ## Implementation
 
-`common/scripted_triggers/slopx_ireland_triggers.txt` now defines `slopx_ireland_northern_local_partner_valid`, accepting only named local-contact or mandate records: opened Northern contacts, local authority, union local mandate, IRA local mandates, trade corridor, or open Northern negotiation.
+`common/scripted_triggers/ireland_triggers.txt` now defines `ireland_northern_local_partner_valid`, accepting only named local-contact or mandate records: opened Northern contacts, local authority, union local mandate, IRA local mandates, trade corridor, or open Northern negotiation.
 
 The trigger is consumed by:
 
-- `slopx_ireland_action_open_cross_border_confidence_measures`;
-- `slopx_ireland_action_invite_northern_delegations`.
+- `ireland_action_open_cross_border_confidence_measures`;
+- `ireland_action_invite_northern_delegations`.
 
 Both decisions retain their existing named map-state, control, staff/material, consent, mission, dynamic-cost, AI, and cleanup gates. No claim, control, occupation, settlement, integration, core, unit, or diplomatic recognition is created by the trigger.
 

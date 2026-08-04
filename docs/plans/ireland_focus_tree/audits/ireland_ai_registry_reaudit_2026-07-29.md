@@ -7,18 +7,18 @@ in-game scenario or save was used.
 
 ## Durable profiles and overlays
 
-`common/ai_strategy/slopx_ireland_ai_strategy.txt` contains exactly 40 unique
+`common/ai_strategy/ireland_ai_strategy.txt` contains exactly 40 unique
 top-level strategy blocks:
 
 - 30 durable Ireland profiles;
-- 10 temporary overlays, each using the `slopx_ireland_overlay_*` registry;
+- 10 temporary overlays, each using the `ireland_overlay_*` registry;
 - no duplicate top-level IDs.
 
 Every one of the 40 blocks has an Ireland `allowed` scope, an `enable` gate,
 `abort_when_not_enabled = yes`, and at least one authored `ai_strategy` entry.
 The profile and overlay registry therefore remains separate from the 31
 vanilla-style focus-selection plans in
-`common/ai_strategy_plans/IRE_slopx_ireland_strategy_plans.txt`.
+`common/ai_strategy_plans/IRE_ireland_strategy_plans.txt`.
 
 ## Focus-plan references
 

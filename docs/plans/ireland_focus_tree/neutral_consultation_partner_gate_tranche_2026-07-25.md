@@ -1,7 +1,7 @@
 # Neutral consultation partner gate tranche — 2026-07-25
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`
+Namespace: `ireland`
 
 ## Canonical requirement
 
@@ -9,7 +9,7 @@ The Part 5 decision lifecycle and the decision/mission map define `Convene a Neu
 
 ## Implementation
 
-The action now consumes `slopx_ireland_neutral_consultation_partners_valid`. The composite trigger requires both:
+The action now consumes `ireland_neutral_consultation_partners_valid`. The composite trigger requires both:
 
 1. an open Vatican channel whose named Italian/Vatican partner still exists and has not capitulated; and
 2. the separate neutral-states forum channel opened by `Foreign Safeguards`.
@@ -20,10 +20,10 @@ The action still requires Dublin Metropolitan Region, the foreign category capac
 
 ## Evidence
 
-- Trigger: `common/scripted_triggers/slopx_ireland_triggers.txt`
-- Action admission: `common/decisions/slopx_ireland_decisions.txt`
-- Player-facing requirements: `localisation/english/slopx_ireland_l_english.yml`
-- Reusable-helper contract: `docs/slopx_dynamic_effects.md`
+- Trigger: `common/scripted_triggers/ireland_triggers.txt`
+- Action admission: `common/decisions/ireland_decisions.txt`
+- Player-facing requirements: `localisation/english/ireland_l_english.yml`
+- Reusable-helper contract: `docs/ireland_dynamic_effects.md`
 - Canonical row: `docs/specs/ireland_focus_tree/ireland_focus_tree_spec_part_5_decisions_events_and_lifecycles.md` and `docs/specs/ireland_focus_tree/maps/ireland_focus_tree_decision_and_mission_map.md`
 
 ## Remaining proof

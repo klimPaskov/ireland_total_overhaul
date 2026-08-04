@@ -38,7 +38,7 @@ Only S-19 is promoted from the round-seven staging packages:
 
 - DDS: `gfx/interface/ireland/sourced/symbol_document_s_19.dds`
 - Sprite: `GFX_ireland_symbol_document_s_19`
-- Registration: `interface/slopx_ireland_sourced_assets.gfx`
+- Registration: `interface/ireland_sourced_assets.gfx`
 - SHA-256: `63f1827f2d651e3b54103db32f3bbfbf331be8ba56e1f2df75fbf5dfd5cd04a4`
 - Dimensions: 397x153
 

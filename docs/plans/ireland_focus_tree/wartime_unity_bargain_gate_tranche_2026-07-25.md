@@ -27,24 +27,24 @@ Canonical references:
 
 ## Runtime implementation
 
-`common/decisions/slopx_ireland_decisions.txt` now requires:
+`common/decisions/ireland_decisions.txt` now requires:
 
-- the 1940 window, `slopx_ireland_invasion_danger`, or an active war;
+- the 1940 window, `ireland_invasion_danger`, or an active war;
 - the Dublin-to-Belfast Northern operating context and available category capacity;
 - completed defence estimates, completed command audit, and the derived ready Irish command structure;
 - an open British channel with a valid, non-capitulated GBR partner;
-- Readiness `35`, British Flexibility `45`, Nationalist Consent `50`, and Unionist Consent `20` or `slopx_ireland_northern_safeguard_enforceable`;
+- Readiness `35`, British Flexibility `45`, Nationalist Consent `50`, and Unionist Consent `20` or `ireland_northern_safeguard_enforceable`;
 - the existing 50 Infantry Equipment and 25 Truck stock gates and dynamic PP/CP burden gates.
 
-Completion consumes the authored equipment and truck charges, records the action, sets `slopx_ireland_northern_wartime_bargain_ready` for the separate focus handoff, and sets `slopx_ireland_h14_gateway` for the dated proposal dispatcher. It does not set `slopx_ireland_northern_wartime_bargain_complete`, `slopx_ireland_northern_war_plan`, a control flag, an occupation flag, an integration stage, a core, a subject, equipment replacement, or any Northern state ownership.
+Completion consumes the authored equipment and truck charges, records the action, sets `ireland_northern_wartime_bargain_ready` for the separate focus handoff, and sets `ireland_h14_gateway` for the dated proposal dispatcher. It does not set `ireland_northern_wartime_bargain_complete`, `ireland_northern_war_plan`, a control flag, an occupation flag, an integration stage, a core, a subject, equipment replacement, or any Northern state ownership.
 
-The focus route remains a separate decision surface: `slopx_ireland_northern_wartime_bargain` must still be completed before the durable `slopx_ireland_northern_wartime_bargain_complete` and `slopx_ireland_northern_war_plan` flags exist. The H14 event family is dated and multi-node; its explicit gateway is now authoritative and its resolved full-unity result is required before the focus handoff can be consumed. See `docs/plans/ireland_focus_tree/wartime_unity_lifecycle_tranche_2026-07-25.md` for the outcome and cleanup contract.
+The focus route remains a separate decision surface: `ireland_northern_wartime_bargain` must still be completed before the durable `ireland_northern_wartime_bargain_complete` and `ireland_northern_war_plan` flags exist. The H14 event family is dated and multi-node; its explicit gateway is now authoritative and its resolved full-unity result is required before the focus handoff can be consumed. See `docs/plans/ireland_focus_tree/wartime_unity_lifecycle_tranche_2026-07-25.md` for the outcome and cleanup contract.
 
 ## Localisation and tuning
 
 The action description and requirements tooltip expose the live Readiness, British Flexibility, Nationalist Consent, and Unionist Consent values, the exact floors, the crisis/war gate, the command and British-channel proofs, the material charges, and the no-control/no-core boundary.
 
-The fixed thresholds are centralized in `common/script_constants/slopx_ireland_constants.txt` under the `northern_wartime_bargain_*` keys. No new passive political-power store or free material reward was added.
+The fixed thresholds are centralized in `common/script_constants/ireland_constants.txt` under the `northern_wartime_bargain_*` keys. No new passive political-power store or free material reward was added.
 
 ## Validation and open work
 

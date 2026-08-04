@@ -24,13 +24,13 @@ FRESH_LAW_ICON_ROOT = FRESH_ICON_PACKAGE
 OUT = ROOT / "docs" / "plans" / "ireland_focus_tree" / "assets" / "asset_coverage_crosswalk.md"
 
 GFX_FILES = {
-    "focus": "interface/slopx_ireland_icons.gfx",
-    "secondary": "interface/slopx_ireland_secondary_assets.gfx",
-    "route": "interface/slopx_ireland_route_assets.gfx",
-    "gui": "interface/slopx_ireland_gui_assets.gfx",
-    "animation": "interface/slopx_ireland_animation_assets.gfx",
-    "event": "interface/slopx_ireland_event_art.gfx",
-    "sourced": "interface/slopx_ireland_sourced_assets.gfx",
+    "focus": "interface/ireland_icons.gfx",
+    "secondary": "interface/ireland_secondary_assets.gfx",
+    "route": "interface/ireland_route_assets.gfx",
+    "gui": "interface/ireland_gui_assets.gfx",
+    "animation": "interface/ireland_animation_assets.gfx",
+    "event": "interface/ireland_event_art.gfx",
+    "sourced": "interface/ireland_sourced_assets.gfx",
 }
 
 
@@ -211,7 +211,7 @@ def parse_focus_rows(path: Path) -> list[CodeRow]:
     for _, block, line in named_blocks(source, r"^\tfocus\s*=\s*\{"):
         identifier = value(block, "id")
         icon = value(block, "icon")
-        if identifier.startswith("slopx_ireland_") and icon.startswith("GFX_focus_"):
+        if identifier.startswith("ireland_") and icon.startswith("GFX_focus_"):
             rows.append(CodeRow(identifier, icon, rel(path), line, block))
     return rows
 
@@ -224,7 +224,7 @@ def sprite_candidates(intended: str) -> list[str]:
     return [
         intended,
         "GFX_" + intended,
-        "GFX_slopx_" + intended,
+        "GFX_ireland_" + intended,
         "GFX_report_event_" + intended,
         "GFX_news_event_" + intended,
     ]
@@ -232,7 +232,7 @@ def sprite_candidates(intended: str) -> list[str]:
 
 def assign_decision_parents(rows: list[CodeRow], path: Path) -> list[CodeRow]:
     source = text(path)
-    category_spans = block_spans(source, r"^(slopx_ireland_[A-Za-z0-9_]+)\s*=\s*\{")
+    category_spans = block_spans(source, r"^(ireland_[A-Za-z0-9_]+)\s*=\s*\{")
     result: list[CodeRow] = []
     for row in rows:
         line_offset = sum(len(item) for item in source.splitlines(keepends=True)[: row.line - 1])
@@ -346,7 +346,7 @@ def staging_paths(group: str, row: GfxRow, ordinal: int | None = None) -> tuple[
     elif group == "gui":
         parts = texture.split("/")
         surface = parts[-2]
-        gui_stem = row.sprite.removeprefix("GFX_slopx_ireland_gui_")
+        gui_stem = row.sprite.removeprefix("GFX_ireland_gui_")
         source = ASSET_ROOT / "generated/gui" / surface / "source" / f"{gui_stem}_source.png"
         processed = ASSET_ROOT / "generated/gui" / surface / "processed" / f"{gui_stem}.png"
         fallback = ASSET_ROOT / "generated/gui" / surface / "static_fallback" / f"{gui_stem}_static_fallback.dds"
@@ -470,20 +470,20 @@ def main() -> None:
     blocked_manifest_rows = [row for row in manifest_rows if row.get("status") in {"blocked", "needs_user_review"}]
     source_event_rows = [row for row in manifest_rows if row.get("family") == "event_news"]
 
-    focus_path = ROOT / "common/national_focus/slopx_ireland_focus_tree.txt"
-    decision_path = ROOT / "common/decisions/slopx_ireland_decisions.txt"
-    category_path = ROOT / "common/decisions/categories/slopx_ireland_categories.txt"
-    spirit_path = ROOT / "common/ideas/slopx_ireland_spirits.txt"
-    achievement_path = ROOT / "common/achievements/slopx_ireland_achievements.txt"
+    focus_path = ROOT / "common/national_focus/ireland_focus_tree.txt"
+    decision_path = ROOT / "common/decisions/ireland_decisions.txt"
+    category_path = ROOT / "common/decisions/categories/ireland_categories.txt"
+    spirit_path = ROOT / "common/ideas/ireland_spirits.txt"
+    achievement_path = ROOT / "common/achievements/ireland_achievements.txt"
 
     focus_rows = parse_focus_rows(focus_path)
-    category_rows = parse_code_rows(category_path, r"^(slopx_ireland_[A-Za-z0-9_]+)\s*=\s*\{")
-    action_rows = assign_decision_parents(parse_code_rows(decision_path, r"^\t(slopx_ireland_action_[A-Za-z0-9_]+)\s*=\s*\{"), decision_path)
-    mission_rows = assign_decision_parents(parse_code_rows(decision_path, r"^\t(slopx_ireland_mission_[A-Za-z0-9_]+)\s*=\s*{"), decision_path)
-    spirit_rows = parse_code_rows(spirit_path, r"^\s*(slopx_ireland_spirit_[A-Za-z0-9_]+)\s*=\s*\{")
+    category_rows = parse_code_rows(category_path, r"^(ireland_[A-Za-z0-9_]+)\s*=\s*\{")
+    action_rows = assign_decision_parents(parse_code_rows(decision_path, r"^\t(ireland_action_[A-Za-z0-9_]+)\s*=\s*\{"), decision_path)
+    mission_rows = assign_decision_parents(parse_code_rows(decision_path, r"^\t(ireland_mission_[A-Za-z0-9_]+)\s*=\s*{"), decision_path)
+    spirit_rows = parse_code_rows(spirit_path, r"^\s*(ireland_spirit_[A-Za-z0-9_]+)\s*=\s*\{")
 
     achievement_source = text(achievement_path)
-    achievement_blocks = parse_code_rows(achievement_path, r"^(slopx_ireland_[A-Za-z0-9_]+)\s*=\s*\{")
+    achievement_blocks = parse_code_rows(achievement_path, r"^(ireland_[A-Za-z0-9_]+)\s*=\s*\{")
     achievement_blocks = [row for row in achievement_blocks if row.identifier != "unique_id"]
     achievement_id_lines = {row.identifier: row.line for row in achievement_blocks}
     achievement_order = {f"GFX_achievement_{row.identifier}": index + 1 for index, row in enumerate(achievement_blocks)}
@@ -501,12 +501,12 @@ def main() -> None:
 
     decision_gfx = [row for row in gfx_rows if row.kind == "focus" and row.sprite.startswith("GFX_decision_")]
     category_gfx = [row for row in decision_gfx if row.sprite.startswith("GFX_decision_category_")]
-    action_gfx = [row for row in decision_gfx if row.sprite.startswith("GFX_decision_slopx_ireland_")]
+    action_gfx = [row for row in decision_gfx if row.sprite.startswith("GFX_decision_ireland_")]
     mission_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_mission_")]
-    spirit_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_slopx_ireland_spirit_")]
-    overlay_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_slopx_ireland_temporary_overlay_")]
-    law_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_slopx_ireland_law_")]
-    mechanic_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_slopx_ireland_mechanic_ledger_")]
+    spirit_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_ireland_spirit_")]
+    overlay_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_ireland_temporary_overlay_")]
+    law_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_ireland_law_")]
+    mechanic_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_ireland_mechanic_ledger_")]
     achievement_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_achievement_")]
     route_gfx = [row for row in gfx_rows if row.kind == "route"]
     gui_gfx = [row for row in gfx_rows if row.kind == "gui"]
@@ -525,15 +525,15 @@ def main() -> None:
         "",
         "| surface | canonical rows | runtime registrations | consumer surface | visual/source status |",
         "|---|---:|---:|---|---|",
-        f"| Focus goal icons | 216 | {len(focus_rows)} | `common/national_focus/slopx_ireland_focus_tree.txt` + paired shine masks | 216 independently generated emblems accepted after complete-sheet HOI4-style review; runtime DDS promoted under gfx |",
-        f"| Decision categories | 13 | {len(category_gfx)} | `common/decisions/categories/slopx_ireland_categories.txt` | registered |",
-        f"| Named decision actions | 140 | {len(action_gfx)} unique action sprites | `common/decisions/slopx_ireland_decisions.txt` | 70 controlled-reuse textures |",
-        f"| Missions | 54 | {len(mission_gfx)} | `common/decisions/slopx_ireland_decisions.txt` | registered; mission outcome blocks remain code-owned |",
-        f"| Persistent route spirits | 63 | {len(spirit_gfx)} | `common/ideas/slopx_ireland_spirits.txt` | three families × 21 staged route entries |",
+        f"| Focus goal icons | 216 | {len(focus_rows)} | `common/national_focus/ireland_focus_tree.txt` + paired shine masks | 216 independently generated emblems accepted after complete-sheet HOI4-style review; runtime DDS promoted under gfx |",
+        f"| Decision categories | 13 | {len(category_gfx)} | `common/decisions/categories/ireland_categories.txt` | registered |",
+        f"| Named decision actions | 140 | {len(action_gfx)} unique action sprites | `common/decisions/ireland_decisions.txt` | 70 controlled-reuse textures |",
+        f"| Missions | 54 | {len(mission_gfx)} | `common/decisions/ireland_decisions.txt` | registered; mission outcome blocks remain code-owned |",
+        f"| Persistent route spirits | 63 | {len(spirit_gfx)} | `common/ideas/ireland_spirits.txt` | three families × 21 staged route entries |",
         f"| Temporary overlays | 10 durable overlays + 17 event/temporary overlays | {len(overlay_gfx)} | decision/event/controller consumers | registered; conditional state bindings audited per row |",
-        f"| Law icons | 51 | {len(law_gfx)} | scripted law stages in `common/scripted_effects/slopx_ireland_laws.txt` | registered; dynamic stage-to-sprite binding is recorded per row |",
+        f"| Law icons | 51 | {len(law_gfx)} | scripted law stages in `common/scripted_effects/ireland_laws.txt` | registered; dynamic stage-to-sprite binding is recorded per row |",
         f"| Mechanic/ledger icons | 45 | {len(mechanic_gfx)} | BOP and scripted GUI surfaces | registered; direct consumer evidence listed per row |",
-        f"| Achievement states | 96 | {len(achievement_gfx)} | `common/achievements/slopx_ireland_achievements.txt` | 32 × completed/grey/not-eligible |",
+        f"| Achievement states | 96 | {len(achievement_gfx)} | `common/achievements/ireland_achievements.txt` | 32 × completed/grey/not-eligible |",
         f"| Route/symbol assets | 27 | {len(route_gfx)} | route character and route-state consumers | generated source packages; runtime DDS present |",
         f"| Scripted GUI assets | 11 | {len(gui_gfx)} | three GUI layouts | static runtime package; state surface listed per row |",
         f"| Independent animations | 7 packages / 14 registrations | {len(animation_gfx)} | three GUI surfaces and event/evidence states | frame sheets + static fallbacks |",
@@ -632,7 +632,7 @@ def main() -> None:
         "## Audit interpretation",
         "",
 		"- Earlier focus-icon normalization and v5-v12 packages are retained as technical or rejected evidence only. The fresh 2026-08-01 package is the accepted goal/law source of truth after complete-sheet boundary, chroma, alignment, and runtime readback review.",
-		"- The 216 focus and 51 law rows are independently regenerated source art; the runtime names and `.gfx` registrations remain stable while the verified DDS files are promoted under `gfx/interface/goals/slopx_ireland/` and `gfx/interface/ideas/slopx_ireland/laws/`.",
+		"- The 216 focus and 51 law rows are independently regenerated source art; the runtime names and `.gfx` registrations remain stable while the verified DDS files are promoted under `gfx/interface/goals/ireland/` and `gfx/interface/ideas/ireland/laws/`.",
         "- Decision-action rows distinguish 140 named consumers from the 70 allocated DDS textures. Reuse is recorded at the row level and is not a free placeholder: each reused texture has a named decision consumer and category binding.",
         "- The law, overlay, and mechanic packages are registered assets whose dynamic state controllers are intentionally listed in the consumer column. A missing direct `GFX_` token is an audit finding, not a claim that the asset is used.",
         f"- Portrait, symbol/document, and source event/news clearance remains governed by the five-state manifest. The manifest contains 60 portrait rows, 40 symbol/document rows, and {len(source_event_rows)} source event/news rows; {len(blocked_manifest_rows)} blocked/review rows remain unpromoted and are not cleared by this crosswalk.",

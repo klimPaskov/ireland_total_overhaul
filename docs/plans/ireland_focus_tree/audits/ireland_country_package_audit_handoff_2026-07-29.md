@@ -16,7 +16,7 @@ The Ireland tag, historical start, route leader registry, office registry, three
 The two material handoff blockers are:
 
 1. The Northern claim ledger is initialized but has no found progression or engine claim effect. Core granting is separately gated, but claim-to-control-to-occupation-to-settlement-to-integration is not fully engine-backed in the audited country surfaces.
-2. Route-specific characters are country leaders only. `common/characters/slopx_ireland_route_characters.txt` contains no `advisor = { ... }` blocks; only the inherited vanilla Ireland advisor roster is recruited at game start.
+2. Route-specific characters are country leaders only. `common/characters/ireland_route_characters.txt` contains no `advisor = { ... }` blocks; only the inherited vanilla Ireland advisor roster is recruited at game start.
 
 Portrait review remains intentionally unresolved. Seven `needs_user_review` portraits have live character consumers. No review or blocked source was promoted, and no likeness was generated.
 
@@ -38,12 +38,12 @@ Excluded from edits as requested: DDS files, source manifest, decisions, events,
 | Tag registration and country definition | Covered through vanilla inheritance | Vanilla `common/country_tags/00_countries.txt:29` maps `IRE` to `countries/Ireland.txt`; vanilla `common/countries/Ireland.txt` supplies the base country definition. The mod adds route cosmetic tags only. |
 | Historical country setup | Covered, with inherited OOB | `history/countries/IRE - Ireland.txt:4-55` keeps capital 113, `IRE_1936`, three research slots, technologies, 10 convoys, politics, and campaign initialization. |
 | 1939 setup | Covered | `history/countries/IRE - Ireland.txt:57-105` keeps the vanilla 1939 OOB, technology/doctrine block, special project, and election state. |
-| Characters and offices | Partially covered | Vanilla characters and advisors are recruited at `history/countries/IRE - Ireland.txt:20-40`; route leaders are in `common/characters/slopx_ireland_route_characters.txt`; office occupancy and vacancy registry is in `common/scripted_effects/slopx_ireland_offices.txt`. Route advisor blocks are missing. |
-| Persistent route spirits | Covered | 63 ideas in `common/ideas/slopx_ireland_spirits.txt`, exactly 21 in each of three families. |
-| Law ladders | Covered in registry | 17 law variables and staged lifecycle helpers in `common/scripted_effects/slopx_ireland_effects.txt:131-216` and `common/scripted_effects/slopx_ireland_laws.txt`. |
-| Flags and cosmetics | Covered | 18 `IRE_SLOPX_*` cosmetic tags in `common/countries/slopx_ireland_cosmetic.txt`; each has root, medium, and small flag files and three localisation keys. |
+| Characters and offices | Partially covered | Vanilla characters and advisors are recruited at `history/countries/IRE - Ireland.txt:20-40`; route leaders are in `common/characters/ireland_route_characters.txt`; office occupancy and vacancy registry is in `common/scripted_effects/ireland_offices.txt`. Route advisor blocks are missing. |
+| Persistent route spirits | Covered | 63 ideas in `common/ideas/ireland_spirits.txt`, exactly 21 in each of three families. |
+| Law ladders | Covered in registry | 17 law variables and staged lifecycle helpers in `common/scripted_effects/ireland_effects.txt:131-216` and `common/scripted_effects/ireland_laws.txt`. |
+| Flags and cosmetics | Covered | 18 `IRE_IRELAND_*` cosmetic tags in `common/countries/ireland_cosmetic.txt`; each has root, medium, and small flag files and three localisation keys. |
 | Northern claims and settlement | Incomplete | State 119 deliberately retains only ENG/NIR cores; the final IRE core is separately gated. The claim ledger itself has no found progression or claim effect. |
-| Focus loading | Covered | `common/national_focus/slopx_ireland_focus_tree.txt:13-22` defines `slopx_ireland_focus_tree` and assigns it to `tag = IRE`; 217 focus definitions are present. No focus file was edited. |
+| Focus loading | Covered | `common/national_focus/ireland_focus_tree.txt:13-22` defines `ireland_focus_tree` and assigns it to `tag = IRE`; 217 focus definitions are present. No focus file was edited. |
 | Decisions, events, and GUI | Audited only | Existing decision/event/GUI surfaces are outside this handoff's edit boundary. No files were changed. |
 | Starting military and industry | Inherited and coherent | Vanilla `history/units/IRE_1936.txt` and `IRE_1939.txt` provide one infantry command, one infantry equipment production line, and no starting navy or air formation. |
 | AI and playability | Registry covered, scenarios untested | 30 durable strategies and 10 overlays exist; 30 Ireland strategy plans are present. Live testing was excluded. |
@@ -55,34 +55,34 @@ Excluded from edits as requested: DDS files, source manifest, decisions, events,
 
 - `history/countries/IRE - Ireland.txt:4` sets `capital = 113`; vanilla states 113, 134, and 135 remain owned and cored by IRE. Dublin is province 11293 in state 113.
 - `history/states/119-Northern Ireland.txt:5-26` sets `owner = ENG`, retains `add_core_of = ENG` and `add_core_of = NIR`, and intentionally omits an opening IRE core. State 119 retains the vanilla province list, VPs, infrastructure 3, one arms factory, two civilian factories, air base 1, two dockyards, naval base 4, manpower, aluminium, and coal.
-- The Northern runtime initializer in `common/scripted_effects/slopx_ireland_effects.txt:439-445` separates variables for `slopx_ireland_northern_claim_ledger`, `slopx_ireland_northern_control_ledger`, `slopx_ireland_northern_occupation_ledger`, `slopx_ireland_northern_settlement_ledger`, and `slopx_ireland_northern_integration_ledger`.
-- `slopx_ireland_apply_northern_core_review` in `common/scripted_effects/slopx_ireland_runtime.txt:5533` is the only found state-changing Northern core effect. It adds the IRE core to state 119 only after the final review gate. `common/scripted_triggers/slopx_ireland_triggers.txt:1428` and `common/script_constants/slopx_ireland_constants.txt:206-242` enforce the stage-5/final-proof thresholds.
-- Follow-up implementation restored the dedicated claim step to `slopx_ireland_northern_settlement_ledger`: state 119 receives `add_claim_by = ROOT` when the focus completes. This records only Ireland's legal claim. It does not transfer ownership or control, mark occupation or settlement, advance integration, or add a core. The separate runtime ledger and stage-5 final review remain authoritative for every later stage.
+- The Northern runtime initializer in `common/scripted_effects/ireland_effects.txt:439-445` separates variables for `ireland_northern_claim_ledger`, `ireland_northern_control_ledger`, `ireland_northern_occupation_ledger`, `ireland_northern_settlement_ledger`, and `ireland_northern_integration_ledger`.
+- `ireland_apply_northern_core_review` in `common/scripted_effects/ireland_runtime.txt:5533` is the only found state-changing Northern core effect. It adds the IRE core to state 119 only after the final review gate. `common/scripted_triggers/ireland_triggers.txt:1428` and `common/script_constants/ireland_constants.txt:206-242` enforce the stage-5/final-proof thresholds.
+- Follow-up implementation restored the dedicated claim step to `ireland_northern_settlement_ledger`: state 119 receives `add_claim_by = ROOT` when the focus completes. This records only Ireland's legal claim. It does not transfer ownership or control, mark occupation or settlement, advance integration, or add a core. The separate runtime ledger and stage-5 final review remain authoritative for every later stage.
 
 ### Politics, characters, offices, advisors, and parties
 
 - `history/countries/IRE - Ireland.txt:42-53` starts democratic with popularity `democratic = 98`, `fascism = 1`, and `communism = 1`; elections are allowed every 48 months. The 1939 politics block is present at lines 99-105.
 - Vanilla characters recruited at lines 20-40 include the four vanilla leader candidates, one commander, 15 advisors, and Ernest Walton as scientist. The vanilla source is `C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV/common/characters/IRE.txt`.
-- Route definitions in `common/characters/slopx_ireland_route_characters.txt` cover real-person leader IDs `slopx_ireland_w_t_cosgrave`, `slopx_ireland_richard_mulcahy`, `slopx_ireland_john_costello`, `slopx_ireland_james_dillon`, `slopx_ireland_sean_lemass`, `slopx_ireland_daniel_morrissey`, `slopx_ireland_joseph_blowick`, `slopx_ireland_frank_ryan`, `slopx_ireland_peadar_odonnell`, and `slopx_ireland_gearoid_o_cuinneagain`.
-- The same file defines institutional leaders `slopx_ireland_civil_republican_directorate`, `slopx_ireland_workers_party_executive`, `slopx_ireland_workers_smallholders_congress`, `slopx_ireland_corporate_estate_council`, `slopx_ireland_oduffy_command`, `slopx_ireland_gaelic_producer_council`, `slopx_ireland_christian_national_council`, `slopx_ireland_regional_ailtiri_council`, `slopx_ireland_ailtiri_state_directorate`, `slopx_ireland_clerical_guardianship`, `slopx_ireland_ira_army_council`, `slopx_ireland_high_king`, `slopx_ireland_five_provinces_steward`, and `slopx_ireland_compact_steward`. Institutional names and collective portraits follow the no-invented-person rule.
-- `common/scripted_effects/slopx_ireland_offices.txt:9-23` defines the 15 office occupancy variables: president, Taoiseach, Tanaiste, party leader, parliamentary leader, cabinet minister, chief of staff, security chief, movement leader, armed-wing commander, council chair, provincial chair, High King, Compact Steward, and Transitional Administrator. Vacancy flags and aggregate counts are rebuilt at lines 146-224.
+- Route definitions in `common/characters/ireland_route_characters.txt` cover real-person leader IDs `ireland_w_t_cosgrave`, `ireland_richard_mulcahy`, `ireland_john_costello`, `ireland_james_dillon`, `ireland_sean_lemass`, `ireland_daniel_morrissey`, `ireland_joseph_blowick`, `ireland_frank_ryan`, `ireland_peadar_odonnell`, and `ireland_gearoid_o_cuinneagain`.
+- The same file defines institutional leaders `ireland_civil_republican_directorate`, `ireland_workers_party_executive`, `ireland_workers_smallholders_congress`, `ireland_corporate_estate_council`, `ireland_oduffy_command`, `ireland_gaelic_producer_council`, `ireland_christian_national_council`, `ireland_regional_ailtiri_council`, `ireland_ailtiri_state_directorate`, `ireland_clerical_guardianship`, `ireland_ira_army_council`, `ireland_high_king`, `ireland_five_provinces_steward`, and `ireland_compact_steward`. Institutional names and collective portraits follow the no-invented-person rule.
+- `common/scripted_effects/ireland_offices.txt:9-23` defines the 15 office occupancy variables: president, Taoiseach, Tanaiste, party leader, parliamentary leader, cabinet minister, chief of staff, security chief, movement leader, armed-wing commander, council chair, provincial chair, High King, Compact Steward, and Transitional Administrator. Vacancy flags and aggregate counts are rebuilt at lines 146-224.
 - Historical finding: route characters had no advisor role blocks at this audit date. The 2026-08-01 tranche now provides the route-specific advisor/high-command/minister package; this paragraph is retained to explain the earlier audit boundary.
-- Party and route names are localized in `localisation/english/slopx_ireland_l_english.yml`; the country history uses the inherited vanilla party setup until the runtime route transition.
+- Party and route names are localized in `localisation/english/ireland_l_english.yml`; the country history uses the inherited vanilla party setup until the runtime route transition.
 
 ### Exactly three route-spirit families and law registry
 
-- `common/ideas/slopx_ireland_spirits.txt` contains exactly three families, each with 21 definitions: governing, society, and security. The opening trio is added by `common/scripted_effects/slopx_ireland_effects.txt:428-435`:
-  - `slopx_ireland_spirit_governing_order`
-  - `slopx_ireland_spirit_organised_society`
-  - `slopx_ireland_spirit_security_external_position`
-- Route refresh logic in `common/scripted_effects/slopx_ireland_runtime.txt:2468-2574` removes/replaces one family at a time and includes failure/corruption states. All 63 idea names/descriptions are present in `localisation/english/slopx_ireland_l_english.yml`, and all 63 idea pictures are registered in `interface/slopx_ireland_secondary_assets.gfx`.
-- The law registry contains exactly 17 ladders: constitutional government, emergency authority, censorship, rationing, tillage, mobilisation, internment, public order, occupation, education, religion, language, economic control, trade/shipping, foreign access, Northern settlement, and guarantee. Lifecycle helpers are in `common/scripted_effects/slopx_ireland_laws.txt`.
+- `common/ideas/ireland_spirits.txt` contains exactly three families, each with 21 definitions: governing, society, and security. The opening trio is added by `common/scripted_effects/ireland_effects.txt:428-435`:
+  - `ireland_spirit_governing_order`
+  - `ireland_spirit_organised_society`
+  - `ireland_spirit_security_external_position`
+- Route refresh logic in `common/scripted_effects/ireland_runtime.txt:2468-2574` removes/replaces one family at a time and includes failure/corruption states. All 63 idea names/descriptions are present in `localisation/english/ireland_l_english.yml`, and all 63 idea pictures are registered in `interface/ireland_secondary_assets.gfx`.
+- The law registry contains exactly 17 ladders: constitutional government, emergency authority, censorship, rationing, tillage, mobilisation, internment, public order, occupation, education, religion, language, economic control, trade/shipping, foreign access, Northern settlement, and guarantee. Lifecycle helpers are in `common/scripted_effects/ireland_laws.txt`.
 
 ### Flags, cosmetics, and identity cleanup
 
-- `common/countries/slopx_ireland_cosmetic.txt` defines exactly 18 route cosmetic tags, from `IRE_SLOPX_ARMY_COUNCIL` through `IRE_SLOPX_CONVERGENCE_ORDER`.
-- Every one has root, medium, and small `.tga` files under `gfx/flags`; the corresponding `NAME`, `ADJ`, and `DEF` keys are present in `localisation/english/slopx_ireland_l_english.yml:5-58`.
-- `common/scripted_effects/slopx_ireland_runtime.txt:3363-3495` clears old route identity before applying one cosmetic tag. No stale tag-reference or missing flag surface was found.
+- `common/countries/ireland_cosmetic.txt` defines exactly 18 route cosmetic tags, from `IRE_IRELAND_ARMY_COUNCIL` through `IRE_IRELAND_CONVERGENCE_ORDER`.
+- Every one has root, medium, and small `.tga` files under `gfx/flags`; the corresponding `NAME`, `ADJ`, and `DEF` keys are present in `localisation/english/ireland_l_english.yml:5-58`.
+- `common/scripted_effects/ireland_runtime.txt:3363-3495` clears old route identity before applying one cosmetic tag. No stale tag-reference or missing flag surface was found.
 
 ### Portrait source archive, registrations, and consumers
 
@@ -97,13 +97,13 @@ Exact live `needs_user_review` portrait consumers:
 
 | Manifest ID | Sprite | Live consumer | Consumer location |
 | --- | --- | --- | --- |
-| P-05 John A. Costello | `GFX_slopx_ireland_portrait_john_costello` | `slopx_ireland_john_costello` | `common/characters/slopx_ireland_route_characters.txt:28-35` (sprite line 31); registration `interface/slopx_ireland_sourced_assets.gfx:55` |
-| P-06 James Dillon | `GFX_slopx_ireland_portrait_james_dillon` | `slopx_ireland_james_dillon` | `common/characters/slopx_ireland_route_characters.txt:39-46` (sprite line 42); registration line 56 |
-| P-27 Joseph Blowick | `GFX_slopx_ireland_portrait_joseph_blowick` | `slopx_ireland_joseph_blowick` | `common/characters/slopx_ireland_route_characters.txt:72-79` (sprite line 75); registration line 58 |
-| P-43 Frank Ryan | `GFX_slopx_ireland_portrait_frank_ryan` | `slopx_ireland_frank_ryan` | `common/characters/slopx_ireland_route_characters.txt:83-90` (sprite line 86); registration line 59 |
-| P-46 Peadar O'Donnell | `GFX_slopx_ireland_portrait_peadar_odonnell` | `slopx_ireland_peadar_odonnell` | `common/characters/slopx_ireland_route_characters.txt:94-101` (sprite line 97); registration line 60 |
-| P-56 Gearoid O Cuinneagain | `GFX_slopx_ireland_portrait_gearoid_o_cuinneagain` | `slopx_ireland_gearoid_o_cuinneagain` | `common/characters/slopx_ireland_route_characters.txt:105-112` (sprite line 108); registration line 61 |
-| RC-PORTRAIT-01 Daniel Morrissey | `GFX_slopx_ireland_portrait_daniel_morrissey` | `slopx_ireland_daniel_morrissey` | `common/characters/slopx_ireland_route_characters.txt:61-68` (sprite line 64); registration line 57 |
+| P-05 John A. Costello | `GFX_ireland_portrait_john_costello` | `ireland_john_costello` | `common/characters/ireland_route_characters.txt:28-35` (sprite line 31); registration `interface/ireland_sourced_assets.gfx:55` |
+| P-06 James Dillon | `GFX_ireland_portrait_james_dillon` | `ireland_james_dillon` | `common/characters/ireland_route_characters.txt:39-46` (sprite line 42); registration line 56 |
+| P-27 Joseph Blowick | `GFX_ireland_portrait_joseph_blowick` | `ireland_joseph_blowick` | `common/characters/ireland_route_characters.txt:72-79` (sprite line 75); registration line 58 |
+| P-43 Frank Ryan | `GFX_ireland_portrait_frank_ryan` | `ireland_frank_ryan` | `common/characters/ireland_route_characters.txt:83-90` (sprite line 86); registration line 59 |
+| P-46 Peadar O'Donnell | `GFX_ireland_portrait_peadar_odonnell` | `ireland_peadar_odonnell` | `common/characters/ireland_route_characters.txt:94-101` (sprite line 97); registration line 60 |
+| P-56 Gearoid O Cuinneagain | `GFX_ireland_portrait_gearoid_o_cuinneagain` | `ireland_gearoid_o_cuinneagain` | `common/characters/ireland_route_characters.txt:105-112` (sprite line 108); registration line 61 |
+| RC-PORTRAIT-01 Daniel Morrissey | `GFX_ireland_portrait_daniel_morrissey` | `ireland_daniel_morrissey` | `common/characters/ireland_route_characters.txt:61-68` (sprite line 64); registration line 57 |
 
 The remaining canonical `needs_user_review` IDs with no non-interface consumer are `P-09`, `P-13`, `P-14`, `P-17`, `P-18`, `P-19`, `P-20`, `P-21`, `P-22`, `P-23`, `P-25`, `P-28`, `P-29`, `P-30`, `P-34`, `P-36`, `P-37`, `P-40`, `P-42`, `P-44`, `P-47`, `P-49`, `P-52`, `P-53`, `P-58`, and `P-60`. P-20, P-37, P-42, and P-60 have no live `.gfx` registration; the other registration-only entries remain review status and were not promoted by this audit.
 
@@ -116,8 +116,8 @@ The remaining canonical `needs_user_review` IDs with no non-interface consumer a
 
 ### AI and playability
 
-- `common/ai_strategy/slopx_ireland_ai_strategy.txt` has exactly 40 definitions: 30 durable profiles and 10 temporary overlays.
-- `common/ai_strategy_plans/IRE_slopx_ireland_strategy_plans.txt` contains the historical/reactive layer and route plan definitions, all gated by `original_tag = IRE` or Ireland route flags.
+- `common/ai_strategy/ireland_ai_strategy.txt` has exactly 40 definitions: 30 durable profiles and 10 temporary overlays.
+- `common/ai_strategy_plans/IRE_ireland_strategy_plans.txt` contains the historical/reactive layer and route plan definitions, all gated by `original_tag = IRE` or Ireland route flags.
 - The AI registry preserves the historical opening and explicitly reacts to office vacancy, Northern occupation/integration, invasion danger, provision breakdown, demobilisation, and route conclusion review. No static missing-ID issue was found.
 - Live AI focus, supply, diplomacy, and survival scenarios were not run by request.
 

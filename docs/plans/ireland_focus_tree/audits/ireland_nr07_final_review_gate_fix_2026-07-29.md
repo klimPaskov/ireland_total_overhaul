@@ -6,26 +6,26 @@ Feature: `ireland_focus_tree`
 ## Defect
 
 The four NR07 events and their dispatcher entries accepted either
-`slopx_ireland_northern_core_review_open` or a date after 1 January 1936.
+`ireland_northern_core_review_open` or a date after 1 January 1936.
 Every entry already had the same date floor. The second branch therefore made
 the final-review flag optional and allowed the Northern final-review narrative
 to begin before stage five.
 
 The defect affected:
 
-- `slopx_ireland_events.292`, Northern Final Review
-- `slopx_ireland_events.293`, Northern Core Eligibility
-- `slopx_ireland_events.294`, Northern Postwar Memory
-- `slopx_ireland_events.295`, Northern Archive and Compensation
-- the four matching entries in `slopx_ireland_dispatch_event_programme`
+- `ireland_events.292`, Northern Final Review
+- `ireland_events.293`, Northern Core Eligibility
+- `ireland_events.294`, Northern Postwar Memory
+- `ireland_events.295`, Northern Archive and Compensation
+- the four matching entries in `ireland_dispatch_event_programme`
 
 The actual core grant remained protected by
-`slopx_ireland_can_northern_core_review`. No early core grant was found.
+`ireland_can_northern_core_review`. No early core grant was found.
 
 ## Correction
 
 All eight admission blocks now require
-`slopx_ireland_northern_core_review_open` directly. That flag has one writer in
+`ireland_northern_core_review_open` directly. That flag has one writer in
 the Ireland runtime. Its writer requires:
 
 - a started or requested regional review
@@ -46,7 +46,7 @@ Direct source checks confirmed:
 - dispatcher coverage is exactly events 292, 293, 294, and 295
 - no date-based `OR` bypass remains for the final-review-open flag
 - the event and runtime files retain balanced blocks
-- all 251 event identifiers in `slopx_ireland_events.txt` remain unique
+- all 251 event identifiers in `ireland_events.txt` remain unique
 - no unrelated event, option, localisation, picture, or cleanup source changed
 
 The pre-edit event inspection produced revision

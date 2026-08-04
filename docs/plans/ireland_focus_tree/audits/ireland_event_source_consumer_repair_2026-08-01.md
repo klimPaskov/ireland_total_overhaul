@@ -1,7 +1,7 @@
 # Ireland promoted event-source consumer repair audit
 
 Feature slug: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 Audit date: 2026-08-01
 Scope: non-live source, GFX, manifest, and crosswalk review
 
@@ -19,18 +19,18 @@ for source and processed evidence.
 
 | Source | Registered sprite | Consumer | Runtime DDS |
 |---|---|---|---|
-| EV-SRC-020 | `GFX_report_event_ireland_report_constitutional_crisis_report_02` | `events/slopx_ireland_events.txt:20130` | `gfx/event_pictures/ireland/event_ev_src_020_report.dds` |
-| EV-SRC-023 | `GFX_report_event_ireland_report_constitutional_crisis_report_05` | `events/slopx_ireland_events.txt:20221` | `gfx/event_pictures/ireland/ireland_report_constitutional_crisis_report_05.dds` |
-| EV-SRC-032 | `GFX_news_event_ireland_news_historical_news_02` | `events/slopx_ireland_events.txt:2386` | `gfx/event_pictures/ireland/event_ev_src_032_news.dds` |
-| EV-SRC-036 | `GFX_news_event_ireland_news_historical_news_06` | `events/slopx_ireland_flavour_events.txt:9680` | `gfx/event_pictures/ireland/event_ev_src_036_news.dds` |
-| EV-SRC-037 | `GFX_news_event_ireland_news_historical_news_07` | `events/slopx_ireland_events.txt:99` | `gfx/event_pictures/ireland/event_ev_src_037_news.dds` |
-| EV-SRC-038 | `GFX_news_event_ireland_news_historical_news_08` | `events/slopx_ireland_events.txt:5566` | `gfx/event_pictures/ireland/event_ev_src_038_news.dds` |
-| EV-SRC-050 | `GFX_report_event_ireland_report_flavour_family_07` | `events/slopx_ireland_flavour_events.txt:13259` | `gfx/event_pictures/ireland/event_ev_src_050_report.dds` |
-| EV-SRC-054 | `GFX_report_event_ireland_report_flavour_family_11` | `events/slopx_ireland_flavour_events.txt:10019` | `gfx/event_pictures/ireland/event_ev_src_054_report.dds` |
-| EV-SRC-056 | `GFX_report_event_ireland_report_flavour_family_13` | `events/slopx_ireland_flavour_events.txt:19540` | `gfx/event_pictures/ireland/event_ev_src_056_report.dds` |
-| EV-SRC-068 | `GFX_report_event_ireland_report_flavour_family_25` | `events/slopx_ireland_flavour_events.txt:18951` | `gfx/event_pictures/ireland/event_ev_src_068_report.dds` |
-| EV-SRC-055 | `GFX_report_event_ireland_report_flavour_family_12` | `events/slopx_ireland_events.txt` H01 event `slopx_ireland_events.102` | `gfx/event_pictures/ireland/ireland_report_flavour_family_12.dds` |
-| EV-SRC-059 | `GFX_report_event_ireland_report_flavour_family_16` | `events/slopx_ireland_flavour_events.txt` F17 event `slopx_ireland_flavour_events.683` (`cork_ports`) | `gfx/event_pictures/ireland/ireland_report_flavour_family_16.dds` |
+| EV-SRC-020 | `GFX_report_event_ireland_report_constitutional_crisis_report_02` | `events/ireland_events.txt:20130` | `gfx/event_pictures/ireland/event_ev_src_020_report.dds` |
+| EV-SRC-023 | `GFX_report_event_ireland_report_constitutional_crisis_report_05` | `events/ireland_events.txt:20221` | `gfx/event_pictures/ireland/ireland_report_constitutional_crisis_report_05.dds` |
+| EV-SRC-032 | `GFX_news_event_ireland_news_historical_news_02` | `events/ireland_events.txt:2386` | `gfx/event_pictures/ireland/event_ev_src_032_news.dds` |
+| EV-SRC-036 | `GFX_news_event_ireland_news_historical_news_06` | `events/ireland_flavour_events.txt:9680` | `gfx/event_pictures/ireland/event_ev_src_036_news.dds` |
+| EV-SRC-037 | `GFX_news_event_ireland_news_historical_news_07` | `events/ireland_events.txt:99` | `gfx/event_pictures/ireland/event_ev_src_037_news.dds` |
+| EV-SRC-038 | `GFX_news_event_ireland_news_historical_news_08` | `events/ireland_events.txt:5566` | `gfx/event_pictures/ireland/event_ev_src_038_news.dds` |
+| EV-SRC-050 | `GFX_report_event_ireland_report_flavour_family_07` | `events/ireland_flavour_events.txt:13259` | `gfx/event_pictures/ireland/event_ev_src_050_report.dds` |
+| EV-SRC-054 | `GFX_report_event_ireland_report_flavour_family_11` | `events/ireland_flavour_events.txt:10019` | `gfx/event_pictures/ireland/event_ev_src_054_report.dds` |
+| EV-SRC-056 | `GFX_report_event_ireland_report_flavour_family_13` | `events/ireland_flavour_events.txt:19540` | `gfx/event_pictures/ireland/event_ev_src_056_report.dds` |
+| EV-SRC-068 | `GFX_report_event_ireland_report_flavour_family_25` | `events/ireland_flavour_events.txt:18951` | `gfx/event_pictures/ireland/event_ev_src_068_report.dds` |
+| EV-SRC-055 | `GFX_report_event_ireland_report_flavour_family_12` | `events/ireland_events.txt` H01 event `ireland_events.102` | `gfx/event_pictures/ireland/ireland_report_flavour_family_12.dds` |
+| EV-SRC-059 | `GFX_report_event_ireland_report_flavour_family_16` | `events/ireland_flavour_events.txt` F17 event `ireland_flavour_events.683` (`cork_ports`) | `gfx/event_pictures/ireland/ireland_report_flavour_family_16.dds` |
 | EV-SRC-004 | `GFX_report_event_ireland_report_historical_chain_report_04` | no dedicated canonical consumer reference; registration-only until an exact slot is mapped | `gfx/event_pictures/ireland/ireland_report_historical_chain_report_04.dds` |
 | EV-SRC-022 | `GFX_report_event_ireland_report_constitutional_crisis_report_04` | no dedicated canonical consumer reference; registration-only until an exact slot is mapped | `gfx/event_pictures/ireland/ireland_report_constitutional_crisis_report_04.dds` |
 | EV-SRC-040 | `GFX_news_event_ireland_news_historical_news_10` | no dedicated canonical consumer reference; registration-only until an exact slot is mapped | `gfx/event_pictures/ireland/ireland_news_historical_news_10.dds` |
@@ -77,11 +77,11 @@ existing source package.
 
 | Source | Consumer | Binding rationale |
 |---|---|---|
-| EV-SRC-004 | `events/slopx_ireland_events.txt:1090` — `slopx_ireland_events.112` | H04 node 1, Emergency War News; official neutrality record anchors the public emergency declaration. |
-| EV-SRC-022 | `events/slopx_ireland_events.txt:1176` — `slopx_ireland_events.113` | H04 node 2, Emergency First Amendment; the official record is a wartime political/neutrality constitutional anchor. |
-| EV-SRC-040 | `events/slopx_ireland_events.txt:1267` — `slopx_ireland_events.114` | H04 node 3, Emergency Powers Act; the record documents neutrality and refusal of territorial access while powers are defined. |
-| EV-SRC-041 | `events/slopx_ireland_events.txt:1358` — `slopx_ireland_events.115` | H04 node 4, Emergency Six Month Review; the 1940 British-port demand is the review's concrete external-pressure record. |
-| EV-SRC-058 | `events/slopx_ireland_flavour_events.txt:13090` — `slopx_ireland_flavour_events.655` | F15 node 6, Neutral Markings; the 1941 friendly-neutral statement is the exact maritime-neutrality flavour anchor. |
+| EV-SRC-004 | `events/ireland_events.txt:1090` — `ireland_events.112` | H04 node 1, Emergency War News; official neutrality record anchors the public emergency declaration. |
+| EV-SRC-022 | `events/ireland_events.txt:1176` — `ireland_events.113` | H04 node 2, Emergency First Amendment; the official record is a wartime political/neutrality constitutional anchor. |
+| EV-SRC-040 | `events/ireland_events.txt:1267` — `ireland_events.114` | H04 node 3, Emergency Powers Act; the record documents neutrality and refusal of territorial access while powers are defined. |
+| EV-SRC-041 | `events/ireland_events.txt:1358` — `ireland_events.115` | H04 node 4, Emergency Six Month Review; the 1940 British-port demand is the review's concrete external-pressure record. |
+| EV-SRC-058 | `events/ireland_flavour_events.txt:13090` — `ireland_flavour_events.655` | F15 node 6, Neutral Markings; the 1941 friendly-neutral statement is the exact maritime-neutrality flavour anchor. |
 
 The regenerated crosswalk now reports these five source-to-consumer lines,
 and the source manifest remains 132 complete / 37 blocked. This addendum

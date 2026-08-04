@@ -113,7 +113,7 @@ Live in-game testing is intentionally omitted and is not counted as a blocker.
 The latest static repair tranche also reconciles the Otherworld H/P/A
 boundary, including the historical `H` serious-culture/archive opening, the
 historical Otherworld AI opening, the investigation focus committing `P`, and
-the explicit four-choice `slopx_ireland_events.437` archive-reveal event that
+the explicit four-choice `ireland_events.437` archive-reveal event that
 commits `A`. Its rejection branch opens the existing recovery bridge and
 constitutional-calendar restoration sequence without returning the campaign
 to H; the verified impossible occurrence remains an A-state historical fact.

@@ -3,7 +3,7 @@
 ## Scope
 
 This pass covered the Ireland-owned runtime and source surfaces for
-`ireland_focus_tree` / `slopx` after the final non-live implementation audit.
+`ireland_focus_tree` / `ireland` after the final non-live implementation audit.
 It did not launch Hearts of Iron IV or perform live-save testing; the project
 owner will perform that test independently.
 
@@ -13,7 +13,7 @@ only the Ireland scripted cleanup contract and this audit record.
 
 ## Repair applied
 
-`common/scripted_effects/slopx_ireland_effects.txt` contained eleven
+`common/scripted_effects/ireland_effects.txt` contained eleven
 `clear_global_event_target` effects for Ireland names that had no matching
 `save_event_target_as`, `save_global_event_target_as`, `event_target:`, or
 `has_event_target` use anywhere in `common/`, `events/`, or `interface/`.

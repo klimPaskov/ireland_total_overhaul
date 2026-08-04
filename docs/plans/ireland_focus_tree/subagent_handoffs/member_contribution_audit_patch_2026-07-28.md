@@ -6,13 +6,13 @@ Bounded audit follow-up for the `ireland_focus_tree` member-contribution tranche
 
 ## Changed files and identifiers
 
-- `common/decisions/slopx_ireland_decisions.txt`
-  - `slopx_ireland_mission_meet_the_member_contribution_schedule`
+- `common/decisions/ireland_decisions.txt`
+  - `ireland_mission_meet_the_member_contribution_schedule`
 - `docs/plans/ireland_focus_tree/subagent_handoffs/member_contribution_audit_patch_2026-07-28.md`
 
 ## Corrected behaviour
 
-Before this patch, the decision's `available` block still required Northern Integration Capacity of 50 for the `complete` flag and 30 for the `partial` flag. Commit `cebbface` had already replaced the runtime's equivalent generic capacity checks with `slopx_ireland_member_contribution_full` and `slopx_ireland_member_contribution_partial`.
+Before this patch, the decision's `available` block still required Northern Integration Capacity of 50 for the `complete` flag and 30 for the `partial` flag. Commit `cebbface` had already replaced the runtime's equivalent generic capacity checks with `ireland_member_contribution_full` and `ireland_member_contribution_partial`.
 
 That left a contradictory terminal path: a class could satisfy its documented full or partial trigger, receive the corresponding mission flag, and still be unable to execute the result until the timer expired. A full flag also prevents the runtime from setting partial, so the timeout took the failure branch.
 

@@ -8,10 +8,10 @@ This tranche closes four canonical admission gaps in the National Readiness and 
 
 | Action | Canonical proof | Implemented admission |
 | --- | --- | --- |
-| Build a Coastwatch Sector Network | Marine and Coast Watching Service active | `slopx_ireland_coastwatch_service_active`; full control of state 134 with infrastructure-connected post site |
-| Install Harbour Defences | valid port authority and transferred or controlled harbour | `slopx_ireland_harbour_defence_authority`; full control of state 135 plus port authority/transfer/project proof |
-| Organise Marine Patrols | Marine Service or route equivalent | `slopx_ireland_marine_patrol_authority`; Marine Service or named shipping route, full controlled Cork port, industrial capacity |
-| Intercept an Airspace Violation | detected aircraft and available warning or Air Corps response | `slopx_ireland_air_intercept_response_authority`; Air Warning route or command authority with state-113 air base |
+| Build a Coastwatch Sector Network | Marine and Coast Watching Service active | `ireland_coastwatch_service_active`; full control of state 134 with infrastructure-connected post site |
+| Install Harbour Defences | valid port authority and transferred or controlled harbour | `ireland_harbour_defence_authority`; full control of state 135 plus port authority/transfer/project proof |
+| Organise Marine Patrols | Marine Service or route equivalent | `ireland_marine_patrol_authority`; Marine Service or named shipping route, full controlled Cork port, industrial capacity |
+| Intercept an Airspace Violation | detected aircraft and available warning or Air Corps response | `ireland_air_intercept_response_authority`; Air Warning route or command authority with state-113 air base |
 
 ## Source and engine basis
 
@@ -22,10 +22,10 @@ This tranche closes four canonical admission gaps in the National Readiness and 
 
 ## Files changed
 
-- `common/scripted_triggers/slopx_ireland_triggers.txt`
-- `common/decisions/slopx_ireland_decisions.txt`
-- `localisation/english/slopx_ireland_l_english.yml`
-- `docs/slopx_dynamic_effects.md`
+- `common/scripted_triggers/ireland_triggers.txt`
+- `common/decisions/ireland_decisions.txt`
+- `localisation/english/ireland_l_english.yml`
+- `docs/ireland_dynamic_effects.md`
 
 ## Validation evidence
 

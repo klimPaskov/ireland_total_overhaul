@@ -19,13 +19,13 @@ source-art reuse remains in the current runtime set.
 The final DDS files are in the standard runtime location:
 
 ```text
-gfx/interface/goals/slopx_ireland/
+gfx/interface/goals/ireland/
 ```
 
 `assets/` contains temporary source atlases, chroma-key source tiles, processed
 previews, manifests, contact sheets, and staging DDS files. Stable
-`GFX_focus_slopx_ireland_*` registrations remain owned by
-`interface/slopx_ireland_icons.gfx`.
+`GFX_focus_ireland_*` registrations remain owned by
+`interface/ireland_icons.gfx`.
 
 ## Rejected medallion package evidence
 

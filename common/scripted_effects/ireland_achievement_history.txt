@@ -1,0 +1,1250 @@
+# Durable Ireland achievement history. This file records the evidence of a route,
+# crisis, law, mission, office, foreign reaction, or cleanup transition. It is
+# called from the existing daily achievement tracker and never clears a history
+# flag when the live ledger later recovers.
+
+ireland_update_achievement_history = {
+	# Ironman eligibility is recorded only for a campaign that cannot satisfy the
+	# immutable achievement gate. A normal 1936 ironman run never enters this block.
+	if = {
+		limit = {
+			OR = {
+				is_ironman = no
+				has_any_custom_difficulty_setting = yes
+				NOT = { has_start_date > 1935.12.31 }
+				NOT = { has_start_date < 1936.01.02 }
+				NOT = { tag = IRE }
+				NOT = { original_tag = IRE }
+			}
+		}
+		set_country_flag = ireland_achievement_campaign_disqualified
+	}
+
+	# Neutrality and material misconduct are historical, not snapshots.
+	if = {
+		limit = {
+			check_variable = {
+				var = ireland_neutrality_integrity
+				value = constant:ireland.achievement_floor_65
+				compare = less_than
+			}
+		}
+		set_country_flag = ireland_achievement_neutrality_integrity_below_65
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_conclusion_review_active
+				has_country_flag = ireland_northern_final_review_active
+			}
+			OR = {
+				check_variable = { var = ireland_provision_food value = constant:ireland.achievement_floor_40 compare = less_than }
+				check_variable = { var = ireland_provision_energy value = constant:ireland.achievement_floor_40 compare = less_than }
+				check_variable = { var = ireland_provision_transport value = constant:ireland.achievement_floor_40 compare = less_than }
+				check_variable = { var = ireland_provision_maritime value = constant:ireland.achievement_floor_40 compare = less_than }
+				check_variable = { var = ireland_readiness_command value = constant:ireland.achievement_floor_40 compare = less_than }
+				check_variable = { var = ireland_readiness_equipment value = constant:ireland.achievement_floor_40 compare = less_than }
+				check_variable = { var = ireland_readiness_supply value = constant:ireland.achievement_floor_40 compare = less_than }
+			}
+		}
+		set_country_flag = ireland_achievement_component_collapse_during_review
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_irish_shipping_created
+				has_country_flag = ireland_action_purchase_a_merchant_vessel_complete
+				has_country_flag = ireland_action_mark_and_publicise_neutral_shipping_complete
+			}
+		}
+		set_country_flag = ireland_achievement_irish_shipping_created
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_memory_shipping_commercial_withdrawal_b
+				has_country_flag = ireland_mission_replace_a_lost_merchant_vessel_failure_recorded
+			}
+		}
+		set_country_flag = ireland_achievement_merchant_service_dissolved
+	}
+	if = {
+		limit = {
+			has_war = yes
+			OR = {
+				has_country_flag = ireland_foreign_fr09_allied_access_request_accepted
+				has_country_flag = ireland_foreign_fr10_axis_liaison_offer_accepted
+				has_country_flag = ireland_action_answer_a_foreign_access_request_complete
+			}
+		}
+		set_country_flag = ireland_achievement_deliberate_belligerent_misuse
+	}
+
+	# Constitutional crisis and parliamentary evidence.
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_action_negotiate_confidence_and_supply_complete
+				has_country_flag = ireland_action_request_a_confidence_vote_complete
+				has_country_flag = ireland_memory_confidence_vote_lost_a
+				has_country_flag = ireland_mission_conduct_a_free_general_election_by_election_full_recorded
+			}
+		}
+		set_country_flag = ireland_achievement_confidence_agreement_recorded
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_memory_presidency_dissolution_case_b
+				has_country_flag = ireland_memory_confidence_presidential_choice_b
+			}
+		}
+		set_country_flag = ireland_achievement_presidential_refusal_of_dissolution
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_achievement_presidential_refusal_of_dissolution
+			OR = {
+				has_country_flag = ireland_action_publish_a_government_programme_complete
+				has_country_flag = ireland_action_ratify_the_common_programme_complete
+				has_country_flag = ireland_government_from_opposition_complete
+			}
+			has_country_flag = ireland_dail_nomination_complete
+			NOT = { has_country_flag = ireland_achievement_coup }
+		}
+		set_country_flag = ireland_achievement_lawful_alternative_government
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_action_establish_a_caretaker_cabinet_complete
+				has_country_flag = ireland_memory_confidence_caretaker_or_dissolution_b
+			}
+		}
+		set_country_flag = ireland_achievement_caretaker_seizure
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_memory_confidence_vote_lost_b
+			NOT = { has_country_flag = ireland_dail_nomination_complete }
+		}
+		set_country_flag = ireland_achievement_failed_dail_nomination
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_action_publish_a_government_programme_complete
+		}
+		set_country_flag = ireland_achievement_national_government_programme_decided
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_action_ask_the_president_for_dissolution_complete
+				has_country_flag = ireland_action_prepare_a_by_election_complete
+			}
+			has_country_flag = ireland_memory_presidency_dissolution_case_b
+		}
+		set_country_flag = ireland_achievement_opportunistic_snap_election
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_restore_constitutional_calendar_complete
+				has_country_flag = ireland_restore_ordinary_constitutional_procedure_complete
+				has_country_flag = ireland_action_restore_ordinary_constitutional_procedure_complete
+			}
+		}
+		set_country_flag = ireland_achievement_constitutional_restoration_conclusion
+		set_country_flag = ireland_achievement_ordinary_constitutional_restoration_conclusion
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_action_restore_ordinary_constitutional_procedure_complete
+				has_country_flag = ireland_action_archive_the_failed_restoration_complete
+			}
+		}
+		set_country_flag = ireland_achievement_restoration_cleanup_complete
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_mission_conduct_a_free_general_election_full_recorded
+				has_country_flag = ireland_action_conduct_a_free_general_election_complete
+			}
+			OR = {
+				has_country_flag = ireland_achievement_constitutional_restoration_conclusion
+				has_country_flag = ireland_restore_parliamentary_confidence_complete
+			}
+		}
+		set_country_flag = ireland_achievement_election_after_restoration
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_memory_presidency_dissolution_case_b
+			OR = {
+				has_country_flag = ireland_government_formation_complete
+				has_country_flag = ireland_government_from_opposition_complete
+			}
+			NOT = { has_country_flag = ireland_office_vacancy }
+		}
+		set_country_flag = ireland_achievement_office_continuity_after_refusal
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_governing_collapse
+				has_country_flag = ireland_coalition_collapse
+			}
+		}
+		set_country_flag = ireland_achievement_party_collapse
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_coalition_collapse
+		}
+		set_country_flag = ireland_achievement_coalition_collapse
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_governing_collapse
+				has_country_flag = ireland_route_closed
+			}
+			OR = {
+				has_country_flag = ireland_route_ailtiri_total_state
+				has_country_flag = ireland_route_oduffy
+				has_country_flag = ireland_congress_vanguard_path
+				has_country_flag = ireland_ira_army_council_path
+			}
+		}
+		set_country_flag = ireland_achievement_party_seizure
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_governing_collapse
+				has_country_flag = ireland_office_vacancy
+			}
+			OR = {
+				has_country_flag = ireland_military_command_collapse
+				has_country_flag = ireland_security_command_collapse
+				has_country_flag = ireland_route_closed
+			}
+		}
+		set_country_flag = ireland_achievement_coup
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_action_establish_a_caretaker_cabinet_complete
+				has_country_flag = ireland_foreign_access_failure
+			}
+			has_country_flag = ireland_governing_collapse
+		}
+		set_country_flag = ireland_achievement_unlawful_appointment
+	}
+
+	# Party, labour, agrarian, and vocational route history.
+	if = {
+		limit = {
+			has_country_flag = ireland_memory_labour_reunion_or_split_a
+			date > 1944.1.1
+		}
+		set_country_flag = ireland_achievement_1944_labour_split_prevented
+	}
+	if = {
+		limit = { has_country_flag = ireland_memory_labour_reunion_or_split_b }
+		set_country_flag = ireland_achievement_national_labour_split_unresolved
+	}
+	if = {
+		limit = { has_country_flag = ireland_memory_labour_affiliate_dispute_b }
+		set_country_flag = ireland_achievement_affiliate_purge
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_route_norton_parliamentary
+				has_country_flag = ireland_norton_parliamentary_complete
+			}
+			OR = {
+				check_variable = { var = ireland_dail_government_formal_seats value = constant:ireland.dail_majority_opening compare = less_than }
+				has_country_flag = ireland_government_from_opposition_complete
+			}
+		}
+		set_country_flag = ireland_achievement_minority_government_started
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_norton_parliamentary_concluded
+			has_country_flag = ireland_route_conclusion_full
+			has_country_flag = ireland_achievement_minority_government_started
+		}
+		set_country_flag = ireland_achievement_minority_route_conclusion
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_clann_1943_merger_complete
+		}
+		set_country_flag = ireland_achievement_clann_1943_merger_completed
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_memory_clann_1943_merger_b
+		}
+		set_country_flag = ireland_achievement_clann_merger_skipped
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_clann_founded
+			OR = {
+				has_country_flag = ireland_action_recognise_an_agrarian_support_bloc_complete
+				has_country_flag = ireland_agrarian_support_bloc_complete
+			}
+			NOT = { has_country_flag = ireland_clann_by_election_complete }
+		}
+		set_country_flag = ireland_achievement_farmer_independents_silently_converted
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_producer_councils_complete
+				has_country_flag = ireland_vocational_constitution_complete
+			}
+		}
+		set_country_flag = ireland_achievement_council_tier_1_functioning
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_producer_constitution_complete
+				has_country_flag = ireland_vocational_constitution_capstone_complete
+			}
+		}
+		set_country_flag = ireland_achievement_council_tier_2_functioning
+	}
+	if = {
+		limit = { has_country_flag = ireland_vocational_constitution_capstone_complete }
+		set_country_flag = ireland_achievement_council_tier_3_functioning
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_dail_supremacy_clause_complete
+				has_country_flag = ireland_army_serves_dail_complete
+				has_country_flag = ireland_security_under_law_complete
+			}
+		}
+		set_country_flag = ireland_achievement_dail_sovereignty_preserved
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_security_under_law_complete
+				has_country_flag = ireland_civil_service_court_compact_ready
+			}
+		}
+		set_country_flag = ireland_achievement_judicial_review_preserved
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_action_invoke_the_council_of_state_complete
+			NOT = { has_country_flag = ireland_dail_supremacy_clause_complete }
+		}
+		set_country_flag = ireland_achievement_council_government_without_dail
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_captured_boards_failure
+				has_country_flag = ireland_vocational_dail_supremacy_failed
+			}
+		}
+		set_country_flag = ireland_achievement_captured_panel
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_corporate_estates_complete
+		}
+		set_country_flag = ireland_achievement_corporate_estates
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_constitutional_vocational_concluded
+			has_country_flag = ireland_route_conclusion_full
+		}
+		set_country_flag = ireland_achievement_constitutional_vocational_conclusion
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_clerical_veto_failure
+				has_country_flag = ireland_clerical_censorship_failure
+				has_country_flag = ireland_religious_persecution_failure
+			}
+		}
+		set_country_flag = ireland_achievement_clerical_veto_state
+	}
+
+	# Republican, military, corporate, and Ailtirí failures retain the route
+	# decision that caused them even after a constitutional recovery.
+	if = {
+		limit = {
+			has_country_flag = ireland_ira_civil_authority_complete
+			OR = {
+				has_country_flag = ireland_action_integrate_or_devolve_military_command_complete
+				has_country_flag = ireland_memory_command_civil_authority_a
+			}
+		}
+		set_country_flag = ireland_achievement_armed_wing_subordinate
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_memory_command_civil_authority_b
+				has_country_flag = ireland_memory_command_compromise_or_purge_b
+				has_country_flag = ireland_military_command_collapse
+			}
+			OR = {
+				has_country_flag = ireland_route_mulcahy_civil_defence
+				has_country_flag = ireland_ira_army_council_path
+				has_country_flag = ireland_route_oduffy
+			}
+		}
+		set_country_flag = ireland_achievement_army_shadow
+	}
+	if = {
+		limit = {
+			check_variable = {
+				var = ireland_civil_authority
+				value = constant:ireland.achievement_floor_40
+				compare = less_than
+			}
+			OR = {
+				has_country_flag = ireland_route_ira_republican
+				has_country_flag = ireland_ira_civil_authority_complete
+				has_country_flag = ireland_ira_army_council_path
+			}
+		}
+		set_country_flag = ireland_achievement_civil_authority_below_threshold
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_ira_army_council_path
+			OR = {
+				has_country_flag = ireland_memory_command_compromise_or_purge_b
+				has_country_flag = ireland_ira_ghq_reassembled
+				has_country_flag = ireland_governing_collapse
+			}
+		}
+		set_country_flag = ireland_achievement_ghq_dictatorship
+		set_country_flag = ireland_achievement_failure_army_council
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_ira_army_council_path
+			has_country_flag = ireland_armed_wing_active
+		NOT = { has_country_flag = ireland_achievement_dail_sovereignty_preserved }
+		}
+		set_country_flag = ireland_achievement_militia_republic
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_congress_vanguard_path
+				has_country_flag = ireland_congress_vanguard_capstone_complete
+			}
+			OR = {
+				has_country_flag = ireland_memory_congress_constituent_collapse_b
+				has_country_flag = ireland_governing_collapse
+			}
+		}
+		set_country_flag = ireland_achievement_committee_fragmentation
+		set_country_flag = ireland_achievement_vanguard_purge
+		set_country_flag = ireland_achievement_failure_vanguard
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_congress_plural_republic_complete
+				has_country_flag = ireland_congress_transition_complete
+				has_country_flag = ireland_ira_republican_government_complete
+			}
+			has_country_flag = ireland_labour_social_law_complete
+		}
+		set_country_flag = ireland_achievement_workers_republic_bridge
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_oduffy_corporate_path
+				has_country_flag = ireland_oduffy_corporate_capstone_complete
+			}
+			OR = {
+				has_country_flag = ireland_memory_oduffy_foreign_patron_b
+				has_country_flag = ireland_memory_oduffy_death_and_succession_b
+				has_country_flag = ireland_oduffy_state_interface_broken
+			}
+		}
+		set_country_flag = ireland_achievement_corporate_rupture
+		set_country_flag = ireland_achievement_failure_corporate
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_oduffy_personal_concluded
+			# Personal-rule route records become achievement evidence only after a
+			# full conclusion review; a partial review is a damaged route, not a
+			# political-victory record.
+			has_country_flag = ireland_route_conclusion_full
+		}
+		set_country_flag = ireland_achievement_personal_cult_remains
+		set_country_flag = ireland_achievement_personal_dictatorship
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_oduffy_personal_path
+			has_country_flag = ireland_memory_oduffy_death_and_succession_a
+		}
+		set_country_flag = ireland_achievement_oduffy_removed_lawful_succession
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_close_oduffy_chapter_complete
+			has_country_flag = ireland_memory_oduffy_death_and_succession_a
+		}
+		set_country_flag = ireland_achievement_oduffy_left_office_lawfully
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_memory_oduffy_death_and_succession_b
+				has_country_flag = ireland_memory_oduffy_foreign_patron_b
+			}
+			OR = {
+				has_country_flag = ireland_oduffy_personal_path
+				has_country_flag = ireland_oduffy_corporate_path
+			}
+		}
+		set_country_flag = ireland_achievement_ghost_movement
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_ailtiri_police_exposure
+				has_country_flag = ireland_ailtiri_crisis
+				has_country_flag = ireland_compulsory_language_failure
+				has_country_flag = ireland_forced_assimilation_failure
+			}
+		}
+		set_country_flag = ireland_achievement_failure_ailtiri
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_route_ailtiri_total_state
+			date > 1945.1.1
+			OR = {
+				has_country_flag = ireland_foreign_postwar_review_complete
+				has_country_flag = ireland_postwar_foreign_review_complete
+			}
+			NOT = { has_country_flag = ireland_achievement_failure_ailtiri }
+		}
+		set_country_flag = ireland_achievement_post_axis_ailtiri_crisis_survived
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_route_ailtiri_total_state
+			date < 1942.1.1
+		}
+		set_country_flag = ireland_achievement_pre_1942_shortcut
+	}
+
+	# Office and leadership history is based on the registry, never on a free
+	# character replacement. Excess offices and unresolved vacancies are durable.
+	if = {
+		limit = {
+			check_variable = {
+				var = ireland_office_occupied_count
+				value = constant:ireland.office_duplicate_threshold
+				compare = greater_than
+			}
+		}
+		set_country_flag = ireland_achievement_duplicate_offices
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_route_conclusion_review_due
+				has_country_flag = ireland_conclusion_review_due
+			}
+			OR = {
+				has_country_flag = ireland_office_vacancy
+				has_country_flag = ireland_leadership_vacancy
+				has_country_flag = ireland_northern_occupation_active
+			}
+		}
+		set_country_flag = ireland_achievement_exceptional_office_unresolved
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_route_mulcahy_civil_defence
+			OR = {
+				has_country_flag = ireland_memory_f01_succession_shadow_b
+				has_country_flag = ireland_flavour_f01_succession_shadow_b
+			}
+		}
+		set_country_flag = ireland_achievement_mulcahy_removed_outside_party_process
+		set_country_flag = ireland_achievement_fine_gael_coup_shortcut
+	}
+
+	# Development and the Dillon gate use named projects and the canonical
+	# material record. A project failure is not erased by a later factory total.
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_mission_complete_a_developmental_plant_full_recorded
+				has_country_flag = ireland_mission_deliver_a_western_regional_portfolio_full_recorded
+				has_country_flag = ireland_mission_restore_the_dublin_to_cork_corridor_full_recorded
+				has_country_flag = ireland_memory_reconstruction_regional_balance_a
+				has_country_flag = ireland_memory_postwar_regional_balance_a
+			}
+		}
+		set_country_flag = ireland_achievement_four_region_balanced_development
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_memory_f02_imported_machines_b
+				has_country_flag = ireland_mission_complete_a_developmental_plant_failure_recorded
+				has_country_flag = ireland_foreign_fr03_us_procurement_licence_refused
+			}
+		}
+		set_country_flag = ireland_achievement_imported_development_failure
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_captured_boards_failure
+				check_variable = { var = ireland_law_economic_control_stage value = constant:ireland.law_stage_max compare = greater_than_or_equals }
+			}
+		}
+		set_country_flag = ireland_achievement_state_monopoly
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_achievement_dillon_allied_war_entered
+			NOT = { has_country_flag = ireland_action_activate_a_cadre_reserve_complete }
+		}
+		set_country_flag = ireland_achievement_missing_home_defence_reserve
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_achievement_dillon_allied_war_entered
+			NOT = {
+				OR = {
+					has_country_flag = ireland_action_integrate_a_voluntary_member_contribution_complete
+					has_country_flag = ireland_mission_meet_the_member_contribution_schedule_full_recorded
+				}
+			}
+		}
+		set_country_flag = ireland_achievement_missing_military_contribution
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_dillon_vote_passed
+			has_country_flag = ireland_dillon_safeguards_ready
+		}
+		set_country_flag = ireland_achievement_dillon_gate_snapshot_valid
+		set_country_flag = ireland_achievement_dillon_safeguards_enforced
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_dillon_war_assent_complete
+			has_war = yes
+		}
+		set_country_flag = ireland_achievement_dillon_allied_war_entered
+	}
+	if = {
+		limit = {
+			has_war = yes
+			NOT = { has_country_flag = ireland_dillon_vote_passed }
+			OR = {
+				has_country_flag = ireland_foreign_fr09_allied_access_request_accepted
+				has_country_flag = ireland_foreign_fr10_axis_liaison_offer_accepted
+				has_country_flag = ireland_northern_war_plan
+			}
+		}
+		set_country_flag = ireland_achievement_formal_war_entered
+		set_country_flag = ireland_achievement_war_entry_event_shortcut
+	}
+	if = {
+		limit = {
+			has_war = yes
+			OR = {
+				has_country_flag = ireland_foreign_fr09_allied_access_request_accepted
+				has_country_flag = ireland_foreign_fr10_axis_liaison_offer_accepted
+			}
+		}
+		set_country_flag = ireland_achievement_formal_belligerency
+	}
+
+	# Foreign reaction history. Acceptance is not itself a client state; client
+	# flags require the route to accept command, security, or patron dependence.
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_foreign_fr01_uk_northern_guarantee_accepted
+				has_country_flag = ireland_foreign_fr03_us_diaspora_pressure_accepted
+				has_country_flag = ireland_foreign_fr05_german_promise_agents_accepted
+				has_country_flag = ireland_foreign_fr06_vatican_public_criticism_accepted
+				has_country_flag = ireland_foreign_fr09_allied_access_request_accepted
+				has_country_flag = ireland_foreign_fr10_axis_liaison_offer_accepted
+			}
+		}
+		set_country_flag = ireland_achievement_client_pressure_ever
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_foreign_access_failure
+				has_country_flag = ireland_overlay_foreign_sponsor_collapse
+				check_variable = { var = ireland_sponsor_dependence value = constant:ireland.achievement_leverage_ceiling compare = greater_than }
+			}
+		}
+		set_country_flag = ireland_achievement_foreign_patron_control
+		set_country_flag = ireland_achievement_foreign_control
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_foreign_fr09_allied_command_consultation_accepted
+				has_country_flag = ireland_foreign_fr10_axis_liaison_offer_accepted
+			}
+			OR = {
+				has_country_flag = ireland_route_ira_republican
+				has_country_flag = ireland_route_ailtiri_total_state
+				has_country_flag = ireland_route_oduffy
+			}
+		}
+		set_country_flag = ireland_achievement_foreign_command
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_achievement_foreign_command
+			OR = {
+				has_country_flag = ireland_foreign_access_failure
+				has_country_flag = ireland_governing_collapse
+			}
+		}
+		set_country_flag = ireland_achievement_foreign_client
+		set_country_flag = ireland_achievement_client_security_state
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_foreign_fr09_allied_command_consultation_accepted
+				has_country_flag = ireland_foreign_fr10_axis_liaison_offer_accepted
+			}
+			OR = {
+				has_country_flag = ireland_route_oduffy
+				has_country_flag = ireland_route_ailtiri_total_state
+				has_country_flag = ireland_route_high_king
+			}
+			check_variable = { var = ireland_foreign_exposure value = constant:ireland.achievement_floor_60 compare = greater_than_or_equals }
+		}
+		set_country_flag = ireland_achievement_foreign_installed_leader
+		set_country_flag = ireland_achievement_foreign_appointed_government
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_route_high_king
+			OR = {
+				has_country_flag = ireland_foreign_fr12_celtic_federal_overclaim_accepted
+				has_country_flag = ireland_high_king_captured_crown_path
+			}
+		}
+		set_country_flag = ireland_achievement_foreign_appointed_claimant
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_northern_occupation_active
+			OR = {
+				has_country_flag = ireland_action_restore_ordinary_constitutional_procedure_complete
+				has_country_flag = ireland_restore_constitutional_calendar_complete
+			}
+			OR = {
+				has_country_flag = ireland_foreign_fr09_allied_occupation_concern_accepted
+				has_country_flag = ireland_foreign_access_failure
+			}
+		}
+		set_country_flag = ireland_achievement_foreign_occupation_appointed_restoration
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_foreign_fr01_uk_northern_guarantee_accepted
+				has_country_flag = ireland_foreign_fr09_allied_occupation_concern_accepted
+				has_country_flag = ireland_foreign_fr03_us_postwar_credit_accepted
+			}
+		}
+		set_country_flag = ireland_achievement_protected_dependency_ever
+	}
+
+	# Northern Ireland remains a sequence of claim, control, occupation,
+	# settlement, integration, and core review. Positive history is only written
+	# after the same strict stage-five and final-review gate used by the core.
+	if = {
+		limit = {
+			has_country_flag = ireland_northern_war_plan
+			OR = {
+				has_country_flag = ireland_action_plan_a_coercive_northern_campaign_complete
+				has_country_flag = ireland_memory_northern_war_plan_b
+			}
+		}
+		set_country_flag = ireland_achievement_northern_war
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_achievement_northern_war
+			OR = {
+				has_country_flag = ireland_northern_occupation_active
+				has_country_flag = ireland_occupation_active
+			}
+		}
+		set_country_flag = ireland_achievement_coercive_northern_war
+		set_country_flag = ireland_achievement_coercive_occupation
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_achievement_coercive_northern_war
+			has_country_flag = ireland_northern_core_granted
+			has_country_flag = ireland_northern_final_review_passed
+			check_variable = { var = ireland_northern_integration_stage value = constant:ireland.northern_stage_core_eligible compare = greater_than_or_equals }
+		}
+		set_country_flag = ireland_achievement_northern_coercive_war_victory
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_memory_northern_plebiscite_result_b
+				has_country_flag = ireland_memory_f13_boundary_hearings_b
+			}
+		}
+		set_country_flag = ireland_achievement_imposed_boundaries
+		set_country_flag = ireland_achievement_automatic_ulster_claim
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_full_recorded
+				has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_partial_recorded
+			}
+			has_country_flag = ireland_memory_northern_plebiscite_result_b
+		}
+		set_country_flag = ireland_achievement_imposed_plebiscite
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_failure_recorded
+				has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_cancellation_recorded
+				has_country_flag = ireland_plebiscite_rejected
+				has_country_flag = ireland_memory_northern_plebiscite_result_b
+			}
+		}
+		set_country_flag = ireland_achievement_invalid_plebiscite
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_northern_core_granted
+			OR = {
+				NOT = { has_country_flag = ireland_northern_final_review_passed }
+				check_variable = { var = ireland_northern_integration_stage value = constant:ireland.northern_stage_core_eligible compare = less_than }
+			}
+		}
+		set_country_flag = ireland_achievement_blanket_cores
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_northern_settlement_failure
+				has_country_flag = ireland_forced_assimilation_failure
+				has_country_flag = ireland_sectarian_policing_failure
+				has_country_flag = ireland_religious_persecution_failure
+				has_country_flag = ireland_memory_northern_rights_safeguards_b
+			}
+		}
+		set_country_flag = ireland_achievement_rights_failure
+		set_country_flag = ireland_achievement_rights_violation
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_achievement_coercive_occupation
+			OR = {
+				has_country_flag = ireland_achievement_rights_failure
+				check_variable = { var = ireland_law_occupation_stage value = constant:ireland.law_stage_failure compare = greater_than }
+				has_country_flag = ireland_atrocity_recorded
+			}
+		}
+		set_country_flag = ireland_achievement_atrocity
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_action_settle_education_and_religious_safeguards_complete
+				has_country_flag = ireland_memory_northern_rights_safeguards_a
+				has_country_flag = ireland_memory_f13_federal_court_a
+			}
+			has_country_flag = ireland_route_five_provinces
+		}
+		set_country_flag = ireland_achievement_five_provinces_rights_review_passed
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_route_five_provinces
+			OR = {
+				has_country_flag = ireland_action_merge_tax_and_debt_administration_complete
+				has_country_flag = ireland_memory_f13_budget_equalisation_a
+				has_country_flag = ireland_mission_ratify_the_federal_settlement_full_recorded
+			}
+		}
+		set_country_flag = ireland_achievement_five_provinces_finance_review_passed
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_ulster_rule_complete
+			NOT = { has_country_flag = ireland_achievement_automatic_ulster_claim }
+			NOT = { has_country_flag = ireland_achievement_imposed_boundaries }
+		}
+		set_country_flag = ireland_achievement_ulster_rule_lawful
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_route_five_provinces
+			has_country_flag = ireland_federal_republic_complete
+			OR = {
+				has_country_flag = ireland_memory_f13_boundary_hearings_b
+				has_country_flag = ireland_memory_f13_budget_equalisation_b
+				has_country_flag = ireland_federal_centralisation_failure
+			}
+		}
+		set_country_flag = ireland_achievement_painted_provinces
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_route_five_provinces
+			OR = {
+				has_country_flag = ireland_pentarchy_guardians_path
+				has_country_flag = ireland_federal_republic_path
+			}
+			OR = {
+				has_country_flag = ireland_memory_f13_guard_loyalty_b
+				has_country_flag = ireland_memory_f13_veto_b
+				has_country_flag = ireland_governing_collapse
+			}
+		}
+		set_country_flag = ireland_achievement_rival_sovereignties
+		set_country_flag = ireland_achievement_warlord_province
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_northern_occupation_active
+				has_country_flag = ireland_occupation_active
+			}
+			OR = {
+				has_country_flag = ireland_northern_final_review_active
+				has_country_flag = ireland_law_occupation_active
+			}
+		}
+		set_country_flag = ireland_achievement_military_government_unresolved
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_achievement_northern_war
+			has_country_flag = ireland_northern_occupation_active
+			NOT = { has_country_flag = ireland_ulster_rule_complete }
+		}
+		set_country_flag = ireland_achievement_offensive_annexation
+	}
+
+	# The remaining hidden and recovery records are written from named route
+	# transitions. They remain true after a later restoration or constitutional
+	# cleanup, so conclusion checks can use history rather than an end-state
+	# snapshot.
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_clerical_veto_failure
+				has_country_flag = ireland_clerical_censorship_failure
+				has_country_flag = ireland_religious_persecution_failure
+			}
+		}
+		set_country_flag = ireland_achievement_failure_clerical
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_emergency_overreach
+				has_country_flag = ireland_emergency_powers_crisis
+				has_country_flag = ireland_indefinite_emergency_rule
+				check_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.law_stage_failure compare = greater_than_or_equals }
+			}
+		}
+		set_country_flag = ireland_achievement_failure_permanent_emergency
+		set_country_flag = ireland_achievement_permanent_emergency_failure
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_indefinite_emergency_rule
+				check_variable = { var = ireland_law_emergency_authority_stage value = constant:ireland.law_stage_failure compare = greater_than_or_equals }
+			}
+		}
+		set_country_flag = ireland_achievement_indefinite_emergency_rule
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_memory_f03_civil_war_memory_b
+				has_country_flag = ireland_memory_f03_reconciliation_b
+			}
+			has_country_flag = ireland_route_mulcahy_civil_defence
+			has_country_flag = ireland_memory_command_compromise_or_purge_b
+		}
+		set_country_flag = ireland_achievement_retaliatory_purge
+	}
+
+	# Coastwatch has two separate historical failures even though they can share
+	# the same disbandment decision: an abandoned sector and a shortcut that
+	# substitutes a narrow technical fix for the six-sector warning system.
+	if = {
+		limit = { has_country_flag = ireland_memory_coastwatch_disbandment_b }
+		set_country_flag = ireland_achievement_coastwatch_sector_abandoned
+		set_country_flag = ireland_achievement_coastwatch_free_radar_shortcut
+	}
+
+	# A confidence-and-supply arrangement is a real temporary agreement, not an
+	# evergreen political-power reservoir. Its 365-day support clock is started
+	# once, then the expiry is retained as an irreversible minority-route
+	# disqualifier.
+	if = {
+		limit = {
+			has_country_flag = ireland_action_negotiate_confidence_and_supply_complete
+			NOT = { has_country_flag = ireland_confidence_support_agreement_active }
+			NOT = { has_country_flag = ireland_achievement_support_agreement_expired }
+		}
+		set_variable = { var = ireland_confidence_support_agreement_days value = constant:ireland.confidence_support_agreement_days }
+		set_country_flag = ireland_confidence_support_agreement_active
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_confidence_support_agreement_active
+			check_variable = { var = ireland_confidence_support_agreement_days value = constant:ireland.zero compare = greater_than }
+		}
+		subtract_from_variable = { ireland_confidence_support_agreement_days = constant:ireland.one }
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_confidence_support_agreement_active
+			check_variable = { var = ireland_confidence_support_agreement_days value = constant:ireland.one compare = less_than }
+		}
+		clr_country_flag = ireland_confidence_support_agreement_active
+		set_country_flag = ireland_achievement_support_agreement_expired
+	}
+
+	# Accepted obligations and compact failures are distinct durable records.
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_memory_otherworld_obligation_failure_a
+				has_country_flag = ireland_mission_fulfil_the_compact_at_five_sites_failure_recorded
+			}
+		}
+		set_country_flag = ireland_achievement_accepted_obligation_failed
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_memory_otherworld_obligation_failure_b
+				has_country_flag = ireland_memory_f14_breach_b
+			}
+		}
+		set_country_flag = ireland_achievement_accepted_obligation_breached
+		set_country_flag = ireland_achievement_compact_broken
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_memory_otherworld_obligation_failure_a
+			has_country_flag = ireland_action_archive_the_failed_restoration_complete
+		}
+		set_country_flag = ireland_achievement_fabricated_obligation_removed
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_otherworld_concluded
+			has_country_flag = ireland_route_conclusion_full
+			has_country_flag = ireland_otherworld_containment_path
+			NOT = { has_country_flag = ireland_otherworld_compact_path }
+			NOT = { has_country_flag = ireland_otherworld_dominion_path }
+		}
+		set_country_flag = ireland_achievement_permanent_sealing
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_dominion_claim_complete
+				has_country_flag = ireland_otherworld_dominion_path
+			}
+		}
+		set_country_flag = ireland_achievement_dominion
+	}
+
+	# Evidence failures are tied to a failed named verification and its chosen
+	# public response. A normal partial record or a lawful containment decision
+	# does not by itself become a fabrication or persecution flag.
+	if = {
+		limit = {
+			has_country_flag = ireland_action_test_a_restoration_claim_complete
+			has_country_flag = ireland_mission_verify_the_restoration_evidence_failure_recorded
+			NOT = { has_country_flag = ireland_otherworld_evidence_verified }
+		}
+		set_country_flag = ireland_achievement_fabricated_evidence
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_action_archive_the_failed_restoration_complete
+			has_country_flag = ireland_mission_verify_the_restoration_evidence_failure_recorded
+		}
+		set_country_flag = ireland_achievement_government_fabrication
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_memory_f14_folklore_records_b
+			has_country_flag = ireland_mission_verify_the_restoration_evidence_failure_recorded
+		}
+		set_country_flag = ireland_achievement_hoax
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_memory_f14_local_fear_b
+			has_country_flag = ireland_action_contain_a_public_folklore_panic_complete
+			OR = {
+				has_country_flag = ireland_memory_f14_clergy_b
+				has_country_flag = ireland_memory_f14_scholars_b
+			}
+		}
+		set_country_flag = ireland_achievement_witness_persecution
+	}
+
+	# The route-overthrow record is deliberately narrower than ordinary route
+	# cleanup: it requires a governing collapse while a committed coercive or
+	# concealed route is active and no valid conclusion has been recorded.
+	if = {
+		limit = {
+			has_country_flag = ireland_governing_collapse
+			has_country_flag = ireland_route_committed
+			OR = {
+				has_country_flag = ireland_route_ira_republican
+				has_country_flag = ireland_route_congress
+				has_country_flag = ireland_route_oduffy
+				has_country_flag = ireland_route_ailtiri_total_state
+				has_country_flag = ireland_route_high_king
+				has_country_flag = ireland_route_five_provinces
+				has_country_flag = ireland_route_otherworld
+			}
+			NOT = {
+				OR = {
+					has_country_flag = ireland_ira_concluded
+					has_country_flag = ireland_congress_plural_concluded
+					has_country_flag = ireland_oduffy_personal_concluded
+					has_country_flag = ireland_oduffy_corporate_concluded
+					has_country_flag = ireland_ailtiri_total_state_concluded
+					has_country_flag = ireland_high_king_concluded
+					has_country_flag = ireland_five_provinces_concluded
+					has_country_flag = ireland_otherworld_concluded
+				}
+			}
+		}
+		set_country_flag = ireland_achievement_route_overthrown
+	}
+
+	# High Kingship must retain three separate ratification records. A crown
+	# focus or a claimant alone never supplies any of these histories.
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_high_king_captured_crown_path
+				has_country_flag = ireland_foreign_fr12_celtic_federal_overclaim_accepted
+			}
+		}
+		set_country_flag = ireland_achievement_captive_crown
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_high_king_concluded
+			has_country_flag = ireland_route_conclusion_full
+			has_country_flag = ireland_high_king_ratification_ready
+			OR = {
+				has_country_flag = ireland_elective_crown_complete
+				has_country_flag = ireland_high_king_constitutional_path
+			}
+			NOT = { has_country_flag = ireland_achievement_captive_crown }
+		}
+		set_country_flag = ireland_achievement_royal_public_ratification
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_high_king_concluded
+			has_country_flag = ireland_route_conclusion_full
+			OR = {
+				has_country_flag = ireland_five_province_mandates_complete
+				has_country_flag = ireland_memory_f12_provincial_assent_a
+			}
+			NOT = { has_country_flag = ireland_achievement_captive_crown }
+		}
+		set_country_flag = ireland_achievement_royal_provincial_ratification
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_high_king_concluded
+			has_country_flag = ireland_route_conclusion_full
+			OR = {
+				has_country_flag = ireland_foreign_fr07_commonwealth_recognition_accepted
+				has_country_flag = ireland_foreign_fr11_postwar_admission_review_accepted
+				has_country_flag = ireland_foreign_fr12_celtic_cultural_delegation_accepted
+			}
+		}
+		set_country_flag = ireland_achievement_royal_foreign_recognition
+	}
+
+	# The federal six-value record is only valid after the strict regional review
+	# and full integration gate. Each policy value is checked independently so a
+	# single high display average cannot substitute for a missing constituency.
+	if = {
+		limit = {
+			has_country_flag = ireland_northern_federal_preparation_complete
+			has_country_flag = ireland_northern_final_review_passed
+			check_variable = { var = ireland_northern_integration_stage value = constant:ireland.northern_stage_core_eligible compare = greater_than_or_equals }
+			check_variable = { var = ireland_northern_unionist_consent value = constant:ireland.achievement_floor_60 compare = greater_than_or_equals }
+			check_variable = { var = ireland_northern_nationalist_consent value = constant:ireland.achievement_floor_70 compare = greater_than_or_equals }
+			check_variable = { var = ireland_northern_labour_cooperation value = constant:ireland.achievement_floor_55 compare = greater_than_or_equals }
+			check_variable = { var = ireland_northern_security_stability value = constant:ireland.achievement_floor_60 compare = greater_than_or_equals }
+			OR = {
+				has_country_flag = ireland_action_maintain_welfare_and_pensions_complete
+				has_country_flag = ireland_northern_integration_complete
+			}
+			OR = {
+				has_country_flag = ireland_action_settle_education_and_religious_safeguards_complete
+				has_country_flag = ireland_northern_rights_framework_complete
+			}
+			has_country_flag = ireland_action_vet_and_rebuild_policing_complete
+			has_country_flag = ireland_action_merge_tax_and_debt_administration_complete
+			has_country_flag = ireland_action_demobilise_and_settle_veterans_complete
+			NOT = { has_country_flag = ireland_achievement_northern_war }
+			NOT = { has_country_flag = ireland_achievement_imposed_boundaries }
+			NOT = { has_country_flag = ireland_achievement_rights_failure }
+			NOT = { has_country_flag = ireland_achievement_foreign_client }
+		}
+		set_country_flag = ireland_achievement_federal_six_value_ledger_passed
+	}
+}

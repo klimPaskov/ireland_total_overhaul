@@ -6,12 +6,12 @@ The decision and mission map requires `Integrate a Voluntary Member Contribution
 
 ## Source changes
 
-- Added shared member-contribution charges, class floors, and cancellation recovery values to `common/script_constants/slopx_ireland_constants.txt`.
-- Added class admission, action-cost reserve, class result, and map-objective triggers to `common/scripted_triggers/slopx_ireland_triggers.txt`.
-- Added five payload effects, class history, ephemeral cleanup, and class-specific cancellation refunds to `common/scripted_effects/slopx_ireland_effects.txt`.
-- Replaced the hard-coded Support Equipment charge in `common/decisions/slopx_ireland_decisions.txt` with event 431 selection and class cleanup in every terminal mission path.
-- Replaced generic mission evaluation thresholds in `common/scripted_effects/slopx_ireland_runtime.txt` with class-specific full/partial triggers.
-- Added the player/AI selection event to `events/slopx_ireland_member_contribution_events.txt` and its complete localisation to `localisation/english/slopx_ireland_l_english.yml`.
+- Added shared member-contribution charges, class floors, and cancellation recovery values to `common/script_constants/ireland_constants.txt`.
+- Added class admission, action-cost reserve, class result, and map-objective triggers to `common/scripted_triggers/ireland_triggers.txt`.
+- Added five payload effects, class history, ephemeral cleanup, and class-specific cancellation refunds to `common/scripted_effects/ireland_effects.txt`.
+- Replaced the hard-coded Support Equipment charge in `common/decisions/ireland_decisions.txt` with event 431 selection and class cleanup in every terminal mission path.
+- Replaced generic mission evaluation thresholds in `common/scripted_effects/ireland_runtime.txt` with class-specific full/partial triggers.
+- Added the player/AI selection event to `events/ireland_member_contribution_events.txt` and its complete localisation to `localisation/english/ireland_l_english.yml`.
 
 ## Static evidence
 

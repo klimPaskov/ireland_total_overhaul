@@ -1,0 +1,59 @@
+# Ireland Total Overhaul historical and route-specific formation names.
+# These groups are deliberately separate from vanilla IRE_INF_01 so a Marine
+# Service or coastal formation does not consume the regular infantry numbering.
+IRE_IRELAND_COASTAL_01 = {
+	name = "Irish Coastal Defence"
+	for_countries = { IRE }
+	can_use = { always = yes }
+	division_types = { "infantry" }
+	fallback_name = "%d Coastal Defence Battalion"
+	unordered = {
+		"Cork Coastal Defence Battalion"
+		"Dublin Coastal Defence Battalion"
+		"Galway Coastal Defence Battalion"
+		"Donegal Coastal Defence Battalion"
+		"Limerick Coastal Defence Battalion"
+		"Waterford Coastal Defence Battalion"
+	}
+}
+
+IRE_IRELAND_MARINE_01 = {
+	name = "Irish Marine Service"
+	for_countries = { IRE }
+	can_use = { has_country_flag = ireland_marine_service_ready }
+	division_types = { "marine" }
+	fallback_name = "%d Marine Service Company"
+	unordered = {
+		"Cobh Marine Service Company"
+		"Berehaven Marine Service Company"
+		"Dublin Marine Service Company"
+		"Lough Swilly Marine Service Company"
+	}
+}
+
+IRE_IRELAND_WATCH_01 = {
+	name = "Irish Coastal Watch"
+	for_countries = { IRE }
+	can_use = { has_country_flag = ireland_coastwatch_ready }
+	division_types = { "infantry" }
+	fallback_name = "%d Coastal Watch Brigade"
+	unordered = {
+		"Cork Coastal Watch Brigade"
+		"Shannon Coastal Watch Brigade"
+		"Galway Coastal Watch Brigade"
+		"Donegal Coastal Watch Brigade"
+	}
+}
+
+IRE_IRELAND_RESERVE_01 = {
+	name = "Irish Emergency Reserve"
+	for_countries = { IRE }
+	can_use = { has_country_flag = ireland_readiness_plan }
+	division_types = { "infantry" }
+	fallback_name = "%d Emergency Reserve Division"
+	unordered = {
+		"1st Emergency Reserve Division"
+		"2nd Emergency Reserve Division"
+		"3rd Emergency Reserve Division"
+	}
+}

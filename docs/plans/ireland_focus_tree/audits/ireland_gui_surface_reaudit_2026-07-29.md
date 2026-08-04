@@ -27,9 +27,9 @@ source, processed, manifest, contact-sheet, and static-fallback package only.
 
 | family | authored window | decision-category registration | runtime background |
 |---|---|---|---|
-| National Conditions Panel | `slopx_ireland_conditions_panel_window` | `slopx_ireland_conditions_panel_scripted_gui` on `slopx_ireland_settlement_government` | `gfx/interface/ireland/gui/conditions/background.dds` |
-| Northern Settlement Ledger | `slopx_ireland_northern_settlement_ledger_window` | `slopx_ireland_northern_settlement_ledger_scripted_gui` on `slopx_ireland_northern` | `gfx/interface/ireland/gui/northern/background.dds` |
-| Concealed Evidence Ledger | `slopx_ireland_concealed_evidence_ledger_window` | `slopx_ireland_concealed_evidence_ledger_scripted_gui` on `slopx_ireland_cultural_archival` | `gfx/interface/ireland/gui/evidence/background.dds` |
+| National Conditions Panel | `ireland_conditions_panel_window` | `ireland_conditions_panel_scripted_gui` on `ireland_settlement_government` | `gfx/interface/ireland/gui/conditions/background.dds` |
+| Northern Settlement Ledger | `ireland_northern_settlement_ledger_window` | `ireland_northern_settlement_ledger_scripted_gui` on `ireland_northern` | `gfx/interface/ireland/gui/northern/background.dds` |
+| Concealed Evidence Ledger | `ireland_concealed_evidence_ledger_window` | `ireland_concealed_evidence_ledger_scripted_gui` on `ireland_cultural_archival` | `gfx/interface/ireland/gui/evidence/background.dds` |
 
 The current source contains exactly three `.gui` files, three top-level
 `containerWindowType` windows, three scripted-GUI registrations, and three
@@ -70,10 +70,10 @@ missing localisation, text overflow, child-outside-clipped-parent, or
 resolution drift.
 
 The concealed ledger keeps its evidence rows hidden until
-`slopx_ireland_concealed_evidence_revealed`; its inspect button requests review
+`ireland_concealed_evidence_revealed`; its inspect button requests review
 but does not grant the reveal flag. Its ready/warning/critical display thresholds
 now read the shared constants contract, including
-`constant:slopx_ireland.evidence_gui_ready_public_threshold`.
+`constant:ireland.evidence_gui_ready_public_threshold`.
 
 ## Visual and runtime asset evidence
 
@@ -85,7 +85,7 @@ languages and leave the authored text areas readable:
 - blue-grey map and operations furniture for the Northern ledger;
 - sealed dark archival material for concealed evidence.
 
-The layouts reference 25 unique `GFX_slopx_*` sprites. All 25 names are
+The layouts reference 25 unique `GFX_ireland_*` sprites. All 25 names are
 registered, have texture bindings, and resolve to runtime files. The GUI package
 itself contains eleven final runtime textures under
 `gfx/interface/ireland/gui`: three `920x704` backgrounds, four `32x32` status
@@ -134,11 +134,11 @@ linked SVGs are offline review evidence rather than an independent live-engine
 result:
 
 - conditions:
-  `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/b5c91f6b263dc1760b35a671297d3a4fe5e1a947d974feaead5ee8f198d81dff/50efba274135d3fda26d76e2cfac0346a58435fd9edd66855017a12472cfb065/slopx_ireland_conditions_panel_window-full.svg`;
+  `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/b5c91f6b263dc1760b35a671297d3a4fe5e1a947d974feaead5ee8f198d81dff/50efba274135d3fda26d76e2cfac0346a58435fd9edd66855017a12472cfb065/ireland_conditions_panel_window-full.svg`;
 - Northern:
-  `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/3c36e4fd4edc66023c2f6b6f9132f9624da19a20b0186e70182c4c36cef5ed95/4b132c38d6ccd9c0b0eb29e84357d64f5218ee7b902ca9c040138ced41f1b5c6/slopx_ireland_northern_settlement_ledger_window-full.svg`;
+  `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/3c36e4fd4edc66023c2f6b6f9132f9624da19a20b0186e70182c4c36cef5ed95/4b132c38d6ccd9c0b0eb29e84357d64f5218ee7b902ca9c040138ced41f1b5c6/ireland_northern_settlement_ledger_window-full.svg`;
 - concealed evidence:
-  `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/5f1fb646c9dcf711263014f949854bd49973c4f63b6c572324d8e120023ba17c/0b9e0c73da6f5ede1b6c16a4478e81fbdc5d12009a84989d2d919e04e8ea4546/slopx_ireland_concealed_evidence_ledger_window-full.svg`.
+  `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/5f1fb646c9dcf711263014f949854bd49973c4f63b6c572324d8e120023ba17c/0b9e0c73da6f5ede1b6c16a4478e81fbdc5d12009a84989d2d919e04e8ea4546/ireland_concealed_evidence_ledger_window-full.svg`.
 
 ### Superseded historical inspector observation
 

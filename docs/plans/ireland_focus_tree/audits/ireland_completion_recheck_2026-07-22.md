@@ -6,7 +6,7 @@ This is a current-worktree static recheck after the runtime-art placement correc
 
 ## Current structural inventory
 
-- Focus source: 216 focus blocks in `common/national_focus/slopx_ireland_focus_tree.txt`.
+- Focus source: 216 focus blocks in `common/national_focus/ireland_focus_tree.txt`.
 - Decisions and missions: 13 categories, 140 action decisions, and 54 mission families.
 - Mission presentation: 54 named map-objective tooltips and 54 timeout-escalation descriptions are wired to the mission surfaces.
 - Events: 249 main event nodes and 236 flavour nodes. The historical, political-crisis, and foreign-reaction registries remain H01–H18, P01–P18, and FR01–FR12; the foreign-reaction registry includes the reaction digest in addition to the 30 reaction nodes.
@@ -19,17 +19,17 @@ This is a current-worktree static recheck after the runtime-art placement correc
 - Final runtime DDS files are under the standard mod `gfx/` roots, including `gfx/interface/`, `gfx/event_pictures/ireland/`, `gfx/leaders/ireland/`, and `gfx/achievements/`.
 - `assets/ireland_focus_tree/` is staging-only for source masters, processed previews, manifests, contact sheets, review material, and fallback evidence. It is not a runtime texture root.
 - The current interface registrations use `gfx/...` texture paths. The only `assets/ireland_focus_tree` matches in the two Ireland route/secondary `.gfx` files are explanatory comments; no runtime `texturefile` uses the staging path.
-- All 216 authored focus icons now have paired `_shine` registrations in `interface/slopx_ireland_focus_shine.gfx`; the 216 masks resolve to `gfx/interface/goals/slopx_ireland/`, and the standard shine surface is copied to `gfx/interface/goals/shine_overlay.dds`.
+- All 216 authored focus icons now have paired `_shine` registrations in `interface/ireland_focus_shine.gfx`; the 216 masks resolve to `gfx/interface/goals/ireland/`, and the standard shine surface is copied to `gfx/interface/goals/shine_overlay.dds`.
 - The runtime event-picture root currently contains 78 DDS files: 51 generated alternate/news images and 26 complete source-manifest outputs plus the historical-chain alias image. Four stale blocked candidates were moved into the staging-only review directory and are not registered.
 - The 51 generated event/news manifest rows and all 67 complete or review-gated source rows with final paths have existing DDS files whose SHA-256 values match their manifests. Blocked source rows have no final path.
 
 ## Gameplay invariants checked in source
 
-- The opening constants and initial ledgers remain centralized in `common/script_constants/slopx_ireland_constants.txt` and the Ireland initializer: National Settlement `+25` with momentum `-1`, Social Consent `55`, Dáil `153`/`152`, Provision `55/25/40/30` displayed as `38`, Readiness `25/8/20/12/5/5/30` displayed as `15`, Neutrality Integrity `72`, and Northern `U5 N40 L30 B10 S45 I10`.
+- The opening constants and initial ledgers remain centralized in `common/script_constants/ireland_constants.txt` and the Ireland initializer: National Settlement `+25` with momentum `-1`, Social Consent `55`, Dáil `153`/`152`, Provision `55/25/40/30` displayed as `38`, Readiness `25/8/20/12/5/5/30` displayed as `15`, Neutrality Integrity `72`, and Northern `U5 N40 L30 B10 S45 I10`.
 - Action costs use the native `cost` field for all 140 actions, with named-ledger political-power/command-power scarcity surcharges and burden ledgers applied in completion effects; no action mixes native and custom cost models. Physical stockpile/manpower costs remain on major provision, readiness, defence, transport, and merchant actions. The command-power ceiling remains `60`.
 - Foreign partner validity is centralized for GBR, USA, GER, and ITA. Daily runtime synchronization clears channels for missing or capitulated partners, records actor-specific invalidation plus foreign-access failure, and route cleanup clears every open foreign channel.
 - The Northern sequence remains separate: claims, control, occupation, settlement, integration, and final review are distinct helpers/ledgers. The only Ireland runtime `add_core_of = ROOT` is inside the final core-review helper, whose trigger requires integration stage `5` and the final review proofs.
-- `slopx_ireland_enforce_hpa_boundary` remains the shared route-profile boundary helper; route identity is not implemented as a generic ideology skin.
+- `ireland_enforce_hpa_boundary` remains the shared route-profile boundary helper; route identity is not implemented as a generic ideology skin.
 - Hidden High Kingship, Five Provinces, and Otherworld dispatches require their respective evidence/convention/rare-condition flags in both source triggers and the daily dispatcher.
 
 ## Offline fixes in this recheck

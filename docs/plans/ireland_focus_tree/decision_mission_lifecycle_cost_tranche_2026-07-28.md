@@ -6,7 +6,7 @@ This tranche records bounded source repairs found by the decision/mission and co
 
 ## Automatic objective missions
 
-All 54 canonical `slopx_ireland_mission_*` objective blocks now use `selectable_mission = no`. They remain activated by their paired actions and resolve through their existing automatic `available`, timeout, cancellation, escalation, and cleanup effects. This prevents a completed map objective from waiting for a second player click.
+All 54 canonical `ireland_mission_*` objective blocks now use `selectable_mission = no`. They remain activated by their paired actions and resolve through their existing automatic `available`, timeout, cancellation, escalation, and cleanup effects. This prevents a completed map objective from waiting for a second player click.
 
 ## Named action-cost presentation
 
@@ -14,11 +14,11 @@ All 140 actions retain their native `cost =` field and their existing completion
 
 The underlying bands remain: below 15 adds 10 Political Power and Command Power plus 2 burden; 15 through 29 adds 5 Political Power and Command Power plus 1 burden; 30 or above adds no surcharge. The command-power ceiling remains 60, and the native AI budget signal remains present.
 
-The 2026-07-29 row audit found 77 stale `custom_cost_text` ledger labels whose displayed scarcity variable differed from the variable used by the action's surcharge checks. Those labels are now aligned in `common/decisions/slopx_ireland_decisions.txt`; the 140-row disposition is recorded in `docs/plans/ireland_focus_tree/action_material_safeguard_ledger_2026-07-29.md`, and the post-repair sweep reports 140/140 matches.
+The 2026-07-29 row audit found 77 stale `custom_cost_text` ledger labels whose displayed scarcity variable differed from the variable used by the action's surcharge checks. Those labels are now aligned in `common/decisions/ireland_decisions.txt`; the 140-row disposition is recorded in `docs/plans/ireland_focus_tree/action_material_safeguard_ledger_2026-07-29.md`, and the post-repair sweep reports 140/140 matches.
 
 ## Achievement correction
 
-`slopx_ireland_resurrection_without_sponsor` now checks current `slopx_ireland_german_leverage < 40` for its A-22 success condition. It no longer checks the historical high-water mark, so the achievement can be earned after the German channel is reduced below the canonical threshold.
+`ireland_resurrection_without_sponsor` now checks current `ireland_german_leverage < 40` for its A-22 success condition. It no longer checks the historical high-water mark, so the achievement can be earned after the German channel is reduced below the canonical threshold.
 
 ## Remaining boundary at tranche time
 

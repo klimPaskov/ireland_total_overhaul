@@ -18,6 +18,6 @@ These checks do not grant equipment, fuel, ships, aircraft, units, territory, co
 
 ## Evidence and remaining gates
 
-Changed source: `common/decisions/slopx_ireland_decisions.txt` and `localisation/english/slopx_ireland_l_english.yml`.
+Changed source: `common/decisions/ireland_decisions.txt` and `localisation/english/ireland_l_english.yml`.
 
 Static checks must confirm the named platform gates, paired convoy macro usage, balanced Clausewitz blocks, and localisation BOM. HOI4 was not launched. Live state-building, incident dispatch, mission timeout, foreign-reaction, AI queue, and route-cleanup scenarios remain open, as do the broader source-clearance and action-specific cost-map gates.

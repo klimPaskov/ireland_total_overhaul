@@ -4,7 +4,7 @@ This tranche replaces the mechanically templated focus descriptions in the Irela
 
 ## Scope
 
-The edited surface is `localisation/english/slopx_ireland_l_english.yml`, covering the 216 national-focus title and description pairs used by `common/national_focus/slopx_ireland_focus_tree.txt`.
+The edited surface is `localisation/english/ireland_l_english.yml`, covering the 216 national-focus title and description pairs used by `common/national_focus/ireland_focus_tree.txt`.
 
 The revised descriptions distinguish the shared opening, constitutional and electoral routes, De Valera, Lemass, Fine Gael/Cosgrave, Mulcahy, Costello, Dillon, Norton, Clann, vocational politics, serious culture, Provision, Readiness, active neutrality, Northern policy, recovery, IRA, Republican Congress, O'Duffy, clerical and producer politics, dated Ailtirí, High Kingship, Five Provinces, Otherworld, and convergence. They describe the actual institutional or material trade-off of each focus instead of repeating a generic settlement sentence.
 

@@ -13,7 +13,7 @@ The decision and mission map requires five action families to treat external dea
 ## Implementation
 
 - Added shared constants for the neutrality channel burden (`5` Foreign Exposure and `3` sponsor leverage) and the explicitly British Northern negotiation (`3` Foreign Exposure and `4` British Leverage).
-- Added `slopx_ireland_record_diplomatic_channel_burden` in `common/scripted_effects/slopx_ireland_effects.txt`. It checks current named partner validity, gives leverage only to one live named channel, treats the neutral-states forum as exposure-only, and clamps every external ledger.
+- Added `ireland_record_diplomatic_channel_burden` in `common/scripted_effects/ireland_effects.txt`. It checks current named partner validity, gives leverage only to one live named channel, treats the neutral-states forum as exposure-only, and clamps every external ledger.
 - Wired the reusable effect into internment release, controlled weather, foreign-access response, and liberated-authority recognition after their existing legal, incident, route, map, material, and dynamic-cost work.
 - Wired the Northern negotiation directly to its valid British-partner gate and records its British Exposure/Leverage burden beside the existing +5 Northern British Flexibility movement. It does not move Unionist Consent.
 - Updated action names, descriptions, requirements, dynamic-effect documentation, project status, and the source-of-truth map in the same change.

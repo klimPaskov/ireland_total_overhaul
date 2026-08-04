@@ -10,9 +10,9 @@ The decision and mission map gives the G2 liaison action two separate proofs: a 
 
 ## Implemented source changes
 
-- Added `slopx_ireland_g2_partner_or_northern_plan` to `common/scripted_triggers/slopx_ireland_triggers.txt`.
-- Added `slopx_ireland_g2_liaison_authority`, requiring the channel/plan proof plus sovereignty-and-review safeguards or Security Under Law.
-- Added `slopx_ireland_foreign_agent_case_ready`, requiring the active intelligence incident family plus Security Under Law or the National Emergency legal order.
+- Added `ireland_g2_partner_or_northern_plan` to `common/scripted_triggers/ireland_triggers.txt`.
+- Added `ireland_g2_liaison_authority`, requiring the channel/plan proof plus sovereignty-and-review safeguards or Security Under Law.
+- Added `ireland_foreign_agent_case_ready`, requiring the active intelligence incident family plus Security Under Law or the National Emergency legal order.
 - Wired `Open a G2 Liaison Channel` to the liaison-authority trigger.
 - Wired `Turn or Intern a Foreign Agent` to the foreign-agent-case trigger.
 - Updated the two action descriptions and requirement tooltips so the live gate is readable before the player pays the existing physical and power costs.

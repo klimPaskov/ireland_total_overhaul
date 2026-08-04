@@ -16,12 +16,12 @@ The mission map objective retains Connacht infrastructure and a concealed-eviden
 
 ## Source changes
 
-- `common/script_constants/slopx_ireland_constants.txt` adds refund code 34 and capped recovery values of 175 manpower and 3 Trucks.
-- `common/scripted_triggers/slopx_ireland_triggers.txt` adds `slopx_ireland_folklore_collection_authority` and attaches it to the named map objective.
-- `common/decisions/slopx_ireland_decisions.txt` gates the action on the authority proof, charges local staff and transport, clears its one-shot refund guard, and invokes the shared cancellation refund helper.
-- `common/scripted_effects/slopx_ireland_effects.txt` records the recoverable share for the new refund code without returning the full commitment.
-- `localisation/english/slopx_ireland_l_english.yml` exposes the named institutional and physical requirements and current evidence count.
-- `docs/slopx_dynamic_effects.md` records the authority contract and its side effects.
+- `common/script_constants/ireland_constants.txt` adds refund code 34 and capped recovery values of 175 manpower and 3 Trucks.
+- `common/scripted_triggers/ireland_triggers.txt` adds `ireland_folklore_collection_authority` and attaches it to the named map objective.
+- `common/decisions/ireland_decisions.txt` gates the action on the authority proof, charges local staff and transport, clears its one-shot refund guard, and invokes the shared cancellation refund helper.
+- `common/scripted_effects/ireland_effects.txt` records the recoverable share for the new refund code without returning the full commitment.
+- `localisation/english/ireland_l_english.yml` exposes the named institutional and physical requirements and current evidence count.
+- `docs/ireland_dynamic_effects.md` records the authority contract and its side effects.
 
 ## Boundary and cleanup
 

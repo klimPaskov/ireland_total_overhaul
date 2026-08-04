@@ -27,7 +27,7 @@ activated for free by a focus or political victory.
 | Republican Congress | George Gilmore; Nora Connolly O'Brien; Seán Murray | plural and vanguard movement portfolios |
 | O'Duffy and Ailtirí | Patrick Belton; Ernest Blythe; Oliver J. Flanagan | corporate patronage, ideological movement, and dated postwar Ailtirí portfolio |
 
-`common/characters/slopx_ireland_route_characters.txt` now contains 32
+`common/characters/ireland_route_characters.txt` now contains 32
 advisor blocks: the existing Seán Lemass and Richard Mulcahy appointments plus
 the thirty roles above. Each role has a stable `idea_token`, a registered
 portrait sprite, an explicit slot and trait, a normal 100 PP appointment cost,
@@ -35,8 +35,8 @@ and a route/date/office gate.
 
 ## Lifecycle contract
 
-`slopx_ireland_route_advisor_*` scripted triggers in
-`common/scripted_triggers/slopx_ireland_triggers.txt` separate constitutional,
+`ireland_route_advisor_*` scripted triggers in
+`common/scripted_triggers/ireland_triggers.txt` separate constitutional,
 Fine Gael, Labour, Clann, vocational, clerical, IRA civil, IRA command,
 Congress, O'Duffy, and Ailtirí authority. The route activation effect recruits
 only the roster that belongs to the selected route. The lifecycle synchroniser
@@ -55,7 +55,7 @@ Every portrait used by this tranche is a `complete` P-row in
 user-approved C3 conditional clearance state. Source masters remain preserved
 under `docs/portraits/` and temporary `assets/` research packages; runtime DDS
 files remain under the standard mod paths in `gfx/leaders/ireland/`. Existing
-GFX registrations in `interface/slopx_ireland_sourced_assets.gfx` are reused;
+GFX registrations in `interface/ireland_sourced_assets.gfx` are reused;
 no portrait was generated or reprocessed as a substitute for a missing source.
 
 ## Validation evidence

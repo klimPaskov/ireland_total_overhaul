@@ -8,16 +8,16 @@ user direction.
 
 ## Runtime event inventory
 
-The 2026-08-01 reconciliation of the current `events/slopx_ireland*.txt` files
+The 2026-08-01 reconciliation of the current `events/ireland*.txt` files
 finds 494 unique authored event IDs. One additional nested dispatch block in
 the standard event source brings the raw block count to 495:
 
 | source | unique event IDs | raw blocks |
 |---|---:|---:|
-| `events/slopx_ireland_events.txt` | 255 | 256 |
-| `events/slopx_ireland_flavour_events.txt` | 236 | 236 |
-| `events/slopx_ireland_member_contribution_events.txt` | 1 | 1 |
-| `events/slopx_ireland_public_conclusion_events.txt` | 2 | 2 |
+| `events/ireland_events.txt` | 255 | 256 |
+| `events/ireland_flavour_events.txt` | 236 | 236 |
+| `events/ireland_member_contribution_events.txt` | 1 | 1 |
+| `events/ireland_public_conclusion_events.txt` | 2 | 2 |
 
 The 236-event consequential flavour floor remains exact. The additional
 standard, member-contribution, and public-conclusion events do not change the
@@ -27,7 +27,7 @@ canonical 18 historical-chain, 18 political-crisis, 12 foreign-reaction, or
 ## Event inspector result
 
 The local event inspector ran namespace-filtered lint passes for
-`slopx_ireland_events` and `slopx_ireland_flavour_events`. Both returned
+`ireland_events` and `ireland_flavour_events`. Both returned
 `EVENT_INSPECTED_PARTIAL`, no tool blocker, no skipped source, no blocking
 diagnostic, and an empty issue array. A later aggregate namespace pass against
 the current 494-ID workspace also returned `EVENT_INSPECTED_PARTIAL`
@@ -51,7 +51,7 @@ not absent repository definitions.
 
 Direct source lookup resolves all 25 reported names under
 `common/scripted_effects/`. A wider independent sweep extracted every
-indented `slopx_ireland_* = yes/no/{` custom call from the two principal event
+indented `ireland_* = yes/no/{` custom call from the two principal event
 files and the Ireland on-action file, then compared those 45 unique call names
 with top-level definitions under `common/scripted_effects/` and
 `common/scripted_triggers/`. Result: 45 call names, 363 available definitions,

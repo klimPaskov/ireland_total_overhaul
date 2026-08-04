@@ -81,7 +81,7 @@ The remaining gaps are source-object and rights gaps, not image-generation gaps:
 
 ## GFX handoff
 
-The main agent owns `.gfx` edits. Proposed target is the event/news picture GFX file selected by the main agent; `interface/slopx_ireland_event_art.gfx` is a suggested grouping name only. The snippets below are ready to copy after the target file is confirmed:
+The main agent owns `.gfx` edits. Proposed target is the event/news picture GFX file selected by the main agent; `interface/ireland_event_art.gfx` is a suggested grouping name only. The snippets below are ready to copy after the target file is confirmed:
 
 ```text
 spriteType = {

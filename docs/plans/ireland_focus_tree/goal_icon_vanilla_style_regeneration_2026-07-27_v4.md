@@ -1,7 +1,7 @@
 # Ireland focus-goal icons — fresh vanilla-style regeneration — 2026-07-27 v4
 
 Feature slug: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 
 ## Current package
 
@@ -20,11 +20,11 @@ assets/ireland_focus_tree/icons/regenerated_goal_icons_vanilla_focus_emblems_fre
 Runtime final DDS:
 
 ```text
-gfx/interface/goals/slopx_ireland/
+gfx/interface/goals/ireland/
 ```
 
 The runtime sprite names and registration file remain stable:
-`interface/slopx_ireland_icons.gfx` → `GFX_focus_slopx_ireland_*`.
+`interface/ireland_icons.gfx` → `GFX_focus_ireland_*`.
 
 ## Visual contract
 

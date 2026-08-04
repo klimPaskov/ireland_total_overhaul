@@ -1,7 +1,7 @@
 # Atlantic consultation charter partner gate tranche — 2026-07-25
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`
+Namespace: `ireland`
 
 ## Canonical requirement
 
@@ -9,7 +9,7 @@ The regional/external decision map defines `Draft an Atlantic Consultation Chart
 
 ## Implementation
 
-The action now consumes `slopx_ireland_atlantic_charter_partners_valid`. The trigger enumerates every valid pair among the five state-level channel families used by the Ireland package:
+The action now consumes `ireland_atlantic_charter_partners_valid`. The trigger enumerates every valid pair among the five state-level channel families used by the Ireland package:
 
 - British and American;
 - British and German;
@@ -28,10 +28,10 @@ The action retains its Dublin map, route, Maritime Access, category, and dynamic
 
 ## Evidence
 
-- Trigger: `common/scripted_triggers/slopx_ireland_triggers.txt`
-- Action admission: `common/decisions/slopx_ireland_decisions.txt`
-- Player-facing requirements: `localisation/english/slopx_ireland_l_english.yml`
-- Reusable-helper contract: `docs/slopx_dynamic_effects.md`
+- Trigger: `common/scripted_triggers/ireland_triggers.txt`
+- Action admission: `common/decisions/ireland_decisions.txt`
+- Player-facing requirements: `localisation/english/ireland_l_english.yml`
+- Reusable-helper contract: `docs/ireland_dynamic_effects.md`
 - Canonical row: `docs/specs/ireland_focus_tree/maps/ireland_focus_tree_decision_and_mission_map.md`
 
 ## Remaining proof

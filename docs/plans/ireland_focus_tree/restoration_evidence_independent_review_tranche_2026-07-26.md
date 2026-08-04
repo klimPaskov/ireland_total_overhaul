@@ -10,7 +10,7 @@ The canonical Part 5 decision/mission map requires `Verify the Restoration Evide
 
 ## Implemented contract
 
-- Added `slopx_ireland_restoration_evidence_authority` to centralise the admission proof.
+- Added `ireland_restoration_evidence_authority` to centralise the admission proof.
 - Required the serious-culture or archive lane, Cultural Service, Diaspora Exchange, named archive provenance, historic-site custody, royal evidence thresholds `4/3/3`, an unusual live campaign condition, and zero evidence disqualifiers.
 - Added the authority, active action, and active mission flags to the named Leinster map objective. Full control, industrial capacity, and naval-base presence remain separate physical map proofs.
 - Replaced the restoration action's generic serious-culture/archive gate with the named authority helper while preserving its dynamic Political Power/Command Power costs and existing mission-capacity checks.
@@ -20,11 +20,11 @@ The canonical Part 5 decision/mission map requires `Verify the Restoration Evide
 
 ## Boundary and cleanup
 
-The helper does not grant territory, cores, industry, equipment, units, fuel, shipping, administration, alignment, offices, recognition, or a political-power store. It does not set `slopx_ireland_independent_evidence_ready`; that flag remains downstream of a full restoration record or an approved achievement provenance path, preventing circular admission. The authored lifecycle now classifies timeout failure and wires panic containment and failed-restoration archiving to explicit cleanup flags; full, partial, escalation, hidden reveal, and live recovery behavior still require scenario validation.
+The helper does not grant territory, cores, industry, equipment, units, fuel, shipping, administration, alignment, offices, recognition, or a political-power store. It does not set `ireland_independent_evidence_ready`; that flag remains downstream of a full restoration record or an approved achievement provenance path, preventing circular admission. The authored lifecycle now classifies timeout failure and wires panic containment and failed-restoration archiving to explicit cleanup flags; full, partial, escalation, hidden reveal, and live recovery behavior still require scenario validation.
 
 ## Evidence
 
-- `common/scripted_triggers/slopx_ireland_triggers.txt`
-- `common/decisions/slopx_ireland_decisions.txt`
-- `localisation/english/slopx_ireland_l_english.yml`
-- `docs/slopx_dynamic_effects.md`
+- `common/scripted_triggers/ireland_triggers.txt`
+- `common/decisions/ireland_decisions.txt`
+- `localisation/english/ireland_l_english.yml`
+- `docs/ireland_dynamic_effects.md`

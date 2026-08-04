@@ -18,7 +18,7 @@ background, or visible key-green.
 The runtime files are promoted to the standard game path:
 
 ```text
-gfx/interface/goals/slopx_ireland/
+gfx/interface/goals/ireland/
 ```
 
 `assets/` remains temporary source, processing, provenance, and review space.

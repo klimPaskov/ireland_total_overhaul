@@ -6,7 +6,7 @@ Date: 2026-07-26
 
 The canonical roster in `docs/specs/ireland_focus_tree/maps/ireland_focus_tree_decision_and_mission_map.md` reserves two active slots for Radical and Underground Transition: one organisational mission and one seizure or constituent mission. The same document and Part 5 fix the total at exactly 54 mission families.
 
-Current source has the required ten Radical and Underground actions in `common/decisions/slopx_ireland_decisions.txt`, but no `slopx_ireland_mission_*` block inside `slopx_ireland_radical_underground`. The measured implementation remains exactly 54 missions because all current families belong to the other twelve categories.
+Current source has the required ten Radical and Underground actions in `common/decisions/ireland_decisions.txt`, but no `ireland_mission_*` block inside `ireland_radical_underground`. The measured implementation remains exactly 54 missions because all current families belong to the other twelve categories.
 
 ## Why this is not a small patch
 

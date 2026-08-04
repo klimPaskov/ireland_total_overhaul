@@ -2,7 +2,7 @@
 
 Feature slug: `ireland_focus_tree`
 
-Namespace: `slopx`
+Namespace: `ireland`
 
 ## Scope
 
@@ -15,7 +15,7 @@ runtime gameplay file was changed by this audit.
 
 The Ireland focus source contains 216 authored focus blocks. The surrounding
 `focus_tree` wrapper is excluded from that count. The route-AI layer contains
-31 `IRE_slopx_*` focus plans:
+31 `IRE_ireland_*` focus plans:
 
 - one historical opening plan;
 - one shared route-reactive plan;
@@ -27,7 +27,7 @@ The Ireland focus source contains 216 authored focus blocks. The surrounding
 Every focus named by `ai_national_focuses` or `focus_factors` resolves to an
 authored Ireland focus ID. The 17 visible route gateways are all present in at
 least one route-specific or route-reactive plan. Route plans are enabled by
-their durable route/profile flags and abort on `slopx_ireland_route_cleanup`,
+their durable route/profile flags and abort on `ireland_route_cleanup`,
 so a completed route does not leave obsolete focus priorities active.
 
 The strategy registry contains exactly 40 Ireland blocks. Its source roster is

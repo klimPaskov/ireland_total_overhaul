@@ -4,8 +4,8 @@ Status: **structurally complete for the 54 canonical mission families; live
 engine and gameplay validation intentionally excluded from the completion gate**.
 
 The audit read the current mission blocks in
-`common/decisions/slopx_ireland_decisions.txt` and the UTF-8 localisation file
-`localisation/english/slopx_ireland_l_english.yml`. It did not change either
+`common/decisions/ireland_decisions.txt` and the UTF-8 localisation file
+`localisation/english/ireland_l_english.yml`. It did not change either
 file.
 
 ## Coverage

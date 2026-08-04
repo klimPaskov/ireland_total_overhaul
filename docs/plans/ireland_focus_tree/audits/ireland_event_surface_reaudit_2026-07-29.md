@@ -9,15 +9,15 @@ in-game scenario or save was used.
 
 | Surface | Source | Blocks | Unique IDs | Options |
 | --- | --- | ---: | ---: | ---: |
-| Main historical, crisis, material, Northern, foreign-reaction and conclusion events | `events/slopx_ireland_events.txt` | 251 | 251 | 506 |
-| Generated public-conclusion records | `events/slopx_ireland_public_conclusion_events.txt` | 2 | 2 | 2 |
-| Regional member-contribution selection | `events/slopx_ireland_member_contribution_events.txt` | 1 | 1 | 5 |
-| Consequential flavour events | `events/slopx_ireland_flavour_events.txt` | 236 | 236 | 473 |
+| Main historical, crisis, material, Northern, foreign-reaction and conclusion events | `events/ireland_events.txt` | 251 | 251 | 506 |
+| Generated public-conclusion records | `events/ireland_public_conclusion_events.txt` | 2 | 2 | 2 |
+| Regional member-contribution selection | `events/ireland_member_contribution_events.txt` | 1 | 1 | 5 |
+| Consequential flavour events | `events/ireland_flavour_events.txt` | 236 | 236 | 473 |
 
 The main file has 248 registry-marked H/P/N/NR/FR/PW nodes. The three
 additional blocks are the two explicitly named Five Provinces evidence nodes
-(`slopx_ireland_events.217` and `.219`) and the foreign-reaction digest
-(`slopx_ireland_events.430`). The separately owned public-conclusion file
+(`ireland_events.217` and `.219`) and the foreign-reaction digest
+(`ireland_events.430`). The separately owned public-conclusion file
 contains `.432` and `.433`, which consume the generated High Kingship and
 Northern unity news assets without granting territory, cores, resources, or
 offices. Event `.431` remains the separately owned member-contribution
@@ -27,7 +27,7 @@ present.
 ## Localisation and lifecycle results
 
 - Every main event title and description key resolves in
-  `localisation/english/slopx_ireland_l_english.yml`.
+  `localisation/english/ireland_l_english.yml`.
 - Every main option name resolves: 506/506.
 - All six title, description, and option keys in the two public-conclusion
   records resolve.

@@ -21,7 +21,7 @@ non-historical opening-intent draw. It can set only preference flags for the
 eight additional route families, plus a permission-gated rare Ailtirí intent.
 The ordered route synchronizer maps those flags to the existing generic
 profile flags and the existing three route-spirit families. It refuses to use
-them after `slopx_ireland_route_committed`, so route commitment remains owned
+them after `ireland_route_committed`, so route commitment remains owned
 by the authored focus gateways.
 
 The corresponding route-family focus plans are enabled by their generic
@@ -35,13 +35,13 @@ grant was added by this repair.
 
 ## Static evidence
 
-- `common/scripted_effects/slopx_ireland_effects.txt` contains the existing
+- `common/scripted_effects/ireland_effects.txt` contains the existing
   historical/constitutional selector plus the non-historical route-intent
   draw and permission-gated Ailtirí draw.
-- `common/scripted_effects/slopx_ireland_runtime.txt` maps all nine new intent
+- `common/scripted_effects/ireland_runtime.txt` maps all nine new intent
   flags to existing profile flags only while the route is uncommitted; the
   H/P/A boundary helper remains called after synchronization.
-- `common/ai_strategy_plans/IRE_slopx_ireland_strategy_plans.txt` contains 31
+- `common/ai_strategy_plans/IRE_ireland_strategy_plans.txt` contains 31
   balanced Ireland focus plans, including the shared reactive plan and all
   route-family plans. Generic pre-commit family plans now recognize their
   corresponding profile selectors.

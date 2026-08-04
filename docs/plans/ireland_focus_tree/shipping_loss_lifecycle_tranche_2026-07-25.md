@@ -10,7 +10,7 @@ The action was using the foreign-access law and access-incident family even thou
 
 The action now requires:
 
-- `slopx_ireland_shipping_incident_active` and `slopx_ireland_law_trade_shipping_active`;
+- `ireland_shipping_incident_active` and `ireland_law_trade_shipping_active`;
 - Marine Service and Intelligence readiness above the shared value-5 investigation floor;
 - full control of state 135, an industrial complex in state 135, and a naval base in state 113;
 - the existing neutrality category capacity, dynamic Political Power/Command Power cost, and launchable named mission gates.

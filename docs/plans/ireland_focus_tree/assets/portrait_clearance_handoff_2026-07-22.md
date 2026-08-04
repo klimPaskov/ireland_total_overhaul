@@ -18,11 +18,11 @@ The authoritative manifest now records 9 complete portraits, 28 C3 portraits nee
 
 | ID | Person | Source basis | Runtime registration |
 | --- | --- | --- | --- |
-| P-07 | William Norton | NLI Record vtls000544361; anonymous-author public-domain Commons record | `GFX_slopx_ireland_portrait_william_norton` |
-| P-08 | Douglas Hyde | 1903 *The Cabinet of Irish Literature* scan; Commons No Known Copyright Restrictions record | `GFX_slopx_ireland_portrait_douglas_hyde` |
-| P-10 | Seán Mac Eoin | RTÉ source; unknown-author circa-1922 Commons record with Irish/US public-domain basis | `GFX_slopx_ireland_portrait_sean_mac_eoin` |
-| P-11 | Frank Aiken | British Pathé 1933 newsreel frame; Commons UK/US public-domain record | `GFX_slopx_ireland_portrait_frank_aiken` |
-| P-12 | Seán MacEntee | British Pathé 1933 newsreel frame; Commons UK/US public-domain record | `GFX_slopx_ireland_portrait_sean_macentee` |
+| P-07 | William Norton | NLI Record vtls000544361; anonymous-author public-domain Commons record | `GFX_ireland_portrait_william_norton` |
+| P-08 | Douglas Hyde | 1903 *The Cabinet of Irish Literature* scan; Commons No Known Copyright Restrictions record | `GFX_ireland_portrait_douglas_hyde` |
+| P-10 | Seán Mac Eoin | RTÉ source; unknown-author circa-1922 Commons record with Irish/US public-domain basis | `GFX_ireland_portrait_sean_mac_eoin` |
+| P-11 | Frank Aiken | British Pathé 1933 newsreel frame; Commons UK/US public-domain record | `GFX_ireland_portrait_frank_aiken` |
+| P-12 | Seán MacEntee | British Pathé 1933 newsreel frame; Commons UK/US public-domain record | `GFX_ireland_portrait_sean_macentee` |
 
 Each promoted row now records source URL(s), source hash, processed/final paths, final DDS hash, crop, target size, source tier, credit, and clearance state in `docs/plans/ireland_focus_tree/assets/source_manifest.json`. P-09 remains review-gated because the Harris & Ewing rights chain is jurisdiction-sensitive; P-13 remains review-gated because its NLI Flickr Commons record is a no-known-restrictions record rather than an explicit unrestricted grant.
 

@@ -6,12 +6,12 @@ Status: localisation pass complete. No gameplay, idea, decision, trigger, asset,
 
 Owned files:
 
-- `localisation/english/slopx_ireland_l_english.yml`
+- `localisation/english/ireland_l_english.yml`
 - this handoff
 
-The source audit used `common/ideas/slopx_ireland_spirits.txt`, the route-spirit lifecycle sections in Parts 3–6, the AI strategy matrix, the route refresh effect, the offline localisation and idea-modding wiki pages, and the installed vanilla modifier documentation.
+The source audit used `common/ideas/ireland_spirits.txt`, the route-spirit lifecycle sections in Parts 3–6, the AI strategy matrix, the route refresh effect, the offline localisation and idea-modding wiki pages, and the installed vanilla modifier documentation.
 
-A concurrent user edit to `slopx_ireland_northern_settlement_ledger_desc` was preserved exactly:
+A concurrent user edit to `ireland_northern_settlement_ledger_desc` was preserved exactly:
 
 > Record Ireland's legal claim to Northern Ireland and open the settlement ledger. The claim grants no control, occupation, settlement, integration, or core: Unionist Consent, Nationalist Consent, Labour Cooperation, British Flexibility, Security Stability, and Integration Capacity remain separate tests.
 
@@ -47,82 +47,82 @@ The earlier audit phrase that all 60 variants shared one template was imprecise.
 
 ### Opening trio
 
-- `slopx_ireland_spirit_governing_order_desc`
-- `slopx_ireland_spirit_organised_society_desc`
-- `slopx_ireland_spirit_security_external_position_desc`
+- `ireland_spirit_governing_order_desc`
+- `ireland_spirit_organised_society_desc`
+- `ireland_spirit_security_external_position_desc`
 
 ### Governing Order route and failure forms
 
-- `slopx_ireland_spirit_governing_de_valera_reconciliation_desc`
-- `slopx_ireland_spirit_governing_de_valera_emergency_desc`
-- `slopx_ireland_spirit_governing_lemass_developmental_desc`
-- `slopx_ireland_spirit_governing_cosgrave_institutional_desc`
-- `slopx_ireland_spirit_governing_mulcahy_civil_defence_desc`
-- `slopx_ireland_spirit_governing_costello_coalition_desc`
-- `slopx_ireland_spirit_governing_dillon_intervention_desc`
-- `slopx_ireland_spirit_governing_norton_parliamentary_desc`
-- `slopx_ireland_spirit_governing_clann_agrarian_broker_desc`
-- `slopx_ireland_spirit_governing_constitutional_vocational_desc`
-- `slopx_ireland_spirit_governing_ira_republican_desc`
-- `slopx_ireland_spirit_governing_congress_desc`
-- `slopx_ireland_spirit_governing_oduffy_desc`
-- `slopx_ireland_spirit_governing_clerical_producer_desc`
-- `slopx_ireland_spirit_governing_ailtiri_total_state_desc`
-- `slopx_ireland_spirit_governing_high_king_desc`
-- `slopx_ireland_spirit_governing_five_provinces_desc`
-- `slopx_ireland_spirit_governing_otherworld_desc`
-- `slopx_ireland_spirit_governing_corrupted_desc`
-- `slopx_ireland_spirit_governing_collapse_desc`
+- `ireland_spirit_governing_de_valera_reconciliation_desc`
+- `ireland_spirit_governing_de_valera_emergency_desc`
+- `ireland_spirit_governing_lemass_developmental_desc`
+- `ireland_spirit_governing_cosgrave_institutional_desc`
+- `ireland_spirit_governing_mulcahy_civil_defence_desc`
+- `ireland_spirit_governing_costello_coalition_desc`
+- `ireland_spirit_governing_dillon_intervention_desc`
+- `ireland_spirit_governing_norton_parliamentary_desc`
+- `ireland_spirit_governing_clann_agrarian_broker_desc`
+- `ireland_spirit_governing_constitutional_vocational_desc`
+- `ireland_spirit_governing_ira_republican_desc`
+- `ireland_spirit_governing_congress_desc`
+- `ireland_spirit_governing_oduffy_desc`
+- `ireland_spirit_governing_clerical_producer_desc`
+- `ireland_spirit_governing_ailtiri_total_state_desc`
+- `ireland_spirit_governing_high_king_desc`
+- `ireland_spirit_governing_five_provinces_desc`
+- `ireland_spirit_governing_otherworld_desc`
+- `ireland_spirit_governing_corrupted_desc`
+- `ireland_spirit_governing_collapse_desc`
 
 ### Organised Society route and failure forms
 
-- `slopx_ireland_spirit_society_de_valera_reconciliation_desc`
-- `slopx_ireland_spirit_society_de_valera_emergency_desc`
-- `slopx_ireland_spirit_society_lemass_developmental_desc`
-- `slopx_ireland_spirit_society_cosgrave_institutional_desc`
-- `slopx_ireland_spirit_society_mulcahy_civil_defence_desc`
-- `slopx_ireland_spirit_society_costello_coalition_desc`
-- `slopx_ireland_spirit_society_dillon_intervention_desc`
-- `slopx_ireland_spirit_society_norton_parliamentary_desc`
-- `slopx_ireland_spirit_society_clann_agrarian_broker_desc`
-- `slopx_ireland_spirit_society_constitutional_vocational_desc`
-- `slopx_ireland_spirit_society_ira_republican_desc`
-- `slopx_ireland_spirit_society_congress_desc`
-- `slopx_ireland_spirit_society_oduffy_desc`
-- `slopx_ireland_spirit_society_clerical_producer_desc`
-- `slopx_ireland_spirit_society_ailtiri_total_state_desc`
-- `slopx_ireland_spirit_society_high_king_desc`
-- `slopx_ireland_spirit_society_five_provinces_desc`
-- `slopx_ireland_spirit_society_otherworld_desc`
-- `slopx_ireland_spirit_society_patronage_desc`
-- `slopx_ireland_spirit_society_broken_services_desc`
+- `ireland_spirit_society_de_valera_reconciliation_desc`
+- `ireland_spirit_society_de_valera_emergency_desc`
+- `ireland_spirit_society_lemass_developmental_desc`
+- `ireland_spirit_society_cosgrave_institutional_desc`
+- `ireland_spirit_society_mulcahy_civil_defence_desc`
+- `ireland_spirit_society_costello_coalition_desc`
+- `ireland_spirit_society_dillon_intervention_desc`
+- `ireland_spirit_society_norton_parliamentary_desc`
+- `ireland_spirit_society_clann_agrarian_broker_desc`
+- `ireland_spirit_society_constitutional_vocational_desc`
+- `ireland_spirit_society_ira_republican_desc`
+- `ireland_spirit_society_congress_desc`
+- `ireland_spirit_society_oduffy_desc`
+- `ireland_spirit_society_clerical_producer_desc`
+- `ireland_spirit_society_ailtiri_total_state_desc`
+- `ireland_spirit_society_high_king_desc`
+- `ireland_spirit_society_five_provinces_desc`
+- `ireland_spirit_society_otherworld_desc`
+- `ireland_spirit_society_patronage_desc`
+- `ireland_spirit_society_broken_services_desc`
 
 ### Security and External Position route and failure forms
 
-- `slopx_ireland_spirit_security_de_valera_reconciliation_desc`
-- `slopx_ireland_spirit_security_de_valera_emergency_desc`
-- `slopx_ireland_spirit_security_lemass_developmental_desc`
-- `slopx_ireland_spirit_security_cosgrave_institutional_desc`
-- `slopx_ireland_spirit_security_mulcahy_civil_defence_desc`
-- `slopx_ireland_spirit_security_costello_coalition_desc`
-- `slopx_ireland_spirit_security_dillon_intervention_desc`
-- `slopx_ireland_spirit_security_norton_parliamentary_desc`
-- `slopx_ireland_spirit_security_clann_agrarian_broker_desc`
-- `slopx_ireland_spirit_security_constitutional_vocational_desc`
-- `slopx_ireland_spirit_security_ira_republican_desc`
-- `slopx_ireland_spirit_security_congress_desc`
-- `slopx_ireland_spirit_security_oduffy_desc`
-- `slopx_ireland_spirit_security_clerical_producer_desc`
-- `slopx_ireland_spirit_security_ailtiri_total_state_desc`
-- `slopx_ireland_spirit_security_high_king_desc`
-- `slopx_ireland_spirit_security_five_provinces_desc`
-- `slopx_ireland_spirit_security_otherworld_desc`
-- `slopx_ireland_spirit_security_compromised_desc`
-- `slopx_ireland_spirit_security_disarmed_desc`
+- `ireland_spirit_security_de_valera_reconciliation_desc`
+- `ireland_spirit_security_de_valera_emergency_desc`
+- `ireland_spirit_security_lemass_developmental_desc`
+- `ireland_spirit_security_cosgrave_institutional_desc`
+- `ireland_spirit_security_mulcahy_civil_defence_desc`
+- `ireland_spirit_security_costello_coalition_desc`
+- `ireland_spirit_security_dillon_intervention_desc`
+- `ireland_spirit_security_norton_parliamentary_desc`
+- `ireland_spirit_security_clann_agrarian_broker_desc`
+- `ireland_spirit_security_constitutional_vocational_desc`
+- `ireland_spirit_security_ira_republican_desc`
+- `ireland_spirit_security_congress_desc`
+- `ireland_spirit_security_oduffy_desc`
+- `ireland_spirit_security_clerical_producer_desc`
+- `ireland_spirit_security_ailtiri_total_state_desc`
+- `ireland_spirit_security_high_king_desc`
+- `ireland_spirit_security_five_provinces_desc`
+- `ireland_spirit_security_otherworld_desc`
+- `ireland_spirit_security_compromised_desc`
+- `ireland_spirit_security_disarmed_desc`
 
 ## Exact modifier cross-check
 
-Abbreviations: `Stab` stability, `PP` political-power factor, `War` war-support factor, `CG` consumer-goods factor, `CivBuild` industrial-complex construction speed, `ArmsBuild` arms-factory construction speed, `Def` army defence, `Atk` army attack, `Coast` naval-invasion defence, and `Res` local-resources factor. Values below are percentages represented by the fixed modifiers in `common/ideas/slopx_ireland_spirits.txt`.
+Abbreviations: `Stab` stability, `PP` political-power factor, `War` war-support factor, `CG` consumer-goods factor, `CivBuild` industrial-complex construction speed, `ArmsBuild` arms-factory construction speed, `Def` army defence, `Atk` army attack, `Coast` naval-invasion defence, and `Res` local-resources factor. Values below are percentages represented by the fixed modifiers in `common/ideas/ireland_spirits.txt`.
 
 | Route suffix | Governing Order | Organised Society | Security and External Position |
 | --- | --- | --- | --- |
@@ -149,21 +149,21 @@ Opening and failure forms:
 
 | Idea | Exact modifiers reflected in prose |
 | --- | --- |
-| `slopx_ireland_spirit_governing_order` | Stab +3, PP +2 |
-| `slopx_ireland_spirit_organised_society` | Stab +3, CG -1 |
-| `slopx_ireland_spirit_security_external_position` | Def +3, Coast +4 |
-| `slopx_ireland_spirit_governing_corrupted` | Stab -4, PP -2, War +3 |
-| `slopx_ireland_spirit_governing_collapse` | Stab -8, Def -4 |
-| `slopx_ireland_spirit_society_patronage` | CG +4, Stab -3 |
-| `slopx_ireland_spirit_society_broken_services` | Stab -5, CG +3 |
-| `slopx_ireland_spirit_security_compromised` | Def -4, `foreign_subversive_activites` +5 |
-| `slopx_ireland_spirit_security_disarmed` | Def -6, Coast -5 |
+| `ireland_spirit_governing_order` | Stab +3, PP +2 |
+| `ireland_spirit_organised_society` | Stab +3, CG -1 |
+| `ireland_spirit_security_external_position` | Def +3, Coast +4 |
+| `ireland_spirit_governing_corrupted` | Stab -4, PP -2, War +3 |
+| `ireland_spirit_governing_collapse` | Stab -8, Def -4 |
+| `ireland_spirit_society_patronage` | CG +4, Stab -3 |
+| `ireland_spirit_society_broken_services` | Stab -5, CG +3 |
+| `ireland_spirit_security_compromised` | Def -4, `foreign_subversive_activites` +5 |
+| `ireland_spirit_security_disarmed` | Def -6, Coast -5 |
 
 No modifier value, cost, dynamic effect, or gameplay promise was added to localisation beyond the direction represented by these blocks.
 
 ## Concealment check
 
-The static route refresh adds the High Kingship, Five Provinces, and Otherworld idea triplets only after `slopx_ireland_route_high_king`, `slopx_ireland_route_five_provinces`, or `slopx_ireland_route_otherworld` is present. Hidden-route institutional language is confined to those corresponding idea descriptions. The opening trio, ordinary constitutional variants, radical variants, and failure forms do not announce an unrevealed concealed route.
+The static route refresh adds the High Kingship, Five Provinces, and Otherworld idea triplets only after `ireland_route_high_king`, `ireland_route_five_provinces`, or `ireland_route_otherworld` is present. Hidden-route institutional language is confined to those corresponding idea descriptions. The opening trio, ordinary constitutional variants, radical variants, and failure forms do not announce an unrevealed concealed route.
 
 There is no convergence-specific persistent idea or description among the 63 source ideas. Consequently, this pass added no convergence wording that could leak before the convergence order is visible.
 
@@ -171,7 +171,7 @@ There is no convergence-specific persistent idea or description among the 63 sou
 
 These cannot be resolved by description-only edits without changing idea or runtime architecture:
 
-1. **Historical de Valera and reconciliation share one triplet:** `slopx_ireland_refresh_route_spirits` applies the `de_valera_reconciliation` ideas to either `slopx_ireland_route_de_valera_stewardship` or `slopx_ireland_route_de_valera_reconciliation`. The title and description therefore cannot fully distinguish AI-01 historical stewardship from AI-02 reconciliation.
+1. **Historical de Valera and reconciliation share one triplet:** `ireland_refresh_route_spirits` applies the `de_valera_reconciliation` ideas to either `ireland_route_de_valera_stewardship` or `ireland_route_de_valera_reconciliation`. The title and description therefore cannot fully distinguish AI-01 historical stewardship from AI-02 reconciliation.
 2. **IRA civil and GHQ profiles share one triplet:** the canonical matrix separates civil republican government from GHQ command, but the idea source provides only `ira_republican` forms titled around Civil Republican Authority. The new prose makes the command contest visible, but a true GHQ state still lacks its own final idea identity.
 3. **Congress plural and vanguard profiles share one triplet:** the source has one `congress` triplet for both plural congress and possible directorate outcomes.
 4. **O'Duffy personal and corporate profiles share one triplet:** the current `oduffy` forms blend personal command and corporate institutions rather than selecting one profile-specific form.
@@ -179,7 +179,7 @@ These cannot be resolved by description-only edits without changing idea or runt
 6. **Hidden subprofiles are compressed:** constitutional and sacral High Kingship share `high_king`; federation and pentarchy share `five_provinces`; compact, dominion, and containment share `otherworld`. The shared descriptions state institutions and tradeoffs common to each family, but the titles and modifiers cannot identify the active subprofile.
 7. **Convergence has no persistent idea merger form:** the canonical AI-30 convergence order and convergence focus sequence have no dedicated governing, society, or security idea block in the 63-idea source. The parent should confirm whether convergence deliberately retains a predecessor triplet or whether three merged forms are missing.
 
-Resolved during parent review: `slopx_ireland_spirit_security_compromised`
+Resolved during parent review: `ireland_spirit_security_compromised`
 now uses the documented engine token `foreign_subversive_activites`.
 
 ## Validation

@@ -7,7 +7,7 @@ The canonical statecraft specification defines 83 historical lookout posts in si
 ## Implementation
 
 - Added canonical Coastwatch constants for the 83-post total, six-sector count, full/partial component scores, and exposure bands.
-- Initialised the six sector ledgers in `slopx_ireland_initialize_campaign`.
+- Initialised the six sector ledgers in `ireland_initialize_campaign`.
 - Added deterministic next-sector selection and aggregate post recomputation in the Ireland runtime.
 - Reworked the Coastwatch map-objective and mission-validity triggers to use the active named sector's regional platform.
 - Made the existing Coastwatch action/mission repeatable until all six operational records exist. Partial results remain retryable; full results advance the next sector; failure and escalation preserve exposure without falsely completing a sector.
@@ -21,7 +21,7 @@ No Coastwatch result creates territory, cores, equipment, manpower, units, facto
 ## Validation evidence
 
 - Six sector component families are present and initialised for all six sectors.
-- Only `slopx_ireland_record_coastwatch_sector_result` writes operational sector records.
+- Only `ireland_record_coastwatch_sector_result` writes operational sector records.
 - The achievement-history writer reads those sector records and no longer reads unrelated air, harbour, or patrol completion flags.
 - No HOI4 process was launched; live mission resolution remains an explicit validation blocker for the larger Ireland goal.
 

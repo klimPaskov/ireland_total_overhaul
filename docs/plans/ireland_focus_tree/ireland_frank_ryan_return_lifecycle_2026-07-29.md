@@ -1,7 +1,7 @@
 # Ireland Frank Ryan return lifecycle
 
 Feature slug: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 Date: 2026-07-29
 
 ## Outcome
@@ -72,12 +72,12 @@ under `docs/portraits/`.
 
 ## Files
 
-- `common/script_constants/slopx_ireland_constants.txt`
-- `common/scripted_triggers/slopx_ireland_triggers.txt`
-- `common/scripted_effects/slopx_ireland_runtime.txt`
-- `events/slopx_ireland_events.txt`
-- `localisation/english/slopx_ireland_l_english.yml`
-- `docs/slopx_dynamic_effects.md`
+- `common/script_constants/ireland_constants.txt`
+- `common/scripted_triggers/ireland_triggers.txt`
+- `common/scripted_effects/ireland_runtime.txt`
+- `events/ireland_events.txt`
+- `localisation/english/ireland_l_english.yml`
+- `docs/ireland_dynamic_effects.md`
 
 ## Validation boundary
 

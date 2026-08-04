@@ -1,9 +1,9 @@
 # Ireland goal-icon visual QA — v4 direct regeneration
 
 Feature slug: ireland_focus_tree  
-Namespace: slopx  
+Namespace: ireland  
 Review date: 2026-07-25  
-Runtime target: gfx/interface/goals/slopx_ireland/
+Runtime target: gfx/interface/goals/ireland/
 
 > Superseded historical QA. The v4 direct-regeneration package is no longer
 > the runtime package. Use the fresh vanilla-emblem tranche dated 2026-07-26
@@ -27,12 +27,12 @@ The v4 package is historical evidence only. Every one of the 216 focus IDs recei
 
 | Layer | Expected | Measured | Location |
 |---|---:|---:|---|
-| Focus IDs | 216 | 216 | common/national_focus/slopx_ireland_focus_tree.txt |
+| Focus IDs | 216 | 216 | common/national_focus/ireland_focus_tree.txt |
 | Fresh direct source PNGs | 216 | 216 | assets/ireland_focus_tree/icons/regenerated_goal_icons_v4_2026-07-25/source_png/focus |
 | Processed RGBA PNGs | 216 | 216 | assets/ireland_focus_tree/icons/regenerated_goal_icons_v4_2026-07-25/processed_png/focus |
 | Historical staging DDS files | 216 | 216 | assets/ireland_focus_tree/icons/regenerated_goal_icons_v4_2026-07-25/final_dds |
-| Promoted runtime DDS files | 216 | 216 | gfx/interface/goals/slopx_ireland |
-| Runtime sprite registrations | 216 | 216 | interface/slopx_ireland_icons.gfx |
+| Promoted runtime DDS files | 216 | 216 | gfx/interface/goals/ireland |
+| Runtime sprite registrations | 216 | 216 | interface/ireland_icons.gfx |
 
 ## Static checks
 

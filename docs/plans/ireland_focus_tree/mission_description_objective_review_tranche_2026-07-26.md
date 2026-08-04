@@ -4,13 +4,13 @@ Feature slug: `ireland_focus_tree`
 
 ## Result
 
-The 54 localized mission descriptions in `localisation/english/slopx_ireland_l_english.yml` were reviewed against the mission architecture in `docs/specs/ireland_focus_tree/ireland_focus_tree_spec_part_5_decisions_events_and_lifecycles.md`.
+The 54 localized mission descriptions in `localisation/english/ireland_l_english.yml` were reviewed against the mission architecture in `docs/specs/ireland_focus_tree/ireland_focus_tree_spec_part_5_decisions_events_and_lifecycles.md`.
 
 The descriptions now identify the concrete work the player must perform instead of describing a generic ledger or repeating a category template. Each row names the relevant place, institution, route, cargo, force, service, or settlement where the canonical row provides one; every row states a concrete deadline or operating period; and every row distinguishes full success, partial success, and failure. Escalation and cleanup remain implemented in the corresponding mission source blocks rather than being hidden in prose.
 
 ## Static evidence
 
-- 54 mission description keys are present, matching the 54 mission blocks in `common/decisions/slopx_ireland_decisions.txt` one-for-one.
+- 54 mission description keys are present, matching the 54 mission blocks in `common/decisions/ireland_decisions.txt` one-for-one.
 - 54/54 descriptions are unique exact strings.
 - 54/54 descriptions include a machine-readable `within N days` or `for N days` duration.
 - 54/54 descriptions include `Full success`, `partial success`, and `failure` outcome wording.

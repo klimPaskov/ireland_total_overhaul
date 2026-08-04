@@ -1,7 +1,7 @@
 # Ireland named persistent-spirit failure forms
 
 Feature slug: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 Date: 2026-07-29
 
 ## Outcome
@@ -49,17 +49,17 @@ survive a route transition.
 
 This tranche adds no runtime image and creates no asset in `assets/`. The named
 forms reuse the six already approved failure-family sprite registrations in
-`interface/slopx_ireland_secondary_assets.gfx`. All final textures remain under
-`gfx/interface/ideas/slopx_ireland/spirits/`; the exact runtime spirit-art
+`interface/ireland_secondary_assets.gfx`. All final textures remain under
+`gfx/interface/ideas/ireland/spirits/`; the exact runtime spirit-art
 budget remains 63 DDS files.
 
 ## Files
 
-- `common/ideas/slopx_ireland_spirits.txt`
-- `common/script_constants/slopx_ireland_constants.txt`
-- `common/scripted_effects/slopx_ireland_runtime.txt`
-- `localisation/english/slopx_ireland_l_english.yml`
-- `docs/slopx_dynamic_effects.md`
+- `common/ideas/ireland_spirits.txt`
+- `common/script_constants/ireland_constants.txt`
+- `common/scripted_effects/ireland_runtime.txt`
+- `localisation/english/ireland_l_english.yml`
+- `docs/ireland_dynamic_effects.md`
 
 ## Validation boundary
 

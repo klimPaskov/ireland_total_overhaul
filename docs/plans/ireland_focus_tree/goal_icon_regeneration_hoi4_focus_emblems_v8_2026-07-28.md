@@ -22,10 +22,10 @@ It contains fourteen source atlases, alpha atlases, 216 source crops, 216
 processed previews, 216 DDS files, a row-level manifest, prompts, audit,
 visual review, and runtime handoff. The final runtime directory is:
 
-`gfx/interface/goals/slopx_ireland/`
+`gfx/interface/goals/ireland/`
 
 Only the 216 audited DDS files belong in the runtime `gfx/` tree. The stable
-registration file is `interface/slopx_ireland_icons.gfx`; no registration was
+registration file is `interface/ireland_icons.gfx`; no registration was
 changed to point at `assets/`.
 
 ## Art direction

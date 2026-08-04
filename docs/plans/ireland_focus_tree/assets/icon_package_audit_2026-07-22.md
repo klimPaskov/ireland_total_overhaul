@@ -6,7 +6,7 @@
 > The v12 package is the current 216-row visual and runtime source of truth.
 
 Feature slug: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 
 This is a static asset-package audit. HOI4 was not launched. Its current-state
 registration and path assertions were rechecked on 2026-07-29. Live gameplay
@@ -30,7 +30,7 @@ Each allocated row has a source PNG, processed PNG, and final DDS with matching 
 | Achievement states | 96 |
 | **Total** | **635** |
 
-The source and processed staging roots contain 635 allocated files; the canonical runtime DDS set is shipped under the matching `gfx/` roots and contains 635 registered allocations. The source, processed, and runtime DDS sets match one-to-one after the documented `_source` suffix is removed from source PNG names, with no duplicate canonical DDS basenames. The 140 named decision actions intentionally resolve to 70 controlled-reuse textures; no visible decision category repeats a texture. Achievement runtime DDS uses the exact `slopx_ireland_*` IDs; byte-identical ordinal achievement DDS variants retained in `gfx/achievements/` are unreferenced legacy copies outside this allocation count.
+The source and processed staging roots contain 635 allocated files; the canonical runtime DDS set is shipped under the matching `gfx/` roots and contains 635 registered allocations. The source, processed, and runtime DDS sets match one-to-one after the documented `_source` suffix is removed from source PNG names, with no duplicate canonical DDS basenames. The 140 named decision actions intentionally resolve to 70 controlled-reuse textures; no visible decision category repeats a texture. Achievement runtime DDS uses the exact `ireland_*` IDs; byte-identical ordinal achievement DDS variants retained in `gfx/achievements/` are unreferenced legacy copies outside this allocation count.
 
 The earlier focus packages were rejected for HOI4 focus-icon style and are
 retained under
@@ -38,7 +38,7 @@ retained under
 technical comparison only. The v12 replacement contains 216 independently
 generated focus emblems, 216 processed previews, and 216 DDS rows at 100x88.
 Its staging DDS and runtime DDS hashes match one-to-one under
-`gfx/interface/goals/slopx_ireland/`.
+`gfx/interface/goals/ireland/`.
 
 The row-level evidence is in
 `docs/plans/ireland_focus_tree/assets/goal_icon_visual_qa_2026-07-23.md`.
@@ -47,8 +47,8 @@ The 70 superseded action rows are retained outside the runtime package at `docs/
 
 ## Registration
 
-- `interface/slopx_ireland_icons.gfx` registers the 216 focus, 13 category, and 140 named action sprites; those action aliases use exactly 70 unique DDS paths.
-- `interface/slopx_ireland_secondary_assets.gfx` registers the 54 mission, 63 spirit, 27 overlay, 51 law, 45 mechanic/ledger, and 96 achievement-state sprites.
+- `interface/ireland_icons.gfx` registers the 216 focus, 13 category, and 140 named action sprites; those action aliases use exactly 70 unique DDS paths.
+- `interface/ireland_secondary_assets.gfx` registers the 54 mission, 63 spirit, 27 overlay, 51 law, 45 mechanic/ledger, and 96 achievement-state sprites.
 - The twelve Ireland-owned interface files contain 1,535 texture references to 815 unique paths. Every path resolves, and none points into `assets/`.
 
 ## Animation package

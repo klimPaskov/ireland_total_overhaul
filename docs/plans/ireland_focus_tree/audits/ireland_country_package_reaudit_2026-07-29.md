@@ -37,7 +37,7 @@ fresh-save scenario was used.
 
 - `history/countries/IRE - Ireland.txt` starts Ireland in state `113`, keeps
   the vanilla `IRE_1936` baseline, recruits the vanilla 21-character roster,
-  and calls the guarded `slopx_ireland_initialize_campaign` effect.
+  and calls the guarded `ireland_initialize_campaign` effect.
 - `history/states/119-Northern Ireland.txt` keeps state `119` owned by `ENG`
   with only `ENG` and `NIR` cores. The mod does not give Ireland an opening
   owner, controller, core, or transfer there.
@@ -47,16 +47,16 @@ fresh-save scenario was used.
 
 ## Route leaders and identity
 
-`common/characters/slopx_ireland_route_characters.txt` contains 24 route
+`common/characters/ireland_route_characters.txt` contains 24 route
 character blocks: ten named historical people and fourteen institutional or
 collective offices. The institutional entries are used only for alternate or
 symbolic route identities; they do not fabricate a real-person portrait.
 
-`common/scripted_effects/slopx_ireland_runtime.txt` contains 24 matching
+`common/scripted_effects/ireland_runtime.txt` contains 24 matching
 promotion paths and 24 recruitment calls across the route lifecycle. The
 retirement helper clears outgoing route leaders before a new route is
 activated, and the transition is protected by
-`slopx_ireland_route_leader_transition_complete` plus per-route activation
+`ireland_route_leader_transition_complete` plus per-route activation
 flags. The ordinary route-specific political identity path also sets the
 appropriate ruling ideology/election state and party-name keys.
 
@@ -69,13 +69,13 @@ collective portraits remain outside that archive because they are symbolic
 route assets rather than source-found people.
 
 The 18 route cosmetic tags in
-`common/countries/slopx_ireland_cosmetic.txt` are all referenced by the route
+`common/countries/ireland_cosmetic.txt` are all referenced by the route
 identity synchroniser, with no undefined or unused route tag in the static
 registry sweep.
 
 ## Northern core boundary
 
-`slopx_ireland_can_northern_core_review` requires, in addition to stage five
+`ireland_can_northern_core_review` requires, in addition to stage five
 integration and the completed settlement ledger:
 
 - the consent floors for Unionist, Nationalist, Labour, and British channels;
@@ -86,7 +86,7 @@ integration and the completed settlement ledger:
   demobilisation, security-sustainment, and emergency-law completion flags;
 - no occupation or settlement failure and no core-review block.
 
-`slopx_ireland_apply_northern_core_review` is the sole map-core mutation. It
+`ireland_apply_northern_core_review` is the sole map-core mutation. It
 adds the Ireland core only when that trigger passes, records the durable core
 flag, and is idempotent. A completed final review without control records a
 blocked review instead of granting a core.
@@ -124,7 +124,7 @@ to current route-character/GFX surfaces: P-05, P-06, P-27, P-43, P-46, P-56,
 and route extension RC-PORTRAIT-01 (Daniel Morrissey). Current source evidence
 still shows those review-gated references; no fix is claimed. The NR07
 early-admission defect is fixed: the four event blocks and matching dispatcher
-limits directly require `slopx_ireland_northern_core_review_open`, and its sole
+limits directly require `ireland_northern_core_review_open`, and its sole
 writer enforces final-review proof, stage-five integration, control, and clean
 occupation/settlement state. The bounded source checks pass; the full
 comparison tool timed out and remains a tooling limitation. The unresolved

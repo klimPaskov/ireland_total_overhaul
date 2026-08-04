@@ -1,7 +1,7 @@
 # Ireland completion follow-up — reconciled 2026-07-19
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`  
+Namespace: `ireland`  
 Status: incomplete; implementation and validation remain open.
 
 This follow-up records repairs made after the earlier country, localisation, decision/mission/GUI, and feature-completion audits. Earlier audit reports remain historical evidence and are not rewritten to erase their original findings.
@@ -27,8 +27,8 @@ Snapshot supersession note (2026-07-22): the historical 33-complete/29-review wo
 
 | Surface | Evidence | Result |
 | --- | --- | --- |
-| focus tree | `hoi4_focus_inspect` for `slopx_ireland_focus_tree` | 216 focuses; 190 connectors; zero Ireland-local layout diagnostics; global scan still reports unrelated vanilla errors |
-| focus render | `hoi4_focus_render` for `common/national_focus/slopx_ireland_focus_tree.txt` | HTML, SVG, JSON, source-map, and plan artifacts produced; global render validation still reports 14 unrelated vanilla focus diagnostics |
+| focus tree | `hoi4_focus_inspect` for `ireland_focus_tree` | 216 focuses; 190 connectors; zero Ireland-local layout diagnostics; global scan still reports unrelated vanilla errors |
+| focus render | `hoi4_focus_render` for `common/national_focus/ireland_focus_tree.txt` | HTML, SVG, JSON, source-map, and plan artifacts produced; global render validation still reports 14 unrelated vanilla focus diagnostics |
 | focus raster | `hoi4_focus_raster` at bounded review scale | Icon-aware PNG produced at 9,128×766; global validation still reports the same 14 unrelated vanilla focus diagnostics |
 | main events | local structural inventory | 249 nodes; 249 follow-up writes; 179 predecessor reads; 179 outcome gates; balanced braces |
 | flavour events | local structural inventory and idempotent gate patcher | 236 nodes; 236 follow-up writes; 217 predecessor reads; balanced braces |

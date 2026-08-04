@@ -31,19 +31,19 @@ The four source contracts are:
 
 ### Reusable trigger contracts
 
-`common/scripted_triggers/slopx_ireland_triggers.txt` adds:
+`common/scripted_triggers/ireland_triggers.txt` adds:
 
-- `slopx_ireland_has_named_provision_shortage`
-- `slopx_ireland_british_supply_contract_authority`
-- `slopx_ireland_american_procurement_authority`
-- `slopx_ireland_german_delivery_authority`
-- `slopx_ireland_vatican_relief_authority`
+- `ireland_has_named_provision_shortage`
+- `ireland_british_supply_contract_authority`
+- `ireland_american_procurement_authority`
+- `ireland_german_delivery_authority`
+- `ireland_vatican_relief_authority`
 
-The contracts are documented in `docs/slopx_dynamic_effects.md`. All are side-effect-free proof triggers. They do not treat dates, leverage values, generic reaction windows, or channel flags as cargo, credit, legal authority, a German promise, or a humanitarian case.
+The contracts are documented in `docs/ireland_dynamic_effects.md`. All are side-effect-free proof triggers. They do not treat dates, leverage values, generic reaction windows, or channel flags as cargo, credit, legal authority, a German promise, or a humanitarian case.
 
 ### Decisions
 
-`common/decisions/slopx_ireland_decisions.txt` applies the source contracts to:
+`common/decisions/ireland_decisions.txt` applies the source contracts to:
 
 - Renegotiate a British Supply Contract.
 - Send an American Procurement Mission.
@@ -57,11 +57,11 @@ The existing dynamic Political Power/Command Power, convoy, factory, leverage, e
 
 The four map-objective triggers now recheck the active mission, source record, channel/partner, and source-specific authority. British and American objectives recheck the finance/credit and legal safeguards; German rechecks the prior emissary promise and independence boundary; Vatican rechecks a durable humanitarian-case record. The mission deadlines, full/partial/failure/escalation results, source leverage, and cleanup remain separate.
 
-The Vatican action writes `slopx_ireland_vatican_humanitarian_case_recorded` as a durable case-history flag before mission resolution. It is evidence of the accepted case, not a free relief result or an ongoing temporary delegation.
+The Vatican action writes `ireland_vatican_humanitarian_case_recorded` as a durable case-history flag before mission resolution. It is evidence of the accepted case, not a free relief result or an ongoing temporary delegation.
 
 ## Localisation
 
-`localisation/english/slopx_ireland_l_english.yml` now exposes the source-specific admission differences, current Provision component values for the British shortage preview, and the live mission/source/safeguard requirements for each map objective. The text keeps channel availability distinct from an actionable contract.
+`localisation/english/ireland_l_english.yml` now exposes the source-specific admission differences, current Provision component values for the British shortage preview, and the live mission/source/safeguard requirements for each map objective. The text keeps channel availability distinct from an actionable contract.
 
 ## Validation boundary
 

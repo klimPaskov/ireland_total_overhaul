@@ -1,6 +1,6 @@
 # GFX handoff — Ireland sourced report tranche
 
-The source worker did not edit `.gfx`; the main integration pass registered these five C3-cleared report sprites in `interface/slopx_ireland_sourced_assets.gfx`. Their final runtime DDS paths are under `gfx/event_pictures/ireland/`.
+The source worker did not edit `.gfx`; the main integration pass registered these five C3-cleared report sprites in `interface/ireland_sourced_assets.gfx`. Their final runtime DDS paths are under `gfx/event_pictures/ireland/`.
 
 ```text
 GFX_report_event_ireland_report_historical_chain_report_02 -> gfx/event_pictures/ireland/event_ev_src_002_report.dds

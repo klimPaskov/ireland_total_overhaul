@@ -1,0 +1,13 @@
+# Ireland's independent intelligence surface opens with the Naval Staff. It
+# covers Coastwatch reports, harbour security, and neutral-shipping analysis;
+# it is an agency logo and name pool, not a free operative or free operation.
+intelligence_agency = {
+	picture = GFX_intelligence_agency_logo_ireland
+	names = {
+		ireland_agency_g2
+		ireland_agency_coastwatch
+		ireland_agency_neutral_shipping
+	}
+	default = { tag = IRE }
+	available = { original_tag = IRE }
+}

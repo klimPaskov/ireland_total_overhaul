@@ -1,7 +1,7 @@
 # Ireland user-approved conditional asset re-audit — 2026-08-01
 
 Feature slug: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 
 This is the non-live audit for the explicit user-approved conditional source
 promotion. It covers exact source objects, processed previews, final runtime
@@ -54,7 +54,7 @@ points into `assets/`.
   texture files, zero duplicate sprite names, and no `assets/` runtime texture
   paths.
 - Every complete manifest final DDS path is represented by a registered texture
-  path in `interface/slopx_ireland_sourced_assets.gfx`.
+  path in `interface/ireland_sourced_assets.gfx`.
 - No consumer was fabricated for a promoted row merely to increase the image
   count. Existing consumer repairs and the registration-only boundary remain
   separately documented.

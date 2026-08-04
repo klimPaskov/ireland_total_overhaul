@@ -5,7 +5,7 @@
 This is a source-only audit of the Ireland decision surface. It replays the exact
 140-action / 54-mission inventory in
 `docs/plans/ireland_focus_tree/action_material_safeguard_ledger_2026-07-29.md`
-against `common/decisions/slopx_ireland_decisions.txt`, the canonical Ireland
+against `common/decisions/ireland_decisions.txt`, the canonical Ireland
 decision/mission map and lifecycle documents, matching triggers/constants,
 localisation, and the directly referenced member-contribution event. No live
 HOI4 test was run by request.
@@ -70,68 +70,68 @@ accepted on trust. The following source mission manifest is the exact
 
 | Mission ID | Owner action(s) | Objective family / region | Days |
 |---|---|---|---:|
-| `slopx_ireland_mission_maintain_cabinet_discipline` | `slopx_ireland_action_convene_a_cabinet_cohesion_review` | Dáil / national cabinet | 90 |
-| `slopx_ireland_mission_assemble_seventy_votes` | `slopx_ireland_action_request_a_confidence_vote` | Dáil confidence vote | 45 |
-| `slopx_ireland_mission_complete_the_six_month_review` | `slopx_ireland_action_review_the_six_month_settlement` | national constitutional review | 180 |
-| `slopx_ireland_mission_conduct_a_free_election` | `slopx_ireland_action_update_the_electoral_register` | contested electoral areas | 105 |
-| `slopx_ireland_mission_form_a_government` | `slopx_ireland_action_open_coalition_negotiations` | Dáil coalition | 60 |
-| `slopx_ireland_mission_protect_the_by_election` | `slopx_ireland_action_prepare_a_by_election` | constituency campaign | 100 |
-| `slopx_ireland_mission_conclude_the_education_compact` | `slopx_ireland_action_negotiate_an_education_compact` | education network | 150 |
-| `slopx_ireland_mission_settle_the_essential_service_dispute` | `slopx_ireland_action_mediate_an_essential_service_dispute` | essential services | 60 |
-| `slopx_ireland_mission_audit_parish_service_dependency` | `slopx_ireland_action_audit_church_service_dependency` | parish-service network | 120 |
-| `slopx_ireland_mission_expand_the_folklore_collection` | `slopx_ireland_action_expand_the_folklore_collection` | Gaeltacht / provincial archive | 180 |
-| `slopx_ireland_mission_hold_the_provincial_cultural_congress` | `slopx_ireland_action_hold_a_provincial_cultural_congress` | provincial cultural centres | 210 |
-| `slopx_ireland_mission_test_the_restoration_claim` | `slopx_ireland_action_test_the_restoration_claim` | archives and historic sites | 270 |
-| `slopx_ireland_mission_meet_the_tillage_quota` | `slopx_ireland_action_set_county_tillage_quotas` | rural counties | 150 |
-| `slopx_ireland_mission_secure_the_harvest` | `slopx_ireland_action_repair_mills_and_storage` | rural-to-city food route | 120 |
-| `slopx_ireland_mission_establish_protected_workshops` | `slopx_ireland_action_license_protected_workshops` | industrial workshops | 180 |
-| `slopx_ireland_mission_commission_the_developmental_plant` | `slopx_ireland_action_commission_a_developmental_plant` | development plant | 270 |
-| `slopx_ireland_mission_stabilise_winter_rations` | `slopx_ireland_action_issue_ration_books` | Dublin ration network | 120 |
-| `slopx_ireland_mission_mobilise_emergency_turf` | `slopx_ireland_action_mobilise_emergency_turf` | Midlands / western fuel districts | 120 |
-| `slopx_ireland_mission_repair_the_dublin_cork_corridor` | `slopx_ireland_action_repair_the_dublin_cork_rail_corridor` | Dublin–Cork rail corridor | 180 |
-| `slopx_ireland_mission_keep_an_essential_cargo_route_open` | `slopx_ireland_action_charter_foreign_tonnage`; `slopx_ireland_action_reroute_essential_cargo`; conditional procurement branch of `slopx_ireland_action_procure_rifles_and_support_equipment` | state 135–113 cargo route | 120 |
-| `slopx_ireland_mission_purchase_a_merchant_vessel` | `slopx_ireland_action_purchase_a_merchant_vessel` | merchant fleet | 270 |
-| `slopx_ireland_mission_fund_the_western_regional_portfolio` | `slopx_ireland_action_fund_a_western_regional_portfolio` | western regional portfolio | 300 |
-| `slopx_ireland_mission_run_the_command_district_exercise` | `slopx_ireland_action_run_a_command_district_exercise` | command district | 105 |
-| `slopx_ireland_mission_activate_the_cadre_reserve` | `slopx_ireland_action_activate_the_cadre_reserve` | mobilisation districts | 150 |
-| `slopx_ireland_mission_motorise_the_strategic_route` | `slopx_ireland_action_motorise_the_strategic_route` | Dublin–Belfast corridor | 120 |
-| `slopx_ireland_mission_build_the_coastwatch_network` | `slopx_ireland_action_build_a_coastwatch_network` | coastwatch sectors | 120 |
-| `slopx_ireland_mission_install_harbour_defences` | `slopx_ireland_action_install_harbour_defences` | treaty-port / harbour sectors | 210 |
-| `slopx_ireland_mission_organise_the_marine_patrols` | `slopx_ireland_action_organise_marine_patrols` | coastal sectors and ports | 105 |
-| `slopx_ireland_mission_protect_the_operational_plan` | `slopx_ireland_action_protect_the_operational_plan` | border commands | 120 |
-| `slopx_ireland_mission_demobilise_the_force_tier` | `slopx_ireland_action_demobilise_a_force_tier` | national force posture | 210 |
-| `slopx_ireland_mission_intern_belligerent_aircrew` | `slopx_ireland_action_intern_belligerent_crew` | internment site | 90 |
-| `slopx_ireland_mission_investigate_the_neutral_shipping_loss` | `slopx_ireland_action_investigate_a_neutral_shipping_loss` | shipping-loss route / home port | 120 |
-| `slopx_ireland_mission_mark_equal_neutrality` | `slopx_ireland_action_mark_and_publicise_neutral_shipping` | neutral-shipping channels | 150 |
-| `slopx_ireland_mission_share_the_blacksod_weather_report` | `slopx_ireland_action_share_a_controlled_weather_report` | Blacksod, Mayo | 105 |
-| `slopx_ireland_mission_secure_the_british_delivery` | `slopx_ireland_action_renegotiate_the_british_supply_contract`; conditional procurement branch of `slopx_ireland_action_procure_rifles_and_support_equipment` | British–Irish supply route | 150 |
-| `slopx_ireland_mission_secure_the_american_delivery` | `slopx_ireland_action_send_an_american_procurement_mission`; conditional procurement branch of `slopx_ireland_action_procure_rifles_and_support_equipment` | Atlantic / American procurement route | 240 |
-| `slopx_ireland_mission_secure_the_german_delivery` | `slopx_ireland_action_demand_proof_of_german_delivery`; conditional procurement branch of `slopx_ireland_action_procure_rifles_and_support_equipment` | German delivery route | 150 |
-| `slopx_ireland_mission_seek_vatican_mediation` | `slopx_ireland_action_seek_vatican_mediation` | Vatican humanitarian channel | 120 |
-| `slopx_ireland_mission_open_cross_border_confidence` | `slopx_ireland_action_open_cross_border_confidence` | border districts | 150 |
-| `slopx_ireland_mission_convene_the_northern_convention` | `slopx_ireland_action_invite_northern_delegates` | Belfast / Derry convention | 210 |
-| `slopx_ireland_mission_protect_the_northern_plebiscite` | `slopx_ireland_action_protect_northern_campaign_freedom` | Northern campaign districts | 240 |
-| `slopx_ireland_mission_convene_the_federal_powers_conference` | `slopx_ireland_action_convene_a_federal_powers_conference` | Dáil / Northern / British conference | 300 |
-| `slopx_ireland_mission_plan_the_belfast_operation` | `slopx_ireland_action_plan_a_coercive_campaign` | Belfast | 150 |
-| `slopx_ireland_mission_vet_and_rebuild_policing` | `slopx_ireland_action_vet_and_rebuild_policing` | Northern policing districts | 240 |
-| `slopx_ireland_mission_restore_belfast_industry` | `slopx_ireland_action_restore_belfast_contracts` | Belfast industry / state 119 | 300 |
-| `slopx_ireland_mission_complete_the_northern_stage_five_review` | `slopx_ireland_action_conduct_a_core_eligibility_review` | all Northern administration | 365 |
-| `slopx_ireland_mission_draft_the_atlantic_charter` | `slopx_ireland_action_invite_a_celtic_partner` | member capitals | 240 |
-| `slopx_ireland_mission_integrate_the_voluntary_member_contribution` | `slopx_ireland_action_integrate_a_voluntary_member_contribution` | contributing member states | 180 |
-| `slopx_ireland_mission_fulfil_the_compact_obligation` | `slopx_ireland_action_fulfil_a_compact_obligation` | five compact sites | 300 |
-| `slopx_ireland_mission_replace_emergency_rations` | `slopx_ireland_action_replace_emergency_supply` | national urban supply | 240 |
-| `slopx_ireland_mission_demobilise_and_settle_veterans` | `slopx_ireland_action_demobilise_and_settle_veterans` | national veteran settlement | 300 |
-| `slopx_ireland_mission_settle_the_republic_question` | `slopx_ireland_action_settle_the_republic_question` | Dáil / presidency | 150 |
-| `slopx_ireland_mission_apply_for_un_membership` | `slopx_ireland_action_apply_for_un_membership` | eligible members / Security Council | 300 |
-| `slopx_ireland_mission_launch_the_reconstruction_portfolio` | `slopx_ireland_action_launch_a_reconstruction_portfolio` | three reconstruction regions | 365 |
+| `ireland_mission_maintain_cabinet_discipline` | `ireland_action_convene_a_cabinet_cohesion_review` | Dáil / national cabinet | 90 |
+| `ireland_mission_assemble_seventy_votes` | `ireland_action_request_a_confidence_vote` | Dáil confidence vote | 45 |
+| `ireland_mission_complete_the_six_month_review` | `ireland_action_review_the_six_month_settlement` | national constitutional review | 180 |
+| `ireland_mission_conduct_a_free_election` | `ireland_action_update_the_electoral_register` | contested electoral areas | 105 |
+| `ireland_mission_form_a_government` | `ireland_action_open_coalition_negotiations` | Dáil coalition | 60 |
+| `ireland_mission_protect_the_by_election` | `ireland_action_prepare_a_by_election` | constituency campaign | 100 |
+| `ireland_mission_conclude_the_education_compact` | `ireland_action_negotiate_an_education_compact` | education network | 150 |
+| `ireland_mission_settle_the_essential_service_dispute` | `ireland_action_mediate_an_essential_service_dispute` | essential services | 60 |
+| `ireland_mission_audit_parish_service_dependency` | `ireland_action_audit_church_service_dependency` | parish-service network | 120 |
+| `ireland_mission_expand_the_folklore_collection` | `ireland_action_expand_the_folklore_collection` | Gaeltacht / provincial archive | 180 |
+| `ireland_mission_hold_the_provincial_cultural_congress` | `ireland_action_hold_a_provincial_cultural_congress` | provincial cultural centres | 210 |
+| `ireland_mission_test_the_restoration_claim` | `ireland_action_test_the_restoration_claim` | archives and historic sites | 270 |
+| `ireland_mission_meet_the_tillage_quota` | `ireland_action_set_county_tillage_quotas` | rural counties | 150 |
+| `ireland_mission_secure_the_harvest` | `ireland_action_repair_mills_and_storage` | rural-to-city food route | 120 |
+| `ireland_mission_establish_protected_workshops` | `ireland_action_license_protected_workshops` | industrial workshops | 180 |
+| `ireland_mission_commission_the_developmental_plant` | `ireland_action_commission_a_developmental_plant` | development plant | 270 |
+| `ireland_mission_stabilise_winter_rations` | `ireland_action_issue_ration_books` | Dublin ration network | 120 |
+| `ireland_mission_mobilise_emergency_turf` | `ireland_action_mobilise_emergency_turf` | Midlands / western fuel districts | 120 |
+| `ireland_mission_repair_the_dublin_cork_corridor` | `ireland_action_repair_the_dublin_cork_rail_corridor` | Dublin–Cork rail corridor | 180 |
+| `ireland_mission_keep_an_essential_cargo_route_open` | `ireland_action_charter_foreign_tonnage`; `ireland_action_reroute_essential_cargo`; conditional procurement branch of `ireland_action_procure_rifles_and_support_equipment` | state 135–113 cargo route | 120 |
+| `ireland_mission_purchase_a_merchant_vessel` | `ireland_action_purchase_a_merchant_vessel` | merchant fleet | 270 |
+| `ireland_mission_fund_the_western_regional_portfolio` | `ireland_action_fund_a_western_regional_portfolio` | western regional portfolio | 300 |
+| `ireland_mission_run_the_command_district_exercise` | `ireland_action_run_a_command_district_exercise` | command district | 105 |
+| `ireland_mission_activate_the_cadre_reserve` | `ireland_action_activate_the_cadre_reserve` | mobilisation districts | 150 |
+| `ireland_mission_motorise_the_strategic_route` | `ireland_action_motorise_the_strategic_route` | Dublin–Belfast corridor | 120 |
+| `ireland_mission_build_the_coastwatch_network` | `ireland_action_build_a_coastwatch_network` | coastwatch sectors | 120 |
+| `ireland_mission_install_harbour_defences` | `ireland_action_install_harbour_defences` | treaty-port / harbour sectors | 210 |
+| `ireland_mission_organise_the_marine_patrols` | `ireland_action_organise_marine_patrols` | coastal sectors and ports | 105 |
+| `ireland_mission_protect_the_operational_plan` | `ireland_action_protect_the_operational_plan` | border commands | 120 |
+| `ireland_mission_demobilise_the_force_tier` | `ireland_action_demobilise_a_force_tier` | national force posture | 210 |
+| `ireland_mission_intern_belligerent_aircrew` | `ireland_action_intern_belligerent_crew` | internment site | 90 |
+| `ireland_mission_investigate_the_neutral_shipping_loss` | `ireland_action_investigate_a_neutral_shipping_loss` | shipping-loss route / home port | 120 |
+| `ireland_mission_mark_equal_neutrality` | `ireland_action_mark_and_publicise_neutral_shipping` | neutral-shipping channels | 150 |
+| `ireland_mission_share_the_blacksod_weather_report` | `ireland_action_share_a_controlled_weather_report` | Blacksod, Mayo | 105 |
+| `ireland_mission_secure_the_british_delivery` | `ireland_action_renegotiate_the_british_supply_contract`; conditional procurement branch of `ireland_action_procure_rifles_and_support_equipment` | British–Irish supply route | 150 |
+| `ireland_mission_secure_the_american_delivery` | `ireland_action_send_an_american_procurement_mission`; conditional procurement branch of `ireland_action_procure_rifles_and_support_equipment` | Atlantic / American procurement route | 240 |
+| `ireland_mission_secure_the_german_delivery` | `ireland_action_demand_proof_of_german_delivery`; conditional procurement branch of `ireland_action_procure_rifles_and_support_equipment` | German delivery route | 150 |
+| `ireland_mission_seek_vatican_mediation` | `ireland_action_seek_vatican_mediation` | Vatican humanitarian channel | 120 |
+| `ireland_mission_open_cross_border_confidence` | `ireland_action_open_cross_border_confidence` | border districts | 150 |
+| `ireland_mission_convene_the_northern_convention` | `ireland_action_invite_northern_delegates` | Belfast / Derry convention | 210 |
+| `ireland_mission_protect_the_northern_plebiscite` | `ireland_action_protect_northern_campaign_freedom` | Northern campaign districts | 240 |
+| `ireland_mission_convene_the_federal_powers_conference` | `ireland_action_convene_a_federal_powers_conference` | Dáil / Northern / British conference | 300 |
+| `ireland_mission_plan_the_belfast_operation` | `ireland_action_plan_a_coercive_campaign` | Belfast | 150 |
+| `ireland_mission_vet_and_rebuild_policing` | `ireland_action_vet_and_rebuild_policing` | Northern policing districts | 240 |
+| `ireland_mission_restore_belfast_industry` | `ireland_action_restore_belfast_contracts` | Belfast industry / state 119 | 300 |
+| `ireland_mission_complete_the_northern_stage_five_review` | `ireland_action_conduct_a_core_eligibility_review` | all Northern administration | 365 |
+| `ireland_mission_draft_the_atlantic_charter` | `ireland_action_invite_a_celtic_partner` | member capitals | 240 |
+| `ireland_mission_integrate_the_voluntary_member_contribution` | `ireland_action_integrate_a_voluntary_member_contribution` | contributing member states | 180 |
+| `ireland_mission_fulfil_the_compact_obligation` | `ireland_action_fulfil_a_compact_obligation` | five compact sites | 300 |
+| `ireland_mission_replace_emergency_rations` | `ireland_action_replace_emergency_supply` | national urban supply | 240 |
+| `ireland_mission_demobilise_and_settle_veterans` | `ireland_action_demobilise_and_settle_veterans` | national veteran settlement | 300 |
+| `ireland_mission_settle_the_republic_question` | `ireland_action_settle_the_republic_question` | Dáil / presidency | 150 |
+| `ireland_mission_apply_for_un_membership` | `ireland_action_apply_for_un_membership` | eligible members / Security Council | 300 |
+| `ireland_mission_launch_the_reconstruction_portfolio` | `ireland_action_launch_a_reconstruction_portfolio` | three reconstruction regions | 365 |
 
 ## Corrected findings
 
 ### High — BBA airframe admission and consumption was blind to custom designs (fixed)
 
-**Identifiers:** `slopx_ireland_action_intercept_an_airspace_violation`,
-`@SLOPX_IRELAND_AIRSPACE_INTERCEPT_FIGHTER_GATE`,
-`@SLOPX_IRELAND_AIRSPACE_INTERCEPT_FIGHTER_CHARGE`.
+**Identifiers:** `ireland_action_intercept_an_airspace_violation`,
+`@IRELAND_AIRSPACE_INTERCEPT_FIGHTER_GATE`,
+`@IRELAND_AIRSPACE_INTERCEPT_FIGHTER_CHARGE`.
 
 The interrupted patch only scanned six legacy concrete fighter types. That
 excluded By Blood Alone custom designs, which vanilla represents through the
@@ -155,8 +155,8 @@ explicitly excluded from this task.
 
 ### Medium — Dublin–Cork rail fuel gate rejected an exact payment (fixed)
 
-**Identifiers:** `slopx_ireland_action_repair_the_dublin_cork_rail_corridor`,
-`@SLOPX_IRELAND_RAIL_CORRIDOR_FUEL_GATE` in both the decision and matching
+**Identifiers:** `ireland_action_repair_the_dublin_cork_rail_corridor`,
+`@IRELAND_RAIL_CORRIDOR_FUEL_GATE` in both the decision and matching
 Ireland trigger file.
 
 The action consumes 200 fuel but tested `has_fuel > 200`, which requires 201.
@@ -196,7 +196,7 @@ charge is exact.
   A generic source scan therefore reported no `remove_effect` on mission
   blocks, but this is not a missing lifecycle implementation.
 - 33 material-heavy missions invoke
-  `slopx_ireland_refund_cancelled_material_inputs`. Its one-time action guard
+  `ireland_refund_cancelled_material_inputs`. Its one-time action guard
   prevents cancellation farming; the per-action helper supplies capped
   recoveries. The rail case, for example, returns 3 trains, 175 manpower, and
   140 fuel only on eligible cancellation.
@@ -204,8 +204,8 @@ charge is exact.
   sovereign, non-capitulated) at admission, activation, objective, and route
   closure/cancellation points. The related owner actions have AI weights and
   route-lock cleanup. The one direct decision event reference,
-  `slopx_ireland_events.431`, is defined in
-  `events/slopx_ireland_member_contribution_events.txt`; its five paid choices
+  `ireland_events.431`, is defined in
+  `events/ireland_member_contribution_events.txt`; its five paid choices
   also have availability, AI weights, and one-time cleanup. No event change
   was made.
 
@@ -215,7 +215,7 @@ charge is exact.
 
 The earlier pre-reveal finding is superseded by the separate
 `docs/plans/ireland_focus_tree/action_reveal_contract_handoff_2026-07-29.md`.
-The current source has one reusable `slopx_ireland_reveal_*` call inside each
+The current source has one reusable `ireland_reveal_*` call inside each
 of the 140 action `visible` blocks, and the thirteen category headers each call
 their matching category reveal helper. The action helpers are backed by the
 authored opening, recovery, route, incident, dated, occupation-stage, and
@@ -249,12 +249,12 @@ engine confirmation, and was intentionally not performed.
 
 ## Files changed by this audit
 
-- `common/decisions/slopx_ireland_decisions.txt`
-  - `slopx_ireland_action_intercept_an_airspace_violation`: BBA-aware aircraft
+- `common/decisions/ireland_decisions.txt`
+  - `ireland_action_intercept_an_airspace_violation`: BBA-aware aircraft
     admission and consumption.
-  - `@SLOPX_IRELAND_RAIL_CORRIDOR_FUEL_GATE`: exact 200-fuel admission.
-- `common/scripted_triggers/slopx_ireland_triggers.txt`
-  - matching `@SLOPX_IRELAND_RAIL_CORRIDOR_FUEL_GATE`: exact 200-fuel
+  - `@IRELAND_RAIL_CORRIDOR_FUEL_GATE`: exact 200-fuel admission.
+- `common/scripted_triggers/ireland_triggers.txt`
+  - matching `@IRELAND_RAIL_CORRIDOR_FUEL_GATE`: exact 200-fuel
     admission.
 - `docs/plans/ireland_focus_tree/audits/ireland_decision_mission_audit_handoff_2026-07-29.md`
   - this audit and handoff.

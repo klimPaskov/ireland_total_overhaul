@@ -1,7 +1,7 @@
 # Ireland goal-icon visual QA — historical 2026-07-24 package
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`
+Namespace: `ireland`
 
 Superseded by the fresh v12 package at
 `assets/ireland_focus_tree/icons/regenerated_goal_icons_hoi4_focus_emblems_fresh_2026-07-28_v12/`.
@@ -34,7 +34,7 @@ Every goal row must have:
 - one freshly generated source PNG tile and one processed RGBA preview in its
   v3 package;
 - one `94x86` runtime DDS at
-  `gfx/interface/goals/slopx_ireland/goal_<exact_focus_id>.dds`;
+  `gfx/interface/goals/ireland/goal_<exact_focus_id>.dds`;
 - a centered, readable painted subject with consistent transparent breathing
   room;
 - dark hand-painted contour, aged brush texture, restrained 1930s palette, and

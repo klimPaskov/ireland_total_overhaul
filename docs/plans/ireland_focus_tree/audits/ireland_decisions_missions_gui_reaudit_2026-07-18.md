@@ -32,7 +32,7 @@ The current source contains exactly **13 categories**, **140 actions**, and **54
 
 All 140 actions have `visible`, `available`, `ai_will_do`, and an IRE guard. All 54 missions have `available`, a deadline, cancellation, timeout, completion, AI weighting, full/partial/failure feedback, an individual active flag, and route-cleanup cancellation.
 
-The global cap itself is correctly centralised in `common/script_constants/slopx_ireland_constants.txt` as normal `8`, emergency/war `10`, and simultaneous national emergency plus Northern occupation `12`. The immediate-launch refresh patch makes those global limits effective within the same tick.
+The global cap itself is correctly centralised in `common/script_constants/ireland_constants.txt` as normal `8`, emergency/war `10`, and simultaneous national emergency plus Northern occupation `12`. The immediate-launch refresh patch makes those global limits effective within the same tick.
 
 ## Mission quality notes
 
@@ -56,13 +56,13 @@ Every family is owned by IRE. The listed title is the named objective and the br
 
 ## Issue list, sorted by severity
 
-1. **High — category caps and critical reservations are not implemented as specified.** `slopx_ireland_rebuild_mission_counters` sets every `slopx_ireland_category_*_at_capacity` flag from the one global `slopx_ireland_active_mission_count >= slopx_ireland_mission_capacity` comparison. There are no per-category counters. The 53 ordinary mission activations also reject `slopx_ireland_critical_slot_reserved`, but there is no critical-family classification or reservation below the global cap. This does not meet the map’s 2/3/4 category caps or one/two/three critical reserves. Do not patch this piecemeal; see the follow-up handoff.
+1. **High — category caps and critical reservations are not implemented as specified.** `ireland_rebuild_mission_counters` sets every `ireland_category_*_at_capacity` flag from the one global `ireland_active_mission_count >= ireland_mission_capacity` comparison. There are no per-category counters. The 53 ordinary mission activations also reject `ireland_critical_slot_reserved`, but there is no critical-family classification or reservation below the global cap. This does not meet the map’s 2/3/4 category caps or one/two/three critical reserves. Do not patch this piecemeal; see the follow-up handoff.
 
-2. **Medium — escalation is named but never recorded as the shared escalation result.** Every mission timeout sets a family-specific `_escalated` flag, but all 54 record result `3` (failure), never `constant:slopx_ireland.mission_result_escalated` (`5`). `slopx_ireland_missions_escalated` therefore remains unused/zero even as failure escalation flags accumulate. The resolution needs an explicit decision whether escalation is a second telemetry dimension or a mutually exclusive terminal result.
+2. **Medium — escalation is named but never recorded as the shared escalation result.** Every mission timeout sets a family-specific `_escalated` flag, but all 54 record result `3` (failure), never `constant:ireland.mission_result_escalated` (`5`). `ireland_missions_escalated` therefore remains unused/zero even as failure escalation flags accumulate. The resolution needs an explicit decision whether escalation is a second telemetry dimension or a mutually exclusive terminal result.
 
-3. **Medium — availability and dynamic-cost clarity are below the stated tooltip standard.** None of the 194 entries use `custom_trigger_tooltip`, `custom_cost_trigger`, or a decision-surface scripted-localisation reference. The long raw availability blocks contain the actual named requirement and scarcity bands. Action effects display `slopx_ireland_action_burden_tt`, but the dynamic surcharge is not a pre-click custom cost contract.
+3. **Medium — availability and dynamic-cost clarity are below the stated tooltip standard.** None of the 194 entries use `custom_trigger_tooltip`, `custom_cost_trigger`, or a decision-surface scripted-localisation reference. The long raw availability blocks contain the actual named requirement and scarcity bands. Action effects display `ireland_action_burden_tt`, but the dynamic surcharge is not a pre-click custom cost contract.
 
-4. **Low — terminal capacity presentation can remain one mission high until the next daily tick.** `slopx_ireland_record_mission_result` rebuilds counters before each family clears its active flag. The next `on_daily_IRE` corrects it, and the patched next launch also corrects it, so this is conservative blocking rather than an overflow exploit. Moving the terminal refresh after every family cleanup is a mechanical but broad 54-family change.
+4. **Low — terminal capacity presentation can remain one mission high until the next daily tick.** `ireland_record_mission_result` rebuilds counters before each family clears its active flag. The next `on_daily_IRE` corrects it, and the patched next launch also corrects it, so this is conservative blocking rather than an overflow exploit. Moving the terminal refresh after every family cleanup is a mechanical but broad 54-family change.
 
 5. **Low — 26 row-selection variables and two request flags are write-only.** The Conditions, Northern, and Evidence row handlers set selected-row variables which no GUI text, trigger, or gameplay source consumes. The Conditions Review and Evidence Inspect flags are also write-only. The existing tooltips make the rows informative, so this is inert UI state rather than an AI/gameplay exploit. Remove the clicks or add a selection detail surface only after product ownership chooses the intended interaction.
 
@@ -92,7 +92,7 @@ Post-patch inspector artifacts:
 - Conditions inspect: `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/3901fde490bacb479b2cc1f5e9448ae44f15dac9cfeb2bd22e1bc8e0d179f46b/6d2d73195b7b8ed99d473cfb3dc68549aba9e4aebfcc0fa43c7fa5cd22e1ad6c/gui-inspect.98e0261b43de1ee3.json`
 - Northern inspect: `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/0737f0374e4e6924ff9f93bd1d46f9c40795e2f45da31f46a3db5813b5971596/8d7f53e1c9c1e429162179f7a14b9e09df0a17397db020181b417fdf7ec0f186/gui-inspect.d02804a3ca1b1e04.json`
 - Evidence inspect: `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/eee2fa5110ce414f0c9764040c794dc2be45a5e523d5f89b033b8f4068d26fbd/d0c560d560333afd6240dff7906901dc34fafa6dfd445dadf37568f3539b34f2/gui-inspect.f8c02d144a5399ca.json`
-- Conditions render and click map: `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/87a264550da83f33c0c7086be289abe13b633686ee651a263f699c973e032e3d/8f8ce0a8a45269740107f2b2f5082dc571770b6e7dabd90f5f8929bd679699c7/slopx_ireland_conditions_panel_window-full.png` and `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/a84da1d3bc3c9d03f5cab79b0f60dc6dcdf5ecfcb8b243de651114f296b51d3f/5917ee648eb3cb15f170327b3fd37307ee28733125fee98e5da90ceee0832899/slopx_ireland_conditions_panel_window-click-regions.png`
+- Conditions render and click map: `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/87a264550da83f33c0c7086be289abe13b633686ee651a263f699c973e032e3d/8f8ce0a8a45269740107f2b2f5082dc571770b6e7dabd90f5f8929bd679699c7/ireland_conditions_panel_window-full.png` and `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/a84da1d3bc3c9d03f5cab79b0f60dc6dcdf5ecfcb8b243de651114f296b51d3f/5917ee648eb3cb15f170327b3fd37307ee28733125fee98e5da90ceee0832899/ireland_conditions_panel_window-click-regions.png`
 
 The renderer still reports geometric overlap because its offline scenario does not evaluate the scripted GUI visibility predicates. Source-level threshold truth tables are the meaningful validation for this patch. Its `GUI_AI_EQUIVALENT_MISSING` warning applies to presentation-only row/refresh clicks; actual Northern core review also runs through `on_daily_IRE`, so AI is not dependent on a GUI click.
 
@@ -100,8 +100,8 @@ The renderer still reports geometric overlap because its offline scenario does n
 
 | File | Identifiers | Before | After |
 | --- | --- | --- | --- |
-| `common/decisions/slopx_ireland_decisions.txt` | all 54 `activate_mission` launch sites | Active flag was set, but capacity/counter flags waited for the daily IRE hook. | Calls `slopx_ireland_update_mission_capacity = yes` immediately after activation, enforcing the current 8/10/12 global cap in the same tick. |
-| `common/scripted_guis/slopx_ireland_scripted_guis.txt` | the three ready/warning/critical visibility trigger sets | Multiple status icons could be true at the same position. | Explicit critical > warning > ready priority; Neutrality Integrity is included in Conditions warning/ready evaluation. |
+| `common/decisions/ireland_decisions.txt` | all 54 `activate_mission` launch sites | Active flag was set, but capacity/counter flags waited for the daily IRE hook. | Calls `ireland_update_mission_capacity = yes` immediately after activation, enforcing the current 8/10/12 global cap in the same tick. |
+| `common/scripted_guis/ireland_scripted_guis.txt` | the three ready/warning/critical visibility trigger sets | Multiple status icons could be true at the same position. | Explicit critical > warning > ready priority; Neutrality Integrity is included in Conditions warning/ready evaluation. |
 
 ## Validation performed
 
@@ -111,14 +111,14 @@ The renderer still reports geometric overlap because its offline scenario does n
 - Checked action-cost ranges and confirmed maximum dynamic Command Power cost is 45.
 - Checked the three status-priority truth tables at normal, warning, and critical thresholds; each yields one intended status layer.
 - Inspected and rendered the linked GUI panels. The renderer’s remaining overlap warnings are the known predicate-evaluation limitation described above.
-- Ran a narrow event state-flow inspection of `slopx_ireland_mission_result`: `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/0fb84756111ef5ff03ade89b06a82539200dcf421d0ab22f7c14ab5ca16c2d38/167e3dbdce46191278e9268a2e995625812b3293606e9c1b73b56e472aabbeb1/event-state_flow-c68cb1910645.json`.
+- Ran a narrow event state-flow inspection of `ireland_mission_result`: `hoi4-agent://workspace/mod_ireland_total_overhaul_65a6b5f140a7/artifact/0fb84756111ef5ff03ade89b06a82539200dcf421d0ab22f7c14ab5ca16c2d38/167e3dbdce46191278e9268a2e995625812b3293606e9c1b73b56e472aabbeb1/event-state_flow-c68cb1910645.json`.
 
 ## Remaining blockers and recommended ownership
 
 The route design was not changed. The following require parent/architect decisions before implementation:
 
-1. Implement category-specific counters, cap constants, critical-family classification, and reserve admission in `common/scripted_effects/slopx_ireland_runtime.txt`, `common/scripted_triggers/slopx_ireland_triggers.txt`, and the 54 mission activation sites.
-2. Define whether `_escalated` is a secondary metric or an exclusive terminal result, then align `slopx_ireland_record_mission_result` and the 54 timeout effects.
+1. Implement category-specific counters, cap constants, critical-family classification, and reserve admission in `common/scripted_effects/ireland_runtime.txt`, `common/scripted_triggers/ireland_triggers.txt`, and the 54 mission activation sites.
+2. Define whether `_escalated` is a secondary metric or an exclusive terminal result, then align `ireland_record_mission_result` and the 54 timeout effects.
 3. Introduce a reusable availability/cost tooltip helper and dynamic localisation before touching the 194 raw player-facing trigger blocks.
 4. Decide whether the write-only GUI selection/request controls should become an actual detail interaction or non-clickable informational rows.
 5. Assign the duplicate texture and animation-fallback metadata diagnostics to the asset/UI owner.

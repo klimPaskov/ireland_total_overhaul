@@ -10,7 +10,7 @@ The canonical statecraft material requires a regional defence league to be more 
 
 ## Implemented gate
 
-`slopx_ireland_action_propose_a_regional_defence_league` now requires all of the following through shared `script_constants` values:
+`ireland_action_propose_a_regional_defence_league` now requires all of the following through shared `script_constants` values:
 
 - Readiness display at least `75`;
 - Provision display at least `65`;
@@ -23,9 +23,9 @@ The aggregate and component gates are in the same availability wrapper and are d
 
 ## Evidence and boundaries
 
-- `common/script_constants/slopx_ireland_constants.txt` owns the shared thresholds.
-- `common/decisions/slopx_ireland_decisions.txt` applies the thresholds before the action can launch.
-- `localisation/english/slopx_ireland_l_english.yml` names the current component requirements.
+- `common/script_constants/ireland_constants.txt` owns the shared thresholds.
+- `common/decisions/ireland_decisions.txt` applies the thresholds before the action can launch.
+- `localisation/english/ireland_l_english.yml` names the current component requirements.
 - The existing force, charter, member, safeguard, common-threat, category-cap, and dynamic Political Power/Command Power gates remain unchanged.
 - The later `Ratify a Regional Charter` and `Meet the Member Contribution Schedule` missions still own named map objectives, deadlines, partial success, failure, escalation, and cleanup.
 

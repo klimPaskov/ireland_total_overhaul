@@ -40,7 +40,7 @@ All completion charges are paired with their gates. The source does not award th
 
 ## Cancellation and cleanup
 
-The shared `slopx_ireland_refund_cancelled_material_inputs` effect now handles the new cultural-congress, western-portfolio, aircrew-internment, and Blacksod-station branches as well as the earlier emergency turf, cadre reserve, compact-obligation, ration-book, charter, procurement, tillage, neutral-shipping, train, fuel, and campaign branches. Refunds are bounded recoveries only; they do not refund political power, command power, factories, ledgers, offices, territory, cores, or recognition.
+The shared `ireland_refund_cancelled_material_inputs` effect now handles the new cultural-congress, western-portfolio, aircrew-internment, and Blacksod-station branches as well as the earlier emergency turf, cadre reserve, compact-obligation, ration-book, charter, procurement, tillage, neutral-shipping, train, fuel, and campaign branches. Refunds are bounded recoveries only; they do not refund political power, command power, factories, ledgers, offices, territory, cores, or recognition.
 
 The new coded refund values are:
 
@@ -61,10 +61,10 @@ The origin flags and duplicate-refund guards are cleared on mission completion, 
 
 ## Evidence
 
-- `common/decisions/slopx_ireland_decisions.txt` — action gates, completion charges, and mission cancellation wiring.
-- `common/script_constants/slopx_ireland_constants.txt` — shared refund codes and quantities.
-- `common/scripted_effects/slopx_ireland_effects.txt` — cancellation-safe material recovery helper.
-- `docs/slopx_dynamic_effects.md` — helper contract and branch documentation.
+- `common/decisions/ireland_decisions.txt` — action gates, completion charges, and mission cancellation wiring.
+- `common/script_constants/ireland_constants.txt` — shared refund codes and quantities.
+- `common/scripted_effects/ireland_effects.txt` — cancellation-safe material recovery helper.
+- `docs/ireland_dynamic_effects.md` — helper contract and branch documentation.
 - Static audit: 140 actions, 54 missions, 61 resource-gated actions, no gate/charge gaps, no mission-refund gaps, 132 defined and used-or-accepted decision macros, and refund caps within the authored ceiling.
 
 ## Remaining gates

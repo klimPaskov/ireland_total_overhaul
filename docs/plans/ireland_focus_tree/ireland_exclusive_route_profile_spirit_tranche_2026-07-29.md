@@ -10,7 +10,7 @@ asset.
 
 ## Durable profile authority
 
-`slopx_ireland_sync_route_profile` now clears the complete profile registry and
+`ireland_sync_route_profile` now clears the complete profile registry and
 selects one profile through a single ordered `if`/`else_if` chain.
 
 The precedence is:
@@ -25,9 +25,9 @@ The precedence is:
 
 The component High Kingship, Five Provinces, and Otherworld flags remain
 historical evidence during convergence. They no longer create simultaneous AI
-profiles. `slopx_ireland_profile_convergence_order` is written only after
-`slopx_ireland_convergence_order_concluded`; the capstone alone retains
-`slopx_ireland_profile_otherworld_compact` throughout the 180-day review.
+profiles. `ireland_profile_convergence_order` is written only after
+`ireland_convergence_order_concluded`; the capstone alone retains
+`ireland_profile_otherworld_compact` throughout the 180-day review.
 
 ## Persistent spirit forms
 
@@ -55,10 +55,10 @@ before installing their failure replacement.
 
 The exact spirit-art budget remains 63 DDS files:
 
-`gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_001.dds` through
+`gfx/interface/ideas/ireland/spirits/spirit_ireland_001.dds` through
 `spirit_ireland_063.dds`.
 
-`interface/slopx_ireland_secondary_assets.gfx` registers stable subprofile
+`interface/ireland_secondary_assets.gfx` registers stable subprofile
 aliases against those approved runtime files. No texture path points into
 `assets/` or `docs/`, and no additional spirit DDS was created. The aliases
 stay within their governing, society, or security family.
@@ -75,10 +75,10 @@ containment, and convergence.
 
 ## Files
 
-- `common/scripted_effects/slopx_ireland_runtime.txt`
-- `common/ideas/slopx_ireland_spirits.txt`
-- `interface/slopx_ireland_secondary_assets.gfx`
-- `localisation/english/slopx_ireland_l_english.yml`
+- `common/scripted_effects/ireland_runtime.txt`
+- `common/ideas/ireland_spirits.txt`
+- `interface/ireland_secondary_assets.gfx`
+- `localisation/english/ireland_l_english.yml`
 
 ## Static evidence
 

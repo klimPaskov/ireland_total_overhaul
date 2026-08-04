@@ -1,0 +1,70 @@
+﻿# Irish Marine Service names. The names are intentionally small-service
+# appropriate: saints, Irish trees, coastal places, and the few Irish vessels
+# that were actually used for patrol, training, or rescue work.
+IRE_IRELAND_PATROL_SERVICE = {
+	name = "Irish Marine Service Patrol Craft"
+	for_countries = { IRE }
+	type = ship
+	ship_types = { ship_hull_light destroyer }
+	prefix = "LÉ "
+	fallback_name = "Marine Service Patrol %d"
+	unique = {
+		"Muirchú" "Fort Rannoch" "Fortbaugh" "Deirdre" "Clíona" "Macha"
+		"Setanta" "Gráinne" "Banba" "Fódla" "Emer" "Aoife" "Aisling"
+		"Eithne" "Niamh" "Róisín"
+	}
+}
+
+IRE_IRELAND_TRAINING_SERVICE = {
+	name = "Irish Marine Service Training Craft"
+	for_countries = { IRE }
+	type = ship
+	ship_types = { ship_hull_light destroyer }
+	prefix = "LÉ "
+	fallback_name = "Training Craft %d"
+	unique = {
+		"Irish Poplar" "Irish Plane" "Irish Elm" "Irish Beech" "Irish Larch"
+		"Irish Ash" "Irish Willow" "Irish Hawthorn" "Irish Rose" "Irish Cedar"
+		"Irish Hazel" "Dún Laoghaire" "Cobh" "Galway" "Lough Swilly"
+	}
+}
+
+IRE_IRELAND_RESERVE_PATROL_SERVICE = {
+	name = "Irish Reserve Patrol and Rescue Service"
+	for_countries = { IRE }
+	type = ship
+	ship_types = { ship_hull_light destroyer }
+	prefix = "LÉ "
+	fallback_name = "Reserve Patrol Craft %d"
+	unique = {
+		"Fastnet" "Skellig" "Aran" "Achill" "Clare Island"
+		"Inishtrahull" "Rathlin" "Blasket" "Valentia" "Cape Clear"
+	}
+}
+
+IRE_IRELAND_CRUISER_SERVICE = {
+	name = "Irish Maritime Defence Cruiser Service"
+	for_countries = { IRE }
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	prefix = "LÉ "
+	fallback_name = "Maritime Defence Cruiser %d"
+	unique = {
+		"Michael Collins" "Arthur Griffith" "Theobald Wolfe Tone"
+		"William Smith O'Brien" "Daniel O'Connell" "Patrick Pearse"
+		"Constance Markievicz" "Eoin MacNeill"
+	}
+}
+
+IRE_IRELAND_SUBMARINE_SERVICE = {
+	name = "Irish Submarine Service"
+	for_countries = { IRE }
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	prefix = "LÉ "
+	fallback_name = "Submarine %d"
+	unique = {
+		"Deirbhile" "Granuaile" "Lir" "Fionn" "Náisiunta"
+		"Inis Mór" "Inis Meáin" "Inis Oírr" "Tory" "Rinn"
+	}
+}

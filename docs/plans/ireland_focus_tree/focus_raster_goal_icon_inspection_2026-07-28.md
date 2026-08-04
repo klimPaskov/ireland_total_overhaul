@@ -2,21 +2,21 @@
 
 ## Scope
 
-This is an offline MCP raster review of the authored `slopx_ireland_focus_tree`
+This is an offline MCP raster review of the authored `ireland_focus_tree`
 after the fresh v7 focus-goal regeneration. It does not launch Hearts of Iron
 IV and does not claim live engine behaviour.
 
 ## Result
 
-- Source: `common/national_focus/slopx_ireland_focus_tree.txt`
-- Tree id: `slopx_ireland_focus_tree`
+- Source: `common/national_focus/ireland_focus_tree.txt`
+- Tree id: `ireland_focus_tree`
 - Raster mode: national focus tree
 - Review scale: `0.25`
 - Raster spacing: horizontal `80`, vertical `80`, padding `20`
 - Raster dimensions: `9046x1009`
 - Result: `FOCUS_RASTERIZED`
 - Ireland focus goal references loaded: `216`
-- Runtime texture root observed: `gfx/interface/goals/slopx_ireland/`
+- Runtime texture root observed: `gfx/interface/goals/ireland/`
 - Runtime `assets/` texture references observed: `0`
 
 The raster source scan resolved the Ireland focus references against the fresh

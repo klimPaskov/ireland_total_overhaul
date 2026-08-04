@@ -4,7 +4,7 @@ Feature slug: `ireland_focus_tree`
 
 ## Scope
 
-The durable `slopx_ireland_atlantic_route` writer in `common/scripted_effects/slopx_ireland_runtime.txt` now follows the late-game Atlantic defence requirements instead of treating the route as formed at the old 35/35 readiness point.
+The durable `ireland_atlantic_route` writer in `common/scripted_effects/ireland_runtime.txt` now follows the late-game Atlantic defence requirements instead of treating the route as formed at the old 35/35 readiness point.
 
 ## Required route evidence
 

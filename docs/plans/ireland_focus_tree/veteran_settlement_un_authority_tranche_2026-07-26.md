@@ -15,19 +15,19 @@ This tranche closes two canonical admission gaps found while reviewing the 140-r
 
 ## Veteran settlement
 
-`slopx_ireland_veteran_settlement_capacity` in `common/scripted_triggers/slopx_ireland_triggers.txt` requires:
+`ireland_veteran_settlement_capacity` in `common/scripted_triggers/ireland_triggers.txt` requires:
 
 - Administrative Reach at least the shared political gate minimum (`60`);
 - Labour Organisation at least the shared constitutional-route minimum (`35`); and
 - one named capacity: Emergency Housing, Reconstruction Portfolio, the Reconstruction Mandate focus handoff, or the O'Duffy veteran-employer base.
 
-The action in `common/decisions/slopx_ireland_decisions.txt` additionally requires full-control Dublin, two available civilian factories, more than 99 Infantry Equipment, and more than 999 manpower. Launch commits exactly 100 Infantry Equipment and 1,000 manpower, reserves two civilian factories for 300 days, and starts the existing dated settlement mission. No units, equipment, factories, housing, employment, or political power are created as a political victory reward.
+The action in `common/decisions/ireland_decisions.txt` additionally requires full-control Dublin, two available civilian factories, more than 99 Infantry Equipment, and more than 999 manpower. Launch commits exactly 100 Infantry Equipment and 1,000 manpower, reserves two civilian factories for 300 days, and starts the existing dated settlement mission. No units, equipment, factories, housing, employment, or political power are created as a political victory reward.
 
-The cancellation path uses the existing one-time capped refund helper. Code `19` now returns at most 70 Infantry Equipment and 700 manpower, with no factory-time or political-cost refund. The constants live in `common/script_constants/slopx_ireland_constants.txt`, and the action and refund effects are documented in `docs/slopx_dynamic_effects.md`.
+The cancellation path uses the existing one-time capped refund helper. Code `19` now returns at most 70 Infantry Equipment and 700 manpower, with no factory-time or political-cost refund. The constants live in `common/script_constants/ireland_constants.txt`, and the action and refund effects are documented in `docs/ireland_dynamic_effects.md`.
 
 ## United Nations admission
 
-`slopx_ireland_un_admission_authority` requires the postwar foreign review, a resolved FR11 admission-reaction record or a closed H17 United Nations chain, and Diplomatic Recognition at least 50. Both the decision admission gate and the `Build Support For United Nations Admission` map objective consume this trigger. The mission retains its naval-base, control, Neutrality Integrity, foreign-posture, deadline, full, partial, failure, escalation, and cleanup behavior.
+`ireland_un_admission_authority` requires the postwar foreign review, a resolved FR11 admission-reaction record or a closed H17 United Nations chain, and Diplomatic Recognition at least 50. Both the decision admission gate and the `Build Support For United Nations Admission` map objective consume this trigger. The mission retains its naval-base, control, Neutrality Integrity, foreign-posture, deadline, full, partial, failure, escalation, and cleanup behavior.
 
 The gate accepts the authored FR11 event 425 resolution or the named H17 closure flags (`followup_un_application_closed`, `followup_un_recognition_and_delay_closed`, or `followup_un_neutral_contribution_closed`). It does not treat a date, generic posture, foreign country tag, or action completion as a world-organisation position. The action and map-objective tooltips expose the recognition and external-position requirements and state that membership does not grant free recognition, territory, cores, alignment, industry, equipment, units, fuel, shipping, offices, or membership.
 

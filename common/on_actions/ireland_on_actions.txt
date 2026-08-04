@@ -1,0 +1,96 @@
+# Ireland country-scoped runtime hooks. Startup initializes only IRE, while daily and monthly work stays on the exact scoped TAG on_action forms used by vanilla.
+
+on_actions = {
+	on_startup = {
+		effect = {
+			IRE = {
+				if = {
+					limit = {
+						ireland_is_ireland = yes
+						NOT = { has_country_flag = ireland_initialized }
+					}
+					ireland_initialize_campaign = yes
+				}
+			}
+		}
+	}
+
+	on_daily_IRE = {
+		effect = {
+			if = {
+				limit = {
+					ireland_is_ireland = yes
+					has_country_flag = ireland_initialized
+				}
+				ireland_sync_foreign_channels = yes
+				ireland_update_neutrality_partner_depth = yes
+				ireland_sync_named_northern_objectives = yes
+				ireland_evaluate_mission_objectives = yes
+				ireland_update_settlement_stage = yes
+				ireland_tick_reviews_and_windows = yes
+				ireland_sync_operational_state = yes
+				ireland_update_mission_capacity = yes
+				ireland_sync_cultural_evidence = yes
+				ireland_sync_plebiscite_state = yes
+				ireland_sync_hidden_permissions = yes
+				ireland_sync_route_profile = yes
+				ireland_sync_route_gate_flags = yes
+				ireland_sync_political_gate_flags = yes
+				mark_focus_tree_layout_dirty = yes
+				ireland_sync_law_registry = yes
+				ireland_sync_dillon_route_state = yes
+				ireland_sync_dillon_crisis_boundary = yes
+				ireland_refresh_route_spirits = yes
+				ireland_activate_route_leader = yes
+				ireland_sync_office_registry = yes
+				ireland_sync_route_identity = yes
+				ireland_sync_legacy_ledgers = yes
+				ireland_sync_northern_ledger = yes
+				ireland_sync_gui_requests = yes
+				ireland_sync_ai_overlays = yes
+				ireland_sync_ai_priority_flags = yes
+				ireland_update_achievement_trackers = yes
+				ireland_open_event_gateways = yes
+				ireland_tick_h14_bargain_lifecycle = yes
+				ireland_dispatch_event_programme = yes
+				ireland_update_action_cost_preview = yes
+				if = {
+					limit = { has_country_flag = ireland_mission_capacity_rebuild_pending }
+					ireland_update_mission_capacity = yes
+					clr_country_flag = ireland_mission_capacity_rebuild_pending
+				}
+				ireland_resume_paused_routine_mission_preserving_timeout = yes
+			}
+		}
+	}
+
+	on_monthly_IRE = {
+		effect = {
+			if = {
+				limit = {
+					ireland_is_ireland = yes
+					has_country_flag = ireland_initialized
+				}
+				ireland_update_settlement_monthly = yes
+				ireland_recompute_provision = yes
+				ireland_recompute_readiness = yes
+				ireland_sync_operational_state = yes
+				ireland_sync_cultural_evidence = yes
+				ireland_sync_plebiscite_state = yes
+				ireland_sync_northern_ledger = yes
+				ireland_sync_named_northern_objectives = yes
+				ireland_sync_gui_requests = yes
+				ireland_sync_office_registry = yes
+				ireland_sync_hidden_permissions = yes
+				ireland_sync_route_gate_flags = yes
+				ireland_sync_political_gate_flags = yes
+				ireland_sync_law_registry = yes
+				ireland_sync_dillon_route_state = yes
+				ireland_sync_dillon_crisis_boundary = yes
+				ireland_update_achievement_trackers = yes
+				ireland_sync_ai_priority_flags = yes
+				ireland_update_action_cost_preview = yes
+			}
+		}
+	}
+}

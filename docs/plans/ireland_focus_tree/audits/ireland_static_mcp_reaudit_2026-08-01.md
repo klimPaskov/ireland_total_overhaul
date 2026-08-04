@@ -13,8 +13,8 @@ outside the completion gate by user direction.
 
 ## Focus tree and icon references
 
-`hoi4.focus_inspect` resolved `slopx_ireland_focus_tree` from
-`common/national_focus/slopx_ireland_focus_tree.txt` with 216 Ireland focus
+`hoi4.focus_inspect` resolved `ireland_focus_tree` from
+`common/national_focus/ireland_focus_tree.txt` with 216 Ireland focus
 nodes, 197 connectors, zero connector crossings, zero node intersections, and
 zero long connectors. The 14 blocking diagnostics returned by the global
 inspection are unrelated vanilla continuous-focus references (missing

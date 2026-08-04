@@ -28,7 +28,7 @@ Canonical ledger: [ireland_icon_animation_manifest.md](../../../../assets/irelan
 | Achievement states | 96 source PNG + 96 processed PNG + 96 DDS; 32 concepts x completed/grey/not-eligible |
 | Independent animations | exactly 7; 58 source frames + 58 processed frames, 7 sheets, 7 static fallbacks, 7 GIF previews, 7 contact sheets |
 
-Every focus icon also has a paired animated shine registration in `interface/slopx_ireland_focus_shine.gfx`. The masks use the final focus DDS files under `gfx/interface/goals/slopx_ireland/`, and the standard shine effect surface is present at `gfx/interface/goals/shine_overlay.dds`.
+Every focus icon also has a paired animated shine registration in `interface/ireland_focus_shine.gfx`. The masks use the final focus DDS files under `gfx/interface/goals/ireland/`, and the standard shine effect surface is present at `gfx/interface/goals/shine_overlay.dds`.
 
 Source and processed assets remain under `assets/ireland_focus_tree/icons/{source_png,processed_png}/`; final runtime DDS files are shipped under the corresponding `gfx/` roots. The six class contact sheets are under `assets/ireland_focus_tree/icons/contact_sheets/`. The exact row patterns, ranges, spirit runtime-name mapping, and dimensions are in the canonical manifest.
 
@@ -53,8 +53,8 @@ Each animation contains independently generated `source_frames/`, processed `pro
 
 ## Remaining blockers / owning-agent actions
 
-1. The `ireland_NNN` package basenames are mapped to the canonical mission, overlay, law, mechanic/ledger, and achievement runtime IDs in `interface/slopx_ireland_secondary_assets.gfx`.
-2. Spirits use the ordered `GFX_slopx_ireland_spirit_*` mapping in the canonical manifest and implementation registration.
+1. The `ireland_NNN` package basenames are mapped to the canonical mission, overlay, law, mechanic/ledger, and achievement runtime IDs in `interface/ireland_secondary_assets.gfx`.
+2. Spirits use the ordered `GFX_ireland_spirit_*` mapping in the canonical manifest and implementation registration.
 3. Static DDS paths, animation sheet frame counts/rates, static fallbacks, and achievement state variants are registered in the Ireland-owned `.gfx` files. All seven animated and seven static sprites are assigned across the three Ireland GUI surfaces.
 4. The documented 60x68 spirit/law and 64x64 mechanic/ledger dimensions are registered against the current UI surfaces. Live gameplay testing is outside the completion gate by user instruction.
 

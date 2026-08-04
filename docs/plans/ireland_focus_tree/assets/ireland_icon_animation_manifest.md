@@ -20,7 +20,7 @@ Worker handoff: `docs/plans/ireland_focus_tree/assets/ireland_icon_asset_handoff
 The source, processed, and final paths, exact spirit runtime mapping, and
 contact sheets are recorded in the canonical manifest. The ordinal source rows
 for missions, temporary overlays, laws, mechanics, and achievements are mapped
-to their owning runtime IDs in `interface/slopx_ireland_secondary_assets.gfx`.
+to their owning runtime IDs in `interface/ireland_secondary_assets.gfx`.
 Spirits use their exact runtime names.
 
 ## Delivered independent animations
@@ -29,23 +29,23 @@ All seven packages contain independently produced source frames, processed frame
 
 | Slug | Frames | FPS | Loop | Static sprite | Animated sprite |
 | --- | ---: | ---: | --- | --- | --- |
-| `hidden_evidence_seal_reveal` | 6 | 6 | no | `GFX_slopx_ireland_hidden_evidence_seal_reveal` | `GFX_slopx_ireland_hidden_evidence_seal_reveal_animated` |
-| `ailtiri_takeover_seal` | 8 | 8 | no | `GFX_slopx_ireland_ailtiri_takeover_seal` | `GFX_slopx_ireland_ailtiri_takeover_seal_animated` |
-| `high_kingship_crown_selection` | 8 | 8 | no | `GFX_slopx_ireland_high_kingship_crown_selection` | `GFX_slopx_ireland_high_kingship_crown_selection_animated` |
-| `five_provinces_compact` | 8 | 8 | no | `GFX_slopx_ireland_five_provinces_compact` | `GFX_slopx_ireland_five_provinces_compact_animated` |
-| `verified_otherworld_entry` | 10 | 8 | no | `GFX_slopx_ireland_verified_otherworld_entry` | `GFX_slopx_ireland_verified_otherworld_entry_animated` |
-| `compact_breach_warning` | 6 | 6 | yes | `GFX_slopx_ireland_compact_breach_warning` | `GFX_slopx_ireland_compact_breach_warning_animated` |
-| `convergence_conclusion_seal` | 12 | 8 | no | `GFX_slopx_ireland_convergence_conclusion_seal` | `GFX_slopx_ireland_convergence_conclusion_seal_animated` |
+| `hidden_evidence_seal_reveal` | 6 | 6 | no | `GFX_ireland_hidden_evidence_seal_reveal` | `GFX_ireland_hidden_evidence_seal_reveal_animated` |
+| `ailtiri_takeover_seal` | 8 | 8 | no | `GFX_ireland_ailtiri_takeover_seal` | `GFX_ireland_ailtiri_takeover_seal_animated` |
+| `high_kingship_crown_selection` | 8 | 8 | no | `GFX_ireland_high_kingship_crown_selection` | `GFX_ireland_high_kingship_crown_selection_animated` |
+| `five_provinces_compact` | 8 | 8 | no | `GFX_ireland_five_provinces_compact` | `GFX_ireland_five_provinces_compact_animated` |
+| `verified_otherworld_entry` | 10 | 8 | no | `GFX_ireland_verified_otherworld_entry` | `GFX_ireland_verified_otherworld_entry_animated` |
+| `compact_breach_warning` | 6 | 6 | yes | `GFX_ireland_compact_breach_warning` | `GFX_ireland_compact_breach_warning_animated` |
+| `convergence_conclusion_seal` | 12 | 8 | no | `GFX_ireland_convergence_conclusion_seal` | `GFX_ireland_convergence_conclusion_seal_animated` |
 
 ## Implemented owning surfaces
 
-`interface/slopx_ireland_animation_assets.gfx` registers all seven static
+`interface/ireland_animation_assets.gfx` registers all seven static
 fallbacks and seven `frameAnimatedSpriteType` definitions with the documented
 frame counts, rates, and loop flags. The three Ireland GUI files consume the
 seven animated/static pairs:
 
-- `slopx_ireland_concealed_evidence.gui`: evidence reveal and Otherworld entry;
-- `slopx_ireland_northern_ledger.gui`: Ailtirí takeover and compact breach;
-- `slopx_ireland_conditions.gui`: High Kingship, Five Provinces, and convergence.
+- `ireland_concealed_evidence.gui`: evidence reveal and Otherworld entry;
+- `ireland_northern_ledger.gui`: Ailtirí takeover and compact breach;
+- `ireland_conditions.gui`: High Kingship, Five Provinces, and convergence.
 
 No fourth GUI, still-image substitution, or staging ordinal is used.

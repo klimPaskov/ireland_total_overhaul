@@ -1,0 +1,19 @@
+# Ireland-only public conclusion follow-up. The tag-scoped daily hook avoids a
+# world iteration and opens the Northern unity record after the H14 settlement
+# has set its full-unity and success state.
+
+on_actions = {
+	on_daily_IRE = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = ireland_initialized
+					has_country_flag = ireland_h14_full_unity
+					has_country_flag = ireland_h14_success
+					NOT = { has_country_flag = ireland_event_seen_433 }
+				}
+				country_event = { id = ireland_events.433 }
+			}
+		}
+	}
+}

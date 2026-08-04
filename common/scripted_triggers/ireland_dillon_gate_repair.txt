@@ -1,0 +1,10 @@
+# Ireland Dillon gate repair
+# The named Dáil vote keeps the fixed 90-point political mandate. The direct-
+# attack exception is intentionally confined to the final war-entry trigger.
+
+ireland_dillon_named_vote_gate_strict = {
+	AND = {
+		ireland_dillon_named_vote_gate = yes
+		check_variable = { var = ireland_intervention_mandate value = constant:ireland.dillon_intervention_mandate compare = greater_than_or_equals }
+	}
+}

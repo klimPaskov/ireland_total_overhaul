@@ -25,8 +25,8 @@ Package: `assets/ireland_focus_tree/icons/regenerated_goal_and_law_icons_fresh_2
 
 The final files are installed only at:
 
-- `gfx/interface/goals/slopx_ireland/` — 216 DDS.
-- `gfx/interface/ideas/slopx_ireland/laws/` — 51 DDS.
+- `gfx/interface/goals/ireland/` — 216 DDS.
+- `gfx/interface/ideas/ireland/laws/` — 51 DDS.
 
 ## Spirit replacements
 
@@ -34,7 +34,7 @@ Package: `assets/ireland_focus_tree/icons/regenerated_spirit_icons_fresh_2026-08
 
 Rows `003`, `009`, `011`, `032`, `034`, `043`, and `062` pass the seven-row
 alpha/centering audit and `audits/spirit_dds_readback.json`. Their verified DDS files are
-installed at `gfx/interface/ideas/slopx_ireland/spirits/` without changing
+installed at `gfx/interface/ideas/ireland/spirits/` without changing
 the existing sprite names or idea wiring.
 
 ## Runtime surface readback

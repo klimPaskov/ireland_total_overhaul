@@ -2,7 +2,7 @@
 
 Date: 2026-07-28
 Feature slug: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 
 ## Outcome
 
@@ -28,7 +28,7 @@ reprocessed from v5 or any earlier package.
   chroma-key cleanup produced real alpha; each visible alpha bound was then
   optically centered on a 100x88 canvas.
 - All 216 processed PNGs were converted to DDS and promoted to the standard
-  runtime `gfx/interface/goals/slopx_ireland/` folder.
+  runtime `gfx/interface/goals/ireland/` folder.
 
 ## Evidence
 

@@ -2,7 +2,7 @@
 
 Date: 2026-08-01
 Feature: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 
 ## Scope
 
@@ -14,8 +14,8 @@ The two merged missions retain distinct mode ledgers:
 
 | Merged mission | Mode flag | Mode result namespace |
 | --- | --- | --- |
-| Conduct a Free General Election | `slopx_ireland_election_mission_by_election_mode` | `slopx_ireland_mission_conduct_a_free_general_election_by_election_*` |
-| Keep Essential Services Running | `slopx_ireland_service_mission_parish_audit_mode` | `slopx_ireland_mission_keep_essential_services_running_parish_audit_*` |
+| Conduct a Free General Election | `ireland_election_mission_by_election_mode` | `ireland_mission_conduct_a_free_general_election_by_election_*` |
+| Keep Essential Services Running | `ireland_service_mission_parish_audit_mode` | `ireland_mission_keep_essential_services_running_parish_audit_*` |
 
 The by-election remains the 100-day mode through the existing `-5` timeout
 adjustment from the 105-day base mission. The parish audit remains the
@@ -24,20 +24,20 @@ mission.
 
 ## Changed runtime surfaces
 
-- `common/scripted_effects/slopx_ireland_runtime.txt` now uses the merged
+- `common/scripted_effects/ireland_runtime.txt` now uses the merged
   mode namespaces for cancellation, timeout, full and partial completion,
   escalation, failure history, preemption, partial-marker reset, objective
   evaluation, and route cleanup.
-- `common/scripted_effects/slopx_ireland_effects.txt` clears the merged mode
+- `common/scripted_effects/ireland_effects.txt` clears the merged mode
   ledgers during route cleanup.
-- `common/scripted_effects/slopx_ireland_achievement_history.txt` reads the
+- `common/scripted_effects/ireland_achievement_history.txt` reads the
   merged by-election full-success record.
-- `common/scripted_triggers/slopx_ireland_triggers.txt` exposes the two
+- `common/scripted_triggers/ireland_triggers.txt` exposes the two
   mode-specific map-objective triggers under merged mission names.
-- `common/decisions/slopx_ireland_decisions.txt` consumes the merged
+- `common/decisions/ireland_decisions.txt` consumes the merged
   mode-specific objective keys and result flags without changing action or
   mission ownership.
-- `localisation/english/slopx_ireland_l_english.yml` keeps readable,
+- `localisation/english/ireland_l_english.yml` keeps readable,
   mode-specific requirement text and names the 100-day and 120-day deadlines.
 
 ## Static evidence

@@ -4,7 +4,7 @@ Feature slug: `ireland_focus_tree`
 
 Mod: `Ireland Total Overhaul`
 
-Namespace and script prefix: `slopx`
+Namespace and script prefix: `ireland`
 
 ## Objective
 
@@ -88,7 +88,7 @@ Do not begin the focus tree until the country package and shared system ownershi
 
 ### Phase 2: identifiers, constants, regions, variables, flags, and cleanup helpers
 
-Create a stable `slopx` ID registry for:
+Create a stable `ireland` ID registry for:
 
 - focus tree and focus nodes
 - event namespaces and event families

@@ -10,11 +10,11 @@ This source tranche closes three per-action safeguard rows identified by the can
 
 | Action | Canonical burden | Admission now required | Ownership |
 | --- | --- | --- | --- |
-| `Share a Controlled Weather Report` | exposure, aviation safety, leverage, Integrity | a live weather incident, a completed G2 cooperation record, or a valid diplomatic channel, plus Coastal and Air Warning at the shared warning bottleneck threshold | `slopx_ireland_weather_cooperation_depth_valid` |
-| `Release or Exchange Internees` | leverage, public trust, security review | the internment law and active incident, plus a live British, American, German, Vatican, or neutral-states diplomatic channel with a valid route | `slopx_ireland_internment_diplomatic_channel_valid` |
-| `Merge Tax and Debt Administration` | finance staff, budget, external creditors | controlled state 119 plus a live British, American, or neutral-states creditor route | `slopx_ireland_external_creditor_channel_valid` |
+| `Share a Controlled Weather Report` | exposure, aviation safety, leverage, Integrity | a live weather incident, a completed G2 cooperation record, or a valid diplomatic channel, plus Coastal and Air Warning at the shared warning bottleneck threshold | `ireland_weather_cooperation_depth_valid` |
+| `Release or Exchange Internees` | leverage, public trust, security review | the internment law and active incident, plus a live British, American, German, Vatican, or neutral-states diplomatic channel with a valid route | `ireland_internment_diplomatic_channel_valid` |
+| `Merge Tax and Debt Administration` | finance staff, budget, external creditors | controlled state 119 plus a live British, American, or neutral-states creditor route | `ireland_external_creditor_channel_valid` |
 
-The shared `slopx_ireland_any_valid_diplomatic_channel` trigger validates named state actors for the British, American, German, and Vatican channels and retains the neutral-states forum as its own channel. A stale route flag or generic foreign-reaction window is not sufficient.
+The shared `ireland_any_valid_diplomatic_channel` trigger validates named state actors for the British, American, German, and Vatican channels and retains the neutral-states forum as its own channel. A stale route flag or generic foreign-reaction window is not sufficient.
 
 ## Boundaries and cleanup
 

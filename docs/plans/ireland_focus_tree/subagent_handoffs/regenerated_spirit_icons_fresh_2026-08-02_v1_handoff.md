@@ -14,13 +14,13 @@ Source treatment: built-in `$imagegen`, compact centered HOI4 idea/national-spir
 
 | Runtime row | Existing spirit meaning / picture | Source PNG | Status |
 | --- | --- | --- | --- |
-| `spirit_ireland_003` | `slopx_ireland_spirit_security_external_position` / `GFX_slopx_ireland_spirit_security_external_position` — external security | `source_png/spirit_ireland_003_source.png` | generated source only |
-| `spirit_ireland_009` | `slopx_ireland_spirit_governing_costello_coalition` / `GFX_slopx_ireland_spirit_governing_costello_coalition` — coalition government | `source_png/spirit_ireland_009_source.png` | generated source only |
-| `spirit_ireland_011` | `slopx_ireland_spirit_governing_norton_parliamentary` / `GFX_slopx_ireland_spirit_governing_norton_parliamentary` — parliamentary government | `source_png/spirit_ireland_011_source.png` | generated source only |
-| `spirit_ireland_032` | `slopx_ireland_spirit_society_ira_republican` / `GFX_slopx_ireland_spirit_society_ira_republican` — republican society | `source_png/spirit_ireland_032_source.png` | fresh replacement source only |
-| `spirit_ireland_034` | `slopx_ireland_spirit_society_oduffy` / `GFX_slopx_ireland_spirit_society_oduffy` — O'Duffy society | `source_png/spirit_ireland_034_source.png` | generated source only |
-| `spirit_ireland_043` | `slopx_ireland_spirit_security_cosgrave_institutional` / `GFX_slopx_ireland_spirit_security_cosgrave_institutional` — institutional security | `source_png/spirit_ireland_043_source.png` | fresh replacement source only |
-| `spirit_ireland_062` | `slopx_ireland_spirit_society_ira_ghq_command` / `GFX_slopx_ireland_spirit_society_ira_ghq_command` — IRA GHQ command | `source_png/spirit_ireland_062_source.png` | generated source only |
+| `spirit_ireland_003` | `ireland_spirit_security_external_position` / `GFX_ireland_spirit_security_external_position` — external security | `source_png/spirit_ireland_003_source.png` | generated source only |
+| `spirit_ireland_009` | `ireland_spirit_governing_costello_coalition` / `GFX_ireland_spirit_governing_costello_coalition` — coalition government | `source_png/spirit_ireland_009_source.png` | generated source only |
+| `spirit_ireland_011` | `ireland_spirit_governing_norton_parliamentary` / `GFX_ireland_spirit_governing_norton_parliamentary` — parliamentary government | `source_png/spirit_ireland_011_source.png` | generated source only |
+| `spirit_ireland_032` | `ireland_spirit_society_ira_republican` / `GFX_ireland_spirit_society_ira_republican` — republican society | `source_png/spirit_ireland_032_source.png` | fresh replacement source only |
+| `spirit_ireland_034` | `ireland_spirit_society_oduffy` / `GFX_ireland_spirit_society_oduffy` — O'Duffy society | `source_png/spirit_ireland_034_source.png` | generated source only |
+| `spirit_ireland_043` | `ireland_spirit_security_cosgrave_institutional` / `GFX_ireland_spirit_security_cosgrave_institutional` — institutional security | `source_png/spirit_ireland_043_source.png` | fresh replacement source only |
+| `spirit_ireland_062` | `ireland_spirit_society_ira_ghq_command` / `GFX_ireland_spirit_society_ira_ghq_command` — IRA GHQ command | `source_png/spirit_ireland_062_source.png` | generated source only |
 
 Full prompts and source dimensions are recorded in `generation_plan.json` beside the source PNGs.
 

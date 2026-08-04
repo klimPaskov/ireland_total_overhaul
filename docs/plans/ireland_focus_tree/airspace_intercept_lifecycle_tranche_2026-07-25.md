@@ -8,9 +8,9 @@ This tranche corrects the neutrality-family wiring for `Intercept an Airspace Vi
 
 ## Current implementation
 
-- The interception now requires `slopx_ireland_airspace_active`, the operational family signal derived from the active airspace incident sources.
+- The interception now requires `ireland_airspace_active`, the operational family signal derived from the active airspace incident sources.
 - The existing Fighter and Fuel gates remain in force, and completion adds the authored Readiness Intelligence delta and opens the foreign-reaction window.
-- Completion records `slopx_ireland_airspace_forced_landing_pending`.
+- Completion records `ireland_airspace_forced_landing_pending`.
 - `Intern a Belligerent Crew` and `Resolve an Aircrew Internment Case` accept either the named internment incident or the pending forced-landing record, while retaining the internment law, map, manpower, and mission-capacity gates.
 - Cancellation, timeout, full success, partial success, route cleanup, and neutrality-incident cleanup all clear the pending handoff flag.
 

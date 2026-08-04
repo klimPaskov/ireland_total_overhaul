@@ -8,7 +8,7 @@ Asset worker scope: `assets/ireland_focus_tree/generated/collective_portraits/` 
 
 Package result: `handed_off`
 
-Main integration (2026-07-22): all fourteen sprite definitions are registered in `interface/slopx_ireland_route_assets.gfx`, and all fourteen institutional offices are represented in `common/characters/slopx_ireland_route_characters.txt`. Route activation recruits the relevant office portrait while retaining sourced historical characters where the route has a real founder or organiser; route-leader cleanup retires unused institutional candidates with the rest of the route transition.
+Main integration (2026-07-22): all fourteen sprite definitions are registered in `interface/ireland_route_assets.gfx`, and all fourteen institutional offices are represented in `common/characters/ireland_route_characters.txt`. Route activation recruits the relevant office portrait while retaining sourced historical characters where the route has a real founder or organiser; route-leader cleanup retires unused institutional candidates with the rest of the route transition.
 
 Exactly 14 distinct fictional institutional/collective leader-style portraits were generated, processed, and converted. No real-person likenesses, historical documents, historical symbols, fallbacks, reused stills, `.gfx` edits, or gameplay edits were used.
 

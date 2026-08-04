@@ -12,10 +12,10 @@ M2 is accepted and implemented. The feature keeps exactly 13 decision
 categories, 140 actions, and 54 mission families.
 
 - The by-election mode now launches the base Conduct a Free General Election
-  mission with `slopx_ireland_election_mission_by_election_mode`. Its deadline
+  mission with `ireland_election_mission_by_election_mode`. Its deadline
   is 100 days; the ordinary general-election mode remains 105 days.
 - The parish-audit mode now launches the base Keep Essential Services Running
-  mission with `slopx_ireland_service_mission_parish_audit_mode`. Its deadline
+  mission with `ireland_service_mission_parish_audit_mode`. Its deadline
   is 120 days; the ordinary essential-services mode remains 60 days.
 - The freed mission ordinals are now the Radical/Underground families
   Consolidate the Movement Network (006) and Secure Constituent Authority
@@ -47,7 +47,7 @@ conditional local-mod promotion of S-24, S-27, and the eight exact event/news
 rows in `assets/source_research_handoffs/event_news_user_approved_conditional_2026-08-01.md`.
 The source manifest records the promoted packages as `complete`, with final
 DDS paths and SHA-256 hashes, and registers their sprites in
-`interface/slopx_ireland_sourced_assets.gfx`. The conditional packages retain
+`interface/ireland_sourced_assets.gfx`. The conditional packages retain
 their attribution and object-use boundaries and are not represented as C4 or
 unrestricted redistribution permission.
 
@@ -100,7 +100,7 @@ and cleanup checks only; it makes no claim of a running HOI4 session.
 ## Post-approval static repairs
 
 The follow-up Dillon audit added a distinct
-`slopx_ireland_dillon_named_vote_gate`: the invasion-danger exception remains
+`ireland_dillon_named_vote_gate`: the invasion-danger exception remains
 available only to the final war-entry gate, so it cannot synthesize the named
 Dail assent. The named vote is written by the explicit event option and is
 cleared only by route cleanup. The ten promoted event/news packages also gained

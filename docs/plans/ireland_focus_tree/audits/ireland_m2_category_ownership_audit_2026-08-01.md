@@ -9,7 +9,7 @@ Scope: static source ownership and count audit for the approved M2 decision.
 The current decision source contains exactly 13 categories, 140 action
 definitions, and 54 mission definitions. Mission identifiers are unique and
 the source has balanced braces. The two replacement mission declarations are
-physically children of `slopx_ireland_radical_underground`; they are not merely
+physically children of `ireland_radical_underground`; they are not merely
 activated by Radical/Underground actions.
 
 | category | missions | actions | total child definitions |
@@ -31,16 +31,16 @@ activated by Radical/Underground actions.
 
 ## M2 ownership checks
 
-- `slopx_ireland_mission_conduct_a_free_general_election` remains in
-  `slopx_ireland_elections` and carries the approved general-election and
+- `ireland_mission_conduct_a_free_general_election` remains in
+  `ireland_elections` and carries the approved general-election and
   by-election modes.
-- `slopx_ireland_mission_keep_essential_services_running` remains in
-  `slopx_ireland_organised_society` and carries the approved normal-service
+- `ireland_mission_keep_essential_services_running` remains in
+  `ireland_organised_society` and carries the approved normal-service
   and parish-audit modes.
-- `slopx_ireland_mission_consolidate_the_movement_network` is a child of
-  `slopx_ireland_radical_underground` and uses ordinal 006.
-- `slopx_ireland_mission_secure_constituent_authority` is a child of
-  `slopx_ireland_radical_underground` and uses ordinal 009.
+- `ireland_mission_consolidate_the_movement_network` is a child of
+  `ireland_radical_underground` and uses ordinal 006.
+- `ireland_mission_secure_constituent_authority` is a child of
+  `ireland_radical_underground` and uses ordinal 009.
 - No active mission target references the retired standalone
   `protect_a_by_election` or `audit_parish_service_contracts` identifiers.
 - The count-preserving merge therefore leaves the decision surface at 140

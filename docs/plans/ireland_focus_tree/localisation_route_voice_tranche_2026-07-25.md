@@ -34,7 +34,7 @@ The tranche was then extended across the remaining standard event surface:
 
 The verified source-level result is 220 unique standard event descriptions and
 217 unique standard `a`/`b` option strings in
-`slopx_ireland_events`, with all 236 flavour-event descriptions also unique.
+`ireland_events`, with all 236 flavour-event descriptions also unique.
 
 The changes are localisation-only. They do not alter event IDs, option keys,
 effects, route gates, Northern control, occupation, settlement, integration,

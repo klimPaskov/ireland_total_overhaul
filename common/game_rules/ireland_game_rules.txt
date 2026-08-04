@@ -1,0 +1,19 @@
+# Ireland Total Overhaul game rules.
+# The hidden-content rule is deliberately opt-in. Historical and plausible
+# culture remains available without it; only the concealed A-state permission
+# uses this rule.
+
+ireland_hidden_content = {
+	name = "IRELAND_HIDDEN_CONTENT"
+	group = "RULE_GROUP_IRELAND"
+	default = {
+		name = DISABLED
+		text = "IRELAND_HIDDEN_CONTENT_DISABLED"
+		desc = "IRELAND_HIDDEN_CONTENT_DISABLED_DESC"
+	}
+	option = {
+		name = ENABLED
+		text = "IRELAND_HIDDEN_CONTENT_ENABLED"
+		desc = "IRELAND_HIDDEN_CONTENT_ENABLED_DESC"
+	}
+}

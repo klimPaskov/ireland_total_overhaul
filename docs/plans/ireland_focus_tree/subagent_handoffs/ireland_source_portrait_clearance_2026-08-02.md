@@ -40,7 +40,7 @@ The package manifest is `provenance_manifest.json`; per-item notes are under `ev
 
 ## Main-agent wiring handoff
 
-Proposed sprite tokens remain the canonical manifest names `ireland_portrait_p_15` through `ireland_portrait_p_57` for the assigned IDs. Suggested GFX surface is `interface/slopx_ireland_sourced_assets.gfx`, with final files intended for `gfx/leaders/ireland/` only after a row is cleared. `gfx_handoff.md` contains the complete no-DDS table. Do not wire any review PNG or source image into runtime.
+Proposed sprite tokens remain the canonical manifest names `ireland_portrait_p_15` through `ireland_portrait_p_57` for the assigned IDs. Suggested GFX surface is `interface/ireland_sourced_assets.gfx`, with final files intended for `gfx/leaders/ireland/` only after a row is cleared. `gfx_handoff.md` contains the complete no-DDS table. Do not wire any review PNG or source image into runtime.
 
 ## Completion state
 

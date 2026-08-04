@@ -1,7 +1,7 @@
 # Ireland Icon Surface Audit
 
 Feature slug: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 Audit date: 2026-07-28
 Expanded edge review: 2026-07-29
 
@@ -39,7 +39,7 @@ output. The package contains 14 source atlases, 216 source rows, 216 alpha
 previews, 216 processed 100x88 previews, a contact sheet, and a row manifest.
 The final runtime directory is:
 
-`gfx/interface/goals/slopx_ireland/`
+`gfx/interface/goals/ireland/`
 
 The v12 audit found:
 
@@ -51,7 +51,7 @@ The v12 audit found:
 - exact 100x88 DDS readback dimensions; and
 - zero staging-to-runtime hash mismatches.
 
-The stable registrations remain in `interface/slopx_ireland_icons.gfx`.
+The stable registrations remain in `interface/ireland_icons.gfx`.
 
 ## Law icons
 
@@ -72,7 +72,7 @@ matted, edge-contracted, and normalized around a shared visible center of
 `(29.5, 33.5)` in the 60x68 canvas. Pixel-grid quantization leaves no more
 than 0.5 pixels of visible-bounds drift. The final runtime directory is:
 
-`gfx/interface/ideas/slopx_ireland/laws/`
+`gfx/interface/ideas/ireland/laws/`
 
 The v1 audit found:
 
@@ -85,7 +85,7 @@ The v1 audit found:
 - zero staging-to-runtime hash mismatches.
 
 The stable registrations remain in
-`interface/slopx_ireland_secondary_assets.gfx`. The generated law sources and
+`interface/ireland_secondary_assets.gfx`. The generated law sources and
 processed evidence are symbolic/generated art and do not assert historical
 source clearance.
 
@@ -160,29 +160,29 @@ runtime directory that had no `.gfx` registration or gameplay reference. They
 were not part of the canonical achievement package. They are retained at
 `assets/ireland_focus_tree/icons/runtime_cleanup/legacy_numeric_achievements_2026-07-28/`
 as staging-only cleanup evidence; the runtime tree now contains only the 96
-registered `slopx_ireland_*` variants.
+registered `ireland_*` variants.
 
 ## Wiring and staging boundary
 
 The final DDS paths are:
 
-- `gfx/interface/goals/slopx_ireland/`
-- `gfx/interface/decisions/categories/slopx_ireland/`
-- `gfx/interface/decisions/slopx_ireland/actions/`
-- `gfx/interface/decisions/slopx_ireland/missions/`
-- `gfx/interface/ideas/slopx_ireland/laws/`
-- `gfx/interface/ideas/slopx_ireland/spirits/`
+- `gfx/interface/goals/ireland/`
+- `gfx/interface/decisions/categories/ireland/`
+- `gfx/interface/decisions/ireland/actions/`
+- `gfx/interface/decisions/ireland/missions/`
+- `gfx/interface/ideas/ireland/laws/`
+- `gfx/interface/ideas/ireland/spirits/`
 - `gfx/interface/ireland/mechanic_ledger/`
 - `gfx/interface/ireland/temporary_overlays/`
 - `gfx/interface/ireland/emblems/`
 - `gfx/interface/ireland/sourced/`
 - `gfx/achievements/`
-- `gfx/interface/animated/slopx_ireland/`
+- `gfx/interface/animated/ireland/`
 
-The goal registrations remain in `interface/slopx_ireland_icons.gfx`; the law,
+The goal registrations remain in `interface/ireland_icons.gfx`; the law,
 spirit, mission, overlay, ledger, and achievement registrations remain in
-`interface/slopx_ireland_secondary_assets.gfx`; animation registrations remain
-in `interface/slopx_ireland_animation_assets.gfx`. No runtime texture path
+`interface/ireland_secondary_assets.gfx`; animation registrations remain
+in `interface/ireland_animation_assets.gfx`. No runtime texture path
 points into `assets/`.
 
 ## Remaining non-asset gates

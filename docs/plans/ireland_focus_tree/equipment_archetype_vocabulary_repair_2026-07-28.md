@@ -1,7 +1,7 @@
 # Ireland equipment-archetype vocabulary repair — 2026-07-28
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`  
+Namespace: `ireland`  
 Status: source-level repair complete; live parser and gameplay scenarios are excluded by user direction.
 
 ## Finding

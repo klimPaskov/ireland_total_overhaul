@@ -2,15 +2,15 @@
 
 Status: complete for asset production; the main-agent source-side `.gfx` registration now covers all 34 complete manifest records while review-gated candidates remain explicitly marked.
 
-Scope reconciliation (2026-07-22): the original asset-worker boundary did not include `.gfx` edits; the main implementation has since registered the cleared source package in `interface/slopx_ireland_sourced_assets.gfx`. Live GUI validation and source-clearance decisions remain open.
+Scope reconciliation (2026-07-22): the original asset-worker boundary did not include `.gfx` edits; the main implementation has since registered the cleared source package in `interface/ireland_sourced_assets.gfx`. Live GUI validation and source-clearance decisions remain open.
 
-Runtime portrait reconciliation (2026-07-22): the unrestricted William Norton package is applied to the vanilla `IRE_william_norton` country-leader character when the Norton parliamentary route activates, through `set_portraits` in `common/scripted_effects/slopx_ireland_runtime.txt`. The other conditional source portraits remain registered for review-gated use and are not silently treated as unrestricted.
+Runtime portrait reconciliation (2026-07-22): the unrestricted William Norton package is applied to the vanilla `IRE_william_norton` country-leader character when the Norton parliamentary route activates, through `set_portraits` in `common/scripted_effects/ireland_runtime.txt`. The other conditional source portraits remain registered for review-gated use and are not silently treated as unrestricted.
 
-Historical source integration (2026-07-22): S-02's official Government of Ireland harp reference is registered as `GFX_ireland_official_state_harp_reference` in `interface/slopx_ireland_sourced_assets.gfx`; the older Dalway-harp candidate remains research-only. S-03's 1937 Official Seal of the President of Ireland is registered as `GFX_report_event_ireland_report_presidential_seal` and consumed by `slopx_ireland_events.106`, the presidential-dissolution case. Both packages are C4 in the authoritative source manifest with their source URLs, permission records, processed derivatives, DDS hashes, and attribution retained.
+Historical source integration (2026-07-22): S-02's official Government of Ireland harp reference is registered as `GFX_ireland_official_state_harp_reference` in `interface/ireland_sourced_assets.gfx`; the older Dalway-harp candidate remains research-only. S-03's 1937 Official Seal of the President of Ireland is registered as `GFX_report_event_ireland_report_presidential_seal` and consumed by `ireland_events.106`, the presidential-dissolution case. Both packages are C4 in the authoritative source manifest with their source URLs, permission records, processed derivatives, DDS hashes, and attribution retained.
 
 Source mode: generated fictional/institutional interface art via Codex built-in `image_gen`. The art contains no real-person likenesses, historical documents, real flags, attested symbols, readable generated text, watermarks, or modern UI branding.
 
-Runtime registrations are in `interface/slopx_ireland_gui_assets.gfx`; this handoff records the shipped `gfx/` paths while source, processed, and static-fallback evidence remains in `assets/`.
+Runtime registrations are in `interface/ireland_gui_assets.gfx`; this handoff records the shipped `gfx/` paths while source, processed, and static-fallback evidence remains in `assets/`.
 
 ## Runtime placement
 
@@ -22,17 +22,17 @@ Each close action sets its surface's one-day `*_panel_closed` flag and dirties t
 
 | Sprite name | Surface/use | Final DDS | Dimensions | Static fallback DDS |
 | --- | --- | --- | --- | --- |
-| `GFX_slopx_ireland_gui_conditions_background` | National Conditions Panel background | `gfx/interface/ireland/gui/conditions/background.dds` | `920x704` | `assets/ireland_focus_tree/generated/gui/conditions/static_fallback/conditions_background_static_fallback.dds` |
-| `GFX_slopx_ireland_gui_northern_background` | Northern Settlement Ledger background | `gfx/interface/ireland/gui/northern/background.dds` | `920x704` | `assets/ireland_focus_tree/generated/gui/northern/static_fallback/northern_background_static_fallback.dds` |
-| `GFX_slopx_ireland_gui_evidence_background` | Concealed Evidence Ledger background | `gfx/interface/ireland/gui/evidence/background.dds` | `920x704` | `assets/ireland_focus_tree/generated/gui/evidence/static_fallback/evidence_background_static_fallback.dds` |
-| `GFX_slopx_ireland_gui_status_ready` | Shared approved/ready state | `gfx/interface/ireland/gui/shared/status_ready.dds` | `32x32` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/status_ready_static_fallback.dds` |
-| `GFX_slopx_ireland_gui_status_locked` | Shared locked state | `gfx/interface/ireland/gui/shared/status_locked.dds` | `32x32` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/status_locked_static_fallback.dds` |
-| `GFX_slopx_ireland_gui_status_warning` | Shared warning state | `gfx/interface/ireland/gui/shared/status_warning.dds` | `32x32` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/status_warning_static_fallback.dds` |
-| `GFX_slopx_ireland_gui_status_critical` | Shared critical state | `gfx/interface/ireland/gui/shared/status_critical.dds` | `32x32` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/status_critical_static_fallback.dds` |
-| `GFX_slopx_ireland_gui_value_row` | Shared value row | `gfx/interface/ireland/gui/shared/value_row.dds` | `420x30` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/value_row_static_fallback.dds` |
-| `GFX_slopx_ireland_gui_compact_row` | Shared compact row | `gfx/interface/ireland/gui/shared/compact_row.dds` | `272x30` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/compact_row_static_fallback.dds` |
-| `GFX_slopx_ireland_gui_review_button` | Shared review action plate | `gfx/interface/ireland/gui/shared/review_button.dds` | `280x38` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/review_button_static_fallback.dds` |
-| `GFX_slopx_ireland_gui_close_button` | Shared close action plate | `gfx/interface/ireland/gui/shared/close_button.dds` | `44x38` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/close_button_static_fallback.dds` |
+| `GFX_ireland_gui_conditions_background` | National Conditions Panel background | `gfx/interface/ireland/gui/conditions/background.dds` | `920x704` | `assets/ireland_focus_tree/generated/gui/conditions/static_fallback/conditions_background_static_fallback.dds` |
+| `GFX_ireland_gui_northern_background` | Northern Settlement Ledger background | `gfx/interface/ireland/gui/northern/background.dds` | `920x704` | `assets/ireland_focus_tree/generated/gui/northern/static_fallback/northern_background_static_fallback.dds` |
+| `GFX_ireland_gui_evidence_background` | Concealed Evidence Ledger background | `gfx/interface/ireland/gui/evidence/background.dds` | `920x704` | `assets/ireland_focus_tree/generated/gui/evidence/static_fallback/evidence_background_static_fallback.dds` |
+| `GFX_ireland_gui_status_ready` | Shared approved/ready state | `gfx/interface/ireland/gui/shared/status_ready.dds` | `32x32` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/status_ready_static_fallback.dds` |
+| `GFX_ireland_gui_status_locked` | Shared locked state | `gfx/interface/ireland/gui/shared/status_locked.dds` | `32x32` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/status_locked_static_fallback.dds` |
+| `GFX_ireland_gui_status_warning` | Shared warning state | `gfx/interface/ireland/gui/shared/status_warning.dds` | `32x32` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/status_warning_static_fallback.dds` |
+| `GFX_ireland_gui_status_critical` | Shared critical state | `gfx/interface/ireland/gui/shared/status_critical.dds` | `32x32` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/status_critical_static_fallback.dds` |
+| `GFX_ireland_gui_value_row` | Shared value row | `gfx/interface/ireland/gui/shared/value_row.dds` | `420x30` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/value_row_static_fallback.dds` |
+| `GFX_ireland_gui_compact_row` | Shared compact row | `gfx/interface/ireland/gui/shared/compact_row.dds` | `272x30` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/compact_row_static_fallback.dds` |
+| `GFX_ireland_gui_review_button` | Shared review action plate | `gfx/interface/ireland/gui/shared/review_button.dds` | `280x38` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/review_button_static_fallback.dds` |
+| `GFX_ireland_gui_close_button` | Shared close action plate | `gfx/interface/ireland/gui/shared/close_button.dds` | `44x38` | `assets/ireland_focus_tree/generated/gui/shared/static_fallback/close_button_static_fallback.dds` |
 
 ## Shared-reuse rule
 
@@ -54,7 +54,7 @@ No generation or DDS-conversion blocker remains. Source-side `.gfx` registration
 
 ## Sourced Ireland event/news handoff
 
-Suggested target surface: `interface/slopx_ireland_sourced_assets.gfx`. The table uses the manifest's stable sprite names with a `GFX_report_event_` or `GFX_news_event_` surface prefix. All listed DDS files are final and registered in the runtime `.gfx` surface.
+Suggested target surface: `interface/ireland_sourced_assets.gfx`. The table uses the manifest's stable sprite names with a `GFX_report_event_` or `GFX_news_event_` surface prefix. All listed DDS files are final and registered in the runtime `.gfx` surface.
 
 | Slot | Proposed sprite name | Final DDS | Size | Clearance |
 | --- | --- | --- | --- | --- |

@@ -17,7 +17,7 @@ The engine references used for the schema check were:
 
 ## Exact roster and eligibility
 
-`common/achievements/slopx_ireland_achievements.txt` contains:
+`common/achievements/ireland_achievements.txt` contains:
 
 - the unique package ID `ireland_total_overhaul_ireland_focus_tree`;
 - exactly 32 achievement blocks;
@@ -48,14 +48,14 @@ historical evidence for that decision, not an open approval blocker.
 
 ## Historical proof and anti-exploit wiring
 
-The achievement blocks consume 192 distinct `slopx_ireland_achievement_*`
+The achievement blocks consume 192 distinct `ireland_achievement_*`
 history flags and 24 distinct achievement-history variables. A current source
 scan found at least one gameplay writer for every consumed flag and variable
 outside the achievement declaration file.
 
 The Northern achievements A-23, A-24, A-25, A-28, and A-32 all require the
 stage-five/core-eligible integration threshold and
-`slopx_ireland_northern_final_review_passed`. None treats a claim, control,
+`ireland_northern_final_review_passed`. None treats a claim, control,
 occupation, settlement, or war victory as integration.
 
 The authoritative hidden and mastery entries retain their named public-reveal
@@ -136,9 +136,9 @@ achievements, and the exact three scripted GUI windows is:
 2. Extend the existing Concealed Evidence Ledger window rather than creating a
    fourth GUI. Its registration may open when the hidden-evidence gate is
    active or when one of the three canonical public-reveal flags is present:
-   `slopx_ireland_achievement_reveal_ailtiri_public_launch`,
-   `slopx_ireland_achievement_reveal_royal_convention`, or
-   `slopx_ireland_achievement_reveal_fivefold_convention`.
+   `ireland_achievement_reveal_ailtiri_public_launch`,
+   `ireland_achievement_reveal_royal_convention`, or
+   `ireland_achievement_reveal_fivefold_convention`.
 3. Reuse the existing A-22, A-27, and A-28 achievement sprites in three compact
    dossier entries. Each entry is invisible before its own reveal flag. After
    reveal it shows the final title, readable criteria, current dynamic values,

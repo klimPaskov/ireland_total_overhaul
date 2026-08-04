@@ -4,7 +4,7 @@ This record captures the current source-level checks after the Ireland focus-goa
 
 ## Scope
 
-The checked feature slug is `ireland_focus_tree`; the script namespace is `slopx`. The user requested that final goal sprites live under the mod's runtime `gfx` tree. Temporary source and audit material remains under `assets/ireland_focus_tree/` and is not referenced by runtime `.gfx` definitions.
+The checked feature slug is `ireland_focus_tree`; the script namespace is `ireland`. The user requested that final goal sprites live under the mod's runtime `gfx` tree. Temporary source and audit material remains under `assets/ireland_focus_tree/` and is not referenced by runtime `.gfx` definitions.
 
 Before source changes, the repository instructions, the required offline Paradox wiki pages, the relevant local vanilla documentation, and vanilla precedents were consulted. The source audit below is deliberately static because the user asked not to launch HOI4.
 
@@ -12,18 +12,18 @@ Before source changes, the repository instructions, the required offline Paradox
 
 | Surface | Current count | Evidence source |
 | --- | ---: | --- |
-| National focuses | 216 | `common/national_focus/slopx_ireland_focus_tree.txt` |
-| Evolving decision categories | 13 | `common/decisions/categories/slopx_ireland_categories.txt` |
-| Decision actions | 140 | `common/decisions/slopx_ireland_decisions.txt` |
-| Mission families | 54 | `common/decisions/slopx_ireland_decisions.txt` |
-| Historical event families | 18 | `events/slopx_ireland_events.txt` (`H01`–`H18`) |
-| Political crisis families | 18 | `events/slopx_ireland_events.txt` (`P01`–`P18`) |
-| Consequential flavour events | 236 | `events/slopx_ireland_flavour_events.txt` |
-| Durable AI profiles | 30 | `common/ai_strategy/slopx_ireland_ai_strategy.txt` |
-| Temporary AI overlays | 10 | `common/ai_strategy/slopx_ireland_ai_strategy.txt` |
-| Foreign actor families | 12 | `common/scripted_effects/slopx_ireland_effects.txt` / `common/scripted_triggers/slopx_ireland_triggers.txt` |
-| Foreign response classes | 12 | `common/scripted_effects/slopx_ireland_effects.txt` |
-| Achievements | 32 | `common/achievements/slopx_ireland_achievements.txt` |
+| National focuses | 216 | `common/national_focus/ireland_focus_tree.txt` |
+| Evolving decision categories | 13 | `common/decisions/categories/ireland_categories.txt` |
+| Decision actions | 140 | `common/decisions/ireland_decisions.txt` |
+| Mission families | 54 | `common/decisions/ireland_decisions.txt` |
+| Historical event families | 18 | `events/ireland_events.txt` (`H01`–`H18`) |
+| Political crisis families | 18 | `events/ireland_events.txt` (`P01`–`P18`) |
+| Consequential flavour events | 236 | `events/ireland_flavour_events.txt` |
+| Durable AI profiles | 30 | `common/ai_strategy/ireland_ai_strategy.txt` |
+| Temporary AI overlays | 10 | `common/ai_strategy/ireland_ai_strategy.txt` |
+| Foreign actor families | 12 | `common/scripted_effects/ireland_effects.txt` / `common/scripted_triggers/ireland_triggers.txt` |
+| Foreign response classes | 12 | `common/scripted_effects/ireland_effects.txt` |
+| Achievements | 32 | `common/achievements/ireland_achievements.txt` |
 
 The event source contains 251 event IDs. Its family header accounts for the current historical, crisis, foreign-reaction, postwar, digest, and Five Provinces evidence-gate groups; the separate flavour file contains the 236 flavour-event blocks.
 
@@ -31,7 +31,7 @@ The event source contains 251 event IDs. Its family header accounts for the curr
 
 The English localisation currently contains both a title and a `_desc` key for every focus ID: 432 expected keys, 0 missing. It also contains both keys for every decision action and mission ID: 388 expected keys, 0 missing.
 
-Localisation source: `localisation/english/slopx_ireland_l_english.yml`.
+Localisation source: `localisation/english/ireland_l_english.yml`.
 
 This key-presence check does not prove UTF-8-with-BOM encoding, in-game rendering, readable dynamic requirements, or concealment behavior; those remain part of the engine/reference and scenario checks.
 
@@ -39,9 +39,9 @@ This key-presence check does not prove UTF-8-with-BOM encoding, in-game renderin
 
 The regenerated focus-goal package contains 216 fresh, consistent HOI4-style emblem sprites. The final DDS files are in:
 
-`gfx/interface/goals/slopx_ireland/`
+`gfx/interface/goals/ireland/`
 
-The runtime definitions are in `interface/slopx_ireland_icons.gfx` and reference 216 goal DDS files. The runtime directory contains 216 DDS files. The shine definitions in `interface/slopx_ireland_focus_shine.gfx` contain 216 focus-shine entries and 432 mask references.
+The runtime definitions are in `interface/ireland_icons.gfx` and reference 216 goal DDS files. The runtime directory contains 216 DDS files. The shine definitions in `interface/ireland_focus_shine.gfx` contain 216 focus-shine entries and 432 mask references.
 
 The icon audit found no runtime texture path into `assets/ireland_focus_tree/`, no missing goal sprite, no bad dimension, no visible key-green matte, no opaque square corner, no edge contact, and no off-center emblem. The current regenerated contact sheet is:
 
@@ -52,7 +52,7 @@ The static audit cannot substitute for an in-game focus-tree render.
 The bounded offline MCP focus inspection was rerun against the correct
 workspace `mod_ireland_total_overhaul_65a6b5f140a7` and the current source path without
 launching HOI4. It returned `FOCUS_INSPECTED` for tree
-`slopx_ireland_focus_tree`: 216 focus blocks, 216 resolved titles, 197
+`ireland_focus_tree`: 216 focus blocks, 216 resolved titles, 197
 connectors, zero Ireland-local crossings, zero node intersections, zero long
 connectors, and zero Ireland-tree diagnostics. The matching render returned
 `FOCUS_RENDERED`; its layout hash is
@@ -90,9 +90,9 @@ The existing High Kingship focus/event surfaces now carry separate lawful-househ
 ## Boundary and cost checks
 
 - The focus tree has no core, claim, state-owner, or transfer writer.
-- The only `add_core_of` writer found in the current `common` and `events` source is the final-review runtime path at `common/scripted_effects/slopx_ireland_runtime.txt:5091–5094`, guarded by the strict integration-stage-five and final-review trigger in `common/scripted_triggers/slopx_ireland_triggers.txt:1177`.
-- There are 420 direct command-power deductions in `common/decisions/slopx_ireland_decisions.txt`; the largest base action cost is 35. The current scarcity surcharge adds at most 10, giving a static upper bound of 45 and remaining below the requested maximum of 60.
-- The three persistent route-spirit families are defined in `common/ideas/slopx_ireland_spirits.txt`.
+- The only `add_core_of` writer found in the current `common` and `events` source is the final-review runtime path at `common/scripted_effects/ireland_runtime.txt:5091–5094`, guarded by the strict integration-stage-five and final-review trigger in `common/scripted_triggers/ireland_triggers.txt:1177`.
+- There are 420 direct command-power deductions in `common/decisions/ireland_decisions.txt`; the largest base action cost is 35. The current scarcity surcharge adds at most 10, giving a static upper bound of 45 and remaining below the requested maximum of 60.
+- The three persistent route-spirit families are defined in `common/ideas/ireland_spirits.txt`.
 - The National Settlement, Northern opening state, National Provision, Readiness, Neutrality Integrity, and related values remain implemented through the current scripted system; numeric parity alone is not treated as proof of all runtime transitions.
 
 ## Source clearance status

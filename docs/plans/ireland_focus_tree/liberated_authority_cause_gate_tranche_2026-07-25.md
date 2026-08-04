@@ -1,7 +1,7 @@
 # Liberated authority cause gate tranche
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`  
+Namespace: `ireland`  
 Date: 2026-07-25
 
 ## Purpose
@@ -10,7 +10,7 @@ The Regional Orders and External Ambitions row for `Recognise a Liberated Author
 
 ## Implementation
 
-`common/scripted_triggers/slopx_ireland_triggers.txt` defines `slopx_ireland_liberated_authority_cause_valid`. It accepts only the authored war/collapse or local-authority records:
+`common/scripted_triggers/ireland_triggers.txt` defines `ireland_liberated_authority_cause_valid`. It accepts only the authored war/collapse or local-authority records:
 
 - active Irish war;
 - war spillover;
@@ -18,9 +18,9 @@ The Regional Orders and External Ambitions row for `Recognise a Liberated Author
 - the Northern local-authority mandate;
 - a Northern wartime bargain.
 
-`common/decisions/slopx_ireland_decisions.txt` consumes the trigger in `slopx_ireland_action_recognise_a_liberated_authority`. Existing route-family, capacity, state-113, diplomatic-recognition, equipment, convoy, political-power, command-power, mission, AI, and cleanup gates remain in force.
+`common/decisions/ireland_decisions.txt` consumes the trigger in `ireland_action_recognise_a_liberated_authority`. Existing route-family, capacity, state-113, diplomatic-recognition, equipment, convoy, political-power, command-power, mission, AI, and cleanup gates remain in force.
 
-The updated localisation names the cause, bounded aid package, and no-free-status rule. The trigger contract is recorded in `docs/slopx_dynamic_effects.md`.
+The updated localisation names the cause, bounded aid package, and no-free-status rule. The trigger contract is recorded in `docs/ireland_dynamic_effects.md`.
 
 ## Invariants
 

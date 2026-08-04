@@ -1,13 +1,13 @@
 # Ireland achievement history setter audit — 2026-07-28
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`  
+Namespace: `ireland`  
 Status: structural audit complete; engine and scenario validation remain open.
 
 ## Scope
 
 This audit checks the durable history contract between
-`common/achievements/slopx_ireland_achievements.txt` and the Ireland scripted
+`common/achievements/ireland_achievements.txt` and the Ireland scripted
 source. It deliberately does not change achievement conditions or invent an
 unsupported staged-visibility key.
 
@@ -22,13 +22,13 @@ unsupported staged-visibility key.
   `common/` or `events/` source tree, including the `var = ...` form used by
   the scripted-variable effects.
 - The three apparent unresolved names from a naive reference scan —
-  `slopx_ireland_achievement_coastwatch_days`,
-  `slopx_ireland_achievement_league_members`, and
-  `slopx_ireland_achievement_mission_floor` — are file-local `@` constants,
+  `ireland_achievement_coastwatch_days`,
+  `ireland_achievement_league_members`, and
+  `ireland_achievement_mission_floor` — are file-local `@` constants,
   not gameplay flags or variables.
-- `slopx_ireland_update_achievement_trackers` runs from the scoped
+- `ireland_update_achievement_trackers` runs from the scoped
   `on_daily_IRE` and `on_monthly_IRE` hooks and calls
-  `slopx_ireland_update_achievement_history`; the history writer therefore
+  `ireland_update_achievement_history`; the history writer therefore
   remains attached to the Ireland runtime rather than a world-wide on-action.
 
 ## Boundary that remains open

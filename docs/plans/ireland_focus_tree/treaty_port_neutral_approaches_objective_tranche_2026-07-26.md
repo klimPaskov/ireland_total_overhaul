@@ -15,11 +15,11 @@ This tranche closes the source-level gap between the canonical decision-and-miss
 
 ## Source changes
 
-- `common/script_constants/slopx_ireland_constants.txt` adds `neutral_approaches_integrity_floor = 25` so the patrol objective does not duplicate a magic threshold.
-- `common/scripted_triggers/slopx_ireland_triggers.txt` adds `slopx_ireland_treaty_port_operational_authority` and `slopx_ireland_neutral_approaches_operational_authority`.
+- `common/script_constants/ireland_constants.txt` adds `neutral_approaches_integrity_floor = 25` so the patrol objective does not duplicate a magic threshold.
+- `common/scripted_triggers/ireland_triggers.txt` adds `ireland_treaty_port_operational_authority` and `ireland_neutral_approaches_operational_authority`.
 - The two named map-objective triggers now require live action and mission records and call the reusable authority proofs. They retain separate state control, building, command, warning, Neutrality Integrity, and maritime-readiness checks.
-- `localisation/english/slopx_ireland_l_english.yml` explains the named state, platform, route, warning, action, mission, and dynamic current-value requirements without exposing implementation history.
-- `docs/slopx_dynamic_effects.md` records both trigger contracts, their defaults, side effects, and caller usage.
+- `localisation/english/ireland_l_english.yml` explains the named state, platform, route, warning, action, mission, and dynamic current-value requirements without exposing implementation history.
+- `docs/ireland_dynamic_effects.md` records both trigger contracts, their defaults, side effects, and caller usage.
 
 ## Boundaries
 
@@ -28,6 +28,6 @@ These triggers do not transfer or core Northern territory, create equipment, shi
 ## Validation evidence
 
 - Static source inspection confirms the two helpers are defined once and each named mission objective calls the intended helper plus its active action/mission flags.
-- The new constant is referenced through `constant:slopx_ireland.neutral_approaches_integrity_floor`.
+- The new constant is referenced through `constant:ireland.neutral_approaches_integrity_floor`.
 - Localisation remains UTF-8 with BOM and the touched source contains no unsupported `<=` or `>=` operators.
 - HOI4 was not launched, so parser behavior, mission ticking, map control/building checks, deadline outcomes, AI selection, foreign reaction, and cleanup scenarios remain not-run.

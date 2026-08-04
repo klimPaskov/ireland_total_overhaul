@@ -7,7 +7,7 @@ Owned source package: `assets/ireland_focus_tree/generated/`. Runtime final DDS 
 | Package | Count | Final output | Suggested surface | Static fallback |
 | --- | ---: | --- | --- | --- |
 | Generated event/news allocations | 51 | `gfx/event_pictures/ireland/` | report/news event-picture `.gfx` slots | own static DDS; no animation dependency |
-| Generated route flag identities | 18 × 3 sizes | `gfx/flags/`, `gfx/flags/medium/`, `gfx/flags/small/` | exact `IRE_SLOPX_*` cosmetic-tag filenames | size siblings; historical tricolour when inactive |
+| Generated route flag identities | 18 × 3 sizes | `gfx/flags/`, `gfx/flags/medium/`, `gfx/flags/small/` | exact `IRE_IRELAND_*` cosmetic-tag filenames | size siblings; historical tricolour when inactive |
 | Generated route/faction emblems | 8 × 2 sizes | `gfx/interface/ireland/emblems/` | selected faction/route emblem `.gfx` surface | large/small static siblings |
 
 The ledger split is preserved: 69 sourced + 51 generated = 120 planned event/news images. The 51 generated source PNGs are exact; four retained alternatives are outside the allocation under `contact_sheets/alternatives/`.
@@ -71,9 +71,9 @@ The ledger split is preserved: 69 sourced + 51 generated = 120 planned event/new
 ## Route flags
 
 The DDS paths below are presentation/review siblings only. Engine flags are
-the exact 18 `IRE_SLOPX_*` TGA triplets under the standard `gfx/flags/` roots.
+the exact 18 `IRE_IRELAND_*` TGA triplets under the standard `gfx/flags/` roots.
 Their cosmetic tags are declared in
-`common/countries/slopx_ireland_cosmetic.txt` and applied by the Ireland
+`common/countries/ireland_cosmetic.txt` and applied by the Ireland
 runtime identity effect.
 
 | Identity | Review sprite stem | Normal DDS | Medium DDS | Small DDS | Engine note |

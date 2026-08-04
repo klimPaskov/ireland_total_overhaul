@@ -2,7 +2,7 @@
 
 Date: 2026-07-29
 Feature: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 
 ## Same-day follow-up
 
@@ -44,7 +44,7 @@ runtime portrait was created from that pass.
 EV-SRC-021, EV-SRC-039, and EV-SRC-057 advanced to complete C3/C4 packages
 from distinct Treaty Port source objects. Their final DDS files are under
 `gfx/event_pictures/ireland/` and their sprites are registered in
-`interface/slopx_ireland_sourced_assets.gfx`. They remain without
+`interface/ireland_sourced_assets.gfx`. They remain without
 event-picture consumers because their canonical slot labels do not match the
 current event-family semantics; no unrelated event was assigned merely to
 consume cleared art. The detailed evidence is in
@@ -106,7 +106,7 @@ promoted only three independently verified public-domain rows:
 - S-40: the 1904/1905 Stone of Divisions illustration from *Romantic Ireland*.
 
 Their final DDS files are under `gfx/interface/ireland/sourced/` and their
-sprites are registered in `interface/slopx_ireland_sourced_assets.gfx`.
+sprites are registered in `interface/ireland_sourced_assets.gfx`.
 
 The remaining symbol files stay in source/review staging. A processed PNG,
 staging DDS, or contact-sheet label is not treated as clearance. Exact

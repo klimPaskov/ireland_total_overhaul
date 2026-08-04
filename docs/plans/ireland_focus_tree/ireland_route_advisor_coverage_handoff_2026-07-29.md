@@ -12,8 +12,8 @@ Implemented the two advisor roles that are fully supported by the canonical offi
 
 | Character / idea token | Slot | Trait | Cost | Route and office gate | AI weight | Lifecycle |
 | --- | --- | --- | ---: | --- | --- | --- |
-| `slopx_ireland_sean_lemass` | `political_advisor` | `captain_of_industry` | 150 PP | Visible before route commitment and on the three de Valera routes or Lemass route. Unavailable after route archive, government/cabinet vacancy, constitutional-government-law exit, or while Lemass is ruling leader. | Base `1`; factor `2` on the three de Valera routes. | Retained as a minister on de Valera routes; dismissed before promotion to Taoiseach; retired on incompatible committed routes; may return to minister status after a failed Lemass leadership outcome if the constitutional office remains valid. |
-| `slopx_ireland_richard_mulcahy` | `army_chief` | `army_chief_defensive_2` | 100 PP | Visible before route commitment and on Cosgrave, Mulcahy, or Costello routes. Unavailable after route archive, government/Chief-of-Staff vacancy, military-command collapse, constitutional-government-law exit, or while Mulcahy is ruling leader. | Base `1`; factor `2` on Cosgrave or Costello routes. | Retained as defence figure under Cosgrave and as separate party/defence authority under Costello; dismissed before promotion to Taoiseach; retired on incompatible committed routes; may return to command after a failed Mulcahy leadership outcome if civilian command remains valid. |
+| `ireland_sean_lemass` | `political_advisor` | `captain_of_industry` | 150 PP | Visible before route commitment and on the three de Valera routes or Lemass route. Unavailable after route archive, government/cabinet vacancy, constitutional-government-law exit, or while Lemass is ruling leader. | Base `1`; factor `2` on the three de Valera routes. | Retained as a minister on de Valera routes; dismissed before promotion to Taoiseach; retired on incompatible committed routes; may return to minister status after a failed Lemass leadership outcome if the constitutional office remains valid. |
+| `ireland_richard_mulcahy` | `army_chief` | `army_chief_defensive_2` | 100 PP | Visible before route commitment and on Cosgrave, Mulcahy, or Costello routes. Unavailable after route archive, government/Chief-of-Staff vacancy, military-command collapse, constitutional-government-law exit, or while Mulcahy is ruling leader. | Base `1`; factor `2` on Cosgrave or Costello routes. | Retained as defence figure under Cosgrave and as separate party/defence authority under Costello; dismissed before promotion to Taoiseach; retired on incompatible committed routes; may return to command after a failed Mulcahy leadership outcome if civilian command remains valid. |
 
 Both roles remain ordinary paid appointments. Nothing calls `activate_advisor`, and neither route commitment nor political victory grants an advisor for free.
 
@@ -23,12 +23,12 @@ No new advisor trait or localisation key was required. Character names are exist
 
 ## Files changed
 
-- `common/characters/slopx_ireland_route_characters.txt`
+- `common/characters/ireland_route_characters.txt`
   - Added the two static advisor roles and small-portrait consumers using their already registered sourced sprites.
 - `history/countries/IRE - Ireland.txt`
   - Replaced the two recruited vanilla duplicate-person tokens with the custom sourced tokens.
-- `common/scripted_effects/slopx_ireland_runtime.txt`
-  - Added `slopx_ireland_sync_route_advisor_lifecycle`.
+- `common/scripted_effects/ireland_runtime.txt`
+  - Added `ireland_sync_route_advisor_lifecycle`.
   - Preserved Lemass on the three de Valera routes and Mulcahy on Cosgrave/Mulcahy/Costello routes.
   - Dismissed each advisor before an incompatible ruling office and after invalid office, law, command, route, or archive state.
 - `docs/plans/ireland_focus_tree/ireland_route_advisor_coverage_handoff_2026-07-29.md`

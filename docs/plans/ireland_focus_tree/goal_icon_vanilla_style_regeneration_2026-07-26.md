@@ -25,10 +25,10 @@ record, a machine-readable manifest, a complete contact sheet, and the static
 audit. The final game-facing DDS files are in:
 
 ```text
-gfx/interface/goals/slopx_ireland/
+gfx/interface/goals/ireland/
 ```
 
-`interface/slopx_ireland_icons.gfx` keeps the existing stable sprite names and
+`interface/ireland_icons.gfx` keeps the existing stable sprite names and
 references all 216 runtime DDS files. `assets/` is staging and provenance only;
 the runtime art is not loaded from there.
 
@@ -53,7 +53,7 @@ visible key-green.
 - `contact_sheets/goal_icons_complete_contact_sheet.png` is the complete visual
   review of the regenerated set.
 - Runtime parity is exact: 216 staged DDS files match 216 files under
-  `gfx/interface/goals/slopx_ireland/`, with 100x88 DDS headers and 216 `.gfx`
+  `gfx/interface/goals/ireland/`, with 100x88 DDS headers and 216 `.gfx`
   texture references.
 - The new source and processed hashes have zero overlap with the superseded
   package, confirming that the current set was regenerated rather than

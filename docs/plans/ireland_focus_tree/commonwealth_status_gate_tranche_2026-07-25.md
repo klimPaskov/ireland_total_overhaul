@@ -1,7 +1,7 @@
 # Commonwealth Status Gate Tranche
 
 Feature: `ireland_focus_tree`  
-Namespace: `slopx`  
+Namespace: `ireland`  
 Date: 2026-07-25
 
 ## Closed source gap
@@ -10,14 +10,14 @@ The canonical Part 5 decision map defines `Review Commonwealth Relations` as a p
 
 ## Implementation
 
-`common/decisions/slopx_ireland_decisions.txt` now requires one of the following recorded transitions:
+`common/decisions/ireland_decisions.txt` now requires one of the following recorded transitions:
 
 - the standard postwar republic-status event closed;
 - the standard postwar Commonwealth-choice event closed;
 - a full `Bring the Republic Settlement into Force` mission result;
 - a partial `Bring the Republic Settlement into Force` mission result.
 
-The gate is placed only inside `slopx_ireland_action_review_commonwealth_relations`. It does not grant recognition, territory, Northern control, cores, industry, equipment, units, shipping, fuel, administration, offices, alignment, or passive Political Power. The action still records its own British-Leverage and Command-Power consequences.
+The gate is placed only inside `ireland_action_review_commonwealth_relations`. It does not grant recognition, territory, Northern control, cores, industry, equipment, units, shipping, fuel, administration, offices, alignment, or passive Political Power. The action still records its own British-Leverage and Command-Power consequences.
 
 The requirement tooltip names the status-transition prerequisite so a locked action is readable in the decision surface.
 

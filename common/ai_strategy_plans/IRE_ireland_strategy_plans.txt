@@ -1,0 +1,1103 @@
+# Ireland Total Overhaul AI focus plans.
+# These plans provide the focus-selection layer for the durable profile and
+# overlay registry. Runtime AI strategies still own diplomacy, construction,
+# readiness, neutrality, and decision/mission priorities.
+
+IRE_ireland_historical = {
+	name = "Ireland historical constitutional plan"
+	desc = "A cautious constitutional government completes the shared institutional, neutrality, and material programme before choosing a lawful route."
+
+	allowed = {
+		original_tag = IRE
+	}
+	enable = {
+		NOT = { has_country_flag = ireland_route_committed }
+		OR = {
+			is_historical_focus_on = yes
+			has_country_flag = ireland_profile_historical_de_valera
+		}
+	}
+	abort = {
+		has_country_flag = ireland_route_cleanup
+	}
+
+	ai_national_focuses = {
+		ireland_state_still_defined
+		ireland_institutional_survey
+		ireland_national_settlement
+		ireland_economic_war_review
+		ireland_defence_estimates
+		ireland_port_and_coast_audit
+		ireland_church_labour_consultation
+		ireland_minority_guarantees
+		ireland_language_service
+		ireland_border_observation
+		ireland_northern_contacts
+		ireland_election_timetable
+		ireland_constitutional_draft
+		ireland_presidential_settlement
+		ireland_plebiscite_campaign
+		ireland_general_election_campaign
+		ireland_plebiscite_mandate
+		ireland_election_mandate
+		ireland_government_formation
+		ireland_1938_trade_settlement
+		ireland_treaty_port_transfer
+		ireland_sovereignty_mandate
+		ireland_emergency_opening
+		ireland_active_neutrality
+		ireland_provision_baseline
+		ireland_readiness_baseline
+		ireland_maritime_reserve
+		ireland_coastwatch
+		ireland_port_defence_project
+		ireland_transport_priority
+		ireland_command_audit
+		ireland_establish_naval_staff
+		ireland_harbour_defence_board
+		ireland_cobh_dockyard_programme
+		ireland_lough_swilly_watch
+		ireland_rebuild_marine_service
+		ireland_requisition_trawler_hulls
+		ireland_coastal_patrol_flotilla
+		ireland_professional_army
+		ireland_marine_service_reserve
+		ireland_atlantic_convoy_office
+		ireland_interoperability
+		ireland_regional_maritime_defence_pact
+		ireland_strict_neutrality
+		ireland_neutrality_posture
+		ireland_republican_government
+		ireland_party_of_government
+		ireland_republican_legitimacy
+		ireland_neutrality_by_irish_decision
+		ireland_de_valera_stewardship
+		ireland_govern_through_dail
+		ireland_constitutional_stewardship
+		ireland_secure_plebiscite_mandate
+		ireland_distinguish_prisoners
+		ireland_amnesty_under_law
+		ireland_reconciliation_mandate
+		ireland_de_valera_reconciliation_capstone
+		ireland_recovery_bridge
+		ireland_restore_constitutional_calendar
+		ireland_emergency_accounting
+		ireland_demobilisation_charter
+		ireland_reconstruction_mandate
+		ireland_foreign_postwar_review
+		ireland_material_conclusion_proof
+	}
+
+	research = {
+		industry = 45.0
+		infantry_tech = 20.0
+		support_tech = 10.0
+		artillery = 5.0
+	}
+	ideas = {
+	}
+	traits = {
+		political_connections = 5
+	}
+	weight = {
+		factor = 1.0
+	}
+	focus_factors = {
+		ireland_national_settlement = 100
+		ireland_constitutional_draft = 80
+		ireland_presidential_settlement = 70
+		ireland_general_election_campaign = 70
+		ireland_government_formation = 70
+		ireland_active_neutrality = 60
+		ireland_provision_baseline = 55
+		ireland_readiness_baseline = 55
+		ireland_strict_neutrality = 45
+		ireland_civil_war_memory = 60
+		ireland_republican_veterans = 40
+		ireland_public_order_review = 55
+		ireland_rural_price_board = 50
+		ireland_domestic_industry_review = 60
+		ireland_command_audit = 60
+		ireland_seanad_panels = 45
+		ireland_replacement_charter = 75
+		ireland_party_conference = 55
+		ireland_dail_nomination = 65
+		ireland_food_ledger = 60
+		ireland_maritime_reserve = 55
+		ireland_rebuild_marine_service = 75
+		ireland_requisition_trawler_hulls = 65
+		ireland_coastal_patrol_flotilla = 70
+		ireland_marine_service_reserve = 55
+		ireland_establish_naval_staff = 75
+		ireland_harbour_defence_board = 65
+		ireland_cobh_dockyard_programme = 70
+		ireland_lough_swilly_watch = 60
+		ireland_atlantic_convoy_office = 70
+		ireland_regional_maritime_defence_pact = 45
+		ireland_rural_credit = 50
+		ireland_emergency_stockpiles = 65
+		ireland_social_cooperatives = 55
+		ireland_readiness_command = 70
+		ireland_territorial_reserve = 55
+		ireland_coastwatch = 70
+		ireland_air_warning = 55
+		ireland_port_defence_project = 65
+		ireland_maritime_protection = 70
+		ireland_professional_army = 70
+		ireland_civilian_oversight = 55
+		ireland_interoperability = 60
+		ireland_emergency_mobilisation = 65
+		ireland_armed_neutrality = 70
+		ireland_treaty_port_diplomacy = 60
+		ireland_british_leverage_management = 60
+		ireland_american_diaspora_mission = 45
+		ireland_vatican_small_state_mediation = 45
+		ireland_de_valera_reconciliation_capstone = 15
+		ireland_recovery_bridge = 20
+	}
+}
+
+IRE_ireland_route_reactive = {
+	name = "Ireland route-reactive plan"
+	desc = "After a route commitment, the AI follows the active constitutional, material, Northern, and conclusion gates instead of spending a passive reserve."
+
+	allowed = {
+		original_tag = IRE
+	}
+	enable = {
+		has_country_flag = ireland_route_committed
+	}
+	abort = {
+		has_country_flag = ireland_route_cleanup
+	}
+
+	ai_national_focuses = {
+		ireland_provision_conclusion
+		ireland_readiness_conclusion
+		ireland_foreign_safeguards
+		ireland_northern_settlement_ledger
+		ireland_northern_local_authorities
+		ireland_northern_trade_corridor
+		ireland_northern_labour_social_bridge
+		ireland_northern_federal_preparation
+		ireland_northern_unitary_preparation
+		ireland_northern_wartime_bargain
+		ireland_northern_recovery_bridge
+		ireland_northern_regional_review
+		ireland_northern_policy_proof
+		ireland_recovery_bridge
+		ireland_restore_constitutional_calendar
+		ireland_emergency_accounting
+		ireland_demobilisation_charter
+		ireland_reconstruction_mandate
+		ireland_foreign_postwar_review
+		ireland_material_conclusion_proof
+		ireland_de_valera_reconciliation_capstone
+		ireland_de_valera_emergency_capstone
+		ireland_lemass_developmental_capstone
+		ireland_cosgrave_capstone
+		ireland_mulcahy_capstone
+		ireland_costello_capstone
+		ireland_norton_parliamentary_capstone
+		ireland_vocational_constitution_capstone
+		ireland_ira_route_capstone
+		ireland_congress_plural_capstone
+		ireland_congress_vanguard_capstone
+		ireland_oduffy_personal_capstone
+		ireland_oduffy_corporate_capstone
+		ireland_clerical_route_capstone
+		ireland_ailtiri_total_state_capstone
+		ireland_high_king_capstone
+		ireland_five_provinces_capstone
+		ireland_otherworld_capstone
+		ireland_convergence_order_capstone
+	}
+
+	research = {
+		industry = 40.0
+		infantry_tech = 20.0
+		artillery = 10.0
+		support_tech = 10.0
+	}
+	ideas = {
+	}
+	traits = {
+		political_connections = 5
+	}
+	weight = {
+		factor = 1.0
+	}
+	focus_factors = {
+		ireland_civil_war_memory = 60
+		ireland_republican_veterans = 40
+		ireland_public_order_review = 55
+		ireland_rural_price_board = 50
+		ireland_domestic_industry_review = 60
+		ireland_command_audit = 60
+		ireland_seanad_panels = 45
+		ireland_replacement_charter = 75
+		ireland_party_conference = 55
+		ireland_dail_nomination = 65
+		ireland_food_ledger = 60
+		ireland_maritime_reserve = 55
+		ireland_rural_credit = 50
+		ireland_emergency_stockpiles = 65
+		ireland_social_cooperatives = 55
+		ireland_readiness_command = 70
+		ireland_territorial_reserve = 55
+		ireland_coastwatch = 70
+		ireland_air_warning = 55
+		ireland_port_defence_project = 65
+		ireland_maritime_protection = 70
+		ireland_professional_army = 70
+		ireland_civilian_oversight = 55
+		ireland_interoperability = 60
+		ireland_emergency_mobilisation = 65
+		ireland_armed_neutrality = 70
+		ireland_treaty_port_diplomacy = 60
+		ireland_british_leverage_management = 60
+		ireland_american_diaspora_mission = 45
+		ireland_vatican_small_state_mediation = 45
+		ireland_provision_conclusion = 35
+		ireland_readiness_conclusion = 35
+		ireland_foreign_safeguards = 30
+		ireland_northern_settlement_ledger = 40
+		ireland_northern_local_authorities = 35
+		ireland_northern_trade_corridor = 30
+		ireland_northern_recovery_bridge = 35
+		ireland_northern_regional_review = 25
+		ireland_recovery_bridge = 30
+		ireland_restore_constitutional_calendar = 25
+		ireland_emergency_accounting = 25
+		ireland_demobilisation_charter = 25
+		ireland_reconstruction_mandate = 25
+		ireland_foreign_postwar_review = 25
+		ireland_material_conclusion_proof = 25
+		ireland_de_valera_reconciliation_capstone = 20
+		ireland_de_valera_emergency_capstone = 20
+		ireland_lemass_developmental_capstone = 20
+		ireland_cosgrave_capstone = 20
+		ireland_mulcahy_capstone = 20
+		ireland_costello_capstone = 20
+		ireland_norton_parliamentary_capstone = 20
+		ireland_vocational_constitution_capstone = 20
+		ireland_ira_route_capstone = 20
+		ireland_congress_plural_capstone = 20
+		ireland_congress_vanguard_capstone = 20
+		ireland_oduffy_personal_capstone = 20
+		ireland_oduffy_corporate_capstone = 20
+		ireland_clerical_route_capstone = 20
+		ireland_ailtiri_total_state_capstone = 20
+		ireland_high_king_capstone = 20
+		ireland_five_provinces_capstone = 20
+		ireland_otherworld_capstone = 20
+		ireland_convergence_order_capstone = 20
+	}
+}
+
+# Route-specific focus plans. The route-reactive plan remains the shared
+# material/Northern spine; these plans supply the distinct political and
+# constitutional priorities once a route has actually been committed.
+
+IRE_ireland_route_de_valera_stewardship = {
+	name = "Ireland constitutional stewardship plan"
+	desc = "Keep the Fianna Fail government inside ordinary constitutional review while preserving the historic settlement programme."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_route_de_valera_stewardship }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_constitutional_draft
+		ireland_presidential_settlement
+		ireland_government_formation
+		ireland_de_valera_stewardship
+		ireland_govern_through_dail
+		ireland_constitutional_stewardship
+		ireland_recovery_bridge
+		ireland_restore_constitutional_calendar
+	}
+	focus_factors = {
+		ireland_de_valera_stewardship = 100
+		ireland_constitutional_stewardship = 90
+		ireland_recovery_bridge = 45
+		ireland_material_conclusion_proof = 35
+	}
+}
+
+IRE_ireland_route_de_valera_reconciliation = {
+	name = "Ireland reconciliation plan"
+	desc = "Use lawful prisoner distinctions, amnesty conditions, and a measured reconciliation mandate before the constitutional conclusion."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_route_de_valera_reconciliation }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_republican_government
+		ireland_party_of_government
+		ireland_republican_legitimacy
+		ireland_de_valera_reconciliation
+		ireland_distinguish_prisoners
+		ireland_amnesty_under_law
+		ireland_reconciliation_mandate
+		ireland_de_valera_reconciliation_capstone
+		ireland_recovery_bridge
+	}
+	focus_factors = {
+		ireland_reconciliation_mandate = 90
+		ireland_de_valera_reconciliation_capstone = 100
+		ireland_recovery_bridge = 40
+		ireland_northern_policy_proof = 30
+	}
+}
+
+IRE_ireland_route_de_valera_emergency = {
+	name = "Ireland reviewed emergency plan"
+	desc = "Concentrate authority only through a statutory emergency, a dated review, and an explicit return to ordinary law."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_route_de_valera_emergency }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_emergency_opening
+		ireland_emergency_direction
+		ireland_statutory_emergency
+		ireland_emergency_review
+		ireland_emergency_repeal
+		ireland_de_valera_emergency_capstone
+	}
+	focus_factors = {
+		ireland_statutory_emergency = 95
+		ireland_emergency_review = 90
+		ireland_emergency_repeal = 85
+		ireland_de_valera_emergency_capstone = 100
+	}
+}
+
+IRE_ireland_route_lemass_developmental = {
+	name = "Ireland developmental state plan"
+	desc = "Build domestic production, labour discipline, rural compensation, and the developmental authority in sequence."
+	allowed = { original_tag = IRE }
+	enable = { OR = { has_country_flag = ireland_route_lemass_developmental has_country_flag = ireland_profile_lemass_developmental } }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_lemass_developmental
+		ireland_energy_board
+		ireland_transport_priority
+		ireland_domestic_manufacturing
+		ireland_development_authority
+		ireland_cabinet_compact
+		ireland_cabinet_of_production
+		ireland_labour_industrial_discipline
+		ireland_rural_compensation
+		ireland_lemass_developmental_capstone
+	}
+	focus_factors = {
+		ireland_cabinet_of_production = 85
+		ireland_development_authority = 95
+		ireland_lemass_developmental_capstone = 100
+		ireland_provision_conclusion = 55
+	}
+}
+
+IRE_ireland_route_cosgrave_institutional = {
+	name = "Ireland institutional Fine Gael plan"
+	desc = "Restore parliamentary confidence, civil service capacity, courts, and security under law before consolidation."
+	allowed = { original_tag = IRE }
+	enable = { OR = { has_country_flag = ireland_route_cosgrave_institutional has_country_flag = ireland_profile_cosgrave_institutional } }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_constitutional_opposition
+		ireland_close_oduffy_chapter
+		ireland_government_from_opposition
+		ireland_state_we_built
+		ireland_cosgrave_institutional
+		ireland_restore_parliamentary_confidence
+		ireland_civil_service_and_courts
+		ireland_security_under_law
+		ireland_cosgrave_capstone
+	}
+	focus_factors = {
+		ireland_restore_parliamentary_confidence = 90
+		ireland_civil_service_and_courts = 95
+		ireland_security_under_law = 90
+		ireland_cosgrave_capstone = 100
+	}
+}
+
+IRE_ireland_route_mulcahy_civil_defence = {
+	name = "Ireland civil defence plan"
+	desc = "Professionalise the command structure, keep the army under the Dail, and settle the Civil War record without a military takeover."
+	allowed = { original_tag = IRE }
+	enable = { OR = { has_country_flag = ireland_route_mulcahy_civil_defence has_country_flag = ireland_profile_mulcahy_civil_defence } }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_government_from_opposition
+		ireland_defence_estimates
+		ireland_mulcahy_succession
+		ireland_professional_defence_council
+		ireland_army_serves_dail
+		ireland_face_civil_war_record
+		ireland_mulcahy_capstone
+	}
+	focus_factors = {
+		ireland_professional_defence_council = 95
+		ireland_army_serves_dail = 95
+		ireland_mulcahy_capstone = 100
+		ireland_readiness_conclusion = 55
+	}
+}
+
+IRE_ireland_route_costello_coalition = {
+	name = "Ireland Costello coalition plan"
+	desc = "Write the coalition charter, unwind exceptional authority, and preserve offices through legal compromise."
+	allowed = { original_tag = IRE }
+	enable = { OR = { has_country_flag = ireland_route_costello_coalition has_country_flag = ireland_profile_costello_coalition } }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_government_from_opposition
+		ireland_state_we_built
+		ireland_costello_coalition
+		ireland_written_coalition_charter
+		ireland_unwind_exceptional_state
+		ireland_costello_capstone
+		ireland_recovery_bridge
+		ireland_restore_constitutional_calendar
+	}
+	focus_factors = {
+		ireland_written_coalition_charter = 95
+		ireland_unwind_exceptional_state = 90
+		ireland_costello_capstone = 100
+		ireland_northern_policy_proof = 35
+	}
+}
+
+IRE_ireland_route_dillon_intervention = {
+	name = "Ireland Dillon intervention plan"
+	desc = "Complete the canonical intervention gate, establish command authority, and treat war as a material decision rather than a political reward."
+	allowed = { original_tag = IRE }
+	enable = { OR = { has_country_flag = ireland_route_dillon_intervention has_country_flag = ireland_profile_dillon_intervention } }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_constitutional_opposition
+		ireland_sovereignty_mandate
+		ireland_active_neutrality
+		ireland_dillon_public_dissent
+		ireland_dillon_intervention_caucus
+		ireland_dillon_war_assent
+	}
+	focus_factors = {
+		ireland_dillon_intervention_caucus = 90
+		ireland_dillon_war_assent = 95
+		ireland_readiness_conclusion = 65
+	}
+}
+
+IRE_ireland_route_norton_parliamentary = {
+	name = "Ireland Norton parliamentary plan"
+	desc = "Use Labour conscience, support without surrender, and social law to make parliamentary power durable."
+	allowed = { original_tag = IRE }
+	enable = { OR = { has_country_flag = ireland_route_norton_parliamentary has_country_flag = ireland_profile_norton_parliamentary } }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_government_formation
+		ireland_church_labour_consultation
+		ireland_norton_parliamentary
+		ireland_labour_as_conscience
+		ireland_support_without_surrender
+		ireland_labour_social_law
+		ireland_norton_parliamentary_capstone
+		ireland_recovery_bridge
+	}
+	focus_factors = {
+		ireland_labour_social_law = 95
+		ireland_norton_parliamentary_capstone = 100
+		ireland_labour_as_conscience = 45
+	}
+}
+
+IRE_ireland_route_clann_agrarian_broker = {
+	name = "Ireland Clann agrarian plan"
+	desc = "Turn the rural support bloc into a dated electoral and producer compact without substituting patronage for capacity."
+	allowed = { original_tag = IRE }
+	enable = { OR = { has_country_flag = ireland_route_clann_agrarian_broker has_country_flag = ireland_profile_clann_agrarian_broker } }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_clann_founding
+		ireland_agrarian_support_bloc
+		ireland_clann_by_election
+		ireland_rural_producer_compact
+		ireland_recovery_bridge
+		ireland_material_conclusion_proof
+	}
+	focus_factors = {
+		ireland_agrarian_support_bloc = 90
+		ireland_clann_by_election = 95
+		ireland_rural_producer_compact = 95
+		ireland_material_conclusion_proof = 55
+	}
+}
+
+IRE_ireland_route_constitutional_vocational = {
+	name = "Ireland vocational constitutional plan"
+	desc = "Test vocational institutions while preserving Dail supremacy, judicial review, and ordinary safeguards."
+	allowed = { original_tag = IRE }
+	enable = { OR = { has_country_flag = ireland_route_constitutional_vocational has_country_flag = ireland_profile_constitutional_vocational } }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_church_labour_consultation
+		ireland_constitutional_draft
+		ireland_vocational_constitution
+		ireland_dail_supremacy_clause
+		ireland_council_government_rejected
+		ireland_vocational_constitution_capstone
+		ireland_recovery_bridge
+	}
+	focus_factors = {
+		ireland_dail_supremacy_clause = 95
+		ireland_council_government_rejected = 90
+		ireland_vocational_constitution_capstone = 100
+	}
+}
+
+IRE_ireland_route_serious_cultural_stewardship = {
+	name = "Ireland serious cultural stewardship plan"
+	desc = "Make language service, archival record, regional participation, and site stewardship a primary public programme while preserving every ordinary constitutional safeguard."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_profile_serious_cultural_stewardship }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_cultural_survey
+		ireland_language_institutions
+		ireland_archival_record
+		ireland_regional_participation
+		ireland_site_stewardship
+		ireland_diaspora_exchange
+		ireland_serious_cultural_stewardship
+		ireland_cultural_service
+		ireland_cultural_evidence_ledger
+		ireland_culture_completion
+		ireland_recovery_bridge
+	}
+	focus_factors = {
+		ireland_serious_cultural_stewardship = 100
+		ireland_cultural_evidence_ledger = 95
+		ireland_culture_completion = 100
+	}
+}
+
+IRE_ireland_route_ira_republican = {
+	name = "Ireland Republican Army plan"
+	desc = "Choose civil republican authority or an Army Council, then bind the revolutionary network to a named command and supply ledger."
+	allowed = { original_tag = IRE }
+	enable = {
+		OR = {
+			has_country_flag = ireland_route_ira_republican
+			has_country_flag = ireland_ira_army_council_path
+			has_country_flag = ireland_ira_civil_path
+			has_country_flag = ireland_profile_ira_republican
+		}
+	}
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_civil_war_memory
+		ireland_republican_veterans
+		ireland_public_order_review
+		ireland_ira_republican_bridge
+		ireland_reassemble_ghq
+		ireland_convention_of_commands
+		ireland_republic_in_districts
+		ireland_arms_before_authority
+		ireland_authority_before_arms
+		ireland_german_channel
+		ireland_ira_civil_authority
+		ireland_ira_army_council
+		ireland_northern_question_in_arms
+		ireland_ira_route_capstone
+	}
+	focus_factors = {
+		ireland_arms_before_authority = 70
+		ireland_authority_before_arms = 90
+		ireland_ira_civil_authority = 95
+		ireland_ira_route_capstone = 100
+	}
+}
+
+IRE_ireland_route_ira_ghq_command = {
+	name = "Ireland IRA GHQ command plan"
+	desc = "Reassemble a disciplined Army Council only after the civil republican command and supply ledgers are explicit."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_profile_ira_ghq_command }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_ira_republican_bridge
+		ireland_reassemble_ghq
+		ireland_convention_of_commands
+		ireland_republic_in_districts
+		ireland_arms_before_authority
+		ireland_german_channel
+		ireland_ira_army_council
+		ireland_northern_question_in_arms
+		ireland_ira_route_capstone
+	}
+	focus_factors = {
+		ireland_ira_army_council = 100
+		ireland_authority_before_arms = 95
+		ireland_ira_route_capstone = 100
+	}
+}
+
+IRE_ireland_route_congress_plural = {
+	name = "Ireland plural Republican Congress plan"
+	desc = "Use Congress as a workers-and-smallholders institution with a public programme and a bounded security mandate."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_profile_congress_plural }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_civil_war_memory
+		ireland_republican_veterans
+		ireland_public_order_review
+		ireland_church_labour_consultation
+		ireland_congress_reform_bridge
+		ireland_organise_congress
+		ireland_union_local_mandate
+		ireland_congress_plural_republic
+		ireland_extra_parliamentary_transition
+		ireland_congress_plural_capstone
+	}
+	focus_factors = {
+		ireland_organise_congress = 95
+		ireland_congress_plural_republic = 95
+		ireland_congress_plural_capstone = 100
+	}
+}
+
+IRE_ireland_route_congress_vanguard = {
+	name = "Ireland vanguard Republican Congress plan"
+	desc = "Bind the Congress vanguard to an armed-wing command, supply discipline, and a declared republican conclusion."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_profile_congress_vanguard }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_congress_reform_bridge
+		ireland_organise_congress
+		ireland_union_local_mandate
+		ireland_congress_vanguard_cell
+		ireland_extra_parliamentary_transition
+		ireland_congress_vanguard_capstone
+	}
+	focus_factors = {
+		ireland_organise_congress = 90
+		ireland_congress_vanguard_cell = 100
+		ireland_congress_vanguard_capstone = 100
+	}
+}
+
+IRE_ireland_route_oduffy_personal = {
+	name = "Ireland O'Duffy personal command plan"
+	desc = "Keep the movement tied to O'Duffy's personal command while the Army, estates, and public order ledgers remain visible."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_profile_oduffy_personal }
+	abort = {
+		OR = {
+			has_country_flag = ireland_route_cleanup
+			date > 1944.11.29
+		}
+	}
+	ai_national_focuses = {
+		ireland_civil_war_memory
+		ireland_republican_veterans
+		ireland_public_order_review
+		ireland_close_oduffy_chapter
+		ireland_oduffy_network_revival
+		ireland_agrarian_support_bloc
+		ireland_oduffy_personal_command
+		ireland_veteran_employer_league
+		ireland_oduffy_personal_capstone
+	}
+	focus_factors = {
+		ireland_oduffy_personal_command = 100
+		ireland_veteran_employer_league = 90
+		ireland_oduffy_personal_capstone = 100
+	}
+}
+
+IRE_ireland_route_oduffy_corporate = {
+	name = "Ireland O'Duffy corporate estate plan"
+	desc = "Turn the corporate estate programme into an institutional command that can outlive its founder."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_profile_oduffy_corporate }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_oduffy_network_revival
+		ireland_agrarian_support_bloc
+		ireland_veteran_employer_league
+		ireland_producer_accounting
+		ireland_corporate_estates
+		ireland_army_acceptance
+		ireland_corporate_order
+		ireland_oduffy_corporate_capstone
+	}
+	focus_factors = {
+		ireland_corporate_estates = 100
+		ireland_corporate_order = 100
+		ireland_oduffy_corporate_capstone = 100
+	}
+}
+
+IRE_ireland_route_clerical_guardianship = {
+	name = "Ireland clerical guardianship plan"
+	desc = "Secure Church service authority through dated institutions while preserving a measurable public obligation and review."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_profile_clerical_guardianship }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_domestic_industry_review
+		ireland_church_labour_consultation
+		ireland_producer_accounting
+		ireland_clerical_failure_bridge
+		ireland_service_state
+		ireland_producer_councils
+		ireland_clerical_guardianship
+		ireland_producer_constitution
+		ireland_clerical_route_capstone
+		ireland_recovery_bridge
+	}
+	focus_factors = {
+		ireland_service_state = 95
+		ireland_clerical_guardianship = 100
+		ireland_clerical_route_capstone = 100
+	}
+}
+
+IRE_ireland_route_producer_council_state = {
+	name = "Ireland producer council plan"
+	desc = "Build a producer constitution around industrial, agrarian, and service councils without turning political victory into free capacity."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_profile_producer_council_state }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_clerical_failure_bridge
+		ireland_producer_accounting
+		ireland_producer_councils
+		ireland_service_state
+		ireland_clerical_guardianship
+		ireland_producer_constitution
+		ireland_clerical_route_capstone
+	}
+	focus_factors = {
+		ireland_producer_constitution = 100
+		ireland_producer_councils = 95
+		ireland_clerical_route_capstone = 100
+	}
+}
+
+IRE_ireland_route_emergency_admin_restoration = {
+	name = "Ireland emergency administration restoration plan"
+	desc = "Use emergency authority as a dated bridge back to ordinary constitutional government, with recovery and review ahead of conclusion."
+	allowed = { original_tag = IRE }
+	enable = { OR = { has_country_flag = ireland_profile_emergency_admin_restoration has_country_flag = ireland_otherworld_human_restoration_open has_country_flag = ireland_otherworld_human_restoration_review_started } }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_emergency_opening
+		ireland_statutory_emergency
+		ireland_emergency_review
+		ireland_restore_constitutional_calendar
+		ireland_recovery_bridge
+	}
+	focus_factors = {
+		ireland_statutory_emergency = 95
+		ireland_emergency_review = 100
+		ireland_restore_constitutional_calendar = 100
+		ireland_recovery_bridge = 80
+	}
+}
+
+IRE_ireland_route_congress = {
+	name = "Ireland Republican Congress plan"
+	desc = "Reassemble Congress, choose plural reform or vanguard discipline, and keep labour, smallholder, and security obligations visible."
+	allowed = { original_tag = IRE }
+	enable = {
+		OR = {
+			has_country_flag = ireland_route_congress
+			has_country_flag = ireland_congress_plural_path
+			has_country_flag = ireland_congress_vanguard_path
+			has_country_flag = ireland_profile_congress
+		}
+	}
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_civil_war_memory
+		ireland_republican_veterans
+		ireland_public_order_review
+		ireland_church_labour_consultation
+		ireland_congress_reform_bridge
+		ireland_organise_congress
+		ireland_union_local_mandate
+		ireland_congress_plural_republic
+		ireland_congress_vanguard_cell
+		ireland_extra_parliamentary_transition
+		ireland_congress_plural_capstone
+		ireland_congress_vanguard_capstone
+	}
+	focus_factors = {
+		ireland_organise_congress = 90
+		ireland_congress_plural_capstone = 100
+		ireland_congress_vanguard_capstone = 100
+	}
+}
+
+IRE_ireland_route_oduffy = {
+	name = "Ireland O'Duffy corporate plan"
+	desc = "Reconstruct the corporate movement through estates, public order, and a personal or institutional command choice."
+	allowed = { original_tag = IRE }
+	enable = {
+		OR = {
+			has_country_flag = ireland_route_oduffy
+			has_country_flag = ireland_oduffy_personal_path
+			has_country_flag = ireland_oduffy_corporate_path
+			has_country_flag = ireland_profile_oduffy
+		}
+	}
+	abort = {
+		OR = {
+			has_country_flag = ireland_route_cleanup
+			date > 1944.11.29
+		}
+	}
+	ai_national_focuses = {
+		ireland_civil_war_memory
+		ireland_republican_veterans
+		ireland_public_order_review
+		ireland_close_oduffy_chapter
+		ireland_oduffy_network_revival
+		ireland_agrarian_support_bloc
+		ireland_oduffy_personal_command
+		ireland_veteran_employer_league
+		ireland_producer_accounting
+		ireland_corporate_estates
+		ireland_army_acceptance
+		ireland_corporate_order
+		ireland_oduffy_personal_capstone
+		ireland_oduffy_corporate_capstone
+	}
+	focus_factors = {
+		ireland_corporate_estates = 90
+		ireland_corporate_order = 95
+		ireland_oduffy_personal_capstone = 100
+		ireland_oduffy_corporate_capstone = 100
+	}
+}
+
+IRE_ireland_route_clerical_producer = {
+	name = "Ireland clerical producer plan"
+	desc = "Separate clerical guardianship from producer constitutionalism while keeping services, labour, and material capacity measurable."
+	allowed = { original_tag = IRE }
+	enable = {
+		OR = {
+			has_country_flag = ireland_route_clerical_producer
+			has_country_flag = ireland_clerical_guardianship_path
+			has_country_flag = ireland_producer_constitution_path
+			has_country_flag = ireland_profile_clerical_producer
+		}
+	}
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_domestic_industry_review
+		ireland_church_labour_consultation
+		ireland_producer_accounting
+		ireland_clerical_failure_bridge
+		ireland_producer_constitution
+		ireland_service_state
+		ireland_producer_councils
+		ireland_clerical_guardianship
+		ireland_clerical_route_capstone
+		ireland_recovery_bridge
+	}
+	focus_factors = {
+		ireland_producer_constitution = 90
+		ireland_service_state = 90
+		ireland_clerical_route_capstone = 100
+		ireland_provision_conclusion = 55
+	}
+}
+
+IRE_ireland_route_ailtiri_total_state = {
+	name = "Ireland Ailtiri total state plan"
+	desc = "Use the dated Ailtiri sequence: cells, public launch, corporate state, and the consequences of a total-state conclusion."
+	allowed = { original_tag = IRE }
+	enable = {
+		OR = {
+			has_country_flag = ireland_route_ailtiri_total_state
+			has_country_flag = ireland_profile_ailtiri_total_state
+		}
+	}
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_civil_war_memory
+		ireland_republican_veterans
+		ireland_public_order_review
+		ireland_cultural_survey
+		ireland_language_institutions
+		ireland_archival_record
+		ireland_regional_participation
+		ireland_site_stewardship
+		ireland_diaspora_exchange
+		ireland_serious_cultural_stewardship
+		ireland_cultural_service
+		ireland_cultural_evidence_ledger
+		ireland_ailtiri_cell_network
+		ireland_language_cells
+		ireland_june_1942_public_launch
+		ireland_ceannaire_state
+		ireland_producer_accounting
+		ireland_corporate_gaelic_nation
+		ireland_ailtiri_total_state_capstone
+		ireland_recovery_bridge
+	}
+	focus_factors = {
+		ireland_ailtiri_cell_network = 95
+		ireland_corporate_gaelic_nation = 90
+		ireland_ailtiri_total_state_capstone = 100
+	}
+}
+
+IRE_ireland_route_high_king = {
+	name = "Ireland High Kingship plan"
+	desc = "Complete the evidence, convention, and elective or guardian crown sequence before any sacral conclusion is considered."
+	allowed = { original_tag = IRE }
+	enable = {
+		OR = {
+			has_country_flag = ireland_route_high_king
+			has_country_flag = ireland_high_king_constitutional_path
+			has_country_flag = ireland_high_king_sacral_path
+			has_country_flag = ireland_profile_high_king
+		}
+	}
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_cultural_survey
+		ireland_language_institutions
+		ireland_archival_record
+		ireland_regional_participation
+		ireland_site_stewardship
+		ireland_diaspora_exchange
+		ireland_serious_cultural_stewardship
+		ireland_cultural_service
+		ireland_cultural_evidence_ledger
+		ireland_high_king_evidence_gate
+		ireland_high_king_convention
+		ireland_dail_supremacy_clause
+		ireland_elective_crown
+		ireland_guardian_crown
+		ireland_crown_powers_charter
+		ireland_high_king_capstone
+		ireland_recovery_bridge
+	}
+	focus_factors = {
+		ireland_high_king_evidence_gate = 90
+		ireland_high_king_convention = 95
+		ireland_high_king_capstone = 100
+	}
+}
+
+IRE_ireland_route_five_provinces = {
+	name = "Ireland Five Provinces plan"
+	desc = "Secure five provincial mandates, build the federal convention, and keep the negotiated and pentarchic outcomes distinct."
+	allowed = { original_tag = IRE }
+	enable = {
+		OR = {
+			has_country_flag = ireland_route_five_provinces
+			has_country_flag = ireland_federal_republic_path
+			has_country_flag = ireland_pentarchy_path
+			has_country_flag = ireland_profile_five_provinces
+		}
+	}
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_cultural_survey
+		ireland_language_institutions
+		ireland_archival_record
+		ireland_northern_settlement_ledger
+		ireland_regional_participation
+		ireland_five_province_mandates
+		ireland_federal_convention
+		ireland_federal_republic
+		ireland_northern_policy_proof
+		ireland_ulster_rule
+		ireland_pentarchy_guardians
+		ireland_five_provinces_capstone
+		ireland_recovery_bridge
+	}
+	focus_factors = {
+		ireland_five_province_mandates = 90
+		ireland_federal_convention = 95
+		ireland_federal_republic = 90
+		ireland_five_provinces_capstone = 100
+	}
+}
+
+IRE_ireland_route_otherworld = {
+	name = "Ireland Otherworld evidence plan"
+	desc = "Investigate, witness, verify, and contain or formalise the Otherworld route without concealing its H/P/A boundary."
+	allowed = { original_tag = IRE }
+	enable = {
+		OR = {
+			has_country_flag = ireland_route_otherworld
+			has_country_flag = ireland_otherworld_compact_path
+			has_country_flag = ireland_otherworld_containment_path
+			has_country_flag = ireland_otherworld_dominion_path
+			has_country_flag = ireland_profile_otherworld
+		}
+	}
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_cultural_survey
+		ireland_language_institutions
+		ireland_archival_record
+		ireland_regional_participation
+		ireland_site_stewardship
+		ireland_diaspora_exchange
+		ireland_serious_cultural_stewardship
+		ireland_cultural_service
+		ireland_cultural_evidence_ledger
+		ireland_otherworld_investigation
+		ireland_otherworld_witnesses
+		ireland_otherworld_evidence_ledger
+		ireland_compact_with_otherworld
+		ireland_containment_protocol
+		ireland_dominion_claim
+		ireland_otherworld_guardians
+		ireland_regional_thresholds
+		ireland_foreign_safeguards
+		ireland_otherworld_statecraft
+		ireland_otherworld_capstone
+	}
+	focus_factors = {
+		ireland_otherworld_investigation = 90
+		ireland_otherworld_evidence_ledger = 95
+		ireland_otherworld_capstone = 100
+	}
+}
+
+IRE_ireland_route_convergence = {
+	name = "Ireland convergence conclusion plan"
+	desc = "Complete the material, regional, foreign, and obligation prerequisites before the final convergence order."
+	allowed = { original_tag = IRE }
+	enable = {
+		OR = {
+			has_country_flag = ireland_convergence_components_ready
+			has_country_flag = ireland_otherworld_convergence_ready
+			has_country_flag = ireland_convergence_order_concluded
+		}
+	}
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_crown_province_convergence
+		ireland_otherworld_convergence
+		ireland_fivefold_obligation
+		ireland_convergence_order_capstone
+	}
+	focus_factors = {
+		ireland_crown_province_convergence = 90
+		ireland_otherworld_convergence = 90
+		ireland_fivefold_obligation = 95
+		ireland_convergence_order_capstone = 100
+	}
+}

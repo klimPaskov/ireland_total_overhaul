@@ -1,7 +1,7 @@
 # Ireland P-54 exact-source portrait re-audit — 2026-08-02
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`  
+Namespace: `ireland`  
 Boundary: non-live source, preservation, manifest, runtime-GFX, and hash audit; HOI4 was not launched.
 
 ## Source decision
@@ -19,7 +19,7 @@ No generated likeness, face reconstruction, wrong-person image, generic avatar, 
 | Processed source derivative | `assets/ireland_focus_tree/sourced/research_2026-08-02/portrait_exact_object_search_round14/P-54_pj_coughlan/processed_png/leader_p_54_pj_coughlan_156x210.png` | present; RGB 156x210 |
 | Preserved archive | `docs/portraits/research_2026-08-02/portrait_exact_object_search_round14/P-54_pj_coughlan/` | source and derivative preserved |
 | Runtime | `gfx/leaders/ireland/leader_p_54.dds` | present; manifest hash matches |
-| Registration | `GFX_ireland_portrait_p_54` in `interface/slopx_ireland_sourced_assets.gfx` | present; runtime path is under `gfx/` |
+| Registration | `GFX_ireland_portrait_p_54` in `interface/ireland_sourced_assets.gfx` | present; runtime path is under `gfx/` |
 
 The source original and processed derivative have exact-byte matches in the
 portrait archive. The canonical manifest reports P-54 as `complete` with

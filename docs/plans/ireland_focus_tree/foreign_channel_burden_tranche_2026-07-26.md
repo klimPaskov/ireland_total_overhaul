@@ -15,7 +15,7 @@ The Part 5 decision map treats foreign-channel work as a bargain with named exte
 - `Receive a German Emissary` now records `+5 Foreign Exposure` beside its existing German-Leverage bargain.
 - `Seek Vatican Humanitarian Mediation` now records `+3 Vatican Leverage` and `+5 Foreign Exposure` before opening its mediation mission.
 - `Convene a Neutral States Consultation` now records `+5 Foreign Exposure` without inventing sponsor leverage for a neutral forum.
-- The deltas are centralized in `common/script_constants/slopx_ireland_constants.txt`, and the action descriptions/requirement tooltips name the burden and source-specific result.
+- The deltas are centralized in `common/script_constants/ireland_constants.txt`, and the action descriptions/requirement tooltips name the burden and source-specific result.
 
 ## Boundary and cleanup
 
@@ -23,8 +23,8 @@ This tranche does not grant aid, equipment, units, fuel, shipping, territory, co
 
 ## Evidence
 
-- `common/decisions/slopx_ireland_decisions.txt`
-- `common/script_constants/slopx_ireland_constants.txt`
-- `localisation/english/slopx_ireland_l_english.yml`
+- `common/decisions/ireland_decisions.txt`
+- `common/script_constants/ireland_constants.txt`
+- `localisation/english/ireland_l_english.yml`
 
 Live partner invalidation, reaction ordering, mission completion, AI queue behavior, engine-reference checks, and cleanup scenarios remain not-run.

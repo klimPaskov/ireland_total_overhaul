@@ -1,7 +1,7 @@
 # Ireland EV-SRC-059 static re-audit
 
 Feature slug: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 Date: 2026-08-01
 Scope: source manifest, source bytes, processed PNG, runtime DDS, GFX registration, event consumer, and read-only engine checks
 
@@ -26,14 +26,14 @@ blocked. Clearance totals are C1 35, C2 24, C3 83, and C4 27.
 | Processed PNG | `210x176`, RGBA; SHA `BE38AD2B65832D1FF28F061563271782C338C575B6C12DBFDF9B5CFC363B5921` |
 | Staging DDS | `210x176`; SHA `85E52AB22BEBEDE14E192BF2EF6BC825EE78E8E35C466EE77C5A395BF4881668` |
 | Runtime DDS | `gfx/event_pictures/ireland/ireland_report_flavour_family_16.dds`; same SHA and dimensions |
-| GFX registration | one `GFX_report_event_ireland_report_flavour_family_16` entry in `interface/slopx_ireland_sourced_assets.gfx` |
-| Event consumer | `events/slopx_ireland_flavour_events.txt`, event `.683`, `f17_cork_ports` |
+| GFX registration | one `GFX_report_event_ireland_report_flavour_family_16` entry in `interface/ireland_sourced_assets.gfx` |
+| Event consumer | `events/ireland_flavour_events.txt`, event `.683`, `f17_cork_ports` |
 | Crosswalk | regenerated from the manifest after promotion; row reports registered GFX, runtime DDS, and consumer |
 
 ## Read-only event inspection
 
 `mcp__hoi4_agent_tools__hoi4_event_inspect` was rerun in `lint` mode for the
-`slopx_ireland_flavour_events` namespace after the picture wiring. The result
+`ireland_flavour_events` namespace after the picture wiring. The result
 was `status: ok`, `EVENT_INSPECTED_PARTIAL`, with zero blocking diagnostics.
 The linked report is the authoritative artifact
 `event-lint-d83b61d809e9.json` (revision

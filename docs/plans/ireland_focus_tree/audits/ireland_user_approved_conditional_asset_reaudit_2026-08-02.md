@@ -1,7 +1,7 @@
 # Ireland user-approved conditional asset re-audit - 2026-08-02
 
 Feature slug: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 
 This is the non-live audit for the exact source packages promoted under the
 user's 2026-08-02 instruction and the subsequent round-13 and round-14 exact
@@ -44,7 +44,7 @@ and `docs/portraits/research_2026-08-02/portrait_exact_object_search_round14/P-5
   `review only` suffix. The manifest's
   `dimensions` field is retained source/crop documentation where applicable;
   it is not used as the processed-output assertion.
-- `interface/slopx_ireland_sourced_assets.gfx` contains 170 texture references,
+- `interface/ireland_sourced_assets.gfx` contains 170 texture references,
   with zero missing files, zero complete rows left unregistered, and no
   runtime texture path under `assets/`.
 - `gfx/event_pictures/ireland` contains 121 DDS files: the 69 complete

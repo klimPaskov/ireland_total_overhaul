@@ -1,7 +1,7 @@
 # Occupation and regional authority gate tranche
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`  
+Namespace: `ireland`  
 Date: 2026-07-25
 
 ## Purpose
@@ -16,14 +16,14 @@ This tranche closes three canonical admission gaps in the Northern occupation an
 
 ## Implementation
 
-`common/scripted_triggers/slopx_ireland_triggers.txt` now provides:
+`common/scripted_triggers/ireland_triggers.txt` now provides:
 
-- `slopx_ireland_paramilitary_disarm_authority`, requiring a division in state 119, Intelligence Readiness above the investigation floor, and Public Order, Security Under Law, or Vet and Rebuild Policing authority.
-- `slopx_ireland_protectorate_authority_valid`, requiring a recognised liberated authority, Northern war plan, completed coercive campaign, or Northern wartime bargain.
+- `ireland_paramilitary_disarm_authority`, requiring a division in state 119, Intelligence Readiness above the investigation floor, and Public Order, Security Under Law, or Vet and Rebuild Policing authority.
+- `ireland_protectorate_authority_valid`, requiring a recognised liberated authority, Northern war plan, completed coercive campaign, or Northern wartime bargain.
 
-The decision consumers remain in `common/decisions/slopx_ireland_decisions.txt` and retain their existing capacity, route, ledger, map, political-power, command-power, cooldown, AI, and cleanup logic. Military command additionally charges the authored Army Experience cost on completion. The protectorate action calls `slopx_ireland_open_foreign_reaction_window = yes` and does not grant a subject, territory, core, industry, equipment, unit, fuel, shipping, administration, alignment, office, or recognition.
+The decision consumers remain in `common/decisions/ireland_decisions.txt` and retain their existing capacity, route, ledger, map, political-power, command-power, cooldown, AI, and cleanup logic. Military command additionally charges the authored Army Experience cost on completion. The protectorate action calls `ireland_open_foreign_reaction_window = yes` and does not grant a subject, territory, core, industry, equipment, unit, fuel, shipping, administration, alignment, office, or recognition.
 
-The player-facing requirements in `localisation/english/slopx_ireland_l_english.yml` name the current unit, intelligence, law, material, authority, and foreign-reaction gates. The reusable trigger contracts are documented in `docs/slopx_dynamic_effects.md`.
+The player-facing requirements in `localisation/english/ireland_l_english.yml` name the current unit, intelligence, law, material, authority, and foreign-reaction gates. The reusable trigger contracts are documented in `docs/ireland_dynamic_effects.md`.
 
 ## Static evidence
 

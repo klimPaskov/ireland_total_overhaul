@@ -13,7 +13,7 @@ Status: source-level implementation complete for this tranche; live partner, rea
 - 5 Foreign Exposure; and
 - 3 leverage on exactly one selected priority channel (British, then American, German, or Vatican) when that channel carries the liaison.
 
-A Northern-plan liaison carries the exposure without inventing sponsor leverage. Source values are centralized in `common/script_constants/slopx_ireland_constants.txt`, clamped to the shared ledger range, and exposed in the action requirements tooltip. The action still grants no intelligence, equipment, foreign access, recognition, alignment, or political victory for free; its existing Intelligence Coordination increase remains tied to the physical communications commitment.
+A Northern-plan liaison carries the exposure without inventing sponsor leverage. Source values are centralized in `common/script_constants/ireland_constants.txt`, clamped to the shared ledger range, and exposed in the action requirements tooltip. The action still grants no intelligence, equipment, foreign access, recognition, alignment, or political victory for free; its existing Intelligence Coordination increase remains tied to the physical communications commitment.
 
 ## Commonwealth review safeguard
 
@@ -24,7 +24,7 @@ A Northern-plan liaison carries the exposure without inventing sponsor leverage.
 - The source still contains exactly 140 action blocks and 54 mission blocks.
 - G2 uses one source-specific leverage branch and a shared Foreign Exposure delta; all four leverage values are clamped.
 - Commonwealth review has a three-branch economic-safeguard admission gate and matching localisation.
-- `docs/slopx_dynamic_effects.md` records the G2 side effects and usage boundary.
+- `docs/ireland_dynamic_effects.md` records the G2 side effects and usage boundary.
 - No HOI4 process was launched and no live scenario is being presented as passed.
 
 ## Remaining boundary

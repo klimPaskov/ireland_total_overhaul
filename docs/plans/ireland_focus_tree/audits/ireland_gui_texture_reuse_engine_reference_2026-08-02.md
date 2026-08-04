@@ -14,7 +14,7 @@ from the completion gate.
 
 ## Ireland source contract
 
-`interface/slopx_ireland_icons.gfx:219-361` defines 140 unique decision-action
+`interface/ireland_icons.gfx:219-361` defines 140 unique decision-action
 sprite names backed by 70 unique action DDS textures. The source comment at
 the start of that block records the contract: named action sprites remain
 distinct for the 140 actions while the 70-texture allocation is intentionally

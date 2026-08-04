@@ -1,7 +1,7 @@
 # Ireland runtime integration audit — 2026-07-28
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`  
+Namespace: `ireland`  
 Runtime root: `C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/ireland_total_overhaul`
 
 ## Disposition

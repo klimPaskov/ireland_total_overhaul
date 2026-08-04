@@ -2,7 +2,7 @@
 
 Feature: `ireland_focus_tree`  
 Date: 2026-07-28  
-Runtime root: `gfx/interface/goals/slopx_ireland/`  
+Runtime root: `gfx/interface/goals/ireland/`  
 Source package: `assets/ireland_focus_tree/icons/regenerated_goal_icons_hoi4_focus_emblems_fresh_2026-07-28_v5/`
 
 ## User correction applied
@@ -18,8 +18,8 @@ The v4 and earlier packages remain staging/review history only. Their artwork is
 - 216 real alpha PNG rows with chroma spill removed.
 - 216 processed PNG rows at 100×88.
 - 216 runtime DDS rows at 100×88 under the standard `gfx/` tree.
-- 216 stable focus sprite registrations remain in `interface/slopx_ireland_icons.gfx`.
-- 216 paired focus-shine definitions remain in `interface/slopx_ireland_focus_shine.gfx`.
+- 216 stable focus sprite registrations remain in `interface/ireland_icons.gfx`.
+- 216 paired focus-shine definitions remain in `interface/ireland_focus_shine.gfx`.
 - `manifest.json` records each focus id, atlas/cell, source/alpha/processed paths, runtime DDS path, sprite name, and hashes.
 - `manifest.md`, `gfx_handoff.md`, and `prompts/atlas_prompts.md` retain the per-package handoff and generation brief.
 - `contact_sheets/goal_icons_complete_contact_sheet.png` is the review sheet for alignment and visual-family inspection.

@@ -1,0 +1,687 @@
+# Ireland Total Overhaul - compact National Conditions decision-category panel.
+# The scripted-GUI registration owns visibility, state swaps, click effects, and
+# dirty refresh. This window is deliberately sized for the vanilla 510px
+# decision grid rather than behaving like a separate full-screen interface.
+# Registration handoff: window_name = ireland_conditions_panel_window
+# context_type = decision_category; dirty = ireland_conditions_gui_dirty
+
+guiTypes = {
+	containerWindowType = {
+		name = "ireland_conditions_panel_window"
+		orientation = upper_left
+		position = { x = 0 y = 0 }
+		size = { width = 510 height = 590 }
+		clipping = no
+
+		background = {
+			name = "ireland_conditions_panel_background"
+			quadTextureSprite = "GFX_ireland_gui_conditions_background"
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "ireland_conditions_panel_title"
+			position = { x = 16 y = 10 }
+			text = "ireland_conditions_panel_title"
+			font = "hoi_24header"
+			format = left
+			maxWidth = 390
+			maxHeight = 30
+		}
+
+		iconType = {
+			name = "ireland_conditions_panel_status_ready"
+			spriteType = "GFX_ireland_gui_status_ready"
+			position = { x = 456 y = 10 }
+			pdx_tooltip = "ireland_conditions_status_tooltip"
+		}
+		iconType = {
+			name = "ireland_conditions_panel_status_locked"
+			spriteType = "GFX_ireland_gui_status_locked"
+			position = { x = 456 y = 10 }
+			pdx_tooltip = "ireland_conditions_locked_tooltip"
+		}
+		iconType = {
+			name = "ireland_conditions_panel_status_warning"
+			spriteType = "GFX_ireland_gui_status_warning"
+			position = { x = 456 y = 10 }
+			pdx_tooltip = "ireland_conditions_warning_tooltip"
+		}
+		iconType = {
+			name = "ireland_conditions_panel_status_critical"
+			spriteType = "GFX_ireland_gui_status_critical"
+			position = { x = 456 y = 10 }
+			pdx_tooltip = "ireland_conditions_critical_tooltip"
+		}
+
+		instantTextBoxType = {
+			name = "ireland_conditions_panel_available_state"
+			position = { x = 292 y = 40 }
+			text = "ireland_conditions_available_state"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 154
+			maxHeight = 22
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_panel_locked_state"
+			position = { x = 292 y = 40 }
+			text = "ireland_conditions_locked_state"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 154
+			maxHeight = 22
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_panel_instruction"
+			position = { x = 16 y = 40 }
+			text = "ireland_conditions_panel_instruction"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 262
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "ireland_conditions_provision_summary"
+			position = { x = 16 y = 66 }
+			text = "ireland_conditions_provision_summary"
+			pdx_tooltip = "ireland_conditions_provision_summary_tooltip"
+			font = "hoi_18b"
+			format = left
+			maxWidth = 238
+			maxHeight = 25
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_readiness_summary"
+			position = { x = 258 y = 66 }
+			text = "ireland_conditions_readiness_summary"
+			pdx_tooltip = "ireland_conditions_readiness_summary_tooltip"
+			font = "hoi_18b"
+			format = left
+			maxWidth = 238
+			maxHeight = 25
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_neutrality_summary"
+			position = { x = 16 y = 92 }
+			text = "ireland_conditions_neutrality_summary"
+			pdx_tooltip = "ireland_conditions_neutrality_summary_tooltip"
+			font = "hoi_18b"
+			format = left
+			maxWidth = 476
+			maxHeight = 25
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_target_requirement"
+			position = { x = 16 y = 118 }
+			text = "ireland_conditions_target_requirement"
+			pdx_tooltip = "ireland_conditions_target_requirement_tooltip"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 476
+			maxHeight = 32
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "ireland_conditions_provision_header"
+			position = { x = 16 y = 153 }
+			text = "ireland_conditions_provision_header"
+			font = "hoi_18b"
+			format = left
+			maxWidth = 238
+			maxHeight = 22
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_readiness_header"
+			position = { x = 258 y = 153 }
+			text = "ireland_conditions_readiness_header"
+			font = "hoi_18b"
+			format = left
+			maxWidth = 238
+			maxHeight = 22
+		}
+
+		# Each row is a real vanilla button. The transparent text overlays keep
+		# the label/value alignment readable without intercepting the click hook.
+		buttonType = {
+			name = "ireland_conditions_food_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 12 y = 178 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_food_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_food_label"
+			position = { x = 24 y = 187 }
+			text = "ireland_conditions_food_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_food_value"
+			position = { x = 184 y = 187 }
+			text = "ireland_conditions_food_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_command_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 258 y = 178 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_command_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_command_label"
+			position = { x = 270 y = 187 }
+			text = "ireland_conditions_command_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_command_value"
+			position = { x = 430 y = 187 }
+			text = "ireland_conditions_command_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_energy_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 12 y = 216 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_energy_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_energy_label"
+			position = { x = 24 y = 225 }
+			text = "ireland_conditions_energy_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_energy_value"
+			position = { x = 184 y = 225 }
+			text = "ireland_conditions_energy_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_equipment_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 258 y = 216 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_equipment_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_equipment_label"
+			position = { x = 270 y = 225 }
+			text = "ireland_conditions_equipment_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_equipment_value"
+			position = { x = 430 y = 225 }
+			text = "ireland_conditions_equipment_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_transport_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 12 y = 254 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_transport_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_transport_label"
+			position = { x = 24 y = 263 }
+			text = "ireland_conditions_transport_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_transport_value"
+			position = { x = 184 y = 263 }
+			text = "ireland_conditions_transport_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_mobilisation_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 258 y = 254 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_mobilisation_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_mobilisation_label"
+			position = { x = 270 y = 263 }
+			text = "ireland_conditions_mobilisation_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_mobilisation_value"
+			position = { x = 430 y = 263 }
+			text = "ireland_conditions_mobilisation_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_maritime_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 12 y = 292 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_maritime_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_maritime_label"
+			position = { x = 24 y = 301 }
+			text = "ireland_conditions_maritime_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_maritime_value"
+			position = { x = 184 y = 301 }
+			text = "ireland_conditions_maritime_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_supply_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 258 y = 292 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_supply_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_supply_label"
+			position = { x = 270 y = 301 }
+			text = "ireland_conditions_supply_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_supply_value"
+			position = { x = 430 y = 301 }
+			text = "ireland_conditions_supply_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_warning_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 12 y = 330 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_warning_component_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_warning_label"
+			position = { x = 24 y = 339 }
+			text = "ireland_conditions_warning_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_warning_value"
+			position = { x = 184 y = 339 }
+			text = "ireland_conditions_warning_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_maritime_protection_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 258 y = 330 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_maritime_protection_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_maritime_protection_label"
+			position = { x = 270 y = 339 }
+			text = "ireland_conditions_maritime_protection_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_maritime_protection_value"
+			position = { x = 430 y = 339 }
+			text = "ireland_conditions_maritime_protection_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_intelligence_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 12 y = 368 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_intelligence_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_intelligence_label"
+			position = { x = 24 y = 377 }
+			text = "ireland_conditions_intelligence_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_intelligence_value"
+			position = { x = 184 y = 377 }
+			text = "ireland_conditions_intelligence_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_neutrality_row"
+			quadTextureSprite = "GFX_button_238x38"
+			position = { x = 258 y = 368 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_neutrality_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_neutrality_label"
+			position = { x = 270 y = 377 }
+			text = "ireland_conditions_neutrality_label"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 164
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_neutrality_value"
+			position = { x = 430 y = 377 }
+			text = "ireland_conditions_neutrality_value"
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 54
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "ireland_conditions_critical_slots_header"
+			position = { x = 16 y = 412 }
+			text = "ireland_conditions_critical_slots_header"
+			font = "hoi_18b"
+			format = left
+			maxWidth = 476
+			maxHeight = 22
+		}
+
+		buttonType = {
+			name = "ireland_conditions_provision_critical_slot"
+			quadTextureSprite = "GFX_button_123x34"
+			position = { x = 12 y = 438 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_provision_critical_slot_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_provision_critical_slot_text"
+			position = { x = 18 y = 446 }
+			text = "ireland_conditions_provision_critical_slot_text"
+			font = "hoi_16mbs"
+			format = center
+			maxWidth = 111
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "ireland_conditions_readiness_critical_slot"
+			quadTextureSprite = "GFX_button_123x34"
+			position = { x = 188 y = 438 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_readiness_critical_slot_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_readiness_critical_slot_text"
+			position = { x = 194 y = 446 }
+			text = "ireland_conditions_readiness_critical_slot_text"
+			font = "hoi_16mbs"
+			format = center
+			maxWidth = 111
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "ireland_conditions_neutrality_critical_slot"
+			quadTextureSprite = "GFX_button_123x34"
+			position = { x = 364 y = 438 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_neutrality_critical_slot_tooltip"
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_neutrality_critical_slot_text"
+			position = { x = 370 y = 446 }
+			text = "ireland_conditions_neutrality_critical_slot_text"
+			font = "hoi_16mbs"
+			format = center
+			maxWidth = 111
+			maxHeight = 22
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "ireland_conditions_warning_message"
+			position = { x = 16 y = 478 }
+			text = "ireland_conditions_warning_message"
+			pdx_tooltip = "ireland_conditions_warning_message_tooltip"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 476
+			maxHeight = 20
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_critical_message"
+			position = { x = 16 y = 499 }
+			text = "ireland_conditions_critical_message"
+			pdx_tooltip = "ireland_conditions_critical_message_tooltip"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 476
+			maxHeight = 20
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_next_review"
+			position = { x = 16 y = 520 }
+			context_aware_text = [GetIrelandLawReviewStatus]
+			pdx_tooltip = "ireland_conditions_next_review_tooltip"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 476
+			maxHeight = 20
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ireland_conditions_selection"
+			position = { x = 16 y = 541 }
+			context_aware_text = [GetIrelandConditionsSelection]
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 476
+			maxHeight = 20
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ireland_conditions_review_button"
+			quadTextureSprite = "GFX_button_221x34"
+			position = { x = 12 y = 563 }
+			buttonText = "ireland_conditions_review_button_text"
+			buttonFont = "hoi_16mbs"
+			format = center
+			clicksound = click_default
+			pdx_tooltip = "ireland_conditions_review_button_tooltip"
+		}
+		buttonType = {
+			name = "ireland_conditions_close_button"
+			quadTextureSprite = "GFX_closebutton"
+			position = { x = 462 y = 561 }
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			clicksound = click_close
+			pdx_tooltip = "ireland_gui_close_tooltip"
+		}
+
+		# Route seals are intentionally small and never allowed to dominate the
+		# decision surface. The scripted GUI still swaps their animated/fallback
+		# states through the existing control names.
+		iconType = {
+			name = "ireland_conditions_high_kingship_animation"
+			spriteType = "GFX_ireland_high_kingship_crown_selection_animated"
+			position = { x = 414 y = 104 }
+			scale = 0.28
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "ireland_conditions_high_kingship_fallback"
+			spriteType = "GFX_ireland_high_kingship_crown_selection"
+			position = { x = 414 y = 104 }
+			scale = 0.28
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "ireland_conditions_five_provinces_animation"
+			spriteType = "GFX_ireland_five_provinces_compact_animated"
+			position = { x = 458 y = 104 }
+			scale = 0.28
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "ireland_conditions_five_provinces_fallback"
+			spriteType = "GFX_ireland_five_provinces_compact"
+			position = { x = 458 y = 104 }
+			scale = 0.28
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "ireland_conditions_convergence_animation"
+			spriteType = "GFX_ireland_convergence_conclusion_seal_animated"
+			position = { x = 454 y = 466 }
+			scale = 0.22
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "ireland_conditions_convergence_fallback"
+			spriteType = "GFX_ireland_convergence_conclusion_seal"
+			position = { x = 454 y = 466 }
+			scale = 0.22
+			alwaystransparent = yes
+		}
+	}
+}

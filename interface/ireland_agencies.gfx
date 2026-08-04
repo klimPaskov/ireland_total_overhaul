@@ -1,0 +1,9 @@
+# Two-frame intelligence-agency logo. The second frame is the selected/highlighted
+# state used by the agency view; the logo is intentionally distinct from decision icons.
+spriteTypes = {
+	spriteType = {
+		name = GFX_intelligence_agency_logo_ireland
+		texturefile = "gfx/interface/operatives/agencies/agency_logo_ireland_coastwatch.dds"
+		noOfFrames = 2
+	}
+}

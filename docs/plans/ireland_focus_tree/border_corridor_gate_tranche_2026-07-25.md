@@ -12,16 +12,16 @@ The canonical row admits the action for refugee, trade, relief, Plan W, or North
 
 ## Current implementation
 
-`common/decisions/slopx_ireland_decisions.txt` now requires:
+`common/decisions/ireland_decisions.txt` now requires:
 
 - a named border, war-spillover, relief, Plan W, trade, or Northern-settlement pressure flag;
-- at least one controlled division in the named Border Belt force area through `slopx_ireland_has_regional_contribution_force`;
+- at least one controlled division in the named Border Belt force area through `ireland_has_regional_contribution_force`;
 - a completed local security, local defence, or policing preparation action;
 - the existing 250-manpower and 5-Truck commitment, Border Belt control, Neutrality Integrity ceiling, and dynamic scarcity costs.
 
 On completion, the action retains its 5-point Neutrality Integrity improvement and additionally moves the Northern Security Stability and British Leverage ledgers by the authored corridor deltas. It creates no free military or territorial reward.
 
-The action description and requirements tooltip identify the pressure record, named division presence, local safeguards, manpower, trucks, and leverage exposure. Constants live in `common/script_constants/slopx_ireland_constants.txt` so the two ledger deltas remain tunable.
+The action description and requirements tooltip identify the pressure record, named division presence, local safeguards, manpower, trucks, and leverage exposure. Constants live in `common/script_constants/ireland_constants.txt` so the two ledger deltas remain tunable.
 
 ## Validation boundary
 

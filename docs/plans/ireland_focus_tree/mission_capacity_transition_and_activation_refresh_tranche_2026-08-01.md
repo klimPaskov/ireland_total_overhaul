@@ -1,19 +1,19 @@
 # Ireland mission-cap transition and activation-refresh tranche
 
 Date: 2026-08-01
-Scope: `ireland_focus_tree`, namespace `slopx`
+Scope: `ireland_focus_tree`, namespace `ireland`
 Authority: approved M2 mission merge and A2 static-hidden achievement ruling
 
 ## Changes
 
-- `slopx_ireland_update_mission_capacity` now keeps the explicit cap ladder in
+- `ireland_update_mission_capacity` now keeps the explicit cap ladder in
   one runtime variable: 8 in normal peace, 10 during a national emergency or
   war, and 12 only while both the national emergency and Northern occupation
   are active.
 - Leaving either emergency condition returns to the 10-slot band first. The
   10-slot band decays to 8 only after 30 consecutive stable days, including
   the transition from the conditional 12-slot band.
-- `slopx_ireland_has_active_mission_capacity` reads the current dynamic cap
+- `ireland_has_active_mission_capacity` reads the current dynamic cap
   rather than reconstructing only the three flag-based states. This keeps the
   temporary post-emergency 10-slot band usable by ordinary mission admission.
 - Critical admission retains strict post-activation `greater_than` handling:
@@ -27,7 +27,7 @@ Authority: approved M2 mission merge and A2 static-hidden achievement ruling
 
 ## Static evidence
 
-- `common/decisions/slopx_ireland_decisions.txt` contains 67 activation call
+- `common/decisions/ireland_decisions.txt` contains 67 activation call
   sites representing exactly 54 unique mission IDs, matching M2.
 - The eight Radical/Underground call sites have direct refresh effects. The
   two existing multi-step activations refresh after their timeout adjustment,

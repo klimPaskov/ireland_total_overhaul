@@ -2,7 +2,7 @@
 
 Date: 2026-07-28
 Feature: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 
 ## Scope
 
@@ -26,13 +26,13 @@ administration, alignment, offices, or recognition.
 
 Each route capstone now records only its route-specific `*_capstone_complete`
 or pending gate. The scripted trigger
-`slopx_ireland_has_route_conclusion_capstone` reads those pending capstone
+`ireland_has_route_conclusion_capstone` reads those pending capstone
 markers, so the 180-day review can still find a route that is ready for review.
 
-`slopx_ireland_finalize_route_conclusion` remains the single resolution point.
-It classifies the review as `slopx_ireland_route_conclusion_full` or
-`slopx_ireland_route_conclusion_partial`, calls
-`slopx_ireland_record_route_conclusion_flags`, then proceeds through the normal
+`ireland_finalize_route_conclusion` remains the single resolution point.
+It classifies the review as `ireland_route_conclusion_full` or
+`ireland_route_conclusion_partial`, calls
+`ireland_record_route_conclusion_flags`, then proceeds through the normal
 Clann handling and cleanup. The new recorder maps only the completed route
 capstone markers to route-specific `*_concluded` flags after the review has
 resolved. Failure and blocked outcomes do not become political victories.
@@ -48,13 +48,13 @@ but it cannot satisfy a full political-victory achievement.
 
 The sponsor-dependence condition now checks the durable high-water variables
 for British, Vatican, American, and German leverage. It no longer relies on
-the current aggregate `slopx_ireland_achievement_sponsor_dependence`, which is
+the current aggregate `ireland_achievement_sponsor_dependence`, which is
 overwritten as live leverage changes.
 
 ### A-21: recoverable emergency settlement
 
 The contradictory negative condition for
-`slopx_ireland_achievement_permanent_emergency_failure` was removed. The
+`ireland_achievement_permanent_emergency_failure` was removed. The
 achievement instead requires the live emergency-overreach flag, emergency
 powers crisis flag, and emergency-law failure stage to be cleared. The
 historical failure flags remain recorded for other history-sensitive outcomes.
@@ -71,12 +71,12 @@ guarantee-review milestones no longer increment the member count.
 
 ## Touched implementation surfaces
 
-- `common/national_focus/slopx_ireland_focus_tree.txt`
-- `common/scripted_triggers/slopx_ireland_triggers.txt`
-- `common/scripted_effects/slopx_ireland_effects.txt`
-- `common/scripted_effects/slopx_ireland_runtime.txt`
-- `common/scripted_effects/slopx_ireland_achievement_history.txt`
-- `common/achievements/slopx_ireland_achievements.txt`
+- `common/national_focus/ireland_focus_tree.txt`
+- `common/scripted_triggers/ireland_triggers.txt`
+- `common/scripted_effects/ireland_effects.txt`
+- `common/scripted_effects/ireland_runtime.txt`
+- `common/scripted_effects/ireland_achievement_history.txt`
+- `common/achievements/ireland_achievements.txt`
 - `docs/plans/ireland_focus_tree/source_of_truth_map.md`
 - `docs/plans/ireland_focus_tree/project_status.md`
 

@@ -1,0 +1,15 @@
+# Static presentation assets for the three Ireland scripted GUI surfaces. Runtime DDS files live under gfx/interface/ireland/gui/.
+# The generated package's source, processed, and static-fallback evidence remains under assets/.
+spriteTypes = {
+	spriteType = { name = GFX_ireland_gui_conditions_background texturefile = "gfx/interface/ireland/gui/conditions/background.dds" }
+	spriteType = { name = GFX_ireland_gui_northern_background texturefile = "gfx/interface/ireland/gui/northern/background.dds" }
+	spriteType = { name = GFX_ireland_gui_evidence_background texturefile = "gfx/interface/ireland/gui/evidence/background.dds" }
+	spriteType = { name = GFX_ireland_gui_status_ready texturefile = "gfx/interface/ireland/gui/shared/status_ready.dds" }
+	spriteType = { name = GFX_ireland_gui_status_locked texturefile = "gfx/interface/ireland/gui/shared/status_locked.dds" }
+	spriteType = { name = GFX_ireland_gui_status_warning texturefile = "gfx/interface/ireland/gui/shared/status_warning.dds" }
+	spriteType = { name = GFX_ireland_gui_status_critical texturefile = "gfx/interface/ireland/gui/shared/status_critical.dds" }
+	spriteType = { name = GFX_ireland_gui_value_row texturefile = "gfx/interface/ireland/gui/shared/value_row.dds" }
+	spriteType = { name = GFX_ireland_gui_compact_row texturefile = "gfx/interface/ireland/gui/shared/compact_row.dds" }
+	spriteType = { name = GFX_ireland_gui_review_button texturefile = "gfx/interface/ireland/gui/shared/review_button.dds" }
+	spriteType = { name = GFX_ireland_gui_close_button texturefile = "gfx/interface/ireland/gui/shared/close_button.dds" }
+}

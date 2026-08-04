@@ -3,13 +3,13 @@
   "surfaces": [
     {
       "name": "focus_goals",
-      "directory": "gfx/interface/goals/slopx_ireland",
+      "directory": "gfx/interface/goals/ireland",
       "expected_count": 216,
       "actual_count": 216,
       "count_ok": true,
       "rows": [
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_1938_trade_settlement.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_1938_trade_settlement.dds",
           "dimensions": [
             100,
             88
@@ -26,7 +26,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_active_neutrality.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_active_neutrality.dds",
           "dimensions": [
             100,
             88
@@ -43,7 +43,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_agrarian_support_bloc.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_agrarian_support_bloc.dds",
           "dimensions": [
             100,
             88
@@ -60,7 +60,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_ailtiri_cell_network.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_ailtiri_cell_network.dds",
           "dimensions": [
             100,
             88
@@ -77,7 +77,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_ailtiri_total_state_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_ailtiri_total_state_capstone.dds",
           "dimensions": [
             100,
             88
@@ -94,7 +94,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_air_warning.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_air_warning.dds",
           "dimensions": [
             100,
             88
@@ -111,7 +111,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_american_diaspora_mission.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_american_diaspora_mission.dds",
           "dimensions": [
             100,
             88
@@ -128,7 +128,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_amnesty_under_law.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_amnesty_under_law.dds",
           "dimensions": [
             100,
             88
@@ -145,7 +145,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_archival_record.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_archival_record.dds",
           "dimensions": [
             100,
             88
@@ -162,7 +162,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_armed_neutrality.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_armed_neutrality.dds",
           "dimensions": [
             100,
             88
@@ -179,7 +179,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_arms_before_authority.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_arms_before_authority.dds",
           "dimensions": [
             100,
             88
@@ -196,7 +196,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_army_acceptance.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_army_acceptance.dds",
           "dimensions": [
             100,
             88
@@ -213,7 +213,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_army_serves_dail.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_army_serves_dail.dds",
           "dimensions": [
             100,
             88
@@ -230,7 +230,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_authority_before_arms.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_authority_before_arms.dds",
           "dimensions": [
             100,
             88
@@ -247,7 +247,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_border_observation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_border_observation.dds",
           "dimensions": [
             100,
             88
@@ -264,7 +264,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_british_leverage_management.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_british_leverage_management.dds",
           "dimensions": [
             100,
             88
@@ -281,7 +281,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_cabinet_compact.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_cabinet_compact.dds",
           "dimensions": [
             100,
             88
@@ -298,7 +298,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_cabinet_of_production.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_cabinet_of_production.dds",
           "dimensions": [
             100,
             88
@@ -315,7 +315,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_ceannaire_state.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_ceannaire_state.dds",
           "dimensions": [
             100,
             88
@@ -332,7 +332,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_church_labour_consultation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_church_labour_consultation.dds",
           "dimensions": [
             100,
             88
@@ -349,7 +349,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_civil_service_and_courts.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_civil_service_and_courts.dds",
           "dimensions": [
             100,
             88
@@ -366,7 +366,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_civil_war_memory.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_civil_war_memory.dds",
           "dimensions": [
             100,
             88
@@ -383,7 +383,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_civilian_oversight.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_civilian_oversight.dds",
           "dimensions": [
             100,
             88
@@ -400,7 +400,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_clann_by_election.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_clann_by_election.dds",
           "dimensions": [
             100,
             88
@@ -417,7 +417,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_clann_founding.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_clann_founding.dds",
           "dimensions": [
             100,
             88
@@ -434,7 +434,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_clerical_failure_bridge.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_clerical_failure_bridge.dds",
           "dimensions": [
             100,
             88
@@ -451,7 +451,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_clerical_guardianship.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_clerical_guardianship.dds",
           "dimensions": [
             100,
             88
@@ -468,7 +468,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_clerical_route_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_clerical_route_capstone.dds",
           "dimensions": [
             100,
             88
@@ -485,7 +485,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_close_oduffy_chapter.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_close_oduffy_chapter.dds",
           "dimensions": [
             100,
             88
@@ -502,7 +502,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_coastwatch.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_coastwatch.dds",
           "dimensions": [
             100,
             88
@@ -519,7 +519,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_command_audit.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_command_audit.dds",
           "dimensions": [
             100,
             88
@@ -536,7 +536,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_compact_with_otherworld.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_compact_with_otherworld.dds",
           "dimensions": [
             100,
             88
@@ -553,7 +553,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_congress_plural_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_congress_plural_capstone.dds",
           "dimensions": [
             100,
             88
@@ -570,7 +570,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_congress_plural_republic.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_congress_plural_republic.dds",
           "dimensions": [
             100,
             88
@@ -587,7 +587,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_congress_reform_bridge.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_congress_reform_bridge.dds",
           "dimensions": [
             100,
             88
@@ -604,7 +604,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_congress_vanguard_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_congress_vanguard_capstone.dds",
           "dimensions": [
             100,
             88
@@ -621,7 +621,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_congress_vanguard_cell.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_congress_vanguard_cell.dds",
           "dimensions": [
             100,
             88
@@ -638,7 +638,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_constitutional_draft.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_constitutional_draft.dds",
           "dimensions": [
             100,
             88
@@ -655,7 +655,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_constitutional_opposition.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_constitutional_opposition.dds",
           "dimensions": [
             100,
             88
@@ -672,7 +672,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_constitutional_stewardship.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_constitutional_stewardship.dds",
           "dimensions": [
             100,
             88
@@ -689,7 +689,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_containment_protocol.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_containment_protocol.dds",
           "dimensions": [
             100,
             88
@@ -706,7 +706,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_convention_of_commands.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_convention_of_commands.dds",
           "dimensions": [
             100,
             88
@@ -723,7 +723,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_convergence_order_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_convergence_order_capstone.dds",
           "dimensions": [
             100,
             88
@@ -740,7 +740,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_corporate_estates.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_corporate_estates.dds",
           "dimensions": [
             100,
             88
@@ -757,7 +757,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_corporate_gaelic_nation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_corporate_gaelic_nation.dds",
           "dimensions": [
             100,
             88
@@ -774,7 +774,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_corporate_order.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_corporate_order.dds",
           "dimensions": [
             100,
             88
@@ -791,7 +791,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_cosgrave_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_cosgrave_capstone.dds",
           "dimensions": [
             100,
             88
@@ -808,7 +808,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_cosgrave_institutional.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_cosgrave_institutional.dds",
           "dimensions": [
             100,
             88
@@ -825,7 +825,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_costello_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_costello_capstone.dds",
           "dimensions": [
             100,
             88
@@ -842,7 +842,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_costello_coalition.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_costello_coalition.dds",
           "dimensions": [
             100,
             88
@@ -859,7 +859,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_council_government_rejected.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_council_government_rejected.dds",
           "dimensions": [
             100,
             88
@@ -876,7 +876,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_crown_powers_charter.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_crown_powers_charter.dds",
           "dimensions": [
             100,
             88
@@ -893,7 +893,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_crown_province_convergence.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_crown_province_convergence.dds",
           "dimensions": [
             100,
             88
@@ -910,7 +910,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_cultural_evidence_ledger.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_cultural_evidence_ledger.dds",
           "dimensions": [
             100,
             88
@@ -927,7 +927,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_cultural_service.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_cultural_service.dds",
           "dimensions": [
             100,
             88
@@ -944,7 +944,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_cultural_survey.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_cultural_survey.dds",
           "dimensions": [
             100,
             88
@@ -961,7 +961,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_culture_completion.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_culture_completion.dds",
           "dimensions": [
             100,
             88
@@ -978,7 +978,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_dail_nomination.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_dail_nomination.dds",
           "dimensions": [
             100,
             88
@@ -995,7 +995,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_dail_supremacy_clause.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_dail_supremacy_clause.dds",
           "dimensions": [
             100,
             88
@@ -1012,7 +1012,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_de_valera_emergency_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_de_valera_emergency_capstone.dds",
           "dimensions": [
             100,
             88
@@ -1029,7 +1029,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_de_valera_reconciliation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_de_valera_reconciliation.dds",
           "dimensions": [
             100,
             88
@@ -1046,7 +1046,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_de_valera_reconciliation_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_de_valera_reconciliation_capstone.dds",
           "dimensions": [
             100,
             88
@@ -1063,7 +1063,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_de_valera_stewardship.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_de_valera_stewardship.dds",
           "dimensions": [
             100,
             88
@@ -1080,7 +1080,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_defence_estimates.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_defence_estimates.dds",
           "dimensions": [
             100,
             88
@@ -1097,7 +1097,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_demobilisation_charter.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_demobilisation_charter.dds",
           "dimensions": [
             100,
             88
@@ -1114,7 +1114,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_development_authority.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_development_authority.dds",
           "dimensions": [
             100,
             88
@@ -1131,7 +1131,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_diaspora_exchange.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_diaspora_exchange.dds",
           "dimensions": [
             100,
             88
@@ -1148,7 +1148,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_dillon_intervention_caucus.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_dillon_intervention_caucus.dds",
           "dimensions": [
             100,
             88
@@ -1165,7 +1165,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_dillon_public_dissent.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_dillon_public_dissent.dds",
           "dimensions": [
             100,
             88
@@ -1182,7 +1182,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_dillon_war_assent.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_dillon_war_assent.dds",
           "dimensions": [
             100,
             88
@@ -1199,7 +1199,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_distinguish_prisoners.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_distinguish_prisoners.dds",
           "dimensions": [
             100,
             88
@@ -1216,7 +1216,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_domestic_industry_review.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_domestic_industry_review.dds",
           "dimensions": [
             100,
             88
@@ -1233,7 +1233,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_domestic_manufacturing.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_domestic_manufacturing.dds",
           "dimensions": [
             100,
             88
@@ -1250,7 +1250,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_dominion_claim.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_dominion_claim.dds",
           "dimensions": [
             100,
             88
@@ -1267,7 +1267,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_economic_war_review.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_economic_war_review.dds",
           "dimensions": [
             100,
             88
@@ -1284,7 +1284,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_election_mandate.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_election_mandate.dds",
           "dimensions": [
             100,
             88
@@ -1301,7 +1301,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_election_timetable.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_election_timetable.dds",
           "dimensions": [
             100,
             88
@@ -1318,7 +1318,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_elective_crown.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_elective_crown.dds",
           "dimensions": [
             100,
             88
@@ -1335,7 +1335,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_emergency_accounting.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_emergency_accounting.dds",
           "dimensions": [
             100,
             88
@@ -1352,7 +1352,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_emergency_direction.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_emergency_direction.dds",
           "dimensions": [
             100,
             88
@@ -1369,7 +1369,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_emergency_mobilisation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_emergency_mobilisation.dds",
           "dimensions": [
             100,
             88
@@ -1386,7 +1386,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_emergency_opening.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_emergency_opening.dds",
           "dimensions": [
             100,
             88
@@ -1403,7 +1403,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_emergency_repeal.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_emergency_repeal.dds",
           "dimensions": [
             100,
             88
@@ -1420,7 +1420,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_emergency_review.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_emergency_review.dds",
           "dimensions": [
             100,
             88
@@ -1437,7 +1437,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_emergency_stockpiles.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_emergency_stockpiles.dds",
           "dimensions": [
             100,
             88
@@ -1454,7 +1454,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_energy_board.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_energy_board.dds",
           "dimensions": [
             100,
             88
@@ -1471,7 +1471,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_extra_parliamentary_transition.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_extra_parliamentary_transition.dds",
           "dimensions": [
             100,
             88
@@ -1488,7 +1488,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_face_civil_war_record.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_face_civil_war_record.dds",
           "dimensions": [
             100,
             88
@@ -1505,7 +1505,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_federal_convention.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_federal_convention.dds",
           "dimensions": [
             100,
             88
@@ -1522,7 +1522,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_federal_republic.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_federal_republic.dds",
           "dimensions": [
             100,
             88
@@ -1539,7 +1539,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_five_province_mandates.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_five_province_mandates.dds",
           "dimensions": [
             100,
             88
@@ -1556,7 +1556,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_five_provinces_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_five_provinces_capstone.dds",
           "dimensions": [
             100,
             88
@@ -1573,7 +1573,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_fivefold_obligation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_fivefold_obligation.dds",
           "dimensions": [
             100,
             88
@@ -1590,7 +1590,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_food_ledger.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_food_ledger.dds",
           "dimensions": [
             100,
             88
@@ -1607,7 +1607,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_foreign_postwar_review.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_foreign_postwar_review.dds",
           "dimensions": [
             100,
             88
@@ -1624,7 +1624,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_foreign_safeguards.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_foreign_safeguards.dds",
           "dimensions": [
             100,
             88
@@ -1641,7 +1641,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_general_election_campaign.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_general_election_campaign.dds",
           "dimensions": [
             100,
             88
@@ -1658,7 +1658,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_german_channel.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_german_channel.dds",
           "dimensions": [
             100,
             88
@@ -1675,7 +1675,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_govern_through_dail.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_govern_through_dail.dds",
           "dimensions": [
             100,
             88
@@ -1692,7 +1692,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_government_formation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_government_formation.dds",
           "dimensions": [
             100,
             88
@@ -1709,7 +1709,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_government_from_opposition.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_government_from_opposition.dds",
           "dimensions": [
             100,
             88
@@ -1726,7 +1726,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_guardian_crown.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_guardian_crown.dds",
           "dimensions": [
             100,
             88
@@ -1743,7 +1743,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_high_king_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_high_king_capstone.dds",
           "dimensions": [
             100,
             88
@@ -1760,7 +1760,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_high_king_convention.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_high_king_convention.dds",
           "dimensions": [
             100,
             88
@@ -1777,7 +1777,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_high_king_evidence_gate.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_high_king_evidence_gate.dds",
           "dimensions": [
             100,
             88
@@ -1794,7 +1794,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_institutional_survey.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_institutional_survey.dds",
           "dimensions": [
             100,
             88
@@ -1811,7 +1811,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_interoperability.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_interoperability.dds",
           "dimensions": [
             100,
             88
@@ -1828,7 +1828,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_ira_army_council.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_ira_army_council.dds",
           "dimensions": [
             100,
             88
@@ -1845,7 +1845,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_ira_civil_authority.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_ira_civil_authority.dds",
           "dimensions": [
             100,
             88
@@ -1862,7 +1862,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_ira_republican_bridge.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_ira_republican_bridge.dds",
           "dimensions": [
             100,
             88
@@ -1879,7 +1879,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_ira_route_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_ira_route_capstone.dds",
           "dimensions": [
             100,
             88
@@ -1896,7 +1896,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_june_1942_public_launch.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_june_1942_public_launch.dds",
           "dimensions": [
             100,
             88
@@ -1913,7 +1913,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_labour_as_conscience.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_labour_as_conscience.dds",
           "dimensions": [
             100,
             88
@@ -1930,7 +1930,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_labour_industrial_discipline.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_labour_industrial_discipline.dds",
           "dimensions": [
             100,
             88
@@ -1947,7 +1947,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_labour_social_law.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_labour_social_law.dds",
           "dimensions": [
             100,
             88
@@ -1964,7 +1964,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_language_cells.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_language_cells.dds",
           "dimensions": [
             100,
             88
@@ -1981,7 +1981,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_language_institutions.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_language_institutions.dds",
           "dimensions": [
             100,
             88
@@ -1998,7 +1998,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_language_service.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_language_service.dds",
           "dimensions": [
             100,
             88
@@ -2015,7 +2015,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_lemass_developmental.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_lemass_developmental.dds",
           "dimensions": [
             100,
             88
@@ -2032,7 +2032,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_lemass_developmental_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_lemass_developmental_capstone.dds",
           "dimensions": [
             100,
             88
@@ -2049,7 +2049,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_maritime_protection.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_maritime_protection.dds",
           "dimensions": [
             100,
             88
@@ -2066,7 +2066,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_maritime_reserve.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_maritime_reserve.dds",
           "dimensions": [
             100,
             88
@@ -2083,7 +2083,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_material_conclusion_proof.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_material_conclusion_proof.dds",
           "dimensions": [
             100,
             88
@@ -2100,7 +2100,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_minority_guarantees.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_minority_guarantees.dds",
           "dimensions": [
             100,
             88
@@ -2117,7 +2117,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_mulcahy_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_mulcahy_capstone.dds",
           "dimensions": [
             100,
             88
@@ -2134,7 +2134,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_mulcahy_succession.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_mulcahy_succession.dds",
           "dimensions": [
             100,
             88
@@ -2151,7 +2151,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_national_settlement.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_national_settlement.dds",
           "dimensions": [
             100,
             88
@@ -2168,7 +2168,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_neutrality_by_irish_decision.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_neutrality_by_irish_decision.dds",
           "dimensions": [
             100,
             88
@@ -2185,7 +2185,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_neutrality_posture.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_neutrality_posture.dds",
           "dimensions": [
             100,
             88
@@ -2202,7 +2202,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_contacts.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_contacts.dds",
           "dimensions": [
             100,
             88
@@ -2219,7 +2219,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_federal_preparation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_federal_preparation.dds",
           "dimensions": [
             100,
             88
@@ -2236,7 +2236,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_labour_social_bridge.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_labour_social_bridge.dds",
           "dimensions": [
             100,
             88
@@ -2253,7 +2253,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_local_authorities.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_local_authorities.dds",
           "dimensions": [
             100,
             88
@@ -2270,7 +2270,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_policy_proof.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_policy_proof.dds",
           "dimensions": [
             100,
             88
@@ -2287,7 +2287,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_question_in_arms.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_question_in_arms.dds",
           "dimensions": [
             100,
             88
@@ -2304,7 +2304,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_recovery_bridge.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_recovery_bridge.dds",
           "dimensions": [
             100,
             88
@@ -2321,7 +2321,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_regional_review.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_regional_review.dds",
           "dimensions": [
             100,
             88
@@ -2338,7 +2338,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_settlement_ledger.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_settlement_ledger.dds",
           "dimensions": [
             100,
             88
@@ -2355,7 +2355,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_trade_corridor.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_trade_corridor.dds",
           "dimensions": [
             100,
             88
@@ -2372,7 +2372,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_unitary_preparation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_unitary_preparation.dds",
           "dimensions": [
             100,
             88
@@ -2389,7 +2389,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_northern_wartime_bargain.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_northern_wartime_bargain.dds",
           "dimensions": [
             100,
             88
@@ -2406,7 +2406,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_norton_parliamentary.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_norton_parliamentary.dds",
           "dimensions": [
             100,
             88
@@ -2423,7 +2423,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_norton_parliamentary_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_norton_parliamentary_capstone.dds",
           "dimensions": [
             100,
             88
@@ -2440,7 +2440,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_oduffy_corporate_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_oduffy_corporate_capstone.dds",
           "dimensions": [
             100,
             88
@@ -2457,7 +2457,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_oduffy_network_revival.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_oduffy_network_revival.dds",
           "dimensions": [
             100,
             88
@@ -2474,7 +2474,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_oduffy_personal_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_oduffy_personal_capstone.dds",
           "dimensions": [
             100,
             88
@@ -2491,7 +2491,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_oduffy_personal_command.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_oduffy_personal_command.dds",
           "dimensions": [
             100,
             88
@@ -2508,7 +2508,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_organise_congress.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_organise_congress.dds",
           "dimensions": [
             100,
             88
@@ -2525,7 +2525,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_otherworld_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_otherworld_capstone.dds",
           "dimensions": [
             100,
             88
@@ -2542,7 +2542,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_otherworld_convergence.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_otherworld_convergence.dds",
           "dimensions": [
             100,
             88
@@ -2559,7 +2559,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_otherworld_evidence_ledger.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_otherworld_evidence_ledger.dds",
           "dimensions": [
             100,
             88
@@ -2576,7 +2576,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_otherworld_guardians.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_otherworld_guardians.dds",
           "dimensions": [
             100,
             88
@@ -2593,7 +2593,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_otherworld_investigation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_otherworld_investigation.dds",
           "dimensions": [
             100,
             88
@@ -2610,7 +2610,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_otherworld_statecraft.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_otherworld_statecraft.dds",
           "dimensions": [
             100,
             88
@@ -2627,7 +2627,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_otherworld_witnesses.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_otherworld_witnesses.dds",
           "dimensions": [
             100,
             88
@@ -2644,7 +2644,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_party_conference.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_party_conference.dds",
           "dimensions": [
             100,
             88
@@ -2661,7 +2661,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_party_of_government.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_party_of_government.dds",
           "dimensions": [
             100,
             88
@@ -2678,7 +2678,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_pentarchy_guardians.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_pentarchy_guardians.dds",
           "dimensions": [
             100,
             88
@@ -2695,7 +2695,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_plebiscite_campaign.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_plebiscite_campaign.dds",
           "dimensions": [
             100,
             88
@@ -2712,7 +2712,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_plebiscite_mandate.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_plebiscite_mandate.dds",
           "dimensions": [
             100,
             88
@@ -2729,7 +2729,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_port_and_coast_audit.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_port_and_coast_audit.dds",
           "dimensions": [
             100,
             88
@@ -2746,7 +2746,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_port_defence_project.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_port_defence_project.dds",
           "dimensions": [
             100,
             88
@@ -2763,7 +2763,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_presidential_settlement.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_presidential_settlement.dds",
           "dimensions": [
             100,
             88
@@ -2780,7 +2780,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_producer_accounting.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_producer_accounting.dds",
           "dimensions": [
             100,
             88
@@ -2797,7 +2797,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_producer_constitution.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_producer_constitution.dds",
           "dimensions": [
             100,
             88
@@ -2814,7 +2814,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_producer_councils.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_producer_councils.dds",
           "dimensions": [
             100,
             88
@@ -2831,7 +2831,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_professional_army.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_professional_army.dds",
           "dimensions": [
             100,
             88
@@ -2848,7 +2848,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_professional_defence_council.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_professional_defence_council.dds",
           "dimensions": [
             100,
             88
@@ -2865,7 +2865,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_provision_baseline.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_provision_baseline.dds",
           "dimensions": [
             100,
             88
@@ -2882,7 +2882,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_provision_conclusion.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_provision_conclusion.dds",
           "dimensions": [
             100,
             88
@@ -2899,7 +2899,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_public_order_review.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_public_order_review.dds",
           "dimensions": [
             100,
             88
@@ -2916,7 +2916,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_readiness_baseline.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_readiness_baseline.dds",
           "dimensions": [
             100,
             88
@@ -2933,7 +2933,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_readiness_command.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_readiness_command.dds",
           "dimensions": [
             100,
             88
@@ -2950,7 +2950,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_readiness_conclusion.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_readiness_conclusion.dds",
           "dimensions": [
             100,
             88
@@ -2967,7 +2967,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_reassemble_ghq.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_reassemble_ghq.dds",
           "dimensions": [
             100,
             88
@@ -2984,7 +2984,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_reconciliation_mandate.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_reconciliation_mandate.dds",
           "dimensions": [
             100,
             88
@@ -3001,7 +3001,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_reconstruction_mandate.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_reconstruction_mandate.dds",
           "dimensions": [
             100,
             88
@@ -3018,7 +3018,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_recovery_bridge.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_recovery_bridge.dds",
           "dimensions": [
             100,
             88
@@ -3035,7 +3035,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_regional_participation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_regional_participation.dds",
           "dimensions": [
             100,
             88
@@ -3052,7 +3052,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_regional_thresholds.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_regional_thresholds.dds",
           "dimensions": [
             100,
             88
@@ -3069,7 +3069,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_replacement_charter.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_replacement_charter.dds",
           "dimensions": [
             100,
             88
@@ -3086,7 +3086,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_republic_in_districts.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_republic_in_districts.dds",
           "dimensions": [
             100,
             88
@@ -3103,7 +3103,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_republican_government.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_republican_government.dds",
           "dimensions": [
             100,
             88
@@ -3120,7 +3120,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_republican_legitimacy.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_republican_legitimacy.dds",
           "dimensions": [
             100,
             88
@@ -3137,7 +3137,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_republican_veterans.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_republican_veterans.dds",
           "dimensions": [
             100,
             88
@@ -3154,7 +3154,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_restore_constitutional_calendar.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_restore_constitutional_calendar.dds",
           "dimensions": [
             100,
             88
@@ -3171,7 +3171,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_restore_parliamentary_confidence.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_restore_parliamentary_confidence.dds",
           "dimensions": [
             100,
             88
@@ -3188,7 +3188,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_rural_compensation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_rural_compensation.dds",
           "dimensions": [
             100,
             88
@@ -3205,7 +3205,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_rural_credit.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_rural_credit.dds",
           "dimensions": [
             100,
             88
@@ -3222,7 +3222,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_rural_price_board.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_rural_price_board.dds",
           "dimensions": [
             100,
             88
@@ -3239,7 +3239,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_rural_producer_compact.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_rural_producer_compact.dds",
           "dimensions": [
             100,
             88
@@ -3256,7 +3256,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_seanad_panels.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_seanad_panels.dds",
           "dimensions": [
             100,
             88
@@ -3273,7 +3273,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_secure_plebiscite_mandate.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_secure_plebiscite_mandate.dds",
           "dimensions": [
             100,
             88
@@ -3290,7 +3290,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_security_under_law.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_security_under_law.dds",
           "dimensions": [
             100,
             88
@@ -3307,7 +3307,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_serious_cultural_stewardship.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_serious_cultural_stewardship.dds",
           "dimensions": [
             100,
             88
@@ -3324,7 +3324,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_service_state.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_service_state.dds",
           "dimensions": [
             100,
             88
@@ -3341,7 +3341,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_site_stewardship.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_site_stewardship.dds",
           "dimensions": [
             100,
             88
@@ -3358,7 +3358,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_social_cooperatives.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_social_cooperatives.dds",
           "dimensions": [
             100,
             88
@@ -3375,7 +3375,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_sovereignty_mandate.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_sovereignty_mandate.dds",
           "dimensions": [
             100,
             88
@@ -3392,7 +3392,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_state_still_defined.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_state_still_defined.dds",
           "dimensions": [
             100,
             88
@@ -3409,7 +3409,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_state_we_built.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_state_we_built.dds",
           "dimensions": [
             100,
             88
@@ -3426,7 +3426,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_statutory_emergency.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_statutory_emergency.dds",
           "dimensions": [
             100,
             88
@@ -3443,7 +3443,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_strict_neutrality.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_strict_neutrality.dds",
           "dimensions": [
             100,
             88
@@ -3460,7 +3460,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_support_without_surrender.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_support_without_surrender.dds",
           "dimensions": [
             100,
             88
@@ -3477,7 +3477,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_territorial_reserve.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_territorial_reserve.dds",
           "dimensions": [
             100,
             88
@@ -3494,7 +3494,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_transport_priority.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_transport_priority.dds",
           "dimensions": [
             100,
             88
@@ -3511,7 +3511,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_treaty_port_diplomacy.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_treaty_port_diplomacy.dds",
           "dimensions": [
             100,
             88
@@ -3528,7 +3528,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_treaty_port_transfer.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_treaty_port_transfer.dds",
           "dimensions": [
             100,
             88
@@ -3545,7 +3545,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_ulster_rule.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_ulster_rule.dds",
           "dimensions": [
             100,
             88
@@ -3562,7 +3562,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_union_local_mandate.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_union_local_mandate.dds",
           "dimensions": [
             100,
             88
@@ -3579,7 +3579,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_unwind_exceptional_state.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_unwind_exceptional_state.dds",
           "dimensions": [
             100,
             88
@@ -3596,7 +3596,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_vatican_small_state_mediation.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_vatican_small_state_mediation.dds",
           "dimensions": [
             100,
             88
@@ -3613,7 +3613,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_veteran_employer_league.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_veteran_employer_league.dds",
           "dimensions": [
             100,
             88
@@ -3630,7 +3630,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_vocational_constitution.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_vocational_constitution.dds",
           "dimensions": [
             100,
             88
@@ -3647,7 +3647,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_vocational_constitution_capstone.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_vocational_constitution_capstone.dds",
           "dimensions": [
             100,
             88
@@ -3664,7 +3664,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/goals/slopx_ireland/goal_slopx_ireland_written_coalition_charter.dds",
+          "path": "gfx/interface/goals/ireland/goal_ireland_written_coalition_charter.dds",
           "dimensions": [
             100,
             88
@@ -3685,13 +3685,13 @@
     },
     {
       "name": "law_stages",
-      "directory": "gfx/interface/ideas/slopx_ireland/laws",
+      "directory": "gfx/interface/ideas/ireland/laws",
       "expected_count": 51,
       "actual_count": 51,
       "count_ok": true,
       "rows": [
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_001.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_001.dds",
           "dimensions": [
             60,
             68
@@ -3708,7 +3708,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_002.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_002.dds",
           "dimensions": [
             60,
             68
@@ -3725,7 +3725,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_003.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_003.dds",
           "dimensions": [
             60,
             68
@@ -3742,7 +3742,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_004.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_004.dds",
           "dimensions": [
             60,
             68
@@ -3759,7 +3759,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_005.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_005.dds",
           "dimensions": [
             60,
             68
@@ -3776,7 +3776,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_006.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_006.dds",
           "dimensions": [
             60,
             68
@@ -3793,7 +3793,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_007.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_007.dds",
           "dimensions": [
             60,
             68
@@ -3810,7 +3810,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_008.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_008.dds",
           "dimensions": [
             60,
             68
@@ -3827,7 +3827,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_009.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_009.dds",
           "dimensions": [
             60,
             68
@@ -3844,7 +3844,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_010.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_010.dds",
           "dimensions": [
             60,
             68
@@ -3861,7 +3861,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_011.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_011.dds",
           "dimensions": [
             60,
             68
@@ -3878,7 +3878,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_012.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_012.dds",
           "dimensions": [
             60,
             68
@@ -3895,7 +3895,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_013.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_013.dds",
           "dimensions": [
             60,
             68
@@ -3912,7 +3912,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_014.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_014.dds",
           "dimensions": [
             60,
             68
@@ -3929,7 +3929,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_015.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_015.dds",
           "dimensions": [
             60,
             68
@@ -3946,7 +3946,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_016.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_016.dds",
           "dimensions": [
             60,
             68
@@ -3963,7 +3963,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_017.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_017.dds",
           "dimensions": [
             60,
             68
@@ -3980,7 +3980,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_018.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_018.dds",
           "dimensions": [
             60,
             68
@@ -3997,7 +3997,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_019.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_019.dds",
           "dimensions": [
             60,
             68
@@ -4014,7 +4014,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_020.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_020.dds",
           "dimensions": [
             60,
             68
@@ -4031,7 +4031,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_021.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_021.dds",
           "dimensions": [
             60,
             68
@@ -4048,7 +4048,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_022.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_022.dds",
           "dimensions": [
             60,
             68
@@ -4065,7 +4065,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_023.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_023.dds",
           "dimensions": [
             60,
             68
@@ -4082,7 +4082,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_024.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_024.dds",
           "dimensions": [
             60,
             68
@@ -4099,7 +4099,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_025.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_025.dds",
           "dimensions": [
             60,
             68
@@ -4116,7 +4116,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_026.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_026.dds",
           "dimensions": [
             60,
             68
@@ -4133,7 +4133,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_027.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_027.dds",
           "dimensions": [
             60,
             68
@@ -4150,7 +4150,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_028.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_028.dds",
           "dimensions": [
             60,
             68
@@ -4167,7 +4167,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_029.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_029.dds",
           "dimensions": [
             60,
             68
@@ -4184,7 +4184,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_030.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_030.dds",
           "dimensions": [
             60,
             68
@@ -4201,7 +4201,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_031.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_031.dds",
           "dimensions": [
             60,
             68
@@ -4218,7 +4218,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_032.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_032.dds",
           "dimensions": [
             60,
             68
@@ -4235,7 +4235,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_033.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_033.dds",
           "dimensions": [
             60,
             68
@@ -4252,7 +4252,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_034.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_034.dds",
           "dimensions": [
             60,
             68
@@ -4269,7 +4269,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_035.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_035.dds",
           "dimensions": [
             60,
             68
@@ -4286,7 +4286,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_036.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_036.dds",
           "dimensions": [
             60,
             68
@@ -4303,7 +4303,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_037.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_037.dds",
           "dimensions": [
             60,
             68
@@ -4320,7 +4320,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_038.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_038.dds",
           "dimensions": [
             60,
             68
@@ -4337,7 +4337,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_039.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_039.dds",
           "dimensions": [
             60,
             68
@@ -4354,7 +4354,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_040.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_040.dds",
           "dimensions": [
             60,
             68
@@ -4371,7 +4371,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_041.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_041.dds",
           "dimensions": [
             60,
             68
@@ -4388,7 +4388,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_042.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_042.dds",
           "dimensions": [
             60,
             68
@@ -4405,7 +4405,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_043.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_043.dds",
           "dimensions": [
             60,
             68
@@ -4422,7 +4422,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_044.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_044.dds",
           "dimensions": [
             60,
             68
@@ -4439,7 +4439,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_045.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_045.dds",
           "dimensions": [
             60,
             68
@@ -4456,7 +4456,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_046.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_046.dds",
           "dimensions": [
             60,
             68
@@ -4473,7 +4473,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_047.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_047.dds",
           "dimensions": [
             60,
             68
@@ -4490,7 +4490,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_048.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_048.dds",
           "dimensions": [
             60,
             68
@@ -4507,7 +4507,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_049.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_049.dds",
           "dimensions": [
             60,
             68
@@ -4524,7 +4524,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_050.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_050.dds",
           "dimensions": [
             60,
             68
@@ -4541,7 +4541,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/laws/law_ireland_051.dds",
+          "path": "gfx/interface/ideas/ireland/laws/law_ireland_051.dds",
           "dimensions": [
             60,
             68
@@ -4562,13 +4562,13 @@
     },
     {
       "name": "route_spirits",
-      "directory": "gfx/interface/ideas/slopx_ireland/spirits",
+      "directory": "gfx/interface/ideas/ireland/spirits",
       "expected_count": 63,
       "actual_count": 63,
       "count_ok": true,
       "rows": [
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_001.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_001.dds",
           "dimensions": [
             60,
             68
@@ -4585,7 +4585,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_002.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_002.dds",
           "dimensions": [
             60,
             68
@@ -4602,7 +4602,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_003.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_003.dds",
           "dimensions": [
             60,
             68
@@ -4619,7 +4619,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_004.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_004.dds",
           "dimensions": [
             60,
             68
@@ -4636,7 +4636,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_005.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_005.dds",
           "dimensions": [
             60,
             68
@@ -4653,7 +4653,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_006.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_006.dds",
           "dimensions": [
             60,
             68
@@ -4670,7 +4670,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_007.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_007.dds",
           "dimensions": [
             60,
             68
@@ -4687,7 +4687,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_008.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_008.dds",
           "dimensions": [
             60,
             68
@@ -4704,7 +4704,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_009.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_009.dds",
           "dimensions": [
             60,
             68
@@ -4721,7 +4721,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_010.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_010.dds",
           "dimensions": [
             60,
             68
@@ -4738,7 +4738,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_011.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_011.dds",
           "dimensions": [
             60,
             68
@@ -4755,7 +4755,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_012.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_012.dds",
           "dimensions": [
             60,
             68
@@ -4772,7 +4772,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_013.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_013.dds",
           "dimensions": [
             60,
             68
@@ -4789,7 +4789,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_014.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_014.dds",
           "dimensions": [
             60,
             68
@@ -4806,7 +4806,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_015.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_015.dds",
           "dimensions": [
             60,
             68
@@ -4823,7 +4823,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_016.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_016.dds",
           "dimensions": [
             60,
             68
@@ -4840,7 +4840,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_017.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_017.dds",
           "dimensions": [
             60,
             68
@@ -4857,7 +4857,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_018.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_018.dds",
           "dimensions": [
             60,
             68
@@ -4874,7 +4874,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_019.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_019.dds",
           "dimensions": [
             60,
             68
@@ -4891,7 +4891,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_020.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_020.dds",
           "dimensions": [
             60,
             68
@@ -4908,7 +4908,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_021.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_021.dds",
           "dimensions": [
             60,
             68
@@ -4925,7 +4925,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_022.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_022.dds",
           "dimensions": [
             60,
             68
@@ -4942,7 +4942,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_023.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_023.dds",
           "dimensions": [
             60,
             68
@@ -4959,7 +4959,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_024.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_024.dds",
           "dimensions": [
             60,
             68
@@ -4976,7 +4976,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_025.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_025.dds",
           "dimensions": [
             60,
             68
@@ -4993,7 +4993,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_026.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_026.dds",
           "dimensions": [
             60,
             68
@@ -5010,7 +5010,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_027.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_027.dds",
           "dimensions": [
             60,
             68
@@ -5027,7 +5027,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_028.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_028.dds",
           "dimensions": [
             60,
             68
@@ -5044,7 +5044,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_029.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_029.dds",
           "dimensions": [
             60,
             68
@@ -5061,7 +5061,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_030.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_030.dds",
           "dimensions": [
             60,
             68
@@ -5078,7 +5078,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_031.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_031.dds",
           "dimensions": [
             60,
             68
@@ -5095,7 +5095,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_032.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_032.dds",
           "dimensions": [
             60,
             68
@@ -5112,7 +5112,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_033.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_033.dds",
           "dimensions": [
             60,
             68
@@ -5129,7 +5129,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_034.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_034.dds",
           "dimensions": [
             60,
             68
@@ -5146,7 +5146,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_035.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_035.dds",
           "dimensions": [
             60,
             68
@@ -5163,7 +5163,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_036.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_036.dds",
           "dimensions": [
             60,
             68
@@ -5180,7 +5180,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_037.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_037.dds",
           "dimensions": [
             60,
             68
@@ -5197,7 +5197,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_038.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_038.dds",
           "dimensions": [
             60,
             68
@@ -5214,7 +5214,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_039.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_039.dds",
           "dimensions": [
             60,
             68
@@ -5231,7 +5231,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_040.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_040.dds",
           "dimensions": [
             60,
             68
@@ -5248,7 +5248,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_041.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_041.dds",
           "dimensions": [
             60,
             68
@@ -5265,7 +5265,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_042.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_042.dds",
           "dimensions": [
             60,
             68
@@ -5282,7 +5282,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_043.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_043.dds",
           "dimensions": [
             60,
             68
@@ -5299,7 +5299,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_044.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_044.dds",
           "dimensions": [
             60,
             68
@@ -5316,7 +5316,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_045.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_045.dds",
           "dimensions": [
             60,
             68
@@ -5333,7 +5333,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_046.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_046.dds",
           "dimensions": [
             60,
             68
@@ -5350,7 +5350,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_047.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_047.dds",
           "dimensions": [
             60,
             68
@@ -5367,7 +5367,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_048.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_048.dds",
           "dimensions": [
             60,
             68
@@ -5384,7 +5384,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_049.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_049.dds",
           "dimensions": [
             60,
             68
@@ -5401,7 +5401,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_050.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_050.dds",
           "dimensions": [
             60,
             68
@@ -5418,7 +5418,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_051.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_051.dds",
           "dimensions": [
             60,
             68
@@ -5435,7 +5435,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_052.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_052.dds",
           "dimensions": [
             60,
             68
@@ -5452,7 +5452,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_053.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_053.dds",
           "dimensions": [
             60,
             68
@@ -5469,7 +5469,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_054.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_054.dds",
           "dimensions": [
             60,
             68
@@ -5486,7 +5486,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_055.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_055.dds",
           "dimensions": [
             60,
             68
@@ -5503,7 +5503,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_056.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_056.dds",
           "dimensions": [
             60,
             68
@@ -5520,7 +5520,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_057.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_057.dds",
           "dimensions": [
             60,
             68
@@ -5537,7 +5537,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_058.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_058.dds",
           "dimensions": [
             60,
             68
@@ -5554,7 +5554,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_059.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_059.dds",
           "dimensions": [
             60,
             68
@@ -5571,7 +5571,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_060.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_060.dds",
           "dimensions": [
             60,
             68
@@ -5588,7 +5588,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_061.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_061.dds",
           "dimensions": [
             60,
             68
@@ -5605,7 +5605,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_062.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_062.dds",
           "dimensions": [
             60,
             68
@@ -5622,7 +5622,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/ideas/slopx_ireland/spirits/spirit_ireland_063.dds",
+          "path": "gfx/interface/ideas/ireland/spirits/spirit_ireland_063.dds",
           "dimensions": [
             60,
             68
@@ -5643,13 +5643,13 @@
     },
     {
       "name": "decision_categories",
-      "directory": "gfx/interface/decisions/categories/slopx_ireland",
-      "expected_count": 13,
-      "actual_count": 13,
+      "directory": "gfx/interface/decisions/categories/ireland",
+      "expected_count": 14,
+      "actual_count": 14,
       "count_ok": true,
       "rows": [
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_001.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_001.dds",
           "dimensions": [
             52,
             40
@@ -5666,7 +5666,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_002.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_002.dds",
           "dimensions": [
             52,
             40
@@ -5683,7 +5683,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_003.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_003.dds",
           "dimensions": [
             52,
             40
@@ -5700,7 +5700,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_004.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_004.dds",
           "dimensions": [
             52,
             40
@@ -5717,7 +5717,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_005.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_005.dds",
           "dimensions": [
             52,
             40
@@ -5734,7 +5734,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_006.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_006.dds",
           "dimensions": [
             52,
             40
@@ -5751,7 +5751,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_007.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_007.dds",
           "dimensions": [
             52,
             40
@@ -5768,7 +5768,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_008.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_008.dds",
           "dimensions": [
             52,
             40
@@ -5785,7 +5785,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_009.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_009.dds",
           "dimensions": [
             52,
             40
@@ -5802,7 +5802,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_010.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_010.dds",
           "dimensions": [
             52,
             40
@@ -5819,7 +5819,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_011.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_011.dds",
           "dimensions": [
             52,
             40
@@ -5836,7 +5836,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_012.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_012.dds",
           "dimensions": [
             52,
             40
@@ -5853,7 +5853,24 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/categories/slopx_ireland/decision_category_ireland_013.dds",
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_013.dds",
+          "dimensions": [
+            52,
+            40
+          ],
+          "expected_dimensions": [
+            52,
+            40
+          ],
+          "dimension_ok": true,
+          "visible_key_pixels": 0,
+          "visible_green_pixels": 0,
+          "visible_edge_pixels": 0,
+          "strict_chroma": true,
+          "complete": true
+        },
+        {
+          "path": "gfx/interface/decisions/categories/ireland/decision_category_ireland_014.dds",
           "dimensions": [
             52,
             40
@@ -5874,13 +5891,13 @@
     },
     {
       "name": "decision_actions",
-      "directory": "gfx/interface/decisions/slopx_ireland/actions",
+      "directory": "gfx/interface/decisions/ireland/actions",
       "expected_count": 70,
       "actual_count": 70,
       "count_ok": true,
       "rows": [
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_001.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_001.dds",
           "dimensions": [
             32,
             32
@@ -5897,7 +5914,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_002.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_002.dds",
           "dimensions": [
             32,
             32
@@ -5914,7 +5931,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_003.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_003.dds",
           "dimensions": [
             32,
             32
@@ -5931,7 +5948,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_004.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_004.dds",
           "dimensions": [
             32,
             32
@@ -5948,7 +5965,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_005.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_005.dds",
           "dimensions": [
             32,
             32
@@ -5965,7 +5982,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_006.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_006.dds",
           "dimensions": [
             32,
             32
@@ -5982,7 +5999,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_007.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_007.dds",
           "dimensions": [
             32,
             32
@@ -5999,7 +6016,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_008.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_008.dds",
           "dimensions": [
             32,
             32
@@ -6016,7 +6033,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_009.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_009.dds",
           "dimensions": [
             32,
             32
@@ -6033,7 +6050,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_010.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_010.dds",
           "dimensions": [
             32,
             32
@@ -6050,7 +6067,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_011.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_011.dds",
           "dimensions": [
             32,
             32
@@ -6067,7 +6084,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_012.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_012.dds",
           "dimensions": [
             32,
             32
@@ -6084,7 +6101,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_013.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_013.dds",
           "dimensions": [
             32,
             32
@@ -6101,7 +6118,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_014.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_014.dds",
           "dimensions": [
             32,
             32
@@ -6118,7 +6135,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_015.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_015.dds",
           "dimensions": [
             32,
             32
@@ -6135,7 +6152,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_016.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_016.dds",
           "dimensions": [
             32,
             32
@@ -6152,7 +6169,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_017.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_017.dds",
           "dimensions": [
             32,
             32
@@ -6169,7 +6186,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_018.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_018.dds",
           "dimensions": [
             32,
             32
@@ -6186,7 +6203,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_019.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_019.dds",
           "dimensions": [
             32,
             32
@@ -6203,7 +6220,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_020.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_020.dds",
           "dimensions": [
             32,
             32
@@ -6220,7 +6237,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_021.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_021.dds",
           "dimensions": [
             32,
             32
@@ -6237,7 +6254,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_022.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_022.dds",
           "dimensions": [
             32,
             32
@@ -6254,7 +6271,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_023.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_023.dds",
           "dimensions": [
             32,
             32
@@ -6271,7 +6288,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_024.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_024.dds",
           "dimensions": [
             32,
             32
@@ -6288,7 +6305,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_025.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_025.dds",
           "dimensions": [
             32,
             32
@@ -6305,7 +6322,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_026.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_026.dds",
           "dimensions": [
             32,
             32
@@ -6322,7 +6339,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_027.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_027.dds",
           "dimensions": [
             32,
             32
@@ -6339,7 +6356,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_028.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_028.dds",
           "dimensions": [
             32,
             32
@@ -6356,7 +6373,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_029.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_029.dds",
           "dimensions": [
             32,
             32
@@ -6373,7 +6390,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_030.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_030.dds",
           "dimensions": [
             32,
             32
@@ -6390,7 +6407,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_031.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_031.dds",
           "dimensions": [
             32,
             32
@@ -6407,7 +6424,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_032.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_032.dds",
           "dimensions": [
             32,
             32
@@ -6424,7 +6441,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_033.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_033.dds",
           "dimensions": [
             32,
             32
@@ -6441,7 +6458,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_034.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_034.dds",
           "dimensions": [
             32,
             32
@@ -6458,7 +6475,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_035.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_035.dds",
           "dimensions": [
             32,
             32
@@ -6475,7 +6492,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_036.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_036.dds",
           "dimensions": [
             32,
             32
@@ -6492,7 +6509,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_037.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_037.dds",
           "dimensions": [
             32,
             32
@@ -6509,7 +6526,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_038.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_038.dds",
           "dimensions": [
             32,
             32
@@ -6526,7 +6543,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_039.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_039.dds",
           "dimensions": [
             32,
             32
@@ -6543,7 +6560,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_040.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_040.dds",
           "dimensions": [
             32,
             32
@@ -6560,7 +6577,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_041.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_041.dds",
           "dimensions": [
             32,
             32
@@ -6577,7 +6594,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_042.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_042.dds",
           "dimensions": [
             32,
             32
@@ -6594,7 +6611,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_043.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_043.dds",
           "dimensions": [
             32,
             32
@@ -6611,7 +6628,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_044.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_044.dds",
           "dimensions": [
             32,
             32
@@ -6628,7 +6645,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_045.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_045.dds",
           "dimensions": [
             32,
             32
@@ -6645,7 +6662,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_046.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_046.dds",
           "dimensions": [
             32,
             32
@@ -6662,7 +6679,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_047.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_047.dds",
           "dimensions": [
             32,
             32
@@ -6679,7 +6696,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_048.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_048.dds",
           "dimensions": [
             32,
             32
@@ -6696,7 +6713,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_049.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_049.dds",
           "dimensions": [
             32,
             32
@@ -6713,7 +6730,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_050.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_050.dds",
           "dimensions": [
             32,
             32
@@ -6730,7 +6747,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_051.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_051.dds",
           "dimensions": [
             32,
             32
@@ -6747,7 +6764,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_052.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_052.dds",
           "dimensions": [
             32,
             32
@@ -6764,7 +6781,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_053.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_053.dds",
           "dimensions": [
             32,
             32
@@ -6781,7 +6798,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_054.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_054.dds",
           "dimensions": [
             32,
             32
@@ -6798,7 +6815,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_055.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_055.dds",
           "dimensions": [
             32,
             32
@@ -6815,7 +6832,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_056.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_056.dds",
           "dimensions": [
             32,
             32
@@ -6832,7 +6849,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_057.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_057.dds",
           "dimensions": [
             32,
             32
@@ -6849,7 +6866,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_058.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_058.dds",
           "dimensions": [
             32,
             32
@@ -6866,7 +6883,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_059.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_059.dds",
           "dimensions": [
             32,
             32
@@ -6883,7 +6900,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_060.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_060.dds",
           "dimensions": [
             32,
             32
@@ -6900,7 +6917,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_061.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_061.dds",
           "dimensions": [
             32,
             32
@@ -6917,7 +6934,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_062.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_062.dds",
           "dimensions": [
             32,
             32
@@ -6934,7 +6951,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_063.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_063.dds",
           "dimensions": [
             32,
             32
@@ -6951,7 +6968,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_064.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_064.dds",
           "dimensions": [
             32,
             32
@@ -6968,7 +6985,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_065.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_065.dds",
           "dimensions": [
             32,
             32
@@ -6985,7 +7002,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_066.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_066.dds",
           "dimensions": [
             32,
             32
@@ -7002,7 +7019,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_077.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_077.dds",
           "dimensions": [
             32,
             32
@@ -7019,7 +7036,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_078.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_078.dds",
           "dimensions": [
             32,
             32
@@ -7036,7 +7053,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_079.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_079.dds",
           "dimensions": [
             32,
             32
@@ -7053,7 +7070,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/actions/decision_action_ireland_080.dds",
+          "path": "gfx/interface/decisions/ireland/actions/decision_action_ireland_080.dds",
           "dimensions": [
             32,
             32
@@ -7074,13 +7091,13 @@
     },
     {
       "name": "missions",
-      "directory": "gfx/interface/decisions/slopx_ireland/missions",
+      "directory": "gfx/interface/decisions/ireland/missions",
       "expected_count": 54,
       "actual_count": 54,
       "count_ok": true,
       "rows": [
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_001.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_001.dds",
           "dimensions": [
             33,
             32
@@ -7097,7 +7114,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_002.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_002.dds",
           "dimensions": [
             33,
             32
@@ -7114,7 +7131,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_003.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_003.dds",
           "dimensions": [
             33,
             32
@@ -7131,7 +7148,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_004.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_004.dds",
           "dimensions": [
             33,
             32
@@ -7148,7 +7165,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_005.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_005.dds",
           "dimensions": [
             33,
             32
@@ -7165,7 +7182,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_006.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_006.dds",
           "dimensions": [
             33,
             32
@@ -7182,7 +7199,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_007.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_007.dds",
           "dimensions": [
             33,
             32
@@ -7199,7 +7216,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_008.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_008.dds",
           "dimensions": [
             33,
             32
@@ -7216,7 +7233,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_009.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_009.dds",
           "dimensions": [
             33,
             32
@@ -7233,7 +7250,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_010.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_010.dds",
           "dimensions": [
             33,
             32
@@ -7250,7 +7267,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_011.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_011.dds",
           "dimensions": [
             33,
             32
@@ -7267,7 +7284,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_012.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_012.dds",
           "dimensions": [
             33,
             32
@@ -7284,7 +7301,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_013.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_013.dds",
           "dimensions": [
             33,
             32
@@ -7301,7 +7318,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_014.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_014.dds",
           "dimensions": [
             33,
             32
@@ -7318,7 +7335,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_015.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_015.dds",
           "dimensions": [
             33,
             32
@@ -7335,7 +7352,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_016.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_016.dds",
           "dimensions": [
             33,
             32
@@ -7352,7 +7369,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_017.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_017.dds",
           "dimensions": [
             33,
             32
@@ -7369,7 +7386,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_018.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_018.dds",
           "dimensions": [
             33,
             32
@@ -7386,7 +7403,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_019.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_019.dds",
           "dimensions": [
             33,
             32
@@ -7403,7 +7420,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_020.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_020.dds",
           "dimensions": [
             33,
             32
@@ -7420,7 +7437,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_021.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_021.dds",
           "dimensions": [
             33,
             32
@@ -7437,7 +7454,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_022.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_022.dds",
           "dimensions": [
             33,
             32
@@ -7454,7 +7471,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_023.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_023.dds",
           "dimensions": [
             33,
             32
@@ -7471,7 +7488,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_024.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_024.dds",
           "dimensions": [
             33,
             32
@@ -7488,7 +7505,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_025.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_025.dds",
           "dimensions": [
             33,
             32
@@ -7505,7 +7522,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_026.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_026.dds",
           "dimensions": [
             33,
             32
@@ -7522,7 +7539,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_027.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_027.dds",
           "dimensions": [
             33,
             32
@@ -7539,7 +7556,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_028.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_028.dds",
           "dimensions": [
             33,
             32
@@ -7556,7 +7573,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_029.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_029.dds",
           "dimensions": [
             33,
             32
@@ -7573,7 +7590,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_030.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_030.dds",
           "dimensions": [
             33,
             32
@@ -7590,7 +7607,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_031.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_031.dds",
           "dimensions": [
             33,
             32
@@ -7607,7 +7624,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_032.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_032.dds",
           "dimensions": [
             33,
             32
@@ -7624,7 +7641,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_033.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_033.dds",
           "dimensions": [
             33,
             32
@@ -7641,7 +7658,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_034.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_034.dds",
           "dimensions": [
             33,
             32
@@ -7658,7 +7675,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_035.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_035.dds",
           "dimensions": [
             33,
             32
@@ -7675,7 +7692,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_036.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_036.dds",
           "dimensions": [
             33,
             32
@@ -7692,7 +7709,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_037.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_037.dds",
           "dimensions": [
             33,
             32
@@ -7709,7 +7726,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_038.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_038.dds",
           "dimensions": [
             33,
             32
@@ -7726,7 +7743,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_039.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_039.dds",
           "dimensions": [
             33,
             32
@@ -7743,7 +7760,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_040.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_040.dds",
           "dimensions": [
             33,
             32
@@ -7760,7 +7777,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_041.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_041.dds",
           "dimensions": [
             33,
             32
@@ -7777,7 +7794,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_042.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_042.dds",
           "dimensions": [
             33,
             32
@@ -7794,7 +7811,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_043.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_043.dds",
           "dimensions": [
             33,
             32
@@ -7811,7 +7828,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_044.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_044.dds",
           "dimensions": [
             33,
             32
@@ -7828,7 +7845,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_045.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_045.dds",
           "dimensions": [
             33,
             32
@@ -7845,7 +7862,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_046.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_046.dds",
           "dimensions": [
             33,
             32
@@ -7862,7 +7879,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_047.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_047.dds",
           "dimensions": [
             33,
             32
@@ -7879,7 +7896,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_048.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_048.dds",
           "dimensions": [
             33,
             32
@@ -7896,7 +7913,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_049.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_049.dds",
           "dimensions": [
             33,
             32
@@ -7913,7 +7930,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_050.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_050.dds",
           "dimensions": [
             33,
             32
@@ -7930,7 +7947,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_051.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_051.dds",
           "dimensions": [
             33,
             32
@@ -7947,7 +7964,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_052.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_052.dds",
           "dimensions": [
             33,
             32
@@ -7964,7 +7981,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_053.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_053.dds",
           "dimensions": [
             33,
             32
@@ -7981,7 +7998,7 @@
           "complete": true
         },
         {
-          "path": "gfx/interface/decisions/slopx_ireland/missions/mission_ireland_054.dds",
+          "path": "gfx/interface/decisions/ireland/missions/mission_ireland_054.dds",
           "dimensions": [
             33,
             32

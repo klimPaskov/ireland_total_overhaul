@@ -1,0 +1,228 @@
+# Ireland Marine Service decisions. Each action advances a visible Provision or
+# Readiness component and consumes a finite material input; one-time flags keep
+# the category from becoming a reward loop.
+ireland_marine_service = {
+	ireland_commission_patrol_craft = {
+		icon = GFX_decision_ireland_commission_patrol_craft
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_coastal_patrol_flotilla_ready
+			NOT = { has_country_flag = ireland_patrol_craft_commissioned }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_commission_patrol_craft_requirements_tt
+				original_tag = IRE
+				has_full_control_of_state = 135
+				has_political_power > 14
+				command_power > 4
+				has_equipment = { convoy > 4 }
+				has_equipment = { support_equipment > 24 }
+			}
+		}
+		custom_cost_trigger = {
+			has_political_power > 14
+			command_power > 4
+			has_equipment = { convoy > 4 }
+			has_equipment = { support_equipment > 24 }
+		}
+		custom_cost_text = ireland_marine_cost_commission_patrol_craft
+		complete_effect = {
+			add_political_power = -15
+			add_command_power = -5
+			add_equipment_to_stockpile = { type = convoy amount = -5 }
+			add_equipment_to_stockpile = { type = support_equipment amount = -25 }
+			set_country_flag = ireland_patrol_craft_commissioned
+			add_to_variable = { var = ireland_provision_maritime value = 4 }
+			add_to_variable = { var = ireland_readiness_maritime_protection value = 6 }
+			navy_experience = 10
+			custom_effect_tooltip = ireland_commission_patrol_craft_effect_tt
+			ireland_recompute_provision = yes
+			ireland_recompute_readiness = yes
+		}
+		ai_will_do = {
+			base = 8
+			modifier = {
+				factor = 1.5
+				has_country_flag = ireland_profile_historical_de_valera
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = ireland_route_archived
+			}
+		}
+	}
+
+	ireland_train_marine_service_reserve = {
+		icon = GFX_decision_ireland_train_marine_service_reserve
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_marine_service_reserve_ready
+			NOT = { has_country_flag = ireland_marine_service_reserve_trained }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_train_marine_service_reserve_requirements_tt
+				original_tag = IRE
+				has_full_control_of_state = 135
+				has_political_power > 9
+				command_power > 9
+				has_manpower > 999
+				has_equipment = { infantry_equipment > 499 }
+				has_equipment = { support_equipment > 49 }
+			}
+		}
+		custom_cost_trigger = {
+			has_political_power > 9
+			command_power > 9
+			has_manpower > 999
+			has_equipment = { infantry_equipment > 499 }
+			has_equipment = { support_equipment > 49 }
+		}
+		custom_cost_text = ireland_marine_cost_train_reserve
+		complete_effect = {
+			add_political_power = -10
+			add_command_power = -10
+			add_manpower = -1000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -500 }
+			add_equipment_to_stockpile = { type = support_equipment amount = -50 }
+			135 = {
+				create_unit = {
+					division = "name = \"Cobh Marine Service Company\" division_template = \"Marine Service Company\" start_experience_factor = 0.15 start_equipment_factor = 0.65"
+					owner = ROOT
+				}
+			}
+			set_country_flag = ireland_marine_service_reserve_trained
+			add_to_variable = { var = ireland_readiness_command value = 5 }
+			add_to_variable = { var = ireland_readiness_equipment value = 4 }
+			army_experience = 5
+			custom_effect_tooltip = ireland_train_marine_service_reserve_effect_tt
+			ireland_recompute_readiness = yes
+		}
+		ai_will_do = {
+			base = 7
+			modifier = {
+				factor = 1.3
+				has_country_flag = ireland_profile_historical_de_valera
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = ireland_route_archived
+			}
+		}
+	}
+
+	ireland_repair_cobh_dockyard = {
+		icon = GFX_decision_ireland_repair_cobh_dockyard
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_cobh_dockyard_programme_ready
+			NOT = { has_country_flag = ireland_cobh_dockyard_repaired }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_repair_cobh_dockyard_requirements_tt
+				original_tag = IRE
+				has_full_control_of_state = 135
+				has_political_power > 11
+				has_equipment = { support_equipment > 24 }
+			}
+		}
+		custom_cost_trigger = {
+			has_political_power > 11
+			has_equipment = { support_equipment > 24 }
+		}
+		custom_cost_text = ireland_marine_cost_repair_dockyard
+		complete_effect = {
+			add_political_power = -12
+			add_equipment_to_stockpile = { type = support_equipment amount = -25 }
+			135 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = ireland_cobh_dockyard_repaired
+			add_to_variable = { var = ireland_provision_maritime value = 5 }
+			add_to_variable = { var = ireland_readiness_maritime_protection value = 4 }
+			custom_effect_tooltip = ireland_repair_cobh_dockyard_effect_tt
+			ireland_recompute_provision = yes
+			ireland_recompute_readiness = yes
+		}
+		ai_will_do = {
+			base = 6
+			modifier = {
+				factor = 1.4
+				has_country_flag = ireland_profile_historical_de_valera
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = ireland_route_archived
+			}
+		}
+	}
+
+	ireland_protect_atlantic_route = {
+		icon = GFX_decision_ireland_protect_atlantic_route
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_atlantic_convoy_office_ready
+			NOT = { has_country_flag = ireland_atlantic_route_protected }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_protect_atlantic_route_requirements_tt
+				original_tag = IRE
+				has_war = yes
+				has_political_power > 17
+				command_power > 14
+				has_equipment = { convoy > 9 }
+				has_fuel > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_war = yes
+			has_political_power > 17
+			command_power > 14
+			has_equipment = { convoy > 9 }
+			has_fuel > 99
+		}
+		custom_cost_text = ireland_marine_cost_protect_atlantic_route
+		days_remove = 120
+		complete_effect = {
+			add_political_power = -18
+			add_command_power = -15
+			add_equipment_to_stockpile = { type = convoy amount = -10 }
+			add_fuel = -100
+			set_country_flag = ireland_atlantic_route_protected
+			add_to_variable = { var = ireland_provision_maritime value = 6 }
+			add_to_variable = { var = ireland_readiness_maritime_protection value = 8 }
+			navy_experience = 15
+			custom_effect_tooltip = ireland_protect_atlantic_route_effect_tt
+			ireland_recompute_provision = yes
+			ireland_recompute_readiness = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+			}
+		}
+		remove_effect = {
+			clr_country_flag = ireland_atlantic_route_protected
+		}
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 1.6
+				has_country_flag = ireland_profile_historical_de_valera
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = ireland_route_archived
+			}
+		}
+	}
+}

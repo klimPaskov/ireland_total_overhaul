@@ -24,9 +24,9 @@ The three requirement strings remain player-facing and now state the staff, truc
 
 ## Static evidence
 
-- `common/decisions/slopx_ireland_decisions.txt` contains the three new admission gates and the dedicated tax/debt convoy macros.
+- `common/decisions/ireland_decisions.txt` contains the three new admission gates and the dedicated tax/debt convoy macros.
 - A source sweep of all 140 action blocks finds no completion-time equipment, manpower, fuel, or factory charge without a corresponding same-action stockpile/capacity gate. Existing scripted authority helpers remain responsible for gates that intentionally span an action and its map objective.
-- The three requirement localisation keys are present in `localisation/english/slopx_ireland_l_english.yml`.
+- The three requirement localisation keys are present in `localisation/english/ireland_l_english.yml`.
 - No focus, event, mission result, or conclusion was changed by this tranche.
 
 ## Remaining gates

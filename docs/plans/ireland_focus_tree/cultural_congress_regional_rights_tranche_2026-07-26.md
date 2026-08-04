@@ -16,11 +16,11 @@ The `Hold a Five-Region Cultural Congress` map objective now rechecks the active
 
 ## Source changes
 
-- `common/script_constants/slopx_ireland_constants.txt` adds regional and rights floors of 30 and 35.
-- `common/scripted_triggers/slopx_ireland_triggers.txt` adds `slopx_ireland_cultural_congress_authority` and attaches it to the named map objective.
-- `common/decisions/slopx_ireland_decisions.txt` gates the action on the authority proof; its existing truck charge and capped refund remain unchanged.
-- `localisation/english/slopx_ireland_l_english.yml` exposes current regional, minority, and labour values alongside the named requirements.
-- `docs/slopx_dynamic_effects.md` records the authority contract and side effects.
+- `common/script_constants/ireland_constants.txt` adds regional and rights floors of 30 and 35.
+- `common/scripted_triggers/ireland_triggers.txt` adds `ireland_cultural_congress_authority` and attaches it to the named map objective.
+- `common/decisions/ireland_decisions.txt` gates the action on the authority proof; its existing truck charge and capped refund remain unchanged.
+- `localisation/english/ireland_l_english.yml` exposes current regional, minority, and labour values alongside the named requirements.
+- `docs/ireland_dynamic_effects.md` records the authority contract and side effects.
 
 ## Boundaries
 

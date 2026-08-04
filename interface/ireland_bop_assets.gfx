@@ -1,0 +1,12 @@
+# Native balance-of-power endpoint icons for The National Settlement use their
+# own 72x88 side medallions, separate from decision, focus, and idea sprites.
+spriteTypes = {
+	spriteType = {
+		name = GFX_bop_ireland_unsettled_side
+		texturefile = "gfx/interface/bop/ireland/bop_ireland_unsettled_side.dds"
+	}
+	spriteType = {
+		name = GFX_bop_ireland_constitutional_side
+		texturefile = "gfx/interface/bop/ireland/bop_ireland_constitutional_side.dds"
+	}
+}

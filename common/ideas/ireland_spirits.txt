@@ -1,0 +1,876 @@
+# Ireland Total Overhaul route spirits.
+# Exactly three persistent families are present. Their stage, contributors, and
+# route-specific meaning are maintained by the Ireland scripted runtime.
+ideas = {
+	country = {
+		ireland_spirit_governing_order = {
+			picture = GFX_ireland_spirit_governing_order
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.03
+				political_power_factor = 0.02
+			}
+		}
+		ireland_spirit_organised_society = {
+			picture = GFX_ireland_spirit_organised_society
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.03
+				consumer_goods_factor = -0.01
+			}
+		}
+		ireland_spirit_security_external_position = {
+			picture = GFX_ireland_spirit_security_external_position
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.07
+			}
+		}
+		ireland_spirit_governing_de_valera_reconciliation = {
+			picture = GFX_ireland_spirit_governing_de_valera_reconciliation
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.02
+			}
+		}
+		ireland_spirit_governing_de_valera_emergency = {
+			picture = GFX_ireland_spirit_governing_de_valera_emergency
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.02
+				political_power_factor = 0.04
+				war_support_factor = 0.04
+			}
+		}
+		ireland_spirit_governing_lemass_developmental = {
+			picture = GFX_ireland_spirit_governing_lemass_developmental
+			allowed = { original_tag = IRE }
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+				political_power_factor = 0.02
+			}
+		}
+		ireland_spirit_governing_cosgrave_institutional = {
+			picture = GFX_ireland_spirit_governing_cosgrave_institutional
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.02
+			}
+		}
+		ireland_spirit_governing_mulcahy_civil_defence = {
+			picture = GFX_ireland_spirit_governing_mulcahy_civil_defence
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.05
+				stability_factor = 0.02
+			}
+		}
+		ireland_spirit_governing_costello_coalition = {
+			picture = GFX_ireland_spirit_governing_costello_coalition
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.04
+				consumer_goods_factor = -0.02
+			}
+		}
+		ireland_spirit_governing_dillon_intervention = {
+			picture = GFX_ireland_spirit_governing_dillon_intervention
+			allowed = { original_tag = IRE }
+			modifier = {
+				war_support_factor = 0.05
+				political_power_factor = 0.02
+			}
+		}
+		ireland_spirit_governing_norton_parliamentary = {
+			picture = GFX_ireland_spirit_governing_norton_parliamentary
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.04
+				consumer_goods_factor = -0.03
+			}
+		}
+		ireland_spirit_governing_clann_agrarian_broker = {
+			picture = GFX_ireland_spirit_governing_clann_agrarian_broker
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.03
+				local_resources_factor = 0.05
+			}
+		}
+		ireland_spirit_governing_constitutional_vocational = {
+			picture = GFX_ireland_spirit_governing_constitutional_vocational
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.04
+				political_power_factor = 0.02
+			}
+		}
+		ireland_spirit_governing_ira_republican = {
+			picture = GFX_ireland_spirit_governing_ira_republican
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.04
+				stability_factor = 0.02
+			}
+		}
+		ireland_spirit_governing_congress = {
+			picture = GFX_ireland_spirit_governing_congress
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.03
+				political_power_factor = 0.04
+			}
+		}
+		ireland_spirit_governing_oduffy = {
+			picture = GFX_ireland_spirit_governing_oduffy
+			allowed = { original_tag = IRE }
+			modifier = {
+				war_support_factor = 0.06
+				stability_factor = -0.02
+			}
+		}
+		ireland_spirit_governing_clerical_producer = {
+			picture = GFX_ireland_spirit_governing_clerical_producer
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.01
+			}
+		}
+		ireland_spirit_governing_ailtiri_total_state = {
+			picture = GFX_ireland_spirit_governing_ailtiri_total_state
+			allowed = { original_tag = IRE }
+			modifier = {
+				war_support_factor = 0.05
+				political_power_factor = 0.05
+				stability_factor = -0.04
+			}
+		}
+		ireland_spirit_governing_high_king = {
+			picture = GFX_ireland_spirit_governing_high_king
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.06
+				political_power_factor = 0.02
+			}
+		}
+		ireland_spirit_governing_five_provinces = {
+			picture = GFX_ireland_spirit_governing_five_provinces
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.04
+				political_power_factor = 0.03
+			}
+		}
+		ireland_spirit_governing_otherworld = {
+			picture = GFX_ireland_spirit_governing_otherworld
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.03
+				political_power_factor = 0.03
+			}
+		}
+		ireland_spirit_society_de_valera_reconciliation = {
+			picture = GFX_ireland_spirit_society_de_valera_reconciliation
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.04
+				political_power_factor = 0.02
+			}
+		}
+		ireland_spirit_society_de_valera_emergency = {
+			picture = GFX_ireland_spirit_society_de_valera_emergency
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = 0.03
+				stability_factor = -0.02
+			}
+		}
+		ireland_spirit_society_lemass_developmental = {
+			picture = GFX_ireland_spirit_society_lemass_developmental
+			allowed = { original_tag = IRE }
+			modifier = {
+				production_speed_industrial_complex_factor = 0.04
+				consumer_goods_factor = -0.02
+			}
+		}
+		ireland_spirit_society_cosgrave_institutional = {
+			picture = GFX_ireland_spirit_society_cosgrave_institutional
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = -0.03
+				stability_factor = 0.03
+			}
+		}
+		ireland_spirit_society_mulcahy_civil_defence = {
+			picture = GFX_ireland_spirit_society_mulcahy_civil_defence
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.03
+				army_defence_factor = 0.02
+			}
+		}
+		ireland_spirit_society_costello_coalition = {
+			picture = GFX_ireland_spirit_society_costello_coalition
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.04
+				consumer_goods_factor = -0.03
+			}
+		}
+		ireland_spirit_society_dillon_intervention = {
+			picture = GFX_ireland_spirit_society_dillon_intervention
+			allowed = { original_tag = IRE }
+			modifier = {
+				war_support_factor = 0.04
+				consumer_goods_factor = -0.01
+			}
+		}
+		ireland_spirit_society_norton_parliamentary = {
+			picture = GFX_ireland_spirit_society_norton_parliamentary
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.04
+			}
+		}
+		ireland_spirit_society_clann_agrarian_broker = {
+			picture = GFX_ireland_spirit_society_clann_agrarian_broker
+			allowed = { original_tag = IRE }
+			modifier = {
+				local_resources_factor = 0.06
+				stability_factor = 0.03
+			}
+		}
+		ireland_spirit_society_constitutional_vocational = {
+			picture = GFX_ireland_spirit_society_constitutional_vocational
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.04
+				consumer_goods_factor = -0.02
+			}
+		}
+		ireland_spirit_society_ira_republican = {
+			picture = GFX_ireland_spirit_society_ira_republican
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.02
+				army_defence_factor = 0.03
+			}
+		}
+		ireland_spirit_society_congress = {
+			picture = GFX_ireland_spirit_society_congress
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.04
+				consumer_goods_factor = -0.03
+			}
+		}
+		ireland_spirit_society_oduffy = {
+			picture = GFX_ireland_spirit_society_oduffy
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.01
+				consumer_goods_factor = 0.02
+				war_support_factor = 0.03
+			}
+		}
+		ireland_spirit_society_clerical_producer = {
+			picture = GFX_ireland_spirit_society_clerical_producer
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+		ireland_spirit_society_ailtiri_total_state = {
+			picture = GFX_ireland_spirit_society_ailtiri_total_state
+			allowed = { original_tag = IRE }
+			modifier = {
+				war_support_factor = 0.05
+				stability_factor = -0.04
+				consumer_goods_factor = 0.02
+			}
+		}
+		ireland_spirit_society_high_king = {
+			picture = GFX_ireland_spirit_society_high_king
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+		ireland_spirit_society_five_provinces = {
+			picture = GFX_ireland_spirit_society_five_provinces
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.04
+				local_resources_factor = 0.04
+			}
+		}
+		ireland_spirit_society_otherworld = {
+			picture = GFX_ireland_spirit_society_otherworld
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.03
+				consumer_goods_factor = -0.01
+			}
+		}
+		ireland_spirit_security_de_valera_reconciliation = {
+			picture = GFX_ireland_spirit_security_de_valera_reconciliation
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.03
+			stability_factor = 0.02
+			}
+		}
+		ireland_spirit_security_de_valera_emergency = {
+			picture = GFX_ireland_spirit_security_de_valera_emergency
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.05
+			war_support_factor = 0.03
+			}
+		}
+		ireland_spirit_security_lemass_developmental = {
+			picture = GFX_ireland_spirit_security_lemass_developmental
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.03
+			production_speed_arms_factory_factor = 0.03
+			}
+		}
+		ireland_spirit_security_cosgrave_institutional = {
+			picture = GFX_ireland_spirit_security_cosgrave_institutional
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.03
+			political_power_factor = 0.02
+			}
+		}
+		ireland_spirit_security_mulcahy_civil_defence = {
+			picture = GFX_ireland_spirit_security_mulcahy_civil_defence
+			allowed = { original_tag = IRE }
+			modifier = {
+			army_defence_factor = 0.09
+			}
+		}
+		ireland_spirit_security_costello_coalition = {
+			picture = GFX_ireland_spirit_security_costello_coalition
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.04
+			stability_factor = 0.02
+			}
+		}
+		ireland_spirit_security_dillon_intervention = {
+			picture = GFX_ireland_spirit_security_dillon_intervention
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_attack_factor = 0.04
+			army_defence_factor = 0.03
+			}
+		}
+		ireland_spirit_security_norton_parliamentary = {
+			picture = GFX_ireland_spirit_security_norton_parliamentary
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.03
+			stability_factor = 0.03
+			}
+		}
+		ireland_spirit_security_clann_agrarian_broker = {
+			picture = GFX_ireland_spirit_security_clann_agrarian_broker
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.04
+			local_resources_factor = 0.03
+			}
+		}
+		ireland_spirit_security_constitutional_vocational = {
+			picture = GFX_ireland_spirit_security_constitutional_vocational
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.03
+			stability_factor = 0.03
+			}
+		}
+		ireland_spirit_security_ira_republican = {
+			picture = GFX_ireland_spirit_security_ira_republican
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_attack_factor = 0.05
+			army_defence_factor = 0.02
+			stability_factor = -0.03
+			}
+		}
+		ireland_spirit_security_congress = {
+			picture = GFX_ireland_spirit_security_congress
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.04
+			stability_factor = 0.03
+			}
+		}
+		ireland_spirit_security_oduffy = {
+			picture = GFX_ireland_spirit_security_oduffy
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_attack_factor = 0.05
+			army_defence_factor = 0.02
+			stability_factor = -0.03
+			}
+		}
+		ireland_spirit_security_clerical_producer = {
+			picture = GFX_ireland_spirit_security_clerical_producer
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.04
+			stability_factor = 0.03
+			}
+		}
+		ireland_spirit_security_ailtiri_total_state = {
+			picture = GFX_ireland_spirit_security_ailtiri_total_state
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_attack_factor = 0.06
+			army_defence_factor = 0.03
+			stability_factor = -0.05
+			}
+		}
+		ireland_spirit_security_high_king = {
+			picture = GFX_ireland_spirit_security_high_king
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.05
+			political_power_factor = 0.02
+			}
+		}
+		ireland_spirit_security_five_provinces = {
+			picture = GFX_ireland_spirit_security_five_provinces
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.09
+			}
+		}
+		ireland_spirit_security_otherworld = {
+			picture = GFX_ireland_spirit_security_otherworld
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.07
+			}
+		}
+
+		# Exact durable subprofile forms. These remain members of the same three
+		# persistent families and replace their host-route forms; they never
+		# stack with them.
+		ireland_spirit_governing_historical_de_valera = {
+			picture = GFX_ireland_spirit_governing_historical_de_valera
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.02
+			}
+		}
+		ireland_spirit_society_historical_de_valera = {
+			picture = GFX_ireland_spirit_society_historical_de_valera
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.04
+				consumer_goods_factor = -0.01
+			}
+		}
+		ireland_spirit_security_historical_de_valera = {
+			picture = GFX_ireland_spirit_security_historical_de_valera
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.06
+			}
+		}
+		ireland_spirit_governing_ira_ghq_command = {
+			picture = GFX_ireland_spirit_governing_ira_ghq_command
+			allowed = { original_tag = IRE }
+			modifier = {
+				war_support_factor = 0.05
+				political_power_factor = 0.03
+				stability_factor = -0.04
+			}
+		}
+		ireland_spirit_society_ira_ghq_command = {
+			picture = GFX_ireland_spirit_society_ira_ghq_command
+			allowed = { original_tag = IRE }
+			modifier = {
+				war_support_factor = 0.03
+				consumer_goods_factor = 0.03
+				stability_factor = -0.03
+			}
+		}
+		ireland_spirit_security_ira_ghq_command = {
+			picture = GFX_ireland_spirit_security_ira_ghq_command
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_attack_factor = 0.06
+				army_defence_factor = 0.03
+				stability_factor = -0.04
+			}
+		}
+		ireland_spirit_governing_congress_vanguard = {
+			picture = GFX_ireland_spirit_governing_congress_vanguard
+			allowed = { original_tag = IRE }
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = -0.04
+			}
+		}
+		ireland_spirit_society_congress_vanguard = {
+			picture = GFX_ireland_spirit_society_congress_vanguard
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = 0.02
+				war_support_factor = 0.03
+				stability_factor = -0.03
+			}
+		}
+		ireland_spirit_security_congress_vanguard = {
+			picture = GFX_ireland_spirit_security_congress_vanguard
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_attack_factor = 0.04
+				army_defence_factor = 0.03
+				stability_factor = -0.03
+			}
+		}
+		ireland_spirit_governing_oduffy_corporate = {
+			picture = GFX_ireland_spirit_governing_oduffy_corporate
+			allowed = { original_tag = IRE }
+			modifier = {
+				political_power_factor = 0.04
+				stability_factor = 0.02
+				war_support_factor = 0.03
+			}
+		}
+		ireland_spirit_society_oduffy_corporate = {
+			picture = GFX_ireland_spirit_society_oduffy_corporate
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = -0.02
+				stability_factor = 0.02
+			}
+		}
+		ireland_spirit_security_oduffy_corporate = {
+			picture = GFX_ireland_spirit_security_oduffy_corporate
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_attack_factor = 0.03
+				army_defence_factor = 0.04
+			}
+		}
+		ireland_spirit_governing_producer_council = {
+			picture = GFX_ireland_spirit_governing_producer_council
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.03
+				political_power_factor = 0.03
+			}
+		}
+		ireland_spirit_society_producer_council = {
+			picture = GFX_ireland_spirit_society_producer_council
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = -0.04
+				local_resources_factor = 0.04
+			}
+		}
+		ireland_spirit_security_producer_council = {
+			picture = GFX_ireland_spirit_security_producer_council
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.03
+				stability_factor = 0.02
+			}
+		}
+		ireland_spirit_governing_high_king_sacral = {
+			picture = GFX_ireland_spirit_governing_high_king_sacral
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.03
+				war_support_factor = 0.04
+				political_power_factor = -0.03
+			}
+		}
+		ireland_spirit_society_high_king_sacral = {
+			picture = GFX_ireland_spirit_society_high_king_sacral
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = 0.02
+				stability_factor = 0.03
+			}
+		}
+		ireland_spirit_security_high_king_sacral = {
+			picture = GFX_ireland_spirit_security_high_king_sacral
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.04
+				war_support_factor = 0.03
+			}
+		}
+		ireland_spirit_governing_five_provinces_pentarchy = {
+			picture = GFX_ireland_spirit_governing_five_provinces_pentarchy
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.02
+				political_power_factor = 0.02
+			}
+		}
+		ireland_spirit_society_five_provinces_pentarchy = {
+			picture = GFX_ireland_spirit_society_five_provinces_pentarchy
+			allowed = { original_tag = IRE }
+			modifier = {
+				local_resources_factor = 0.06
+				stability_factor = 0.03
+			}
+		}
+		ireland_spirit_security_five_provinces_pentarchy = {
+			picture = GFX_ireland_spirit_security_five_provinces_pentarchy
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.07
+			}
+		}
+		ireland_spirit_governing_otherworld_dominion = {
+			picture = GFX_ireland_spirit_governing_otherworld_dominion
+			allowed = { original_tag = IRE }
+			modifier = {
+				political_power_factor = 0.06
+				stability_factor = -0.06
+			}
+		}
+		ireland_spirit_society_otherworld_dominion = {
+			picture = GFX_ireland_spirit_society_otherworld_dominion
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = 0.04
+				stability_factor = -0.04
+			}
+		}
+		ireland_spirit_security_otherworld_dominion = {
+			picture = GFX_ireland_spirit_security_otherworld_dominion
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_attack_factor = 0.06
+				army_defence_factor = 0.04
+				stability_factor = -0.04
+			}
+		}
+		ireland_spirit_governing_otherworld_containment = {
+			picture = GFX_ireland_spirit_governing_otherworld_containment
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.02
+				political_power_factor = -0.02
+			}
+		}
+		ireland_spirit_society_otherworld_containment = {
+			picture = GFX_ireland_spirit_society_otherworld_containment
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = 0.03
+				stability_factor = 0.02
+			}
+		}
+		ireland_spirit_security_otherworld_containment = {
+			picture = GFX_ireland_spirit_security_otherworld_containment
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.12
+			}
+		}
+		ireland_spirit_governing_convergence_order = {
+			picture = GFX_ireland_spirit_governing_convergence_order
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.08
+				political_power_factor = 0.04
+			}
+		}
+		ireland_spirit_society_convergence_order = {
+			picture = GFX_ireland_spirit_society_convergence_order
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = 0.06
+				consumer_goods_factor = -0.03
+				local_resources_factor = 0.03
+			}
+		}
+		ireland_spirit_security_convergence_order = {
+			picture = GFX_ireland_spirit_security_convergence_order
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = 0.12
+				war_support_factor = 0.03
+			}
+		}
+
+		# Named slot-local failure forms. Each reuses one of the six approved
+		# failure-family icons and replaces only its own persistent family.
+		ireland_spirit_governing_clerical_veto = {
+			picture = GFX_ireland_spirit_governing_corrupted
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = -0.06
+				political_power_factor = -0.03
+			}
+		}
+		ireland_spirit_governing_captive_crown = {
+			picture = GFX_ireland_spirit_governing_collapse
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = -0.08
+				political_power_factor = -0.03
+				war_support_factor = 0.03
+			}
+		}
+		ireland_spirit_governing_rival_provincial_sovereignties = {
+			picture = GFX_ireland_spirit_governing_collapse
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = -0.06
+				army_defence_factor = -0.03
+			}
+		}
+		ireland_spirit_society_emergency_shortage_order = {
+			picture = GFX_ireland_spirit_society_broken_services
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = -0.03
+			}
+		}
+		ireland_spirit_society_captured_estates = {
+			picture = GFX_ireland_spirit_society_patronage
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = -0.04
+			}
+		}
+		ireland_spirit_society_sectarian_administration = {
+			picture = GFX_ireland_spirit_society_patronage
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = -0.06
+				political_power_factor = -0.02
+			}
+		}
+		ireland_spirit_society_forced_mobilisation = {
+			picture = GFX_ireland_spirit_society_broken_services
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = 0.04
+				stability_factor = -0.04
+				war_support_factor = 0.04
+			}
+		}
+		ireland_spirit_security_neutrality_breakdown = {
+			picture = GFX_ireland_spirit_security_compromised
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = -0.06
+				foreign_subversive_activites = 0.04
+			}
+		}
+		ireland_spirit_security_client_state = {
+			picture = GFX_ireland_spirit_security_compromised
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = -0.03
+				political_power_factor = -0.04
+				foreign_subversive_activites = 0.04
+			}
+		}
+		ireland_spirit_security_occupied_order = {
+			picture = GFX_ireland_spirit_security_disarmed
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = -0.05
+				stability_factor = -0.05
+			}
+		}
+		ireland_spirit_security_fragmented_armed_wings = {
+			picture = GFX_ireland_spirit_security_disarmed
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_attack_factor = -0.04
+				army_defence_factor = -0.05
+			}
+		}
+		ireland_spirit_security_uncommanded_provincial_guards = {
+			picture = GFX_ireland_spirit_security_disarmed
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = -0.08
+			}
+		}
+		ireland_spirit_security_compact_breach = {
+			picture = GFX_ireland_spirit_security_compromised
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = -0.05
+				stability_factor = -0.04
+				foreign_subversive_activites = 0.06
+			}
+		}
+
+		ireland_spirit_governing_corrupted = {
+			picture = GFX_ireland_spirit_governing_corrupted
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = -0.04
+				political_power_factor = -0.02
+				war_support_factor = 0.03
+			}
+		}
+		ireland_spirit_governing_collapse = {
+			picture = GFX_ireland_spirit_governing_collapse
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = -0.08
+				army_defence_factor = -0.04
+			}
+		}
+		ireland_spirit_society_patronage = {
+			picture = GFX_ireland_spirit_society_patronage
+			allowed = { original_tag = IRE }
+			modifier = {
+				consumer_goods_factor = 0.04
+				stability_factor = -0.03
+			}
+		}
+		ireland_spirit_society_broken_services = {
+			picture = GFX_ireland_spirit_society_broken_services
+			allowed = { original_tag = IRE }
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = 0.03
+			}
+		}
+		ireland_spirit_security_compromised = {
+			picture = GFX_ireland_spirit_security_compromised
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = -0.04
+				foreign_subversive_activites = 0.05
+			}
+		}
+		ireland_spirit_security_disarmed = {
+			picture = GFX_ireland_spirit_security_disarmed
+			allowed = { original_tag = IRE }
+			modifier = {
+				army_defence_factor = -0.11
+			}
+		}
+
+	}
+}

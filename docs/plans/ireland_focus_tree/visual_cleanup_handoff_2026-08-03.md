@@ -10,7 +10,7 @@ Feature slug: `ireland_focus_tree`
 - The malformed outer `scripted_gui` nesting is repaired so Conditions, Northern Settlement, and Concealed Evidence are all registered inside one valid container.
 - The 420 action-cost localisation keys (140 base, 140 blocked, 140 tooltip) use compact row text and retain the detailed surcharge explanation in the hover tooltip.
 - The 45 advisor `small` portrait slots now use native 65x67 generated cards. The original full-size `large` portrait slots remain unchanged.
-- The historical-AI route guard is registered as `slopx_ireland_alternate_focus_ai_allowed`. All 18 alternate route-entry focuses use it in `available`; each also has an `ai_will_do` zero-weight modifier when `is_historical_focus_on = yes`.
+- The historical-AI route guard is registered as `ireland_alternate_focus_ai_allowed`. All 18 alternate route-entry focuses use it in `available`; each also has an `ai_will_do` zero-weight modifier when `is_historical_focus_on = yes`.
 - The initialization effect already assigns the De Valera base profile whenever the country is AI-controlled with Historical AI Focuses enabled. Non-historical AI-only random profile selection remains behind `NOT = { is_historical_focus_on = yes }`.
 
 ## Audit evidence

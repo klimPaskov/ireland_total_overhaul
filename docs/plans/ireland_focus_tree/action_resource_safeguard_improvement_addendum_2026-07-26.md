@@ -37,7 +37,7 @@ This file is therefore a new bounded follow-up to a later implementation tranche
 | Trains | Rail repair charges 5 Trains; essential cargo charges 2 Trains. | Keep both amounts. Make the route and inland-distribution proof match those commitments. |
 | Trucks | Belfast industry already gates and charges 50 Trucks. Other recently repaired truck rows have paired admission checks. | Keep the Belfast amount; do not invent another truck charge. Tie it to a real Belfast labour/capacity project. |
 | Convoys | Essential cargo already gates and charges 5 Convoys, but admission checks state 134 while the mission objective checks state 135 and neither proves an operating port-to-inland route. | Standardise this action/mission on the existing state-135 receiving-port objective and add dynamic port-capacity proof. |
-| Aircraft | `slopx_ireland_action_intercept_an_airspace_violation` has a 5-Fighter/100-fuel commitment, an air base in state 135, incident-family authority, and a forced-landing handoff after the 2026-07-25 tranches. | Do not reopen source design in this tranche. Live incident, aircraft, AI, reaction, and cleanup validation remains open. |
+| Aircraft | `ireland_action_intercept_an_airspace_violation` has a 5-Fighter/100-fuel commitment, an air base in state 135, incident-family authority, and a forced-landing handoff after the 2026-07-25 tranches. | Do not reopen source design in this tranche. Live incident, aircraft, AI, reaction, and cleanup validation remains open. |
 | Ships | Marine patrols have fuel, Navy XP, manpower, Convoys, a naval base, industry, and a named route authority; merchant-vessel purchase has Convoys, manpower, supplier/leverage logic, dockyard capacity, and crew/route mission proof. | Do not replace the authored Convoy vessel proxy or invent ship deletion without a separate engine-reference decision. Live naval validation remains open. |
 | Leverage | The 2026-07-26 foreign-channel and neutrality burden tranches attach source-specific leverage or exposure to the named foreign actions they repaired. | Do not add generic leverage to domestic rail, cargo, command, or Belfast work. Multi-channel priority and partner invalidation remain live-validation work. |
 | Tied units | Command-exercise admission checks one division in state 113, but its mission result writers and map objective do not recheck any formation or supply. | Add ongoing one-/two-division and supply proof without spawning, deleting, moving, or permanently locking units. |
@@ -50,10 +50,10 @@ Implement exactly these action/mission pairs:
 
 | Action ID | Linked mission ID | Primary gap |
 | --- | --- | --- |
-| `slopx_ireland_action_repair_a_named_rail_corridor` | `slopx_ireland_mission_restore_the_dublin_to_cork_corridor` | fuel and route-endpoint authority |
-| `slopx_ireland_action_reroute_an_essential_cargo` | `slopx_ireland_mission_keep_an_essential_cargo_route_open` | receiving-port and inland-distribution capacity |
-| `slopx_ireland_action_run_a_command_district_exercise` | `slopx_ireland_mission_prove_the_command_district` | continuing force and supply commitment |
-| `slopx_ireland_action_restore_belfast_industrial_contracts` | `slopx_ireland_mission_reopen_belfast_industry` | labour agreement and two-factory reservation |
+| `ireland_action_repair_a_named_rail_corridor` | `ireland_mission_restore_the_dublin_to_cork_corridor` | fuel and route-endpoint authority |
+| `ireland_action_reroute_an_essential_cargo` | `ireland_mission_keep_an_essential_cargo_route_open` | receiving-port and inland-distribution capacity |
+| `ireland_action_run_a_command_district_exercise` | `ireland_mission_prove_the_command_district` | continuing force and supply commitment |
+| `ireland_action_restore_belfast_industrial_contracts` | `ireland_mission_reopen_belfast_industry` | labour agreement and two-factory reservation |
 
 Do not change the fixed inventory of 140 actions or 54 missions.
 
@@ -78,19 +78,19 @@ Keep the existing dynamic Political Power and Command Power model. The exact cur
 
 Physical commitments stay fixed and visible because a Train, Convoy, Fighter, or Truck is not an abstract scarcity score. Dynamic behaviour comes from the existing PP/CP bands, post-charge material-safety checks, competing capacity, and full/partial result conditions.
 
-Put shared thresholds and refund values in `common/script_constants/slopx_ireland_constants.txt` when the consuming field accepts script constants. Use dedicated file-local macros only for equipment/fuel admission and charge fields that follow the existing decision-file pattern. Do not borrow another action's macro names.
+Put shared thresholds and refund values in `common/script_constants/ireland_constants.txt` when the consuming field accepts script constants. Use dedicated file-local macros only for equipment/fuel admission and charge fields that follow the existing decision-file pattern. Do not borrow another action's macro names.
 
 ## Action specification 1: Repair a Named Rail Corridor
 
 ### Named contracts
 
-- `slopx_ireland_rail_corridor_admission_valid`
-- `slopx_ireland_rail_corridor_full_valid`
-- `slopx_ireland_rail_corridor_partial_valid`
+- `ireland_rail_corridor_admission_valid`
+- `ireland_rail_corridor_full_valid`
+- `ireland_rail_corridor_partial_valid`
 
 ### Admission
 
-`slopx_ireland_rail_corridor_admission_valid` must require:
+`ireland_rail_corridor_admission_valid` must require:
 
 - original Ireland ownership and all existing route, category-capacity, repeat, and mission-launch gates;
 - full control of states 113 and 135, not only ownership of state 113;
@@ -108,12 +108,12 @@ Do not require an already-working Dublin-to-Cork railway connection at admission
 - Keep the dynamic PP/CP bands above.
 - Keep 5 Trains, 250 manpower, and one civilian factory.
 - Add a dedicated 200-fuel charge.
-- Keep the one-factory reservation visible with `slopx_ireland_factory_commitment_one_tt`.
+- Keep the one-factory reservation visible with `ireland_factory_commitment_one_tt`.
 - Align the action's timed factory work with the linked mission lifecycle. Preferred implementation: 180 days for both the factory reservation and mission. If the parent retains the current 150-day reservation, document that the final 30 days are inspection rather than active construction.
 
 ### Full, partial, failure, and cleanup
 
-`slopx_ireland_rail_corridor_full_valid` must require:
+`ireland_rail_corridor_full_valid` must require:
 
 - the action and mission active flags;
 - full control of states 113 and 135;
@@ -121,7 +121,7 @@ Do not require an already-working Dublin-to-Cork railway connection at admission
 - railway level 1 or higher at both endpoints;
 - Transport Serviceability at least 50.
 
-`slopx_ireland_rail_corridor_partial_valid` must require:
+`ireland_rail_corridor_partial_valid` must require:
 
 - the action and mission active flags;
 - full control of both endpoints;
@@ -146,15 +146,15 @@ The AI may launch only when the post-charge material floor remains valid for Tra
 
 ### Named contracts
 
-- `slopx_ireland_essential_cargo_route_capacity_valid`
-- `slopx_ireland_essential_cargo_full_valid`
-- `slopx_ireland_essential_cargo_partial_valid`
+- `ireland_essential_cargo_route_capacity_valid`
+- `ireland_essential_cargo_full_valid`
+- `ireland_essential_cargo_partial_valid`
 
 ### Admission
 
 Replace the current state-134 admission proof with the state-135 receiving-port model already used by the mission objective.
 
-`slopx_ireland_essential_cargo_route_capacity_valid` must require:
+`ireland_essential_cargo_route_capacity_valid` must require:
 
 - full control of state 135;
 - an industrial complex and naval base in state 135;
@@ -165,7 +165,7 @@ Replace the current state-134 admission proof with the state-135 receiving-port 
 
 Port capacity must scale with concurrent work:
 
-- naval-base level 1 is sufficient when neither `slopx_ireland_mission_patrol_the_neutral_approaches` nor `slopx_ireland_mission_replace_a_lost_merchant_vessel` is active;
+- naval-base level 1 is sufficient when neither `ireland_mission_patrol_the_neutral_approaches` nor `ireland_mission_replace_a_lost_merchant_vessel` is active;
 - naval-base level 2 is required when one of those missions is active;
 - naval-base level 3 is required when both are active.
 
@@ -179,13 +179,13 @@ This is a read-only capacity gate, not a new global port-capacity ledger. It avo
 
 ### Full, partial, failure, and cleanup
 
-`slopx_ireland_essential_cargo_full_valid` must require:
+`ireland_essential_cargo_full_valid` must require:
 
 - action and mission provenance;
 - the full route-capacity trigger;
 - Maritime Access at least 50.
 
-`slopx_ireland_essential_cargo_partial_valid` must require:
+`ireland_essential_cargo_partial_valid` must require:
 
 - action and mission provenance;
 - state-135 control and a naval base;
@@ -204,13 +204,13 @@ The AI must evaluate the capacity helper before receiving the material-ready bon
 
 ### Named contracts
 
-- `slopx_ireland_command_district_force_commitment_valid`
-- `slopx_ireland_command_district_exercise_full_valid`
-- `slopx_ireland_command_district_exercise_partial_valid`
+- `ireland_command_district_force_commitment_valid`
+- `ireland_command_district_exercise_full_valid`
+- `ireland_command_district_exercise_partial_valid`
 
 ### Admission
 
-`slopx_ireland_command_district_force_commitment_valid` must require:
+`ireland_command_district_force_commitment_valid` must require:
 
 - full control of state 113;
 - at least one division in state 113;
@@ -229,7 +229,7 @@ This is a force commitment, not a transfer of ownership. Do not create, delete, 
 
 ### Full, partial, failure, and cleanup
 
-`slopx_ireland_command_district_exercise_full_valid` must require:
+`ireland_command_district_exercise_full_valid` must require:
 
 - action and mission provenance;
 - full control, arms-factory, and infrastructure proof in state 113;
@@ -237,7 +237,7 @@ This is a force commitment, not a transfer of ownership. Do not create, delete, 
 - Command Readiness at least 50;
 - Supply Readiness at least 35.
 
-`slopx_ireland_command_district_exercise_partial_valid` must require:
+`ireland_command_district_exercise_partial_valid` must require:
 
 - action and mission provenance;
 - the state-113 platform;
@@ -251,19 +251,19 @@ Retain the existing cancellation ceiling of 35 Infantry Equipment and 175 fuel. 
 
 ### AI
 
-Player admission remains one division, but AI launch requires two divisions already present in state 113 and a valid post-charge equipment/fuel floor. Apply factor 0 during `slopx_ireland_invasion_danger`, an active coercive Northern campaign, or a home-defence queue emergency. This prevents the AI from turning the only field formation into an exercise commitment during an actual crisis.
+Player admission remains one division, but AI launch requires two divisions already present in state 113 and a valid post-charge equipment/fuel floor. Apply factor 0 during `ireland_invasion_danger`, an active coercive Northern campaign, or a home-defence queue emergency. This prevents the AI from turning the only field formation into an exercise commitment during an actual crisis.
 
 ## Action specification 4: Restore Belfast Industrial Contracts
 
 ### Named contracts
 
-- `slopx_ireland_belfast_contract_admission_valid`
-- `slopx_ireland_belfast_industry_full_valid`
-- `slopx_ireland_belfast_industry_partial_valid`
+- `ireland_belfast_contract_admission_valid`
+- `ireland_belfast_industry_full_valid`
+- `ireland_belfast_industry_partial_valid`
 
 ### Admission
 
-`slopx_ireland_belfast_contract_admission_valid` must require:
+`ireland_belfast_contract_admission_valid` must require:
 
 - full control of state 119, not only any controlled state;
 - an industrial complex and infrastructure in state 119;
@@ -279,13 +279,13 @@ The labour floor represents the union agreement named in the canonical action ma
 - Keep the dynamic 16/35, 21/40, and 26/45 PP/CP bands.
 - Keep 100 Support Equipment, 50 Trucks, and 250 fuel.
 - Add a two-civilian-factory reservation for the 300-day action/mission period.
-- Reuse `slopx_ireland_factory_commitment_two_tt`.
+- Reuse `ireland_factory_commitment_two_tt`.
 
 This raises the documented named native reservation total from eight projects / thirteen factories to nine projects / fifteen factories. Update every inventory statement that cites the old count.
 
 ### Full, partial, failure, and cleanup
 
-`slopx_ireland_belfast_industry_full_valid` must require:
+`ireland_belfast_industry_full_valid` must require:
 
 - action and mission provenance;
 - full control of state 119;
@@ -293,7 +293,7 @@ This raises the documented named native reservation total from eight projects / 
 - Northern Labour Cooperation at least the existing `northern_core_labour_floor` of 45;
 - Industrial Capacity at least the existing Belfast full threshold of 55.
 
-`slopx_ireland_belfast_industry_partial_valid` must require:
+`ireland_belfast_industry_partial_valid` must require:
 
 - action and mission provenance;
 - full control and the same physical platform;
@@ -315,7 +315,7 @@ The parent should implement in this order:
 1. add the twelve side-effect-free admission/full/partial triggers;
 2. add dedicated rail-fuel and labour/capacity constants or local macros;
 3. update the four action admission blocks and cost presentation;
-4. update `slopx_ireland_evaluate_mission_objectives` so each pair uses its full helper first and partial helper second;
+4. update `ireland_evaluate_mission_objectives` so each pair uses its full helper first and partial helper second;
 5. make each mission `available` block consume the same helpers instead of reconstructing weaker conditions;
 6. add the 140-fuel rail cancellation return and preserve all duplicate-refund guards;
 7. verify route cleanup, decision removal, mission cancellation, timeout, full success, and partial success each clear only their owned flags and reservations;
@@ -328,14 +328,14 @@ Do not introduce a daily or weekly all-country on action. These conditions belon
 
 Update the existing requirement and map-objective keys for all four pairs:
 
-- `slopx_ireland_action_repair_a_named_rail_corridor_requirements_tt`
-- `slopx_ireland_map_objective_restore_the_dublin_to_cork_corridor_tt`
-- `slopx_ireland_action_reroute_an_essential_cargo_requirements_tt`
-- `slopx_ireland_map_objective_keep_an_essential_cargo_route_open_tt`
-- `slopx_ireland_action_run_a_command_district_exercise_requirements_tt`
-- `slopx_ireland_map_objective_prove_the_command_district_tt`
-- `slopx_ireland_action_restore_belfast_industrial_contracts_requirements_tt`
-- `slopx_ireland_map_objective_reopen_belfast_industry_tt`
+- `ireland_action_repair_a_named_rail_corridor_requirements_tt`
+- `ireland_map_objective_restore_the_dublin_to_cork_corridor_tt`
+- `ireland_action_reroute_an_essential_cargo_requirements_tt`
+- `ireland_map_objective_keep_an_essential_cargo_route_open_tt`
+- `ireland_action_run_a_command_district_exercise_requirements_tt`
+- `ireland_map_objective_prove_the_command_district_tt`
+- `ireland_action_restore_belfast_industrial_contracts_requirements_tt`
+- `ireland_map_objective_reopen_belfast_industry_tt`
 
 The text must name the physical commitment, endpoint/port/force/labour proof, and cancellation ceiling where the player can act on it. Keep player-facing prose in world terms. Do not mention implementation history, caps, hardcoding, or this addendum.
 
@@ -345,8 +345,8 @@ No new localisation namespace, event text, GUI text, icon, or asset is required.
 
 If implemented, update:
 
-- `docs/slopx_ireland_systems.md` for the four action contracts and Belfast reservation count;
-- `docs/slopx_dynamic_effects.md` for every new reusable trigger/effect contract;
+- `docs/ireland_systems.md` for the four action contracts and Belfast reservation count;
+- `docs/ireland_dynamic_effects.md` for every new reusable trigger/effect contract;
 - `docs/plans/ireland_focus_tree/project_status.md` with source-level evidence and unchanged live-validation blockers;
 - `docs/plans/ireland_focus_tree/source_of_truth_map.md` with the four-row disposition;
 - the material/safeguard audit or a new dated implementation tranche report covering only these four pairs.
@@ -366,7 +366,7 @@ This tranche must not:
 - add generic Foreign Exposure or leverage to domestic projects;
 - reopen the 2026-07-25 airspace-interception or Marine Patrol platform tranches;
 - reopen the 2026-07-26 foreign-leverage and channel-burden tranches;
-- implement shipping, finance, intelligence, and infrastructure variants of `slopx_ireland_action_integrate_a_voluntary_member_contribution`.
+- implement shipping, finance, intelligence, and infrastructure variants of `ireland_action_integrate_a_voluntary_member_contribution`.
 
 The last exclusion is deliberate. The current regional-contribution source defines only a military contribution and has no player-facing contribution-class selector. Adding ship, finance, intelligence, and infrastructure modes would require a separate bounded design decision about selection, member provenance, command, refunds, and AI. Folding that larger system into these four repairs would weaken reviewability.
 

@@ -2,12 +2,12 @@
 
 Date: 2026-08-01  
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`
+Namespace: `ireland`
 
 ## Implemented line
 
 The selected constitutional research line is now used in the visible
-`slopx_ireland_constitutional_draft_desc` localisation key:
+`ireland_constitutional_draft_desc` localisation key:
 
 > “in accordance with its own genius and traditions”
 

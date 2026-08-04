@@ -2,7 +2,7 @@
 
 Date: 2026-07-29  
 Feature: `ireland_focus_tree`  
-Namespace: `slopx`
+Namespace: `ireland`
 
 ## Scope
 
@@ -107,9 +107,9 @@ costing, and cleanup surfaces used by the authored families.
 
 The approved M2 ruling resolves the historical Radical/Underground inventory
 wording. The current source physically nests
-`slopx_ireland_mission_consolidate_the_movement_network` and
-`slopx_ireland_mission_secure_constituent_authority` under
-`slopx_ireland_radical_underground`. The by-election and parish-audit modes
+`ireland_mission_consolidate_the_movement_network` and
+`ireland_mission_secure_constituent_authority` under
+`ireland_radical_underground`. The by-election and parish-audit modes
 remain mode-specific paths of the two merged base missions. The source still
 contains exactly 54 mission families, 140 actions, and 13 categories.
 

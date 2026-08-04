@@ -9,10 +9,10 @@ save, in-game scenario, or fresh-save playthrough was used.
 
 The four Ireland event sources contain 494 unique event identifiers:
 
-- `events/slopx_ireland_flavour_events.txt`: 236 flavour events.
-- `events/slopx_ireland_events.txt`: 255 core event definitions.
-- `events/slopx_ireland_member_contribution_events.txt`: 1 event.
-- `events/slopx_ireland_public_conclusion_events.txt`: 2 events.
+- `events/ireland_flavour_events.txt`: 236 flavour events.
+- `events/ireland_events.txt`: 255 core event definitions.
+- `events/ireland_member_contribution_events.txt`: 1 event.
+- `events/ireland_public_conclusion_events.txt`: 2 events.
 
 The core namespace therefore contains 258 numeric events, with no duplicate
 numeric identifiers, and the flavour namespace contains the exact 236-event
@@ -27,7 +27,7 @@ not a global parser or gameplay claim.
 
 ## Decisions and missions
 
-Static parsing of `common/decisions/slopx_ireland_decisions.txt` finds exactly
+Static parsing of `common/decisions/ireland_decisions.txt` finds exactly
 13 decision categories, 140 unique action definitions, and 54 unique mission
 definitions. Every mission block has the native `icon`, `activation`,
 `available`, `days_mission_timeout`, `cancel_trigger`, `cancel_effect`,
@@ -39,10 +39,10 @@ escalation result paths. The two mode-multiplexed missions deliberately route
 those paths through the shared helpers below, so their block-local token count
 is not a missing-outcome finding:
 
-- `slopx_ireland_mission_conduct_a_free_general_election` uses the election
+- `ireland_mission_conduct_a_free_general_election` uses the election
   cancellation, timeout, and completion helpers for the ordinary and
   by-election modes.
-- `slopx_ireland_mission_keep_essential_services_running` uses the service
+- `ireland_mission_keep_essential_services_running` uses the service
   obligations helpers for the ordinary and parish-audit modes.
 
 All six helpers provide result recording, the appropriate full/partial/failure
@@ -68,7 +68,7 @@ The GUI inspector reports the known global/offline limitations: 97 combined
 source diagnostics for each Ireland surface, including intentional animation /
 fallback and status-overlay geometry, unsupported renderer fields, and the
 controlled action-texture reuse. The current Ireland GFX parse finds 369 unique
-sprite names in `interface/slopx_ireland_icons.gfx`, with no duplicate sprite
+sprite names in `interface/ireland_icons.gfx`, with no duplicate sprite
 names. The 140 decision sprite names intentionally consume 70 unique DDS
 texture paths; the MCP texture-symbol collision diagnostic is the indexer's
 representation of that reuse, not a duplicate sprite registration or a visual

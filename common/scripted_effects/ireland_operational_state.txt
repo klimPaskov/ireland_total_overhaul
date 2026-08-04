@@ -1,0 +1,282 @@
+# Ireland operational-state synchronisation. This file turns canonical ledgers and
+# incident source flags into the active signals consumed by laws, missions, offices,
+# decisions, and the three Ireland scripted GUIs. It contains no passive rewards.
+
+ireland_sync_operational_state = {
+	# A war or a zeroed provision/readiness component is an active emergency. The
+	# dated emergency route remains active until its repeal review, while a real
+	# shortage can reopen the state after repeal and must be recovered in play.
+	if = {
+		limit = {
+			OR = {
+				has_war = yes
+				check_variable = { var = ireland_provision_food value = constant:ireland.zero compare = equals }
+				check_variable = { var = ireland_provision_energy value = constant:ireland.zero compare = equals }
+				check_variable = { var = ireland_provision_transport value = constant:ireland.zero compare = equals }
+				check_variable = { var = ireland_provision_maritime value = constant:ireland.zero compare = equals }
+				check_variable = { var = ireland_readiness_command value = constant:ireland.zero compare = equals }
+				check_variable = { var = ireland_readiness_equipment value = constant:ireland.zero compare = equals }
+				check_variable = { var = ireland_readiness_mobilisation value = constant:ireland.zero compare = equals }
+				check_variable = { var = ireland_readiness_supply value = constant:ireland.zero compare = equals }
+				check_variable = { var = ireland_readiness_warning value = constant:ireland.zero compare = equals }
+				check_variable = { var = ireland_readiness_maritime_protection value = constant:ireland.zero compare = equals }
+				check_variable = { var = ireland_readiness_intelligence value = constant:ireland.zero compare = equals }
+				AND = {
+					NOT = { has_country_flag = ireland_emergency_repeal_complete }
+					OR = {
+						has_country_flag = ireland_emergency_opening
+						has_country_flag = ireland_statutory_emergency_complete
+					}
+				}
+			}
+		}
+		set_country_flag = ireland_national_emergency_active
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_national_emergency_active
+			NOT = { has_war = yes }
+			NOT = { has_country_flag = ireland_emergency_opening }
+			NOT = { has_country_flag = ireland_statutory_emergency_complete }
+			has_country_flag = ireland_emergency_repeal_complete
+			NOT = {
+				OR = {
+					check_variable = { var = ireland_provision_food value = constant:ireland.zero compare = equals }
+					check_variable = { var = ireland_provision_energy value = constant:ireland.zero compare = equals }
+					check_variable = { var = ireland_provision_transport value = constant:ireland.zero compare = equals }
+					check_variable = { var = ireland_provision_maritime value = constant:ireland.zero compare = equals }
+					check_variable = { var = ireland_readiness_command value = constant:ireland.zero compare = equals }
+					check_variable = { var = ireland_readiness_equipment value = constant:ireland.zero compare = equals }
+					check_variable = { var = ireland_readiness_mobilisation value = constant:ireland.zero compare = equals }
+					check_variable = { var = ireland_readiness_supply value = constant:ireland.zero compare = equals }
+					check_variable = { var = ireland_readiness_warning value = constant:ireland.zero compare = equals }
+					check_variable = { var = ireland_readiness_maritime_protection value = constant:ireland.zero compare = equals }
+					check_variable = { var = ireland_readiness_intelligence value = constant:ireland.zero compare = equals }
+				}
+			}
+		}
+		clr_country_flag = ireland_national_emergency_active
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = ireland_national_emergency_active
+				has_war = yes
+			}
+		}
+		set_country_flag = ireland_external_emergency
+	}
+	else = {
+		clr_country_flag = ireland_external_emergency
+	}
+
+	# Command and mobilisation failures are active conditions, not rewards. The
+	# durable achievement history helper records them before recovery clears the
+	# operational vacancy signal.
+	if = {
+		limit = { check_variable = { var = ireland_readiness_command value = constant:ireland.zero compare = equals } }
+		set_country_flag = ireland_military_command_collapse
+	}
+	else = {
+		clr_country_flag = ireland_military_command_collapse
+	}
+	if = {
+		limit = { check_variable = { var = ireland_security_loyalty value = constant:ireland.zero compare = equals } }
+		set_country_flag = ireland_security_command_collapse
+	}
+	else = {
+		clr_country_flag = ireland_security_command_collapse
+	}
+	if = {
+		limit = { check_variable = { var = ireland_readiness_mobilisation value = constant:ireland.zero compare = equals } }
+		set_country_flag = ireland_mobilisation_failure
+		set_country_flag = ireland_mobilisation_command_collapse
+	}
+	else = {
+		clr_country_flag = ireland_mobilisation_failure
+		clr_country_flag = ireland_mobilisation_command_collapse
+	}
+
+	ireland_sync_neutrality_incident_family = yes
+	add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one }
+}
+
+ireland_sync_neutrality_incident_family = {
+	# A source flag belongs to one incident family only. Clear the previous
+	# pointer before assigning the current one so a closed incident cannot leave
+	# a stale law, decision, or event trigger active.
+	clr_country_flag = ireland_airspace_active
+	clr_country_flag = ireland_shipping_incident_active
+	clr_country_flag = ireland_internment_incident_active
+	clr_country_flag = ireland_intelligence_incident_active
+	clr_country_flag = ireland_weather_incident_active
+	clr_country_flag = ireland_trade_incident_active
+	clr_country_flag = ireland_access_incident_active
+	clr_country_flag = ireland_censorship_incident_active
+	clr_country_flag = ireland_border_incident_active
+	if = {
+		limit = { NOT = { has_country_flag = ireland_neutrality_incident_active } }
+		clr_country_flag = ireland_neutrality_incident_220_source
+		clr_country_flag = ireland_neutrality_incident_221_source
+		clr_country_flag = ireland_neutrality_incident_222_source
+		clr_country_flag = ireland_neutrality_incident_223_source
+		clr_country_flag = ireland_neutrality_incident_224_source
+		clr_country_flag = ireland_neutrality_incident_225_source
+		clr_country_flag = ireland_neutrality_incident_226_source
+		clr_country_flag = ireland_neutrality_incident_227_source
+		clr_country_flag = ireland_neutrality_incident_228_source
+		clr_country_flag = ireland_neutrality_incident_229_source
+		clr_country_flag = ireland_neutrality_incident_230_source
+		clr_country_flag = ireland_neutrality_incident_231_source
+		clr_country_flag = ireland_neutrality_incident_232_source
+		clr_country_flag = ireland_neutrality_incident_233_source
+		clr_country_flag = ireland_neutrality_incident_234_source
+		clr_country_flag = ireland_neutrality_incident_235_source
+		clr_country_flag = ireland_neutrality_incident_236_source
+		clr_country_flag = ireland_neutrality_incident_237_source
+		clr_country_flag = ireland_neutrality_incident_238_source
+		clr_country_flag = ireland_neutrality_incident_239_source
+		clr_country_flag = ireland_neutrality_incident_240_source
+		clr_country_flag = ireland_neutrality_incident_241_source
+		clr_country_flag = ireland_neutrality_incident_242_source
+		clr_country_flag = ireland_neutrality_incident_243_source
+		clr_country_flag = ireland_neutrality_incident_244_source
+		clr_country_flag = ireland_neutrality_incident_245_source
+		clr_country_flag = ireland_neutrality_incident_246_source
+		clr_country_flag = ireland_neutrality_incident_247_source
+		clr_country_flag = ireland_neutrality_incident_248_source
+		clr_country_flag = ireland_neutrality_incident_249_source
+		clr_country_flag = ireland_neutrality_incident_250_source
+		clr_country_flag = ireland_neutrality_incident_251_source
+		clr_country_flag = ireland_neutrality_incident_252_source
+		clr_country_flag = ireland_neutrality_incident_253_source
+		clr_country_flag = ireland_neutrality_incident_254_source
+		clr_country_flag = ireland_neutrality_incident_255_source
+		clr_country_flag = ireland_neutrality_incident_256_source
+		clr_country_flag = ireland_neutrality_incident_257_source
+		clr_country_flag = ireland_neutrality_incident_258_source
+		clr_country_flag = ireland_neutrality_incident_259_source
+		clr_country_flag = ireland_neutrality_incident_260_source
+		clr_country_flag = ireland_neutrality_incident_261_source
+		clr_country_flag = ireland_neutrality_incident_262_source
+		clr_country_flag = ireland_neutrality_incident_263_source
+		clr_country_flag = ireland_neutrality_incident_264_source
+		clr_country_flag = ireland_neutrality_incident_265_source
+		clr_country_flag = ireland_neutrality_incident_266_source
+		clr_country_flag = ireland_neutrality_incident_267_source
+	}
+	if = {
+		limit = { has_country_flag = ireland_neutrality_incident_active }
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ireland_neutrality_incident_220_source
+					has_country_flag = ireland_neutrality_incident_221_source
+					has_country_flag = ireland_neutrality_incident_222_source
+					has_country_flag = ireland_neutrality_incident_223_source
+					has_country_flag = ireland_neutrality_incident_224_source
+					has_country_flag = ireland_neutrality_incident_225_source
+				}
+			}
+			set_country_flag = ireland_airspace_active
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ireland_neutrality_incident_226_source
+					has_country_flag = ireland_neutrality_incident_227_source
+					has_country_flag = ireland_neutrality_incident_228_source
+					has_country_flag = ireland_neutrality_incident_229_source
+					has_country_flag = ireland_neutrality_incident_230_source
+					has_country_flag = ireland_neutrality_incident_231_source
+				}
+			}
+			set_country_flag = ireland_shipping_incident_active
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ireland_neutrality_incident_232_source
+					has_country_flag = ireland_neutrality_incident_233_source
+					has_country_flag = ireland_neutrality_incident_234_source
+					has_country_flag = ireland_neutrality_incident_235_source
+					has_country_flag = ireland_neutrality_incident_236_source
+					has_country_flag = ireland_neutrality_incident_237_source
+				}
+			}
+			set_country_flag = ireland_internment_incident_active
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ireland_neutrality_incident_238_source
+					has_country_flag = ireland_neutrality_incident_239_source
+					has_country_flag = ireland_neutrality_incident_240_source
+					has_country_flag = ireland_neutrality_incident_241_source
+					has_country_flag = ireland_neutrality_incident_242_source
+					has_country_flag = ireland_neutrality_incident_243_source
+				}
+			}
+			set_country_flag = ireland_intelligence_incident_active
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ireland_neutrality_incident_244_source
+					has_country_flag = ireland_neutrality_incident_245_source
+					has_country_flag = ireland_neutrality_incident_246_source
+					has_country_flag = ireland_neutrality_incident_247_source
+					has_country_flag = ireland_neutrality_incident_248_source
+				}
+			}
+			set_country_flag = ireland_weather_incident_active
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ireland_neutrality_incident_249_source
+					has_country_flag = ireland_neutrality_incident_250_source
+					has_country_flag = ireland_neutrality_incident_251_source
+					has_country_flag = ireland_neutrality_incident_252_source
+					has_country_flag = ireland_neutrality_incident_253_source
+				}
+			}
+			set_country_flag = ireland_trade_incident_active
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ireland_neutrality_incident_254_source
+					has_country_flag = ireland_neutrality_incident_255_source
+					has_country_flag = ireland_neutrality_incident_256_source
+					has_country_flag = ireland_neutrality_incident_257_source
+					has_country_flag = ireland_neutrality_incident_258_source
+				}
+			}
+			set_country_flag = ireland_access_incident_active
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ireland_neutrality_incident_259_source
+					has_country_flag = ireland_neutrality_incident_260_source
+					has_country_flag = ireland_neutrality_incident_261_source
+					has_country_flag = ireland_neutrality_incident_262_source
+					has_country_flag = ireland_neutrality_incident_263_source
+				}
+			}
+			set_country_flag = ireland_censorship_incident_active
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ireland_neutrality_incident_264_source
+					has_country_flag = ireland_neutrality_incident_265_source
+					has_country_flag = ireland_neutrality_incident_266_source
+					has_country_flag = ireland_neutrality_incident_267_source
+				}
+			}
+			set_country_flag = ireland_border_incident_active
+		}
+	}
+}

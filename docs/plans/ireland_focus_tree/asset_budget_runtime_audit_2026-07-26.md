@@ -12,16 +12,16 @@ material, or claim live engine validation.
 
 | Surface | Canonical budget | Current runtime observation | Result |
 | --- | ---: | ---: | --- |
-| focus goal icons | 216 | 216 DDS under `gfx/interface/goals/slopx_ireland/` | exact |
+| focus goal icons | 216 | 216 DDS under `gfx/interface/goals/ireland/` | exact |
 | focus shine and masks | 216 / 432 mask references | 216 shine entries and paired mask references | exact by static registration |
-| decision categories | 13 | 13 DDS under `gfx/interface/decisions/categories/slopx_ireland/` | exact |
-| decision actions | 70 | 70 DDS under `gfx/interface/decisions/slopx_ireland/actions/` | exact |
-| mission families | 54 | 54 DDS under `gfx/interface/decisions/slopx_ireland/missions/` | exact |
-| persistent spirit states | 63 | 63 DDS under `gfx/interface/ideas/slopx_ireland/spirits/` | exact |
+| decision categories | 13 | 13 DDS under `gfx/interface/decisions/categories/ireland/` | exact |
+| decision actions | 70 | 70 DDS under `gfx/interface/decisions/ireland/actions/` | exact |
+| mission families | 54 | 54 DDS under `gfx/interface/decisions/ireland/missions/` | exact |
+| persistent spirit states | 63 | 63 DDS under `gfx/interface/ideas/ireland/spirits/` | exact |
 | temporary overlays | 27 | 27 DDS under `gfx/interface/ireland/temporary_overlays/` | exact |
-| law family icons | 51 | 51 DDS under `gfx/interface/ideas/slopx_ireland/laws/` | exact |
+| law family icons | 51 | 51 DDS under `gfx/interface/ideas/ireland/laws/` | exact |
 | mechanic and value icons | 45 | 45 DDS under `gfx/interface/ireland/mechanic_ledger/` | exact |
-| achievement states | 96 | 96 named `slopx_ireland_*` DDS (32 concepts x 3 states) | exact for registered package |
+| achievement states | 96 | 96 named `ireland_*` DDS (32 concepts x 3 states) | exact for registered package |
 | scripted GUI surfaces | 3 | conditions, northern, and evidence surfaces are registered | exact by source registration |
 | animations | 7 | seven source-frame sets, sheets, previews, and runtime static fallbacks | exact by static inventory |
 
@@ -61,7 +61,7 @@ permitted.
 The runtime achievement directory also contains 96 unreferenced legacy files
 named `achievement_ireland_001` through `achievement_ireland_032`, each with
 three states. They are not referenced by the current achievement GFX package;
-the exact 32-achievement package is the 96 named `slopx_ireland_*` files. They
+the exact 32-achievement package is the 96 named `ireland_*` files. They
 are recorded here for deliberate cleanup rather than being treated as part of
 the canonical budget.
 

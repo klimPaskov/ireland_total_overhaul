@@ -6,20 +6,20 @@ This narrow decision pass replaces seven abstract political-power and command-po
 
 ## Changed files
 
-- `common/decisions/slopx_ireland_decisions.txt`
-- `localisation/english/slopx_ireland_l_english.yml`
+- `common/decisions/ireland_decisions.txt`
+- `localisation/english/ireland_l_english.yml`
 
 ## Changed actions
 
 | Action ID | New availability gate | Completion charge | Lifecycle rationale |
 | --- | --- | --- | --- |
-| `slopx_ireland_action_commission_a_developmental_plant` | 50 Support Equipment and 5 Convoys | 50 Support Equipment and 5 Convoys | Imported machinery is a one-time project commitment. |
-| `slopx_ireland_action_open_a_g2_liaison_channel` | 20 Support Equipment | 20 Support Equipment | Secure communications are consumed in establishing the channel. |
-| `slopx_ireland_action_intercept_an_airspace_violation` | 5 Fighters and 100 Fuel | 5 Fighters and 100 Fuel | The interception spends aircraft readiness and fuel. |
-| `slopx_ireland_action_send_an_american_procurement_mission` | 5 Convoys | 5 Convoys | The acquisition route commits carrying capacity before delivery resolves. |
-| `slopx_ireland_action_prepare_a_wartime_unity_bargain` | 50 Infantry Equipment and 25 Trucks | 50 Infantry Equipment and 25 Trucks | The proposed defence contribution must be materially credible. |
-| `slopx_ireland_action_restore_belfast_industrial_contracts` | 100 Support Equipment and 50 Trucks | 100 Support Equipment and 50 Trucks | Repair and delivery work begins before the Belfast mission can resolve. |
-| `slopx_ireland_action_launch_a_reconstruction_portfolio` | 50 Support Equipment and 25 Trucks | 50 Support Equipment and 25 Trucks | First reconstruction works require equipment and transport at launch. |
+| `ireland_action_commission_a_developmental_plant` | 50 Support Equipment and 5 Convoys | 50 Support Equipment and 5 Convoys | Imported machinery is a one-time project commitment. |
+| `ireland_action_open_a_g2_liaison_channel` | 20 Support Equipment | 20 Support Equipment | Secure communications are consumed in establishing the channel. |
+| `ireland_action_intercept_an_airspace_violation` | 5 Fighters and 100 Fuel | 5 Fighters and 100 Fuel | The interception spends aircraft readiness and fuel. |
+| `ireland_action_send_an_american_procurement_mission` | 5 Convoys | 5 Convoys | The acquisition route commits carrying capacity before delivery resolves. |
+| `ireland_action_prepare_a_wartime_unity_bargain` | 50 Infantry Equipment and 25 Trucks | 50 Infantry Equipment and 25 Trucks | The proposed defence contribution must be materially credible. |
+| `ireland_action_restore_belfast_industrial_contracts` | 100 Support Equipment and 50 Trucks | 100 Support Equipment and 50 Trucks | Repair and delivery work begins before the Belfast mission can resolve. |
+| `ireland_action_launch_a_reconstruction_portfolio` | 50 Support Equipment and 25 Trucks | 50 Support Equipment and 25 Trucks | First reconstruction works require equipment and transport at launch. |
 
 ## Behaviour
 
@@ -29,9 +29,9 @@ The existing ledger-driven Action Burden remains dynamic. Physical charges are d
 
 ## Validation run
 
-- Targeted structural check reports `action_count = 140`, `mission_count = 54`, and `brace_balance = 0` for `common/decisions/slopx_ireland_decisions.txt`.
+- Targeted structural check reports `action_count = 140`, `mission_count = 54`, and `brace_balance = 0` for `common/decisions/ireland_decisions.txt`.
 - The check found 24 input macros (gate and charge values for the seven actions). Each action has the expected gate-to-charge pair count, the same resource and magnitude at both ends, and exactly one updated requirement tooltip.
-- Apart from the four file-header declarations, the wartime-unity macro family occurs only inside `slopx_ireland_action_prepare_a_wartime_unity_bargain`; this specifically catches the initially misplaced British-flexibility insertion.
+- Apart from the four file-header declarations, the wartime-unity macro family occurs only inside `ireland_action_prepare_a_wartime_unity_bargain`; this specifically catches the initially misplaced British-flexibility insertion.
 - The touched decision blocks contain no unsupported `<=` or `>=` operators. The localisation file retains a UTF-8 BOM.
 
 ## Skipped validation

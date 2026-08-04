@@ -1,7 +1,7 @@
 # Ireland GUI engine-reference re-audit — 2026-08-03
 
 Feature slug: `ireland_focus_tree`
-Namespace: `slopx`
+Namespace: `ireland`
 Scope: the three authored scripted GUI windows
 HOI4 was not launched.
 
@@ -12,9 +12,9 @@ offline `ireland_audit` scenario:
 
 | window | elements | reported visible overlaps | source result |
 | --- | ---: | ---: | --- |
-| `slopx_ireland_conditions_panel_window` | 58 | 10 | complete |
-| `slopx_ireland_northern_settlement_ledger_window` | 40 | 9 | complete |
-| `slopx_ireland_concealed_evidence_ledger_window` | 57 | 29 | complete |
+| `ireland_conditions_panel_window` | 58 | 10 | complete |
+| `ireland_northern_settlement_ledger_window` | 40 | 9 | complete |
+| `ireland_concealed_evidence_ledger_window` | 57 | 29 | complete |
 
 All three calls returned `GUI_INSPECTED` with `complete: true`. The aggregate
 MCP graph reports 97 blocking diagnostics and a false aggregate validation, but

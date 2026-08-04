@@ -1,7 +1,7 @@
 # Ireland P-50 exact source re-audit — 2026-08-02
 
 Feature slug: `ireland_focus_tree`  
-Namespace: `slopx`  
+Namespace: `ireland`  
 Scope: non-live source, asset, preservation, and registration checks only.
 
 ## Result
@@ -27,7 +27,7 @@ resized to 156 × 210 RGB without generating or reconstructing a face.
 | Preserved source | `docs/portraits/research_2026-08-02/portrait_exact_object_search_round13/P-50_michael_price/Tom_Barry_and_Leslie_Price_wedding_photo_August_1921.jpg` | exists; byte-identical to staged source |
 | Preserved processed portrait | `docs/portraits/research_2026-08-02/portrait_exact_object_search_round13/P-50_michael_price/leader_p_50_mick_price_156x210.png` | exists; byte-identical to staged processed PNG |
 | Runtime DDS | `gfx/leaders/ireland/leader_p_50.dds` | exists; 156 × 210 BGRA DDS; hash matches manifest |
-| GFX registration | `interface/slopx_ireland_sourced_assets.gfx` | `GFX_ireland_portrait_p_50` points to `gfx/leaders/ireland/leader_p_50.dds` |
+| GFX registration | `interface/ireland_sourced_assets.gfx` | `GFX_ireland_portrait_p_50` points to `gfx/leaders/ireland/leader_p_50.dds` |
 
 The complete manifest count is now 165/169, with four exact portrait rows
 remaining blocked: P-26, P-45, P-54, and P-55. No generated likeness,

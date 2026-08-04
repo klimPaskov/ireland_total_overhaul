@@ -16,11 +16,11 @@ runtime DDS was used as input.
 The runtime DDS files are promoted to:
 
 ```text
-gfx/interface/goals/slopx_ireland/
+gfx/interface/goals/ireland/
 ```
 
 `assets/` is staging/provenance only. Stable sprite names remain in
-`interface/slopx_ireland_icons.gfx`; no gameplay references were renamed.
+`interface/ireland_icons.gfx`; no gameplay references were renamed.
 
 ## Package evidence
 

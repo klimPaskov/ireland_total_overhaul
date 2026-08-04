@@ -262,7 +262,7 @@ portrait with its CC BY attribution requirement. The cleared Constitution
 document is wired to the opening constitutional event as
 `GFX_report_event_ireland_report_constitution_1937`; the official state harp is
 registered as `GFX_ireland_official_state_harp_reference`; the 1937 Official
-Seal of the President is wired to event `slopx_ireland_events.106` as
+Seal of the President is wired to event `ireland_events.106` as
 `GFX_report_event_ireland_report_presidential_seal`; P-50 and P-54 are registered as
 `GFX_ireland_portrait_p_50` and `GFX_ireland_portrait_p_54` from their exact
 mapped historical group sources;
@@ -270,16 +270,16 @@ the flag, Constitution
 symbol, de Valera portrait, and Lemass portrait remain separately registered
 for their conditional or character-specific uses. The C4 portrait additions
 for Norton, Hyde, Mac Eoin, Aiken, MacEntee, and J. J. Walsh are registered in
-`interface/slopx_ireland_sourced_assets.gfx`. The S-01 C3 source-derived flag
+`interface/ireland_sourced_assets.gfx`. The S-01 C3 source-derived flag
 set is present at `gfx/flags/IRE.tga`, `gfx/flags/medium/IRE.tga`, and
 `gfx/flags/small/IRE.tga`; its attribution and official colour/proportion
 conditions remain recorded in the manifest. The 54 complete event/news objects
 retain their exact source, attribution, and redistribution conditions in each
 manifest record and are registered in
-`interface/slopx_ireland_sourced_assets.gfx`. EV-SRC-021, EV-SRC-039, and
+`interface/ireland_sourced_assets.gfx`. EV-SRC-021, EV-SRC-039, and
 EV-SRC-057 use distinct Treaty Port records. Their sprites are registered and
 consumed by the existing Cobh inventory, Berehaven and Lough Swilly handover,
-and named Treaty Port access events `slopx_ireland_events.110`, `.111`, and
+and named Treaty Port access events `ireland_events.110`, `.111`, and
 `.254`. EV-SRC-003 remains the H03 legal-document anchor on event `.109`.
 
 ## Blockers

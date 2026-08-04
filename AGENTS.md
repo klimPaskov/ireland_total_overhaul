@@ -155,8 +155,8 @@ Clausewitz script is picky. Follow these rules strictly.
 12. If an effect or trigger does not accept dynamic values, use `meta_effect` or `meta_trigger` with `text = { ... }` to inject computed variables/localisation into otherwise static fields.
     - meta effects can be used in all sorts of creative ways, for example: `my_scripted_effect_[ID] = yes`, so you can even choose a scripted effect dynamically. Meta effects are very powerful and useful, use them often.
 13. Prefer reusable dynamic scripted effects/triggers for complex/dynamic logic.
-    - First check existing dynamic effects (in `common/scripted_effects/slopx_dynamic_effects.txt`) and use them instead of duplicating logic.
-    - If no existing effect fits, create a new dynamic effect and document it in the matching markdown file `docs/slopx_dynamic_effects.md` in the same change.
+    - First check existing dynamic effects (in `common/scripted_effects/ireland_effects.txt`) and use them instead of duplicating logic.
+    - If no existing effect fits, create a new dynamic effect and document it in the matching markdown file `docs/ireland_dynamic_effects.md` in the same change.
     - Keep effect docs explicit: purpose, scope, inputs/outputs, defaults, side effects, and a usage example.
 14. If MTTH (mean time to happen) variables or weighted timing logic would reduce AI/script clutter, centralize the weighted logic in scripted helpers, constants, or the relevant event/decision system. If this repository installs an additional MTTH-specific skill, use that skill before implementing.
 
@@ -248,9 +248,13 @@ Localisation and UI must always be kept in sync with gameplay changes.
 
 ## 3. Naming and Prefix Rules
 
+The project namespace and engine prefix is `ireland`.
+
+Use `ireland_` for project-owned engine identifiers, interface files, sprite names, localization keys, flags, and scripted systems where a stable prefix is needed. The legacy project prefix is retired and must not be introduced anywhere in this repository.
+
 Use prefixes only where they are needed.
 
-Add prefixes if a folder is dedicated to `Ireland Total Overhaul` files that all share the prefix. Do not add the `slopx` prefix to variable names, scripted effects, or scripted triggers unless the surrounding context uses it consistently.
+Add the `ireland` prefix if a folder is dedicated to `Ireland Total Overhaul` files that all share the prefix. Do not add it to local variables, scripted effects, or scripted triggers when the surrounding context already provides an unambiguous scope, but keep the project prefix on public cross-file identifiers and dedicated subsystem files.
 Prefer short, descriptive names that reflect function and scope.
 
 Unnecessary prefixes make code harder to read and maintain. Keep names clean.
@@ -266,7 +270,7 @@ When implementing any new mechanic, follow this checklist:
 5. Plan variables and flags so that values are dynamic and centralised.
 6. Avoid unsupported operators and constructs.
 7. Use loops, meta effects/triggers if needed to make things dynamic, and scripted effects or scripted triggers to remove duplication.
-8. Reuse existing dynamic scripted effects before writing new bespoke logic. If new dynamic effects/triggers are added, document them in `docs/slopx_dynamic_effects.md` in the same change.
+8. Reuse existing dynamic scripted effects before writing new bespoke logic. If new dynamic effects/triggers are added, document them in `docs/ireland_dynamic_effects.md` in the same change.
 9. Keep localisation, icons and UI definitions aligned with changes in the same edit.
 10. When adding any new equipment type/archetype/category, also update `common/script_enums.txt` (`script_enum_equipment_bonus_type`) in the same change.
 11. Document each new script file with an overview at the top.

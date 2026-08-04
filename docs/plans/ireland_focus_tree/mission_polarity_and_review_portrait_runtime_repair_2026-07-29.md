@@ -10,7 +10,7 @@ blocks apply full or partial success. The previous `is_good = yes` setting
 made the engine label those success effects as failure effects in the mission
 tooltip.
 
-`common/decisions/slopx_ireland_decisions.txt` now uses `is_good = no` for all
+`common/decisions/ireland_decisions.txt` now uses `is_good = no` for all
 54 mission families. This matches the offline Decision Modding reference:
 `is_good = no` presents `available` as successful completion and
 `timeout_effect` as the result of missing the deadline. No objective, deadline,
@@ -20,7 +20,7 @@ outcome, escalation, AI weight, capacity rule, or cleanup effect changed.
 
 Twenty-two C3 portrait packages marked `needs_user_review` had no gameplay
 consumer but were registered in
-`interface/slopx_ireland_sourced_assets.gfx` and copied into
+`interface/ireland_sourced_assets.gfx` and copied into
 `gfx/leaders/ireland/`. Their runtime registrations and DDS copies have been
 removed:
 

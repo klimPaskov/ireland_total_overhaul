@@ -23,10 +23,10 @@ The package contains exactly 51 generated event/news concepts:
 - 45 `210x176` sepia report cards.
 
 All 51 runtime paths are registered in
-`interface/slopx_ireland_event_art.gfx`, and all 51 registered sprites have an
+`interface/ireland_event_art.gfx`, and all 51 registered sprites have an
 Ireland event consumer. The High Kingship and Northern unity images are
 consumed by the bounded public conclusion records
-`slopx_ireland_events.432` and `.433`; the former begins the existing
+`ireland_events.432` and `.433`; the former begins the existing
 conclusion review, while the latter records the public settlement after the
 H14 outcome has opened its existing foreign-reaction window. Neither grants
 territory, cores, industry, equipment, units, fuel, shipping, offices,
@@ -49,7 +49,7 @@ handoff textures at `82x52`, `41x26`, and `10x7`.
 
 The authoritative engine flag files are the 54 TGA files under `gfx/flags/`,
 `gfx/flags/medium/`, and `gfx/flags/small/`. Every size root contains exactly
-eighteen `IRE_SLOPX_*` files, all eighteen cosmetic tags are defined and
+eighteen `IRE_IRELAND_*` files, all eighteen cosmetic tags are defined and
 called by the route runtime, and every size group has eighteen unique hashes.
 No source, processed, DDS, or runtime TGA flag contains a bright-green key
 pixel.
@@ -62,7 +62,7 @@ form: eight unique sources, sixteen unique processed PNGs, and sixteen unique
 runtime DDS files under `gfx/interface/ireland/emblems/`.
 
 All sixteen runtime paths are registered in
-`interface/slopx_ireland_route_assets.gfx`. The contact sheet shows a
+`interface/ireland_route_assets.gfx`. The contact sheet shows a
 consistent transparent emblem treatment with no atlas-neighbour bleed, boxed
 source tiles, or green-screen residue.
 
