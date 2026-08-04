@@ -58,6 +58,18 @@ ireland_initialize_campaign = {
 		set_variable = { var = ireland_readiness_maritime_protection value = constant:ireland.readiness_maritime_protection_opening }
 		set_variable = { var = ireland_readiness_intelligence value = constant:ireland.readiness_intelligence_opening }
 		set_variable = { var = ireland_readiness_display value = constant:ireland.readiness_display_opening }
+		# Cumulative civilian and military returns from the maritime-service branch.
+		# These remain at zero until one of the two branch roots establishes the
+		# visible Integrated Maritime Service dynamic modifier.
+		set_variable = { var = ireland_maritime_factory_output_factor value = constant:ireland.zero }
+		set_variable = { var = ireland_maritime_dockyard_output_factor value = constant:ireland.zero }
+		set_variable = { var = ireland_maritime_factory_efficiency_gain_factor value = constant:ireland.zero }
+		set_variable = { var = ireland_maritime_research_speed_factor value = constant:ireland.zero }
+		set_variable = { var = ireland_maritime_supply_consumption_factor value = constant:ireland.zero }
+		set_variable = { var = ireland_maritime_stability_factor value = constant:ireland.zero }
+		set_variable = { var = ireland_maritime_army_defence_factor value = constant:ireland.zero }
+		set_variable = { var = ireland_maritime_convoy_escort_efficiency value = constant:ireland.zero }
+		set_variable = { var = ireland_maritime_repair_speed_factor value = constant:ireland.zero }
 		set_variable = { var = ireland_coastwatch_posts_established value = constant:ireland.zero }
 		set_variable = { var = ireland_coastwatch_sectors_completed value = constant:ireland.zero }
 		set_variable = { var = ireland_coastwatch_active_sector value = constant:ireland.zero }
@@ -571,6 +583,21 @@ ireland_initialize_campaign = {
 		ireland_recompute_readiness = yes
 		ireland_update_mission_capacity = yes
 		ireland_update_action_cost_preview = yes
+	}
+}
+
+ireland_ensure_integrated_maritime_service = {
+	if = {
+		limit = {
+			NOT = {
+				has_dynamic_modifier = {
+					modifier = ireland_integrated_maritime_service
+				}
+			}
+		}
+		add_dynamic_modifier = {
+			modifier = ireland_integrated_maritime_service
+		}
 	}
 }
 

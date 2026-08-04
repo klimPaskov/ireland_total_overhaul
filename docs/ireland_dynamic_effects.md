@@ -894,3 +894,21 @@ Usage contract: the four action blocks call their admission helper inside the vi
 - Defaults: the flag clears when the balance leaves the armed dual-authority range; no numeric proxy replaces the native balance-of-power check.
 - Side effects: none beyond crisis flags; it does not move the balance or choose a constitutional route.
 - Usage: keep this helper after `ireland_sync_law_registry` so the war-assent gate sees the current legal and balance state.
+## Integrated Maritime Service
+
+### `ireland_ensure_integrated_maritime_service`
+
+- Purpose: idempotently add the visible `ireland_integrated_maritime_service`
+  country dynamic modifier.
+- Scope: Ireland country scope.
+- Inputs: the country's current dynamic-modifier registry; no arguments.
+- Outputs: adds the modifier only when it is absent.
+- Defaults: campaign initialization owns and zeroes the modifier's nine backing
+  variables. An undefined backing variable is still evaluated as zero by the
+  engine, keeping history-driven focus completion safe.
+- Side effects: none beyond adding the modifier. It does not change a reward
+  variable, ledger component, flag, idea, building, or unit.
+- Usage: call `ireland_ensure_integrated_maritime_service = yes` in a hidden
+  country effect before incrementing any maritime reward variable. Naval Staff
+  and Marine Service reconstruction both call it so repeated execution remains
+  safe.

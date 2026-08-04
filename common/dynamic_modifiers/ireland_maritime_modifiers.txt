@@ -1,0 +1,19 @@
+# Visible cumulative reward for Ireland's integrated maritime-service branch.
+# Backing variables are initialized and advanced by Ireland scripted effects.
+
+ireland_integrated_maritime_service = {
+	icon = GFX_idea_generic_coastal_navy
+	enable = {
+		original_tag = IRE
+	}
+
+	industrial_capacity_factory = ireland_maritime_factory_output_factor
+	industrial_capacity_dockyard = ireland_maritime_dockyard_output_factor
+	production_factory_efficiency_gain_factor = ireland_maritime_factory_efficiency_gain_factor
+	research_speed_factor = ireland_maritime_research_speed_factor
+	supply_consumption_factor = ireland_maritime_supply_consumption_factor
+	stability_factor = ireland_maritime_stability_factor
+	army_defence_factor = ireland_maritime_army_defence_factor
+	convoy_escort_efficiency = ireland_maritime_convoy_escort_efficiency
+	repair_speed_factor = ireland_maritime_repair_speed_factor
+}

@@ -2675,21 +2675,31 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP }
 		x = 28
-		y = 29
+		y = 30
 		prerequisite = {
-			focus = ireland_port_defence_project
+			focus = ireland_establish_naval_staff
 		}
 		available = {
 			has_country_flag = ireland_readiness_plan
 			has_completed_focus = ireland_coastwatch
-			has_completed_focus = ireland_maritime_reserve
+			has_completed_focus = ireland_maritime_protection
 		}
 		completion_reward = {
 			set_country_flag = ireland_marine_service_ready
 			set_country_flag = ireland_rebuild_marine_service_complete
 			set_country_flag = ireland_marine_patrol_authority_ready
+			add_political_power = 25
 			navy_experience = 10
-			ireland_recompute_readiness = yes
+			hidden_effect = {
+				ireland_ensure_integrated_maritime_service = yes
+				add_to_variable = { ireland_provision_maritime = constant:ireland_maritime.ledger_standard_delta }
+				add_to_variable = { ireland_readiness_maritime_protection = constant:ireland_maritime.ledger_standard_delta }
+				add_to_variable = { ireland_readiness_intelligence = constant:ireland_maritime.ledger_minor_delta }
+				ireland_recompute_provision = yes
+				ireland_recompute_readiness = yes
+			}
+			add_to_variable = { var = ireland_maritime_factory_efficiency_gain_factor value = constant:ireland_maritime.reconstruction_efficiency_gain tooltip = production_factory_efficiency_gain_factor_tt }
+			add_to_variable = { var = ireland_maritime_convoy_escort_efficiency value = constant:ireland_maritime.reconstruction_escort_efficiency tooltip = convoy_escort_efficiency_tt }
 		}
 		ai_will_do = {
 			base = 12
@@ -2705,7 +2715,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		x = 28
-		y = 30
+		y = 31
 		prerequisite = {
 			focus = ireland_rebuild_marine_service
 		}
@@ -2725,7 +2735,12 @@ focus_tree = {
 				amount = 5
 			}
 			navy_experience = 5
-			ireland_recompute_provision = yes
+			hidden_effect = {
+				add_to_variable = { ireland_provision_transport = constant:ireland_maritime.ledger_standard_delta }
+				add_to_variable = { ireland_provision_maritime = constant:ireland_maritime.ledger_major_delta }
+				ireland_recompute_provision = yes
+			}
+			add_to_variable = { var = ireland_maritime_factory_output_factor value = constant:ireland_maritime.trawler_factory_output tooltip = industrial_capacity_factory_tt }
 		}
 		ai_will_do = {
 			base = 10
@@ -2741,7 +2756,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_HISTORICAL }
 		x = 28
-		y = 31
+		y = 32
 		prerequisite = {
 			focus = ireland_requisition_trawler_hulls
 		}
@@ -2760,7 +2775,13 @@ focus_tree = {
 				}
 			}
 			navy_experience = 10
-			ireland_recompute_readiness = yes
+			hidden_effect = {
+				add_to_variable = { ireland_readiness_warning = constant:ireland_maritime.ledger_standard_delta }
+				add_to_variable = { ireland_readiness_maritime_protection = constant:ireland_maritime.ledger_large_delta }
+				ireland_recompute_readiness = yes
+			}
+			add_to_variable = { var = ireland_maritime_stability_factor value = constant:ireland_maritime.patrol_stability tooltip = stability_factor_tt }
+			add_to_variable = { var = ireland_maritime_convoy_escort_efficiency value = constant:ireland_maritime.patrol_escort_efficiency tooltip = convoy_escort_efficiency_tt }
 		}
 		ai_will_do = {
 			base = 10
@@ -2775,20 +2796,30 @@ focus_tree = {
 		icon = GFX_focus_ireland_marine_service_reserve
 		cost = 10
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_MANPOWER FOCUS_FILTER_HISTORICAL }
-		x = 28
-		y = 32
+		x = 26
+		y = 33
 		prerequisite = {
 			focus = ireland_coastal_patrol_flotilla
 		}
+		prerequisite = {
+			focus = ireland_emergency_mobilisation
+		}
 		available = {
-			has_completed_focus = ireland_professional_army
 			has_country_flag = ireland_trawler_hulls_requisitioned
 		}
 		completion_reward = {
 			set_country_flag = ireland_marine_service_reserve_ready
 			set_country_flag = ireland_marine_service_reserve_complete
-			army_experience = 5
-			ireland_recompute_readiness = yes
+			army_experience = 10
+			add_command_power = 10
+			hidden_effect = {
+				add_to_variable = { ireland_readiness_command = constant:ireland_maritime.ledger_major_delta }
+				add_to_variable = { ireland_readiness_equipment = constant:ireland_maritime.ledger_standard_delta }
+				add_to_variable = { ireland_readiness_supply = constant:ireland_maritime.ledger_major_delta }
+				ireland_recompute_readiness = yes
+			}
+			add_to_variable = { var = ireland_maritime_supply_consumption_factor value = constant:ireland_maritime.reserve_supply_consumption tooltip = supply_consumption_factor_tt }
+			add_to_variable = { var = ireland_maritime_army_defence_factor value = constant:ireland_maritime.reserve_army_defence tooltip = army_defence_factor_tt }
 		}
 		ai_will_do = {
 			base = 8
@@ -2815,6 +2846,12 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = ireland_naval_staff_ready
 			set_country_flag = ireland_establish_naval_staff_complete
+			hidden_effect = {
+				ireland_ensure_integrated_maritime_service = yes
+				add_to_variable = { ireland_readiness_intelligence = constant:ireland_maritime.ledger_major_delta }
+				add_to_variable = { ireland_readiness_command = constant:ireland_maritime.ledger_standard_delta }
+				ireland_recompute_readiness = yes
+			}
 			if = {
 				limit = { has_intelligence_agency = no }
 				create_intelligence_agency = {
@@ -2828,8 +2865,10 @@ focus_tree = {
 				uses = 2
 				category = dd_tech
 			}
+			add_to_variable = { var = ireland_maritime_research_speed_factor value = constant:ireland_maritime.staff_research_speed tooltip = research_speed_factor_tt }
+			add_to_variable = { var = ireland_maritime_repair_speed_factor value = constant:ireland_maritime.staff_repair_speed tooltip = repair_speed_factor_tt }
+			army_experience = 5
 			navy_experience = 15
-			ireland_recompute_readiness = yes
 		}
 		ai_will_do = {
 			base = 11
@@ -2870,7 +2909,13 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			ireland_recompute_readiness = yes
+			hidden_effect = {
+				add_to_variable = { ireland_readiness_warning = constant:ireland_maritime.ledger_standard_delta }
+				add_to_variable = { ireland_readiness_supply = constant:ireland_maritime.ledger_standard_delta }
+				ireland_recompute_readiness = yes
+			}
+			add_to_variable = { var = ireland_maritime_army_defence_factor value = constant:ireland_maritime.harbour_army_defence tooltip = army_defence_factor_tt }
+			add_to_variable = { var = ireland_maritime_repair_speed_factor value = constant:ireland_maritime.harbour_repair_speed tooltip = repair_speed_factor_tt }
 		}
 		ai_will_do = {
 			base = 9
@@ -2900,12 +2945,23 @@ focus_tree = {
 			135 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
 					type = dockyard
 					level = 1
 					instant_build = yes
 				}
 			}
-			ireland_recompute_provision = yes
+			hidden_effect = {
+				add_to_variable = { ireland_provision_transport = constant:ireland_maritime.ledger_major_delta }
+				add_to_variable = { ireland_provision_maritime = constant:ireland_maritime.ledger_major_delta }
+				ireland_recompute_provision = yes
+			}
+			add_to_variable = { var = ireland_maritime_factory_output_factor value = constant:ireland_maritime.cobh_factory_output tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { var = ireland_maritime_dockyard_output_factor value = constant:ireland_maritime.cobh_dockyard_output tooltip = industrial_capacity_dockyard_tt }
 		}
 		ai_will_do = {
 			base = 9
@@ -2925,8 +2981,10 @@ focus_tree = {
 		prerequisite = {
 			focus = ireland_cobh_dockyard_programme
 		}
+		prerequisite = {
+			focus = ireland_neutrality_posture
+		}
 		available = {
-			has_completed_focus = ireland_coastwatch
 			has_country_flag = ireland_naval_staff_ready
 		}
 		completion_reward = {
@@ -2939,7 +2997,14 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			ireland_recompute_readiness = yes
+			air_experience = 10
+			hidden_effect = {
+				add_to_variable = { ireland_readiness_warning = constant:ireland_maritime.ledger_large_delta }
+				add_to_variable = { ireland_readiness_intelligence = constant:ireland_maritime.ledger_large_delta }
+				ireland_recompute_readiness = yes
+			}
+			add_to_variable = { var = ireland_maritime_research_speed_factor value = constant:ireland_maritime.swilly_research_speed tooltip = research_speed_factor_tt }
+			add_to_variable = { var = ireland_maritime_stability_factor value = constant:ireland_maritime.swilly_stability tooltip = stability_factor_tt }
 		}
 		ai_will_do = {
 			base = 8
@@ -2958,11 +3023,12 @@ focus_tree = {
 		y = 33
 		prerequisite = {
 			focus = ireland_coastal_patrol_flotilla
-			focus = ireland_cobh_dockyard_programme
+		}
+		prerequisite = {
+			focus = ireland_lough_swilly_watch
 		}
 		available = {
 			has_country_flag = ireland_provision_plan
-			has_completed_focus = ireland_lough_swilly_watch
 		}
 		completion_reward = {
 			set_country_flag = ireland_atlantic_convoy_office_ready
@@ -2970,10 +3036,19 @@ focus_tree = {
 			set_country_flag = ireland_marine_convoy_authority_ready
 			add_equipment_to_stockpile = {
 				type = convoy
-				amount = 10
+				amount = 15
 			}
+			add_political_power = 25
 			navy_experience = 15
-			ireland_recompute_provision = yes
+			hidden_effect = {
+				add_to_variable = { ireland_provision_transport = constant:ireland_maritime.ledger_large_delta }
+				add_to_variable = { ireland_provision_maritime = constant:ireland_maritime.ledger_large_delta }
+				add_to_variable = { ireland_readiness_supply = constant:ireland_maritime.ledger_major_delta }
+				ireland_recompute_provision = yes
+				ireland_recompute_readiness = yes
+			}
+			add_to_variable = { var = ireland_maritime_supply_consumption_factor value = constant:ireland_maritime.atlantic_supply_consumption tooltip = supply_consumption_factor_tt }
+			add_to_variable = { var = ireland_maritime_convoy_escort_efficiency value = constant:ireland_maritime.atlantic_escort_efficiency tooltip = convoy_escort_efficiency_tt }
 		}
 		ai_will_do = {
 			base = 10
@@ -2993,17 +3068,30 @@ focus_tree = {
 		prerequisite = {
 			focus = ireland_atlantic_convoy_office
 		}
+		prerequisite = {
+			focus = ireland_interoperability
+		}
 		available = {
-			has_completed_focus = ireland_interoperability
 			has_country_flag = ireland_atlantic_convoy_office_ready
 		}
 		completion_reward = {
 			set_country_flag = ireland_regional_maritime_defence_pact_ready
 			set_country_flag = ireland_regional_maritime_defence_pact_complete
 			set_country_flag = ireland_regional_maritime_defence_pact_signed
-			add_command_power = 15
+			add_political_power = 50
+			add_command_power = 20
+			army_experience = 10
+			air_experience = 10
 			navy_experience = 20
-			ireland_recompute_readiness = yes
+			hidden_effect = {
+				add_to_variable = { ireland_readiness_intelligence = constant:ireland_maritime.ledger_large_delta }
+				add_to_variable = { ireland_readiness_supply = constant:ireland_maritime.ledger_large_delta }
+				add_to_variable = { ireland_readiness_maritime_protection = constant:ireland_maritime.ledger_large_delta }
+				ireland_recompute_readiness = yes
+			}
+			add_to_variable = { var = ireland_maritime_factory_output_factor value = constant:ireland_maritime.pact_factory_output tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { var = ireland_maritime_army_defence_factor value = constant:ireland_maritime.pact_army_defence tooltip = army_defence_factor_tt }
+			add_to_variable = { var = ireland_maritime_repair_speed_factor value = constant:ireland_maritime.pact_repair_speed tooltip = repair_speed_factor_tt }
 		}
 		ai_will_do = {
 			base = 8

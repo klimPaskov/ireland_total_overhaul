@@ -1,0 +1,35 @@
+# Ireland maritime-service tuning. Focus rewards use these shared values so the
+# branch can be balanced without editing its graph or scripted effects.
+
+ireland_maritime = {
+	schema = {
+		any_key = yes
+		data = fixed_point
+	}
+
+	ledger_minor_delta = 1
+	ledger_standard_delta = 2
+	ledger_major_delta = 3
+	ledger_large_delta = 4
+
+	reconstruction_efficiency_gain = 0.03
+	reconstruction_escort_efficiency = 0.05
+	trawler_factory_output = 0.03
+	patrol_stability = 0.01
+	patrol_escort_efficiency = 0.03
+	reserve_supply_consumption = -0.02
+	reserve_army_defence = 0.02
+	staff_research_speed = 0.02
+	staff_repair_speed = 0.03
+	harbour_army_defence = 0.02
+	harbour_repair_speed = 0.04
+	cobh_factory_output = 0.02
+	cobh_dockyard_output = 0.05
+	swilly_research_speed = 0.01
+	swilly_stability = 0.01
+	atlantic_supply_consumption = -0.03
+	atlantic_escort_efficiency = 0.07
+	pact_factory_output = 0.03
+	pact_army_defence = 0.02
+	pact_repair_speed = 0.03
+}
