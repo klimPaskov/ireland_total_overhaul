@@ -6,8 +6,8 @@
 # Route class legend: H = documented historical route; P = plausible constitutional or institutional route;
 # A = deliberate absurdity, concealed behind independent evidence, state-interface failure and rare conditions.
 # Focuses set route/proof flags and hand off lifecycle work to the parent scripted systems. This file grants
-# no Northern territory, cores, free industry, equipment, units, fuel, shipping, administration, alignment
-# or recognition. Treaty Port and Northern work remains a project, decision, mission and integration surface.
+# no Northern territory, cores, free armies, annexation, administration, alignment or recognition. Limited
+# naval-readiness grants are scoped investments; Treaty Port and Northern work remains a project surface.
 # Route capstones call the conclusion-review helper only after material, readiness, foreign, Northern and
 # postwar proof flags are present. Recovery bridges call cleanup so failed routes can be re-entered lawfully.
 focus_tree = {
@@ -71,6 +71,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_civil_war_memory
+		prerequisite = { focus = ireland_national_settlement }
 		icon = GFX_focus_ireland_civil_war_memory
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -119,6 +120,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_economic_war_review
+		prerequisite = { focus = ireland_institutional_survey }
 		icon = GFX_focus_ireland_economic_war_review
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
@@ -172,11 +174,12 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_defence_estimates
+		prerequisite = { focus = ireland_economic_war_review }
 		icon = GFX_focus_ireland_defence_estimates
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
 		x = 10
-		y = 4
+		y = 5
 		available = {
 			has_completed_focus = ireland_institutional_survey
 		}
@@ -193,7 +196,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
 		x = 10
-		y = 5
+		y = 6
 		prerequisite = {
 			focus = ireland_defence_estimates
 		}
@@ -210,7 +213,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP }
 		x = 10
-		y = 6
+		y = 7
 		prerequisite = {
 			focus = ireland_command_audit
 		}
@@ -277,6 +280,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_border_observation
+		prerequisite = { focus = ireland_national_settlement }
 		icon = GFX_focus_ireland_border_observation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -468,8 +472,8 @@ focus_tree = {
 		prerequisite = {
 			focus = ireland_election_mandate
 		}
-		available = {
-			has_completed_focus = ireland_plebiscite_mandate
+		prerequisite = {
+			focus = ireland_plebiscite_mandate
 		}
 		completion_reward = {
 			ireland_grant_institutional_focus_reward = yes
@@ -573,12 +577,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 0
 		y = 17
-		prerequisite = {
-			focus = ireland_sovereignty_mandate
-		}
+		prerequisite = { focus = ireland_active_neutrality }
 		available = {
 			date > 1939.9.1
-			has_completed_focus = ireland_active_neutrality
 		}
 		completion_reward = {
 			ireland_grant_institutional_focus_reward = yes
@@ -597,8 +598,8 @@ focus_tree = {
 		prerequisite = {
 			focus = ireland_treaty_port_transfer
 		}
-		available = {
-			has_completed_focus = ireland_sovereignty_mandate
+		prerequisite = {
+			focus = ireland_sovereignty_mandate
 		}
 		completion_reward = {
 			ireland_grant_diplomatic_focus_reward = yes
@@ -610,6 +611,7 @@ focus_tree = {
 # H/P de Valera stewardship, reconciliation and Emergency routes
 	focus = {
 		id = ireland_republican_government
+		prerequisite = { focus = ireland_plebiscite_mandate }
 		icon = GFX_focus_ireland_republican_government
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -692,27 +694,8 @@ focus_tree = {
 		prerequisite = {
 			focus = ireland_party_of_government
 		}
-		mutually_exclusive = {
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			not = { has_country_flag = ireland_armed_takeover }
 			has_completed_focus = ireland_constitutional_draft
 		}
@@ -802,26 +785,6 @@ focus_tree = {
 		y = 18
 		prerequisite = {
 			focus = ireland_republican_legitimacy
-		}
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
 		}
 		available = {
 			ireland_alternate_focus_ai_allowed = yes
@@ -922,6 +885,9 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_emergency_direction
+		prerequisite = { focus = ireland_emergency_opening }
+		# Historical AI rejects this alternate route through its AI gate and weight;
+		# human players may still choose it with historical focuses enabled.
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -934,27 +900,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 0
 		y = 18
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
 			date > 1939.9.1
 			has_completed_focus = ireland_party_of_government
@@ -1013,15 +960,13 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_emergency_repeal
+		prerequisite = { focus = ireland_emergency_review }
 		icon = GFX_focus_ireland_emergency_repeal
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 0
 		y = 21
-		available = {
-			has_completed_focus = ireland_recovery_bridge
-			has_completed_focus = ireland_emergency_review
-		}
+		available = { has_completed_focus = ireland_emergency_review }
 		completion_reward = {
 			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_emergency_repeal_complete
@@ -1033,7 +978,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_de_valera_emergency_capstone
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 0
+		x = 2
 		y = 22
 		prerequisite = {
 			focus = ireland_emergency_repeal
@@ -1056,6 +1001,7 @@ focus_tree = {
 # P Lemass developmental succession route
 	focus = {
 		id = ireland_lemass_developmental
+		prerequisite = { focus = ireland_active_neutrality }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -1068,27 +1014,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		x = 4
 		y = 18
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
 			has_country_flag = ireland_valid_succession
 			has_country_flag = ireland_developmental_standing_ready
@@ -1256,6 +1183,7 @@ focus_tree = {
 # H/P Fine Gael, Cosgrave, Mulcahy, Costello and Dillon routes
 	focus = {
 		id = ireland_constitutional_opposition
+		prerequisite = { focus = ireland_treaty_port_transfer }
 		icon = GFX_focus_ireland_constitutional_opposition
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
@@ -1347,27 +1275,8 @@ focus_tree = {
 		prerequisite = {
 			focus = ireland_state_we_built
 		}
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
 			not = { has_country_flag = ireland_armed_takeover }
 			has_completed_focus = ireland_government_from_opposition
@@ -1464,6 +1373,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_mulcahy_succession
+		prerequisite = { focus = ireland_government_from_opposition }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -1476,27 +1386,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 10
 		y = 19
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
 			has_country_flag = ireland_civilian_succession_ready
 			has_completed_focus = ireland_government_from_opposition
@@ -1540,8 +1431,8 @@ focus_tree = {
 		prerequisite = {
 			focus = ireland_professional_defence_council
 		}
-		available = {
-			has_completed_focus = ireland_security_under_law
+		prerequisite = {
+			focus = ireland_security_under_law
 		}
 		completion_reward = {
 			ireland_grant_military_focus_reward = yes
@@ -1594,6 +1485,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_costello_coalition
+		prerequisite = { focus = ireland_government_from_opposition }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -1606,27 +1498,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 14
 		y = 19
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
 			has_country_flag = ireland_coalition_arithmetic_ready
 			has_completed_focus = ireland_government_from_opposition
@@ -1706,6 +1579,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_dillon_public_dissent
+		prerequisite = { focus = ireland_government_from_opposition }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -1716,29 +1590,10 @@ focus_tree = {
 		icon = GFX_focus_ireland_dillon_public_dissent
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 18
+		x = 12
 		y = 19
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
 			date > 1942.1.1
 			has_completed_focus = ireland_constitutional_opposition
@@ -1772,7 +1627,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_dillon_intervention_caucus
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 18
+		x = 12
 		y = 20
 		prerequisite = {
 			focus = ireland_dillon_public_dissent
@@ -1801,7 +1656,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_dillon_war_assent
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 18
+		x = 12
 		y = 21
 		prerequisite = {
 			focus = ireland_dillon_intervention_caucus
@@ -1834,6 +1689,7 @@ focus_tree = {
 # P Norton parliamentary route
 	focus = {
 		id = ireland_norton_parliamentary
+		prerequisite = { focus = ireland_regional_participation }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -1846,27 +1702,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = -12
 		y = 18
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
 			has_country_flag = ireland_labour_organisation_ready
 			has_completed_focus = ireland_government_formation
@@ -1967,6 +1804,7 @@ focus_tree = {
 # P Clann na Talmhan and constitutional vocational route
 	focus = {
 		id = ireland_clann_founding
+		prerequisite = { focus = ireland_regional_participation }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -1979,27 +1817,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = -14
 		y = 18
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
 			date > 1939.6.29
 			has_completed_focus = ireland_rural_price_board
@@ -2075,6 +1894,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_vocational_constitution
+		prerequisite = { focus = ireland_regional_participation }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -2087,27 +1907,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
 		x = -16
 		y = 18
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
 			has_country_flag = ireland_vocational_mandate_ready
 			has_completed_focus = ireland_church_labour_consultation
@@ -2191,10 +1992,11 @@ focus_tree = {
 # H/P serious culture and independent evidence capacity
 	focus = {
 		id = ireland_cultural_survey
+		prerequisite = { focus = ireland_replacement_charter }
 		icon = GFX_focus_ireland_cultural_survey
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-		x = -20
+		x = -18
 		y = 15
 		available = {
 			has_completed_focus = ireland_language_service
@@ -2388,11 +2190,12 @@ focus_tree = {
 # P support economy and National Provision lane
 	focus = {
 		id = ireland_provision_baseline
+		prerequisite = { focus = ireland_emergency_repeal }
 		icon = GFX_focus_ireland_provision_baseline
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		x = -6
-		y = 26
+		y = 25
 		available = {
 			has_completed_focus = ireland_1938_trade_settlement
 			has_completed_focus = ireland_rural_price_board
@@ -2447,6 +2250,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_transport_priority
+		prerequisite = { focus = ireland_provision_baseline }
 		icon = GFX_focus_ireland_transport_priority
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
@@ -2643,11 +2447,12 @@ focus_tree = {
 # P support defence, maritime, air and National Readiness lane
 	focus = {
 		id = ireland_readiness_baseline
+		prerequisite = { focus = ireland_emergency_repeal }
 		icon = GFX_focus_ireland_readiness_baseline
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 6
-		y = 26
+		y = 25
 		available = {
 			has_completed_focus = ireland_defence_estimates
 			has_completed_focus = ireland_command_audit
@@ -2703,6 +2508,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_coastwatch
+		prerequisite = { focus = ireland_readiness_baseline }
 		icon = GFX_focus_ireland_coastwatch
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP }
@@ -2730,6 +2536,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ireland_coastwatch
 		}
+		prerequisite = { focus = ireland_readiness_command }
 		available = {
 			has_completed_focus = ireland_readiness_command
 			has_country_flag = ireland_civilian_defence_review_ready
@@ -3334,10 +3141,11 @@ focus_tree = {
 # P/H active neutrality, diplomacy and foreign safeguards lane
 	focus = {
 		id = ireland_strict_neutrality
+		prerequisite = { focus = ireland_readiness_baseline }
 		icon = GFX_focus_ireland_strict_neutrality
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 18
+		x = 14
 		y = 26
 		available = {
 			has_completed_focus = ireland_sovereignty_mandate
@@ -3374,7 +3182,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_treaty_port_diplomacy
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 22
+		x = 16
 		y = 27
 		prerequisite = {
 			focus = ireland_strict_neutrality
@@ -3394,7 +3202,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_british_leverage_management
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 22
+		x = 18
 		y = 28
 		prerequisite = {
 			focus = ireland_treaty_port_diplomacy
@@ -3433,11 +3241,12 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_vatican_small_state_mediation
+		prerequisite = { focus = ireland_strict_neutrality }
 		icon = GFX_focus_ireland_vatican_small_state_mediation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 14
-		y = 29
+		x = 12
+		y = 28
 		available = {
 			ireland_vatican_partner_valid = yes
 			has_completed_focus = ireland_strict_neutrality
@@ -3501,11 +3310,12 @@ focus_tree = {
 # H/P Northern Ireland ledger, settlement models and integration review
 	focus = {
 		id = ireland_northern_settlement_ledger
+		prerequisite = { focus = ireland_strict_neutrality }
 		icon = GFX_focus_ireland_northern_settlement_ledger
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 28
-		y = 26
+		x = 20
+		y = 27
 		available = {
 			has_completed_focus = ireland_northern_contacts
 			has_completed_focus = ireland_border_observation
@@ -3525,7 +3335,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 28
-		y = 27
+		y = 28
 		prerequisite = {
 			focus = ireland_northern_settlement_ledger
 		}
@@ -3545,7 +3355,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		x = 32
-		y = 28
+		y = 29
 		prerequisite = {
 			focus = ireland_northern_local_authorities
 		}
@@ -3565,7 +3375,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 		x = 24
-		y = 28
+		y = 29
 		prerequisite = {
 			focus = ireland_northern_local_authorities
 		}
@@ -3585,7 +3395,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
 		x = 28
-		y = 29
+		y = 30
 		prerequisite = {
 			focus = ireland_northern_local_authorities
 		}
@@ -3605,7 +3415,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
 		x = 34
-		y = 29
+		y = 30
 		prerequisite = {
 			focus = ireland_northern_trade_corridor
 		}
@@ -3625,7 +3435,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 32
-		y = 30
+		y = 31
 		prerequisite = {
 			focus = ireland_northern_trade_corridor
 		}
@@ -3652,7 +3462,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 26
-		y = 30
+		y = 31
 		prerequisite = {
 			focus = ireland_northern_labour_social_bridge
 		}
@@ -3672,7 +3482,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 30
-		y = 33
+		y = 34
 		prerequisite = {
 			focus = ireland_northern_federal_preparation
 			focus = ireland_northern_unitary_preparation
@@ -3702,7 +3512,7 @@ focus_tree = {
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 28
-		y = 34
+		y = 35
 		prerequisite = {
 			focus = ireland_northern_regional_review
 		}
@@ -3720,11 +3530,12 @@ focus_tree = {
 # H/P recovery bridges, postwar review and material conclusion proof
 	focus = {
 		id = ireland_recovery_bridge
+		prerequisite = { focus = ireland_regional_maritime_defence_pact }
 		icon = GFX_focus_ireland_recovery_bridge
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 28
-		y = 36
+		x = 14
+		y = 35
 		available = {
 			OR = {
 				has_country_flag = ireland_route_failure
@@ -3775,8 +3586,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_restore_constitutional_calendar
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 28
-		y = 37
+		x = 14
+		y = 36
 		prerequisite = {
 			focus = ireland_recovery_bridge
 		}
@@ -3799,8 +3610,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_emergency_accounting
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 30
-		y = 38
+		x = 16
+		y = 37
 		prerequisite = {
 			focus = ireland_restore_constitutional_calendar
 		}
@@ -3815,11 +3626,12 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_demobilisation_charter
+		prerequisite = { focus = ireland_emergency_accounting }
 		icon = GFX_focus_ireland_demobilisation_charter
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
-		x = 28
-		y = 43
+		x = 14
+		y = 40
 		available = {
 			has_country_flag = ireland_demobilisation_ready
 			has_completed_focus = ireland_emergency_accounting
@@ -3837,8 +3649,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_reconstruction_mandate
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 28
-		y = 44
+		x = 14
+		y = 41
 		prerequisite = {
 			focus = ireland_demobilisation_charter
 		}
@@ -3858,8 +3670,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_foreign_postwar_review
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 30
-		y = 45
+		x = 16
+		y = 42
 		prerequisite = {
 			focus = ireland_reconstruction_mandate
 		}
@@ -3878,8 +3690,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_material_conclusion_proof
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 28
-		y = 46
+		x = 14
+		y = 43
 		prerequisite = {
 			focus = ireland_foreign_postwar_review
 		}
@@ -3900,6 +3712,7 @@ focus_tree = {
 # P IRA civil-republican and Army Council routes; A escalation requires proof
 	focus = {
 		id = ireland_ira_republican_bridge
+		prerequisite = { focus = ireland_provision_conclusion }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -3911,32 +3724,13 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = -6
-		y = 38
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
+		y = 35
 		allow_branch = {
 			has_country_flag = ireland_ira_organization_ready
 			has_country_flag = ireland_ira_transition_ready
 		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
 			has_country_flag = ireland_ira_organization_ready
 			has_country_flag = ireland_ira_transition_ready
@@ -3959,7 +3753,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = -6
-		y = 39
+		y = 36
 		prerequisite = {
 			focus = ireland_ira_republican_bridge
 		}
@@ -3978,7 +3772,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
 		x = -6
-		y = 40
+		y = 37
 		prerequisite = {
 			focus = ireland_reassemble_ghq
 		}
@@ -3998,7 +3792,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = -8
-		y = 41
+		y = 38
 		prerequisite = {
 			focus = ireland_convention_of_commands
 		}
@@ -4014,11 +3808,12 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_arms_before_authority
+		prerequisite = { focus = ireland_republic_in_districts }
 		icon = GFX_focus_ireland_arms_before_authority
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
 		x = -10
-		y = 42
+		y = 39
 		mutually_exclusive = {
 			focus = ireland_authority_before_arms
 		}
@@ -4038,7 +3833,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
 		x = -6
-		y = 42
+		y = 39
 		mutually_exclusive = {
 			focus = ireland_arms_before_authority
 		}
@@ -4060,7 +3855,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
 		x = -10
-		y = 43
+		y = 40
 		prerequisite = {
 			focus = ireland_arms_before_authority
 		}
@@ -4081,7 +3876,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
 		x = -8
-		y = 43
+		y = 40
 		prerequisite = {
 			focus = ireland_arms_before_authority
 			focus = ireland_authority_before_arms
@@ -4106,7 +3901,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = -6
-		y = 44
+		y = 41
 		prerequisite = {
 			focus = ireland_authority_before_arms
 		}
@@ -4125,7 +3920,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP FOCUS_FILTER_BALANCE_OF_POWER }
 		x = -10
-		y = 44
+		y = 41
 		prerequisite = {
 			focus = ireland_german_channel
 		}
@@ -4145,7 +3940,7 @@ focus_tree = {
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = -8
-		y = 45
+		y = 42
 		prerequisite = {
 			focus = ireland_ira_civil_authority
 			focus = ireland_ira_army_council
@@ -4171,6 +3966,7 @@ focus_tree = {
 # P Republican Congress plural and vanguard routes; A escalation requires proof
 	focus = {
 		id = ireland_congress_reform_bridge
+		prerequisite = { focus = ireland_ira_republican_bridge }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -4181,28 +3977,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_congress_reform_bridge
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -22
-		y = 38
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
+		x = -14
+		y = 37
 		allow_branch = {
 			has_country_flag = ireland_congress_organization_ready
 			has_country_flag = ireland_congress_transition_ready
@@ -4228,8 +4004,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_organise_congress
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -22
-		y = 39
+		x = -14
+		y = 38
 		prerequisite = {
 			focus = ireland_congress_reform_bridge
 		}
@@ -4247,8 +4023,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_union_local_mandate
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -22
-		y = 41
+		x = -14
+		y = 40
 		prerequisite = {
 			focus = ireland_organise_congress
 		}
@@ -4267,8 +4043,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_congress_plural_republic
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -24
-		y = 42
+		x = -16
+		y = 41
 		mutually_exclusive = {
 			focus = ireland_congress_vanguard_cell
 		}
@@ -4289,8 +4065,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_congress_vanguard_cell
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -20
-		y = 42
+		x = -12
+		y = 41
 		mutually_exclusive = {
 			focus = ireland_congress_plural_republic
 		}
@@ -4311,18 +4087,14 @@ focus_tree = {
 		icon = GFX_focus_ireland_extra_parliamentary_transition
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -22
-		y = 43
+		x = -14
+		y = 42
 		prerequisite = {
-			focus = ireland_union_local_mandate
+			focus = ireland_congress_plural_republic
+			focus = ireland_congress_vanguard_cell
 		}
 		available = {
 			has_country_flag = ireland_congress_transition_ready
-			has_completed_focus = ireland_public_order_review
-			OR = {
-				has_completed_focus = ireland_congress_plural_republic
-				has_completed_focus = ireland_congress_vanguard_cell
-			}
 		}
 		completion_reward = {
 			ireland_grant_institutional_focus_reward = yes
@@ -4335,8 +4107,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_congress_plural_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -24
-		y = 44
+		x = -16
+		y = 43
 		prerequisite = {
 			focus = ireland_extra_parliamentary_transition
 		}
@@ -4359,8 +4131,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_congress_vanguard_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -20
-		y = 44
+		x = -12
+		y = 43
 		prerequisite = {
 			focus = ireland_extra_parliamentary_transition
 		}
@@ -4382,6 +4154,7 @@ focus_tree = {
 # P O'Duffy personal-command and corporate-order routes; A escalation requires proof
 	focus = {
 		id = ireland_oduffy_network_revival
+		prerequisite = { focus = ireland_lemass_developmental_capstone }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -4392,28 +4165,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_oduffy_network_revival
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 2
-		y = 38
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
+		x = 0
+		y = 35
 		allow_branch = {
 			has_country_flag = ireland_oduffy_network_ready
 			has_country_flag = ireland_oduffy_crisis_ready
@@ -4439,8 +4192,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_oduffy_personal_command
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = 2
-		y = 39
+		x = 0
+		y = 36
 		prerequisite = {
 			focus = ireland_oduffy_network_revival
 		}
@@ -4466,8 +4219,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_veteran_employer_league
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = -2
-		y = 40
+		x = -4
+		y = 37
 		prerequisite = {
 			focus = ireland_oduffy_network_revival
 		}
@@ -4483,11 +4236,12 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_corporate_estates
+		prerequisite = { focus = ireland_veteran_employer_league }
 		icon = GFX_focus_ireland_corporate_estates
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 4
-		y = 43
+		y = 39
 		available = {
 			has_country_flag = ireland_corporate_estates_ready
 			has_completed_focus = ireland_producer_accounting
@@ -4505,7 +4259,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
 		x = 2
-		y = 44
+		y = 41
 		prerequisite = {
 			focus = ireland_corporate_estates
 		}
@@ -4525,7 +4279,7 @@ focus_tree = {
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 4
-		y = 45
+		y = 42
 		prerequisite = {
 			focus = ireland_corporate_estates
 		}
@@ -4546,8 +4300,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_oduffy_personal_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 0
-		y = 43
+		x = -2
+		y = 40
 		mutually_exclusive = {
 			focus = ireland_oduffy_corporate_capstone
 		}
@@ -4575,7 +4329,7 @@ focus_tree = {
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 4
-		y = 46
+		y = 43
 		mutually_exclusive = {
 			focus = ireland_oduffy_personal_capstone
 		}
@@ -4600,6 +4354,7 @@ focus_tree = {
 # P clerical guardianship and producer-council route
 	focus = {
 		id = ireland_clerical_failure_bridge
+		prerequisite = { focus = ireland_corporate_estates }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -4610,28 +4365,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_clerical_failure_bridge
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 8
-		y = 43
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_ailtiri_cell_network
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
+		x = 6
+		y = 40
 		allow_branch = {
 			has_country_flag = ireland_clerical_failure_ready
 			has_country_flag = ireland_service_state_ready
@@ -4656,8 +4391,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_service_state
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 8
-		y = 44
+		x = 6
+		y = 41
 		prerequisite = {
 			focus = ireland_clerical_failure_bridge
 		}
@@ -4675,8 +4410,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_producer_councils
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 10
-		y = 44
+		x = 8
+		y = 41
 		prerequisite = {
 			focus = ireland_clerical_failure_bridge
 		}
@@ -4695,8 +4430,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_clerical_guardianship
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 8
-		y = 45
+		x = 6
+		y = 42
 		prerequisite = {
 			focus = ireland_service_state
 		}
@@ -4715,8 +4450,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_producer_constitution
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 10
-		y = 46
+		x = 8
+		y = 43
 		prerequisite = {
 			focus = ireland_producer_councils
 		}
@@ -4737,8 +4472,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_clerical_route_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 8
-		y = 47
+		x = 6
+		y = 44
 		prerequisite = {
 			focus = ireland_clerical_guardianship
 			focus = ireland_producer_constitution
@@ -4761,31 +4496,12 @@ focus_tree = {
 # P dated Ailtirí na hAiséirghe total-state route
 	focus = {
 		id = ireland_ailtiri_cell_network
+		prerequisite = { focus = ireland_readiness_conclusion }
 		icon = GFX_focus_ireland_ailtiri_cell_network
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 16
-		y = 38
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_high_king_evidence_gate
-			focus = ireland_five_province_mandates
-			focus = ireland_otherworld_investigation
-		}
+		x = 10
+		y = 35
 		allow_branch = {
 			date > 1940.9.1
 			has_country_flag = ireland_ailtiri_cells_ready
@@ -4796,6 +4512,7 @@ focus_tree = {
 			}
 		}
 		available = {
+			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
 			date > 1940.9.1
 			has_country_flag = ireland_ailtiri_cells_ready
@@ -4840,8 +4557,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_language_cells
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-		x = 16
-		y = 39
+		x = 10
+		y = 36
 		prerequisite = {
 			focus = ireland_ailtiri_cell_network
 		}
@@ -4859,8 +4576,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_june_1942_public_launch
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 18
-		y = 40
+		x = 12
+		y = 37
 		prerequisite = {
 			focus = ireland_language_cells
 		}
@@ -4882,8 +4599,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_ceannaire_state
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_AIR_XP }
-		x = 16
-		y = 41
+		x = 10
+		y = 38
 		prerequisite = {
 			focus = ireland_june_1942_public_launch
 		}
@@ -4902,8 +4619,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_corporate_gaelic_nation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 18
-		y = 43
+		x = 12
+		y = 40
 		prerequisite = {
 			focus = ireland_ceannaire_state
 		}
@@ -4922,8 +4639,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_ailtiri_total_state_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 16
-		y = 44
+		x = 10
+		y = 41
 		prerequisite = {
 			focus = ireland_corporate_gaelic_nation
 		}
@@ -4946,6 +4663,7 @@ focus_tree = {
 # P High Kingship constitutional route with A sacral escalation
 	focus = {
 		id = ireland_high_king_evidence_gate
+		prerequisite = { focus = ireland_oduffy_corporate_capstone }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -4956,26 +4674,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_high_king_evidence_gate
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 12
-		y = 50
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-		}
+		x = 2
+		y = 44
 		allow_branch = {
 			has_country_flag = ireland_high_king_evidence_verified
 			has_country_flag = ireland_high_king_convention_ready
@@ -4991,8 +4691,6 @@ focus_tree = {
 			ireland_grant_technical_focus_reward = yes
 			set_country_flag = ireland_high_king_evidence_gate_complete
 			set_country_flag = ireland_route_high_king
-			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
-			ireland_commit_route = yes
 		}
 	}
 	focus = {
@@ -5000,8 +4698,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_high_king_convention
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 12
-		y = 51
+		x = 2
+		y = 45
 		prerequisite = {
 			focus = ireland_high_king_evidence_gate
 		}
@@ -5018,8 +4716,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_elective_crown
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 10
-		y = 52
+		x = 0
+		y = 46
 		mutually_exclusive = {
 			focus = ireland_guardian_crown
 		}
@@ -5040,8 +4738,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_guardian_crown
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 14
-		y = 52
+		x = 4
+		y = 46
 		mutually_exclusive = {
 			focus = ireland_elective_crown
 		}
@@ -5062,17 +4760,15 @@ focus_tree = {
 		icon = GFX_focus_ireland_crown_powers_charter
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 12
-		y = 53
+		x = 2
+		y = 47
 		prerequisite = {
 			focus = ireland_high_king_convention
 		}
 		available = {
 			has_country_flag = ireland_high_king_ratification_ready
-			has_completed_focus = ireland_dail_supremacy_clause
 			OR = {
-				has_completed_focus = ireland_elective_crown
-				has_completed_focus = ireland_guardian_crown
+				has_country_flag = ireland_high_king_constitutional_path
 				has_country_flag = ireland_high_king_royal_household_path
 				has_country_flag = ireland_high_king_sacral_path
 				has_country_flag = ireland_high_king_captured_crown_path
@@ -5105,8 +4801,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_high_king_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 12
-		y = 55
+		x = 2
+		y = 49
 		prerequisite = {
 			focus = ireland_crown_powers_charter
 		}
@@ -5128,6 +4824,7 @@ focus_tree = {
 # P Five Provinces federal route with A pentarchic escalation
 	focus = {
 		id = ireland_five_province_mandates
+		prerequisite = { focus = ireland_ira_route_capstone }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -5138,26 +4835,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_five_province_mandates
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -20
-		y = 50
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-		}
+		x = -4
+		y = 44
 		allow_branch = {
 			has_country_flag = ireland_five_provinces_mandates_ready
 			has_country_flag = ireland_five_provinces_convention_ready
@@ -5173,8 +4852,6 @@ focus_tree = {
 			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_five_province_mandates_complete
 			set_country_flag = ireland_route_five_provinces
-			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
-			ireland_commit_route = yes
 		}
 	}
 	focus = {
@@ -5182,8 +4859,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_federal_convention
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -20
-		y = 51
+		x = -4
+		y = 45
 		prerequisite = {
 			focus = ireland_five_province_mandates
 		}
@@ -5200,8 +4877,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_federal_republic
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -22
-		y = 52
+		x = -6
+		y = 46
 		prerequisite = {
 			focus = ireland_federal_convention
 		}
@@ -5219,8 +4896,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_ulster_rule
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -18
-		y = 52
+		x = -2
+		y = 46
 		prerequisite = {
 			focus = ireland_federal_convention
 		}
@@ -5238,8 +4915,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_pentarchy_guardians
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -20
-		y = 53
+		x = -4
+		y = 47
 		prerequisite = {
 			focus = ireland_ulster_rule
 		}
@@ -5260,12 +4937,13 @@ focus_tree = {
 		icon = GFX_focus_ireland_five_provinces_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -20
-		y = 55
+		x = -4
+		y = 49
 		prerequisite = {
 			focus = ireland_federal_republic
 			focus = ireland_pentarchy_guardians
 		}
+		prerequisite = { focus = ireland_ulster_rule }
 		available = {
 			has_country_flag = ireland_provision_conclusion_ready
 			has_country_flag = ireland_readiness_conclusion_ready
@@ -5273,11 +4951,6 @@ focus_tree = {
 			has_country_flag = ireland_foreign_posture_selected
 			has_country_flag = ireland_conclusion_proof
 			has_country_flag = ireland_five_provinces_mandate_conclusion_valid
-			OR = {
-				has_completed_focus = ireland_federal_republic
-				has_completed_focus = ireland_pentarchy_guardians
-			}
-			has_completed_focus = ireland_ulster_rule
 		}
 		completion_reward = {
 			ireland_grant_capstone_focus_reward = yes
@@ -5290,6 +4963,7 @@ focus_tree = {
 # P Otherworld compact/containment routes with A dominion escalation
 	focus = {
 		id = ireland_otherworld_investigation
+		prerequisite = { focus = ireland_material_conclusion_proof }
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -5300,26 +4974,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_otherworld_investigation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 20
-		y = 50
-		mutually_exclusive = {
-			focus = ireland_de_valera_stewardship
-			focus = ireland_de_valera_reconciliation
-			focus = ireland_emergency_direction
-			focus = ireland_lemass_developmental
-			focus = ireland_cosgrave_institutional
-			focus = ireland_mulcahy_succession
-			focus = ireland_costello_coalition
-			focus = ireland_dillon_public_dissent
-			focus = ireland_norton_parliamentary
-			focus = ireland_clann_founding
-			focus = ireland_vocational_constitution
-			focus = ireland_ira_republican_bridge
-			focus = ireland_congress_reform_bridge
-			focus = ireland_oduffy_network_revival
-			focus = ireland_clerical_failure_bridge
-			focus = ireland_ailtiri_cell_network
-		}
+		x = 10
+		y = 44
 		allow_branch = {
 			has_country_flag = ireland_hidden_content_permission
 			has_country_flag = ireland_hidden_content_game_rule_enabled
@@ -5340,8 +4996,6 @@ focus_tree = {
 			ireland_grant_institutional_focus_reward = yes
 			set_country_flag = ireland_otherworld_investigation_complete
 			set_country_flag = ireland_route_otherworld
-			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
-			ireland_commit_route = yes
 		}
 	}
 	focus = {
@@ -5349,8 +5003,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_otherworld_witnesses
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 18
-		y = 51
+		x = 8
+		y = 45
 		prerequisite = {
 			focus = ireland_otherworld_investigation
 		}
@@ -5368,8 +5022,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_otherworld_evidence_ledger
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 22
-		y = 52
+		x = 12
+		y = 46
 		prerequisite = {
 			focus = ireland_otherworld_investigation
 		}
@@ -5395,8 +5049,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_compact_with_otherworld
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 20
-		y = 53
+		x = 10
+		y = 47
 		prerequisite = {
 			focus = ireland_otherworld_witnesses
 		}
@@ -5415,15 +5069,15 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_containment_protocol
+		prerequisite = { focus = ireland_otherworld_evidence_ledger }
 		icon = GFX_focus_ireland_containment_protocol
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 18
-		y = 53
+		x = 12
+		y = 47
 		available = {
 			has_country_flag = ireland_otherworld_containment_ready
 			has_country_flag = ireland_otherworld_archive_reveal_complete
-			has_completed_focus = ireland_security_under_law
 			has_completed_focus = ireland_otherworld_evidence_ledger
 		}
 		completion_reward = {
@@ -5437,8 +5091,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_dominion_claim
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 22
-		y = 54
+		x = 12
+		y = 48
 		prerequisite = {
 			focus = ireland_compact_with_otherworld
 		}
@@ -5458,8 +5112,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_otherworld_guardians
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 20
-		y = 54
+		x = 14
+		y = 48
 		prerequisite = {
 			focus = ireland_compact_with_otherworld
 		}
@@ -5480,8 +5134,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_regional_thresholds
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 18
-		y = 55
+		x = 14
+		y = 49
 		prerequisite = {
 			focus = ireland_otherworld_guardians
 		}
@@ -5497,11 +5151,15 @@ focus_tree = {
 	}
 	focus = {
 		id = ireland_otherworld_statecraft
+		prerequisite = {
+			focus = ireland_dominion_claim
+			focus = ireland_regional_thresholds
+		}
 		icon = GFX_focus_ireland_otherworld_statecraft
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 22
-		y = 56
+		x = 12
+		y = 50
 		available = {
 			OR = { has_country_flag = ireland_otherworld_compact_path has_country_flag = ireland_otherworld_containment_path has_country_flag = ireland_otherworld_dominion_path }
 			has_completed_focus = ireland_foreign_safeguards
@@ -5521,8 +5179,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_otherworld_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 20
-		y = 57
+		x = 10
+		y = 51
 		prerequisite = {
 			focus = ireland_otherworld_statecraft
 		}
@@ -5544,18 +5202,31 @@ focus_tree = {
 # A final convergence and obligations route
 	focus = {
 		id = ireland_crown_province_convergence
+		prerequisite = {
+			focus = ireland_high_king_capstone
+			focus = ireland_five_provinces_capstone
+			focus = ireland_otherworld_capstone
+		}
 		icon = GFX_focus_ireland_crown_province_convergence
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 0
-		y = 60
+		x = 2
+		y = 52
 		available = {
-			has_country_flag = ireland_crown_conclusion_valid
-			has_country_flag = ireland_five_provinces_conclusion_valid
-			has_country_flag = ireland_otherworld_conclusion_valid
-			has_completed_focus = ireland_five_province_mandates
-			has_completed_focus = ireland_otherworld_investigation
-			has_completed_focus = ireland_high_king_evidence_gate
+			OR = {
+				AND = {
+					has_country_flag = ireland_crown_conclusion_valid
+					has_completed_focus = ireland_high_king_capstone
+				}
+				AND = {
+					has_country_flag = ireland_five_provinces_conclusion_valid
+					has_completed_focus = ireland_five_provinces_capstone
+				}
+				AND = {
+					has_country_flag = ireland_otherworld_conclusion_valid
+					has_completed_focus = ireland_otherworld_capstone
+				}
+			}
 		}
 		completion_reward = {
 			ireland_grant_institutional_focus_reward = yes
@@ -5568,8 +5239,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_fivefold_obligation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 0
-		y = 61
+		x = 2
+		y = 53
 		prerequisite = {
 			focus = ireland_crown_province_convergence
 		}
@@ -5588,8 +5259,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_otherworld_convergence
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 0
-		y = 62
+		x = 2
+		y = 54
 		prerequisite = {
 			focus = ireland_fivefold_obligation
 		}
@@ -5608,8 +5279,8 @@ focus_tree = {
 		icon = GFX_focus_ireland_convergence_order_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 0
-		y = 64
+		x = 2
+		y = 56
 		prerequisite = {
 			focus = ireland_otherworld_convergence
 		}

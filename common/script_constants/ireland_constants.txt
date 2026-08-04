@@ -44,11 +44,14 @@ ireland = {
 
 	value_min = 0
 	value_max = 100
-	# GUI status bands are shared by the conditions and Northern ledgers. Keep
-	# these thresholds in the runtime tuning contract so the display cannot
-	# drift from the underlying warning logic.
-	gui_status_ready_threshold = 60
-	gui_status_warning_threshold = 30
+	# Each national capacity has its own public status bands. These constants
+	# must match the thresholds explained in the panel tooltips.
+	gui_provision_ready_threshold = 50
+	gui_provision_critical_threshold = 35
+	gui_readiness_ready_threshold = 30
+	gui_readiness_critical_threshold = 20
+	gui_neutrality_ready_threshold = 65
+	gui_neutrality_critical_threshold = 50
 	northern_gui_ready_security_threshold = 40
 	northern_gui_ready_british_threshold = 20
 	northern_gui_critical_security_threshold = 20

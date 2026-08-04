@@ -1,414 +1,138 @@
-# Ireland Total Overhaul - compact Concealed Evidence / public dossier panel.
-# The sealed and revealed states share one decision-category-sized surface;
-# scripted-GUI visibility triggers decide which ledger is shown.
-# Registration handoff: window_name = ireland_concealed_evidence_ledger_window
-# context_type = decision_category; dirty = ireland_evidence_gui_dirty
-
+# Ireland Total Overhaul - Concealed Evidence decision-category panel.
 guiTypes = {
 	containerWindowType = {
 		name = "ireland_concealed_evidence_ledger_window"
 		orientation = upper_left
 		position = { x = 0 y = 0 }
-		size = { width = 510 height = 540 }
-		clipping = no
-
+		size = { width = 510 height = 490 }
+		clipping = yes
 		background = {
 			name = "ireland_concealed_evidence_ledger_background"
 			quadTextureSprite = "GFX_ireland_gui_evidence_background"
 			alwaystransparent = yes
 		}
-
 		instantTextBoxType = {
 			name = "ireland_concealed_evidence_ledger_title"
-			position = { x = 16 y = 10 }
+			position = { x = 18 y = 12 }
 			text = "ireland_concealed_evidence_ledger_title"
 			font = "hoi_24header"
 			format = left
 			maxWidth = 390
-			maxHeight = 30
+			maxHeight = 28
 		}
 		iconType = {
 			name = "ireland_concealed_evidence_status_ready"
 			spriteType = "GFX_ireland_gui_status_ready"
-			position = { x = 456 y = 10 }
+			position = { x = 458 y = 10 }
 			pdx_tooltip = "ireland_concealed_evidence_status_tooltip"
 		}
+		iconType = { name = "ireland_concealed_evidence_status_locked" spriteType = "GFX_ireland_gui_status_locked" position = { x = 458 y = 10 } pdx_tooltip = "ireland_concealed_evidence_locked_tooltip" }
+		iconType = { name = "ireland_concealed_evidence_status_warning" spriteType = "GFX_ireland_gui_status_warning" position = { x = 458 y = 10 } pdx_tooltip = "ireland_concealed_evidence_warning_tooltip" }
+		iconType = { name = "ireland_concealed_evidence_status_critical" spriteType = "GFX_ireland_gui_status_critical" position = { x = 458 y = 10 } pdx_tooltip = "ireland_concealed_evidence_critical_tooltip" }
 		instantTextBoxType = {
 			name = "ireland_concealed_evidence_available_state"
-			position = { x = 292 y = 40 }
+			position = { x = 300 y = 43 }
 			text = "ireland_concealed_evidence_available_state"
 			font = "hoi_16mbs"
 			format = right
-			maxWidth = 154
-			maxHeight = 22
+			maxWidth = 148
+			maxHeight = 20
 		}
 		instantTextBoxType = {
 			name = "ireland_concealed_evidence_sealed_notice"
-			position = { x = 16 y = 66 }
+			position = { x = 18 y = 48 }
 			text = "ireland_concealed_evidence_sealed_notice"
 			pdx_tooltip = "ireland_concealed_evidence_sealed_notice_tooltip"
 			font = "hoi_18b"
 			format = left
-			maxWidth = 476
+			maxWidth = 270
 			maxHeight = 24
 			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "ireland_concealed_evidence_reveal_requirement"
-			position = { x = 16 y = 92 }
+			position = { x = 18 y = 78 }
 			text = "ireland_concealed_evidence_reveal_requirement"
 			pdx_tooltip = "ireland_concealed_evidence_reveal_requirement_tooltip"
 			font = "hoi_16mbs"
 			format = left
-			maxWidth = 476
-			maxHeight = 30
+			maxWidth = 470
+			maxHeight = 38
 			alwaystransparent = yes
 		}
-
 		instantTextBoxType = {
 			name = "ireland_concealed_evidence_ledger_header"
-			position = { x = 16 y = 128 }
+			position = { x = 18 y = 120 }
 			text = "ireland_concealed_evidence_ledger_header"
 			font = "hoi_18b"
 			format = left
-			maxWidth = 476
+			maxWidth = 470
 			maxHeight = 22
 		}
-		# Concealed ledger rows. Each button remains a named scripted-GUI target
-		# and carries its own live value, label, hover state, and click region.
-		buttonType = {
-			name = "ireland_concealed_evidence_provenance_row"
-			quadTextureSprite = "GFX_button_238x38"
-			position = { x = 12 y = 154 }
-			buttonText = "ireland_concealed_evidence_provenance_row_text"
-			buttonFont = "hoi_16mbs"
-			clicksound = click_default
-			pdx_tooltip = "ireland_concealed_evidence_provenance_tooltip"
-		}
-		buttonType = {
-			name = "ireland_concealed_evidence_sites_row"
-			quadTextureSprite = "GFX_button_238x38"
-			position = { x = 258 y = 154 }
-			buttonText = "ireland_concealed_evidence_sites_row_text"
-			buttonFont = "hoi_16mbs"
-			clicksound = click_default
-			pdx_tooltip = "ireland_concealed_evidence_sites_tooltip"
-		}
-
-		buttonType = {
-			name = "ireland_concealed_evidence_public_knowledge_row"
-			quadTextureSprite = "GFX_button_238x38"
-			position = { x = 12 y = 192 }
-			buttonText = "ireland_concealed_evidence_public_knowledge_row_text"
-			buttonFont = "hoi_16mbs"
-			clicksound = click_default
-			pdx_tooltip = "ireland_concealed_evidence_public_knowledge_tooltip"
-		}
-		buttonType = {
-			name = "ireland_concealed_evidence_disqualifiers_row"
-			quadTextureSprite = "GFX_button_238x38"
-			position = { x = 258 y = 192 }
-			buttonText = "ireland_concealed_evidence_disqualifiers_row_text"
-			buttonFont = "hoi_16mbs"
-			clicksound = click_default
-			pdx_tooltip = "ireland_concealed_evidence_disqualifiers_tooltip"
-		}
-
-		buttonType = {
-			name = "ireland_concealed_evidence_obligations_row"
-			quadTextureSprite = "GFX_button_238x38"
-			position = { x = 12 y = 230 }
-			buttonText = "ireland_concealed_evidence_obligations_row_text"
-			buttonFont = "hoi_16mbs"
-			clicksound = click_default
-			pdx_tooltip = "ireland_concealed_evidence_obligations_tooltip"
-		}
+		buttonType = { name = "ireland_concealed_evidence_provenance_row" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 152 } clicksound = click_default pdx_tooltip = "ireland_concealed_evidence_provenance_tooltip" }
+		instantTextBoxType = { name = "ireland_concealed_evidence_provenance_row_label" position = { x = 87 y = 158 } text = "ireland_concealed_evidence_provenance_label" font = "hoi_16mbs" format = left maxWidth = 248 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_concealed_evidence_provenance_row_value" position = { x = 337 y = 158 } text = "ireland_concealed_evidence_provenance_value" font = "hoi_16mbs" format = right maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
+		buttonType = { name = "ireland_concealed_evidence_sites_row" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 184 } clicksound = click_default pdx_tooltip = "ireland_concealed_evidence_sites_tooltip" }
+		instantTextBoxType = { name = "ireland_concealed_evidence_sites_row_label" position = { x = 87 y = 190 } text = "ireland_concealed_evidence_sites_label" font = "hoi_16mbs" format = left maxWidth = 248 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_concealed_evidence_sites_row_value" position = { x = 337 y = 190 } text = "ireland_concealed_evidence_sites_value" font = "hoi_16mbs" format = right maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
+		buttonType = { name = "ireland_concealed_evidence_public_knowledge_row" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 216 } clicksound = click_default pdx_tooltip = "ireland_concealed_evidence_public_knowledge_tooltip" }
+		instantTextBoxType = { name = "ireland_concealed_evidence_public_knowledge_row_label" position = { x = 87 y = 222 } text = "ireland_concealed_evidence_public_knowledge_label" font = "hoi_16mbs" format = left maxWidth = 248 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_concealed_evidence_public_knowledge_row_value" position = { x = 337 y = 222 } text = "ireland_concealed_evidence_public_knowledge_value" font = "hoi_16mbs" format = right maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
+		buttonType = { name = "ireland_concealed_evidence_disqualifiers_row" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 248 } clicksound = click_default pdx_tooltip = "ireland_concealed_evidence_disqualifiers_tooltip" }
+		instantTextBoxType = { name = "ireland_concealed_evidence_disqualifiers_row_label" position = { x = 87 y = 254 } text = "ireland_concealed_evidence_disqualifiers_label" font = "hoi_16mbs" format = left maxWidth = 248 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_concealed_evidence_disqualifiers_row_value" position = { x = 337 y = 254 } text = "ireland_concealed_evidence_disqualifiers_value" font = "hoi_16mbs" format = right maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
+		buttonType = { name = "ireland_concealed_evidence_obligations_row" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 280 } clicksound = click_default pdx_tooltip = "ireland_concealed_evidence_obligations_tooltip" }
+		instantTextBoxType = { name = "ireland_concealed_evidence_obligations_row_label" position = { x = 87 y = 286 } text = "ireland_concealed_evidence_obligations_label" font = "hoi_16mbs" format = left maxWidth = 248 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_concealed_evidence_obligations_row_value" position = { x = 337 y = 286 } text = "ireland_concealed_evidence_obligations_value" font = "hoi_16mbs" format = right maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
 		instantTextBoxType = {
-			name = "ireland_concealed_evidence_credibility_summary"
-			position = { x = 258 y = 230 }
-			text = "ireland_concealed_evidence_credibility_summary"
-			pdx_tooltip = "ireland_concealed_evidence_credibility_summary_tooltip"
+			name = "ireland_concealed_evidence_selection"
+			position = { x = 18 y = 318 }
+			context_aware_text = [GetIrelandEvidenceSelection]
 			font = "hoi_16mbs"
 			format = left
-			maxWidth = 238
-			maxHeight = 34
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_concealed_evidence_category_region_summary"
-			position = { x = 16 y = 272 }
-			text = "ireland_concealed_evidence_category_region_summary"
-			pdx_tooltip = "ireland_concealed_evidence_category_region_summary_tooltip"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 476
-			maxHeight = 22
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_concealed_evidence_target_requirement"
-			position = { x = 16 y = 296 }
-			text = "ireland_concealed_evidence_target_requirement"
-			pdx_tooltip = "ireland_concealed_evidence_target_requirement_tooltip"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 476
-			maxHeight = 30
+			maxWidth = 470
+			maxHeight = 48
 			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "ireland_concealed_evidence_warning_message"
-			position = { x = 16 y = 329 }
+			position = { x = 18 y = 370 }
 			text = "ireland_concealed_evidence_warning_message"
 			pdx_tooltip = "ireland_concealed_evidence_warning_message_tooltip"
 			font = "hoi_16mbs"
 			format = left
-			maxWidth = 476
+			maxWidth = 470
 			maxHeight = 20
 			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "ireland_concealed_evidence_critical_message"
-			position = { x = 16 y = 350 }
+			position = { x = 18 y = 392 }
 			text = "ireland_concealed_evidence_critical_message"
 			pdx_tooltip = "ireland_concealed_evidence_critical_message_tooltip"
 			font = "hoi_16mbs"
 			format = left
-			maxWidth = 476
-			maxHeight = 20
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_concealed_evidence_next_action"
-			position = { x = 16 y = 371 }
-			text = "ireland_concealed_evidence_next_action"
-			pdx_tooltip = "ireland_concealed_evidence_next_action_tooltip"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 476
-			maxHeight = 30
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_concealed_evidence_selection"
-			position = { x = 16 y = 405 }
-			context_aware_text = [GetIrelandEvidenceSelection]
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 476
+			maxWidth = 470
 			maxHeight = 20
 			alwaystransparent = yes
 		}
 		buttonType = {
 			name = "ireland_concealed_evidence_inspect_button"
-			quadTextureSprite = "GFX_button_221x34"
-			position = { x = 12 y = 428 }
-			buttonText = "ireland_concealed_evidence_inspect_button_text"
-			buttonFont = "hoi_16mbs"
-			format = center
+			quadTextureSprite = "GFX_ireland_gui_action_button"
+			position = { x = 115 y = 412 }
 			clicksound = click_default
 			pdx_tooltip = "ireland_concealed_evidence_inspect_button_tooltip"
 		}
-		instantTextBoxType = {
-			name = "ireland_concealed_evidence_inspect_button_text"
-			position = { x = 12 y = 428 }
-			text = ""
-			font = "hoi_16mbs"
-			maxWidth = 220
-			maxHeight = 0
-			alwaystransparent = yes
-		}
+		instantTextBoxType = { name = "ireland_concealed_evidence_inspect_button_label" position = { x = 142 y = 421 } text = "ireland_concealed_evidence_inspect_button_text" font = "hoi_18b" format = center maxWidth = 225 maxHeight = 22 alwaystransparent = yes }
 		instantTextBoxType = {
 			name = "ireland_concealed_evidence_footer"
-			position = { x = 16 y = 468 }
+			position = { x = 18 y = 458 }
 			context_aware_text = [GetIrelandConcealedEvidenceFooter]
 			font = "hoi_16mbs"
-			format = left
-			maxWidth = 476
-			maxHeight = 22
-			alwaystransparent = yes
-		}
-
-		# Public dossier entries share a compact, readable three-row layout.
-		iconType = {
-			name = "ireland_public_achievement_a22_complete"
-			spriteType = "GFX_achievement_ireland_resurrection_without_sponsor"
-			position = { x = 14 y = 96 }
-			scale = 0.72
-			pdx_tooltip = "ireland_achievement_dossier_a22_tooltip"
-			alwaystransparent = yes
-		}
-		iconType = {
-			name = "ireland_public_achievement_a22_pending"
-			spriteType = "GFX_achievement_ireland_resurrection_without_sponsor_grey"
-			position = { x = 14 y = 96 }
-			scale = 0.72
-			pdx_tooltip = "ireland_achievement_dossier_a22_tooltip"
-			alwaystransparent = yes
-		}
-		iconType = {
-			name = "ireland_public_achievement_a22_not_eligible"
-			spriteType = "GFX_achievement_ireland_resurrection_without_sponsor_not_eligible"
-			position = { x = 14 y = 96 }
-			scale = 0.72
-			pdx_tooltip = "ireland_achievement_dossier_a22_tooltip"
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_public_achievement_a22_title"
-			position = { x = 76 y = 98 }
-			text = "ireland_resurrection_without_sponsor_NAME"
-			font = "hoi_18b"
-			format = left
-			maxWidth = 418
-			maxHeight = 22
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_public_achievement_a22_criteria"
-			position = { x = 76 y = 122 }
-			text = "ireland_public_achievement_dossier_a22_criteria"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 418
-			maxHeight = 34
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_public_achievement_a22_status"
-			position = { x = 76 y = 158 }
-			context_aware_text = [GetIrelandAchievementA22Status]
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 418
+			format = center
+			maxWidth = 470
 			maxHeight = 20
 			alwaystransparent = yes
 		}
-
-		iconType = {
-			name = "ireland_public_achievement_a27_complete"
-			spriteType = "GFX_achievement_ireland_crown_without_conquest"
-			position = { x = 14 y = 184 }
-			scale = 0.72
-			pdx_tooltip = "ireland_achievement_dossier_a27_tooltip"
-			alwaystransparent = yes
-		}
-		iconType = {
-			name = "ireland_public_achievement_a27_pending"
-			spriteType = "GFX_achievement_ireland_crown_without_conquest_grey"
-			position = { x = 14 y = 184 }
-			scale = 0.72
-			pdx_tooltip = "ireland_achievement_dossier_a27_tooltip"
-			alwaystransparent = yes
-		}
-		iconType = {
-			name = "ireland_public_achievement_a27_not_eligible"
-			spriteType = "GFX_achievement_ireland_crown_without_conquest_not_eligible"
-			position = { x = 14 y = 184 }
-			scale = 0.72
-			pdx_tooltip = "ireland_achievement_dossier_a27_tooltip"
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_public_achievement_a27_title"
-			position = { x = 76 y = 186 }
-			text = "ireland_crown_without_conquest_NAME"
-			font = "hoi_18b"
-			format = left
-			maxWidth = 418
-			maxHeight = 22
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_public_achievement_a27_criteria"
-			position = { x = 76 y = 210 }
-			text = "ireland_public_achievement_dossier_a27_criteria"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 418
-			maxHeight = 34
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_public_achievement_a27_status"
-			position = { x = 76 y = 246 }
-			context_aware_text = [GetIrelandAchievementA27Status]
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 418
-			maxHeight = 20
-			alwaystransparent = yes
-		}
-
-		iconType = {
-			name = "ireland_public_achievement_a28_complete"
-			spriteType = "GFX_achievement_ireland_five_provinces_compact"
-			position = { x = 14 y = 272 }
-			scale = 0.72
-			pdx_tooltip = "ireland_achievement_dossier_a28_tooltip"
-			alwaystransparent = yes
-		}
-		iconType = {
-			name = "ireland_public_achievement_a28_pending"
-			spriteType = "GFX_achievement_ireland_five_provinces_compact_grey"
-			position = { x = 14 y = 272 }
-			scale = 0.72
-			pdx_tooltip = "ireland_achievement_dossier_a28_tooltip"
-			alwaystransparent = yes
-		}
-		iconType = {
-			name = "ireland_public_achievement_a28_not_eligible"
-			spriteType = "GFX_achievement_ireland_five_provinces_compact_not_eligible"
-			position = { x = 14 y = 272 }
-			scale = 0.72
-			pdx_tooltip = "ireland_achievement_dossier_a28_tooltip"
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_public_achievement_a28_title"
-			position = { x = 76 y = 274 }
-			text = "ireland_five_provinces_compact_NAME"
-			font = "hoi_18b"
-			format = left
-			maxWidth = 418
-			maxHeight = 22
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_public_achievement_a28_criteria"
-			position = { x = 76 y = 298 }
-			text = "ireland_public_achievement_dossier_a28_criteria"
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 418
-			maxHeight = 34
-			alwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "ireland_public_achievement_a28_status"
-			position = { x = 76 y = 334 }
-			context_aware_text = [GetIrelandAchievementA28Status]
-			font = "hoi_16mbs"
-			format = left
-			maxWidth = 418
-			maxHeight = 20
-			alwaystransparent = yes
-		}
-
-		iconType = {
-			name = "ireland_concealed_evidence_fallback"
-			spriteType = "GFX_ireland_hidden_evidence_seal_reveal"
-			position = { x = 420 y = 78 }
-			scale = 0.26
-			alwaystransparent = yes
-		}
-		iconType = {
-			name = "ireland_concealed_otherworld_fallback"
-			spriteType = "GFX_ireland_verified_otherworld_entry"
-			position = { x = 456 y = 300 }
-			scale = 0.22
-			alwaystransparent = yes
-		}
-
 	}
 }

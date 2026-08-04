@@ -336,10 +336,6 @@ defined_text = {
 		localization_key = ireland_evidence_selection_obligations
 	}
 	text = {
-		trigger = { check_variable = { var = ireland_evidence_selected_row value = 6 compare = equals } }
-		localization_key = ireland_evidence_selection_inspect
-	}
-	text = {
 		trigger = { check_variable = { var = ireland_evidence_last_reviewed_row value = 1 compare = equals } }
 		localization_key = ireland_evidence_selection_provenance
 	}
@@ -358,10 +354,6 @@ defined_text = {
 	text = {
 		trigger = { check_variable = { var = ireland_evidence_last_reviewed_row value = 5 compare = equals } }
 		localization_key = ireland_evidence_selection_obligations
-	}
-	text = {
-		trigger = { check_variable = { var = ireland_evidence_last_reviewed_row value = 6 compare = equals } }
-		localization_key = ireland_evidence_selection_inspect
 	}
 	text = {
 		localization_key = ireland_evidence_selection_none
