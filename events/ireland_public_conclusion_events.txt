@@ -1,4 +1,4 @@
-# Ireland generated public-conclusion event records. The main Ireland event
+﻿# Ireland generated public-conclusion event records. The main Ireland event
 # programme owns the namespace; this file owns the two generated news-image
 # consumers that sit outside the fixed H/P/N/NR/FR/PW registries.
 

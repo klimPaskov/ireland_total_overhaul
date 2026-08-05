@@ -1,0 +1,3 @@
+# Ireland event namespaces are declared once, before every event consumer.
+add_namespace = ireland
+add_namespace = ireland_events

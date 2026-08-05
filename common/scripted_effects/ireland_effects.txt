@@ -249,6 +249,9 @@ ireland_initialize_campaign = {
 		set_variable = { var = ireland_dail_majority_threshold value = constant:ireland.dail_majority_opening }
 		set_variable = { var = ireland_dail_government_formal_seats value = constant:ireland.fianna_fail_formal_seats }
 		set_variable = { var = ireland_dail_government_routine_votes value = constant:ireland.fianna_fail_routine_votes }
+		set_variable = { var = ireland_dail_opposition_formal_seats value = constant:ireland.opposition_formal_seats }
+		set_variable = { var = ireland_dail_external_support_votes value = constant:ireland.zero }
+		set_variable = { var = ireland_parliament_gui_dirty value = constant:ireland.one }
 		set_variable = { var = ireland_dail_fianna_fail_formal_seats value = constant:ireland.fianna_fail_formal_seats }
 		set_variable = { var = ireland_dail_fianna_fail_routine_votes value = constant:ireland.fianna_fail_routine_votes }
 		set_variable = { var = ireland_dail_fine_gael_formal_seats value = constant:ireland.fine_gael_formal_seats }

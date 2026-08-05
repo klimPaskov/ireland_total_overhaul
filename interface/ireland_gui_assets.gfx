@@ -14,6 +14,7 @@ spriteTypes = {
 		noOfFrames = 1
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
+	spriteType = { name = GFX_ireland_gui_parliament_row texturefile = "gfx/interface/ireland/gui/shared/value_row.dds" }
 	spriteType = { name = GFX_ireland_gui_compact_row texturefile = "gfx/interface/ireland/gui/shared/compact_row.dds" }
 	textSpriteType = {
 		name = "GFX_ireland_gui_action_button"

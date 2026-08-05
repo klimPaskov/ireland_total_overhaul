@@ -105,6 +105,7 @@ ireland = {
 	fine_gael_formal_seats = 59
 	labour_formal_seats = 8
 	other_formal_seats = 9
+	opposition_formal_seats = 76
 
 	provision_food_opening = 55
 	provision_energy_opening = 25

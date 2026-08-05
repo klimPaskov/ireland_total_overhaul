@@ -1,34 +1,74 @@
-# Ireland Total Overhaul - National Conditions decision-category panel.
+# Ireland Total Overhaul - compact Dail decision-category panel.
+# This follows the vanilla USA Congress pattern: a short, read-only political
+# summary above the decisions. Decisions remain the only interactive entries.
 guiTypes = {
- containerWindowType = {
-  name = "ireland_conditions_panel_window"
-  orientation = upper_left
-  position = { x = 0 y = 0 }
-  size = { width = 510 height = 430 }
-  clipping = yes
-  background = { name = "ireland_conditions_panel_background" quadTextureSprite = "GFX_ireland_gui_conditions_background" alwaystransparent = yes }
-  instantTextBoxType = { name = "ireland_conditions_panel_title" position = { x = 18 y = 12 } text = "ireland_conditions_panel_title" font = "hoi_24header" format = left maxWidth = 390 maxHeight = 28 }
-  iconType = { name = "ireland_conditions_panel_status_ready" spriteType = "GFX_ireland_gui_status_ready" position = { x = 458 y = 10 } pdx_tooltip = "ireland_conditions_status_tooltip" }
-	iconType = { name = "ireland_conditions_panel_status_warning" spriteType = "GFX_ireland_gui_status_warning" position = { x = 458 y = 10 } pdx_tooltip = "ireland_conditions_warning_tooltip" }
-	iconType = { name = "ireland_conditions_panel_status_critical" spriteType = "GFX_ireland_gui_status_critical" position = { x = 458 y = 10 } pdx_tooltip = "ireland_conditions_critical_tooltip" }
-  instantTextBoxType = { name = "ireland_conditions_panel_available_state" position = { x = 300 y = 43 } text = "ireland_conditions_available_state" font = "hoi_16mbs" format = right maxWidth = 148 maxHeight = 20 }
-  instantTextBoxType = { name = "ireland_conditions_target_requirement" position = { x = 18 y = 45 } text = "ireland_conditions_panel_instruction" pdx_tooltip = "ireland_conditions_target_requirement_tooltip" font = "hoi_16mbs" format = left maxWidth = 270 maxHeight = 38 alwaystransparent = yes }
-  instantTextBoxType = { name = "ireland_conditions_systems_header" position = { x = 18 y = 88 } text = "ireland_conditions_systems_header" font = "hoi_18b" format = left maxWidth = 470 maxHeight = 22 }
-  buttonType = { name = "ireland_conditions_provision_tab" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 116 } clicksound = click_default pdx_tooltip = "ireland_conditions_provision_summary_tooltip" }
-  instantTextBoxType = { name = "ireland_conditions_provision_tab_label" position = { x = 87 y = 122 } text = "ireland_conditions_provision_header" font = "hoi_16mbs" format = left maxWidth = 248 maxHeight = 20 alwaystransparent = yes }
-  instantTextBoxType = { name = "ireland_conditions_provision_tab_value" position = { x = 337 y = 122 } text = "ireland_conditions_provision_summary_value" font = "hoi_16mbs" format = right maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
-  buttonType = { name = "ireland_conditions_readiness_tab" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 150 } clicksound = click_default pdx_tooltip = "ireland_conditions_readiness_summary_tooltip" }
-  instantTextBoxType = { name = "ireland_conditions_readiness_tab_label" position = { x = 87 y = 156 } text = "ireland_conditions_readiness_header" font = "hoi_16mbs" format = left maxWidth = 248 maxHeight = 20 alwaystransparent = yes }
-  instantTextBoxType = { name = "ireland_conditions_readiness_tab_value" position = { x = 337 y = 156 } text = "ireland_conditions_readiness_summary_value" font = "hoi_16mbs" format = right maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
-  buttonType = { name = "ireland_conditions_neutrality_tab" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 184 } clicksound = click_default pdx_tooltip = "ireland_conditions_neutrality_summary_tooltip" }
-  instantTextBoxType = { name = "ireland_conditions_neutrality_tab_label" position = { x = 87 y = 190 } text = "ireland_conditions_neutrality_label" font = "hoi_16mbs" format = left maxWidth = 248 maxHeight = 20 alwaystransparent = yes }
-  instantTextBoxType = { name = "ireland_conditions_neutrality_tab_value" position = { x = 337 y = 190 } text = "ireland_conditions_neutrality_summary_value" font = "hoi_16mbs" format = right maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
-  instantTextBoxType = { name = "ireland_conditions_detail_header" position = { x = 18 y = 226 } text = "ireland_conditions_detail_header" font = "hoi_18b" format = left maxWidth = 470 maxHeight = 22 }
-  instantTextBoxType = { name = "ireland_conditions_selection" position = { x = 18 y = 253 } context_aware_text = [GetIrelandConditionsSelection] font = "hoi_16mbs" format = left maxWidth = 470 maxHeight = 68 alwaystransparent = yes }
-  instantTextBoxType = { name = "ireland_conditions_warning_message" position = { x = 18 y = 327 } text = "ireland_conditions_warning_message" pdx_tooltip = "ireland_conditions_warning_message_tooltip" font = "hoi_16mbs" format = left maxWidth = 470 maxHeight = 20 alwaystransparent = yes }
-  instantTextBoxType = { name = "ireland_conditions_critical_message" position = { x = 18 y = 349 } text = "ireland_conditions_critical_message" pdx_tooltip = "ireland_conditions_critical_message_tooltip" font = "hoi_16mbs" format = left maxWidth = 470 maxHeight = 20 alwaystransparent = yes }
-  instantTextBoxType = { name = "ireland_conditions_next_review" position = { x = 18 y = 371 } context_aware_text = [GetIrelandLawReviewStatus] pdx_tooltip = "ireland_conditions_next_review_tooltip" font = "hoi_16mbs" format = left maxWidth = 470 maxHeight = 20 alwaystransparent = yes }
-  buttonType = { name = "ireland_conditions_review_button" quadTextureSprite = "GFX_ireland_gui_action_button" position = { x = 115 y = 392 } clicksound = click_default pdx_tooltip = "ireland_conditions_review_button_tooltip" }
-  instantTextBoxType = { name = "ireland_conditions_review_button_label" position = { x = 142 y = 401 } text = "ireland_conditions_review_button_text" font = "hoi_18b" format = center maxWidth = 225 maxHeight = 22 alwaystransparent = yes }
- }
+	containerWindowType = {
+		name = "ireland_parliament_panel_window"
+		orientation = upper_left
+		position = { x = 0 y = 0 }
+		size = { width = 510 height = 286 }
+		clipping = yes
+
+		background = {
+			name = "ireland_parliament_panel_background"
+			quadTextureSprite = "GFX_ireland_gui_conditions_background"
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "ireland_parliament_title"
+			position = { x = 18 y = 10 }
+			text = "ireland_parliament_title"
+			font = "hoi_24header"
+			format = left
+			maxWidth = 300
+			maxHeight = 28
+		}
+		instantTextBoxType = {
+			name = "ireland_parliament_status"
+			position = { x = 310 y = 15 }
+			text = "ireland_parliament_status"
+			pdx_tooltip = "ireland_parliament_status_tt"
+			font = "hoi_18mbs"
+			format = right
+			fixedsize = yes
+			maxWidth = 180
+			maxHeight = 22
+		}
+		instantTextBoxType = {
+			name = "ireland_parliament_explanation"
+			position = { x = 18 y = 40 }
+			text = "ireland_parliament_explanation"
+			font = "hoi_16mbs"
+			format = left
+			fixedsize = yes
+			maxWidth = 472
+			maxHeight = 34
+			alwaystransparent = yes
+		}
+
+		iconType = { name = "ireland_parliament_government_row" spriteType = "GFX_ireland_gui_parliament_row" position = { x = 45 y = 75 } }
+		instantTextBoxType = { name = "ireland_parliament_government_label" position = { x = 84 y = 81 } text = "ireland_parliament_government_label" pdx_tooltip = "ireland_parliament_government_tt" font = "hoi_16mbs" format = left maxWidth = 250 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_parliament_government_value" position = { x = 335 y = 81 } text = "ireland_parliament_government_value" pdx_tooltip = "ireland_parliament_government_tt" font = "hoi_16mbs" format = right fixedsize = yes maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
+
+		iconType = { name = "ireland_parliament_opposition_row" spriteType = "GFX_ireland_gui_parliament_row" position = { x = 45 y = 109 } }
+		instantTextBoxType = { name = "ireland_parliament_opposition_label" position = { x = 84 y = 115 } text = "ireland_parliament_opposition_label" pdx_tooltip = "ireland_parliament_opposition_tt" font = "hoi_16mbs" format = left maxWidth = 250 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_parliament_opposition_value" position = { x = 335 y = 115 } text = "ireland_parliament_opposition_value" pdx_tooltip = "ireland_parliament_opposition_tt" font = "hoi_16mbs" format = right fixedsize = yes maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
+
+		iconType = { name = "ireland_parliament_votes_row" spriteType = "GFX_ireland_gui_parliament_row" position = { x = 45 y = 143 } }
+		instantTextBoxType = { name = "ireland_parliament_votes_label" position = { x = 84 y = 149 } text = "ireland_parliament_votes_label" pdx_tooltip = "ireland_parliament_votes_tt" font = "hoi_16mbs" format = left maxWidth = 250 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_parliament_votes_value" position = { x = 335 y = 149 } text = "ireland_parliament_votes_value" pdx_tooltip = "ireland_parliament_votes_tt" font = "hoi_16mbs" format = right fixedsize = yes maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
+
+		iconType = { name = "ireland_parliament_cabinet_row" spriteType = "GFX_ireland_gui_parliament_row" position = { x = 45 y = 177 } }
+		instantTextBoxType = { name = "ireland_parliament_cabinet_label" position = { x = 84 y = 183 } text = "ireland_parliament_cabinet_label" pdx_tooltip = "ireland_parliament_cabinet_tt" font = "hoi_16mbs" format = left maxWidth = 250 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_parliament_cabinet_value" position = { x = 335 y = 183 } text = "ireland_parliament_cabinet_value" pdx_tooltip = "ireland_parliament_cabinet_tt" font = "hoi_16mbs" format = right fixedsize = yes maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
+
+		iconType = { name = "ireland_parliament_public_row" spriteType = "GFX_ireland_gui_parliament_row" position = { x = 45 y = 211 } }
+		instantTextBoxType = { name = "ireland_parliament_public_label" position = { x = 84 y = 217 } text = "ireland_parliament_public_label" pdx_tooltip = "ireland_parliament_public_tt" font = "hoi_16mbs" format = left maxWidth = 250 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_parliament_public_value" position = { x = 335 y = 217 } text = "ireland_parliament_public_value" pdx_tooltip = "ireland_parliament_public_tt" font = "hoi_16mbs" format = right fixedsize = yes maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
+
+		iconType = { name = "ireland_parliament_unity_row" spriteType = "GFX_ireland_gui_parliament_row" position = { x = 45 y = 245 } }
+		instantTextBoxType = { name = "ireland_parliament_unity_label" position = { x = 84 y = 251 } text = "ireland_parliament_unity_label" pdx_tooltip = "ireland_parliament_unity_tt" font = "hoi_16mbs" format = left maxWidth = 250 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_parliament_unity_value" position = { x = 335 y = 251 } text = "ireland_parliament_unity_value" pdx_tooltip = "ireland_parliament_unity_tt" font = "hoi_16mbs" format = right fixedsize = yes maxWidth = 112 maxHeight = 20 alwaystransparent = yes }
+	}
 }

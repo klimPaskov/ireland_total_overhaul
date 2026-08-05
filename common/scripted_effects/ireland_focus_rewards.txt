@@ -1,6 +1,9 @@
 # Immediate, visible focus rewards. These profiles supplement authored route
 # state and unlock effects; they never replace or infer route progression.
 
+@IRELAND_TECHNICAL_FOCUS_BONUS = 0.25
+@IRELAND_TECHNICAL_FOCUS_BONUS_USES = 1
+
 ireland_grant_institutional_focus_reward = {
 	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.political_power_standard }
 	add_political_power = ireland_focus_reward_value
@@ -57,8 +60,9 @@ ireland_grant_technical_focus_reward = {
 	add_political_power = ireland_focus_reward_value
 	add_tech_bonus = {
 		name = ireland_serious_focus_reward
-		bonus = ireland_focus_reward.technical_bonus
-		uses = ireland_focus_reward_int.technical_bonus_uses
+		# add_tech_bonus parses these fields through file-scoped substitution.
+		bonus = @IRELAND_TECHNICAL_FOCUS_BONUS
+		uses = @IRELAND_TECHNICAL_FOCUS_BONUS_USES
 		category = industry
 	}
 }

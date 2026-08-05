@@ -194,109 +194,20 @@ ireland_settlement_government = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ireland_action_convene_a_cabinet_cohesion_review_requirements_tt
-
-			original_tag = IRE
-			OR = { has_country_flag = ireland_settlement_open check_variable = { ireland_social_consent < 70 } }
-			NOT = { has_country_flag = ireland_category_settlement_government_at_capacity }
-			NOT = { has_country_flag = ireland_action_convene_a_cabinet_cohesion_review_active }
-			ireland_can_launch_maintain_cabinet_discipline_mission = yes
+				original_tag = IRE
+				has_country_flag = ireland_settlement_open
+				NOT = { has_country_flag = ireland_category_settlement_government_at_capacity }
+				NOT = { has_country_flag = ireland_action_convene_a_cabinet_cohesion_review_active }
+				ireland_can_launch_maintain_cabinet_discipline_mission = yes
 				NOT = { has_country_flag = ireland_mission_maintain_cabinet_discipline_active }
-			check_variable = { ireland_social_consent < 95 }
-				any_owned_state = {
-					state = 113
-				}
-			OR = {
-				AND = {
-					check_variable = {
-						var = ireland_social_consent
-						value = constant:ireland.action_scarcity_severe
-						compare = less_than
-					}
-					has_political_power > 24
-					command_power > 39
-				}
-				AND = {
-					check_variable = {
-						var = ireland_social_consent
-						value = constant:ireland.action_scarcity_severe
-						compare = greater_than_or_equals
-					}
-					check_variable = {
-						var = ireland_social_consent
-						value = constant:ireland.action_scarcity_watch
-						compare = less_than
-					}
-					has_political_power > 19
-					command_power > 34
-				}
-				AND = {
-					check_variable = {
-						var = ireland_social_consent
-						value = constant:ireland.action_scarcity_watch
-						compare = greater_than_or_equals
-					}
-					has_political_power > 14
-					command_power > 29
-				}
-			}
-			has_political_power > 14
-			command_power > 29
+				check_variable = { ireland_social_consent < 95 }
+				any_owned_state = { state = 113 }
 			}
 		}
 		ai_hint_pp_cost = 25
-		custom_cost_trigger = {
-			always = yes
-		}
-		custom_cost_text = ireland_action_cost_convene_a_cabinet_cohesion_review
-			days_re_enable = 180
+		cost = 25
+		days_re_enable = 180
 		complete_effect = {
-			set_variable = {
-				ireland_action_burden = 5
-			}
-			set_variable = {
-				ireland_action_scope = 2
-			}
-			set_variable = {
-				var = ireland_action_political_cost
-				value = 15
-			}
-			hidden_effect = {
-				add_political_power = -15
-			}
-			set_variable = {
-				var = ireland_action_command_cost
-				value = 30
-			}
-			if = {
-				limit = {
-					check_variable = {
-						var = ireland_social_consent
-						value = constant:ireland.action_scarcity_severe
-						compare = less_than
-					}
-				}
-				ireland_apply_action_scarcity_severe_surcharge = yes
-			}
-			if = {
-				limit = {
-					AND = {
-						check_variable = {
-							var = ireland_social_consent
-							value = constant:ireland.action_scarcity_severe
-							compare = greater_than_or_equals
-						}
-						check_variable = {
-							var = ireland_social_consent
-							value = constant:ireland.action_scarcity_watch
-							compare = less_than
-						}
-					}
-				}
-				ireland_apply_action_scarcity_watch_surcharge = yes
-			}
-			custom_effect_tooltip = ireland_action_burden_tt
-			add_command_power = -30
-	
 			set_country_flag = ireland_action_convene_a_cabinet_cohesion_review_active
 			set_country_flag = ireland_mission_maintain_cabinet_discipline_active
 			activate_mission = ireland_mission_maintain_cabinet_discipline
@@ -437,114 +348,29 @@ ireland_settlement_government = {
 			original_tag = IRE
 			NOT = { has_country_flag = ireland_route_archived }
 			ireland_reveal_settlement_confidence = yes
+			OR = {
+				has_country_flag = ireland_constitutional_crisis_active
+				check_variable = { var = ireland_dail_external_support_votes value = constant:ireland.zero compare = greater_than }
+			}
 			NOT = { has_country_flag = ireland_action_request_a_confidence_vote_locked }
 		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ireland_action_request_a_confidence_vote_requirements_tt
-
-			original_tag = IRE
-			OR = { has_country_flag = ireland_settlement_open check_variable = { ireland_social_consent < 70 } }
-			NOT = { has_country_flag = ireland_category_settlement_government_at_capacity }
-			NOT = { has_country_flag = ireland_action_request_a_confidence_vote_active }
-			ireland_can_launch_assemble_seventy_routine_votes_mission = yes
+				original_tag = IRE
+				has_country_flag = ireland_settlement_open
+				NOT = { has_country_flag = ireland_category_settlement_government_at_capacity }
+				NOT = { has_country_flag = ireland_action_request_a_confidence_vote_active }
+				ireland_can_launch_assemble_seventy_routine_votes_mission = yes
 				NOT = { has_country_flag = ireland_mission_assemble_seventy_routine_votes_active }
-			check_variable = { ireland_dail_mandate < 95 }
-				any_owned_state = {
-					state = 113
-				}
-			OR = {
-				AND = {
-					check_variable = {
-						var = ireland_dail_mandate
-						value = constant:ireland.action_scarcity_severe
-						compare = less_than
-					}
-					has_political_power > 23
-					command_power > 34
-				}
-				AND = {
-					check_variable = {
-						var = ireland_dail_mandate
-						value = constant:ireland.action_scarcity_severe
-						compare = greater_than_or_equals
-					}
-					check_variable = {
-						var = ireland_dail_mandate
-						value = constant:ireland.action_scarcity_watch
-						compare = less_than
-					}
-					has_political_power > 18
-					command_power > 29
-				}
-				AND = {
-					check_variable = {
-						var = ireland_dail_mandate
-						value = constant:ireland.action_scarcity_watch
-						compare = greater_than_or_equals
-					}
-					has_political_power > 13
-					command_power > 24
-				}
-			}
-			has_political_power > 13
-			command_power > 24
+				check_variable = { ireland_dail_mandate < 95 }
+				any_owned_state = { state = 113 }
 			}
 		}
-		ai_hint_pp_cost = 24
-		custom_cost_trigger = {
-			always = yes
-		}
-		custom_cost_text = ireland_action_cost_request_a_confidence_vote
-			days_re_enable = 180
+		ai_hint_pp_cost = 35
+		cost = 35
+		days_re_enable = 180
 		complete_effect = {
-			set_variable = {
-				ireland_action_burden = 5
-			}
-			set_variable = {
-				ireland_action_scope = 2
-			}
-			set_variable = {
-				var = ireland_action_political_cost
-				value = 14
-			}
-			hidden_effect = {
-				add_political_power = -14
-			}
-			set_variable = {
-				var = ireland_action_command_cost
-				value = 25
-			}
-			if = {
-				limit = {
-					check_variable = {
-						var = ireland_dail_mandate
-						value = constant:ireland.action_scarcity_severe
-						compare = less_than
-					}
-				}
-				ireland_apply_action_scarcity_severe_surcharge = yes
-			}
-			if = {
-				limit = {
-					AND = {
-						check_variable = {
-							var = ireland_dail_mandate
-							value = constant:ireland.action_scarcity_severe
-							compare = greater_than_or_equals
-						}
-						check_variable = {
-							var = ireland_dail_mandate
-							value = constant:ireland.action_scarcity_watch
-							compare = less_than
-						}
-					}
-				}
-				ireland_apply_action_scarcity_watch_surcharge = yes
-			}
-			custom_effect_tooltip = ireland_action_burden_tt
-			add_command_power = -25
-	
 			set_country_flag = ireland_action_request_a_confidence_vote_active
 			set_country_flag = ireland_mission_assemble_seventy_routine_votes_active
 			activate_mission = ireland_mission_assemble_seventy_routine_votes
@@ -690,109 +516,27 @@ ireland_settlement_government = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ireland_action_negotiate_confidence_and_supply_requirements_tt
-
-			original_tag = IRE
-			OR = { has_country_flag = ireland_settlement_open check_variable = { ireland_social_consent < 70 } }
-			NOT = { has_country_flag = ireland_category_settlement_government_at_capacity }
-			NOT = { has_country_flag = ireland_action_negotiate_confidence_and_supply_active }
-			check_variable = { ireland_social_consent < 95 }
-				any_owned_state = {
-					state = 113
-				}
-			OR = {
-				AND = {
-					check_variable = {
-						var = ireland_social_consent
-						value = constant:ireland.action_scarcity_severe
-						compare = less_than
-					}
-					has_political_power > 25
-					command_power > 44
-				}
-				AND = {
-					check_variable = {
-						var = ireland_social_consent
-						value = constant:ireland.action_scarcity_severe
-						compare = greater_than_or_equals
-					}
-					check_variable = {
-						var = ireland_social_consent
-						value = constant:ireland.action_scarcity_watch
-						compare = less_than
-					}
-					has_political_power > 20
-					command_power > 39
-				}
-				AND = {
-					check_variable = {
-						var = ireland_social_consent
-						value = constant:ireland.action_scarcity_watch
-						compare = greater_than_or_equals
-					}
-					has_political_power > 15
-					command_power > 34
-				}
-			}
-			has_political_power > 15
-			command_power > 34
+				original_tag = IRE
+				has_country_flag = ireland_settlement_open
+				NOT = { has_country_flag = ireland_category_settlement_government_at_capacity }
+				NOT = { has_country_flag = ireland_action_negotiate_confidence_and_supply_active }
+				check_variable = { ireland_social_consent < 95 }
+				any_owned_state = { state = 113 }
 			}
 		}
-		ai_hint_pp_cost = 26
-		custom_cost_trigger = {
-			always = yes
-		}
-		custom_cost_text = ireland_action_cost_negotiate_confidence_and_supply
+		ai_hint_pp_cost = 30
+		cost = 30
 		days_re_enable = 90
 		complete_effect = {
-			set_variable = {
-				ireland_action_burden = 3
-			}
-			set_variable = {
-				ireland_action_scope = 2
-			}
-			set_variable = {
-				var = ireland_action_political_cost
-				value = 16
-			}
-			hidden_effect = {
-				add_political_power = -16
-			}
-			set_variable = {
-				var = ireland_action_command_cost
-				value = 35
-			}
-			if = {
-				limit = {
-					check_variable = {
-						var = ireland_social_consent
-						value = constant:ireland.action_scarcity_severe
-						compare = less_than
-					}
-				}
-				ireland_apply_action_scarcity_severe_surcharge = yes
-			}
-			if = {
-				limit = {
-					AND = {
-						check_variable = {
-							var = ireland_social_consent
-							value = constant:ireland.action_scarcity_severe
-							compare = greater_than_or_equals
-						}
-						check_variable = {
-							var = ireland_social_consent
-							value = constant:ireland.action_scarcity_watch
-							compare = less_than
-						}
-					}
-				}
-				ireland_apply_action_scarcity_watch_surcharge = yes
-			}
-			custom_effect_tooltip = ireland_action_burden_tt
-			add_command_power = -35
 			add_to_variable = {
 				var = ireland_social_consent
 				value = 6
+			}
+			if = {
+				limit = { check_variable = { var = ireland_dail_external_support_votes value = constant:ireland.one compare = less_than } }
+				set_variable = { var = ireland_dail_external_support_votes value = constant:ireland.one }
+				add_to_variable = { var = ireland_dail_government_routine_votes value = constant:ireland.one }
+				add_to_variable = { var = ireland_parliament_gui_dirty value = constant:ireland.one }
 			}
 	
 			set_country_flag = ireland_action_negotiate_confidence_and_supply_complete

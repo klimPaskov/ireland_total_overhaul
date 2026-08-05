@@ -1,4 +1,4 @@
-# Regional-order member contribution selection. The namespace is declared by
+﻿# Regional-order member contribution selection. The namespace is declared by
 # the main Ireland event programme; this file owns the P/A selection surface.
 
 country_event = {

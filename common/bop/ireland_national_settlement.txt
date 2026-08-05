@@ -1,6 +1,6 @@
-# Ireland Total Overhaul National Settlement balance-of-power presentation.
-# The authoritative value is the country variable maintained by the shared
-# runtime; this native BOP mirrors its seven-stage public presentation.
+# Constitutional balance between Dáil oversight and cabinet direction.
+# The shared campaign runtime remains authoritative; this native BOP gives the
+# player a plain-language, seven-stage account of where governing power rests.
 ireland_national_settlement = {
 	initial_value = 0.25
 	left_side = ireland_unsettled_state

@@ -351,7 +351,10 @@ ireland_reveal_radical_recovery = {
 	}
 }
 
-ireland_reveal_category_provision = { NOT = { has_country_flag = ireland_route_archived } }
+ireland_reveal_category_provision = {
+	NOT = { has_country_flag = ireland_route_archived }
+	has_completed_focus = ireland_provision_baseline
+}
 ireland_reveal_provision_food = {
 	ireland_reveal_category_provision = yes
 	check_variable = { var = ireland_provision_food value = constant:ireland.provision_food_opening compare = less_than_or_equals }
@@ -412,7 +415,10 @@ ireland_reveal_provision_western = {
 	has_country_flag = ireland_action_commission_a_developmental_plant_complete
 }
 
-ireland_reveal_category_readiness = { NOT = { has_country_flag = ireland_route_archived } }
+ireland_reveal_category_readiness = {
+	NOT = { has_country_flag = ireland_route_archived }
+	has_completed_focus = ireland_readiness_baseline
+}
 ireland_reveal_readiness_command = {
 	ireland_reveal_category_readiness = yes
 	check_variable = { var = ireland_readiness_command value = constant:ireland.readiness_command_opening compare = less_than_or_equals }
@@ -482,7 +488,7 @@ ireland_reveal_readiness_demobilise = {
 
 ireland_reveal_category_neutrality = {
 	NOT = { has_country_flag = ireland_route_archived }
-	OR = { date > 1939.9.1 has_country_flag = ireland_neutrality_incident_active has_country_flag = ireland_neutrality_open }
+	has_completed_focus = ireland_active_neutrality
 }
 ireland_reveal_neutrality_airspace = {
 	ireland_reveal_category_neutrality = yes
@@ -740,11 +746,9 @@ ireland_reveal_regional_contribution = {
 ireland_reveal_category_postwar = {
 	NOT = { has_country_flag = ireland_route_archived }
 	OR = {
-		has_country_flag = ireland_emergency_review_started
-		has_country_flag = ireland_emergency_review_complete
+		has_completed_focus = ireland_recovery_bridge
 		has_country_flag = ireland_postwar_review_started
 		has_country_flag = ireland_achievement_major_war_finished
-		date > 1945.1.1
 	}
 }
 ireland_reveal_postwar_review = {

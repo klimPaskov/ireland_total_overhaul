@@ -3,135 +3,17 @@
 # followed by an explicit review action. They do not grant direct rewards.
 
 scripted_gui = {
-	ireland_conditions_panel_scripted_gui = {
+	ireland_parliament_panel_scripted_gui = {
 		context_type = decision_category
-		window_name = "ireland_conditions_panel_window"
+		window_name = "ireland_parliament_panel_window"
 		visible = {
 			original_tag = IRE
 			has_country_flag = ireland_initialized
-			NOT = { has_country_flag = ireland_conditions_panel_closed }
 		}
-		dirty = ireland_conditions_gui_dirty
 		ai_enabled = { original_tag = IRE }
 		ai_check = { always = no }
-		effects = {
-			ireland_conditions_provision_tab_click = {
-				set_variable = { var = ireland_conditions_selected_row value = 13 }
-				add_to_variable = { var = ireland_conditions_gui_dirty value = 1 }
-			}
-			ireland_conditions_readiness_tab_click = {
-				set_variable = { var = ireland_conditions_selected_row value = 14 }
-				add_to_variable = { var = ireland_conditions_gui_dirty value = 1 }
-			}
-			ireland_conditions_neutrality_tab_click = {
-				set_variable = { var = ireland_conditions_selected_row value = 12 }
-				add_to_variable = { var = ireland_conditions_gui_dirty value = 1 }
-			}
-			ireland_conditions_review_button_click = {
-				set_country_flag = ireland_conditions_review_requested
-				ireland_sync_gui_requests = yes
-			}
-		}
-		triggers = {
-			ireland_conditions_panel_available_state_visible = { has_country_flag = ireland_initialized }
-			ireland_conditions_panel_status_ready_visible = {
-				has_country_flag = ireland_initialized
-				OR = {
-					has_completed_focus = ireland_provision_baseline
-					has_completed_focus = ireland_readiness_baseline
-					has_completed_focus = ireland_active_neutrality
-				}
-				NOT = {
-					OR = {
-						AND = { has_completed_focus = ireland_provision_baseline check_variable = { var = ireland_provision_display value = constant:ireland.gui_provision_ready_threshold compare = less_than } }
-						AND = { has_completed_focus = ireland_readiness_baseline check_variable = { var = ireland_readiness_display value = constant:ireland.gui_readiness_ready_threshold compare = less_than } }
-						AND = { has_completed_focus = ireland_active_neutrality check_variable = { var = ireland_neutrality_integrity value = constant:ireland.gui_neutrality_ready_threshold compare = less_than } }
-					}
-				}
-			}
-			ireland_conditions_panel_status_warning_visible = {
-				OR = {
-					AND = { has_completed_focus = ireland_provision_baseline check_variable = { var = ireland_provision_display value = constant:ireland.gui_provision_ready_threshold compare = less_than } }
-					AND = { has_completed_focus = ireland_readiness_baseline check_variable = { var = ireland_readiness_display value = constant:ireland.gui_readiness_ready_threshold compare = less_than } }
-					AND = { has_completed_focus = ireland_active_neutrality check_variable = { var = ireland_neutrality_integrity value = constant:ireland.gui_neutrality_ready_threshold compare = less_than } }
-				}
-				NOT = {
-					OR = {
-						AND = { has_completed_focus = ireland_provision_baseline check_variable = { var = ireland_provision_display value = constant:ireland.gui_provision_critical_threshold compare = less_than } }
-						AND = { has_completed_focus = ireland_readiness_baseline check_variable = { var = ireland_readiness_display value = constant:ireland.gui_readiness_critical_threshold compare = less_than } }
-						AND = { has_completed_focus = ireland_active_neutrality check_variable = { var = ireland_neutrality_integrity value = constant:ireland.gui_neutrality_critical_threshold compare = less_than } }
-					}
-				}
-			}
-			ireland_conditions_panel_status_critical_visible = {
-				OR = {
-					AND = { has_completed_focus = ireland_provision_baseline check_variable = { var = ireland_provision_display value = constant:ireland.gui_provision_critical_threshold compare = less_than } }
-					AND = { has_completed_focus = ireland_readiness_baseline check_variable = { var = ireland_readiness_display value = constant:ireland.gui_readiness_critical_threshold compare = less_than } }
-					AND = { has_completed_focus = ireland_active_neutrality check_variable = { var = ireland_neutrality_integrity value = constant:ireland.gui_neutrality_critical_threshold compare = less_than } }
-				}
-			}
-			ireland_conditions_target_requirement_visible = {
-				OR = {
-					has_completed_focus = ireland_provision_baseline
-					has_completed_focus = ireland_readiness_baseline
-					has_completed_focus = ireland_active_neutrality
-				}
-			}
-			ireland_conditions_provision_tab_visible = { has_completed_focus = ireland_provision_baseline }
-			ireland_conditions_provision_tab_label_visible = { has_completed_focus = ireland_provision_baseline }
-			ireland_conditions_provision_tab_value_visible = { has_completed_focus = ireland_provision_baseline }
-			ireland_conditions_readiness_tab_visible = { has_completed_focus = ireland_readiness_baseline }
-			ireland_conditions_readiness_tab_label_visible = { has_completed_focus = ireland_readiness_baseline }
-			ireland_conditions_readiness_tab_value_visible = { has_completed_focus = ireland_readiness_baseline }
-			ireland_conditions_neutrality_tab_visible = { has_completed_focus = ireland_active_neutrality }
-			ireland_conditions_neutrality_tab_label_visible = { has_completed_focus = ireland_active_neutrality }
-			ireland_conditions_neutrality_tab_value_visible = { has_completed_focus = ireland_active_neutrality }
-			ireland_conditions_warning_message_visible = {
-				OR = {
-					AND = { has_completed_focus = ireland_provision_baseline check_variable = { var = ireland_provision_display value = constant:ireland.gui_provision_ready_threshold compare = less_than } }
-					AND = { has_completed_focus = ireland_readiness_baseline check_variable = { var = ireland_readiness_display value = constant:ireland.gui_readiness_ready_threshold compare = less_than } }
-					AND = { has_completed_focus = ireland_active_neutrality check_variable = { var = ireland_neutrality_integrity value = constant:ireland.gui_neutrality_ready_threshold compare = less_than } }
-				}
-				NOT = {
-					OR = {
-						AND = { has_completed_focus = ireland_provision_baseline check_variable = { var = ireland_provision_display value = constant:ireland.gui_provision_critical_threshold compare = less_than } }
-						AND = { has_completed_focus = ireland_readiness_baseline check_variable = { var = ireland_readiness_display value = constant:ireland.gui_readiness_critical_threshold compare = less_than } }
-						AND = { has_completed_focus = ireland_active_neutrality check_variable = { var = ireland_neutrality_integrity value = constant:ireland.gui_neutrality_critical_threshold compare = less_than } }
-					}
-				}
-			}
-			ireland_conditions_critical_message_visible = {
-				OR = {
-					AND = { has_completed_focus = ireland_provision_baseline check_variable = { var = ireland_provision_display value = constant:ireland.gui_provision_critical_threshold compare = less_than } }
-					AND = { has_completed_focus = ireland_readiness_baseline check_variable = { var = ireland_readiness_display value = constant:ireland.gui_readiness_critical_threshold compare = less_than } }
-					AND = { has_completed_focus = ireland_active_neutrality check_variable = { var = ireland_neutrality_integrity value = constant:ireland.gui_neutrality_critical_threshold compare = less_than } }
-				}
-			}
-			ireland_conditions_next_review_visible = {
-				OR = {
-					has_completed_focus = ireland_provision_baseline
-					has_completed_focus = ireland_readiness_baseline
-					has_completed_focus = ireland_active_neutrality
-				}
-			}
-			ireland_conditions_selection_visible = {
-				check_variable = { var = ireland_conditions_selected_row value = constant:ireland.zero compare = greater_than }
-			}
-			ireland_conditions_review_button_visible = {
-				check_variable = { var = ireland_conditions_selected_row value = constant:ireland.zero compare = greater_than }
-			}
-			ireland_conditions_review_button_label_visible = {
-				check_variable = { var = ireland_conditions_selected_row value = constant:ireland.zero compare = greater_than }
-			}
-			ireland_conditions_provision_tab_click_enabled = { original_tag = IRE has_completed_focus = ireland_provision_baseline }
-			ireland_conditions_readiness_tab_click_enabled = { original_tag = IRE has_completed_focus = ireland_readiness_baseline }
-			ireland_conditions_neutrality_tab_click_enabled = { original_tag = IRE has_completed_focus = ireland_active_neutrality }
-			ireland_conditions_review_button_click_enabled = {
-				original_tag = IRE
-				check_variable = { var = ireland_conditions_selected_row value = constant:ireland.zero compare = greater_than }
-			}
-		}
 	}
+
 
 	ireland_northern_settlement_ledger_scripted_gui = {
 		context_type = decision_category

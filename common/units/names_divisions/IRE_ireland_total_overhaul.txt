@@ -7,13 +7,13 @@ IRE_IRELAND_COASTAL_01 = {
 	can_use = { always = yes }
 	division_types = { "infantry" }
 	fallback_name = "%d Coastal Defence Battalion"
-	unordered = {
-		"Cork Coastal Defence Battalion"
-		"Dublin Coastal Defence Battalion"
-		"Galway Coastal Defence Battalion"
-		"Donegal Coastal Defence Battalion"
-		"Limerick Coastal Defence Battalion"
-		"Waterford Coastal Defence Battalion"
+	ordered = {
+		1 = { "Cork Coastal Defence Battalion" }
+		2 = { "Dublin Coastal Defence Battalion" }
+		3 = { "Galway Coastal Defence Battalion" }
+		4 = { "Donegal Coastal Defence Battalion" }
+		5 = { "Limerick Coastal Defence Battalion" }
+		6 = { "Waterford Coastal Defence Battalion" }
 	}
 }
 
@@ -23,11 +23,11 @@ IRE_IRELAND_MARINE_01 = {
 	can_use = { has_country_flag = ireland_marine_service_ready }
 	division_types = { "marine" }
 	fallback_name = "%d Marine Service Company"
-	unordered = {
-		"Cobh Marine Service Company"
-		"Berehaven Marine Service Company"
-		"Dublin Marine Service Company"
-		"Lough Swilly Marine Service Company"
+	ordered = {
+		1 = { "Cobh Marine Service Company" }
+		2 = { "Berehaven Marine Service Company" }
+		3 = { "Dublin Marine Service Company" }
+		4 = { "Lough Swilly Marine Service Company" }
 	}
 }
 
@@ -37,11 +37,11 @@ IRE_IRELAND_WATCH_01 = {
 	can_use = { has_country_flag = ireland_coastwatch_ready }
 	division_types = { "infantry" }
 	fallback_name = "%d Coastal Watch Brigade"
-	unordered = {
-		"Cork Coastal Watch Brigade"
-		"Shannon Coastal Watch Brigade"
-		"Galway Coastal Watch Brigade"
-		"Donegal Coastal Watch Brigade"
+	ordered = {
+		1 = { "Cork Coastal Watch Brigade" }
+		2 = { "Shannon Coastal Watch Brigade" }
+		3 = { "Galway Coastal Watch Brigade" }
+		4 = { "Donegal Coastal Watch Brigade" }
 	}
 }
 
@@ -51,9 +51,9 @@ IRE_IRELAND_RESERVE_01 = {
 	can_use = { has_country_flag = ireland_readiness_plan }
 	division_types = { "infantry" }
 	fallback_name = "%d Emergency Reserve Division"
-	unordered = {
-		"1st Emergency Reserve Division"
-		"2nd Emergency Reserve Division"
-		"3rd Emergency Reserve Division"
+	ordered = {
+		1 = { "1st Emergency Reserve Division" }
+		2 = { "2nd Emergency Reserve Division" }
+		3 = { "3rd Emergency Reserve Division" }
 	}
 }
