@@ -18,7 +18,10 @@ IRE_ireland_historical = {
 		}
 	}
 	abort = {
-		has_country_flag = ireland_route_cleanup
+		OR = {
+			has_country_flag = ireland_route_cleanup
+			has_country_flag = ireland_route_committed
+		}
 	}
 
 	ai_national_focuses = {
@@ -31,6 +34,8 @@ IRE_ireland_historical = {
 		ireland_northern_contacts
 		ireland_election_timetable
 		ireland_constitutional_draft
+		ireland_plebiscite_campaign
+		ireland_plebiscite_mandate
 		ireland_election_mandate
 		ireland_government_formation
 		ireland_1938_trade_settlement
@@ -709,8 +714,16 @@ IRE_ireland_route_congress = {
 			has_country_flag = ireland_congress_vanguard_path
 			has_country_flag = ireland_profile_congress
 		}
+		NOT = { has_country_flag = ireland_profile_congress_plural }
+		NOT = { has_country_flag = ireland_profile_congress_vanguard }
 	}
-	abort = { has_country_flag = ireland_route_cleanup }
+	abort = {
+		OR = {
+			has_country_flag = ireland_route_cleanup
+			has_country_flag = ireland_profile_congress_plural
+			has_country_flag = ireland_profile_congress_vanguard
+		}
+	}
 	ai_national_focuses = {
 		ireland_public_order_review
 		ireland_church_labour_consultation
@@ -739,10 +752,14 @@ IRE_ireland_route_oduffy = {
 			has_country_flag = ireland_oduffy_corporate_path
 			has_country_flag = ireland_profile_oduffy
 		}
+		NOT = { has_country_flag = ireland_profile_oduffy_personal }
+		NOT = { has_country_flag = ireland_profile_oduffy_corporate }
 	}
 	abort = {
 		OR = {
 			has_country_flag = ireland_route_cleanup
+			has_country_flag = ireland_profile_oduffy_personal
+			has_country_flag = ireland_profile_oduffy_corporate
 			date > 1944.11.29
 		}
 	}
@@ -776,8 +793,16 @@ IRE_ireland_route_clerical_producer = {
 			has_country_flag = ireland_producer_constitution_path
 			has_country_flag = ireland_profile_clerical_producer
 		}
+		NOT = { has_country_flag = ireland_profile_clerical_guardianship }
+		NOT = { has_country_flag = ireland_profile_producer_council_state }
 	}
-	abort = { has_country_flag = ireland_route_cleanup }
+	abort = {
+		OR = {
+			has_country_flag = ireland_route_cleanup
+			has_country_flag = ireland_profile_clerical_guardianship
+			has_country_flag = ireland_profile_producer_council_state
+		}
+	}
 	ai_national_focuses = {
 		ireland_domestic_industry_review
 		ireland_church_labour_consultation
@@ -845,7 +870,6 @@ IRE_ireland_route_high_king = {
 		ireland_cultural_evidence_ledger
 		ireland_high_king_evidence_gate
 		ireland_elective_crown
-		ireland_guardian_crown
 		ireland_crown_powers_charter
 		ireland_high_king_capstone
 		ireland_recovery_bridge
@@ -933,7 +957,13 @@ IRE_ireland_route_convergence = {
 	}
 	abort = { has_country_flag = ireland_route_cleanup }
 	ai_national_focuses = {
+		ireland_fivefold_obligation
+		ireland_otherworld_convergence
+		ireland_convergence_order_capstone
 	}
 	focus_factors = {
+		ireland_fivefold_obligation = 90
+		ireland_otherworld_convergence = 95
+		ireland_convergence_order_capstone = 100
 	}
 }

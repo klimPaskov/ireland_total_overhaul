@@ -1,5 +1,7 @@
-# Material focus-reward tuning. Every profile grants immediate vanilla-facing
-# resources in addition to the focus's authored flags, unlocks, and ledgers.
+# Material focus-reward tuning. These values are meaningful campaign-scale
+# acknowledgements beside the focus's authored route flags, unlocks, ideas,
+# decisions, missions, and ledgers. They are deliberately rounded and are not
+# intended to replace route-specific progression.
 
 ireland_focus_reward = {
 	schema = {
@@ -7,33 +9,22 @@ ireland_focus_reward = {
 		data = fixed_point
 	}
 
-	political_power_standard = 20
-	political_power_economic = 15
-	political_power_technical = 10
-	political_power_cultural = 15
-	political_power_recovery = 30
+	political_power_standard = 25
+	political_power_economic = 25
+	political_power_technical = 25
+	political_power_cultural = 25
+	political_power_recovery = 50
 	political_power_capstone = 50
-	stability_standard = 0.01
-	stability_recovery = 0.02
-	war_support_radical = 0.02
-	command_power_standard = 5
+	stability_standard = 0.05
+	stability_recovery = 0.10
+	war_support_radical = 0.05
+	command_power_standard = 10
 	command_power_capstone = 20
 	service_experience = 10
-	infantry_equipment = 75
+	infantry_equipment = 100
 	support_equipment = 50
-	capstone_support_equipment = 100
-	train_equipment = 2
-	convoys_standard = 5
-	convoys_diplomatic = 3
+	train_equipment = 5
+	convoys_standard = 10
+	convoys_diplomatic = 10
 	manpower_recovery = 1000
-	technical_bonus = 0.25
-}
-
-ireland_focus_reward_int = {
-	schema = {
-		any_key = yes
-		data = int
-	}
-
-	technical_bonus_uses = 1
 }

@@ -1,9 +1,11 @@
-# Overview: Ireland Total Overhaul's thirteen evolving decision categories. Visibility follows
+# Overview: Ireland Total Overhaul's fourteen evolving decision categories. Visibility follows
 # constitutional, material, security, foreign, Northern, regional, and postwar lifecycle gates.
 
 ireland_settlement_government = {
 	icon = GFX_decision_category_ireland_settlement_government
-	scripted_gui = ireland_parliament_panel_scripted_gui
+	# Vanilla USA Congress pattern: the GUI summarizes both chambers; the
+	# native decisions below it are the only interaction surface.
+	scripted_gui = ireland_parliament_decision_ui
 	allowed = {
 		original_tag = IRE
 	}
@@ -103,6 +105,7 @@ ireland_marine_service = {
 	}
 	visible = {
 		original_tag = IRE
+		NOT = { has_country_flag = ireland_route_archived }
 		has_country_flag = ireland_marine_service_ready
 	}
 	visible_when_empty = no

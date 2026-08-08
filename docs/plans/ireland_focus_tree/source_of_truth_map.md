@@ -1,8 +1,8 @@
 # Ireland Focus Tree Documentation Source-of-Truth Map
 
 Feature slug: `ireland_focus_tree`
-Reconciled: 2026-08-03 (M2/A2/C3 authority ruling, fresh goal/law/spirit regeneration, all-icon visual audit, generated source package, sourced-portrait preservation, public conclusion events, final safe source-clearance pass, round-12 conditional source promotion, round-13 exact P-50 portrait promotion, round-14 exact P-54 portrait promotion, round-15 exact P-31 portrait promotion, rounds 16-22 exact-object rejection audits, rounds 30-31 final exact-object rejection audits, Coastwatch six-sector lifecycle, High Kingship branch lifecycle, focus-AI reconciliation, category split, semantic GUI gates, public-achievement dossier, route/source wiring, Fairymount evidence handoff, safeguard/clearance audit, member-contribution choice, and fresh focus/event/map/GUI engine-reference checks)
-Scope: documentation and current-worktree evidence only. HOI4 was not launched.
+Reconciled: 2026-08-05 (full-mod audit, focus/GUI MCP improvement loop, direct executable launch, lifecycle alias repair, one-time Marine Service repair, AI plan ownership repair, current asset crosswalk regeneration)
+Scope: documentation and current-worktree evidence. HOI4 was launched directly with `-debug`; fresh save/route playthroughs and AI simulations remain separate runtime evidence gaps.
 
 The fresh 2026-08-03 engine-reference pass reports zero Ireland-local focus
 layout diagnostics, valid shared map definitions and networks, zero blocking
@@ -19,7 +19,17 @@ under `docs/portraits/`. Temporary `assets/` paths are retained as staging
 evidence only; processed 156x210 crops are derivatives, and runtime DDS files
 remain under `gfx/`.
 
-## Current authority snapshot: 2026-08-03
+## Current audit authority snapshot: 2026-08-05
+
+The live source now has 211 focuses with one root, 14 categories, 144 primary
+actions plus 4 Marine Service actions, and 54 missions. The current MCP focus
+graph has 234 connectors, zero crossings, zero node intersections, zero long
+connectors, and zero same-row overlaps. The parliament GUI has no visible
+overlaps or budget blockers in the rendered state matrix. The direct executable
+launch produced an empty error log. Three exact portrait clearances remain
+blocked (P-26, P-45, P-55); no substitute or fallback asset was introduced.
+
+## Historical authority snapshot: 2026-08-03
 
 The 2026-08-01 authority ruling, the 2026-08-03 exact P-31 promotion, and the
 2026-08-03 public-achievement dossier tranche supersede older numeric snapshots and pending

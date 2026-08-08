@@ -164,11 +164,15 @@ def condition_summary(block: str) -> str:
 def parse_gfx(path: Path, kind: str) -> list[GfxRow]:
     source = text(path)
     rows: list[GfxRow] = []
-    for match in re.finditer(r"\b(spriteType|frameAnimatedSpriteType)\s*=\s*\{(.*?)\}", source, re.DOTALL):
+    for match in re.finditer(
+        r"\b(spriteType|frameAnimatedSpriteType|textSpriteType)\s*=\s*\{(.*?)\}",
+        source,
+        re.DOTALL | re.IGNORECASE,
+    ):
         block = match.group(2)
         sprite = value(block, "name")
         texture = value(block, "texturefile")
-        if sprite == "—":
+        if sprite in {"", "—", "â€”"}:
             continue
         rows.append(
             GfxRow(
@@ -410,8 +414,15 @@ def render_gfx_section(title: str, owner: str, rows: list[GfxRow], group: str, i
         source, processed, fallback = staging_paths(row_group, row, ordinal)
         manifest = manifest_by_sprite.get(row.sprite) or manifest_by_sprite.get(row.sprite.removeprefix("GFX_"))
         if manifest and group != "focus":
-            source = rel(manifest.get("source_path", "not_created"))
-            processed = rel(manifest.get("processed_png_path", "not_created"))
+            # A cleared source may live only in the preserved-evidence path.
+            # Prefer that path when production source is intentionally absent,
+            # while keeping a missing processed PNG visibly missing.
+            source = rel(
+                manifest.get("source_path")
+                or manifest.get("source_preservation_path")
+                or "not_created"
+            )
+            processed = rel(manifest.get("processed_png_path") or "not_created")
         runtime = rel(row.texture)
         status = status_for(runtime, source, processed)
         if manifest:
@@ -477,6 +488,12 @@ def main() -> None:
     achievement_path = ROOT / "common/achievements/ireland_achievements.txt"
 
     focus_rows = parse_focus_rows(focus_path)
+    fresh_focus_source_count = len(list((FRESH_FOCUS_ICON_ROOT / "source_png" / "focus").glob("*.png")))
+    fresh_focus_status = (
+        f"{fresh_focus_source_count} independently generated emblems have full staging evidence"
+        if fresh_focus_source_count
+        else "no fresh focus source rows are present in this checkout"
+    )
     category_rows = parse_code_rows(category_path, r"^(ireland_[A-Za-z0-9_]+)\s*=\s*\{")
     action_rows = assign_decision_parents(parse_code_rows(decision_path, r"^\t(ireland_action_[A-Za-z0-9_]+)\s*=\s*\{"), decision_path)
     mission_rows = assign_decision_parents(parse_code_rows(decision_path, r"^\t(ireland_mission_[A-Za-z0-9_]+)\s*=\s*{"), decision_path)
@@ -503,7 +520,12 @@ def main() -> None:
     category_gfx = [row for row in decision_gfx if row.sprite.startswith("GFX_decision_category_")]
     action_gfx = [row for row in decision_gfx if row.sprite.startswith("GFX_decision_ireland_")]
     mission_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_mission_")]
-    spirit_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_ireland_spirit_")]
+    spirit_gfx = [
+        row
+        for row in gfx_rows
+        if row.kind == "secondary"
+        and row.sprite.lower().startswith(("gfx_idea_ireland_spirit_", "gfx_ireland_spirit_"))
+    ]
     overlay_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_ireland_temporary_overlay_")]
     law_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_ireland_law_")]
     mechanic_gfx = [row for row in gfx_rows if row.kind == "secondary" and row.sprite.startswith("GFX_ireland_mechanic_ledger_")]
@@ -525,22 +547,22 @@ def main() -> None:
         "",
         "| surface | canonical rows | runtime registrations | consumer surface | visual/source status |",
         "|---|---:|---:|---|---|",
-        f"| Focus goal icons | 216 | {len(focus_rows)} | `common/national_focus/ireland_focus_tree.txt` + paired shine masks | 216 independently generated emblems accepted after complete-sheet HOI4-style review; runtime DDS promoted under gfx |",
-        f"| Decision categories | 13 | {len(category_gfx)} | `common/decisions/categories/ireland_categories.txt` | registered |",
-        f"| Named decision actions | 140 | {len(action_gfx)} unique action sprites | `common/decisions/ireland_decisions.txt` | 70 controlled-reuse textures |",
-        f"| Missions | 54 | {len(mission_gfx)} | `common/decisions/ireland_decisions.txt` | registered; mission outcome blocks remain code-owned |",
-        f"| Persistent route spirits | 63 | {len(spirit_gfx)} | `common/ideas/ireland_spirits.txt` | three families × 21 staged route entries |",
+        f"| Focus goal icons | {len(focus_rows)} | {len(focus_rows)} | `common/national_focus/ireland_focus_tree.txt` + paired shine masks | {fresh_focus_status}; all runtime focus DDS rows remain listed individually below |",
+        f"| Decision categories | {len(category_rows)} | {len(category_gfx)} | `common/decisions/categories/ireland_categories.txt` | registered |",
+        f"| Named decision actions | {len(action_rows)} | {len(action_gfx)} unique action sprites | `common/decisions/ireland_decisions.txt` + `common/decisions/ireland_marine_service.txt` | {len(set(row.texture for row in action_gfx))} controlled-reuse textures |",
+        f"| Missions | {len(mission_rows)} | {len(mission_gfx)} | `common/decisions/ireland_decisions.txt` | registered; mission outcome blocks remain code-owned |",
+        f"| Persistent route spirits | {len(spirit_rows)} | {len(spirit_gfx)} | `common/ideas/ireland_spirits.txt` | registered route-spirit entries |",
         f"| Temporary overlays | 10 durable overlays + 17 event/temporary overlays | {len(overlay_gfx)} | decision/event/controller consumers | registered; conditional state bindings audited per row |",
-        f"| Law icons | 51 | {len(law_gfx)} | scripted law stages in `common/scripted_effects/ireland_laws.txt` | registered; dynamic stage-to-sprite binding is recorded per row |",
-        f"| Mechanic/ledger icons | 45 | {len(mechanic_gfx)} | BOP and scripted GUI surfaces | registered; direct consumer evidence listed per row |",
-        f"| Achievement states | 96 | {len(achievement_gfx)} | `common/achievements/ireland_achievements.txt` | 32 × completed/grey/not-eligible |",
-        f"| Route/symbol assets | 27 | {len(route_gfx)} | route character and route-state consumers | generated source packages; runtime DDS present |",
-        f"| Scripted GUI assets | 11 | {len(gui_gfx)} | three GUI layouts | static runtime package; state surface listed per row |",
-        f"| Independent animations | 7 packages / 14 registrations | {len(animation_gfx)} | three GUI surfaces and event/evidence states | frame sheets + static fallbacks |",
-        f"| Generated event/news art | 51 | {len(event_gfx)} | event/news code consumers | generated source/processed package; runtime DDS present |",
+        f"| Law icons | {len(law_gfx)} | {len(law_gfx)} | scripted law stages in `common/scripted_effects/ireland_laws.txt` | registered; dynamic stage-to-sprite binding is recorded per row |",
+        f"| Mechanic/ledger icons | {len(mechanic_gfx)} | {len(mechanic_gfx)} | BOP and scripted GUI surfaces | registered; direct consumer evidence listed per row |",
+        f"| Achievement states | {len(achievement_gfx)} | {len(achievement_gfx)} | `common/achievements/ireland_achievements.txt` | registered achievement-state rows |",
+        f"| Route/symbol assets | {len(route_gfx)} | {len(route_gfx)} | route character and route-state consumers | generated source packages; runtime DDS present |",
+        f"| Scripted GUI assets | {len(gui_gfx)} | {len(gui_gfx)} | three GUI layouts | static runtime package; state surface listed per row |",
+        f"| Independent animations | {len(animation_gfx)} registrations | {len(animation_gfx)} | three GUI surfaces and event/evidence states | frame sheets + static fallbacks |",
+        f"| Generated event/news art | {len(event_gfx)} | {len(event_gfx)} | event/news code consumers | generated source/processed package; runtime DDS present |",
         f"| Source-package registrations | {len(manifest_rows)} manifest rows | {len(sourced_gfx)} registered rows | leaders, symbols, reports | {len(blocked_manifest_rows)} blocked/review rows remain unpromoted |",
         "",
-		"The canonical goal/law visual evidence is the fresh regenerated package at `assets/ireland_focus_tree/icons/regenerated_goal_and_law_icons_fresh_2026-08-01_v1/`. It contains 216 fresh 100x88 focus-emblem sources and 51 fresh 60x68 law-emblem sources, with per-row source, alpha, processed, DDS, runtime, and readback records. Source and processing evidence remain in staging; final DDS files belong under the mod's standard `gfx/` tree.",
+		f"The canonical goal/law visual evidence is the fresh regenerated package at `assets/ireland_focus_tree/icons/regenerated_goal_and_law_icons_fresh_2026-08-01_v1/`. This checkout contains {fresh_focus_source_count} fresh focus-emblem source rows and 51 fresh 60x68 law-emblem sources. The complete {len(focus_rows)}-focus runtime set is checked row-by-row below; source and processing evidence remain a separate staging concern, while final DDS files belong under the mod's standard `gfx/` tree.",
         "",
     ]
 
@@ -632,8 +654,8 @@ def main() -> None:
         "## Audit interpretation",
         "",
 		"- Earlier focus-icon normalization and v5-v12 packages are retained as technical or rejected evidence only. The fresh 2026-08-01 package is the accepted goal/law source of truth after complete-sheet boundary, chroma, alignment, and runtime readback review.",
-		"- The 216 focus and 51 law rows are independently regenerated source art; the runtime names and `.gfx` registrations remain stable while the verified DDS files are promoted under `gfx/interface/goals/ireland/` and `gfx/interface/ideas/ireland/laws/`.",
-        "- Decision-action rows distinguish 140 named consumers from the 70 allocated DDS textures. Reuse is recorded at the row level and is not a free placeholder: each reused texture has a named decision consumer and category binding.",
+		f"- The {len(focus_rows)} focus and 51 law rows are wired to stable runtime names and `.gfx` registrations. The fresh staging package supplies {fresh_focus_source_count} focus source rows; every runtime DDS row, including the restored naval focus rows, is listed and checked individually.",
+        f"- Decision-action rows distinguish {len(action_rows)} named consumers from the {len(set(row.texture for row in action_gfx))} allocated DDS textures. Reuse is recorded at the row level and is not a free placeholder: each reused texture has a named decision consumer and category binding.",
         "- The law, overlay, and mechanic packages are registered assets whose dynamic state controllers are intentionally listed in the consumer column. A missing direct `GFX_` token is an audit finding, not a claim that the asset is used.",
         f"- Portrait, symbol/document, and source event/news clearance remains governed by the five-state manifest. The manifest contains 60 portrait rows, 40 symbol/document rows, and {len(source_event_rows)} source event/news rows; {len(blocked_manifest_rows)} blocked/review rows remain unpromoted and are not cleared by this crosswalk.",
         "- Live HOI4 engine, GUI click-region, frame playback, texture-loading, and scenario validation remain intentionally unrun and are excluded from the completion gate by user direction; this report is static coverage evidence.",

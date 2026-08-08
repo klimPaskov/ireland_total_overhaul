@@ -1,0 +1,20 @@
+# Ireland continuous-focus sprite registrations.
+# These names are referenced by the generic continuous focus palette. The
+# textures are shipped with the game; registering them here keeps the mod
+# self-contained when validation scans only mod-owned interface files.
+spriteTypes = {
+	spriteType = { name = "GFX_focus_DEN_undermine_overlord_continuous_focus" texturefile = "gfx/interface/goals/focus_DEN_undermine_overlord_continuous_focus.dds" }
+	spriteType = { name = "GFX_focus_ETH_continuous_strengthen_the_black_lions" texturefile = "gfx/interface/goals/focus_ETH_continuous_strengthen_the_black_lions.dds" }
+	spriteType = { name = "GFX_focus_ETH_continuous_supporting_the_arbegnoch" texturefile = "gfx/interface/goals/focus_ETH_continuous_supporting_the_arbegnoch.dds" }
+	spriteType = { name = "GFX_focus_SWI_continuous_build_up_military_readiness" texturefile = "gfx/interface/goals/focus_SWI_continuous_build_up_military_readiness.dds" }
+	spriteType = { name = "GFX_focus_SWI_continuous_support_active_militias" texturefile = "gfx/interface/goals/focus_SWI_continuous_support_active_militias.dds" }
+	spriteType = { name = "GFX_goal_continuous_naval_production" texturefile = "gfx/interface/goals/goal_continuous_naval_production.dds" }
+	spriteType = { name = "GFX_goal_continuous_air_production" texturefile = "gfx/interface/goals/goal_continuous_air_production.dds" }
+	spriteType = { name = "GFX_goal_continuous_non_factory_construct" texturefile = "gfx/interface/goals/goal_continuous_non_factory_construct.dds" }
+	spriteType = { name = "GFX_goal_continuous_reduce_training_time" texturefile = "gfx/interface/goals/goal_continuous_reduce_training_time.dds" }
+	spriteType = { name = "GFX_goal_continuous_suppression" texturefile = "gfx/interface/goals/goal_continuous_suppression.dds" }
+	spriteType = { name = "GFX_goal_continuous_repairments" texturefile = "gfx/interface/goals/goal_continuous_repairments.dds" }
+	spriteType = { name = "GFX_goal_continuous_research" texturefile = "gfx/interface/goals/goal_continuous_research.dds" }
+	spriteType = { name = "GFX_goal_continuous_boost_freedom" texturefile = "gfx/interface/goals/goal_continuous_boost_freedom.dds" }
+	spriteType = { name = "GFX_goal_continuous_restrict_freedom" texturefile = "gfx/interface/goals/goal_continuous_restrict_freedom.dds" }
+}

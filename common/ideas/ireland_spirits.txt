@@ -1,4 +1,4 @@
-﻿# Ireland Total Overhaul route spirits.
+# Ireland Total Overhaul route spirits.
 # Exactly three persistent families are present. Their stage, contributors, and
 # route-specific meaning are maintained by the Ireland scripted runtime.
 ideas = {

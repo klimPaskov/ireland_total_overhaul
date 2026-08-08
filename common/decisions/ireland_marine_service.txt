@@ -6,6 +6,7 @@ ireland_marine_service = {
 		icon = GFX_decision_ireland_commission_patrol_craft
 		visible = {
 			original_tag = IRE
+			NOT = { has_country_flag = ireland_route_archived }
 			has_country_flag = ireland_coastal_patrol_flotilla_ready
 			NOT = { has_country_flag = ireland_patrol_craft_commissioned }
 		}
@@ -27,6 +28,7 @@ ireland_marine_service = {
 			has_equipment = { support_equipment > 24 }
 		}
 		custom_cost_text = ireland_marine_cost_commission_patrol_craft
+		ai_hint_pp_cost = 15
 		complete_effect = {
 			add_political_power = -15
 			add_command_power = -5
@@ -57,6 +59,7 @@ ireland_marine_service = {
 		icon = GFX_decision_ireland_train_marine_service_reserve
 		visible = {
 			original_tag = IRE
+			NOT = { has_country_flag = ireland_route_archived }
 			has_country_flag = ireland_marine_service_reserve_ready
 			NOT = { has_country_flag = ireland_marine_service_reserve_trained }
 		}
@@ -80,6 +83,7 @@ ireland_marine_service = {
 			has_equipment = { support_equipment > 49 }
 		}
 		custom_cost_text = ireland_marine_cost_train_reserve
+		ai_hint_pp_cost = 10
 		complete_effect = {
 			add_political_power = -10
 			add_command_power = -10
@@ -116,6 +120,7 @@ ireland_marine_service = {
 		icon = GFX_decision_ireland_repair_cobh_dockyard
 		visible = {
 			original_tag = IRE
+			NOT = { has_country_flag = ireland_route_archived }
 			has_country_flag = ireland_cobh_dockyard_programme_ready
 			NOT = { has_country_flag = ireland_cobh_dockyard_repaired }
 		}
@@ -133,6 +138,7 @@ ireland_marine_service = {
 			has_equipment = { support_equipment > 24 }
 		}
 		custom_cost_text = ireland_marine_cost_repair_dockyard
+		ai_hint_pp_cost = 12
 		complete_effect = {
 			add_political_power = -12
 			add_equipment_to_stockpile = { type = support_equipment amount = -25 }
@@ -168,8 +174,10 @@ ireland_marine_service = {
 		icon = GFX_decision_ireland_protect_atlantic_route
 		visible = {
 			original_tag = IRE
+			NOT = { has_country_flag = ireland_route_archived }
 			has_country_flag = ireland_atlantic_convoy_office_ready
 			NOT = { has_country_flag = ireland_atlantic_route_protected }
+			NOT = { has_country_flag = ireland_atlantic_route_protected_completed }
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -190,6 +198,7 @@ ireland_marine_service = {
 			has_fuel > 99
 		}
 		custom_cost_text = ireland_marine_cost_protect_atlantic_route
+		ai_hint_pp_cost = 18
 		days_remove = 120
 		complete_effect = {
 			add_political_power = -18
@@ -197,6 +206,7 @@ ireland_marine_service = {
 			add_equipment_to_stockpile = { type = convoy amount = -10 }
 			add_fuel = -100
 			set_country_flag = ireland_atlantic_route_protected
+			set_country_flag = ireland_atlantic_route_protected_completed
 			add_to_variable = { var = ireland_provision_maritime value = 6 }
 			add_to_variable = { var = ireland_readiness_maritime_protection value = 8 }
 			navy_experience = 15

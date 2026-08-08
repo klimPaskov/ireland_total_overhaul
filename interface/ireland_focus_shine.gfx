@@ -1,4 +1,4 @@
-﻿# Ireland Total Overhaul focus shine registrations.
+# Ireland Total Overhaul focus shine registrations.
 # Each shine masks the corresponding final DDS under gfx/ and uses the standard animated shine surface.
 # The overlay is a UI effect surface, not a replacement for route-specific focus art.
 spriteTypes = {
@@ -6772,4 +6772,5 @@ spriteTypes = {
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
 		legacy_lazy_load = no
-	}}
+	}
+}

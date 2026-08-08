@@ -20,6 +20,16 @@ This file records reusable dynamic helpers added for the Ireland runtime. Inputs
 
 ## Ireland action scarcity charges
 
+Decision costs are authored per action. The decision's confirmation text shows
+its Political Power, Command Power, every physical input charged by the
+completion effect, and the live state value that controls its scarcity band.
+Watch values add 5 Political Power, 5 Command Power, and 1 Action Burden;
+severe values add 10 Political Power, 10 Command Power, and 2 Action Burden.
+Action Burden is the visible 0-to-5 measure of administrative and public
+strain. There is no global highest-shortage preview: an action charges only
+the named state value in its own completion effect, so the preview cannot
+promise a surcharge that belongs to a different action.
+
 ### `ireland_apply_action_scarcity_severe_surcharge`
 
 - Scope: country; called once by an Ireland action's `complete_effect` when

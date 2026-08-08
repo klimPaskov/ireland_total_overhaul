@@ -1,6 +1,7 @@
-﻿# Ireland generated public-conclusion event records. The main Ireland event
-# programme owns the namespace; this file owns the two generated news-image
-# consumers that sit outside the fixed H/P/N/NR/FR/PW registries.
+# Ireland generated public-conclusion event records. The main Ireland event
+# This file owns the two generated news-image consumers outside the fixed
+# H/P/N/NR/FR/PW registries.
+add_namespace = ireland_events
 
 country_event = {
 	id = ireland_events.432

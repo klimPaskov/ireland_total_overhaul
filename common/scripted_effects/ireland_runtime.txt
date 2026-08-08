@@ -2510,6 +2510,9 @@ ireland_sync_dillon_route_state = {
 }
 
 ireland_sync_political_gate_flags = {
+	# Keep the visible Dáil/Seanad panel synchronized with all daily political
+	# effects, including actions that were authored before the chamber ledger.
+	ireland_update_parliament = yes
 	# Election and constitutional handoffs are durable only after the election
 	# mission has recorded a full or partial result. Opening seat variables alone
 	# never create a mandate flag.
@@ -6393,6 +6396,14 @@ ireland_sync_northern_ledger = {
 		set_variable = { var = ireland_northern_control_ledger value = constant:ireland.zero }
 		clr_country_flag = ireland_northern_control_ledger_active
 	}
+	# Compatibility projection for older occupation gates. The authored
+	# transitional-authority completion flag is canonical; this alias exists
+	# only for legacy action availability and is rebuilt on every sync.
+	if = {
+		limit = { has_country_flag = ireland_action_establish_a_transitional_authority_complete }
+		set_country_flag = ireland_provisional_northern_authority
+	}
+	else = { clr_country_flag = ireland_provisional_northern_authority }
 	if = {
 		limit = {
 			check_variable = { var = ireland_northern_control_candidate value = constant:ireland.one compare = equals }
@@ -6534,6 +6545,31 @@ ireland_sync_northern_ledger = {
 ireland_sync_ai_overlays = {
 	# Temporary overlays are derived state. They are never a second route and
 	# are cleared automatically when the triggering crisis or review closes.
+	# Compatibility projections below keep older consumers synchronized with
+	# canonical route, office, and emergency state. They are not independent
+	# route selectors and are rebuilt every daily runtime pass.
+	if = {
+		limit = {
+			OR = {
+				has_war = yes
+				has_country_flag = ireland_national_emergency_active
+				has_country_flag = ireland_external_emergency
+			}
+		}
+		set_country_flag = ireland_invasion_danger
+	}
+	else = { clr_country_flag = ireland_invasion_danger }
+	if = { limit = { ireland_reveal_category_regional = yes } set_country_flag = ireland_regional_order_gate }
+	else = { clr_country_flag = ireland_regional_order_gate }
+	if = { limit = { ireland_reveal_regional_celtic = yes } set_country_flag = ireland_celtic_route }
+	else = { clr_country_flag = ireland_celtic_route }
+	if = { limit = { has_country_flag = ireland_route_ira_republican } set_country_flag = ireland_ira_route }
+	else = { clr_country_flag = ireland_ira_route }
+	if = {
+		limit = { has_country_flag = ireland_office_vacancy }
+		set_country_flag = ireland_government_vacancy
+	}
+	else = { clr_country_flag = ireland_government_vacancy }
 	if = {
 		limit = {
 			OR = {

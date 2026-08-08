@@ -1,6 +1,10 @@
-# Overview: Ireland Total Overhaul's thirteen nested decision categories contain exactly 140 mapped actions and 54 mapped mission families.
-# Actions use custom-cost-only presentation with a named-ledger scarcity surcharge
-# deducted in the completion effect; each action also manually charges its fixed base PP.
+# Overview: Ireland Total Overhaul has fourteen nested decision categories, 144
+# primary actions in this file, four additional Marine Service actions, and 54
+# mapped mission families. The four Marine Service actions are kept in
+# ireland_marine_service.txt so their category can be audited independently.
+# Most route actions use custom-cost presentation with a named-ledger scarcity
+# surcharge deducted in the completion effect; seven institutional actions use
+# native cost fields and shared completion effects by design.
 # Command-power charges use the same ledger-sensitive model. The maximum command-power charge
 # is the fixed action base plus at most ten, staying below the sixty-point ceiling.
 # Per-action ai_hint_pp_cost values give the AI a worst-case PP budget signal.
@@ -11,6 +15,10 @@
 # explicit cancellation paths may return the capped recoverable fraction documented below.
 # Local staff and transport pools are explicit costs for named polling, cultural,
 # tillage, border, and relief work; they are not passive political-power substitutes.
+@IRELAND_PARLIAMENT_DAIL_SESSION_PP = 15
+@IRELAND_PARLIAMENT_SEANAD_SUPPORT_PP = 25
+@IRELAND_PARLIAMENT_CONFIDENCE_COMPACT_PP = 25
+@IRELAND_PARLIAMENT_JOINT_BUDGET_PP = 35
 @IRELAND_DEVELOPMENTAL_PLANT_SUPPORT_EQUIPMENT_GATE = 49
 @IRELAND_DEVELOPMENTAL_PLANT_SUPPORT_EQUIPMENT_CHARGE = -50
 @IRELAND_DEVELOPMENTAL_PLANT_CONVOY_GATE = 4
@@ -182,6 +190,147 @@
 @IRELAND_COMPACT_SUPPORT_EQUIPMENT_GATE = 19
 @IRELAND_COMPACT_SUPPORT_EQUIPMENT_CHARGE = -20
 ireland_settlement_government = {
+	# Parliamentary opening: one visible action at a time, with the next chamber
+	# only appearing after the preceding institutional step is completed.
+	ireland_action_convene_the_dail = {
+		icon = GFX_decision_ireland_convene_a_cabinet_cohesion_review
+		visible = {
+			original_tag = IRE
+			NOT = { has_country_flag = ireland_route_archived }
+			ireland_reveal_settlement_open = yes
+			ireland_parliament_stage_one = yes
+			NOT = { has_country_flag = ireland_parliament_dail_session_complete }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_action_convene_the_dail_requirements_tt
+				ireland_parliament_open = yes
+				has_country_flag = ireland_settlement_open
+				ireland_parliament_stage_one = yes
+				any_owned_state = { state = 113 }
+			}
+		}
+		ai_hint_pp_cost = @IRELAND_PARLIAMENT_DAIL_SESSION_PP
+		cost = @IRELAND_PARLIAMENT_DAIL_SESSION_PP
+		fire_only_once = yes
+		complete_effect = {
+			ireland_record_parliament_dail_session = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = { base = 10 }
+	}
+
+	ireland_action_negotiate_seanad_support = {
+		icon = GFX_decision_ireland_negotiate_confidence_and_supply
+		visible = {
+			original_tag = IRE
+			NOT = { has_country_flag = ireland_route_archived }
+			ireland_reveal_settlement_open = yes
+			ireland_parliament_stage_two_or_later = yes
+			NOT = { has_country_flag = ireland_parliament_seanad_support_complete }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_action_negotiate_seanad_support_requirements_tt
+				ireland_parliament_open = yes
+				has_country_flag = ireland_settlement_open
+				ireland_parliament_stage_two_or_later = yes
+				check_variable = {
+					var = ireland_seanad_government_seats
+					value = ireland_seanad_majority_threshold
+					compare = less_than
+				}
+				any_owned_state = { state = 113 }
+			}
+		}
+		ai_hint_pp_cost = @IRELAND_PARLIAMENT_SEANAD_SUPPORT_PP
+		cost = @IRELAND_PARLIAMENT_SEANAD_SUPPORT_PP
+		fire_only_once = yes
+		complete_effect = {
+			ireland_record_parliament_seanad_support = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = { base = 9 }
+	}
+
+	ireland_action_secure_a_confidence_compact = {
+		icon = GFX_decision_ireland_request_a_confidence_vote
+		visible = {
+			original_tag = IRE
+			NOT = { has_country_flag = ireland_route_archived }
+			ireland_reveal_settlement_open = yes
+			ireland_parliament_stage_three_or_later = yes
+			NOT = { has_country_flag = ireland_parliament_confidence_compact_complete }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_action_secure_a_confidence_compact_requirements_tt
+				ireland_parliament_open = yes
+				has_country_flag = ireland_settlement_open
+				ireland_parliament_stage_three_or_later = yes
+				any_owned_state = { state = 113 }
+			}
+		}
+		ai_hint_pp_cost = @IRELAND_PARLIAMENT_CONFIDENCE_COMPACT_PP
+		cost = @IRELAND_PARLIAMENT_CONFIDENCE_COMPACT_PP
+		fire_only_once = yes
+		complete_effect = {
+			ireland_record_parliament_confidence_compact = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = { base = 8 }
+	}
+
+	ireland_action_pass_a_joint_budget = {
+		icon = GFX_decision_ireland_publish_a_government_programme
+		visible = {
+			original_tag = IRE
+			NOT = { has_country_flag = ireland_route_archived }
+			ireland_reveal_settlement_open = yes
+			ireland_parliament_stage_four_or_later = yes
+			NOT = { has_country_flag = ireland_parliament_joint_budget_complete }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_action_pass_a_joint_budget_requirements_tt
+				ireland_parliament_open = yes
+				has_country_flag = ireland_settlement_open
+				ireland_parliament_stage_four_or_later = yes
+				ireland_parliament_dail_majority = yes
+				ireland_parliament_seanad_majority = yes
+				any_owned_state = { state = 113 }
+			}
+		}
+		ai_hint_pp_cost = @IRELAND_PARLIAMENT_JOINT_BUDGET_PP
+		cost = @IRELAND_PARLIAMENT_JOINT_BUDGET_PP
+		fire_only_once = yes
+		complete_effect = {
+			ireland_record_parliament_joint_budget = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = { base = 7 }
+	}
+
 	# Convene a Cabinet Cohesion Review — Dublin Metropolitan Region
 	ireland_action_convene_a_cabinet_cohesion_review = {
 		icon = GFX_decision_ireland_convene_a_cabinet_cohesion_review
@@ -213,6 +362,7 @@ ireland_settlement_government = {
 			activate_mission = ireland_mission_maintain_cabinet_discipline
 			ireland_update_mission_capacity = yes
 			set_country_flag = ireland_action_convene_a_cabinet_cohesion_review_complete
+			custom_effect_tooltip = ireland_action_convene_a_cabinet_cohesion_review_effect_tt
 		}
 		remove_trigger = {
 			OR = {
@@ -376,6 +526,7 @@ ireland_settlement_government = {
 			activate_mission = ireland_mission_assemble_seventy_routine_votes
 			ireland_update_mission_capacity = yes
 			set_country_flag = ireland_action_request_a_confidence_vote_complete
+			custom_effect_tooltip = ireland_action_request_a_confidence_vote_effect_tt
 		}
 		remove_trigger = {
 			OR = {
@@ -540,6 +691,7 @@ ireland_settlement_government = {
 			}
 	
 			set_country_flag = ireland_action_negotiate_confidence_and_supply_complete
+			custom_effect_tooltip = ireland_action_negotiate_confidence_and_supply_effect_tt
 		}
 		remove_trigger = {
 			OR = {
@@ -3242,7 +3394,7 @@ ireland_elections = {
 				tooltip = ireland_action_update_the_electoral_register_requirements_tt
 
 			original_tag = IRE
-			OR = { has_country_flag = ireland_election_open has_country_flag = ireland_dissolution_pending has_country_flag = ireland_government_formation_pending has_country_flag = ireland_by_election_open }
+			ireland_reveal_category_elections = yes
 			NOT = { has_country_flag = ireland_category_elections_at_capacity }
 			NOT = { has_country_flag = ireland_action_update_the_electoral_register_active }
 			ireland_can_launch_conduct_a_free_general_election_mission = yes
@@ -3489,7 +3641,7 @@ ireland_elections = {
 				tooltip = ireland_action_protect_campaign_freedom_requirements_tt
 
 			original_tag = IRE
-			OR = { has_country_flag = ireland_election_open has_country_flag = ireland_dissolution_pending has_country_flag = ireland_government_formation_pending has_country_flag = ireland_by_election_open }
+			ireland_reveal_category_elections = yes
 			NOT = { has_country_flag = ireland_category_elections_at_capacity }
 			NOT = { has_country_flag = ireland_action_protect_campaign_freedom_active }
 			check_variable = { ireland_social_consent < 95 }
@@ -3737,7 +3889,7 @@ ireland_elections = {
 				tooltip = ireland_action_organise_county_candidates_requirements_tt
 
 			original_tag = IRE
-			OR = { has_country_flag = ireland_election_open has_country_flag = ireland_dissolution_pending has_country_flag = ireland_government_formation_pending has_country_flag = ireland_by_election_open }
+			ireland_reveal_category_elections = yes
 			NOT = { has_country_flag = ireland_category_elections_at_capacity }
 			NOT = { has_country_flag = ireland_action_organise_county_candidates_active }
 			check_variable = { ireland_dail_mandate < 95 }
@@ -3983,7 +4135,7 @@ ireland_elections = {
 				tooltip = ireland_action_negotiate_transfer_pacts_requirements_tt
 
 			original_tag = IRE
-			OR = { has_country_flag = ireland_election_open has_country_flag = ireland_dissolution_pending has_country_flag = ireland_government_formation_pending has_country_flag = ireland_by_election_open }
+			ireland_reveal_category_elections = yes
 			NOT = { has_country_flag = ireland_category_elections_at_capacity }
 			NOT = { has_country_flag = ireland_action_negotiate_transfer_pacts_active }
 			check_variable = { ireland_social_consent < 95 }
@@ -4229,7 +4381,7 @@ ireland_elections = {
 				tooltip = ireland_action_secure_polling_stations_requirements_tt
 
 			original_tag = IRE
-			OR = { has_country_flag = ireland_election_open has_country_flag = ireland_dissolution_pending has_country_flag = ireland_government_formation_pending has_country_flag = ireland_by_election_open }
+			ireland_reveal_category_elections = yes
 			NOT = { has_country_flag = ireland_category_elections_at_capacity }
 			NOT = { has_country_flag = ireland_action_secure_polling_stations_active }
 			check_variable = { ireland_security_loyalty < 95 }
@@ -4484,7 +4636,7 @@ ireland_elections = {
 				tooltip = ireland_action_count_formal_and_routine_votes_requirements_tt
 
 			original_tag = IRE
-			OR = { has_country_flag = ireland_election_open has_country_flag = ireland_dissolution_pending has_country_flag = ireland_government_formation_pending has_country_flag = ireland_by_election_open }
+			ireland_reveal_category_elections = yes
 			NOT = { has_country_flag = ireland_category_elections_at_capacity }
 			NOT = { has_country_flag = ireland_action_count_formal_and_routine_votes_active }
 			check_variable = { ireland_dail_mandate < 95 }
@@ -4730,7 +4882,7 @@ ireland_elections = {
 				tooltip = ireland_action_open_coalition_negotiations_requirements_tt
 
 			original_tag = IRE
-			OR = { has_country_flag = ireland_election_open has_country_flag = ireland_dissolution_pending has_country_flag = ireland_government_formation_pending has_country_flag = ireland_by_election_open }
+			ireland_reveal_category_elections = yes
 			NOT = { has_country_flag = ireland_category_elections_at_capacity }
 			NOT = { has_country_flag = ireland_action_open_coalition_negotiations_active }
 			ireland_can_launch_form_a_government_after_the_poll_mission = yes
@@ -4973,7 +5125,7 @@ ireland_elections = {
 				tooltip = ireland_action_assign_cabinet_portfolios_requirements_tt
 
 			original_tag = IRE
-			OR = { has_country_flag = ireland_election_open has_country_flag = ireland_dissolution_pending has_country_flag = ireland_government_formation_pending has_country_flag = ireland_by_election_open }
+			ireland_reveal_category_elections = yes
 			NOT = { has_country_flag = ireland_category_elections_at_capacity }
 			NOT = { has_country_flag = ireland_action_assign_cabinet_portfolios_active }
 			check_variable = { ireland_administrative_reach < 95 }
@@ -5219,7 +5371,7 @@ ireland_elections = {
 				tooltip = ireland_action_ratify_the_coalition_charter_requirements_tt
 
 			original_tag = IRE
-			OR = { has_country_flag = ireland_election_open has_country_flag = ireland_dissolution_pending has_country_flag = ireland_government_formation_pending has_country_flag = ireland_by_election_open }
+			ireland_reveal_category_elections = yes
 			NOT = { has_country_flag = ireland_category_elections_at_capacity }
 			NOT = { has_country_flag = ireland_action_ratify_the_coalition_charter_active }
 			check_variable = { ireland_social_consent < 95 }
@@ -5465,7 +5617,7 @@ ireland_elections = {
 				tooltip = ireland_action_prepare_a_by_election_requirements_tt
 
 			original_tag = IRE
-			OR = { has_country_flag = ireland_election_open has_country_flag = ireland_dissolution_pending has_country_flag = ireland_government_formation_pending has_country_flag = ireland_by_election_open }
+			ireland_reveal_category_elections = yes
 			NOT = { has_country_flag = ireland_category_elections_at_capacity }
 			NOT = { has_country_flag = ireland_action_prepare_a_by_election_active }
 			ireland_can_launch_election_by_election_mission = yes

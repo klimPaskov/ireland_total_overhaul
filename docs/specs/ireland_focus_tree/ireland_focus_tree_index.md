@@ -36,7 +36,7 @@ A later part overrides an earlier broad statement only where the later part has 
 | `ireland_focus_tree_spec_part_2_constitutional_politics.md` | National Settlement, elections, Dáil and government formation, Fianna Fáil, Lemass, Fine Gael, Dillon, Labour, Clann na Talmhan, Church domains and constitutional vocationalism |
 | `ireland_focus_tree_spec_part_3_radical_and_hidden_routes.md` | IRA, Republican Congress, O'Duffy, corporate and clerical transformations, Ailtirí, serious culture, High Kingship, Five Provinces, Otherworld and hidden convergence |
 | `ireland_focus_tree_spec_part_4_statecraft_and_war.md` | National Provision, National Readiness, economy, defence, active neutrality, diplomacy, Northern settlement, integration, expansion, postwar statecraft and material route conclusions |
-| `ireland_focus_tree_spec_part_5_decisions_events_and_lifecycles.md` | thirteen categories, 140 actions, 54 mission families, 484-event minimum, laws, offices, ideas, identity, cleanup and fifteen standard conclusion families |
+| `ireland_focus_tree_spec_part_5_decisions_events_and_lifecycles.md` | fourteen categories, 144 actions, 54 mission families, 484-event minimum, laws, offices, ideas, identity, cleanup and fifteen standard conclusion families |
 | `ireland_focus_tree_spec_part_6_ai_assets_achievements_and_text.md` | 30 AI profiles, ten overlays, foreign reactions, 32 achievements, exact asset budget, GUI, animation, text direction and prompt ownership |
 
 ## Maps

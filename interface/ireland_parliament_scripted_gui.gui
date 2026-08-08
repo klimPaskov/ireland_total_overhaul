@@ -1,0 +1,187 @@
+# Ireland Total Overhaul - USA-style parliament decision-category header.
+# Chamber composition and the four legislative powers are summarized above the
+# native decisions, which remain the only clickable controls.
+@DAIL_TEXT_X = 16
+@SEANAD_TEXT_X = 212
+@HEADERS_Y = 67
+@STATUS_Y = 52
+@COMPOSITION_Y = 92
+@POWERS_Y = 120
+
+guiTypes = {
+	containerWindowType = {
+		name = "ireland_parliament_decision_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height = 152 }
+
+		iconType = {
+			name = "dail_icon"
+			spriteType = "GFX_ireland_parliament_dail_ui"
+			position = { x = 70 y = 4 }
+		}
+
+		instantTextBoxType = {
+			name = "ireland_dail_support_header"
+			position = { x = @DAIL_TEXT_X y = @HEADERS_Y }
+			font = "hoi_24header"
+			text = "ireland_parliament_dail_header"
+			format = center
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "ireland_dail_support_status"
+			position = { x = @DAIL_TEXT_X y = @STATUS_Y }
+			font = "hoi_18mbs"
+			text = "ireland_parliament_dail_status"
+			pdx_tooltip = "ireland_parliament_dail_status_tt"
+			format = center
+			fixedsize = yes
+			maxWidth = 180
+		}
+
+		instantTextBoxType = {
+			name = "ireland_dail_composition"
+			position = { x = @DAIL_TEXT_X y = @COMPOSITION_Y }
+			font = "hoi_16mbs"
+			text = "ireland_parliament_dail_composition"
+			pdx_tooltip = "ireland_parliament_dail_composition_tt"
+			format = center
+			fixedsize = yes
+			maxWidth = 180
+		}
+
+		iconType = {
+			name = "seanad_icon"
+			spriteType = "GFX_ireland_parliament_seanad_ui"
+			position = { x = 280 y = 0 }
+		}
+
+		instantTextBoxType = {
+			name = "ireland_seanad_support_status"
+			position = { x = @SEANAD_TEXT_X y = @STATUS_Y }
+			font = "hoi_18mbs"
+			text = "ireland_parliament_seanad_status"
+			pdx_tooltip = "ireland_parliament_seanad_status_tt"
+			format = center
+			fixedsize = yes
+			maxWidth = 280
+		}
+
+		instantTextBoxType = {
+			name = "ireland_seanad_support_header"
+			position = { x = @SEANAD_TEXT_X y = @HEADERS_Y }
+			font = "hoi_24header"
+			text = "ireland_parliament_seanad_header"
+			format = center
+			maxHeight = 24
+			fixedsize = yes
+			maxWidth = 280
+		}
+
+		instantTextBoxType = {
+			name = "ireland_seanad_composition"
+			position = { x = @SEANAD_TEXT_X y = @COMPOSITION_Y }
+			font = "hoi_16mbs"
+			text = "ireland_parliament_seanad_composition"
+			pdx_tooltip = "ireland_parliament_seanad_composition_tt"
+			format = center
+			fixedsize = yes
+			maxWidth = 280
+		}
+
+		instantTextBoxType = {
+			name = "ireland_parliament_powers_header"
+			position = { x = 16 y = @POWERS_Y }
+			font = "hoi_18mbs"
+			text = "ireland_parliament_powers_header"
+			format = left
+			fixedsize = yes
+			maxWidth = 170
+		}
+
+		instantTextBoxType = {
+			name = "ireland_parliament_power_dail_label"
+			position = { x = 200 y = @POWERS_Y }
+			font = "hoi_16mbs"
+			text = "ireland_parliament_power_dail_label"
+			pdx_tooltip = "ireland_parliament_power_dail_tt"
+			format = left
+			fixedsize = yes
+			maxWidth = 110
+		}
+		instantTextBoxType = {
+			name = "ireland_parliament_power_dail_status"
+			position = { x = 315 y = @POWERS_Y }
+			font = "hoi_16mbs"
+			context_aware_text = [GetIrelandParliamentPowerDail]
+			pdx_tooltip = "ireland_parliament_power_dail_tt"
+			format = left
+			maxWidth = 90
+			maxHeight = 22
+		}
+
+		instantTextBoxType = {
+			name = "ireland_parliament_power_seanad_label"
+			position = { x = 430 y = @POWERS_Y }
+			font = "hoi_16mbs"
+			text = "ireland_parliament_power_seanad_label"
+			pdx_tooltip = "ireland_parliament_power_seanad_tt"
+			format = left
+			fixedsize = yes
+			maxWidth = 110
+		}
+		instantTextBoxType = {
+			name = "ireland_parliament_power_seanad_status"
+			position = { x = 545 y = @POWERS_Y }
+			font = "hoi_16mbs"
+			context_aware_text = [GetIrelandParliamentPowerSeanad]
+			pdx_tooltip = "ireland_parliament_power_seanad_tt"
+			format = left
+			maxWidth = 90
+			maxHeight = 22
+		}
+
+		instantTextBoxType = {
+			name = "ireland_parliament_power_confidence_label"
+			position = { x = 660 y = @POWERS_Y }
+			font = "hoi_16mbs"
+			text = "ireland_parliament_power_confidence_label"
+			pdx_tooltip = "ireland_parliament_power_confidence_tt"
+			format = left
+			fixedsize = yes
+			maxWidth = 120
+		}
+		instantTextBoxType = {
+			name = "ireland_parliament_power_confidence_status"
+			position = { x = 785 y = @POWERS_Y }
+			font = "hoi_16mbs"
+			context_aware_text = [GetIrelandParliamentPowerConfidence]
+			pdx_tooltip = "ireland_parliament_power_confidence_tt"
+			format = left
+			maxWidth = 90
+			maxHeight = 22
+		}
+
+		instantTextBoxType = {
+			name = "ireland_parliament_power_budget_label"
+			position = { x = 900 y = @POWERS_Y }
+			font = "hoi_16mbs"
+			text = "ireland_parliament_power_budget_label"
+			pdx_tooltip = "ireland_parliament_power_budget_tt"
+			format = left
+			fixedsize = yes
+			maxWidth = 100
+		}
+		instantTextBoxType = {
+			name = "ireland_parliament_power_budget_status"
+			position = { x = 1005 y = @POWERS_Y }
+			font = "hoi_16mbs"
+			context_aware_text = [GetIrelandParliamentPowerBudget]
+			pdx_tooltip = "ireland_parliament_power_budget_tt"
+			format = left
+			maxWidth = 90
+			maxHeight = 22
+		}
+	}
+}

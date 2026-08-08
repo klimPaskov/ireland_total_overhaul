@@ -1,4 +1,4 @@
-﻿# Irish Marine Service names. The names are intentionally small-service
+# Irish Marine Service names. The names are intentionally small-service
 # appropriate: saints, Irish trees, coastal places, and the few Irish vessels
 # that were actually used for patrol, training, or rescue work.
 IRE_IRELAND_PATROL_SERVICE = {

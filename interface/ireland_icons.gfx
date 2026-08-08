@@ -227,9 +227,10 @@ spriteTypes = {
 	spriteType = { name = GFX_focus_ireland_fivefold_obligation texturefile = "gfx/interface/goals/ireland/goal_ireland_fivefold_obligation.dds" }
 	spriteType = { name = GFX_focus_ireland_otherworld_convergence texturefile = "gfx/interface/goals/ireland/goal_ireland_otherworld_convergence.dds" }
 	spriteType = { name = GFX_focus_ireland_convergence_order_capstone texturefile = "gfx/interface/goals/ireland/goal_ireland_convergence_order_capstone.dds" }
-	# The action budget is 70 unique DDS textures exposed through 140 named
-	# action sprites. Reusing a texturefile across named action aliases is
-	# intentional controlled reuse; sprite names remain unique for decisions.
+	# The live surface has 144 named action sprites backed by 70 controlled
+	# reuse textures: 140 primary decision sprites plus four Marine Service
+	# sprites. Four opening parliamentary decisions intentionally reuse semantic
+	# sprites so the native decision list and the panel show the same action.
 	spriteType = { name = GFX_decision_ireland_convene_a_cabinet_cohesion_review texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_001.dds" }
 	spriteType = { name = GFX_decision_ireland_request_a_confidence_vote texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_002.dds" }
 	spriteType = { name = GFX_decision_ireland_negotiate_confidence_and_supply texturefile = "gfx/interface/decisions/ireland/actions/decision_action_ireland_003.dds" }

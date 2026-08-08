@@ -1,4 +1,6 @@
-﻿# Ireland Total Overhaul player-facing historical, crisis, material, Northern and postwar event programme.
+# Ireland Total Overhaul player-facing historical, crisis, material, Northern and postwar event programme.
+add_namespace = ireland_events
+
 # Allocation in this file: 72 historical/institutional, 45 political crisis, 48 Provision/Readiness/neutrality, 32 Northern settlement/integration, 30 foreign reactions and 24 postwar/conclusion nodes, plus the reaction digest, the explicit Otherworld archive reveal, and three supplemental lifecycle nodes; 256 authored standard definitions in total.
 # Family registry: H01-H18 (72), P01-P18 (45), N01-N09 (48), NR01-NR08 (32), FR01-FR12 (30), PW01-PW04 (24), FR-DIGEST (1), A19 Otherworld reveal (1).
 # H/P/A gates are inline. Every event stores persistent memory, scales effects from a live Ireland ledger, supplies AI chance, and clears ephemeral event state.

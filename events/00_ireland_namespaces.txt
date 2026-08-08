@@ -1,3 +1,4 @@
-# Ireland event namespaces are declared once, before every event consumer.
+# Ireland event namespaces are registered centrally and repeated at the top of
+# each Ireland event consumer so load order cannot leave an event id undefined.
 add_namespace = ireland
 add_namespace = ireland_events

@@ -1,8 +1,6 @@
-# Immediate, visible focus rewards. These profiles supplement authored route
-# state and unlock effects; they never replace or infer route progression.
-
-@IRELAND_TECHNICAL_FOCUS_BONUS = 0.25
-@IRELAND_TECHNICAL_FOCUS_BONUS_USES = 1
+# Rounded branch acknowledgements. Route flags, ideas, decisions, missions,
+# ledgers, and bespoke effects remain the meaningful progression; these profiles
+# make the reward visible without replacing the route's authored payoff.
 
 ireland_grant_institutional_focus_reward = {
 	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.political_power_standard }
@@ -60,9 +58,8 @@ ireland_grant_technical_focus_reward = {
 	add_political_power = ireland_focus_reward_value
 	add_tech_bonus = {
 		name = ireland_serious_focus_reward
-		# add_tech_bonus parses these fields through file-scoped substitution.
-		bonus = @IRELAND_TECHNICAL_FOCUS_BONUS
-		uses = @IRELAND_TECHNICAL_FOCUS_BONUS_USES
+		bonus = 0.25
+		uses = 2
 		category = industry
 	}
 }
@@ -114,13 +111,4 @@ ireland_grant_capstone_focus_reward = {
 	add_stability = ireland_focus_reward_value
 	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.command_power_capstone }
 	add_command_power = ireland_focus_reward_value
-	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.service_experience }
-	army_experience = ireland_focus_reward_value
-	navy_experience = ireland_focus_reward_value
-	air_experience = ireland_focus_reward_value
-	set_temp_variable = { var = ireland_focus_reward_value value = constant:ireland_focus_reward.capstone_support_equipment }
-	add_equipment_to_stockpile = {
-		type = support_equipment
-		amount = ireland_focus_reward_value
-	}
 }

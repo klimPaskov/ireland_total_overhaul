@@ -9,6 +9,7 @@
 @ireland_achievement_neutrality_incident_floor = 6
 @ireland_achievement_office_days = 365
 @ireland_foreign_reaction_saturation_days = 60
+@IRELAND_PARLIAMENT_SEANAD_FORMAL_SEATS = 60
 
 ireland_initialize_campaign = {
 	if = {
@@ -257,6 +258,16 @@ ireland_initialize_campaign = {
 		set_variable = { var = ireland_dail_fine_gael_formal_seats value = constant:ireland.fine_gael_formal_seats }
 		set_variable = { var = ireland_dail_labour_formal_seats value = constant:ireland.labour_formal_seats }
 		set_variable = { var = ireland_dail_other_formal_seats value = constant:ireland.other_formal_seats }
+		set_variable = { var = ireland_parliament_stage value = constant:ireland.one }
+		set_variable = { var = ireland_parliament_dail_sessions_held value = constant:ireland.zero }
+		set_variable = { var = ireland_seanad_formal_seats value = @IRELAND_PARLIAMENT_SEANAD_FORMAL_SEATS }
+		set_variable = { var = ireland_seanad_majority_threshold value = ireland_seanad_formal_seats }
+		divide_variable = { ireland_seanad_majority_threshold = 2 }
+		add_to_variable = { var = ireland_seanad_majority_threshold value = constant:ireland.one }
+		set_variable = { var = ireland_seanad_government_seats value = ireland_seanad_majority_threshold }
+		subtract_from_variable = { ireland_seanad_government_seats = constant:ireland.one }
+		set_variable = { var = ireland_seanad_opposition_seats value = ireland_seanad_formal_seats }
+		subtract_from_variable = { ireland_seanad_opposition_seats = ireland_seanad_government_seats }
 		set_variable = { var = ireland_intervention_mandate value = constant:ireland.zero }
 		set_variable = { var = ireland_route_commitment_input value = constant:ireland.zero }
 		set_variable = { var = ireland_route_commitment value = constant:ireland.zero }
@@ -578,6 +589,7 @@ ireland_initialize_campaign = {
 		ireland_sync_route_profile = yes
 		set_country_flag = ireland_achievement_tracking_active
 		set_country_flag = ireland_initialized
+		ireland_update_parliament = yes
 		set_power_balance = {
 			id = ireland_national_settlement
 			set_value = constant:ireland_fixed.settlement_bop_opening

@@ -36,7 +36,10 @@ ireland_lemass_developmental = {
 	enable = { OR = { has_country_flag = ireland_profile_lemass_developmental has_country_flag = ireland_route_lemass_developmental } }
 	abort_when_not_enabled = yes
 	ai_strategy = { type = build_building id = industrial_complex value = 100 }
-	ai_strategy = { type = factory_build_score_factor value = 35 }
+	# The factory-score factor is state-scoped in vanilla; keep the
+	# developmental preference on Dublin's industrial core rather than using a
+	# targetless entry that the AI parser cannot apply.
+	ai_strategy = { type = factory_build_score_factor target = 113 value = 35 }
 	ai_strategy = { type = research_weight_factor id = basic_machine_tools value = 80 }
 }
 
@@ -75,7 +78,9 @@ ireland_dillon_intervention = {
 	abort_when_not_enabled = yes
 	ai_strategy = { type = prepare_for_war id = GER value = 80 }
 	ai_strategy = { type = prepare_for_war id = ENG value = 55 }
-	ai_strategy = { type = invasion_unit_request value = 40 }
+	# The intervention profile requests units for the named Northern objective;
+	# a targetless request is ignored by the vanilla AI strategy reader.
+	ai_strategy = { type = invasion_unit_request state = 119 value = 40 }
 }
 
 ireland_norton_parliamentary = {

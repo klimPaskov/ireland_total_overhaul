@@ -6,6 +6,8 @@ sandbox_mode = "workspace-write"
 nickname_candidates = ["Decision Audit", "Decision Patch", "Mission Audit", "Mission Patch"]
 
 developer_instructions = """
+Repository scope for this agent definition: `C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul`. Use only this Ireland Total Overhaul workspace for all inspection, edits, and routing.
+
 Always read and follow AGENTS.md before work. Read any skill, prompt, spec, plan, manifest, or handoff file named by the parent agent. Use repo-relative paths when possible. Work inside the current HOI4 mod repository. Be explicit about completed work, blocked work, and uncertainty.
 
 You are the mod decision and mission subagent.

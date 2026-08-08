@@ -1,0 +1,81 @@
+# Ireland parliament trigger contract.
+# These helpers keep the decision requirements readable while the panel exposes
+# the same live Dáil and Seanad ledgers used by the actions below.
+
+@IRELAND_PARLIAMENT_DAIL_SESSION_PP_GATE = 14
+@IRELAND_PARLIAMENT_SEANAD_SUPPORT_PP_GATE = 24
+@IRELAND_PARLIAMENT_CONFIDENCE_COMPACT_PP_GATE = 24
+@IRELAND_PARLIAMENT_JOINT_BUDGET_PP_GATE = 34
+
+ireland_parliament_open = {
+	original_tag = IRE
+	has_country_flag = ireland_initialized
+	ireland_reveal_settlement_open = yes
+}
+
+ireland_parliament_stage_one = {
+	check_variable = { var = ireland_parliament_stage value = constant:ireland.one compare = equals }
+}
+
+ireland_parliament_stage_two_or_later = {
+	check_variable = { var = ireland_parliament_stage value = constant:ireland.two compare = greater_than_or_equals }
+}
+
+ireland_parliament_stage_three_or_later = {
+	check_variable = { var = ireland_parliament_stage value = constant:ireland.three compare = greater_than_or_equals }
+}
+
+ireland_parliament_stage_four_or_later = {
+	check_variable = { var = ireland_parliament_stage value = constant:ireland.four compare = greater_than_or_equals }
+}
+
+ireland_parliament_dail_majority = {
+	check_variable = { var = ireland_dail_government_routine_votes value = ireland_dail_majority_threshold compare = greater_than_or_equals }
+}
+
+ireland_parliament_seanad_majority = {
+	check_variable = { var = ireland_seanad_government_seats value = ireland_seanad_majority_threshold compare = greater_than_or_equals }
+}
+
+ireland_parliament_dail_action_available = {
+	ireland_parliament_open = yes
+	has_country_flag = ireland_settlement_open
+	ireland_parliament_stage_one = yes
+	NOT = { has_country_flag = ireland_parliament_dail_session_complete }
+	has_political_power > @IRELAND_PARLIAMENT_DAIL_SESSION_PP_GATE
+	any_owned_state = { state = 113 }
+}
+
+ireland_parliament_seanad_action_available = {
+	ireland_parliament_open = yes
+	has_country_flag = ireland_settlement_open
+	ireland_parliament_stage_two_or_later = yes
+	NOT = { has_country_flag = ireland_parliament_seanad_support_complete }
+	check_variable = {
+		var = ireland_seanad_government_seats
+		value = ireland_seanad_majority_threshold
+		compare = less_than
+	}
+	has_political_power > @IRELAND_PARLIAMENT_SEANAD_SUPPORT_PP_GATE
+	any_owned_state = { state = 113 }
+}
+
+ireland_parliament_confidence_action_available = {
+	ireland_parliament_open = yes
+	has_country_flag = ireland_settlement_open
+	ireland_parliament_stage_three_or_later = yes
+	NOT = { has_country_flag = ireland_parliament_confidence_compact_complete }
+	has_political_power > @IRELAND_PARLIAMENT_CONFIDENCE_COMPACT_PP_GATE
+	any_owned_state = { state = 113 }
+}
+
+ireland_parliament_joint_budget_action_available = {
+	ireland_parliament_open = yes
+	has_country_flag = ireland_settlement_open
+	ireland_parliament_stage_four_or_later = yes
+	NOT = { has_country_flag = ireland_parliament_joint_budget_complete }
+	ireland_parliament_dail_majority = yes
+	ireland_parliament_seanad_majority = yes
+	has_political_power > @IRELAND_PARLIAMENT_JOINT_BUDGET_PP_GATE
+	any_owned_state = { state = 113 }
+}

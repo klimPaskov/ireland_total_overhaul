@@ -1,4 +1,4 @@
-﻿# Ireland secondary icon registry. Ordinal asset names are mapped to canonical runtime IDs in source order.
+# Ireland secondary icon registry. Ordinal asset names are mapped to canonical runtime IDs in source order.
 # Runtime DDS files live under gfx/. The assets/ireland_focus_tree tree is staging-only for source packages, processing, manifests, and review evidence.
 spriteTypes = {
 	spriteType = { name = GFX_idea_ireland_spirit_governing_order texturefile = "gfx/interface/ideas/ireland/spirits/spirit_ireland_001.dds" }

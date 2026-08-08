@@ -1,0 +1,159 @@
+# Ireland parliament runtime contract.
+# The panel reads these country variables directly. Formal seats are stable
+# chamber composition; routine votes, stage, and chamber support are live
+# ledgers changed by the parliament decisions and normalized each daily tick.
+
+@IRELAND_PARLIAMENT_SEANAD_STAGE_COMPLETE = 5
+@IRELAND_PARLIAMENT_SEANAD_FORMAL_SEATS = 60
+
+# These record effects are called only by the native category decisions. The
+# scripted GUI is a read-only summary, so there is no second cost/effect path.
+
+ireland_record_parliament_dail_session = {
+	add_to_variable = { var = ireland_dail_government_routine_votes value = constant:ireland.one }
+	add_to_variable = { var = ireland_dail_mandate value = 4 }
+	add_to_variable = { var = ireland_cabinet_cohesion value = 2 }
+	add_to_variable = { var = ireland_social_consent value = 2 }
+	add_to_variable = { var = ireland_parliament_dail_sessions_held value = constant:ireland.one }
+	set_country_flag = ireland_parliament_dail_session_complete
+	ireland_update_parliament = yes
+}
+
+ireland_record_parliament_seanad_support = {
+	add_to_variable = { var = ireland_seanad_government_seats value = 2 }
+	add_to_variable = { var = ireland_social_consent value = 3 }
+	add_to_variable = { var = ireland_cabinet_cohesion value = 2 }
+	set_country_flag = ireland_parliament_seanad_support_complete
+	ireland_update_parliament = yes
+}
+
+ireland_record_parliament_confidence_compact = {
+	if = {
+		limit = {
+			check_variable = { var = ireland_dail_external_support_votes value = constant:ireland.zero compare = equals }
+		}
+		set_variable = { var = ireland_dail_external_support_votes value = constant:ireland.one }
+	}
+	add_to_variable = { var = ireland_dail_government_routine_votes value = 2 }
+	add_to_variable = { var = ireland_dail_mandate value = 5 }
+	add_to_variable = { var = ireland_social_consent value = 4 }
+	add_to_variable = { var = ireland_cabinet_cohesion value = 3 }
+	set_country_flag = ireland_parliament_confidence_compact_complete
+	ireland_update_parliament = yes
+}
+
+ireland_record_parliament_joint_budget = {
+	add_stability = 0.05
+	add_to_variable = { var = ireland_administrative_reach value = 5 }
+	add_to_variable = { var = ireland_dail_mandate value = 8 }
+	add_to_variable = { var = ireland_cabinet_cohesion value = 5 }
+	set_country_flag = ireland_parliament_joint_budget_complete
+	ireland_update_parliament = yes
+}
+
+ireland_update_parliament = {
+	if = {
+		limit = { has_country_flag = ireland_initialized }
+		set_temp_variable = { var = ireland_parliament_previous_dail_opposition value = ireland_dail_opposition_formal_seats }
+		set_temp_variable = { var = ireland_parliament_previous_dail_government_formal value = ireland_dail_fianna_fail_formal_seats }
+		set_temp_variable = { var = ireland_parliament_previous_dail_votes value = ireland_dail_government_routine_votes }
+		set_temp_variable = { var = ireland_parliament_previous_seanad_government value = ireland_seanad_government_seats }
+		set_temp_variable = { var = ireland_parliament_previous_seanad_opposition value = ireland_seanad_opposition_seats }
+		set_temp_variable = { var = ireland_parliament_previous_stage value = ireland_parliament_stage }
+		set_temp_variable = { var = ireland_parliament_previous_social_consent value = ireland_social_consent }
+		set_temp_variable = { var = ireland_parliament_previous_cabinet_cohesion value = ireland_cabinet_cohesion }
+		set_temp_variable = { var = ireland_parliament_previous_dail_mandate value = ireland_dail_mandate }
+
+		# Keep the visible Dáil opposition bloc tied to its named party ledgers.
+		set_temp_variable = { var = ireland_parliament_dail_opposition_derived value = ireland_dail_fine_gael_formal_seats }
+		add_to_temp_variable = { ireland_parliament_dail_opposition_derived = ireland_dail_labour_formal_seats }
+		add_to_temp_variable = { ireland_parliament_dail_opposition_derived = ireland_dail_other_formal_seats }
+		set_variable = { var = ireland_dail_opposition_formal_seats value = ireland_parliament_dail_opposition_derived }
+
+		# Routine Dáil power is a voting ledger, while Seanad power is the number
+		# of senators aligned with the government for chamber review and assent.
+		clamp_variable = { var = ireland_dail_government_routine_votes min = constant:ireland.zero max = constant:ireland.dail_routine_votes }
+		clamp_variable = { var = ireland_seanad_government_seats min = constant:ireland.zero max = @IRELAND_PARLIAMENT_SEANAD_FORMAL_SEATS }
+		set_variable = { var = ireland_seanad_opposition_seats value = ireland_seanad_formal_seats }
+		subtract_from_variable = { ireland_seanad_opposition_seats = ireland_seanad_government_seats }
+		clamp_variable = { var = ireland_seanad_opposition_seats min = constant:ireland.zero max = @IRELAND_PARLIAMENT_SEANAD_FORMAL_SEATS }
+
+		# USA-style live chamber frames. Frame 1 is the empty/weak-support
+		# state; frame 21 is full support. The GUI only displays these values.
+		set_temp_variable = { var = ireland_dail_icon_frame_temp value = ireland_dail_government_routine_votes }
+		divide_temp_variable = { ireland_dail_icon_frame_temp = ireland_dail_routine_votes }
+		multiply_temp_variable = { ireland_dail_icon_frame_temp = 21 }
+		if = {
+			limit = {
+				check_variable = {
+					var = ireland_dail_icon_frame_temp
+					value = constant:ireland.zero
+					compare = greater_than
+				}
+			}
+			clamp_temp_variable = { var = ireland_dail_icon_frame_temp min = constant:ireland.one max = 21 }
+		}
+		else = {
+			set_temp_variable = { var = ireland_dail_icon_frame_temp value = constant:ireland.one }
+		}
+		set_variable = { var = ireland_dail_icon_frame value = ireland_dail_icon_frame_temp }
+
+		set_temp_variable = { var = ireland_seanad_icon_frame_temp value = ireland_seanad_government_seats }
+		divide_temp_variable = { ireland_seanad_icon_frame_temp = ireland_seanad_formal_seats }
+		multiply_temp_variable = { ireland_seanad_icon_frame_temp = 21 }
+		if = {
+			limit = {
+				check_variable = {
+					var = ireland_seanad_icon_frame_temp
+					value = constant:ireland.zero
+					compare = greater_than
+				}
+			}
+			clamp_temp_variable = { var = ireland_seanad_icon_frame_temp min = constant:ireland.one max = 21 }
+		}
+		else = {
+			set_temp_variable = { var = ireland_seanad_icon_frame_temp value = constant:ireland.one }
+		}
+		set_variable = { var = ireland_seanad_icon_frame value = ireland_seanad_icon_frame_temp }
+
+		# Each completed chamber action reveals the next one. The final value is
+		# deliberately retained so the GUI can show that the sequence is complete.
+		set_variable = { var = ireland_parliament_stage value = constant:ireland.one }
+		if = {
+			limit = { has_country_flag = ireland_parliament_dail_session_complete }
+			set_variable = { var = ireland_parliament_stage value = constant:ireland.two }
+		}
+		if = {
+			limit = { has_country_flag = ireland_parliament_seanad_support_complete }
+			set_variable = { var = ireland_parliament_stage value = constant:ireland.three }
+		}
+		if = {
+			limit = { has_country_flag = ireland_parliament_confidence_compact_complete }
+			set_variable = { var = ireland_parliament_stage value = constant:ireland.four }
+		}
+		if = {
+			limit = { has_country_flag = ireland_parliament_joint_budget_complete }
+			set_variable = { var = ireland_parliament_stage value = @IRELAND_PARLIAMENT_SEANAD_STAGE_COMPLETE }
+		}
+		clamp_variable = { var = ireland_parliament_stage min = constant:ireland.one max = @IRELAND_PARLIAMENT_SEANAD_STAGE_COMPLETE }
+
+		# The scripted GUI is dirtied only when a displayed value changes. This is
+		# also what makes changes from existing Ireland events appear immediately.
+		if = {
+			limit = {
+				OR = {
+					check_variable = { var = ireland_parliament_previous_dail_opposition value = ireland_dail_opposition_formal_seats compare = not_equals }
+					check_variable = { var = ireland_parliament_previous_dail_government_formal value = ireland_dail_fianna_fail_formal_seats compare = not_equals }
+					check_variable = { var = ireland_parliament_previous_dail_votes value = ireland_dail_government_routine_votes compare = not_equals }
+					check_variable = { var = ireland_parliament_previous_seanad_government value = ireland_seanad_government_seats compare = not_equals }
+					check_variable = { var = ireland_parliament_previous_seanad_opposition value = ireland_seanad_opposition_seats compare = not_equals }
+					check_variable = { var = ireland_parliament_previous_stage value = ireland_parliament_stage compare = not_equals }
+					check_variable = { var = ireland_parliament_previous_social_consent value = ireland_social_consent compare = not_equals }
+					check_variable = { var = ireland_parliament_previous_cabinet_cohesion value = ireland_cabinet_cohesion compare = not_equals }
+					check_variable = { var = ireland_parliament_previous_dail_mandate value = ireland_dail_mandate compare = not_equals }
+				}
+			}
+			add_to_variable = { var = ireland_parliament_gui_dirty value = constant:ireland.one }
+		}
+	}
+}

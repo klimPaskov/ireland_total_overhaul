@@ -4,7 +4,24 @@ Feature slug: `ireland_focus_tree`
 
 Feature: Ireland gameplay overhaul and national focus tree (completion audit in progress)
 
-## Current authority snapshot: 2026-08-03
+## Full-mod audit refresh: 2026-08-05
+
+The current live source contains 211 focuses with one root, 14 decision
+categories, 144 primary actions plus 4 Marine Service actions, and 54 mission
+families. The improvement loop removed ordinary repeated focus reward bundles,
+restored the convergence AI focus chain, closed stale election/lifecycle flag
+aliases, made Atlantic route protection one-time, added parliamentary outcome
+tooltips, and made composite AI plans relinquish ownership to precise profiles.
+MCP focus inspection reports 234 connectors with zero crossings, node
+intersections, long connectors, or same-row overlap. The parliament GUI source
+graph has no overlap or budget blockers across the rendered state matrix. A
+direct `hoi4.exe -debug` launch after these repairs produced an empty
+`logs/error.log`. The three blocked portrait rows P-26, P-45, and P-55 remain
+blocked because exact cleared source was not supplied; no substitute was used.
+
+The 2026-08-03 snapshot below is retained as historical provenance.
+
+## Historical authority snapshot: 2026-08-03
 
 The 2026-08-03 round-15 and round-24 source promotions, round-16 through
 round-18 and round-25 through round-31 exact-object rejections,

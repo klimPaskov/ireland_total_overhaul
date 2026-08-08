@@ -47,6 +47,7 @@ ireland_alternate_focus_ai_allowed = {
 # and concealed entry separate from temporary affordability and capacity.
 ireland_reveal_category_settlement = {
 	NOT = { has_country_flag = ireland_route_archived }
+	has_country_flag = ireland_settlement_open
 }
 
 ireland_reveal_settlement_open = {
@@ -69,7 +70,6 @@ ireland_reveal_settlement_confidence = {
 ireland_reveal_settlement_formation = {
 	ireland_reveal_category_settlement = yes
 	OR = {
-		has_country_flag = ireland_government_formation_ready
 		has_country_flag = ireland_government_formation_ready
 		has_country_flag = ireland_action_ask_the_president_for_dissolution_complete
 		has_country_flag = ireland_general_election_campaign_open

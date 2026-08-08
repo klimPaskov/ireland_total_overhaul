@@ -1,4 +1,4 @@
-﻿# Ireland Total Overhaul country setup.
+# Ireland Total Overhaul country setup.
 # Vanilla Ireland's historical start is preserved; the campaign runtime adds
 # the canonical settlement, companion ledgers, laws, offices, and route spirits.
 capital = 113

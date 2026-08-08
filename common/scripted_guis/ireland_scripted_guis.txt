@@ -1,17 +1,41 @@
 # Ireland Total Overhaul scripted GUI registrations.
-# These decision-category surfaces reveal systems gradually and use selection
-# followed by an explicit review action. They do not grant direct rewards.
+# The parliament surface follows the vanilla USA Congress contract: it is a
+# compact live summary above native decisions. The decisions own costs, gates,
+# AI weights, and effects; this GUI deliberately has no duplicate click path.
 
 scripted_gui = {
-	ireland_parliament_panel_scripted_gui = {
+	ireland_parliament_decision_ui = {
 		context_type = decision_category
-		window_name = "ireland_parliament_panel_window"
-		visible = {
-			original_tag = IRE
-			has_country_flag = ireland_initialized
+		window_name = "ireland_parliament_decision_ui_window"
+		# Match the vanilla USA Congress contract: chamber sprites are
+		# multi-frame assets driven by live support ratios, while decisions
+		# remain the only clickable controls.
+		properties = {
+			dail_icon = {
+				frame = ireland_dail_icon_frame
+			}
+			seanad_icon = {
+				frame = ireland_seanad_icon_frame
+			}
 		}
+		visible = {
+			ireland_parliament_open = yes
+		}
+		dirty = ireland_parliament_gui_dirty
 		ai_enabled = { original_tag = IRE }
-		ai_check = { always = no }
+		triggers = {
+			ireland_dail_composition_visible = { ireland_parliament_open = yes }
+			ireland_seanad_composition_visible = { ireland_parliament_open = yes }
+			ireland_parliament_powers_header_visible = { ireland_parliament_open = yes }
+			ireland_parliament_power_dail_label_visible = { ireland_parliament_open = yes }
+			ireland_parliament_power_dail_status_visible = { ireland_parliament_open = yes }
+			ireland_parliament_power_seanad_label_visible = { ireland_parliament_open = yes }
+			ireland_parliament_power_seanad_status_visible = { ireland_parliament_open = yes }
+			ireland_parliament_power_confidence_label_visible = { ireland_parliament_open = yes }
+			ireland_parliament_power_confidence_status_visible = { ireland_parliament_open = yes }
+			ireland_parliament_power_budget_label_visible = { ireland_parliament_open = yes }
+			ireland_parliament_power_budget_status_visible = { ireland_parliament_open = yes }
+		}
 	}
 
 

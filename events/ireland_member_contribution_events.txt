@@ -1,5 +1,7 @@
-﻿# Regional-order member contribution selection. The namespace is declared by
-# the main Ireland event programme; this file owns the P/A selection surface.
+# Regional-order member contribution selection. The namespace is declared by
+add_namespace = ireland_events
+
+# This file owns the P/A selection surface and declares the event namespace.
 
 country_event = {
 	id = ireland_events.431
