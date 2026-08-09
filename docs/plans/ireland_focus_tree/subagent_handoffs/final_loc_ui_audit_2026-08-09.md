@@ -148,6 +148,20 @@ remain compatibility flags/assets only and do not retain focus localisation.
 None. Both English localisation files retain a UTF-8 BOM
 (`EF BB BF`) and decode as strict UTF-8. No `:0` keys were found.
 
+## Read-only GUI evidence
+
+The Parliament window was inspected after the patch with the `ire_start_after_initialization`
+offline scenario in workspace `mod_ireland_total_overhaul_aaca88216c92`.
+Artifact:
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/2e7f8437b9a25f66afccfe7683fff5300f7e8b844a8fea4ddbc880f46fa375bc/f292ac6a858f48e0b16ea925647a2b6b410716a7c736bb5abb35597af2e6c31e/gui-inspect.ff5b4a8e1f20057e.json`.
+
+The source graph parsed without blocking diagnostics and the inspector reported
+no visible overlap. Its five unresolved dynamic-value groups are the expected
+live chamber variables that the offline scenario cannot inject; they are not
+missing localisation. Two informational layout notices (near-alignment of the
+Dáil icon/header and varying sibling vertical gaps) do not affect text-key
+resolution.
+
 ## Validation
 
 Task-specific checks run after the patch:
