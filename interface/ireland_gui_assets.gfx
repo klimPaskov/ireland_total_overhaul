@@ -8,6 +8,7 @@ spriteTypes = {
 	spriteType = { name = GFX_ireland_gui_status_locked texturefile = "gfx/interface/ireland/gui/shared/status_locked.dds" }
 	spriteType = { name = GFX_ireland_gui_status_warning texturefile = "gfx/interface/ireland/gui/shared/status_warning.dds" }
 	spriteType = { name = GFX_ireland_gui_status_critical texturefile = "gfx/interface/ireland/gui/shared/status_critical.dds" }
+	spriteType = { name = GFX_ireland_parliament_summary_background texturefile = "gfx/interface/ireland/gui/parliament/parliament_summary_background.dds" }
 	# USA Congress-style 21-frame chamber indicators. The frame is set by
 	# ireland_update_parliament from the live Dáil and Seanad support ratios.
 	spriteType = {
@@ -18,6 +19,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_ireland_parliament_seanad_ui"
 		texturefile = "gfx/interface/ireland/gui/parliament/seanad_chamber_ui.dds"
+		noOfFrames = 21
+	}
+	spriteType = {
+		name = "GFX_ireland_parliament_seanad_compact_ui"
+		texturefile = "gfx/interface/ireland/gui/parliament/seanad_chamber_ui_compact.dds"
 		noOfFrames = 21
 	}
 	textSpriteType = {

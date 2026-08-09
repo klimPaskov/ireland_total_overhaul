@@ -21,6 +21,9 @@ focus_tree = {
 		}
 	}
 	initial_show_position = { focus = ireland_state_still_defined }
+	# Keep the continuous-focus palette below the 17-row authored tree instead
+	# of allowing the engine default to cover the middle branch lanes.
+	continuous_focus_position = { x = 50 y = 2400 }
 
 # Shared opening: constitutional politics opens to the left, culture and society occupy the centre,
 # material planning and defence open to the right, and the Marine Service terminates at the far edge.

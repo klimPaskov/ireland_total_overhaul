@@ -55,6 +55,11 @@ diplomacy and neutrality, army/air/coastal readiness, and the far-right Marine
 Service. The naval lane no longer sits inside the political or industrial
 centre.
 
+The continuous-focus palette is explicitly anchored at `x = 50, y = 2400`,
+below the final authored row. It remains close to the opening camera's central
+axis but no longer covers a political, cultural, industrial, diplomatic, or
+defence lane.
+
 All ordinary subject families are visible from the opening screen. Exactly
 eight crisis, radical, or evidence-gated roots retain `allow_branch`: IRA,
 Congress, O'Duffy, clerical failure, Ailtirí, High Kingship, Five Provinces,
@@ -90,10 +95,14 @@ generic reward bundle.
 `ireland_parliament_decision_ui_window` fits the fixed 510 by 198 host. The
 panel contains:
 
-- live Dáil and Seanad chamber summaries;
-- four equal 125-pixel columns for Dáil authority, Seanad panels, confidence,
-  and budget;
-- one frame-driven red/green state icon for each power.
+- a generated 1930s dossier background with a parchment chamber field and a
+  dark legislative-progress band;
+- one Houses of the Oireachtas title and two equal-width Dáil/Seanad chamber
+  cards;
+- identically sized live support arcs, centered majority figures, and compact
+  composition summaries for both chambers;
+- one horizontal four-step track for Dáil authority, Seanad support,
+  confidence, and budget, with a frame-driven red/green state for each step.
 
 `ireland_update_parliament` initializes each power frame to 1 (pending) and
 sets it to 2 (secured) from the matching completion flag. All summary and state
@@ -105,8 +114,14 @@ The Parliament summary is visible as soon as Ireland initialization completes.
 Its four native actions remain gated by `ireland_settlement_open`, so early
 visibility does not bypass their political prerequisites.
 
-The panel reuses vanilla `GFX_checkbox_small_red_green`; no new visual asset or
-fallback sprite was required.
+The panel reuses vanilla `GFX_checkbox_small_red_green` and the existing live
+chamber-strip state system. Its decorative background is registered as
+`GFX_ireland_parliament_summary_background`; source, processed preview, DDS,
+prompt, manifest, and wiring handoff are retained under
+`docs/assets/ireland_parliament_panel/`. A 21-frame 90x50 Seanad derivative is
+processed frame by frame from the existing project strip so both chambers have
+the same 50px visual height without fractional GUI scaling. No fallback sprite
+was used.
 
 ## AI, localisation, and lifecycle alignment
 
@@ -137,7 +152,7 @@ The final `hoi4.focus_inspect` revision reports:
 - 0 Ireland-local diagnostics.
 
 Artifact:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/d4a39796bce33bf7ea6637aead1b99aa1248bd3a340f64e1f3144a367a636e94/421bc58e6e4be5c1a2c9125922e517a6e8c84186840a2b3571cffda032443e43/focus-inspect.f3eb8148dafc7f96.json`
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/3ca1558a3b879ffd558d5fdad951f222f71d92ff473ec325a545a6bc6082a758/65bd0cb5262b5ea5c9d64c933bc8b35f7bb06aacf657efbe5a70d84e56027e43/focus-inspect.e3a6dbf54659fc69.json`
 
 The final structural focus render passed. The high-fidelity raster produced the
 Ireland tree PNG and resolved every Ireland focus icon. Its reported failures
@@ -146,20 +161,24 @@ vanilla continuous-focus description; no Ireland focus or asset is implicated.
 
 Render artifacts:
 
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/67401071261e3f1648c6521d254d2b757f2028e3ccab5445a8e62cc206281e98/f79d48bf724598116eea5331a85be43bdbc0aed34e9b63c13734e2a8e900c245/ireland_focus_tree.focus.html`
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/7507d0e1a2562589350eb99148e691015122db8c36e83557a50a0f4243f7934b/5117e75d29ccb6d20df949b037663bf187330b8731e8a9da99b9afa1eea5bf2e/ireland_focus_tree.focus.png`
+- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/4b998600688da0effb679e604db8f8d965e0cb41d5e11a1a4c7a8ed20ac3092b/e48be564d21e5abd3608f0c555836b021301734fa9dcaa48154468f3bb2c7805/ireland_focus_tree.focus.html`
+- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/e6121bda644e36b632f3336ea192adea60293f8f3deef53d8c2b365ee041c9bf/cb92306c73ff07c1e684074d6d9bd6197d598d2051c01e352cc9dea8c5b81f2a/ireland_focus_tree.focus.png`
 
-The final Parliament GUI inspection has no blocking source-graph diagnostics
-and no visible overlap. Its render covers 1366 by 768 and 1920 by 1080 across normal,
+The final Parliament GUI inspection passes its source graph and has no visible
+overlap, clipping, text overflow, missing sprite, missing texture, or missing
+font. Its render covers 1366 by 768 and 1920 by 1080 across normal,
 hover, selected, locked, disabled, warning, active, completed, empty/full,
 minimum/maximum, long-text, and missing-localisation states. The render reports
-zero overlap or source-graph errors.
+zero overlap or source-graph errors. Its four unresolved-value notices are the
+offline renderer's expected placeholders for country-scoped live seat and
+majority variables; every referenced variable is initialized by the Parliament
+system and is deliberately shown as live data.
 
 Artifacts:
 
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/2e7f8437b9a25f66afccfe7683fff5300f7e8b844a8fea4ddbc880f46fa375bc/f292ac6a858f48e0b16ea925647a2b6b410716a7c736bb5abb35597af2e6c31e/gui-inspect.ff5b4a8e1f20057e.json`
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/d857d868c9d3627f19a9b3de9f02d4def7a3dc54d538724b0f2a24495bb865ba/2e6b5fb9d3d2bd7a7be12d941292630be04a6ca499c72a0148d3c68747b533b0/ireland_parliament_decision_ui_window-validation.json`
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/53387608ad150283192eec6cad203649f187b16f91d61340578e4c85139f86c6/b8d73f7bc168ffe25212af211c24b07ddb928b5193c9a2025d6dc8027f42ff18/ireland_parliament_decision_ui_window-state-matrix.png`
+- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/6bdb582d039d626eb1538f5134af2cad513e3fc7a20995b42c47be0ad133d05b/86a43d18fcb572b90870b2317d90352488a8b1091bec94d3c5be5af900d83582/gui-inspect.5f725bd58271c2f7.json`
+- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/e68361e5c99358adaf0fc2698ade6a7d8e2893f7c622c102cfa57d19226afaf8/9f7b286b3a46c9bad5c5e9b148908948f152a10ded9fcaa7d3535778a917f5ee/ireland_parliament_decision_ui_window-validation.json`
+- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/ef220ede0f0c3bc4e6486c3cdc26b9d1a7ddbd193797659a1de117b97afc986e/49120d0bfac15f29da690caa190867e5d2e9ffe859e3277a9444ebda2c2ae1c2/ireland_parliament_decision_ui_window-state-matrix.png`
 
 ## Files and systems changed
 
@@ -167,6 +186,9 @@ Artifacts:
 - Ireland AI focus plans and 1939 completed-focus history.
 - Parliament recompute effect, scripted-GUI properties/visibility, interface
   layout, scripted localisation, and English localisation.
+- Parliament presentation assets: generated 510x198 dossier background,
+  frame-preserving compact Seanad strip, runtime DDS files, sprite
+  registrations, prompt, manifest, processed previews, and wiring handoff.
 - Generic focus-reward helper and constant files removed.
 - Reward-contract and source-of-truth documentation reconciled; specialist
   focus, GUI, and localisation handoffs retained under `docs/plans/`.
