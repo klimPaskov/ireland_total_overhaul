@@ -10,8 +10,7 @@ ireland_settlement_government = {
 		original_tag = IRE
 	}
 	visible = {
-		original_tag = IRE
-		ireland_reveal_category_settlement = yes
+		ireland_parliament_open = yes
 	}
 	visible_when_empty = yes
 	priority = 100

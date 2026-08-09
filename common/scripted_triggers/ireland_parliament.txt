@@ -10,7 +10,7 @@
 ireland_parliament_open = {
 	original_tag = IRE
 	has_country_flag = ireland_initialized
-	ireland_reveal_settlement_open = yes
+	NOT = { has_country_flag = ireland_route_archived }
 }
 
 ireland_parliament_stage_one = {
