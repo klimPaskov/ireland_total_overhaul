@@ -849,13 +849,14 @@ IRE_ireland_route_high_king = {
 		ireland_serious_cultural_stewardship
 		ireland_cultural_evidence_ledger
 		ireland_high_king_evidence_gate
-		ireland_elective_crown
 		ireland_crown_powers_charter
 		ireland_high_king_capstone
 		ireland_recovery_bridge
 	}
 	focus_factors = {
 		ireland_high_king_evidence_gate = 90
+		ireland_elective_crown = 80
+		ireland_guardian_crown = 90
 		ireland_high_king_capstone = 100
 	}
 }

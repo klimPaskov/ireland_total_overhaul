@@ -17,6 +17,33 @@ Document role: high-level route and system map. It does not define final focus c
 - `~` route changes the meaning or rewards of a shared lane
 - `?` hidden reveal
 
+## Implemented spatial grammar
+
+The 150-focus runtime tree uses the following player-facing layout contract:
+
+| Spatial band | Authored range | Subject family |
+| --- | ---: | --- |
+| far left | x -24 to -18 | emergency, recovery, and radical political crises |
+| left | x -16 to -8 | constitutional government and party succession |
+| left-centre | x -6 to 0 | Northern policy and all-Ireland settlement |
+| centre | x 0 to 12 | culture, society, and evidence-gated institutions |
+| right-centre | x 12 to 20 | industry, transport, and National Provision |
+| right | x 20 to 26 | diplomacy and neutrality |
+| outer right | x 22 to 32 | command, army/air readiness, coastwatch, and port defence |
+| far right | x 36 to 38 | the Marine Service and dockyard family |
+
+The opening camera anchors on `ireland_state_still_defined`. Ordinary politics,
+Northern policy, culture, industry, diplomacy, defence, and naval focuses are
+visible from the start, even while unavailable. Only the eight authored IRA,
+Congress, O'Duffy, clerical-failure, Ailtirí, High Kingship, Five Provinces,
+and Otherworld roots use `allow_branch` progressive reveal.
+
+The visible dependency graph follows subject meaning. Defence Estimates fans
+to Command Audit and the readiness programme; readiness remains unavailable
+until Command Audit is complete. The Economic War feeds provision, the Treaty
+Port settlement feeds Northern policy, emergency repeal feeds recovery, and
+transport plus energy converge through stockpiles into the maritime reserve.
+
 ## Full campaign lane map
 
 ```text

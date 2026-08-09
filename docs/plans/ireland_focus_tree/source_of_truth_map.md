@@ -8,7 +8,7 @@ the Parliament scripted-GUI presentation contract.
 
 The authoritative implementation report for this pass is
 `docs/plans/ireland_focus_tree/focus_tree_parliament_completion_2026-08-09.md`.
-Older 211-focus and 226-focus snapshots below remain historical provenance and
+Older 211-focus, 216-focus, and 226-focus snapshots below remain historical provenance and
 must not be used as current completion evidence.
 
 The portrait-source boundary is flat and explicit: every complete portrait
@@ -19,11 +19,18 @@ remain under `gfx/`.
 
 ## Current audit authority snapshot: 2026-08-09
 
-The live national tree has 150 focuses, one root, and 158 visual connectors.
+The live national tree has 150 focuses, one root, and 159 visual connectors.
 The final MCP inspection reports zero crossings, zero node intersections, zero
 long connectors, zero same-row spacing defects, and zero Ireland-local focus
 diagnostics. All focus titles, descriptions, icons, prerequisite references,
 and AI-plan focus references resolve.
+
+The opening camera anchors on `ireland_state_still_defined`. Ordinary politics,
+Northern policy, culture, industry, diplomacy, army/air readiness, and the
+far-right Marine Service are visible from the start. Exactly eight authored
+crisis, radical, or evidence-gated families retain progressive `allow_branch`
+reveal: IRA, Congress, O'Duffy, clerical failure, Ailtirí, High Kingship, Five
+Provinces, and Otherworld.
 
 Universal focus-reward profiles have been retired. Every surviving focus owns
 a named route, project, ledger, action, mission, proof, or institutional
@@ -34,8 +41,13 @@ written by its explicit survivor.
 The Parliament header is a 510 by 198 projection inside the decision-category
 host. It contains Dáil and Seanad summaries and four equal power columns. All
 display controls are click-through; native decisions remain the sole action
-owners. MCP inspection and the 1280 by 720 / 1920 by 1080 fourteen-state render
+owners. The summary becomes visible after Ireland initialization, while the
+native actions remain gated by the settlement opening. MCP inspection and the
+1366 by 768 / 1920 by 1080 fourteen-state render
 report no localisation errors, visible overlaps, or click-region defects.
+
+All maritime ledger deltas use the registered `ireland_maritime` script
+constant category. The invalid `ireland.maritime` category form is absent.
 
 No fallback tree, placeholder reward, alternative seat model, or substitute UI
 surface was introduced.

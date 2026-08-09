@@ -7,7 +7,7 @@ Feature slug: `ireland_focus_tree`
 ## Outcome
 
 The Ireland national tree is a single 150-focus directed acyclic graph with one
-root and 158 visible connectors. The generated expansion layer and universal
+root and 159 visible connectors. The generated expansion layer and universal
 reward profiles are retired. The Parliament scripted GUI is a compact,
 read-only projection of the native parliamentary decisions inside the actual
 510 by 198 decision-category host.
@@ -38,13 +38,34 @@ convergence-order sequence. It closes the compatibility, conclusion, profile,
 and verification flags in the same completion effect.
 
 The final graph has no duplicate coordinates, unresolved prerequisites, or
-cycles. Its 37 structural leaves were checked individually. They are route
+cycles. Its 36 structural leaves were checked individually. They are route
 capstones, intentional policy endpoints, or focuses consumed by named
 availability gates, flags, events, ledgers, achievements, or conclusion
 effects; none is an unconsumed dead end. Provision and Northern convergence use
 state gates for distant required projects instead of adding crossing visual
 connectors. This changes presentation only: the same completed focuses remain
 required.
+
+## Semantic layout and progressive reveal
+
+The opening camera anchors on `ireland_state_still_defined`. The authored tree
+now reads left to right as political crisis and constitutional government,
+Northern policy, culture and society, industry and National Provision,
+diplomacy and neutrality, army/air/coastal readiness, and the far-right Marine
+Service. The naval lane no longer sits inside the political or industrial
+centre.
+
+All ordinary subject families are visible from the opening screen. Exactly
+eight crisis, radical, or evidence-gated roots retain `allow_branch`: IRA,
+Congress, O'Duffy, clerical failure, Ailtirí, High Kingship, Five Provinces,
+and Otherworld. Their inherited descendants appear only when the existing
+gate and Ireland-scoped layout refresh succeed.
+
+Narrow prerequisite corrections make the visible connectors describe their
+real subject dependencies. In particular, defence and readiness fan from the
+shared defence gateway; readiness still requires Command Audit through its
+availability gate. Transport now visibly feeds stockpiles and the maritime
+reserve, while recovery no longer appears to depend on an optional naval pact.
 
 ## Reward contracts
 
@@ -80,6 +101,10 @@ icons pass clicks through. The four native, one-time decisions remain the only
 cost, trigger, effect, and AI owners. Route archival hides the scripted header,
 preventing a stale panel after its actions are removed.
 
+The Parliament summary is visible as soon as Ireland initialization completes.
+Its four native actions remain gated by `ireland_settlement_open`, so early
+visibility does not bypass their political prerequisites.
+
 The panel reuses vanilla `GFX_checkbox_small_red_green`; no new visual asset or
 fallback sprite was required.
 
@@ -95,13 +120,16 @@ fallback sprite was required.
   explains red pending / green secured.
 - English localisation remains UTF-8 with BOM.
 - The 1939 history bookmark points to the surviving rural-price-board focus.
+- Every maritime ledger delta reads the registered
+  `constant:ireland_maritime.ledger_standard_delta`; the invalid dotted
+  category form is absent.
 
 ## Validation evidence
 
 The final `hoi4.focus_inspect` revision reports:
 
 - 150 focuses and one root;
-- 158 connectors;
+- 159 connectors;
 - 0 connector crossings;
 - 0 node intersections;
 - 0 long connectors;
@@ -109,23 +137,29 @@ The final `hoi4.focus_inspect` revision reports:
 - 0 Ireland-local diagnostics.
 
 Artifact:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/fb32d403fdd542f6a9c2d9ec5171b2ef55d356a942e80f4fe762537d4618c9ef/2e05926efa5a18bbf5a979b0200a4e76acb0033538ace469ba0eea5f09d776e3/focus-inspect.55cadd1bd50ffb1a.json`
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/d4a39796bce33bf7ea6637aead1b99aa1248bd3a340f64e1f3144a367a636e94/421bc58e6e4be5c1a2c9125922e517a6e8c84186840a2b3571cffda032443e43/focus-inspect.f3eb8148dafc7f96.json`
 
 The final structural focus render passed. The high-fidelity raster produced the
 Ireland tree PNG and resolved every Ireland focus icon. Its reported failures
 are nine decoder errors for vanilla continuous-focus DDS files and one missing
 vanilla continuous-focus description; no Ireland focus or asset is implicated.
 
-The final Parliament GUI inspection has no non-information diagnostics and no
-visible overlap. Its render covers 1280 by 720 and 1920 by 1080 across normal,
+Render artifacts:
+
+- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/67401071261e3f1648c6521d254d2b757f2028e3ccab5445a8e62cc206281e98/f79d48bf724598116eea5331a85be43bdbc0aed34e9b63c13734e2a8e900c245/ireland_focus_tree.focus.html`
+- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/7507d0e1a2562589350eb99148e691015122db8c36e83557a50a0f4243f7934b/5117e75d29ccb6d20df949b037663bf187330b8731e8a9da99b9afa1eea5bf2e/ireland_focus_tree.focus.png`
+
+The final Parliament GUI inspection has no blocking source-graph diagnostics
+and no visible overlap. Its render covers 1366 by 768 and 1920 by 1080 across normal,
 hover, selected, locked, disabled, warning, active, completed, empty/full,
 minimum/maximum, long-text, and missing-localisation states. The render reports
 zero overlap or source-graph errors.
 
 Artifacts:
 
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/4a5d6071bec06248e31ec5c0aa7c4db0e9f007dfc5bb3176a8200a4e1a277d76/d94ce9305a7862043d0a3113c869d06be2a7237865dafce5b07a4ce6a562226e/gui-inspect.f3eae66cbc9cad24.json`
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/c6272ab42f0735977c8ac748263d9372e299949720ae186c26af9bcea3e37555/43319d58a8ea78c7f77cbe47eb67e19b5c65b221a8678661704156e783cc59ef/ireland_parliament_decision_ui_window-validation.json`
+- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/2e7f8437b9a25f66afccfe7683fff5300f7e8b844a8fea4ddbc880f46fa375bc/f292ac6a858f48e0b16ea925647a2b6b410716a7c736bb5abb35597af2e6c31e/gui-inspect.ff5b4a8e1f20057e.json`
+- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/d857d868c9d3627f19a9b3de9f02d4def7a3dc54d538724b0f2a24495bb865ba/2e6b5fb9d3d2bd7a7be12d941292630be04a6ca499c72a0148d3c68747b533b0/ireland_parliament_decision_ui_window-validation.json`
+- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/53387608ad150283192eec6cad203649f187b16f91d61340578e4c85139f86c6/b8d73f7bc168ffe25212af211c24b07ddb928b5193c9a2025d6dc8027f42ff18/ireland_parliament_decision_ui_window-state-matrix.png`
 
 ## Files and systems changed
 

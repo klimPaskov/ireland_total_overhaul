@@ -3,15 +3,15 @@
 Date: 2026-08-09  
 Feature slug: `ireland_focus_tree`  
 Pass type: implementation-ready layout and progressive-reveal correction  
-Status: open; prompted by the player-visible readability defect found after the 2026-08-09 consolidation
+Status: implemented; accepted coordinate and reveal contract reconciled to the final source revision
 
-This is a plan-only handoff. It does not authorize focus, localisation, GUI, event, decision, or asset edits by this planner. The gameplay owner remains responsible for implementation and final validation.
+This began as a plan-only handoff. The gameplay owner implemented it, reviewed the connector routing, and accepted the narrow prerequisite corrections recorded in section 6.5 where the original graph itself made the subject families read incorrectly.
 
 ## 1. Why another improvement pass is valid
 
 The 2026-08-05 Parliament/focus-tree addendum is explicitly marked superseded and implemented. The 2026-08-06 reduction plan was fulfilled by the authoritative 2026-08-09 completion report, which records the consolidated 150-focus tree. Neither is an unresolved competing addendum.
 
-The new defect is narrower and was only visible after that implementation: the tree is structurally connected, but its authored coordinates do not communicate its subject families. The player cannot identify politics, industry, army/air, navy, diplomacy, Northern policy, and culture at first glance, and the naval family reads as an interior lane instead of a maritime edge. This addendum changes layout and reveal presentation only. It does not add focuses, routes, rewards, or prerequisites.
+The new defect is narrower and was only visible after that implementation: the tree was structurally connected, but its authored coordinates did not communicate its subject families. The player could not identify politics, industry, army/air, navy, diplomacy, Northern policy, and culture at first glance, and the naval family read as an interior lane instead of a maritime edge. The implementation changes layout and reveal presentation, plus narrow prerequisite geometry where an unrelated family was acting as a visual parent. It does not add focuses, routes, or generic rewards.
 
 ## 2. Evidence and engine constraints
 
@@ -102,13 +102,13 @@ These are absolute coordinates. The table is the implementation source for this 
 | --- | ---: | ---: |
 | `ireland_state_still_defined` | 6 | 0 |
 | `ireland_national_settlement` | -2 | 1 |
-| `ireland_economic_war_review` | 6 | 1 |
+| `ireland_economic_war_review` | 12 | 1 |
 | `ireland_defence_estimates` | 14 | 1 |
 | `ireland_public_order_review` | -10 | 2 |
 | `ireland_church_labour_consultation` | 2 | 2 |
-| `ireland_election_timetable` | -2 | 2 |
+| `ireland_election_timetable` | -4 | 2 |
 | `ireland_rural_price_board` | 12 | 2 |
-| `ireland_command_audit` | 20 | 2 |
+| `ireland_command_audit` | 14 | 2 |
 | `ireland_constitutional_draft` | -4 | 3 |
 | `ireland_election_mandate` | -12 | 4 |
 | `ireland_government_formation` | -12 | 5 |
@@ -129,7 +129,7 @@ These are absolute coordinates. The table is the implementation source for this 
 | `ireland_recovery_bridge` | -22 | 14 |
 | `ireland_restore_constitutional_calendar` | -22 | 15 |
 | `ireland_material_conclusion_proof` | -22 | 16 |
-| `ireland_lemass_developmental` | -16 | 9 |
+| `ireland_lemass_developmental` | -20 | 9 |
 | `ireland_dail_nomination` | -20 | 10 |
 | `ireland_constitutional_opposition` | -10 | 8 |
 | `ireland_close_oduffy_chapter` | -10 | 9 |
@@ -161,11 +161,11 @@ These are absolute coordinates. The table is the implementation source for this 
 | `ireland_cultural_evidence_ledger` | 4 | 8 |
 | `ireland_vocational_constitution` | 6 | 6 |
 | `ireland_vocational_constitution_capstone` | 6 | 7 |
-| `ireland_provision_baseline` | 16 | 3 |
+| `ireland_provision_baseline` | 12 | 3 |
 | `ireland_food_ledger` | 14 | 4 |
 | `ireland_energy_board` | 16 | 4 |
 | `ireland_transport_priority` | 18 | 4 |
-| `ireland_maritime_reserve` | 20 | 6 |
+| `ireland_maritime_reserve` | 18 | 6 |
 | `ireland_domestic_manufacturing` | 16 | 5 |
 | `ireland_rural_credit` | 14 | 5 |
 | `ireland_emergency_stockpiles` | 18 | 5 |
@@ -181,41 +181,41 @@ These are absolute coordinates. The table is the implementation source for this 
 | `ireland_northern_federal_preparation` | -2 | 10 |
 | `ireland_northern_unitary_preparation` | -6 | 11 |
 | `ireland_northern_wartime_bargain` | -4 | 11 |
-| `ireland_northern_policy_proof` | -4 | 12 |
-| `ireland_strict_neutrality` | 22 | 4 |
-| `ireland_armed_neutrality` | 20 | 5 |
-| `ireland_treaty_port_diplomacy` | 24 | 5 |
-| `ireland_british_leverage_management` | 24 | 6 |
-| `ireland_american_diaspora_mission` | 22 | 5 |
-| `ireland_vatican_small_state_mediation` | 26 | 5 |
-| `ireland_foreign_safeguards` | 22 | 7 |
-| `ireland_neutrality_posture` | 22 | 8 |
-| `ireland_interoperability` | 26 | 8 |
+| `ireland_northern_policy_proof` | -2 | 12 |
+| `ireland_strict_neutrality` | 22 | 3 |
+| `ireland_armed_neutrality` | 20 | 4 |
+| `ireland_treaty_port_diplomacy` | 24 | 4 |
+| `ireland_british_leverage_management` | 24 | 5 |
+| `ireland_american_diaspora_mission` | 22 | 4 |
+| `ireland_vatican_small_state_mediation` | 26 | 4 |
+| `ireland_foreign_safeguards` | 22 | 6 |
+| `ireland_neutrality_posture` | 22 | 7 |
+| `ireland_interoperability` | 26 | 7 |
 
 ### 6.3 Army, air, and the far-right naval family
 
 | Focus ID | x | y |
 | --- | ---: | ---: |
-| `ireland_readiness_baseline` | 24 | 3 |
-| `ireland_readiness_command` | 28 | 4 |
-| `ireland_coastwatch` | 32 | 4 |
-| `ireland_professional_army` | 28 | 5 |
-| `ireland_civilian_oversight` | 28 | 6 |
-| `ireland_air_warning` | 30 | 5 |
-| `ireland_emergency_mobilisation` | 30 | 6 |
-| `ireland_port_defence_project` | 34 | 5 |
-| `ireland_maritime_protection` | 32 | 6 |
-| `ireland_readiness_conclusion` | 32 | 7 |
-| `ireland_establish_naval_staff` | 36 | 6 |
-| `ireland_rebuild_marine_service` | 36 | 7 |
-| `ireland_requisition_trawler_hulls` | 36 | 8 |
-| `ireland_coastal_patrol_flotilla` | 36 | 9 |
-| `ireland_marine_service_reserve` | 36 | 10 |
-| `ireland_harbour_defence_board` | 38 | 7 |
-| `ireland_cobh_dockyard_programme` | 38 | 8 |
-| `ireland_lough_swilly_watch` | 38 | 9 |
-| `ireland_atlantic_convoy_office` | 38 | 10 |
-| `ireland_regional_maritime_defence_pact` | 32 | 11 |
+| `ireland_readiness_baseline` | 22 | 2 |
+| `ireland_readiness_command` | 28 | 3 |
+| `ireland_coastwatch` | 30 | 3 |
+| `ireland_professional_army` | 28 | 4 |
+| `ireland_civilian_oversight` | 28 | 5 |
+| `ireland_air_warning` | 30 | 4 |
+| `ireland_emergency_mobilisation` | 30 | 5 |
+| `ireland_port_defence_project` | 32 | 4 |
+| `ireland_maritime_protection` | 32 | 5 |
+| `ireland_readiness_conclusion` | 32 | 6 |
+| `ireland_establish_naval_staff` | 36 | 5 |
+| `ireland_rebuild_marine_service` | 36 | 6 |
+| `ireland_requisition_trawler_hulls` | 36 | 7 |
+| `ireland_coastal_patrol_flotilla` | 36 | 8 |
+| `ireland_marine_service_reserve` | 36 | 9 |
+| `ireland_harbour_defence_board` | 38 | 6 |
+| `ireland_cobh_dockyard_programme` | 38 | 7 |
+| `ireland_lough_swilly_watch` | 38 | 8 |
+| `ireland_atlantic_convoy_office` | 38 | 9 |
+| `ireland_regional_maritime_defence_pact` | 32 | 10 |
 
 ### 6.4 Conditional political and cultural families
 
@@ -255,16 +255,29 @@ These are absolute coordinates. The table is the implementation source for this 
 | `ireland_guardian_crown` | 10 | 10 |
 | `ireland_crown_powers_charter` | 10 | 11 |
 | `ireland_high_king_capstone` | 10 | 12 |
-| `ireland_five_province_mandates` | -4 | 13 |
+| `ireland_five_province_mandates` | -2 | 13 |
 | `ireland_federal_republic` | -4 | 14 |
-| `ireland_pentarchy_guardians` | -6 | 14 |
-| `ireland_five_provinces_capstone` | -6 | 15 |
+| `ireland_pentarchy_guardians` | 0 | 14 |
+| `ireland_five_provinces_capstone` | -2 | 15 |
 | `ireland_otherworld_investigation` | 2 | 9 |
 | `ireland_otherworld_evidence_ledger` | 2 | 10 |
 | `ireland_compact_with_otherworld` | 2 | 11 |
 | `ireland_containment_protocol` | 4 | 11 |
 | `ireland_dominion_claim` | 2 | 12 |
 | `ireland_otherworld_capstone` | 2 | 13 |
+
+### 6.5 Implemented dependency corrections
+
+The exact coordinate table above is the final authored layout. During engine routing review, the gameplay owner also accepted these dependency corrections so the visible graph describes the actual subject architecture:
+
+- `ireland_defence_estimates` opens from `ireland_state_still_defined`, separating defence planning from the Economic War lane.
+- `ireland_provision_baseline` opens from `ireland_rural_price_board`; its existing availability requirements retain the 1938 settlement gate.
+- `ireland_readiness_baseline` visually branches from `ireland_defence_estimates` beside `ireland_command_audit`; its availability block still requires Command Audit, so eligibility is unchanged while the false staircase connector is removed.
+- `ireland_northern_settlement_ledger` opens from `ireland_treaty_port_transfer`, placing Northern policy under the sovereignty settlement rather than under neutrality diplomacy.
+- `ireland_recovery_bridge` opens from `ireland_emergency_repeal`, so constitutional recovery no longer appears to require completion of the optional regional naval pact.
+- `ireland_transport_priority` and `ireland_energy_board` jointly feed `ireland_emergency_stockpiles`, which then feeds `ireland_maritime_reserve`. This gives the transport focus a visible consumer and removes the former crossing/through-node convergence.
+
+These are authored graph corrections, not fallbacks. Existing `available` gates preserve every cross-system state requirement that remains meaningful.
 
 ## 7. Connector-risk rules
 
@@ -277,15 +290,15 @@ Those static properties are necessary but are not a completion claim. HOI4 draws
 3. Keep a minimum same-row centre spacing of two columns and forbid duplicate coordinate pairs.
 4. Permit no connector crossing and no connector-through-unrelated-node diagnostic.
 5. Permit no long connector: horizontal span must remain at most eight and Manhattan span at most ten for every edge, including `ireland_treaty_port_transfer` to `ireland_northern_settlement_ledger` and both parents of `ireland_regional_maritime_defence_pact`.
-6. Route the two multi-system handoffs through empty lower space: Northern policy leaves the Treaty Port political row into x -4; the regional maritime pact converges at x 32/y 11 from interoperability and the Atlantic office.
+6. Route the two multi-system handoffs through empty lower space: Northern policy leaves the Treaty Port political row into x -4; the regional maritime pact converges at x 32/y 10 from interoperability and the Atlantic office.
 7. A shared parent may fan to siblings, but sibling connectors may not share an unrelated child's node cell.
-8. Do not alter prerequisites, mutual exclusions, rewards, route flags, or AI weights merely to make a line shorter. If the exact authored graph cannot meet the zero-diagnostic geometry after bounded coordinate adjustments, stop and report the specific edge pair; prerequisite rewiring requires a separate gameplay-design decision.
+8. Do not alter prerequisites merely to make a line shorter. The prerequisite changes in section 6.5 were accepted because the old connectors asserted the wrong subject dependency; all other mutual exclusions, route flags, and reward contracts remain authoritative.
 
 ## 8. Implementation order and affected surfaces
 
 1. Re-read the current focus source because it was being edited in parallel when this plan was written.
-2. Confirm the current roster is still exactly the 150 IDs in section 6. If any ID or prerequisite changed, reconcile the table before editing rather than silently dropping it.
-3. Change only `initial_show_position`, `x`, `y`, and—if already present and still safe—local positioning declarations in `common/national_focus/ireland_focus_tree.txt`.
+2. Confirm the current roster is still exactly the 150 IDs in section 6 and apply the dependency corrections in section 6.5.
+3. Change `initial_show_position`, authored coordinates, and only the reviewed prerequisite blocks named in section 6.5 in `common/national_focus/ireland_focus_tree.txt`.
 4. Preserve the eight `allow_branch` blocks and the existing country-scoped layout refresh behavior.
 5. Run focus inspect, render, and raster review. Use a normal opening state and each of the eight revealed states.
 6. Correct only bounded coordinate defects, maintaining the band and edge-span rules above.
@@ -297,7 +310,7 @@ No localisation change is expected because no player-facing name changes. No new
 
 Implementation is accepted only when all of the following are true:
 
-- the source still contains exactly 150 focuses and the same prerequisite/mutual-exclusion graph;
+- the source contains exactly 150 focuses, preserves every mutual exclusion, and matches the reviewed dependency corrections in section 6.5;
 - the opening camera centers on `ireland_state_still_defined` and shows the national, economic, and defence gateways;
 - a full-tree raster makes the seven ordinary subject families identifiable without reading individual prerequisite lines;
 - the Marine Service is the far-right family and is not visually embedded inside politics, culture, industry, or the Northern lane;
@@ -306,11 +319,10 @@ Implementation is accepted only when all of the following are true:
 - unrevealed branches leave no orphan lines or unexplained holes in an ordinary branch;
 - focus inspection reports zero connector crossings, zero connector-through-node intersections, zero long connectors, zero parent-below-child cases, zero duplicate coordinates, and zero spacing defects;
 - review at the normal UI scale confirms focus cards and connector turns do not visually collide even if the structural inspector is clean;
-- no gameplay, AI, reward, localisation, asset, or GUI behavior changed as a side effect of the layout pass.
+- no route eligibility, mutual exclusion, localisation, asset, or GUI behavior changes as an accidental side effect of the layout pass.
 
 ## 10. Scope boundary and promotion
 
 Do not add branch-label GUI, new focuses, new hidden routes, new national spirits, route rewiring, or new assets in this pass. The defect is spatial architecture, not missing content. Adding a custom GUI legend would be bloat while the native focus coordinates remain unclear.
 
-This addendum should remain under `docs/plans/ireland_focus_tree/improvement_loop/` while open. If the layout is accepted and implemented, promote the exact coordinate/reveal contract—not the historical MCP snapshot—into the relevant `docs/specs/ireland_focus_tree/maps/` architecture map, then mark this plan implemented/superseded and update the source-of-truth map. If implementation requires prerequisite changes, keep this plan open and create a separately reviewed gameplay addendum rather than silently promoting altered design.
-
+This addendum remains under `docs/plans/ireland_focus_tree/improvement_loop/` as the implementation record. The accepted spatial grammar, reveal policy, and reviewed dependency corrections are promoted into the architecture map and completion/source-of-truth reports. The historical defective MCP snapshot remains evidence only.
