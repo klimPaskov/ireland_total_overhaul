@@ -1,187 +1,214 @@
-# Ireland Total Overhaul - USA-style parliament decision-category header.
-# Chamber composition and the four legislative powers are summarized above the
-# native decisions, which remain the only clickable controls.
-@DAIL_TEXT_X = 16
-@SEANAD_TEXT_X = 212
-@HEADERS_Y = 67
-@STATUS_Y = 52
-@COMPOSITION_Y = 92
-@POWERS_Y = 120
+# Ireland Total Overhaul - parliament decision-category header.
+# The panel presents two chambers and four institutional stages above the native
+# decisions, which remain the only clickable controls and gameplay owners.
+# The decision-category description host is 510 px wide. Keep the parliament
+# header inside that fixed width at every screen resolution.
+@DAIL_TEXT_X = 8
+@DAIL_TEXT_WIDTH = 380
+@DAIL_ICON_X = 400
+@DAIL_ICON_Y = 2
+@DAIL_HEADER_Y = 0
+@DAIL_STATUS_Y = 21
+@DAIL_COMPOSITION_Y = 42
+@SEANAD_TEXT_X = 8
+@SEANAD_TEXT_WIDTH = 350
+@SEANAD_ICON_X = 368
+@SEANAD_ICON_Y = 55
+@SEANAD_HEADER_Y = 61
+@SEANAD_STATUS_Y = 82
+@SEANAD_COMPOSITION_Y = 103
+@POWERS_HEADER_Y = 130
+@POWER_LABEL_Y = 148
+@POWER_STATUS_Y = 165
+@POWER_COLUMN_ONE_X = 2
+@POWER_COLUMN_TWO_X = 129
+@POWER_COLUMN_THREE_X = 256
+@POWER_COLUMN_FOUR_X = 383
+@POWER_COLUMN_WIDTH = 125
+@POWER_STATE_ONE_X = 49
+@POWER_STATE_TWO_X = 176
+@POWER_STATE_THREE_X = 303
+@POWER_STATE_FOUR_X = 430
 
 guiTypes = {
 	containerWindowType = {
 		name = "ireland_parliament_decision_ui_window"
 		position = { x = 0 y = 0 }
-		size = { width = 100% height = 152 }
+		size = { width = 100% height = 198 }
 
 		iconType = {
 			name = "dail_icon"
 			spriteType = "GFX_ireland_parliament_dail_ui"
-			position = { x = 70 y = 4 }
+			position = { x = @DAIL_ICON_X y = @DAIL_ICON_Y }
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
 			name = "ireland_dail_support_header"
-			position = { x = @DAIL_TEXT_X y = @HEADERS_Y }
-			font = "hoi_24header"
+			position = { x = @DAIL_TEXT_X y = @DAIL_HEADER_Y }
+			font = "hoi_18mbs"
 			text = "ireland_parliament_dail_header"
-			format = center
-			maxHeight = 24
+			format = left
+			fixedsize = yes
+			maxWidth = @DAIL_TEXT_WIDTH
+			maxHeight = 20
 		}
 
 		instantTextBoxType = {
 			name = "ireland_dail_support_status"
-			position = { x = @DAIL_TEXT_X y = @STATUS_Y }
-			font = "hoi_18mbs"
+			position = { x = @DAIL_TEXT_X y = @DAIL_STATUS_Y }
+			font = "hoi_16mbs"
 			text = "ireland_parliament_dail_status"
 			pdx_tooltip = "ireland_parliament_dail_status_tt"
-			format = center
+			format = left
 			fixedsize = yes
-			maxWidth = 180
+			maxWidth = @DAIL_TEXT_WIDTH
+			maxHeight = 18
 		}
 
 		instantTextBoxType = {
 			name = "ireland_dail_composition"
-			position = { x = @DAIL_TEXT_X y = @COMPOSITION_Y }
+			position = { x = @DAIL_TEXT_X y = @DAIL_COMPOSITION_Y }
 			font = "hoi_16mbs"
 			text = "ireland_parliament_dail_composition"
 			pdx_tooltip = "ireland_parliament_dail_composition_tt"
-			format = center
+			format = left
 			fixedsize = yes
-			maxWidth = 180
+			maxWidth = @DAIL_TEXT_WIDTH
+			maxHeight = 18
 		}
 
 		iconType = {
 			name = "seanad_icon"
 			spriteType = "GFX_ireland_parliament_seanad_ui"
-			position = { x = 280 y = 0 }
-		}
-
-		instantTextBoxType = {
-			name = "ireland_seanad_support_status"
-			position = { x = @SEANAD_TEXT_X y = @STATUS_Y }
-			font = "hoi_18mbs"
-			text = "ireland_parliament_seanad_status"
-			pdx_tooltip = "ireland_parliament_seanad_status_tt"
-			format = center
-			fixedsize = yes
-			maxWidth = 280
+			position = { x = @SEANAD_ICON_X y = @SEANAD_ICON_Y }
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
 			name = "ireland_seanad_support_header"
-			position = { x = @SEANAD_TEXT_X y = @HEADERS_Y }
-			font = "hoi_24header"
+			position = { x = @SEANAD_TEXT_X y = @SEANAD_HEADER_Y }
+			font = "hoi_18mbs"
 			text = "ireland_parliament_seanad_header"
-			format = center
-			maxHeight = 24
+			format = left
 			fixedsize = yes
-			maxWidth = 280
+			maxWidth = @SEANAD_TEXT_WIDTH
+			maxHeight = 20
+		}
+
+		instantTextBoxType = {
+			name = "ireland_seanad_support_status"
+			position = { x = @SEANAD_TEXT_X y = @SEANAD_STATUS_Y }
+			font = "hoi_16mbs"
+			text = "ireland_parliament_seanad_status"
+			pdx_tooltip = "ireland_parliament_seanad_status_tt"
+			format = left
+			fixedsize = yes
+			maxWidth = @SEANAD_TEXT_WIDTH
+			maxHeight = 18
 		}
 
 		instantTextBoxType = {
 			name = "ireland_seanad_composition"
-			position = { x = @SEANAD_TEXT_X y = @COMPOSITION_Y }
+			position = { x = @SEANAD_TEXT_X y = @SEANAD_COMPOSITION_Y }
 			font = "hoi_16mbs"
 			text = "ireland_parliament_seanad_composition"
 			pdx_tooltip = "ireland_parliament_seanad_composition_tt"
-			format = center
+			format = left
 			fixedsize = yes
-			maxWidth = 280
+			maxWidth = @SEANAD_TEXT_WIDTH
+			maxHeight = 18
 		}
 
 		instantTextBoxType = {
 			name = "ireland_parliament_powers_header"
-			position = { x = 16 y = @POWERS_Y }
-			font = "hoi_18mbs"
+			position = { x = @POWER_COLUMN_ONE_X y = @POWERS_HEADER_Y }
+			font = "hoi_16mbs"
 			text = "ireland_parliament_powers_header"
 			format = left
 			fixedsize = yes
-			maxWidth = 170
+			maxWidth = 500
+			maxHeight = 16
 		}
 
 		instantTextBoxType = {
 			name = "ireland_parliament_power_dail_label"
-			position = { x = 200 y = @POWERS_Y }
+			position = { x = @POWER_COLUMN_ONE_X y = @POWER_LABEL_Y }
 			font = "hoi_16mbs"
 			text = "ireland_parliament_power_dail_label"
 			pdx_tooltip = "ireland_parliament_power_dail_tt"
-			format = left
+			format = center
 			fixedsize = yes
-			maxWidth = 110
+			maxWidth = @POWER_COLUMN_WIDTH
+			maxHeight = 16
 		}
-		instantTextBoxType = {
-			name = "ireland_parliament_power_dail_status"
-			position = { x = 315 y = @POWERS_Y }
-			font = "hoi_16mbs"
-			context_aware_text = [GetIrelandParliamentPowerDail]
-			pdx_tooltip = "ireland_parliament_power_dail_tt"
-			format = left
-			maxWidth = 90
-			maxHeight = 22
+		iconType = {
+			name = "ireland_parliament_power_dail_state"
+			spriteType = "GFX_checkbox_small_red_green"
+			position = { x = @POWER_STATE_ONE_X y = @POWER_STATUS_Y }
+			frame = 1
+			pdx_tooltip = "ireland_parliament_power_status_tt"
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
 			name = "ireland_parliament_power_seanad_label"
-			position = { x = 430 y = @POWERS_Y }
+			position = { x = @POWER_COLUMN_TWO_X y = @POWER_LABEL_Y }
 			font = "hoi_16mbs"
 			text = "ireland_parliament_power_seanad_label"
 			pdx_tooltip = "ireland_parliament_power_seanad_tt"
-			format = left
+			format = center
 			fixedsize = yes
-			maxWidth = 110
+			maxWidth = @POWER_COLUMN_WIDTH
+			maxHeight = 16
 		}
-		instantTextBoxType = {
-			name = "ireland_parliament_power_seanad_status"
-			position = { x = 545 y = @POWERS_Y }
-			font = "hoi_16mbs"
-			context_aware_text = [GetIrelandParliamentPowerSeanad]
-			pdx_tooltip = "ireland_parliament_power_seanad_tt"
-			format = left
-			maxWidth = 90
-			maxHeight = 22
+		iconType = {
+			name = "ireland_parliament_power_seanad_state"
+			spriteType = "GFX_checkbox_small_red_green"
+			position = { x = @POWER_STATE_TWO_X y = @POWER_STATUS_Y }
+			frame = 1
+			pdx_tooltip = "ireland_parliament_power_status_tt"
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
 			name = "ireland_parliament_power_confidence_label"
-			position = { x = 660 y = @POWERS_Y }
+			position = { x = @POWER_COLUMN_THREE_X y = @POWER_LABEL_Y }
 			font = "hoi_16mbs"
 			text = "ireland_parliament_power_confidence_label"
 			pdx_tooltip = "ireland_parliament_power_confidence_tt"
-			format = left
+			format = center
 			fixedsize = yes
-			maxWidth = 120
+			maxWidth = @POWER_COLUMN_WIDTH
+			maxHeight = 16
 		}
-		instantTextBoxType = {
-			name = "ireland_parliament_power_confidence_status"
-			position = { x = 785 y = @POWERS_Y }
-			font = "hoi_16mbs"
-			context_aware_text = [GetIrelandParliamentPowerConfidence]
-			pdx_tooltip = "ireland_parliament_power_confidence_tt"
-			format = left
-			maxWidth = 90
-			maxHeight = 22
+		iconType = {
+			name = "ireland_parliament_power_confidence_state"
+			spriteType = "GFX_checkbox_small_red_green"
+			position = { x = @POWER_STATE_THREE_X y = @POWER_STATUS_Y }
+			frame = 1
+			pdx_tooltip = "ireland_parliament_power_status_tt"
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
 			name = "ireland_parliament_power_budget_label"
-			position = { x = 900 y = @POWERS_Y }
+			position = { x = @POWER_COLUMN_FOUR_X y = @POWER_LABEL_Y }
 			font = "hoi_16mbs"
 			text = "ireland_parliament_power_budget_label"
 			pdx_tooltip = "ireland_parliament_power_budget_tt"
-			format = left
+			format = center
 			fixedsize = yes
-			maxWidth = 100
+			maxWidth = @POWER_COLUMN_WIDTH
+			maxHeight = 16
 		}
-		instantTextBoxType = {
-			name = "ireland_parliament_power_budget_status"
-			position = { x = 1005 y = @POWERS_Y }
-			font = "hoi_16mbs"
-			context_aware_text = [GetIrelandParliamentPowerBudget]
-			pdx_tooltip = "ireland_parliament_power_budget_tt"
-			format = left
-			maxWidth = 90
-			maxHeight = 22
+		iconType = {
+			name = "ireland_parliament_power_budget_state"
+			spriteType = "GFX_checkbox_small_red_green"
+			position = { x = @POWER_STATE_FOUR_X y = @POWER_STATUS_Y }
+			frame = 1
+			pdx_tooltip = "ireland_parliament_power_status_tt"
+			alwaystransparent = yes
 		}
 	}
 }

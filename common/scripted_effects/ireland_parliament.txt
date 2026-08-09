@@ -116,6 +116,29 @@ ireland_update_parliament = {
 		}
 		set_variable = { var = ireland_seanad_icon_frame value = ireland_seanad_icon_frame_temp }
 
+		# The four institutional checks use the vanilla red/green checkbox sprite.
+		# Frame 1 is pending and frame 2 is complete.
+		set_variable = { var = ireland_parliament_power_dail_frame value = constant:ireland.one }
+		if = {
+			limit = { has_country_flag = ireland_parliament_dail_session_complete }
+			set_variable = { var = ireland_parliament_power_dail_frame value = constant:ireland.two }
+		}
+		set_variable = { var = ireland_parliament_power_seanad_frame value = constant:ireland.one }
+		if = {
+			limit = { has_country_flag = ireland_parliament_seanad_support_complete }
+			set_variable = { var = ireland_parliament_power_seanad_frame value = constant:ireland.two }
+		}
+		set_variable = { var = ireland_parliament_power_confidence_frame value = constant:ireland.one }
+		if = {
+			limit = { has_country_flag = ireland_parliament_confidence_compact_complete }
+			set_variable = { var = ireland_parliament_power_confidence_frame value = constant:ireland.two }
+		}
+		set_variable = { var = ireland_parliament_power_budget_frame value = constant:ireland.one }
+		if = {
+			limit = { has_country_flag = ireland_parliament_joint_budget_complete }
+			set_variable = { var = ireland_parliament_power_budget_frame value = constant:ireland.two }
+		}
+
 		# Each completed chamber action reveals the next one. The final value is
 		# deliberately retained so the GUI can show that the sequence is complete.
 		set_variable = { var = ireland_parliament_stage value = constant:ireland.one }

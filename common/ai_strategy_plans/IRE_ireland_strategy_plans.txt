@@ -29,13 +29,9 @@ IRE_ireland_historical = {
 		ireland_national_settlement
 		ireland_economic_war_review
 		ireland_defence_estimates
-		ireland_port_and_coast_audit
 		ireland_church_labour_consultation
-		ireland_northern_contacts
 		ireland_election_timetable
 		ireland_constitutional_draft
-		ireland_plebiscite_campaign
-		ireland_plebiscite_mandate
 		ireland_election_mandate
 		ireland_government_formation
 		ireland_1938_trade_settlement
@@ -65,9 +61,7 @@ IRE_ireland_historical = {
 		ireland_neutrality_posture
 		ireland_republican_government
 		ireland_de_valera_stewardship
-		ireland_govern_through_dail
 		ireland_constitutional_stewardship
-		ireland_reconciliation_mandate
 		ireland_de_valera_reconciliation_capstone
 		ireland_recovery_bridge
 		ireland_restore_constitutional_calendar
@@ -98,7 +92,6 @@ IRE_ireland_historical = {
 		ireland_strict_neutrality = 45
 		ireland_public_order_review = 55
 		ireland_rural_price_board = 50
-		ireland_domestic_industry_review = 60
 		ireland_command_audit = 60
 		ireland_replacement_charter = 75
 		ireland_dail_nomination = 65
@@ -118,7 +111,6 @@ IRE_ireland_historical = {
 		ireland_emergency_stockpiles = 65
 		ireland_social_cooperatives = 55
 		ireland_readiness_command = 70
-		ireland_territorial_reserve = 55
 		ireland_coastwatch = 70
 		ireland_air_warning = 55
 		ireland_port_defence_project = 65
@@ -203,7 +195,6 @@ IRE_ireland_route_reactive = {
 	focus_factors = {
 		ireland_public_order_review = 55
 		ireland_rural_price_board = 50
-		ireland_domestic_industry_review = 60
 		ireland_command_audit = 60
 		ireland_replacement_charter = 75
 		ireland_dail_nomination = 65
@@ -213,7 +204,6 @@ IRE_ireland_route_reactive = {
 		ireland_emergency_stockpiles = 65
 		ireland_social_cooperatives = 55
 		ireland_readiness_command = 70
-		ireland_territorial_reserve = 55
 		ireland_coastwatch = 70
 		ireland_air_warning = 55
 		ireland_port_defence_project = 65
@@ -271,7 +261,6 @@ IRE_ireland_route_de_valera_stewardship = {
 		ireland_constitutional_draft
 		ireland_government_formation
 		ireland_de_valera_stewardship
-		ireland_govern_through_dail
 		ireland_constitutional_stewardship
 		ireland_recovery_bridge
 		ireland_restore_constitutional_calendar
@@ -293,12 +282,10 @@ IRE_ireland_route_de_valera_reconciliation = {
 	ai_national_focuses = {
 		ireland_republican_government
 		ireland_de_valera_reconciliation
-		ireland_reconciliation_mandate
 		ireland_de_valera_reconciliation_capstone
 		ireland_recovery_bridge
 	}
 	focus_factors = {
-		ireland_reconciliation_mandate = 90
 		ireland_de_valera_reconciliation_capstone = 100
 		ireland_recovery_bridge = 40
 		ireland_northern_policy_proof = 30
@@ -452,13 +439,11 @@ IRE_ireland_route_clann_agrarian_broker = {
 	abort = { has_country_flag = ireland_route_cleanup }
 	ai_national_focuses = {
 		ireland_clann_founding
-		ireland_agrarian_support_bloc
 		ireland_clann_by_election
 		ireland_recovery_bridge
 		ireland_material_conclusion_proof
 	}
 	focus_factors = {
-		ireland_agrarian_support_bloc = 90
 		ireland_clann_by_election = 95
 		ireland_material_conclusion_proof = 55
 	}
@@ -611,7 +596,6 @@ IRE_ireland_route_oduffy_personal = {
 		ireland_public_order_review
 		ireland_close_oduffy_chapter
 		ireland_oduffy_network_revival
-		ireland_agrarian_support_bloc
 		ireland_oduffy_personal_command
 		ireland_oduffy_personal_capstone
 	}
@@ -629,7 +613,6 @@ IRE_ireland_route_oduffy_corporate = {
 	abort = { has_country_flag = ireland_route_cleanup }
 	ai_national_focuses = {
 		ireland_oduffy_network_revival
-		ireland_agrarian_support_bloc
 		ireland_producer_accounting
 		ireland_army_acceptance
 		ireland_corporate_order
@@ -648,7 +631,6 @@ IRE_ireland_route_clerical_guardianship = {
 	enable = { has_country_flag = ireland_profile_clerical_guardianship }
 	abort = { has_country_flag = ireland_route_cleanup }
 	ai_national_focuses = {
-		ireland_domestic_industry_review
 		ireland_church_labour_consultation
 		ireland_producer_accounting
 		ireland_clerical_failure_bridge
@@ -767,7 +749,6 @@ IRE_ireland_route_oduffy = {
 		ireland_public_order_review
 		ireland_close_oduffy_chapter
 		ireland_oduffy_network_revival
-		ireland_agrarian_support_bloc
 		ireland_oduffy_personal_command
 		ireland_producer_accounting
 		ireland_army_acceptance
@@ -804,7 +785,6 @@ IRE_ireland_route_clerical_producer = {
 		}
 	}
 	ai_national_focuses = {
-		ireland_domestic_industry_review
 		ireland_church_labour_consultation
 		ireland_producer_accounting
 		ireland_clerical_failure_bridge
@@ -942,28 +922,5 @@ IRE_ireland_route_otherworld = {
 		ireland_otherworld_investigation = 90
 		ireland_otherworld_evidence_ledger = 95
 		ireland_otherworld_capstone = 100
-	}
-}
-
-IRE_ireland_route_convergence = {
-	name = "Ireland convergence conclusion plan"
-	desc = "Complete the material, regional, foreign, and obligation prerequisites before the final convergence order."
-	allowed = { original_tag = IRE }
-	enable = {
-		OR = {
-			has_country_flag = ireland_convergence_components_ready
-			has_country_flag = ireland_convergence_order_concluded
-		}
-	}
-	abort = { has_country_flag = ireland_route_cleanup }
-	ai_national_focuses = {
-		ireland_fivefold_obligation
-		ireland_otherworld_convergence
-		ireland_convergence_order_capstone
-	}
-	focus_factors = {
-		ireland_fivefold_obligation = 90
-		ireland_otherworld_convergence = 95
-		ireland_convergence_order_capstone = 100
 	}
 }

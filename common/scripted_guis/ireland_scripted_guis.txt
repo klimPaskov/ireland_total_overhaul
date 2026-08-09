@@ -17,9 +17,22 @@ scripted_gui = {
 			seanad_icon = {
 				frame = ireland_seanad_icon_frame
 			}
+			ireland_parliament_power_dail_state = {
+				frame = ireland_parliament_power_dail_frame
+			}
+			ireland_parliament_power_seanad_state = {
+				frame = ireland_parliament_power_seanad_frame
+			}
+			ireland_parliament_power_confidence_state = {
+				frame = ireland_parliament_power_confidence_frame
+			}
+			ireland_parliament_power_budget_state = {
+				frame = ireland_parliament_power_budget_frame
+			}
 		}
 		visible = {
 			ireland_parliament_open = yes
+			NOT = { has_country_flag = ireland_route_archived }
 		}
 		dirty = ireland_parliament_gui_dirty
 		ai_enabled = { original_tag = IRE }
@@ -28,13 +41,9 @@ scripted_gui = {
 			ireland_seanad_composition_visible = { ireland_parliament_open = yes }
 			ireland_parliament_powers_header_visible = { ireland_parliament_open = yes }
 			ireland_parliament_power_dail_label_visible = { ireland_parliament_open = yes }
-			ireland_parliament_power_dail_status_visible = { ireland_parliament_open = yes }
 			ireland_parliament_power_seanad_label_visible = { ireland_parliament_open = yes }
-			ireland_parliament_power_seanad_status_visible = { ireland_parliament_open = yes }
 			ireland_parliament_power_confidence_label_visible = { ireland_parliament_open = yes }
-			ireland_parliament_power_confidence_status_visible = { ireland_parliament_open = yes }
 			ireland_parliament_power_budget_label_visible = { ireland_parliament_open = yes }
-			ireland_parliament_power_budget_status_visible = { ireland_parliament_open = yes }
 		}
 	}
 

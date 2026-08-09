@@ -129,7 +129,7 @@ ireland_initialize_campaign = yes
 	complete_national_focus = ireland_air_warning
 	complete_national_focus = ireland_rebuild_marine_service
 	complete_national_focus = ireland_establish_naval_staff
-	complete_national_focus = ireland_domestic_industry_review
+	complete_national_focus = ireland_rural_price_board
 	complete_national_focus = ireland_development_authority
 	complete_national_focus = ireland_domestic_manufacturing
 

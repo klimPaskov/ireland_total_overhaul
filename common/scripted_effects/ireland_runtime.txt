@@ -2690,7 +2690,7 @@ ireland_sync_political_gate_flags = {
 			check_variable = { var = ireland_security_loyalty value = constant:ireland.political_gate_security_min compare = greater_than_or_equals }
 		}
 		set_country_flag = ireland_command_structure_ready
-		set_country_flag = ireland_armed_neutralty_mandate
+		set_country_flag = ireland_armed_neutrality_mandate
 	}
 	if = {
 		limit = {

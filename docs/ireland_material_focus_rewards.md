@@ -1,45 +1,37 @@
-# Material Focus Rewards
+# Focus Reward Contracts
 
 ## Purpose
 
-Ireland focuses use immediate effects sparingly. Route flags, decision
-unlocks, proof records, ledger updates, ideas, and bespoke branch effects are
-the primary rewards. Shared material profiles are now reserved for 16 named
-route-opening milestones and 24 route capstones; ordinary review, service,
-military, cultural, and economic nodes do not repeat a generic reward bundle.
+Ireland focuses use route flags, decision and mission unlocks, proof records,
+ledger updates, institutional transitions, ideas, and bespoke branch effects as
+their primary rewards. Generic political-power, stability, experience, and
+equipment profiles are not used. A focus may include material effects only when
+they are part of the named project represented by that focus.
 
-## Profiles
+## Contracts
 
-- Economic: political power, support equipment, and railway equipment from
-  procurement capacity, used only at named route milestones.
-- Military: Army experience, command power, and infantry equipment, used only
-  at named route milestones.
-- Maritime: naval experience and convoys at maritime route milestones.
-- Air: air experience and command power at the air-warning milestone.
-- Technical: political power and one 15% industry research bonus at evidence
-  gates.
-- Diplomatic: political power, stability, and convoys at foreign-policy
-  milestones.
-- Cultural, radical, and recovery profiles remain available to authored
-  route milestones only; ordinary branch nodes rely on their flags, ideas,
-  decisions, events, and ledgers.
-- Capstone: political power, stability, and limited command power. Route
-  capstones keep their authored conclusion, idea, and review effects instead
-  of receiving an all-service reward bundle.
-
-Material quantities are centralized in
-`common/script_constants/ireland_focus_reward_constants.txt`; the technical
-profile keeps its engine-native one-use 15% industry bonus in the scripted
-effect. Implementations live in `common/scripted_effects/ireland_focus_rewards.txt`.
+- Constitutional and government focuses open a named parliamentary stage,
+  record a mandate, commit a route, or hand control to a decision lifecycle.
+- Provision and readiness focuses open a named project and recompute the
+  corresponding ledger. Their conclusions require the lane's component work.
+- Foreign and Northern focuses open named channels, negotiations, or settlement
+  proofs; they do not grant territory, cores, recognition, or alignment.
+- Radical and hidden focuses record authority, evidence, or transition state
+  and remain gated by their action and mission results.
+- Route capstones open the public conclusion review and perform route-specific
+  cleanup or institutional transition. They receive no universal PP/CP/XP or
+  equipment package.
+- The Marine Service sequence retains bespoke ships, facilities, experience,
+  and ledger changes because those effects are the physical project itself.
 
 ## Visual assets
 
-The reward profiles use vanilla political power, stability, war support,
-experience, command power, manpower, research, convoy, and equipment texticons.
-They require no custom sprite or texture reference.
+No visual asset is required for a shared reward profile because shared reward
+profiles have been retired. Bespoke project effects use the focus icon and the
+standard engine texticons for the concrete resources they affect.
 
 ## Future extension
 
-If a focus later gains a bespoke building, unit, idea, event reward, or unique
-research package, remove its standard profile call after confirming the bespoke
-reward remains immediate and visible.
+When a focus gains a new effect, connect it to the named route, project, ledger,
+decision, mission, idea, or review state. Do not reintroduce a generic bundle to
+make an otherwise passive focus appear rewarding.

@@ -1,17 +1,15 @@
 # Ireland Focus Tree Documentation Source-of-Truth Map
 
 Feature slug: `ireland_focus_tree`
-Reconciled: 2026-08-05 (full-mod audit, focus/GUI MCP improvement loop, direct executable launch, lifecycle alias repair, one-time Marine Service repair, AI plan ownership repair, current asset crosswalk regeneration)
-Scope: documentation and current-worktree evidence. HOI4 was launched directly with `-debug`; fresh save/route playthroughs and AI simulations remain separate runtime evidence gaps.
 
-The fresh 2026-08-03 engine-reference pass reports zero Ireland-local focus
-layout diagnostics, valid shared map definitions and networks, zero blocking
-diagnostics in the Ireland event namespace, and no skipped Ireland event
-sources. The mission probability adapter resolves its inspected source inputs;
-the remaining global vanilla focus diagnostics, workspace-wide event helper
-projection, controlled texture-reuse index warnings, and probability-adapter
-internal errors for oversized custom focus/decision sources remain tool-scope
-limitations rather than Ireland source changes.
+Reconciled: 2026-08-09
+Scope: current focus-tree consolidation, reward contracts, AI references, and
+the Parliament scripted-GUI presentation contract.
+
+The authoritative implementation report for this pass is
+`docs/plans/ireland_focus_tree/focus_tree_parliament_completion_2026-08-09.md`.
+Older 211-focus and 226-focus snapshots below remain historical provenance and
+must not be used as current completion evidence.
 
 The portrait-source boundary is flat and explicit: every complete portrait
 `source_path` in the current manifest points to an unmodified original directly
@@ -19,15 +17,28 @@ under `docs/portraits/`. Temporary `assets/` paths are retained as staging
 evidence only; processed 156x210 crops are derivatives, and runtime DDS files
 remain under `gfx/`.
 
-## Current audit authority snapshot: 2026-08-05
+## Current audit authority snapshot: 2026-08-09
 
-The live source now has 211 focuses with one root, 14 categories, 144 primary
-actions plus 4 Marine Service actions, and 54 missions. The current MCP focus
-graph has 234 connectors, zero crossings, zero node intersections, zero long
-connectors, and zero same-row overlaps. The parliament GUI has no visible
-overlaps or budget blockers in the rendered state matrix. The direct executable
-launch produced an empty error log. Three exact portrait clearances remain
-blocked (P-26, P-45, P-55); no substitute or fallback asset was introduced.
+The live national tree has 150 focuses, one root, and 158 visual connectors.
+The final MCP inspection reports zero crossings, zero node intersections, zero
+long connectors, zero same-row spacing defects, and zero Ireland-local focus
+diagnostics. All focus titles, descriptions, icons, prerequisite references,
+and AI-plan focus references resolve.
+
+Universal focus-reward profiles have been retired. Every surviving focus owns
+a named route, project, ledger, action, mission, proof, or institutional
+transition contract; no generic PP/XP/equipment bundle remains. Retired focus
+state that is still consumed by events, achievements, profiles, or cleanup is
+written by its explicit survivor.
+
+The Parliament header is a 510 by 198 projection inside the decision-category
+host. It contains Dáil and Seanad summaries and four equal power columns. All
+display controls are click-through; native decisions remain the sole action
+owners. MCP inspection and the 1280 by 720 / 1920 by 1080 fourteen-state render
+report no localisation errors, visible overlaps, or click-region defects.
+
+No fallback tree, placeholder reward, alternative seat model, or substitute UI
+surface was introduced.
 
 ## Historical authority snapshot: 2026-08-03
 

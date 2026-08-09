@@ -4,14 +4,17 @@ Feature slug: `ireland_focus_tree`
 
 Addendum date: 2026-08-05
 
-Status: implementation-ready planning handoff; not gameplay completion
+Status: superseded planning handoff; implemented and reconciled 2026-08-09
 
-This is a historical planning snapshot. It is superseded by the 2026-08-05
-full-mod audit: the live source now has 211 focuses, one root, 234 connectors,
-fourteen categories, 144 primary actions plus four Marine Service actions, and
-an interactive parliament GUI with shared record effects. Historical counts,
-layout captures, and recommendations below remain useful provenance but are
-not current implementation claims.
+This is a historical planning snapshot. Its accepted focus-tree and Parliament
+recommendations are implemented and recorded in
+`docs/plans/ireland_focus_tree/focus_tree_parliament_completion_2026-08-09.md`.
+The current source has 150 focuses, one root, and 158 visual connectors. The
+final MCP inspection reports zero crossings, node intersections, long
+connectors, spacing defects, or Ireland-local diagnostics. The Parliament
+header fits its 510 by 198 host and renders without overlap at both target
+resolutions. Historical counts, captures, and recommendations below remain
+useful provenance but are not current implementation claims.
 
 Scope of this pass: documentation only. No gameplay, GUI, localisation, focus,
 asset, or script file was changed.
