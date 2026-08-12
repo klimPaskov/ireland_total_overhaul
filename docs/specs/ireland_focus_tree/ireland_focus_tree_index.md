@@ -172,4 +172,12 @@ The fifteen standard Part 5 conclusion families remain fixed. The convergence pr
 
 # Current completion state
 
-The canonical design, route coverage, reconciliation maps, coding prompt, goal prompt and package inventory are complete, and the mandatory `hoi4_improvement_loop_planner` execution has returned with `fork_context=false`. Runtime implementation, asset clearance, engine-facing checks, and scenario validation remain open; this index must not be treated as a gameplay completion claim.
+The 150-focus runtime tree implements seven named semantic lanes, eight
+progressively revealed route families, bounded operational reward contracts,
+and complete AI focus-ID coverage. The canonical Parliament contract is a
+510x248 interactive surface with matched 126x70 chamber diagrams, four 204x32
+human controls backed by shared guarded executors, AI-only native equivalents,
+and a four-state slate/amber/gold/green action seal. The current implementation
+and completion evidence are indexed by
+`docs/plans/ireland_focus_tree/source_of_truth_map.md`; historical larger-tree
+counts and passive Parliament layouts are not current runtime authority.

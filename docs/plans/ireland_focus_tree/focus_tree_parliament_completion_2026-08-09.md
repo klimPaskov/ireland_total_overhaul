@@ -1,200 +1,177 @@
 # Focus tree and Parliament completion report
 
-Date: 2026-08-09
+Date: 2026-08-12
 
 Feature slug: `ireland_focus_tree`
 
 ## Outcome
 
-The Ireland national tree is a single 150-focus directed acyclic graph with one
-root and 159 visible connectors. The generated expansion layer and universal
-reward profiles are retired. The Parliament scripted GUI is a compact,
-read-only projection of the native parliamentary decisions inside the actual
-510 by 198 decision-category host.
+The Ireland national tree is a single 150-focus directed acyclic graph arranged
+into seven separated subject lanes. It has one root, 150 visible connectors,
+and named navigation shortcuts for politics, culture, industry, diplomacy, the
+Northern question, army/air readiness, and the far-right Naval Service.
 
-No fallback tree, substitute mechanic, placeholder reward, duplicated seat
-model, or alternative GUI action path was used.
+The Parliament surface is a 510 by 248 interactive scripted GUI visible after
+Ireland initialization. It contains two enlarged live chamber diagrams and four
+functional human controls. Equivalent native decisions are AI-only; both paths
+use the same eligibility gates, tuning constants, and record helpers.
 
-## Focus consolidation and route preservation
+No fallback tree, substitute mechanic, placeholder reward, duplicate seat
+model, or non-functional GUI control remains.
 
-Seven late wrapper focuses were folded into the decision-bearing focus that
-already owned their state transition:
+## Focus architecture and reveal rules
 
-| Retired wrapper | Surviving focus |
-| --- | --- |
-| `ireland_domestic_industry_review` | `ireland_rural_price_board` |
-| `ireland_port_and_coast_audit` | `ireland_command_audit` |
-| `ireland_northern_contacts` | `ireland_national_settlement` |
-| `ireland_territorial_reserve` | `ireland_readiness_baseline` |
-| `ireland_govern_through_dail` | `ireland_de_valera_stewardship` |
-| `ireland_reconciliation_mandate` | `ireland_de_valera_reconciliation` |
-| `ireland_agrarian_support_bloc` | `ireland_clann_founding` |
+The opening camera anchors on `ireland_state_still_defined`. The lanes read
+left-to-right as:
 
-The survivor writes every still-consumed compatibility flag. Prerequisites,
-availability gates, history, AI queues, descriptions, and route locks were
-updated to the survivor IDs. The High Kingship capstone is the explicit
-survivor for the former fivefold-obligation, Otherworld-convergence, and final
-convergence-order sequence. It closes the compatibility, conclusion, profile,
-and verification flags in the same completion effect.
+1. politics, constitutional government, and gated political alternatives;
+2. culture and public evidence;
+3. industry and National Provision;
+4. diplomacy and neutrality;
+5. the Northern question;
+6. army and air Readiness;
+7. the Naval Service.
 
-The final graph has no duplicate coordinates, unresolved prerequisites, or
-cycles. Its 36 structural leaves were checked individually. They are route
-capstones, intentional policy endpoints, or focuses consumed by named
-availability gates, flags, events, ledgers, achievements, or conclusion
-effects; none is an unconsumed dead end. Provision and Northern convergence use
-state gates for distant required projects instead of adding crossing visual
-connectors. This changes presentation only: the same completed focuses remain
-required.
+Seven named focus shortcuts jump directly to those anchors. The continuous
+palette remains at `x = 50, y = 2400`, below the 17 authored rows.
 
-## Semantic layout and progressive reveal
-
-The opening camera anchors on `ireland_state_still_defined`. The authored tree
-now reads left to right as political crisis and constitutional government,
-Northern policy, culture and society, industry and National Provision,
-diplomacy and neutrality, army/air/coastal readiness, and the far-right Marine
-Service. The naval lane no longer sits inside the political or industrial
-centre.
-
-The continuous-focus palette is explicitly anchored at `x = 50, y = 2400`,
-below the final authored row. It remains close to the opening camera's central
-axis but no longer covers a political, cultural, industrial, diplomatic, or
-defence lane.
-
-All ordinary subject families are visible from the opening screen. Exactly
-eight crisis, radical, or evidence-gated roots retain `allow_branch`: IRA,
+Ordinary policy families are visible at the opening. Eight crisis, radical, or
+evidence-gated families retain their authored `allow_branch` rules: IRA,
 Congress, O'Duffy, clerical failure, Ailtirí, High Kingship, Five Provinces,
-and Otherworld. Their inherited descendants appear only when the existing
-gate and Ireland-scoped layout refresh succeed.
+and Otherworld. Their descendants appear only after the relevant route or
+evidence state is secured.
 
-Narrow prerequisite corrections make the visible connectors describe their
-real subject dependencies. In particular, defence and readiness fan from the
-shared defence gateway; readiness still requires Command Audit through its
-availability gate. Transport now visibly feeds stockpiles and the maritime
-reserve, while recovery no longer appears to depend on an optional naval pact.
+The visible graph follows real semantic dependencies. The Lemass route visibly
+passes through Dáil Nomination, the Otherworld dominion route visibly consumes
+Containment Protocol, Naval Staff remains in the Naval Service lane, and
+distant cross-system requirements remain explicit availability gates where a
+connector would obscure the subject lanes.
 
-## Reward contracts
+## Reward depth
 
-`common/scripted_effects/ireland_focus_rewards.txt` and
-`common/script_constants/ireland_focus_reward_constants.txt` were removed.
-There are no remaining universal focus-reward calls or generated
-`*_completion_reward_tt` keys.
+The Provision, Readiness, defence, neutrality, and diplomatic lanes use bounded
+script-constant reward steps rather than generic political-power bundles.
+Thirty-seven focus rewards have precise player-facing tooltips. The revised
+contracts include:
 
-Every surviving focus now pays through at least one named contract:
+- visible Food, Energy, Transport, and Maritime Provision gains;
+- visible Command, Equipment, Mobilisation, Supply, Warning, Maritime
+  Protection, and Intelligence gains;
+- domain-appropriate Army, Navy, and Air experience;
+- visible Neutrality Integrity, Social Consent, Dáil Mandate, Cabinet
+  Cohesion, Administrative Reach, and Intervention Mandate changes;
+- named diplomatic-channel and route transitions;
+- the existing physical Marine Service ships, facilities, convoy, intelligence,
+  and production projects.
 
-- a route commitment, mandate, institutional transition, or conclusion review;
-- a decision, mission, project, diplomatic channel, or evidence gate;
-- a provision, readiness, Northern, foreign, cultural, or achievement ledger;
-- a bespoke physical project, such as the Marine Service sequence.
+Generic political-power padding was removed from Marine Service reconstruction,
+the Atlantic Convoy Office, and the regional maritime pact. The reward constants
+are centralized under the `ireland` script-constant category. All surviving
+focus titles, descriptions, shortcut labels, and custom reward tooltips resolve.
 
-The Marine Service retains its authored ships, facilities, experience, and
-ledger effects because those effects are the represented project rather than a
-generic reward bundle.
+The final graph has 150 unique IDs, 150 unique coordinates, no unresolved
+prerequisites, no parent-below-child connectors, and complete AI-plan coverage.
+The Lemass AI plan now includes Dáil Nomination before its capstone.
 
-## Parliament GUI
+## Parliament GUI and interaction contract
 
-`ireland_parliament_decision_ui_window` fits the fixed 510 by 198 host. The
-panel contains:
+`ireland_parliament_decision_ui_window` contains:
 
-- a generated 1930s dossier background with a parchment chamber field and a
-  dark legislative-progress band;
-- one Houses of the Oireachtas title and two equal-width Dáil/Seanad chamber
-  cards;
-- identically sized live support arcs, centered majority figures, and compact
-  composition summaries for both chambers;
-- one horizontal four-step track for Dáil authority, Seanad support,
-  confidence, and budget, with a frame-driven red/green state for each step.
+- a 510x248 dossier background;
+- two balanced 247-pixel chamber cards;
+- 21-frame Dáil and Seanad diagrams enlarged to 126x70 each;
+- live support, majority, and chamber-composition text;
+- four 204x32 actions in a two-column, two-row grid;
+- a separate four-state status column beside every action.
 
-`ireland_update_parliament` initializes each power frame to 1 (pending) and
-sets it to 2 (secured) from the matching completion flag. All summary and state
-icons pass clicks through. The four native, one-time decisions remain the only
-cost, trigger, effect, and AI owners. Route archival hides the scripted header,
-preventing a stale panel after its actions are removed.
+The four human controls are `Convene Dáil`, `Win Seanad Support`, `Confidence
+Pact`, and `Pass Joint Budget`. Each has a real scripted-GUI click effect, a
+canonical enabled trigger, a centralized political-power cost, a one-time
+completion flag, and an immediate Parliament refresh. Labels are natively
+centered by their buttons. Status icons occupy their own columns and therefore
+neither overlap nor intercept the click regions.
 
-The Parliament summary is visible as soon as Ireland initialization completes.
-Its four native actions remain gated by `ireland_settlement_open`, so early
-visibility does not bypass their political prerequisites.
+Each action uses one four-frame seal driven by the canonical current and
+availability triggers: slate for a future locked step, amber for the current
+step without enough Political Power, cream-gold for the current available
+action, and green for a secured result. Red is reserved for an actual failure
+or crisis rather than ordinary unfinished business.
 
-The panel reuses vanilla `GFX_checkbox_small_red_green` and the existing live
-chamber-strip state system. Its decorative background is registered as
-`GFX_ireland_parliament_summary_background`; source, processed preview, DDS,
-prompt, manifest, and wiring handoff are retained under
-`docs/assets/ireland_parliament_panel/`. A 21-frame 90x50 Seanad derivative is
-processed frame by frame from the existing project strip so both chambers have
-the same 50px visual height without fractional GUI scaling. No fallback sprite
-was used.
+The chamber summary is visible as soon as `ireland_initialized` is present. The
+four action rows appear only when the national settlement opens, so early
+visibility does not bypass political prerequisites. The corresponding native
+decisions are `is_ai = yes` and call idempotent shared executors; human players
+therefore use the GUI while AI retains an ordinary decision path without a
+double charge.
 
-## AI, localisation, and lifecycle alignment
-
-- All AI-plan focus IDs resolve to the current 150-focus roster.
-- The historical queue proceeds directly through the constitutional-draft
-  survivor; the obsolete convergence plan was retired.
-- All 150 focus titles and descriptions resolve, with no duplicate English
-  keys.
-- Parliament GUI and scripted-localisation references resolve. Chamber
-  tooltips use live seat and majority values, and the power-state tooltip
-  explains red pending / green secured.
-- English localisation remains UTF-8 with BOM.
-- The 1939 history bookmark points to the surviving rural-price-board focus.
-- Every maritime ledger delta reads the registered
-  `constant:ireland_maritime.ledger_standard_delta`; the invalid dotted
-  category form is absent.
+All costs and outcome increments live in
+`common/script_constants/ireland_constants.txt`. The four record helpers remain
+the single owners of seat and political-ledger mutations and are documented in
+`docs/ireland_dynamic_effects.md`.
 
 ## Validation evidence
 
-The final `hoi4.focus_inspect` revision reports:
+Final focus inspection revision `9f4f86cc5796922d` reports:
 
 - 150 focuses and one root;
-- 159 connectors;
-- 0 connector crossings;
-- 0 node intersections;
+- 150 connectors;
+- 0 crossings;
+- 0 connector-through-node intersections;
 - 0 long connectors;
+- maximum horizontal span 6 and maximum vertical span 2;
 - 0 same-row spacing defects;
-- 0 Ireland-local diagnostics.
+- 0 Ireland focus diagnostics.
 
 Artifact:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/3ca1558a3b879ffd558d5fdad951f222f71d92ff473ec325a545a6bc6082a758/65bd0cb5262b5ea5c9d64c933bc8b35f7bb06aacf657efbe5a70d84e56027e43/focus-inspect.e3a6dbf54659fc69.json`
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/73a78f94783795326e576ef61757af1fb35871f10ca6dd9e16ae402461a2eef9/50b8461f4de0061cc8fd45ef89013c0febc85fb6124714f9883adebcc1dabca8/focus-inspect.9f4f86cc5796922d.json`
 
-The final structural focus render passed. The high-fidelity raster produced the
-Ireland tree PNG and resolved every Ireland focus icon. Its reported failures
-are nine decoder errors for vanilla continuous-focus DDS files and one missing
-vanilla continuous-focus description; no Ireland focus or asset is implicated.
+Structural render:
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/0f9501fc221c42155cac3ac66aa33cede2cba3e7f4bf08b07bc5a85a1aa73ea2/7b61e92441dda7b16c3c2dd4bc61d82b402bcf48d53dcb942f1430d09fac6c22/ireland_focus_tree.focus.html`
 
-Render artifacts:
+High-fidelity raster:
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/15cf201ce13947b67834a4a1fa6924373584cf7c2ea2a361c18a13a27b273a5a/d8f9f0d646d6fff4b03ee9043d730d4504a2c8c4876bd3cb155d53a7812da62c/ireland_focus_tree.focus.png`
 
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/4b998600688da0effb679e604db8f8d965e0cb41d5e11a1a4c7a8ed20ac3092b/e48be564d21e5abd3608f0c555836b021301734fa9dcaa48154468f3bb2c7805/ireland_focus_tree.focus.html`
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/e6121bda644e36b632f3336ea192adea60293f8f3deef53d8c2b365ee041c9bf/cb92306c73ff07c1e684074d6d9bd6197d598d2051c01e352cc9dea8c5b81f2a/ireland_focus_tree.focus.png`
+The raster resolves all 150 Ireland focus icons. Its reported DDS failures are
+limited to vanilla continuous-focus textures that the offline decoder cannot
+read; no Ireland focus asset is implicated.
 
-The final Parliament GUI inspection passes its source graph and has no visible
-overlap, clipping, text overflow, missing sprite, missing texture, or missing
-font. Its render covers 1366 by 768 and 1920 by 1080 across normal,
-hover, selected, locked, disabled, warning, active, completed, empty/full,
-minimum/maximum, long-text, and missing-localisation states. The render reports
-zero overlap or source-graph errors. Its four unresolved-value notices are the
-offline renderer's expected placeholders for country-scoped live seat and
-majority variables; every referenced variable is initialized by the Parliament
-system and is deliberately shown as live data.
+Final Parliament inspection revision `7efa20fde6ec3fcc` reports no overlap,
+off-centre label, clipping, missing sprite, missing texture, missing font, or
+spacing diagnostic. The four unresolved-value notices are the offline
+scenario's placeholders for live country seat variables. The cost checker does
+not follow a scripted-GUI click into its guarded shared executor and therefore
+reports four cost mismatches. Each executor owns the matching political-power
+delta, and the same cost constant drives its availability gate and visible
+label.
 
-Artifacts:
+Inspection artifact:
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/5c8de1b3855e70055af0ba10c9caea6919f47bc2f8c43ae2a840c3249a63e550/fb846fb7dce35268e11e732521378bca818238e0bc2974c11ace082437d5fd84/gui-inspect.7efa20fde6ec3fcc.json`
 
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/6bdb582d039d626eb1538f5134af2cad513e3fc7a20995b42c47be0ad133d05b/86a43d18fcb572b90870b2317d90352488a8b1091bec94d3c5be5af900d83582/gui-inspect.5f725bd58271c2f7.json`
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/e68361e5c99358adaf0fc2698ade6a7d8e2893f7c622c102cfa57d19226afaf8/9f7b286b3a46c9bad5c5e9b148908948f152a10ded9fcaa7d3535778a917f5ee/ireland_parliament_decision_ui_window-validation.json`
-- `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/ef220ede0f0c3bc4e6486c3cdc26b9d1a7ddbd193797659a1de117b97afc986e/49120d0bfac15f29da690caa190867e5d2e9ffe859e3277a9444ebda2c2ae1c2/ireland_parliament_decision_ui_window-state-matrix.png`
+Render artifact:
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/965590013ce89528f81de25146a533349082c8a6d3ce50a2b0aabbe95147fb0b/2aa71812eb4b40a11d9e20ed073e264bbd4570e26616419f595feff8a54dff58/ireland_parliament_decision_ui_window-full.svg`
+
+Static cross-surface checks confirm 150/150 focus title and description
+coverage, seven shortcut labels, 37/37 reward tooltips, 21/21 Parliament GUI
+localisation references, zero duplicate English keys, no dotted maritime
+constant references, and no undefined script-constant references in the
+touched focus, Parliament, decision, trigger, or AI surfaces.
 
 ## Files and systems changed
 
-- National focus source, route layout, rewards, and convergence compatibility.
-- Ireland AI focus plans and 1939 completed-focus history.
-- Parliament recompute effect, scripted-GUI properties/visibility, interface
-  layout, scripted localisation, and English localisation.
-- Parliament presentation assets: generated 510x198 dossier background,
-  frame-preserving compact Seanad strip, runtime DDS files, sprite
-  registrations, prompt, manifest, processed previews, and wiring handoff.
-- Generic focus-reward helper and constant files removed.
-- Reward-contract and source-of-truth documentation reconciled; specialist
-  focus, GUI, and localisation handoffs retained under `docs/plans/`.
+- National focus graph, semantic coordinates, visible dependencies, navigation
+  shortcuts, AI plan ordering, and bounded rewards.
+- Parliament decision category, human GUI effects, AI-only native decisions,
+  canonical action triggers, shared executors, record effects, constants,
+  English localisation, and dynamic-effect documentation.
+- Parliament background, enlarged chamber strips, action-button texture,
+  four-frame action-state seal, GFX registrations, processed PNGs, manifest,
+  and wiring handoff.
+- Focus, Parliament, and completion audit handoffs under
+  `docs/plans/ireland_focus_tree/`.
 
 ## Simplifications, omissions, and blockers
 
-None. Distant project requirements represented as availability gates are the
-authoritative dependency design, not a fallback: they preserve the gameplay
-requirement while preventing misleading cross-tree connector geometry.
+None in the requested Ireland focus-tree and Parliament surfaces. Cross-lane
+availability gates are deliberate gameplay dependencies rather than hidden
+substitutes: they preserve the required completed focus while avoiding a long,
+misleading connector across unrelated subject lanes.

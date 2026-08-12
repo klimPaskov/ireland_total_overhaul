@@ -1,37 +1,29 @@
-# GFX handoff — Ireland Parliament summary background
+# GFX handoff — Ireland Parliament interactive panel
 
 Wired by the main implementation.
 
-- Final DDS: `gfx/interface/ireland/gui/parliament/parliament_summary_background.dds`
-- Proposed sprite name: `GFX_ireland_parliament_summary_background`
-- Suggested target file: `interface/ireland_gui_assets.gfx`
-- Target size: `510x198`
-- Suggested sprite definition:
+- Background DDS: `gfx/interface/ireland/gui/parliament/parliament_summary_background.dds` (510x248).
+- Background sprite: `GFX_ireland_parliament_summary_background`.
+- Dáil DDS: `gfx/interface/ireland/gui/parliament/dail_chamber_ui_large.dds` (21 frames at 126x70).
+- Dáil sprite: `GFX_ireland_parliament_dail_large_ui`.
+- Seanad DDS: `gfx/interface/ireland/gui/parliament/seanad_chamber_ui_large.dds` (21 frames at 126x70).
+- Seanad sprite: `GFX_ireland_parliament_seanad_large_ui`.
+- Button DDS: `gfx/interface/ireland/gui/parliament/parliament_step_button.dds` (204x32).
+- Button sprite: `GFX_ireland_gui_parliament_step_button`.
+- Action-state DDS: `gfx/interface/ireland/gui/parliament/parliament_action_states.dds` (four 32x32 frames).
+- Action-state sprite: `GFX_ireland_gui_parliament_action_state`.
+- Registration file: `interface/ireland_gui_assets.gfx`.
+- Runtime consumer: `interface/ireland_parliament_scripted_gui.gui`.
 
-```text
-spriteType = {
-	name = "GFX_ireland_parliament_summary_background"
-	texturefile = "gfx/interface/ireland/gui/parliament/parliament_summary_background.dds"
-}
-```
+The upper 148 pixels hold the two balanced chamber summaries. The lower 100
+pixels hold four functional parliamentary actions in a two-by-two grid. Button
+textures and click regions have identical dimensions. Each status mark sits in
+a separate column outside the click region, and each label uses the button's
+native centring so neither can intercept or offset the action.
 
-- Intended GUI use: decorative panel background behind two chamber summaries in the upper 110 px and a four-step progress strip in the lower 70 px.
-- State semantics: none; this is a single static background layer.
-- Avoid covering the perimeter brass fasteners/folio corners with essential text or controls. The central paper and lower leather areas are deliberately low contrast for overlaid scripted-GUI content.
-- Runtime registration: `interface/ireland_gui_assets.gfx`.
-- Runtime consumer: `ireland_parliament_background` in `interface/ireland_parliament_scripted_gui.gui`.
-- The asset package itself did not edit `.gfx`, `.gui`, localisation, or gameplay files.
-
-The same wired surface also uses a mechanically resized copy of the existing
-21-frame Seanad chamber strip:
-
-```text
-spriteType = {
-	name = "GFX_ireland_parliament_seanad_compact_ui"
-	texturefile = "gfx/interface/ireland/gui/parliament/seanad_chamber_ui_compact.dds"
-	noOfFrames = 21
-}
-```
-
-Each compact frame is 90x50, matching the Dáil strip's 50px height while
-preserving all 21 live support states and avoiding fractional GUI scaling.
+The generated background has no state semantics. The chamber sprites use the
+live Dáil and Seanad frame variables, while scripted-GUI visibility and enabled
+triggers own the action states. Each action has one non-overlapping state seal:
+slate locked, amber unaffordable, gold current, or green secured. The gold state
+uses the enabled button's native hover and pressed treatment; red is reserved
+for actual failure states.

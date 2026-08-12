@@ -2,7 +2,7 @@
 
 Feature slug: `ireland_focus_tree`
 
-Reconciled: 2026-08-09
+Reconciled: 2026-08-12
 Scope: current focus-tree consolidation, reward contracts, AI references, and
 the Parliament scripted-GUI presentation contract.
 
@@ -17,17 +17,18 @@ under `docs/portraits/`. Temporary `assets/` paths are retained as staging
 evidence only; processed 156x210 crops are derivatives, and runtime DDS files
 remain under `gfx/`.
 
-## Current audit authority snapshot: 2026-08-09
+## Current audit authority snapshot: 2026-08-12
 
-The live national tree has 150 focuses, one root, and 159 visual connectors.
+The live national tree has 150 focuses, one root, and 150 visual connectors.
 The final MCP inspection reports zero crossings, zero node intersections, zero
 long connectors, zero same-row spacing defects, and zero Ireland-local focus
 diagnostics. All focus titles, descriptions, icons, prerequisite references,
 and AI-plan focus references resolve.
 
-The opening camera anchors on `ireland_state_still_defined`. Ordinary politics,
-Northern policy, culture, industry, diplomacy, army/air readiness, and the
-far-right Marine Service are visible from the start. Exactly eight authored
+The opening camera anchors on `ireland_state_still_defined`. Seven named
+shortcuts and separated lanes identify politics, culture, industry, diplomacy,
+Northern policy, army/air readiness, and the far-right Marine Service. Ordinary
+families are visible from the start. Exactly eight authored
 crisis, radical, or evidence-gated families retain progressive `allow_branch`
 reveal: IRA, Congress, O'Duffy, clerical failure, Ailtirí, High Kingship, Five
 Provinces, and Otherworld. The continuous-focus palette is explicitly placed at
@@ -35,19 +36,25 @@ Provinces, and Otherworld. The continuous-focus palette is explicitly placed at
 
 Universal focus-reward profiles have been retired. Every surviving focus owns
 a named route, project, ledger, action, mission, proof, or institutional
-transition contract; no generic PP/XP/equipment bundle remains. Retired focus
-state that is still consumed by events, achievements, profiles, or cleanup is
-written by its explicit survivor.
+transition contract. Thirty-seven operational rewards also expose precise,
+bounded ledger or experience changes; no generic political-power padding
+remains in the Marine Service chain. Retired focus state that is still consumed
+by events, achievements, profiles, or cleanup is written by its explicit
+survivor.
 
-The Parliament header is a 510 by 198 projection inside the decision-category
-host. It uses a generated dossier background, one Oireachtas title, two
-equal-width chamber cards with matched 50px support strips, and one horizontal
-four-step legislative track. The Seanad strip is a frame-preserving 90x50
-derivative of the existing 21-frame project asset, avoiding fractional GUI
-scaling. All display controls are click-through; native
-decisions remain the sole action owners. The summary becomes visible after
-Ireland initialization, while the native actions remain gated by the
-settlement opening.
+The Parliament surface is a 510 by 248 interactive panel inside the
+decision-category host. It uses a generated dossier background, one Oireachtas
+title, two equal-width chamber cards with matched 126x70 support strips, and a
+two-by-two action grid. Four human buttons call guarded shared executors; status
+marks occupy separate columns and cannot intercept them. Equivalent native
+decisions are AI-only and call those same executors. The summary
+becomes visible after Ireland initialization, while the action rows remain
+gated by the settlement opening.
+
+Each action uses one four-frame status seal: slate locked, amber current but
+unaffordable, gold current and available, and green secured. The same canonical
+current/available triggers drive both the seal frame and the button state; red
+is reserved for genuine failure rather than ordinary incomplete business.
 
 All maritime ledger deltas use the registered `ireland_maritime` script
 constant category. The invalid `ireland.maritime` category form is absent.

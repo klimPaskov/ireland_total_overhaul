@@ -3,7 +3,7 @@
 Date: 2026-08-09  
 Feature slug: `ireland_focus_tree`  
 Pass type: implementation-ready layout and progressive-reveal correction  
-Status: implemented; accepted coordinate and reveal contract reconciled to the final source revision
+Status: superseded 2026-08-12 by `ireland_focus_tree_parliament_correction_addendum_2026-08-11.md` and the final seven-lane source layout
 
 This began as a plan-only handoff. The gameplay owner implemented it, reviewed the connector routing, and accepted the narrow prerequisite corrections recorded in section 6.5 where the original graph itself made the subject families read incorrectly.
 

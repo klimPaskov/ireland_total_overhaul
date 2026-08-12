@@ -322,6 +322,7 @@ IRE_ireland_route_lemass_developmental = {
 	abort = { has_country_flag = ireland_route_cleanup }
 	ai_national_focuses = {
 		ireland_lemass_developmental
+		ireland_dail_nomination
 		ireland_energy_board
 		ireland_transport_priority
 		ireland_domestic_manufacturing
@@ -329,6 +330,7 @@ IRE_ireland_route_lemass_developmental = {
 		ireland_lemass_developmental_capstone
 	}
 	focus_factors = {
+		ireland_dail_nomination = 90
 		ireland_development_authority = 95
 		ireland_lemass_developmental_capstone = 100
 		ireland_provision_conclusion = 55

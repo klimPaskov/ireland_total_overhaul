@@ -15,10 +15,6 @@
 # explicit cancellation paths may return the capped recoverable fraction documented below.
 # Local staff and transport pools are explicit costs for named polling, cultural,
 # tillage, border, and relief work; they are not passive political-power substitutes.
-@IRELAND_PARLIAMENT_DAIL_SESSION_PP = 15
-@IRELAND_PARLIAMENT_SEANAD_SUPPORT_PP = 25
-@IRELAND_PARLIAMENT_CONFIDENCE_COMPACT_PP = 25
-@IRELAND_PARLIAMENT_JOINT_BUDGET_PP = 35
 @IRELAND_DEVELOPMENTAL_PLANT_SUPPORT_EQUIPMENT_GATE = 49
 @IRELAND_DEVELOPMENTAL_PLANT_SUPPORT_EQUIPMENT_CHARGE = -50
 @IRELAND_DEVELOPMENTAL_PLANT_CONVOY_GATE = 4
@@ -195,6 +191,7 @@ ireland_settlement_government = {
 	ireland_action_convene_the_dail = {
 		icon = GFX_decision_ireland_convene_a_cabinet_cohesion_review
 		visible = {
+			is_ai = yes
 			original_tag = IRE
 			NOT = { has_country_flag = ireland_route_archived }
 			ireland_reveal_settlement_open = yes
@@ -204,17 +201,15 @@ ireland_settlement_government = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ireland_action_convene_the_dail_requirements_tt
-				ireland_parliament_open = yes
-				has_country_flag = ireland_settlement_open
-				ireland_parliament_stage_one = yes
-				any_owned_state = { state = 113 }
+				ireland_parliament_dail_action_available = yes
 			}
 		}
-		ai_hint_pp_cost = @IRELAND_PARLIAMENT_DAIL_SESSION_PP
-		cost = @IRELAND_PARLIAMENT_DAIL_SESSION_PP
+		ai_hint_pp_cost = constant:ireland.parliament_dail_pp_cost
+		custom_cost_trigger = { always = yes }
+		custom_cost_text = ireland_parliament_dail_custom_cost
 		fire_only_once = yes
 		complete_effect = {
-			ireland_record_parliament_dail_session = yes
+			ireland_execute_parliament_dail_action = yes
 		}
 		remove_trigger = {
 			OR = {
@@ -228,6 +223,7 @@ ireland_settlement_government = {
 	ireland_action_negotiate_seanad_support = {
 		icon = GFX_decision_ireland_negotiate_confidence_and_supply
 		visible = {
+			is_ai = yes
 			original_tag = IRE
 			NOT = { has_country_flag = ireland_route_archived }
 			ireland_reveal_settlement_open = yes
@@ -237,22 +233,15 @@ ireland_settlement_government = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ireland_action_negotiate_seanad_support_requirements_tt
-				ireland_parliament_open = yes
-				has_country_flag = ireland_settlement_open
-				ireland_parliament_stage_two_or_later = yes
-				check_variable = {
-					var = ireland_seanad_government_seats
-					value = ireland_seanad_majority_threshold
-					compare = less_than
-				}
-				any_owned_state = { state = 113 }
+				ireland_parliament_seanad_action_available = yes
 			}
 		}
-		ai_hint_pp_cost = @IRELAND_PARLIAMENT_SEANAD_SUPPORT_PP
-		cost = @IRELAND_PARLIAMENT_SEANAD_SUPPORT_PP
+		ai_hint_pp_cost = constant:ireland.parliament_seanad_pp_cost
+		custom_cost_trigger = { always = yes }
+		custom_cost_text = ireland_parliament_seanad_custom_cost
 		fire_only_once = yes
 		complete_effect = {
-			ireland_record_parliament_seanad_support = yes
+			ireland_execute_parliament_seanad_action = yes
 		}
 		remove_trigger = {
 			OR = {
@@ -266,6 +255,7 @@ ireland_settlement_government = {
 	ireland_action_secure_a_confidence_compact = {
 		icon = GFX_decision_ireland_request_a_confidence_vote
 		visible = {
+			is_ai = yes
 			original_tag = IRE
 			NOT = { has_country_flag = ireland_route_archived }
 			ireland_reveal_settlement_open = yes
@@ -275,17 +265,15 @@ ireland_settlement_government = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ireland_action_secure_a_confidence_compact_requirements_tt
-				ireland_parliament_open = yes
-				has_country_flag = ireland_settlement_open
-				ireland_parliament_stage_three_or_later = yes
-				any_owned_state = { state = 113 }
+				ireland_parliament_confidence_action_available = yes
 			}
 		}
-		ai_hint_pp_cost = @IRELAND_PARLIAMENT_CONFIDENCE_COMPACT_PP
-		cost = @IRELAND_PARLIAMENT_CONFIDENCE_COMPACT_PP
+		ai_hint_pp_cost = constant:ireland.parliament_confidence_pp_cost
+		custom_cost_trigger = { always = yes }
+		custom_cost_text = ireland_parliament_confidence_custom_cost
 		fire_only_once = yes
 		complete_effect = {
-			ireland_record_parliament_confidence_compact = yes
+			ireland_execute_parliament_confidence_action = yes
 		}
 		remove_trigger = {
 			OR = {
@@ -299,6 +287,7 @@ ireland_settlement_government = {
 	ireland_action_pass_a_joint_budget = {
 		icon = GFX_decision_ireland_publish_a_government_programme
 		visible = {
+			is_ai = yes
 			original_tag = IRE
 			NOT = { has_country_flag = ireland_route_archived }
 			ireland_reveal_settlement_open = yes
@@ -308,19 +297,15 @@ ireland_settlement_government = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ireland_action_pass_a_joint_budget_requirements_tt
-				ireland_parliament_open = yes
-				has_country_flag = ireland_settlement_open
-				ireland_parliament_stage_four_or_later = yes
-				ireland_parliament_dail_majority = yes
-				ireland_parliament_seanad_majority = yes
-				any_owned_state = { state = 113 }
+				ireland_parliament_joint_budget_action_available = yes
 			}
 		}
-		ai_hint_pp_cost = @IRELAND_PARLIAMENT_JOINT_BUDGET_PP
-		cost = @IRELAND_PARLIAMENT_JOINT_BUDGET_PP
+		ai_hint_pp_cost = constant:ireland.parliament_budget_pp_cost
+		custom_cost_trigger = { always = yes }
+		custom_cost_text = ireland_parliament_budget_custom_cost
 		fire_only_once = yes
 		complete_effect = {
-			ireland_record_parliament_joint_budget = yes
+			ireland_execute_parliament_budget_action = yes
 		}
 		remove_trigger = {
 			OR = {

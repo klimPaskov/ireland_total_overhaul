@@ -922,3 +922,25 @@ Usage contract: the four action blocks call their admission helper inside the vi
   country effect before incrementing any maritime reward variable. Naval Staff
   and Marine Service reconstruction both call it so repeated execution remains
   safe.
+
+## Parliament action executors
+
+The opening Oireachtas programme has one guarded executor per action. Both the
+human scripted-GUI click and the AI-only native decision call that executor, so
+the availability gate, political-power debit, record helper, and completion
+lock have one owner. All tuning values live in
+`common/script_constants/ireland_constants.txt`.
+
+`ireland_update_parliament` also projects each action into one of four
+centralized frame constants: locked, current but unaffordable, current and
+available, or complete. It reads the same `*_action_current` and
+`*_action_available` triggers used by the controller paths and refreshes the
+single non-overlapping status seal during Ireland's existing daily political
+sync.
+
+| Effect | Purpose and scope | Inputs and outputs | Defaults and side effects | Usage |
+| --- | --- | --- | --- | --- |
+| `ireland_execute_parliament_dail_action` | Executes the opening Dáil sitting in Ireland country scope. | Reads `ireland_parliament_dail_action_available`; deducts the Dáil PP cost and calls `ireland_record_parliament_dail_session`. | Does nothing when the gate is false. The record helper adds routine votes, Dáil Mandate, Cabinet Cohesion, Social Consent, and the completion flag. | Called by both the human Dáil button and the AI-only Dáil decision. |
+| `ireland_execute_parliament_seanad_action` | Secures Seanad support in Ireland country scope. | Reads `ireland_parliament_seanad_action_available`; deducts the Seanad PP cost and calls `ireland_record_parliament_seanad_support`. | Does nothing when the gate is false. The record helper adds government seats, Social Consent, Cabinet Cohesion, and the completion flag. | Called by both the human Seanad button and the AI-only Seanad decision. |
+| `ireland_execute_parliament_confidence_action` | Records the confidence-and-supply compact in Ireland country scope. | Reads `ireland_parliament_confidence_action_available`; deducts the confidence PP cost and calls `ireland_record_parliament_confidence_compact`. | Does nothing when the gate is false. The record helper adds external support, routine votes, Dáil Mandate, Social Consent, Cabinet Cohesion, and the completion flag. | Called by both the human confidence button and the AI-only confidence decision. |
+| `ireland_execute_parliament_budget_action` | Passes the joint opening budget in Ireland country scope. | Reads `ireland_parliament_joint_budget_action_available`; deducts the budget PP cost and calls `ireland_record_parliament_joint_budget`. | Does nothing when the gate is false. The record helper adds Stability, Administrative Reach, Dáil Mandate, Cabinet Cohesion, and the completion flag. | Called by both the human budget button and the AI-only budget decision. |

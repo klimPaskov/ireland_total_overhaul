@@ -44,6 +44,46 @@ ireland = {
 
 	value_min = 0
 	value_max = 100
+	# Opening Oireachtas programme. The gate is one point below the matching
+	# cost because has_political_power uses a strict greater-than comparison.
+	parliament_dail_pp_cost = 15
+	parliament_dail_pp_delta = -15
+	parliament_dail_pp_gate = 14
+	parliament_seanad_pp_cost = 25
+	parliament_seanad_pp_delta = -25
+	parliament_seanad_pp_gate = 24
+	parliament_confidence_pp_cost = 25
+	parliament_confidence_pp_delta = -25
+	parliament_confidence_pp_gate = 24
+	parliament_budget_pp_cost = 35
+	parliament_budget_pp_delta = -35
+	parliament_budget_pp_gate = 34
+	parliament_state_locked_frame = 1
+	parliament_state_unaffordable_frame = 2
+	parliament_state_current_frame = 3
+	parliament_state_complete_frame = 4
+	parliament_dail_routine_votes_gain = 1
+	parliament_dail_mandate_gain = 4
+	parliament_dail_cohesion_gain = 2
+	parliament_dail_consent_gain = 2
+	parliament_seanad_seats_gain = 2
+	parliament_seanad_consent_gain = 3
+	parliament_seanad_cohesion_gain = 2
+	parliament_confidence_routine_votes_gain = 2
+	parliament_confidence_mandate_gain = 5
+	parliament_confidence_consent_gain = 4
+	parliament_confidence_cohesion_gain = 3
+	parliament_budget_stability_gain = 0.05
+	parliament_budget_administrative_gain = 5
+	parliament_budget_mandate_gain = 8
+	parliament_budget_cohesion_gain = 5
+	# Focus rewards use three bounded ledger steps so every operational focus
+	# produces a visible capacity change without generic PP or copied factories.
+	focus_reward_minor_delta = 2
+	focus_reward_standard_delta = 3
+	focus_reward_major_delta = 5
+	focus_reward_xp_standard = 5
+	focus_reward_xp_major = 10
 	# Each national capacity has its own public status bands. These constants
 	# must match the thresholds explained in the panel tooltips.
 	gui_provision_ready_threshold = 50

@@ -1,15 +1,14 @@
 # Ireland Total Overhaul scripted GUI registrations.
-# The parliament surface follows the vanilla USA Congress contract: it is a
-# compact live summary above native decisions. The decisions own costs, gates,
-# AI weights, and effects; this GUI deliberately has no duplicate click path.
+# The parliament surface combines live chamber diagrams with four human-facing
+# institutional controls. Human clicks and the AI-only native decisions use
+# the same guarded executors, tuning constants, and record helpers.
 
 scripted_gui = {
 	ireland_parliament_decision_ui = {
 		context_type = decision_category
 		window_name = "ireland_parliament_decision_ui_window"
-		# Match the vanilla USA Congress contract: chamber sprites are
-		# multi-frame assets driven by live support ratios, while decisions
-		# remain the only clickable controls.
+		# Match the vanilla USA Congress chamber contract: both chamber sprites
+		# are multi-frame assets driven by live support ratios.
 		properties = {
 			dail_icon = {
 				frame = ireland_dail_icon_frame
@@ -35,15 +34,34 @@ scripted_gui = {
 			NOT = { has_country_flag = ireland_route_archived }
 		}
 		dirty = ireland_parliament_gui_dirty
-		ai_enabled = { original_tag = IRE }
+		ai_enabled = { always = no }
+		ai_check = { always = no }
+		effects = {
+			ireland_parliament_dail_button_click = {
+				ireland_execute_parliament_dail_action = yes
+			}
+			ireland_parliament_seanad_button_click = {
+				ireland_execute_parliament_seanad_action = yes
+			}
+			ireland_parliament_confidence_button_click = {
+				ireland_execute_parliament_confidence_action = yes
+			}
+			ireland_parliament_budget_button_click = {
+				ireland_execute_parliament_budget_action = yes
+			}
+		}
 		triggers = {
 			ireland_dail_composition_visible = { ireland_parliament_open = yes }
 			ireland_seanad_composition_visible = { ireland_parliament_open = yes }
-			ireland_parliament_powers_header_visible = { ireland_parliament_open = yes }
-			ireland_parliament_power_dail_label_visible = { ireland_parliament_open = yes }
-			ireland_parliament_power_seanad_label_visible = { ireland_parliament_open = yes }
-			ireland_parliament_power_confidence_label_visible = { ireland_parliament_open = yes }
-			ireland_parliament_power_budget_label_visible = { ireland_parliament_open = yes }
+			ireland_parliament_powers_panel_visible = { has_country_flag = ireland_settlement_open }
+			ireland_parliament_dail_button_visible = { has_country_flag = ireland_settlement_open }
+			ireland_parliament_seanad_button_visible = { has_country_flag = ireland_settlement_open }
+			ireland_parliament_confidence_button_visible = { has_country_flag = ireland_settlement_open }
+			ireland_parliament_budget_button_visible = { has_country_flag = ireland_settlement_open }
+			ireland_parliament_dail_button_click_enabled = { ireland_parliament_dail_action_available = yes }
+			ireland_parliament_seanad_button_click_enabled = { ireland_parliament_seanad_action_available = yes }
+			ireland_parliament_confidence_button_click_enabled = { ireland_parliament_confidence_action_available = yes }
+			ireland_parliament_budget_button_click_enabled = { ireland_parliament_joint_budget_action_available = yes }
 		}
 	}
 

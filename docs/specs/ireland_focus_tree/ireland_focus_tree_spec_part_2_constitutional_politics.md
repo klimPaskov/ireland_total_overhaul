@@ -4741,6 +4741,34 @@ Each route includes:
 
 `[R2.15]` History Ireland, `Clann na Talmhan: Ireland's last farmers' party`, used for the 1939 founding, 1940 by-election contest, 1943 merger, formal 10-seat result, five separate farmer independents, regional conflict, and post-1944 Blowick succession. https://historyireland.com/clann-na-talmhan-irelands-last-farmers-party/
 
+## Canonical focus-lane and Parliament runtime contract
+
+The implemented national tree preserves 150 focus IDs while presenting seven
+separated semantic lanes with named navigation shortcuts: politics and the
+constitution, culture and public evidence, industry and National Provision,
+diplomacy and neutrality, the Northern question, army and air Readiness, and
+the far-right Naval Service. Ordinary lanes are visible from the start. The
+IRA, Congress, O'Duffy, clerical-failure, Ailtirí, High Kingship, Five
+Provinces, and Otherworld families retain progressive `allow_branch` reveal.
+Distant proof dependencies use player-facing `available` gates rather than
+long connectors across unrelated lanes.
+
+The National Settlement decision category owns a 510x248 Parliament surface.
+Its chamber summary is visible after Ireland initialization; the action grid
+appears only after `ireland_settlement_open`. Two 247x126 cards contain matched
+126x70, 21-frame Dáil and Seanad support diagrams. Four 204x32 human controls
+form a two-column, two-row grid. AI uses equivalent hidden native decisions;
+both paths call the same guarded executors. The canonical costs are 15, 25, 25,
+and 35 Political Power for the Dáil sitting, Seanad support, confidence pact,
+and joint budget.
+
+Each action owns one 32x32 four-frame status seal in a separate, click-through
+column: slate means future/locked, amber means current but unaffordable, gold
+means current and available, and green means secured. Red is reserved for an
+actual failure or crisis. The same current and availability triggers drive the
+seal, the human button, and the AI decision, so presentation and execution
+cannot disagree.
+
 ## Part 2 stopping point
 
 Part 2 ends after the constitutional route family, National Settlement system, cross-route Church and vocational systems, political lifecycles, and implementation-facing matrices have been mapped.

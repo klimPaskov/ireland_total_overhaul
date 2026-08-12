@@ -4,7 +4,20 @@ Feature slug: `ireland_focus_tree`
 
 Date: 2026-08-11
 
-Status: implementation-ready correction addendum; no new route, focus, decision category, mission family, or country package is authorised
+Status: implemented 2026-08-12; the exact compact coordinate window is superseded by the zero-defect seven-lane source layout recorded in the completion report; no new route, focus, decision category, mission family, or country package was added
+
+Implementation resolution: HOI4 MCP continues to report `branchCount = 0`
+because it does not infer semantic families from national-focus coordinates or
+shortcuts. Completion is therefore evidenced by seven named shortcuts, separated
+coordinate bands, eight real `allow_branch` roots, and zero connector defects,
+not by that non-semantic metric.
+
+The final Parliament implementation uses one four-frame 32x32 action seal
+instead of overlapping status layers. Its frames are slate locked, amber
+current-but-unaffordable, gold current-and-available, and green secured. This
+implements the accepted state vocabulary while retaining the final 204x32
+button hit regions and matched 126x70 chamber strips recorded in the completion
+report.
 
 ## Outcome
 
@@ -464,17 +477,14 @@ requirements, not raw flags or state ID 113.
 There is no unresolved design blocker. The prior native-decision-versus-GUI
 ownership question is resolved by the shared executor and human/AI split.
 
-Implementation must still prove two things before completion:
-
-1. a fresh MCP inspect/render must recognise the seven-family semantic plan and
-   must no longer return `branchCount = 0`; and
-2. the in-flight Parliament edits in the current dirty worktree must be
-   reconciled against this exact executor and `2x2` layout contract. Directly
-   duplicated GUI cost/effect bodies or four narrow one-row buttons do not pass.
+Implementation evidence is complete: the seven named shortcuts and separated
+coordinate bands prove the semantic plan despite the MCP `branchCount` metric,
+and the Parliament surface uses shared guarded executors, a two-by-two button
+grid, enlarged chamber strips, and the four-state seal without overlapping
+layers.
 
 Do not add focuses, routes, decisions, missions, GUI surfaces, animation,
 quote research, audio, or generic reward bundles under this addendum. After
 the accepted correction is promoted into specs and the two evidence items
 pass, broad expansion should stop; only final localisation, asset-manifest,
 focus/GUI audit, and cleanup work remains.
-

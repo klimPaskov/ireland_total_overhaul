@@ -2,40 +2,60 @@
 
 Feature slug: `ireland_parliament_panel`
 
-Asset type: scripted-GUI background panel / custom feature UI art
+Asset type: scripted-GUI background, live chamber indicators, and action-control art
 
-Source mode: `$imagegen` (generated)
-Source rationale: this is a fictional, symbolic 1930s Irish parliamentary dossier surface with no single real archival image requirement; generated art provides the required wide, low-contrast layout and material treatment without inventing a real document or person.
+Source mode: generated background plus project-owned mechanical derivatives
 
-## Asset
+## Background
 
-- Asset name: `parliament_summary_background`
-- Intended use: decorative background texture behind two balanced chamber summaries in the upper area and a four-step progress strip in the lower area of the Ireland Parliament decision-category scripted GUI.
-- Source prompt: [prompts/parliament_summary_background_prompt.md](prompts/parliament_summary_background_prompt.md)
-- Source PNG: `docs/assets/ireland_parliament_panel/source_png/parliament_summary_background_source.png` (2014x780 RGB)
-- Processed PNG: `docs/assets/ireland_parliament_panel/processed_png/parliament_summary_background_510x198.png` (510x198 RGBA)
-- Final DDS: `gfx/interface/ireland/gui/parliament/parliament_summary_background.dds` (510x198 RGBA, repository converter output)
-- Target size: `510x198`
-- Proposed sprite: `GFX_ireland_parliament_summary_background`
-- Suggested `.gfx`: `interface/ireland_gui_assets.gfx`
-- Related GUI surface: Ireland Parliament decision-category scripted GUI; decorative only, not state-driven.
-- Status: `wired`
-- Generation notes: restrained dark green leather, aged cream paper, walnut and tarnished brass details; broad low-contrast negative space is intentional. No people, flags, readable text, buttons, charts, checkmarks, icons, seals, or watermarks are present.
-- Contact sheet: `not_needed` (single final asset; no alternatives retained).
+- Asset name: `parliament_summary_background`.
+- Intended use: decorative texture behind two enlarged chamber summaries and a two-by-two grid of parliamentary action controls.
+- Source prompt: `docs/assets/ireland_parliament_panel/prompts/parliament_summary_background_prompt.md`.
+- Source PNG: `docs/assets/ireland_parliament_panel/source_png/parliament_summary_background_source.png` (2014x780 RGB).
+- Processed PNG: `docs/assets/ireland_parliament_panel/processed_png/parliament_summary_background_510x248.png` (510x248 RGBA).
+- Final DDS: `gfx/interface/ireland/gui/parliament/parliament_summary_background.dds` (510x248 RGBA).
+- Runtime sprite: `GFX_ireland_parliament_summary_background` in `interface/ireland_gui_assets.gfx`.
+- Status: `wired`.
+- Visual contract: restrained dark-green leather, aged cream paper, walnut, and tarnished brass. The central fields are deliberately low contrast and contain no people, flags, readable text, buttons, charts, checkmarks, icons, seals, or watermarks.
 
-## Review notes and risks
+## Live chamber derivatives
 
-- The source crop is nearly the requested aspect ratio and was cover-cropped to preserve the central paper field and lower leather band.
-- The generated image includes edge fasteners and folio corners only at the perimeter; keep interactive text and progress elements away from those edges where possible.
-- The art is intentionally low contrast so overlaid UI text remains legible; overly strong tinting or opacity changes in the GUI may reduce material separation.
-- The main implementation registers the sprite in `interface/ireland_gui_assets.gfx` and consumes it as the decorative base layer in `interface/ireland_parliament_scripted_gui.gui`.
+- Assets: `dail_chamber_ui_large` and `seanad_chamber_ui_large`.
+- Sources: the existing 21-frame Dáil and Seanad support strips.
+- Processed PNGs: `dail_chamber_ui_large_126x70.png` and `seanad_chamber_ui_large_126x70.png` (2646x70 each).
+- Final DDS files: `gfx/interface/ireland/gui/parliament/dail_chamber_ui_large.dds` and `gfx/interface/ireland/gui/parliament/seanad_chamber_ui_large.dds`.
+- Processing: each source frame was resized independently with Lanczos resampling, then reassembled in its original order. This preserves all 21 live support states without fractional GUI scaling.
+- Runtime sprites: `GFX_ireland_parliament_dail_large_ui` and `GFX_ireland_parliament_seanad_large_ui`.
+- Runtime consumers: `dail_icon` and `seanad_icon` in `interface/ireland_parliament_scripted_gui.gui`.
 
-## Supporting chamber derivative
+## Action-control derivative
 
-- Asset name: `seanad_chamber_ui_compact`.
-- Source: existing project-owned `gfx/interface/ireland/gui/parliament/seanad_chamber_ui.dds`, a 2772x73 strip of 21 frames at 132x73 each.
-- Processed PNG: `docs/assets/ireland_parliament_panel/processed_png/seanad_chamber_ui_compact_90x50.png` (1890x50 RGBA; 21 frames at 90x50).
-- Final DDS: `gfx/interface/ireland/gui/parliament/seanad_chamber_ui_compact.dds` (1890x50 RGBA).
-- Processing: each source frame was resized independently with Lanczos resampling, then reassembled in its original frame order. This gives the Seanad and Dáil equal 50px visual height without relying on sub-pixel GUI scaling.
-- Runtime sprite: `GFX_ireland_parliament_seanad_compact_ui` in `interface/ireland_gui_assets.gfx`.
-- Runtime consumer: `seanad_icon` in `interface/ireland_parliament_scripted_gui.gui`.
+- Asset name: `parliament_step_button`.
+- Source: existing project-owned `gfx/interface/ireland/gui/shared/action_button.dds`.
+- Processed PNG: `docs/assets/ireland_parliament_panel/processed_png/parliament_step_button_204x32.png`.
+- Final DDS: `gfx/interface/ireland/gui/parliament/parliament_step_button.dds` (204x32 RGBA).
+- Runtime sprite: `GFX_ireland_gui_parliament_step_button`.
+- Runtime use: four 204x32 click regions in a two-column, two-row grid. Each completion mark occupies its own 31px status column outside the click region, while the button natively centres its label.
+
+## Action-state derivative
+
+- Asset name: `parliament_action_states`.
+- Sources: project-owned shared `status_locked`, `status_warning`, and
+  `status_ready` seals.
+- Processed PNG:
+  `docs/assets/ireland_parliament_panel/processed_png/parliament_action_states_32x32.png`
+  (four 32x32 frames in a 128x32 strip).
+- Final DDS:
+  `gfx/interface/ireland/gui/parliament/parliament_action_states.dds`.
+- Runtime sprite: `GFX_ireland_gui_parliament_action_state`, four frames.
+- Frame contract: slate locked, amber current-but-unaffordable, cream-gold
+  current-and-available, green secured. Red is reserved for genuine failure.
+- Runtime consumers: the four `ireland_parliament_power_*_state` icons. Their
+  frame variables are recomputed from the same canonical triggers that enable
+  the buttons and AI-only decisions.
+
+## Review notes
+
+- Keep essential controls away from the perimeter fasteners and folio corners.
+- The background, chamber strips, and button texture match their declared GUI dimensions exactly.
+- Contact sheet: `not_needed`; the generated package has one selected background and mechanical derivatives only.

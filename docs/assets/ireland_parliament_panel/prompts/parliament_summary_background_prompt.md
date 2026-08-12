@@ -22,3 +22,12 @@ Text (verbatim): none.
 Constraints: final source art must contain no people, no flags, no national emblems, no readable text, no labels, no buttons, no charts, no checkmarks, no icons, no seals, no modern objects, no UI widgets, no watermarks. Keep the central field low-contrast and functionally empty enough for overlaid chamber summaries and a four-step progress strip. Generate real painted surface art, not geometric placeholders or a blank gradient.
 
 The built-in imagegen output was generated at 2014x780 RGB and then cover-cropped with `ImageOps.fit` to the required 510x198 RGBA canvas.
+
+## Final interface derivative
+
+The interactive Parliament implementation uses a taller 510x248 derivative of
+the same approved source. The additional lower field accommodates two rows of
+real action controls while preserving the original chamber field and perimeter
+details. The current processed PNG and DDS are recorded in `manifest.md`; this
+section documents post-processing and does not alter the source-generation
+prompt above.

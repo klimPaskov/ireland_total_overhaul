@@ -1,40 +1,34 @@
-# Ireland Total Overhaul - Parliament summary in the decision-category host.
-# The panel is deliberately read-only: native decisions remain the sole owners
-# of costs, availability, AI weights, and effects.
+# Ireland Total Overhaul - interactive Parliament chamber and opening programme.
+# Human players use the four scripted-GUI controls below; the matching native
+# decisions remain an AI-only execution path with the same gates and effects.
 @PARLIAMENT_WIDTH = 510
-@PARLIAMENT_HEIGHT = 198
+@PARLIAMENT_HEIGHT = 248
 @TITLE_Y = 1
 
 @CHAMBER_WIDTH = 247
-@CHAMBER_HEIGHT = 109
-@CHAMBER_PANEL_Y = 23
+@CHAMBER_HEIGHT = 126
+@CHAMBER_PANEL_Y = 22
 @DAIL_PANEL_X = 4
 @SEANAD_PANEL_X = 259
 @CHAMBER_HEADER_LOCAL_Y = 0
-@CHAMBER_ICON_LOCAL_Y = 20
-@CHAMBER_STATUS_LOCAL_Y = 72
-@CHAMBER_COMPOSITION_LOCAL_Y = 91
-@DAIL_ICON_LOCAL_X = 76
-@SEANAD_ICON_LOCAL_X = 79
+@DAIL_ICON_LOCAL_X = 61
+@DAIL_ICON_LOCAL_Y = 19
+@SEANAD_ICON_LOCAL_X = 61
+@SEANAD_ICON_LOCAL_Y = 19
+@CHAMBER_STATUS_LOCAL_Y = 90
+@CHAMBER_COMPOSITION_LOCAL_Y = 108
 
-@POWERS_PANEL_Y = 133
-@POWERS_PANEL_HEIGHT = 65
+@POWERS_PANEL_Y = 148
+@POWERS_PANEL_HEIGHT = 100
 @POWERS_HEADER_LOCAL_Y = 0
-@POWER_TRACK_LOCAL_X = 45
-@POWER_TRACK_LOCAL_Y = 17
-@POWER_TRACK_WIDTH = 420
-@POWER_TRACK_HEIGHT = 31
-@POWER_LABEL_LOCAL_Y = 48
-@POWER_LABEL_ROW_HEIGHT = 17
-@POWER_COLUMN_ONE_X = 2
-@POWER_COLUMN_TWO_X = 129
-@POWER_COLUMN_THREE_X = 256
-@POWER_COLUMN_FOUR_X = 383
-@POWER_COLUMN_WIDTH = 125
-@POWER_STATE_ONE_LOCAL_X = 4
-@POWER_STATE_TWO_LOCAL_X = 131
-@POWER_STATE_THREE_LOCAL_X = 258
-@POWER_STATE_FOUR_LOCAL_X = 385
+@POWER_LEFT_X = 44
+@POWER_RIGHT_X = 296
+@POWER_FIRST_ROW_Y = 20
+@POWER_SECOND_ROW_Y = 60
+@POWER_STATE_LEFT_X = 10
+@POWER_STATE_RIGHT_X = 262
+@POWER_STATE_FIRST_ROW_Y = 20
+@POWER_STATE_SECOND_ROW_Y = 60
 
 guiTypes = {
 	containerWindowType = {
@@ -77,8 +71,8 @@ guiTypes = {
 
 			iconType = {
 				name = "dail_icon"
-				spriteType = "GFX_ireland_parliament_dail_ui"
-				position = { x = @DAIL_ICON_LOCAL_X y = @CHAMBER_ICON_LOCAL_Y }
+				spriteType = "GFX_ireland_parliament_dail_large_ui"
+				position = { x = @DAIL_ICON_LOCAL_X y = @DAIL_ICON_LOCAL_Y }
 				alwaystransparent = yes
 			}
 
@@ -125,8 +119,8 @@ guiTypes = {
 
 			iconType = {
 				name = "seanad_icon"
-				spriteType = "GFX_ireland_parliament_seanad_compact_ui"
-				position = { x = @SEANAD_ICON_LOCAL_X y = @CHAMBER_ICON_LOCAL_Y }
+				spriteType = "GFX_ireland_parliament_seanad_large_ui"
+				position = { x = @SEANAD_ICON_LOCAL_X y = @SEANAD_ICON_LOCAL_Y }
 				alwaystransparent = yes
 			}
 
@@ -171,106 +165,84 @@ guiTypes = {
 				maxHeight = 16
 			}
 
-			containerWindowType = {
-				name = "ireland_parliament_progress_track"
-				position = { x = @POWER_TRACK_LOCAL_X y = @POWER_TRACK_LOCAL_Y }
-				size = { width = @POWER_TRACK_WIDTH height = @POWER_TRACK_HEIGHT }
-
-				background = {
-					name = "ireland_parliament_progress_track_background"
-					quadTextureSprite = "GFX_ireland_gui_parliament_row"
-					alwaystransparent = yes
-				}
-
-				iconType = {
-					name = "ireland_parliament_power_dail_state"
-					spriteType = "GFX_checkbox_small_red_green"
-					position = { x = @POWER_STATE_ONE_LOCAL_X y = 0 }
-					frame = 1
-					pdx_tooltip = "ireland_parliament_power_status_tt"
-					alwaystransparent = yes
-				}
-
-				iconType = {
-					name = "ireland_parliament_power_seanad_state"
-					spriteType = "GFX_checkbox_small_red_green"
-					position = { x = @POWER_STATE_TWO_LOCAL_X y = 0 }
-					frame = 1
-					pdx_tooltip = "ireland_parliament_power_status_tt"
-					alwaystransparent = yes
-				}
-
-				iconType = {
-					name = "ireland_parliament_power_confidence_state"
-					spriteType = "GFX_checkbox_small_red_green"
-					position = { x = @POWER_STATE_THREE_LOCAL_X y = 0 }
-					frame = 1
-					pdx_tooltip = "ireland_parliament_power_status_tt"
-					alwaystransparent = yes
-				}
-
-				iconType = {
-					name = "ireland_parliament_power_budget_state"
-					spriteType = "GFX_checkbox_small_red_green"
-					position = { x = @POWER_STATE_FOUR_LOCAL_X y = 0 }
-					frame = 1
-					pdx_tooltip = "ireland_parliament_power_status_tt"
-					alwaystransparent = yes
-				}
+			buttonType = {
+				name = "ireland_parliament_dail_button"
+				position = { x = @POWER_LEFT_X y = @POWER_FIRST_ROW_Y }
+				quadTextureSprite = "GFX_ireland_gui_parliament_step_button"
+				buttonFont = "hoi_16mbs"
+				buttonText = "ireland_parliament_dail_button_label"
+				format = center
+				clicksound = click_default
+				pdx_tooltip = "ireland_parliament_dail_button_tt"
 			}
 
-			containerWindowType = {
-				name = "ireland_parliament_power_label_row"
-				position = { x = 0 y = @POWER_LABEL_LOCAL_Y }
-				size = { width = @PARLIAMENT_WIDTH height = @POWER_LABEL_ROW_HEIGHT }
+			buttonType = {
+				name = "ireland_parliament_seanad_button"
+				position = { x = @POWER_RIGHT_X y = @POWER_FIRST_ROW_Y }
+				quadTextureSprite = "GFX_ireland_gui_parliament_step_button"
+				buttonFont = "hoi_16mbs"
+				buttonText = "ireland_parliament_seanad_button_label"
+				format = center
+				clicksound = click_default
+				pdx_tooltip = "ireland_parliament_seanad_button_tt"
+			}
 
-				instantTextBoxType = {
-					name = "ireland_parliament_power_dail_label"
-					position = { x = @POWER_COLUMN_ONE_X y = 0 }
-					font = "hoi_16mbs"
-					text = "ireland_parliament_power_dail_label"
-					pdx_tooltip = "ireland_parliament_power_dail_tt"
-					format = center
-					fixedsize = yes
-					maxWidth = @POWER_COLUMN_WIDTH
-					maxHeight = 16
-				}
+			buttonType = {
+				name = "ireland_parliament_confidence_button"
+				position = { x = @POWER_LEFT_X y = @POWER_SECOND_ROW_Y }
+				quadTextureSprite = "GFX_ireland_gui_parliament_step_button"
+				buttonFont = "hoi_16mbs"
+				buttonText = "ireland_parliament_confidence_button_label"
+				format = center
+				clicksound = click_default
+				pdx_tooltip = "ireland_parliament_confidence_button_tt"
+			}
 
-				instantTextBoxType = {
-					name = "ireland_parliament_power_seanad_label"
-					position = { x = @POWER_COLUMN_TWO_X y = 0 }
-					font = "hoi_16mbs"
-					text = "ireland_parliament_power_seanad_label"
-					pdx_tooltip = "ireland_parliament_power_seanad_tt"
-					format = center
-					fixedsize = yes
-					maxWidth = @POWER_COLUMN_WIDTH
-					maxHeight = 16
-				}
+			buttonType = {
+				name = "ireland_parliament_budget_button"
+				position = { x = @POWER_RIGHT_X y = @POWER_SECOND_ROW_Y }
+				quadTextureSprite = "GFX_ireland_gui_parliament_step_button"
+				buttonFont = "hoi_16mbs"
+				buttonText = "ireland_parliament_budget_button_label"
+				format = center
+				clicksound = click_default
+				pdx_tooltip = "ireland_parliament_budget_button_tt"
+			}
 
-				instantTextBoxType = {
-					name = "ireland_parliament_power_confidence_label"
-					position = { x = @POWER_COLUMN_THREE_X y = 0 }
-					font = "hoi_16mbs"
-					text = "ireland_parliament_power_confidence_label"
-					pdx_tooltip = "ireland_parliament_power_confidence_tt"
-					format = center
-					fixedsize = yes
-					maxWidth = @POWER_COLUMN_WIDTH
-					maxHeight = 16
-				}
-
-				instantTextBoxType = {
-					name = "ireland_parliament_power_budget_label"
-					position = { x = @POWER_COLUMN_FOUR_X y = 0 }
-					font = "hoi_16mbs"
-					text = "ireland_parliament_power_budget_label"
-					pdx_tooltip = "ireland_parliament_power_budget_tt"
-					format = center
-					fixedsize = yes
-					maxWidth = @POWER_COLUMN_WIDTH
-					maxHeight = 16
-				}
+			# The four-frame seal avoids layered elements while retaining the complete
+			# action vocabulary: slate locked, amber unaffordable, gold current, and
+			# green secured. Red remains reserved for genuine failure states.
+			iconType = {
+				name = "ireland_parliament_power_dail_state"
+				spriteType = "GFX_ireland_gui_parliament_action_state"
+				position = { x = @POWER_STATE_LEFT_X y = @POWER_STATE_FIRST_ROW_Y }
+				frame = 1
+				pdx_tooltip = "ireland_parliament_power_state_tt"
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "ireland_parliament_power_seanad_state"
+				spriteType = "GFX_ireland_gui_parliament_action_state"
+				position = { x = @POWER_STATE_RIGHT_X y = @POWER_STATE_FIRST_ROW_Y }
+				frame = 1
+				pdx_tooltip = "ireland_parliament_power_state_tt"
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "ireland_parliament_power_confidence_state"
+				spriteType = "GFX_ireland_gui_parliament_action_state"
+				position = { x = @POWER_STATE_LEFT_X y = @POWER_STATE_SECOND_ROW_Y }
+				frame = 1
+				pdx_tooltip = "ireland_parliament_power_state_tt"
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "ireland_parliament_power_budget_state"
+				spriteType = "GFX_ireland_gui_parliament_action_state"
+				position = { x = @POWER_STATE_RIGHT_X y = @POWER_STATE_SECOND_ROW_Y }
+				frame = 1
+				pdx_tooltip = "ireland_parliament_power_state_tt"
+				alwaystransparent = yes
 			}
 		}
 	}
