@@ -172,9 +172,12 @@ The fifteen standard Part 5 conclusion families remain fixed. The convergence pr
 
 # Current completion state
 
-The 150-focus runtime tree implements seven named semantic lanes, eight
-progressively revealed route families, bounded operational reward contracts,
-and complete AI focus-ID coverage. The canonical Parliament contract is a
+The 150-focus runtime tree presents three named opening trunks—government and
+politics, national development, and defence and security—then progressively
+reveals four ordinary support families, three late constitutional alternatives,
+and eight exceptional route families.
+It retains bounded operational reward contracts and complete AI focus-ID
+coverage. The canonical Parliament contract is a
 510x248 interactive surface with matched 126x70 chamber diagrams, four 204x32
 human controls backed by shared guarded executors, AI-only native equivalents,
 and a four-state slate/amber/gold/green action seal. The current implementation

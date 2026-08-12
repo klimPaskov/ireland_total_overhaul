@@ -25,14 +25,18 @@ long connectors, zero same-row spacing defects, and zero Ireland-local focus
 diagnostics. All focus titles, descriptions, icons, prerequisite references,
 and AI-plan focus references resolve.
 
-The opening camera anchors on `ireland_state_still_defined`. Seven named
-shortcuts and separated lanes identify politics, culture, industry, diplomacy,
-Northern policy, army/air readiness, and the far-right Marine Service. Ordinary
-families are visible from the start. Exactly eight authored
+The opening camera anchors on `ireland_state_still_defined`. Three named
+shortcuts identify the only opening trunks: government and politics, national
+development, and defence and security. Culture, diplomacy and neutrality,
+Northern policy, and the Marine Service are ordinary support families that
+reveal only after their existing prerequisites are satisfied. Norton, Clann na
+Talmhan, and the vocational constitution also remain concealed until their
+full route-selection conditions are met. Eight additional
 crisis, radical, or evidence-gated families retain progressive `allow_branch`
 reveal: IRA, Congress, O'Duffy, clerical failure, Ailtirí, High Kingship, Five
-Provinces, and Otherworld. The continuous-focus palette is explicitly placed at
-`x = 50, y = 2400`, below the final authored focus row.
+Provinces, and Otherworld. The source therefore has fifteen reveal roots and no
+more than three opening trunks. The continuous-focus palette is explicitly
+placed at `x = 50, y = 2400`, below the final authored focus row.
 
 Universal focus-reward profiles have been retired. Every surviving focus owns
 a named route, project, ledger, action, mission, proof, or institutional

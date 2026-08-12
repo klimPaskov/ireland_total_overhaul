@@ -7,9 +7,10 @@ Feature slug: `ireland_focus_tree`
 ## Outcome
 
 The Ireland national tree is a single 150-focus directed acyclic graph arranged
-into seven separated subject lanes. It has one root, 150 visible connectors,
-and named navigation shortcuts for politics, culture, industry, diplomacy, the
-Northern question, army/air readiness, and the far-right Naval Service.
+behind three opening trunks. It has one root, 150 visible connectors, and named
+navigation shortcuts for government and politics, national development, and
+defence and security. Culture, diplomacy, Northern policy, and the Naval
+Service reveal later as support families rather than competing opening trunks.
 
 The Parliament surface is a 510 by 248 interactive scripted GUI visible after
 Ireland initialization. It contains two enlarged live chamber diagrams and four
@@ -21,25 +22,26 @@ model, or non-functional GUI control remains.
 
 ## Focus architecture and reveal rules
 
-The opening camera anchors on `ireland_state_still_defined`. The lanes read
-left-to-right as:
+The opening camera anchors on `ireland_state_still_defined`. Its three readable
+campaign-level choices are:
 
-1. politics, constitutional government, and gated political alternatives;
-2. culture and public evidence;
-3. industry and National Provision;
-4. diplomacy and neutrality;
-5. the Northern question;
-6. army and air Readiness;
-7. the Naval Service.
+1. government, constitutional politics, and gated political alternatives;
+2. national development, industry, and National Provision;
+3. defence, security, army, and air Readiness.
 
-Seven named focus shortcuts jump directly to those anchors. The continuous
+Three named focus shortcuts jump directly to those anchors. The continuous
 palette remains at `x = 50, y = 2400`, below the 17 authored rows.
 
-Ordinary policy families are visible at the opening. Eight crisis, radical, or
-evidence-gated families retain their authored `allow_branch` rules: IRA,
-Congress, O'Duffy, clerical failure, Ailtirí, High Kingship, Five Provinces,
-and Otherworld. Their descendants appear only after the relevant route or
-evidence state is secured.
+Culture, diplomacy and neutrality, Northern settlement, and the Naval Service
+use `allow_branch` at their ordinary roots, matching their existing gameplay
+gates, so they appear only when their prerequisites make them actionable.
+Three late constitutional alternatives—Norton, Clann na Talmhan, and the
+vocational constitution—are likewise concealed until their full selection
+conditions are met. Eight crisis, radical, or evidence-gated families retain
+their authored reveal rules: IRA, Congress, O'Duffy, clerical failure, Ailtirí,
+High Kingship, Five
+Provinces, and Otherworld. The source therefore contains fifteen presentation
+gates in total while showing no more than three campaign trunks at the start.
 
 The visible graph follows real semantic dependencies. The Lemass route visibly
 passes through Dáil Nomination, the Otherworld dominion route visibly consumes
@@ -109,9 +111,14 @@ All costs and outcome increments live in
 the single owners of seat and political-ledger mutations and are documented in
 `docs/ireland_dynamic_effects.md`.
 
+The decision parser's `ai_hint_pp_cost` field does not accept `constant:`
+tokens. Its four AI budget hints therefore use file-local `@` macros with the
+same 15/25/25/35 values; the executable costs, gates, and GUI labels remain
+owned by the shared script-constant contract.
+
 ## Validation evidence
 
-Final focus inspection revision `9f4f86cc5796922d` reports:
+Final focus inspection revision `c1112c666cadee8b` reports:
 
 - 150 focuses and one root;
 - 150 connectors;
@@ -123,7 +130,7 @@ Final focus inspection revision `9f4f86cc5796922d` reports:
 - 0 Ireland focus diagnostics.
 
 Artifact:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/73a78f94783795326e576ef61757af1fb35871f10ca6dd9e16ae402461a2eef9/50b8461f4de0061cc8fd45ef89013c0febc85fb6124714f9883adebcc1dabca8/focus-inspect.9f4f86cc5796922d.json`
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/8e37b3d8fcc978bbf66674414714882544fc5cff8323faf385d1767986d682e9/0b87357b7b1ecce8e9b5ace730122d922763cb6bc052ff602b2eb53bc3219d66/focus-inspect.c1112c666cadee8b.json`
 
 Structural render:
 `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/0f9501fc221c42155cac3ac66aa33cede2cba3e7f4bf08b07bc5a85a1aa73ea2/7b61e92441dda7b16c3c2dd4bc61d82b402bcf48d53dcb942f1430d09fac6c22/ireland_focus_tree.focus.html`
@@ -151,7 +158,7 @@ Render artifact:
 `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/965590013ce89528f81de25146a533349082c8a6d3ce50a2b0aabbe95147fb0b/2aa71812eb4b40a11d9e20ed073e264bbd4570e26616419f595feff8a54dff58/ireland_parliament_decision_ui_window-full.svg`
 
 Static cross-surface checks confirm 150/150 focus title and description
-coverage, seven shortcut labels, 37/37 reward tooltips, 21/21 Parliament GUI
+coverage, three shortcut labels, 37/37 reward tooltips, 21/21 Parliament GUI
 localisation references, zero duplicate English keys, no dotted maritime
 constant references, and no undefined script-constant references in the
 touched focus, Parliament, decision, trigger, or AI surfaces.

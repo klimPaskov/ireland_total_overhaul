@@ -4743,13 +4743,15 @@ Each route includes:
 
 ## Canonical focus-lane and Parliament runtime contract
 
-The implemented national tree preserves 150 focus IDs while presenting seven
-separated semantic lanes with named navigation shortcuts: politics and the
-constitution, culture and public evidence, industry and National Provision,
-diplomacy and neutrality, the Northern question, army and air Readiness, and
-the far-right Naval Service. Ordinary lanes are visible from the start. The
-IRA, Congress, O'Duffy, clerical-failure, Ailtirí, High Kingship, Five
-Provinces, and Otherworld families retain progressive `allow_branch` reveal.
+The implemented national tree preserves 150 focus IDs while presenting only
+three opening trunks with named navigation shortcuts: government and politics,
+national development, and defence and security. Culture and public evidence,
+diplomacy and neutrality, the Northern question, and the Naval Service reveal
+as ordinary support families once their existing gates are satisfied. Norton,
+Clann na Talmhan, and the vocational constitution remain concealed until their
+full route-selection gates are satisfied. The IRA,
+Congress, O'Duffy, clerical-failure, Ailtirí, High Kingship, Five Provinces,
+and Otherworld families retain progressive `allow_branch` reveal.
 Distant proof dependencies use player-facing `available` gates rather than
 long connectors across unrelated lanes.
 

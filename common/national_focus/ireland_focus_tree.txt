@@ -1,8 +1,7 @@
 # Ireland Total Overhaul national focus tree
-# Overview: seven separated semantic lanes cover politics and the constitution, culture and public
-# evidence, industry and Provision, diplomacy and neutrality, the Northern question, army and air
-# Readiness, and the far-right Naval Service. Hidden revolutionary, corporate, restoration, and
-# Otherworld routes retain their authored reveal gates and rejoin the appropriate political lane.
+# Overview: three opening trunks cover government and politics, national development, and defence.
+# Culture, diplomacy, Northern policy, and the Naval Service reveal later as subordinate families.
+# Hidden revolutionary, corporate, restoration, and Otherworld routes retain their authored gates.
 # Route class legend: H = documented historical route; P = plausible constitutional or institutional route;
 # A = deliberate absurdity, concealed behind independent evidence, state-interface failure and rare conditions.
 # Focuses set route/proof flags and hand off lifecycle work to the parent scripted systems. Operational
@@ -25,15 +24,11 @@ focus_tree = {
 	# of allowing the engine default to cover the middle branch lanes.
 	continuous_focus_position = { x = 50 y = 2400 }
 
-	# Named navigation anchors make the seven semantic lanes legible at a glance.
-	# Route-specific families continue to obey their existing allow_branch gates.
+	# The opening navigation budget is deliberately limited to three trunks.
+	# Supporting and route-specific families reveal later through allow_branch.
 	shortcut = { name = ireland_focus_shortcut_politics target = ireland_state_still_defined scroll_wheel_factor = 0.72 }
-	shortcut = { name = ireland_focus_shortcut_culture target = ireland_cultural_survey scroll_wheel_factor = 0.78 }
 	shortcut = { name = ireland_focus_shortcut_industry target = ireland_economic_war_review scroll_wheel_factor = 0.78 }
-	shortcut = { name = ireland_focus_shortcut_diplomacy target = ireland_strict_neutrality scroll_wheel_factor = 0.82 }
-	shortcut = { name = ireland_focus_shortcut_northern target = ireland_northern_settlement_ledger scroll_wheel_factor = 0.82 }
-	shortcut = { name = ireland_focus_shortcut_army target = ireland_defence_estimates scroll_wheel_factor = 0.78 }
-	shortcut = { name = ireland_focus_shortcut_navy target = ireland_establish_naval_staff scroll_wheel_factor = 0.82 }
+	shortcut = { name = ireland_focus_shortcut_defence target = ireland_defence_estimates scroll_wheel_factor = 0.78 }
 
 # Shared opening: constitutional politics opens to the left, culture and society occupy the centre,
 # material planning and defence open to the right, and the Marine Service terminates at the far edge.
@@ -1086,6 +1081,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = -16
 		y = 7
+		allow_branch = {
+			NOT = { has_country_flag = ireland_route_committed }
+			ireland_alternate_focus_ai_allowed = yes
+			has_completed_focus = ireland_cultural_survey
+			has_country_flag = ireland_labour_organisation_ready
+			has_completed_focus = ireland_government_formation
+			has_completed_focus = ireland_church_labour_consultation
+		}
 		available = {
 			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
@@ -1163,6 +1166,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = -14
 		y = 7
+		allow_branch = {
+			NOT = { has_country_flag = ireland_route_committed }
+			ireland_alternate_focus_ai_allowed = yes
+			has_completed_focus = ireland_cultural_survey
+			date > 1939.6.29
+			has_completed_focus = ireland_rural_price_board
+			has_completed_focus = ireland_election_timetable
+		}
 		available = {
 			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
@@ -1220,6 +1231,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
 		x = -12
 		y = 7
+		allow_branch = {
+			NOT = { has_country_flag = ireland_route_committed }
+			ireland_alternate_focus_ai_allowed = yes
+			has_completed_focus = ireland_cultural_survey
+			has_country_flag = ireland_vocational_mandate_ready
+			has_completed_focus = ireland_church_labour_consultation
+			has_completed_focus = ireland_constitutional_draft
+		}
 		available = {
 			NOT = { has_country_flag = ireland_route_committed }
 			ireland_alternate_focus_ai_allowed = yes
@@ -1274,6 +1293,11 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 		x = -4
 		y = 0
+		allow_branch = {
+			has_completed_focus = ireland_replacement_charter
+			has_completed_focus = ireland_public_order_review
+			has_completed_focus = ireland_church_labour_consultation
+		}
 		available = {
 			has_completed_focus = ireland_replacement_charter
 			has_completed_focus = ireland_public_order_review
@@ -1962,6 +1986,11 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 		x = 50
 		y = 0
+		allow_branch = {
+			has_completed_focus = ireland_port_defence_project
+			has_completed_focus = ireland_command_audit
+			has_country_flag = ireland_readiness_plan
+		}
 		available = {
 			has_completed_focus = ireland_port_defence_project
 			has_completed_focus = ireland_command_audit
@@ -2360,6 +2389,11 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
 		x = 19
 		y = 0
+		allow_branch = {
+			has_completed_focus = ireland_readiness_baseline
+			has_completed_focus = ireland_treaty_port_transfer
+			has_completed_focus = ireland_active_neutrality
+		}
 		available = {
 			has_completed_focus = ireland_readiness_baseline
 			has_completed_focus = ireland_treaty_port_transfer
@@ -2543,6 +2577,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
 		x = 28
 		y = 0
+		allow_branch = {
+			has_completed_focus = ireland_national_settlement
+			has_completed_focus = ireland_treaty_port_transfer
+		}
 		available = {
 			has_completed_focus = ireland_national_settlement
 			has_completed_focus = ireland_treaty_port_transfer

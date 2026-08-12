@@ -7,15 +7,15 @@ Feature: Ireland gameplay overhaul and national focus tree (current focus/Parlia
 ## Current focus and Parliament authority: 2026-08-12
 
 The current national tree contains 150 focuses, one root, and 150 connectors.
-Its named shortcuts and semantic layout separate political crisis and
-constitutional government, culture, industry and provision, diplomacy,
-Northern policy, army/air readiness, and the far-right Marine Service. Focus inspection reports no
+Its three named shortcuts expose government and politics, national development,
+and defence and security as the only opening trunks. Focus inspection reports no
 Ireland-local crossing, node-intersection, long-connector, spacing, linear
 detour, or staircase diagnostic.
 
-All ordinary subject families are visible from the opening camera at
-`ireland_state_still_defined`. Exactly eight crisis, radical, or evidence-gated
-families use progressive `allow_branch` reveal. The 36 structural leaves are
+Culture, diplomacy and neutrality, Northern policy, and the Marine Service
+reveal only after their prerequisites. Three late constitutional alternatives
+and eight crisis, radical, or evidence-gated families also use progressive
+`allow_branch` reveal. The 36 structural leaves are
 named endpoints or have downstream consumers; no generic reward profile or
 unconsumed terminal remains.
 

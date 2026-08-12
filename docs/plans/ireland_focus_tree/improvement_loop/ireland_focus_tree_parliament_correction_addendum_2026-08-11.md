@@ -4,13 +4,28 @@ Feature slug: `ireland_focus_tree`
 
 Date: 2026-08-11
 
-Status: implemented 2026-08-12; the exact compact coordinate window is superseded by the zero-defect seven-lane source layout recorded in the completion report; no new route, focus, decision category, mission family, or country package was added
+Status: implemented 2026-08-12; the exact compact coordinate window is superseded by the zero-defect 150-focus source layout recorded in the completion report; no new route, focus, decision category, mission family, or country package was added
 
-Implementation resolution: HOI4 MCP continues to report `branchCount = 0`
+Historical implementation resolution (superseded for opening visibility below):
+HOI4 MCP continues to report `branchCount = 0`
 because it does not infer semantic families from national-focus coordinates or
 shortcuts. Completion is therefore evidenced by seven named shortcuts, separated
 coordinate bands, eight real `allow_branch` roots, and zero connector defects,
 not by that non-semantic metric.
+
+## 2026-08-12 opening-trunk correction
+
+The user's later direction supersedes this addendum wherever it calls for seven
+simultaneous named branches or shortcuts. The implemented opening presentation
+is limited to three trunks: government and politics, national development, and
+defence and security. Culture, diplomacy and neutrality, Northern policy, and
+the Naval Service keep their internal subject identity but reveal later through
+`allow_branch` gates matching their existing availability requirements. The
+three late constitutional alternatives use the same presentation rule. The
+eight exceptional route families remain progressively revealed, for fifteen
+presentation-gated roots in total. Historical seven-family coordinate and
+reward analysis below remains implementation evidence, not the opening-visibility
+contract.
 
 The final Parliament implementation uses one four-frame 32x32 action seal
 instead of overlapping status layers. Its frames are slate locked, amber
@@ -477,7 +492,7 @@ requirements, not raw flags or state ID 113.
 There is no unresolved design blocker. The prior native-decision-versus-GUI
 ownership question is resolved by the shared executor and human/AI split.
 
-Implementation evidence is complete: the seven named shortcuts and separated
+Historical implementation evidence was complete: the seven named shortcuts and separated
 coordinate bands prove the semantic plan despite the MCP `branchCount` metric,
 and the Parliament surface uses shared guarded executors, a two-by-two button
 grid, enlarged chamber strips, and the four-state seal without overlapping

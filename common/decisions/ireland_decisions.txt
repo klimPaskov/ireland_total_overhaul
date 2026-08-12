@@ -15,6 +15,13 @@
 # explicit cancellation paths may return the capped recoverable fraction documented below.
 # Local staff and transport pools are explicit costs for named polling, cultural,
 # tillage, border, and relief work; they are not passive political-power substitutes.
+# ai_hint_pp_cost is a literal-only parser field. Keep its four file-local
+# macros synchronized with the matching ireland.parliament_*_pp_cost script
+# constants used by the shared executors and visible GUI labels.
+@IRELAND_PARLIAMENT_DAIL_AI_PP_COST = 15
+@IRELAND_PARLIAMENT_SEANAD_AI_PP_COST = 25
+@IRELAND_PARLIAMENT_CONFIDENCE_AI_PP_COST = 25
+@IRELAND_PARLIAMENT_BUDGET_AI_PP_COST = 35
 @IRELAND_DEVELOPMENTAL_PLANT_SUPPORT_EQUIPMENT_GATE = 49
 @IRELAND_DEVELOPMENTAL_PLANT_SUPPORT_EQUIPMENT_CHARGE = -50
 @IRELAND_DEVELOPMENTAL_PLANT_CONVOY_GATE = 4
@@ -204,7 +211,7 @@ ireland_settlement_government = {
 				ireland_parliament_dail_action_available = yes
 			}
 		}
-		ai_hint_pp_cost = constant:ireland.parliament_dail_pp_cost
+		ai_hint_pp_cost = @IRELAND_PARLIAMENT_DAIL_AI_PP_COST
 		custom_cost_trigger = { always = yes }
 		custom_cost_text = ireland_parliament_dail_custom_cost
 		fire_only_once = yes
@@ -236,7 +243,7 @@ ireland_settlement_government = {
 				ireland_parliament_seanad_action_available = yes
 			}
 		}
-		ai_hint_pp_cost = constant:ireland.parliament_seanad_pp_cost
+		ai_hint_pp_cost = @IRELAND_PARLIAMENT_SEANAD_AI_PP_COST
 		custom_cost_trigger = { always = yes }
 		custom_cost_text = ireland_parliament_seanad_custom_cost
 		fire_only_once = yes
@@ -268,7 +275,7 @@ ireland_settlement_government = {
 				ireland_parliament_confidence_action_available = yes
 			}
 		}
-		ai_hint_pp_cost = constant:ireland.parliament_confidence_pp_cost
+		ai_hint_pp_cost = @IRELAND_PARLIAMENT_CONFIDENCE_AI_PP_COST
 		custom_cost_trigger = { always = yes }
 		custom_cost_text = ireland_parliament_confidence_custom_cost
 		fire_only_once = yes
@@ -300,7 +307,7 @@ ireland_settlement_government = {
 				ireland_parliament_joint_budget_action_available = yes
 			}
 		}
-		ai_hint_pp_cost = constant:ireland.parliament_budget_pp_cost
+		ai_hint_pp_cost = @IRELAND_PARLIAMENT_BUDGET_AI_PP_COST
 		custom_cost_trigger = { always = yes }
 		custom_cost_text = ireland_parliament_budget_custom_cost
 		fire_only_once = yes

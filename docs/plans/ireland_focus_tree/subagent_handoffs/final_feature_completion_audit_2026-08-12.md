@@ -5,6 +5,12 @@ Feature slug: `ireland_focus_tree`
 Mode: read-only gameplay/source audit. This handoff is the only file written by
 the audit.
 
+Superseded for focus opening visibility and focus-inspection evidence by
+`opening_parser_completion_audit_2026-08-12.md`. The Parliament geometry,
+interaction, reward, and asset findings below remain valid; references to seven
+current shortcuts, eight reveal gates, or focus revision `9f4f86cc5796922d`
+describe the earlier completed state, not the current three-trunk source.
+
 ## Verdict
 
 **Complete — no unresolved blocker, omission, fallback, or simplification was
@@ -24,8 +30,8 @@ index. Current completion evidence and artifact references agree with source.
 
 | Surface | Status | Current evidence |
 | --- | --- | --- |
-| Focus inventory and layout | Complete | `common/national_focus/ireland_focus_tree.txt` contains 150 focus blocks, seven named shortcuts, seven separated semantic lanes, eight `allow_branch` entries, and 150 unique coordinates. Fresh focus inspection revision `9f4f86cc5796922d` reports 150 focuses, 150 connectors, zero crossings, zero connector-through-node intersections, zero long connectors, maximum spans of six x / two y, zero same-row spacing defects, and zero Ireland diagnostics. The completion report cites this same current focus artifact. |
-| Branch clarity and dead ends | Complete for the requested graph | The seven shortcuts target politics, culture, industry, diplomacy, Northern policy, army/air readiness, and Naval Service anchors. The source has 36 visible-prerequisite leaves; route endpoints call the conclusion-review helper, while the remaining structural leaves have availability/GUI consumers or direct operational packages. The deliberate cross-lane `available` gates preserve gameplay proof without restoring long visual connectors. |
+| Focus inventory and layout | Complete | `common/national_focus/ireland_focus_tree.txt` contains 150 focus blocks, three named opening shortcuts, fifteen `allow_branch` entries, and 150 unique coordinates. Fresh focus inspection revision `c1112c666cadee8b` reports 150 focuses, 150 connectors, zero crossings, zero connector-through-node intersections, zero long connectors, maximum spans of six x / two y, zero same-row spacing defects, and zero Ireland diagnostics. |
+| Branch clarity and dead ends | Complete for the requested graph | The only ungated opening roots are government/politics, national development, and defence/security. Four ordinary support families, three late constitutional alternatives, and eight exceptional families reveal through gates identical to their selection conditions. The source has 36 visible-prerequisite leaves; route endpoints call the conclusion-review helper, while the remaining structural leaves have availability/GUI consumers or direct operational packages. |
 | Focus reward depth | Complete for the accepted bounded repair | All 150 focus titles and descriptions resolve and every focus ID appears in the Ireland AI-plan source. Thirty-seven operational focuses have 37 distinct precise reward tooltips backed by central `constant:ireland.focus_reward_*` values. They expose Provision, Readiness, neutrality, mandate/consent/cohesion, diplomatic-channel, XP, command-power, and maritime effects; the three generic political-power rewards named by the correction plan are absent. |
 | Focus AI | Complete in source | All 150 focus IDs are referenced by `common/ai_strategy_plans/IRE_ireland_strategy_plans.txt`; the Lemass queue now includes `ireland_dail_nomination` before its capstone. |
 | Parliament visibility and ownership | Complete | The category uses `ireland_parliament_open`, which requires initialization and excludes archival; `visible_when_empty = yes` keeps the summary visible. The powers panel and all four human buttons require `ireland_settlement_open`. Native equivalents are `is_ai = yes`; scripted-GUI AI execution is disabled. |
@@ -33,7 +39,7 @@ index. Current completion evidence and artifact references agree with source.
 | Parliament geometry and assets | Complete | `interface/ireland_parliament_scripted_gui.gui` defines a 510x248 root, two 247x126 chamber cards, two 126x70 21-frame seat strips, and four 204x32 buttons in a 2x2 grid. Status columns occupy x `10..42` / `262..294`; buttons occupy x `44..248` / `296..500`, so the click-through seals cannot intercept a control. Chamber text rows fit inside local y `90..125`. The four-frame 128x32 PNG and DDS, runtime GFX registration, and all other Parliament assets match their declared dimensions. |
 | Parliament action-state semantics | Complete | `ireland_update_parliament` snapshots the four prior seal frames, recomputes stage first, then projects all four frames from the canonical current/available triggers. Complete flags override the projection to green. All four frame comparisons dirty the GUI, so the immediate next-stage transition and later daily Political Power threshold crossings cannot leave the seals stale. |
 | Parliament localisation | Complete | All titles, support/composition rows, four button labels/costs/tooltips, and the four-state seal tooltip resolve. |
-| Completion/status documentation | Complete | `source_of_truth_map.md`, `project_status.md`, the completion report, asset manifest/handoff, canonical spec Part 2, and the spec index agree on the current geometry, controller split, costs, and slate/amber/gold/green state contract. The completion report cites focus revision `9f4f86cc5796922d`, GUI revision `7efa20fde6ec3fcc`, and render `965590013ce89528`. |
+| Completion/status documentation | Complete | `source_of_truth_map.md`, `project_status.md`, the completion report, asset manifest/handoff, canonical spec Part 2, and the spec index agree on the current geometry, controller split, costs, and slate/amber/gold/green state contract. The completion report cites focus revision `c1112c666cadee8b`, GUI revision `7efa20fde6ec3fcc`, and render `965590013ce89528`. |
 
 ## Accepted plans and disposition
 
@@ -58,7 +64,8 @@ index. Current completion evidence and artifact references agree with source.
 
 ## Meaningful validation
 
-Fresh read-only focus inspection:
+Superseded focus inspection (retained as historical evidence; use the current
+artifact in `opening_parser_completion_audit_2026-08-12.md`):
 
 `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/73a78f94783795326e576ef61757af1fb35871f10ca6dd9e16ae402461a2eef9/50b8461f4de0061cc8fd45ef89013c0febc85fb6124714f9883adebcc1dabca8/focus-inspect.9f4f86cc5796922d.json`
 
