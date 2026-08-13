@@ -1,0 +1,154 @@
+# Ireland Total Overhaul project MIOs.
+# Ford Cork supplies the motorized/mechanized production route; Harland & Wolff
+# Belfast supplies the naval construction route after the lawful Northern
+# settlement. Both organizations are created for original-tag Ireland and are
+# revealed by their focus-set company flags.
+
+ireland_ford_cork_works_organization = {
+	name = ireland_ford_cork_works_organization
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_ireland_ford_cork_works
+
+	allowed = {
+		original_tag = IRE
+	}
+
+	visible = {
+		FROM = {
+			has_country_flag = ireland_company_ford_cork_unlocked
+		}
+	}
+
+	available = {
+		FROM = {
+			has_country_flag = ireland_company_ford_cork_unlocked
+		}
+	}
+
+	initial_trait = {
+		name = ireland_ford_cork_works_initial_trait
+		limit_to_equipment_type = {
+			motorized_equipment
+			mechanized_equipment
+		}
+		equipment_bonus = {
+			reliability = 0.03
+			build_cost_ic = -0.03
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	add_trait = {
+		token = ireland_ford_cork_works_local_assembly
+		name = ireland_ford_cork_works_local_assembly
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+		special_trait_background = yes
+
+		position = { x = 2 y = 0 }
+		relative_position_id = generic_mio_trait_all_wheel_drive
+		all_parents = { generic_mio_trait_all_wheel_drive }
+
+		limit_to_equipment_type = {
+			motorized_equipment
+			mechanized_equipment
+		}
+		production_bonus = {
+			production_cost_factor = -0.03
+			production_efficiency_cap_factor = 0.03
+		}
+	}
+
+	ai_will_do = {
+		base = 2
+		modifier = {
+			factor = 2
+			FROM = { has_country_flag = ireland_ai_priority_provision }
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { has_country_flag = ireland_ai_supporting_provision }
+		}
+	}
+}
+
+ireland_harland_wolff_belfast_organization = {
+	name = ireland_harland_wolff_belfast_organization
+	include = generic_task_force_ship_organization
+	icon = GFX_idea_ireland_harland_and_wolff_access
+
+	allowed = {
+		original_tag = IRE
+	}
+
+	visible = {
+		FROM = {
+			has_country_flag = ireland_company_harland_wolff_unlocked
+		}
+	}
+
+	available = {
+		FROM = {
+			has_country_flag = ireland_company_harland_wolff_unlocked
+		}
+	}
+
+	initial_trait = {
+		name = ireland_harland_wolff_belfast_initial_trait
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+		equipment_bonus = {
+			max_strength = 0.03
+			reliability = 0.02
+		}
+	}
+
+	add_trait = {
+		token = ireland_harland_wolff_belfast_yards
+		name = ireland_harland_wolff_belfast_yards
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x = 4 y = 0 }
+		relative_position_id = generic_mio_trait_long_range_cruising
+		any_parent = {
+			generic_mio_trait_long_range_cruising
+			generic_mio_trait_high_speed_cruising
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.03
+		}
+	}
+
+	add_trait = {
+		token = ireland_harland_wolff_belfast_refit_discipline
+		name = ireland_harland_wolff_belfast_refit_discipline
+		icon = GFX_generic_mio_trait_icon_reliability
+		special_trait_background = yes
+
+		position = { x = 0 y = 1 }
+		relative_position_id = ireland_harland_wolff_belfast_yards
+		all_parents = { ireland_harland_wolff_belfast_yards }
+
+		equipment_bonus = {
+			reliability = 0.05
+			max_strength = 0.02
+		}
+	}
+
+	ai_will_do = {
+		base = 2
+		modifier = {
+			factor = 2
+			FROM = { has_country_flag = ireland_ai_priority_readiness }
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { has_country_flag = ireland_ai_supporting_readiness }
+		}
+	}
+}

@@ -317,6 +317,13 @@ ireland = {
 	northern_core_minority_floor = 60
 	northern_core_resistance_ceiling = 10
 	northern_core_security_review_days = 180
+	# Territorial diplomacy event tuning. These values are shared by the
+	# initiating decisions and their target-controller result events.
+	territorial_diplomacy_cooldown_days = 180
+	territorial_diplomacy_wargoal_days = 180
+	territorial_diplomacy_compact_major = 5
+	territorial_diplomacy_compact_standard = 3
+	territorial_diplomacy_refusal_leverage_delta = -2
 
 	dillon_intervention_mandate = 90
 	dillon_readiness = 45

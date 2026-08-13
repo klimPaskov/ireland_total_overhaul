@@ -19,25 +19,27 @@ Document role: high-level route and system map. It does not define final focus c
 
 ## Implemented spatial grammar
 
-The 150-focus runtime tree uses the following player-facing layout contract:
+The 215-focus runtime tree uses the following player-facing layout contract:
 
 | Spatial band | Authored range | Subject family |
 | --- | ---: | --- |
+| revealed programme reserve | x -42 to -32 | mutually exclusive democratic, communist, fascist, oligarchic, and restoration programmes |
 | far left | x -26 to -20 | emergency, recovery, and radical political crises |
 | left | x -18 to -12 | constitutional government and party succession |
 | left-centre | x -8 to -2 | culture, society, and evidence-gated institutions |
-| centre | x 0 to 4 | industry, transport, and National Provision |
-| right-centre | x 4 to 12 | diplomacy, neutrality, and Northern policy |
+| centre | x 0 to 8 | industry, transport, National Provision, and named concerns |
+| right-centre | x 4 to 13 | diplomacy, neutrality, Northern policy, and territorial gateway |
 | right | x 12 to 17 | command, army/air readiness, coastwatch, and port defence |
-| far right | x 19 to 21 | the Marine Service and dockyard family |
+| far right | x 19 to 21 | the Marine Service, dockyard family, and postwar settlement office |
 
 The opening camera anchors on `ireland_state_still_defined`. Only government
 and politics, national development, and defence and security are presented as
-opening trunks. Culture, diplomacy and neutrality, Northern policy, and the
-Marine Service reveal after their parent milestones. The three late
-constitutional alternatives and the eight authored IRA, Congress, O'Duffy,
-clerical-failure, Ailtirí, High Kingship, Five Provinces, and Otherworld roots
-also use progressive `allow_branch` reveal.
+opening trunks. The National Settlement reveals the mutually exclusive
+democratic, communist, fascist, oligarchic, and restoration families. Culture,
+diplomacy and neutrality, Northern policy, the Marine Service, named concerns,
+and territorial policy reveal after their parent milestones. Exceptional IRA,
+clerical-failure, Ailtirí, Five Provinces, and Otherworld roots retain their
+progressive evidence or failure gates.
 
 The visible dependency graph follows subject meaning. Defence Estimates fans
 to Command Audit and the readiness programme; readiness remains unavailable

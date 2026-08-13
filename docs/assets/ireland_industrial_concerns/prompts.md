@@ -1,0 +1,3 @@
+# Ireland industrial concern emblem prompt record
+
+The built-in generator received one independent prompt per company. The shared art direction was: a centered 1930s HOI4 national-idea emblem in aged brass, enamel, painted metal, and restrained Irish green; unmistakable industry-specific machinery or infrastructure; readable at 68x68; no words, letters, numbers, signatures, modern branding, flags, people, or watermark. Company-specific symbols were hydroelectric turbine and dam, sugar beet and processing works, peat cutting and fuel flame, rail wheel and steam locomotive, motor works and gear train, civil aircraft and coastal route, merchant ship and registry anchor, steel furnace and ingot, and Belfast gantry cranes with a ship under construction.

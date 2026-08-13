@@ -1,0 +1,136 @@
+{
+  "workflow": "chaos-redux-advisor-dossier-v4",
+  "source": {
+    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_patrick_mcgilligan.dds",
+    "sha256": "23eef2880ca96d0a27ddb256ca4d84085d2bf02e512da6f84533fc328b6d1f28",
+    "original_size": [
+      156,
+      210
+    ],
+    "native_output_canvas": [
+      65,
+      67
+    ]
+  },
+  "template": {
+    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\chaos_redux\\.agents\\skills\\chaos-redux-event-assets\\assets\\vanilla_reference\\portraits\\advisors\\advisor_template.png",
+    "sha256": "8f594ef62afba6fdec58de66a80609350dcfe884320b11e6cb6220f1a0e19f58",
+    "opening_center": [
+      24.76151027919129,
+      30.645146882359736
+    ],
+    "opening_size": [
+      30.477406015014285,
+      45.09450833210553
+    ],
+    "opening_rotation_degrees": -4.76,
+    "opening_geometry_alpha_threshold": 128
+  },
+  "selected_transform": {
+    "portrait_size": [
+      30.477406015014285,
+      45.09450833210553
+    ],
+    "portrait_offset": [
+      0.0,
+      0.0
+    ],
+    "portrait_center": [
+      24.76151027919129,
+      30.645146882359736
+    ],
+    "rotation_degrees": -4.76,
+    "rotation_alignment_error_degrees": 0.0,
+    "sepia_strength": 0.18,
+    "zero_rotation_exception": false,
+    "fit_to_opening": {
+      "safety_mask_bbox": [
+        8,
+        8,
+        40,
+        55
+      ],
+      "under_frame_bleed_mask_bbox": [
+        6,
+        6,
+        42,
+        57
+      ],
+      "opening_local_bounds": [
+        -15.238703,
+        -22.547254,
+        15.238703,
+        22.547254
+      ],
+      "required_inset_pixels": 0.0,
+      "under_frame_bleed_pixels": 2,
+      "resampling_edge_guard_pixels": 1,
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      }
+    },
+    "complete_image_resize": {
+      "mode": "aspect_preserving_cover_with_under_frame_bleed",
+      "source_aspect": 0.742857,
+      "content_aspect": 0.742857,
+      "opening_fill_size": [
+        30.477406015014285,
+        45.09450833210553
+      ],
+      "under_frame_fill_size": [
+        36.47740601501428,
+        51.09450833210553
+      ],
+      "covering_content_size": [
+        37.95592047527839,
+        51.09450833210553
+      ],
+      "covering_content_center": [
+        24.76151027919129,
+        30.645146882359736
+      ],
+      "source_pre_crop": false,
+      "frame_clip_pixels": [
+        0.7392572301320541,
+        0.0,
+        0.7392572301320541,
+        0.0
+      ],
+      "frame_clip": true,
+      "stretch": false
+    }
+  },
+  "placement_candidates": [
+    {
+      "portrait_size": [
+        30.477406015014285,
+        45.09450833210553
+      ],
+      "portrait_offset": [
+        0.0,
+        0.0
+      ],
+      "rotation_degrees": -4.76
+    }
+  ],
+  "outputs": {
+    "preview": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\previews\\advisor_patrick_mcgilligan.png",
+      "sha256": "bea1fb84c084cd974f9fe783fff9ec3cf58cc48391646bf4560ffd79015c215c"
+    },
+    "runtime_dds": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\interface\\ideas\\ireland\\advisors\\advisor_patrick_mcgilligan.dds",
+      "sha256": "78d24591d823d31891be124afaf8ecacc653b0b943d06e6342a2d14b61e9617c"
+    },
+    "alignment_preview": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\alignment_8x\\advisor_patrick_mcgilligan_alignment_8x.png",
+      "sha256": "45b1c202a2fcd42019a65d89be92c1994237c6ee70e000ba51f3c71616b95eb4"
+    },
+    "placement_study": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\placement_studies\\advisor_patrick_mcgilligan_study.png",
+      "sha256": "05f61987b284e3cd1fa022a15279b6c04f7b91dd475dea66d97faf30d241d754"
+    }
+  }
+}

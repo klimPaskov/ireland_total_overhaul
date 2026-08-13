@@ -2,240 +2,228 @@
 
 Feature slug: `ireland_focus_tree`
 
-Audit mode: read-only gameplay/source audit. This handoff is the only file
-written by the completion auditor.
+Mode: final read-only audit of the frozen 215-focus source. This handoff is the
+only file changed by the completion auditor.
 
 ## Verdict
 
-**Complete at the requested static-source, asset, localisation, and offline
-render boundary.** The final frozen source satisfies the combined focus-tree,
-Parliament, event-clarity, event-art, and event-cadence correction. No requested
-route, control, event, choice, image, tooltip, cooldown, AI entry path, or
-documentation update remains omitted or blocked.
+**Complete at the requested static-source, asset, localisation, AI,
+documentation, and offline MCP inspection/render boundary.** No focus,
+Parliament, event, territorial, advisor, concern, MIO, localisation, AI, asset,
+or documentation blocker remains.
 
-There is one disclosed nonblocking layout residual: the concealed
-`ireland_clerical_failure_bridge -> ireland_clerical_guardianship` connector
-moves two columns over one row. It is neither long nor crossing, and removing
-the offset would collide with the visible constitutional lane. No fallback or
-substitute implementation was used.
+The single disclosed source residual is the concealed
+`ireland_clerical_failure_bridge -> ireland_clerical_guardianship` connector:
+it moves two columns over one row but is not long, crossing, intersecting, or
+too close to another node. It is a nonblocking authored detour, not a fallback.
 
 ## Completion by surface
 
-| Surface | Status | Final evidence |
+| Surface | Status | Evidence |
 | --- | --- | --- |
-| Focus layout and navigation | complete | `common/national_focus/ireland_focus_tree.txt`; final MCP revision `c449f5b90475357b1f3730c6d3065c3d444a8e190ecddc72b87b40239e27d967` |
-| Focus search filters | complete | direct reward/filter parity audit over all 150 focus blocks |
-| Parliament presentation and interaction | complete | GUI, scripted-GUI, triggers, executors, native decisions, localisation, and four distinct runtime sprites |
-| Event inventory and player clarity | complete | four Ireland event files, 495 top-level events, 998 choices and 998 matching effect tooltips |
-| Event images | complete | 495 picture references through 121 unique registered, existing, correctly sized DDS assets |
-| Ordinary and foreign event cadence | complete | monthly ordinary dispatcher with a one-pulse cooldown; one actor per foreign window, optional digest, and 120-day admission cooldown |
-| Active documentation | complete | current completion reports, source-of-truth map, event programme, systems document, and focus/event maps agree with final source |
+| Focus structure, rewards, filters, AI, localisation, icons | complete | 215 unique focuses; final focus revision `d8b63828f71934c3`; source/GFX/localisation/AI crosswalk |
+| Parliament presentation and lifecycle | complete | GUI/scripted-GUI/triggers/executors/native decisions; fresh GUI inspection revision `7f3852e55f472fa8` |
+| Territorial diplomacy, settlement, images, cadence | complete | 16 triggered-only territorial events; 31 options/tooltips; decisions, triggers, effects, constants, art manifests |
+| Full event inventory and clarity | complete | 511 event IDs, 1,029 options and 1,029 matching effect tooltips across five Ireland event files |
+| Advisors, concerns, contracts, and MIOs | complete | 45 advisor roles; seven concerns; two MIOs; nine independent one-use contracts |
+| Active documentation | complete | source-of-truth map, implementation document, completion report, canonical spec, and promoted addendum agree with frozen source |
 
 ## Focus tree
 
-The source contains 150 focuses and 150 connectors. Only the government and
-politics, national development, and defence and security trunks are visible at
-the opening; the other no-prerequisite families remain behind their authored
-`allow_branch` reveal conditions. The three navigation shortcuts target useful
-branch centres rather than roots:
+The source has 215 focuses and 222 connectors, bounds x `-42..21` and y
+`0..17`, and exactly three opening roots/trunks. Its three shortcuts point into
+the centres of politics (`ireland_government_formation`), industry
+(`ireland_development_authority`), and defence
+(`ireland_maritime_protection`). The 27 later branch roots use `allow_branch`
+and remain hidden until their authored family, route, cabinet, territorial, or
+postwar reveal condition is true.
 
-- politics -> `ireland_government_formation` at `0.66`;
-- industry -> `ireland_development_authority` at `0.66`;
-- defence -> `ireland_maritime_protection` at `0.70`.
-
-Final focus inspection passed with bounds x `-26..21`, y `0..16`, zero connector
-crossings, zero connector-through-node intersections, zero long connectors,
-zero same-row spacing defects, maximum horizontal span 6, and maximum vertical
-span 2. The sole Ireland diagnostic is the disclosed concealed clerical detour.
-The other warning belongs to vanilla `continuous_restrict_freedom_desc` and is
-not an Ireland source defect.
+The final specialist focus inspection, revision `d8b63828f71934c3`, reports
+215/215 graph reachability, 222 connectors, zero crossings, zero
+connector-through-node intersections, zero long connectors, zero same-row
+spacing defects, and no unresolved prerequisite, mutual-exclusion, or AI-plan
+focus reference. The sole Ireland advisory is the disclosed clerical detour;
+the other warning is the unrelated vanilla
+`continuous_restrict_freedom_desc` localisation warning.
 
 Final focus evidence:
 
-- inspect: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/ab0589809014e4ae6dcc4b3c9b3ef2acca67a058be59d7c35c99bc957dab2f69/08f2395c5aa9c69e9ec5b1fc6fc10ec336936e1a4f30d3e3bfe385620fa3dd21/focus-inspect.c449f5b90475357b.json`;
-- HTML render: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/8999bc9a5cb559400cd0db93dbff70801b0c01a82ad370546f7aebb150a1d981/e669f6d02d40f161cda19cafddbfaa9360d6ef7a46d5c2e384136f9b8932b3b1/ireland_focus_tree.focus.html`;
-- SVG render: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/48f72d38181f34356877accc12e866b432595198497fac9d247f870e85995e20/39ac3e982cae0a79560816c53d8a1080a2bc3bab53f9d54b374b34356de5c016/ireland_focus_tree.focus.svg`.
+- inspect: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/b08b004fd287b5d1761161ebe673917f0f9bfb0a5e9685c200577e3fb46bdd9a/40d6dbe67ef52ef9e7b5923279b804889b737f840f2dd776af2ed4e017e7badb/focus-inspect.d8b63828f71934c3.json`;
+- HTML: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/1054e0beb854a0ee79130b1bc81f6e7416c5f62f4317710c9941c25ede95d79f/06506e11742ba603663a9433030209f56b4456c0c7061bdf2fcf47e9b577eec1/ireland_focus_tree.focus.html`;
+- SVG: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/d896988a8486cdcb3b6403090c891004943443fc4cd9758e5d041467d933b0ba/0fe4f222844beb03a8bf2cb327a8d28baf9a59d2fa9791fdbfcfbe34f3809fe1/ireland_focus_tree.focus.svg`.
 
-The direct completion-reward audit found exact tag/effect parity and no false
-positive or false negative for the filters the correction made effect-strict:
+Every focus has a completion reward, custom reward tooltip, title,
+description, registered icon, existing texture, shine registration, and AI
+plan reference. The final sprite cleanup leaves each of the 27 public-family
+static sprites defined once in `interface/ireland_icons.gfx` and their 27 shine
+sprites once in `interface/ireland_public_family_focus_icons.gfx`; no duplicate
+or missing focus sprite remains.
+
+The strict reward/filter source crosswalk is exact for the correction's
+effect-valued filters:
 
 | Filter | Tagged / direct grants | Mismatches |
 | --- | ---: | ---: |
-| Army XP | 11 / 11 | 0 |
-| Navy XP | 9 / 9 | 0 |
+| Army XP | 14 / 14 | 0 |
+| Navy XP | 11 / 11 | 0 |
 | Air XP | 4 / 4 | 0 |
-| Research/doctrine | 23 / 23 | 0 |
+| Research/doctrine | 28 / 28 | 0 |
 | Manpower/unit grants | 0 / 0 | 0 |
 
-The earlier cultural/evidence research false positives and semantic manpower
-tags are absent. Industry, trade, balance-of-power, historical, and political
-tags remain only on focuses whose direct outcome belongs to those player-facing
-domains; no XP tag is being used as a topical branch label.
+Industry, international-trade, balance-of-power, political-character,
+stability, annexation, and historical tags describe the direct named
+institution, unlock, state instrument, or political outcome of their focus;
+none is used to disguise an XP grant or an unrelated branch label.
+
+The five public families meet the canonical depth/domain contract and retain
+their family lock separately from later profile commitment. Their cabinets,
+economy/company interaction, security, foreign posture, Northern policy,
+reconstruction/recovery, and endpoints are reachable. The territorial and
+postwar branches remain progressively revealed rather than opening a fourth
+trunk.
 
 ## Parliament
 
-The final panel is `510x248`. The title is at y `7` in `vic_18_black` on the
-light parchment rail. Chamber cards begin below the title, and the two action
-rows fit inside the lower programme panel. The opening-state GUI inspection
-found no `GUI_VISIBLE_OVERLAP` among the 22 inspected elements. The Dáil
-composition uses distinct green/blue/red/yellow roles and the compact `Oth`
-label, so Other seats remain legible; support, majority, opposition, and total
-values have distinct colour roles.
+The 510x248 panel keeps the title on the upper parchment rail, above the two
+chamber cards. The Dáil composition uses distinct support/opposition/other
+colours and a compact Other label; values and labels remain legible. The four
+actions have distinct four-frame emblem assets and separate click regions.
 
-The four action seals are separate four-frame DDS assets and have distinct
-SHA-256 hashes:
+The canonical shared-executor sequence is intact:
 
-- Dáil: `57841484260DE9223065EF5553F592DDB2D2AB39DB16BA87C7FC136AC206B80A`;
-- Seanad: `BF006B9DB2ADE1B0C260682E96FF7689FDBCC0DBFACBD1DB6F2E69D013284A2F`;
-- confidence: `F1DD65B6BDA364E4DE0033E65D95977DF0BC12EECB67E69A0B9AB785D0901E7F`;
-- budget: `9215252359BBD1084B21BE8F757387A2228F27B92FFF5BD4EFA0A96802C4D154`.
+1. Convene Dáil is current at stage 1 and free when initialized Ireland owns
+   Dublin.
+2. Seanad support follows Dáil plus National Settlement and costs 25 PP.
+3. Confidence follows Seanad plus Constitutional Draft and costs 25 PP.
+4. Joint budget follows confidence plus Government Formation and costs 35 PP.
 
-The action lifecycle is a single guarded sequence shared by GUI clicks and
-human-visible native decisions:
+GUI clicks and human-visible native decisions use the same current/available
+triggers and idempotent executors. Completion flags advance the stage, so later
+decisions appear sequentially and no parallel human path duplicates an action.
+The requirement tooltips enumerate the same stage, focus, completion, Dublin,
+majority, and affordability gates as the click trigger.
 
-1. Dáil is current at programme stage 1, has no Political Power gate, costs
-   `0`, and is usable from initialization while Ireland owns Dublin/state 113.
-2. Seanad becomes current after the Dáil record and National Settlement focus;
-   it costs `25` Political Power.
-3. Confidence becomes current after Seanad and Constitutional Draft; it costs
-   `25` Political Power.
-4. Joint budget becomes current after confidence and Government Formation; it
-   costs `35` Political Power.
+Fresh GUI inspection revision `7f3852e55f472fa879051f4761cff29c1f53e8027af28326fc67fe98780bc948`
+parses and links the source graph and reports no `GUI_VISIBLE_OVERLAP`:
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/60c27e84db15a57e795ee9a0af9e2147bf0dfe5f1c50c7542ee5829faaa0b106/d538d4bb2edfd9b5352a062b874248e9bbc3f035d4eee1ecf3714d387c746778/gui-inspect.7f3852e55f472fa8.json`.
+The 1920x1080/2560x1440 state render is
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/164ff927e976510637fb105951264d0a5fb67b5f66108e4a1535f200e6018666/fe63dd5827ca981477333c5dcb0eb7d0c450695f42d84197cf16a7f2d4a4491d/ireland_parliament_decision_ui_window-full.svg`.
+The analyzer's three apparent paid-action cost mismatches are bounded false
+positives: it does not follow the click wrapper into the 25/25/35 PP executors.
+It also only partially renders `buttonstate.lua`; direct source review supplies
+the lifecycle evidence.
 
-Each native decision is `fire_only_once`, uses the same canonical current and
-available triggers as the GUI, and calls the same idempotent executor. Completion
-flags advance the programme stage in order, so there is no duplicate or
-overlapping human path.
+## Events, territorial policy, cadence, and images
 
-Final GUI evidence:
+The five event files contain 511 unique event IDs: the prior 495-event
+programme plus 16 target-country territorial events. They contain 1,029
+options, and every option has its matching exact-effect
+`custom_effect_tooltip`; event title, description, option, and tooltip
+localisation references resolve. The earlier programme retains its exact
+post-clamp numeric previews and fixed contribution costs. The 31 territorial
+options name the exact acceptance, counteroffer, refusal, claim, cooldown,
+settlement, or cleanup result.
 
-- inspection revision `ee085bc27a15282024bf9252587b133bf6671bac5ad065136862e29a593901b3`:
-  `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/df2e8921ca87c8d4245218ee9bbfea9decdbbc5901fa0f0d6db563ba88f17f04/cefc82fb5f763a1011c85daec4ce641a44a280c8df684ba788fffce0fbc06b63/gui-inspect.ee085bc27a152820.json`;
-- 1920x1080 and 2560x1440/state render:
-  `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/ff7841afabbb80b192d3cadd922b94d9dbb720b1e0f971248fcf61ae0cc26345/ab25f799c46dc944ae268e9a866b87ea2f9766bb8138f69ec6f94d989bfe25b8/ireland_parliament_decision_ui_window-full.svg`.
+All 511 events have a picture. Their 126 unique picture sprites resolve to
+registered, existing DDS assets. The 16 territorial events use five distinct
+210x176 report images with source/processed/runtime manifests; none is a
+placeholder or missing-image fallback.
 
-The GUI analyzer reports three apparent 25/25/35 cost mismatches because it
-does not follow the click wrapper into the shared executor. Direct source review
-confirms that those executors debit `parliament_seanad_pp_delta`,
-`parliament_confidence_pp_delta`, and `parliament_budget_pp_delta`. It also does
-not execute `buttonstate.lua` or engine text-sprite generation. These are bounded
-offline-tool limitations, not implementation defects.
+The territorial file defines four response chains covering Ulster ultimatum,
+Belfast compact, Highlands demand, and Ulster enforcement. Every event is
+`is_triggered_only`. Recipient acceptance/counter/refusal returns to a named
+requester result event; terminal paths set the 180-day reopening cooldown and
+run cleanup. Issued, delivered, offered, active, and cooldown records prevent
+replay. Saved requester, controller, and state targets are cleared
+deterministically.
 
-## Events, choices, localisation, and images
+Coercive admission and completion recheck peace, route authority, readiness,
+Dublin, Dáil majority, reserves, command power, exact target controller,
+faction relation, relative strength, and required naval reach. Historical AI
+does not use coercive territorial decisions. No external state gains an
+automatic core.
 
-The frozen inventory is:
+Postwar resolution is per holding and per SCO/WLS subject relationship. Local
+rights, protectorate/release, and Highlands integration-review outcomes write
+separate records. The Atlantic settlement mission cannot finish while a
+retained relevant relationship is unresolved, reserves shared mission
+capacity, and releases active/capacity/temporary state on completion,
+cancellation, timeout, route cleanup, or total loss of scope.
 
-- `events/ireland_route_events.txt`: 256 events;
-- `events/ireland_flavour_events.txt`: 236 events;
-- `events/ireland_member_contribution_events.txt`: 1 event;
-- `events/ireland_public_conclusion_events.txt`: 2 events;
-- total: 495 unique top-level event IDs and 998 unique option keys.
+Fresh narrow territorial event lint revision
+`586c951a24d6c13a1a134ba8c6ade7bda7a298fe591605b2643a4c474bec9b6c`
+reports no blocking diagnostic:
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/6fe8aba5b99b326d8d066b9db559b714351ef653238548fcfd1af89cea5d8d58/63a30880328db6a07a18375db5a3b08541b1b895509f1e5df4a8aa0b694469d9/event-lint-586c951a24d6.json`.
+Workspace-scale helper/lifecycle projection was deferred by the tool, so the
+target, cooldown, replay, settlement, and cleanup conclusions above come from
+the narrower direct source crosswalk.
 
-Every event has a nonempty title, description, and picture reference. Every
-choice has exactly one `custom_effect_tooltip`, it is the matching
-`<option-key>.effects` key, and all 495 titles, 495 descriptions, 998 options,
-and 998 effect keys resolve in English localisation.
+The pre-existing cadence correction remains intact: ordinary dispatch is one
+monthly pulse with a one-pulse cooldown; foreign windows admit at most one
+actor report, optionally schedule one aggregate digest, enforce the 120-day
+reopening cooldown, preserve durable seen records, and leave every chained
+reaction reachable after its predecessor. The territorial events add no daily
+or ordinary-dispatch path.
 
-The exact-effect classification is complete:
+## Advisors, concerns, contracts, and MIOs
 
-- 975 choices that change numeric values show exact signed, post-clamp applied
-  deltas;
-- those strings contain 1,899 preview-variable references, and every reference
-  is assigned inside the same owning top-level event before the options appear;
-- five member-contribution choices state their exact fixed Political Power,
-  Command Power, equipment, manpower, fuel, train, truck, and convoy costs;
-- the remaining 18 choices are state/flag-only outcomes and name the record,
-  closure, transition, or failure they create; the 14-day observation and
-  180-day conclusion-review durations are explicit.
+All 45 advisor blocks resolve through idea tokens, localisation, registered
+GFX, existing approved advisor-card DDS files, pool flags, and route/date/
+office lifecycle triggers. The five cabinet focuses expose the intended pools;
+the constitutional service pool remains reachable across democratic profiles.
 
-Descriptions are 17–69 words (average 31.9) and identify the actor, immediate
-problem, and stakes. Option text is 3–16 words (average 7.8) and states the
-policy being adopted. The captured-crown third option now computes its three
-preview deltas in event 623 itself; no preview value is inherited from another
-event.
+The capability matrix is seven industrial concerns plus two real MIOs, not
+nine concerns. All nine focuses set distinct unlock flags and expose nine
+independent, one-use 25-PP/35-day contracts. Player-facing steel localisation
+is “Irish Steel”; the legacy internal token does not expose “Steel Holdings.”
+Irish Shipping uses the March 1941 or national-emergency gate.
 
-All 495 picture references resolve through 121 unique sprites: 102 report-event
-sprites at `210x176` and 19 news-event sprites at `397x153`. Each referenced
-sprite has exactly one definition, each texture path exists, and no referenced
-DDS has a bad header or wrong dimensions. No missing-image fallback or
-placeholder is part of this event set.
+Ford Cork includes vanilla's motorised/mechanised organization and supplies a
+local-assembly trait. Harland and Wolff includes the task-force ship
+organization and supplies yard/refit traits. Both are restricted to
+original-tag Ireland, are visible/available only after their focus flags, have
+valid parent/position trait wiring, focus visibility/size effects, AI weights,
+localisation, icons, and existing textures. Harland and Wolff remains behind
+the lawful state-119 settlement gate.
 
-The final narrow event-tool refresh is supplemental because the tool deferred
-workspace-wide helper/lifecycle projections in this large mod; it reports no
-blocking diagnostic or skipped source:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/04e22b9bdc6182d60c40f0713c9fcbb5f643479ac6ce1507bb67d57a44e82d94/b82e305b29cafc1fa491bfa865edf4c50723e5355b9a795381b48e14ef64e0df/event-scan-f88d81d48a74.json`.
+## Accepted plans and disposition
 
-## Cadence, replay, and reachability
+The political/territorial improvement addendum is marked accepted,
+implemented, and promoted into the canonical specification. Its five-family
+depth, cabinets, seven-concern/two-MIO matrix, target-country diplomacy,
+naval-access proof, per-holding settlement, art, localisation, AI, and cleanup
+contracts are present. The exploratory 210–225 band was reconciled to 215
+manually reviewed focuses without omitting a promised role. No unresolved
+improvement-loop addendum remains, so another planner pass is not recommended.
 
-`on_daily_IRE` performs runtime reviews and window ticking but does not call the
-ordinary dispatcher. `on_monthly_IRE` is the sole ordinary programme pulse.
-The dispatcher contains 457 unique ordinary event calls, each guarded by its
-durable seen flag and the one-dispatch-per-pulse flag; it then sets a one-month
-cooldown. Foreign events 400–430 are absent from this queue. The resulting
-ordinary ceiling is six reports per year.
+The earlier 188-focus completion audit is now explicitly headed superseded and
+historical. Its six findings were rechecked here and are closed by current
+source.
 
-The foreign broker opens a 14-day window only when no window is active, the
-route is open, and the 120-day timed admission flag is absent. Four days pass
-before the day-10 response point. The response helper sets its one-shot
-`response_dispatched` flag before entering a 30-entry random list. All 30 actor
-events have an availability setter, all 30 occur exactly once in that list, and
-all 30 write their durable `ireland_event_seen_400..429` record when shown.
-Those seen records are never cleared when a new reaction window opens.
+## Documentation closure
 
-There are 12 actor roots and 18 chained actor nodes. Each chained availability
-gate requires the predecessor's resolved flag, and the predecessor event writes
-that flag in its closing block. Thus no actor report is structurally orphaned.
-Unselected nodes remain unseen and eligible for later valid windows; selected
-nodes cannot replay. The visible count is capped at one. If other eligible
-responses remain, one digest is scheduled after the window closes; the digest
-is a new aggregate of that window's pending responses, not a replay of an actor
-report, and its scheduling flag prevents duplicate digests in the same window.
+The three documentation discrepancies found during the first frozen pass are
+closed:
 
-## Plans and documentation disposition
+1. `docs/plans/ireland_focus_tree/source_of_truth_map.md` records x `-42..21`
+   and 64 occupied coordinate columns.
+2. `docs/plans/ireland_focus_tree/political_industrial_territorial_expansion_completion_2026-08-13.md`
+   records seven concerns plus two MIOs, 65 added focuses, and no remaining
+   feature blocker or simplification.
+3. `docs/ireland_political_industrial_and_territorial_expansion.md` no longer
+   lists the implemented negotiated foreign-response chains as future work and
+   its validation contract distinguishes seven concern ideas from two MIOs.
 
-- `ireland_focus_tree_parliament_correction_addendum_2026-08-11.md` is
-  implemented; its older seven-shortcut/opening presentation was explicitly
-  superseded by the user's three-trunk correction.
-- `ireland_focus_tree_concrete_reward_density_addendum_2026-08-13.md` is
-  implemented and promoted into the spec/index, source-of-truth map, and current
-  completion report.
-- `ireland_focus_tree_layout_reveal_addendum_2026-08-09.md` is superseded by
-  the correction addendum and final source layout.
-- `ireland_focus_tree_parliament_improvement_addendum_2026-08-05.md` is
-  superseded, implemented, and reconciled.
-- `ireland_focus_tree_next_pass_addendum_2026-08-06.md` is historical planning
-  for the former 211-focus worktree; the implemented 150-focus reports supersede
-  its inventory and reduction work. It contains no unresolved current-scope
-  implementation item.
-
-The active documents now use `events/ireland_route_events.txt`, record 256 main
-events, three opening trunks, free opening Dáil action, sequential human native
-decisions, the one concealed clerical detour, 495 events/998 choices, exact
-preview semantics, monthly ordinary cadence, one actor/optional digest, and the
-120-day foreign admission cooldown. Older snapshots that retain historical
-counts or presentation are explicitly marked superseded or historical and are
-not current completion claims.
+The historical 188-focus audit remains explicitly superseded. The canonical
+specification and implemented/promoted improvement addendum agree with the
+current 215-focus source.
 
 ## Simplifications, omissions, blockers, and next actions
 
-Blocking simplifications, omissions, and blockers: **none**.
+Simplifications, omissions, and blockers: **none**.
 
-Nonblocking disclosed residuals and evidence limits:
-
-- one concealed two-column clerical connector detour remains by deliberate
-  collision avoidance; there is no long connector, crossing, node intersection,
-  or spacing defect;
-- the offline GUI analyzer cannot follow wrapper-to-executor Political Power
-  costs or render engine text/button-state effects;
-- the event MCP refresh is partial at workspace scale, so exact event counts,
-  tooltip ownership, art resolution, dispatcher uniqueness, replay, and chain
-  reachability are established by the narrower source audits above.
-
-No asset gap remains for the requested surfaces. Additional family-specific
-archival image variety in `docs/ireland_event_programme.md` is an optional future
-extension, not a missing image or current completion requirement.
-
-Recommended next action: commit the reviewed correction. A new
-`hoi4_improvement_loop_planner` pass is **not recommended**: accepted depth
-addenda are implemented or superseded, and the remaining optional art-variety
-idea does not justify expanding this already complete correction.
+The requested combined feature is repository-complete at the static-source,
+asset, localisation, AI, documentation, and offline MCP inspection/render
+boundary. The one concealed clerical detour and bounded MCP renderer limits are
+disclosed nonblocking validation residuals. No fallback implementation was
+used, and no new `hoi4_improvement_loop_planner` pass is warranted.

@@ -1,0 +1,136 @@
+{
+  "workflow": "chaos-redux-advisor-dossier-v4",
+  "source": {
+    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_31.dds",
+    "sha256": "54b20fbc4e0b49bfe5dcdc2ed3442bf596c0b8d5841ce623417ad429d2608025",
+    "original_size": [
+      156,
+      210
+    ],
+    "native_output_canvas": [
+      65,
+      67
+    ]
+  },
+  "template": {
+    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\chaos_redux\\.agents\\skills\\chaos-redux-event-assets\\assets\\vanilla_reference\\portraits\\advisors\\advisor_template.png",
+    "sha256": "8f594ef62afba6fdec58de66a80609350dcfe884320b11e6cb6220f1a0e19f58",
+    "opening_center": [
+      24.76151027919129,
+      30.645146882359736
+    ],
+    "opening_size": [
+      30.477406015014285,
+      45.09450833210553
+    ],
+    "opening_rotation_degrees": -4.76,
+    "opening_geometry_alpha_threshold": 128
+  },
+  "selected_transform": {
+    "portrait_size": [
+      30.477406015014285,
+      45.09450833210553
+    ],
+    "portrait_offset": [
+      0.0,
+      0.0
+    ],
+    "portrait_center": [
+      24.76151027919129,
+      30.645146882359736
+    ],
+    "rotation_degrees": -4.76,
+    "rotation_alignment_error_degrees": 0.0,
+    "sepia_strength": 0.18,
+    "zero_rotation_exception": false,
+    "fit_to_opening": {
+      "safety_mask_bbox": [
+        8,
+        8,
+        40,
+        55
+      ],
+      "under_frame_bleed_mask_bbox": [
+        6,
+        6,
+        42,
+        57
+      ],
+      "opening_local_bounds": [
+        -15.238703,
+        -22.547254,
+        15.238703,
+        22.547254
+      ],
+      "required_inset_pixels": 0.0,
+      "under_frame_bleed_pixels": 2,
+      "resampling_edge_guard_pixels": 1,
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      }
+    },
+    "complete_image_resize": {
+      "mode": "aspect_preserving_cover_with_under_frame_bleed",
+      "source_aspect": 0.742857,
+      "content_aspect": 0.742857,
+      "opening_fill_size": [
+        30.477406015014285,
+        45.09450833210553
+      ],
+      "under_frame_fill_size": [
+        36.47740601501428,
+        51.09450833210553
+      ],
+      "covering_content_size": [
+        37.95592047527839,
+        51.09450833210553
+      ],
+      "covering_content_center": [
+        24.76151027919129,
+        30.645146882359736
+      ],
+      "source_pre_crop": false,
+      "frame_clip_pixels": [
+        0.7392572301320541,
+        0.0,
+        0.7392572301320541,
+        0.0
+      ],
+      "frame_clip": true,
+      "stretch": false
+    }
+  },
+  "placement_candidates": [
+    {
+      "portrait_size": [
+        30.477406015014285,
+        45.09450833210553
+      ],
+      "portrait_offset": [
+        0.0,
+        0.0
+      ],
+      "rotation_degrees": -4.76
+    }
+  ],
+  "outputs": {
+    "preview": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\previews\\advisor_ireland_p_31.png",
+      "sha256": "76c5b1f6a50bbb60e95a22d1b542673133208e37994072fca0d15213ba75dd29"
+    },
+    "runtime_dds": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\interface\\ideas\\ireland\\advisors\\advisor_ireland_p_31.dds",
+      "sha256": "fb815450ccb1dbbb76a7acc425e0b8204631006655f41cf20b5b6e771e86ec1b"
+    },
+    "alignment_preview": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\alignment_8x\\advisor_ireland_p_31_alignment_8x.png",
+      "sha256": "101fad67a564fe49272d36b07ad73420dd74dcd443f64f303f206cb7654d5624"
+    },
+    "placement_study": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\placement_studies\\advisor_ireland_p_31_study.png",
+      "sha256": "059e94ac162c720b56a029e93a5276553dbae29b32b9b77dd0237f1e444e7a4a"
+    }
+  }
+}

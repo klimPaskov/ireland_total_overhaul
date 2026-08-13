@@ -389,4 +389,78 @@ spriteTypes = {
 	spriteType = { name = GFX_decision_category_ireland_regional_external texturefile = "gfx/interface/decisions/categories/ireland/decision_category_ireland_012.dds" }
 	spriteType = { name = GFX_decision_category_ireland_postwar texturefile = "gfx/interface/decisions/categories/ireland/decision_category_ireland_013.dds" }
 	spriteType = { name = GFX_decision_category_ireland_marine_service texturefile = "gfx/interface/decisions/categories/ireland/decision_category_ireland_014.dds" }
+
+	# Political-family detail, industrial-company, and territorial expansion focuses.
+	spriteType = { name = GFX_focus_ireland_aer_lingus_air_link texturefile = "gfx/interface/goals/ireland_aer_lingus_air_link.dds" }
+	spriteType = { name = GFX_focus_ireland_all_island_workers_republic texturefile = "gfx/interface/goals/ireland_all_island_workers_republic.dds" }
+	spriteType = { name = GFX_focus_ireland_atlantic_ambition texturefile = "gfx/interface/goals/ireland_atlantic_ambition.dds" }
+	spriteType = { name = GFX_focus_ireland_atlantic_concessions texturefile = "gfx/interface/goals/ireland_atlantic_concessions.dds" }
+	spriteType = { name = GFX_focus_ireland_atlantic_security_compacts texturefile = "gfx/interface/goals/ireland_atlantic_security_compacts.dds" }
+	spriteType = { name = GFX_focus_ireland_atlantic_settlement_concluded texturefile = "gfx/interface/goals/ireland_atlantic_settlement_concluded.dds" }
+	spriteType = { name = GFX_focus_ireland_authorise_reunification_instruments texturefile = "gfx/interface/goals/ireland_authorise_reunification_instruments.dds" }
+	spriteType = { name = GFX_focus_ireland_belfast_compact texturefile = "gfx/interface/goals/ireland_belfast_compact.dds" }
+	spriteType = { name = GFX_focus_ireland_blueshirt_patronage_board texturefile = "gfx/interface/goals/ireland_blueshirt_patronage_board.dds" }
+	spriteType = { name = GFX_focus_ireland_congress_workers_cabinet texturefile = "gfx/interface/goals/ireland_congress_workers_cabinet.dds" }
+	spriteType = { name = GFX_focus_ireland_constitutional_service_cabinet texturefile = "gfx/interface/goals/ireland_constitutional_service_cabinet.dds" }
+	spriteType = { name = GFX_focus_ireland_crown_and_province_mandate texturefile = "gfx/interface/goals/ireland_crown_and_province_mandate.dds" }
+	spriteType = { name = GFX_focus_ireland_customs_union_leverage texturefile = "gfx/interface/goals/ireland_customs_union_leverage.dds" }
+	spriteType = { name = GFX_focus_ireland_dal_riata_claim texturefile = "gfx/interface/goals/ireland_dal_riata_claim.dds" }
+	spriteType = { name = GFX_focus_ireland_define_the_national_question texturefile = "gfx/interface/goals/ireland_define_the_national_question.dds" }
+	spriteType = { name = GFX_focus_ireland_enforce_atlantic_claims texturefile = "gfx/interface/goals/ireland_enforce_atlantic_claims.dds" }
+	spriteType = { name = GFX_focus_ireland_esb_supply_contracts texturefile = "gfx/interface/goals/ireland_esb_supply_contracts.dds" }
+	spriteType = { name = GFX_focus_ireland_estates_and_professions_council texturefile = "gfx/interface/goals/ireland_estates_and_professions_council.dds" }
+	spriteType = { name = GFX_focus_ireland_force_the_border_question texturefile = "gfx/interface/goals/ireland_force_the_border_question.dds" }
+	spriteType = { name = GFX_focus_ireland_ford_cork_works_agreement texturefile = "gfx/interface/goals/ireland_ford_cork_works_agreement.dds" }
+	spriteType = { name = GFX_focus_ireland_gaelic_marches texturefile = "gfx/interface/goals/ireland_gaelic_marches.dds" }
+	spriteType = { name = GFX_focus_ireland_great_southern_railways_contract texturefile = "gfx/interface/goals/ireland_great_southern_railways_contract.dds" }
+	spriteType = { name = GFX_focus_ireland_harland_and_wolff_access texturefile = "gfx/interface/goals/ireland_harland_and_wolff_access.dds" }
+	spriteType = { name = GFX_focus_ireland_household_council texturefile = "gfx/interface/goals/ireland_household_council.dds" }
+	spriteType = { name = GFX_focus_ireland_integration_review_commission texturefile = "gfx/interface/goals/ireland_integration_review_commission.dds" }
+	spriteType = { name = GFX_focus_ireland_irish_shipping_registry texturefile = "gfx/interface/goals/ireland_irish_shipping_registry.dds" }
+	spriteType = { name = GFX_focus_ireland_irish_sugar_company_charter texturefile = "gfx/interface/goals/ireland_irish_sugar_company_charter.dds" }
+	spriteType = { name = GFX_focus_ireland_local_rights_charter texturefile = "gfx/interface/goals/ireland_local_rights_charter.dds" }
+	spriteType = { name = GFX_focus_ireland_northern_plebiscite_guarantees texturefile = "gfx/interface/goals/ireland_northern_plebiscite_guarantees.dds" }
+	spriteType = { name = GFX_focus_ireland_postwar_settlement_office texturefile = "gfx/interface/goals/ireland_postwar_settlement_office.dds" }
+	spriteType = { name = GFX_focus_ireland_protectorate_statutes texturefile = "gfx/interface/goals/ireland_protectorate_statutes.dds" }
+	spriteType = { name = GFX_focus_ireland_republics_across_the_channel texturefile = "gfx/interface/goals/ireland_republics_across_the_channel.dds" }
+	spriteType = { name = GFX_focus_ireland_restore_ulsters_place texturefile = "gfx/interface/goals/ireland_restore_ulsters_place.dds" }
+	spriteType = { name = GFX_focus_ireland_settlement_under_law texturefile = "gfx/interface/goals/ireland_settlement_under_law.dds" }
+	spriteType = { name = GFX_focus_ireland_steel_holdings_programme texturefile = "gfx/interface/goals/ireland_steel_holdings_programme.dds" }
+	spriteType = { name = GFX_focus_ireland_turf_development_board_programme texturefile = "gfx/interface/goals/ireland_turf_development_board_programme.dds" }
+	spriteType = { name = GFX_focus_ireland_ulster_ultimatum texturefile = "gfx/interface/goals/ireland_ulster_ultimatum.dds" }
+	spriteType = { name = GFX_focus_ireland_workers_reunification_campaign texturefile = "gfx/interface/goals/ireland_workers_reunification_campaign.dds" }
+
+	# Public political-family programmes use distinct generated runtime icons.
+	spriteType = { name = GFX_focus_ireland_republican_ministries texturefile = "gfx/interface/goals/ireland_republican_ministries.dds" }
+	spriteType = { name = GFX_focus_ireland_rights_under_emergency texturefile = "gfx/interface/goals/ireland_rights_under_emergency.dds" }
+	spriteType = { name = GFX_focus_ireland_local_government_compact texturefile = "gfx/interface/goals/ireland_local_government_compact.dds" }
+	spriteType = { name = GFX_focus_ireland_democratic_security_league texturefile = "gfx/interface/goals/ireland_democratic_security_league.dds" }
+	spriteType = { name = GFX_focus_ireland_democratic_reconstruction texturefile = "gfx/interface/goals/ireland_democratic_reconstruction.dds" }
+	spriteType = { name = GFX_focus_ireland_vanguard_organisers texturefile = "gfx/interface/goals/ireland_vanguard_organisers.dds" }
+	spriteType = { name = GFX_focus_ireland_trade_union_congress texturefile = "gfx/interface/goals/ireland_trade_union_congress.dds" }
+	spriteType = { name = GFX_focus_ireland_workers_smallholders_programme texturefile = "gfx/interface/goals/ireland_workers_smallholders_programme.dds" }
+	spriteType = { name = GFX_focus_ireland_republican_self_defence texturefile = "gfx/interface/goals/ireland_republican_self_defence.dds" }
+	spriteType = { name = GFX_focus_ireland_workers_reconstruction_board texturefile = "gfx/interface/goals/ireland_workers_reconstruction_board.dds" }
+	spriteType = { name = GFX_focus_ireland_veterans_command_council texturefile = "gfx/interface/goals/ireland_veterans_command_council.dds" }
+	spriteType = { name = GFX_focus_ireland_veteran_employment_corps texturefile = "gfx/interface/goals/ireland_veteran_employment_corps.dds" }
+	spriteType = { name = GFX_focus_ireland_national_corporate_chamber texturefile = "gfx/interface/goals/ireland_national_corporate_chamber.dds" }
+	spriteType = { name = GFX_focus_ireland_motorised_command_contracts texturefile = "gfx/interface/goals/ireland_motorised_command_contracts.dds" }
+	spriteType = { name = GFX_focus_ireland_personal_command_or_corporate_state texturefile = "gfx/interface/goals/ireland_personal_command_or_corporate_state.dds" }
+	spriteType = { name = GFX_focus_ireland_emergency_directorate texturefile = "gfx/interface/goals/ireland_emergency_directorate.dds" }
+	spriteType = { name = GFX_focus_ireland_creditor_cabinet texturefile = "gfx/interface/goals/ireland_creditor_cabinet.dds" }
+	spriteType = { name = GFX_focus_ireland_restricted_estate_franchise texturefile = "gfx/interface/goals/ireland_restricted_estate_franchise.dds" }
+	spriteType = { name = GFX_focus_ireland_industrial_syndicates texturefile = "gfx/interface/goals/ireland_industrial_syndicates.dds" }
+	spriteType = { name = GFX_focus_ireland_rural_producer_boards texturefile = "gfx/interface/goals/ireland_rural_producer_boards.dds" }
+	spriteType = { name = GFX_focus_ireland_executive_estates texturefile = "gfx/interface/goals/ireland_executive_estates.dds" }
+	spriteType = { name = GFX_focus_ireland_producer_directorate texturefile = "gfx/interface/goals/ireland_producer_directorate.dds" }
+	spriteType = { name = GFX_focus_ireland_managed_social_peace texturefile = "gfx/interface/goals/ireland_managed_social_peace.dds" }
+	spriteType = { name = GFX_focus_ireland_claimants_convention texturefile = "gfx/interface/goals/ireland_claimants_convention.dds" }
+	spriteType = { name = GFX_focus_ireland_provincial_compact texturefile = "gfx/interface/goals/ireland_provincial_compact.dds" }
+	spriteType = { name = GFX_focus_ireland_brehon_law_commission texturefile = "gfx/interface/goals/ireland_brehon_law_commission.dds" }
+	spriteType = { name = GFX_focus_ireland_crown_defence_council texturefile = "gfx/interface/goals/ireland_crown_defence_council.dds" }
+
+	spriteType = { name = GFX_decision_category_ireland_territorial_policy texturefile = "gfx/interface/decisions/categories/ireland/ireland_territorial_policy.dds" }
+	spriteType = { name = GFX_decision_ireland_claim_scottish_highlands texturefile = "gfx/interface/decisions/ireland/ireland_claim_scottish_highlands.dds" }
+	spriteType = { name = GFX_decision_ireland_claim_wales texturefile = "gfx/interface/decisions/ireland/ireland_claim_wales.dds" }
+	spriteType = { name = GFX_decision_ireland_claim_cornwall texturefile = "gfx/interface/decisions/ireland/ireland_claim_cornwall.dds" }
 }

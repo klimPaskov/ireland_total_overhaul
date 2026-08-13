@@ -1,0 +1,1143 @@
+{
+  "manifest_version": "2026-08-13-current-chaos-redux-advisor-workflow",
+  "supersedes": "advisor_icon_handoff_2026-08-03.md (legacy copied Ireland workflow)",
+  "workflow": {
+    "tool": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/chaos_redux/.agents/skills/chaos-redux-event-assets/tools/create_advisor_icon.py",
+    "skill": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/chaos_redux/.agents/skills/chaos-redux-event-assets/SKILL.md section 21.1",
+    "tools_readme": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/chaos_redux/.agents/skills/chaos-redux-event-assets/tools/README.md advisor section",
+    "template": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/chaos_redux/.agents/skills/chaos-redux-event-assets/assets/vanilla_reference/portraits/advisors/advisor_template.png",
+    "template_sha256": "8f594ef62afba6fdec58de66a80609350dcfe884320b11e6cb6220f1a0e19f58",
+    "native_size": [
+      65,
+      67
+    ],
+    "opening_size": [
+      30.477406015014285,
+      45.09450833210553
+    ],
+    "opening_center": [
+      24.76151027919129,
+      30.645146882359736
+    ],
+    "rotation_degrees": -4.76,
+    "portrait_offset": [
+      0,
+      0
+    ],
+    "sepia_strength": 0.18,
+    "under_frame_bleed_pixels": 2,
+    "resampling_edge_guard_pixels": 1,
+    "source_pre_crop": false,
+    "stretch": false,
+    "frame_clip": true,
+    "zero_rotation_exception": false,
+    "approval_state": "approved by advisor_card_independent_approval_2026-08-13"
+  },
+  "runtime_folder": "gfx/interface/ideas/ireland/advisors",
+  "cards": [
+    {
+      "sprite_name": "GFX_ireland_advisor_richard_mulcahy",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_richard_mulcahy.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_richard_mulcahy.dds",
+      "source_sha256": "d1244a9ca027a7edc10424e2a5a41605e4db3b930282f6fcf94f0e2fcdb24fa6",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_richard_mulcahy.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_richard_mulcahy_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_richard_mulcahy_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_richard_mulcahy_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_richard_mulcahy.json",
+      "runtime_dds_sha256": "4419d661ce61bb778b1e5a6229e332f2a0272978c842e06300280a52f13f5dda",
+      "processed_preview_sha256": "79928f94ff15729e34b0b61f6699a488e00d96e888e5546d05a0a29b09a5c789",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_sean_lemass",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_sean_lemass.dds",
+      "approved_source_input": "docs/plans/ireland_focus_tree/assets/advisors/source_inputs/sean_lemass_fianna_fail_members_1932_crop.png",
+      "source_sha256": "5f68f3f4690d286ee91861b5d3697a06013dfb56caea53ef20abd1d799fc324d",
+      "source_dimensions": [
+        760,
+        1023
+      ],
+      "source_parent_file": "docs/plans/ireland_focus_tree/assets/advisors/source_inputs/sean_lemass_fianna_fail_members_1932.jpg",
+      "source_parent_dimensions": [
+        6709,
+        5138
+      ],
+      "source_parent_sha256": "9472b5cdb28a6194cce77ff297657311080564f6cf3527b0b6563edd4f036333",
+      "source_crop_box_left_top_right_bottom": [
+        3700,
+        320,
+        4460,
+        1343
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_sean_lemass.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_sean_lemass_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_sean_lemass_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_sean_lemass_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_sean_lemass.json",
+      "runtime_dds_sha256": "35877563f7c5904b7bd9e25e5d8355e7717ad4feb496b1c1bae59959bdc9036f",
+      "processed_preview_sha256": "7aa374895bc89e0d9edc1dc7d85e48afb496af59e06653220f1e42c33f49974d",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Replacement sourced because the prior runtime leader DDS had transparent alpha in the full source canvas and failed current opening coverage; exact approved identity retained; source crop is documented and opaque",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1932_Fianna_F%C3%A1il_members.jpg",
+      "source_archive": "National Library of Ireland catalogue record vtls000293270 via Wikimedia Commons",
+      "source_date": "1932-01-01",
+      "license": "Public domain; unknown-author Irish work, PD-Ireland record",
+      "era_fit": "1932 contemporary Fianna Fail group photograph; crop is the labeled Sean Lemass sitter, head-and-shoulders"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_oscar_traynor",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_oscar_traynor.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_oscar_traynor.dds",
+      "source_sha256": "d9e06ad771c2c50d8ccb4fa189876a5d1b660c9fdbd326d08c5b65d05c8b5566",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_oscar_traynor.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_oscar_traynor_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_oscar_traynor_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_oscar_traynor_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_oscar_traynor.json",
+      "runtime_dds_sha256": "bab517b771ee1bb72a6ad37090aecda04b58f716083ce4cd10afbf2161117b0e",
+      "processed_preview_sha256": "664f8d27e5a81dfad87cdd4ebfa571b3f8cf6ae42ff9e2402d4b7c8802d00b47",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_douglas_hyde",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_douglas_hyde.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_douglas_hyde.dds",
+      "source_sha256": "a0e2766a389d2effd181de88140d44f28e3ce6f34356654fc82645599b3c1040",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_douglas_hyde.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_douglas_hyde_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_douglas_hyde_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_douglas_hyde_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_douglas_hyde.json",
+      "runtime_dds_sha256": "074110b2c0e0abf5206d0d75124903aef084930a6f78900ddd990dcb8318b6f8",
+      "processed_preview_sha256": "e8565e95727f98d5b7f7ddaf4654494b0fd5122ee154592fc53b3f5a3ed50cd6",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_sean_t_okelly",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_sean_t_okelly.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_sean_t_okelly.dds",
+      "source_sha256": "fc76d3a6889b4068ef6ae3dcce9cd85da01bba80ec5f13971c2a83c11214e3d1",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_sean_t_okelly.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_sean_t_okelly_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_sean_t_okelly_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_sean_t_okelly_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_sean_t_okelly.json",
+      "runtime_dds_sha256": "2c724247b7585f3ba57395f250b5d06b4cb5375b9fef2b24dea651bec52f91b9",
+      "processed_preview_sha256": "14ba92739bb5b77d54d5121183644f9ea19cc429a0e3d41d1201bcebbfb171ab",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_frank_aiken",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_frank_aiken.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_frank_aiken.dds",
+      "source_sha256": "a154c0d8fea6ee34c0c23196f3da8ad9631b2d7e44f6d8a3393b74f530c4fb2e",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_frank_aiken.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_frank_aiken_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_frank_aiken_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_frank_aiken_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_frank_aiken.json",
+      "runtime_dds_sha256": "d49c6a1278d576693df71fe147280ed34eed195dbd220b08b97b8b1936f934bf",
+      "processed_preview_sha256": "04356df38bf87260284993e860f66d38e89ba16d5abfe4507026d6d7716e8ef2",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_sean_macentee",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_sean_macentee.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_sean_macentee.dds",
+      "source_sha256": "2aff76331d36fff63199dd318a22a740b154d404fedfb307aa8056d361a6015a",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_sean_macentee.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_sean_macentee_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_sean_macentee_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_sean_macentee_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_sean_macentee.json",
+      "runtime_dds_sha256": "3ca70f3395dbb89e21ec37154b02e68e9bb92e5a46eb829e6990526800bce033",
+      "processed_preview_sha256": "d551f09ec2d4e2c9f9aec6360b6d63d1785dccbf0df6aa9790e32809de6b9b57",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_joseph_walshe",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_joseph_walshe.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_joseph_walshe.dds",
+      "source_sha256": "39c723d10ed1c09a100696dbdb3fb9a7383c88bad80c0bb4d47d16732a4c9397",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_joseph_walshe.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_joseph_walshe_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_joseph_walshe_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_joseph_walshe_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_joseph_walshe.json",
+      "runtime_dds_sha256": "5dfe34bdb00384bf357c8736bd5657a936c0e767dbbf20d7d90c75c24d0ed43b",
+      "processed_preview_sha256": "b22f3f92a01454fe1b48e93da64498f58b550bc4d50317205aff16c6ee8a4d2b",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_sean_mac_eoin",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_sean_mac_eoin.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_sean_mac_eoin.dds",
+      "source_sha256": "294d6e23c1da98496de2ff9d7a9ff5df944d57514968b85caf6818471d72d0b7",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_sean_mac_eoin.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_sean_mac_eoin_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_sean_mac_eoin_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_sean_mac_eoin_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_sean_mac_eoin.json",
+      "runtime_dds_sha256": "e344a61ed98e811d9364b9570a8d7b1084d6128ba3ebe256b550eb7309bebda7",
+      "processed_preview_sha256": "778cac56d64aee12f49f427b2cfa09c165a43df913d09382cb4ba7d4c405d595",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_thomas_f_ohiggins",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_thomas_f_ohiggins.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_thomas_f_ohiggins.dds",
+      "source_sha256": "55c6b7eae0a4b0e35e02e119581cd2d65407b01d3a3a7aaad04727d24f6db54b",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_thomas_f_ohiggins.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_thomas_f_ohiggins_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_thomas_f_ohiggins_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_thomas_f_ohiggins_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_thomas_f_ohiggins.json",
+      "runtime_dds_sha256": "52a02faf3188a24e6c7f6d7ede29dec389027c305a3c168e5682b86dbe52e412",
+      "processed_preview_sha256": "f12436abb8a7afebbc07ff1f83e1a722cd3ebccc711f2f454da5b1938b2a2836",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_patrick_mcgilligan",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_patrick_mcgilligan.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_patrick_mcgilligan.dds",
+      "source_sha256": "23eef2880ca96d0a27ddb256ca4d84085d2bf02e512da6f84533fc328b6d1f28",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_patrick_mcgilligan.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_patrick_mcgilligan_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_patrick_mcgilligan_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_patrick_mcgilligan_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_patrick_mcgilligan.json",
+      "runtime_dds_sha256": "78d24591d823d31891be124afaf8ecacc653b0b943d06e6342a2d14b61e9617c",
+      "processed_preview_sha256": "bea1fb84c084cd974f9fe783fff9ec3cf58cc48391646bf4560ffd79015c215c",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_james_everett",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_james_everett.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_james_everett.dds",
+      "source_sha256": "0818793494223fc3fd376a210d8c28cd20003706fbf1643758074f49b10523b1",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_james_everett.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_james_everett_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_james_everett_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_james_everett_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_james_everett.json",
+      "runtime_dds_sha256": "6864de17863dabd2c09e97bab8c9883655c374d4bb85d016272828ca716830a8",
+      "processed_preview_sha256": "0a0298994e127435796a07de1d63b0f8f3fa61b0bf976ceecbe3fbd69cc957da",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_p_20",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_p_20.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_20.dds",
+      "source_sha256": "ae0c19c67cca4ecef316366812384effd01da37d7e62b4a3c3166db46579d5c7",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_p_20.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_p_20_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_p_20_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_p_20_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_p_20.json",
+      "runtime_dds_sha256": "d3ef2a23dddfc42ca4bd7c8c6c9b39b97a0ea287e52e93651da44a9890805620",
+      "processed_preview_sha256": "13bb03d9d8ce43b0ee8179bbcb98bbb07fe4156acc26f8094c1228258ff612cb",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_james_hickey",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_james_hickey.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_james_hickey.dds",
+      "source_sha256": "050bb7cae91ae14de5aed9dbd457e46b18fbb67d08cd828e83f1898fd82e3c70",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_james_hickey.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_james_hickey_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_james_hickey_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_james_hickey_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_james_hickey.json",
+      "runtime_dds_sha256": "29e6989808c9c8843c367de8fc7974fe87b7ca7c7d221bb67bc6c04d71572656",
+      "processed_preview_sha256": "a247a004031b97aca3390ff0beb756c047514f6dbc4511b58d70bee2a1698944",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_william_davin",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_william_davin.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_william_davin.dds",
+      "source_sha256": "f6fba3f27319d81d4bcfd57fb34e17ecd7efe336b45b99efcba46be93dd249aa",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_william_davin.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_william_davin_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_william_davin_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_william_davin_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_william_davin.json",
+      "runtime_dds_sha256": "b5a072b16f0bcc1162dbae91f4c41d3413259461c5f65f6b78466b95a5dfbf49",
+      "processed_preview_sha256": "72264f94d509c39fc56736c3168d823c8b6308a6514b95a35e4bf9ef56fdb504",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_michael_donnellan",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_michael_donnellan.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_michael_donnellan.dds",
+      "source_sha256": "f0d1b32a2439edc3400bef85957c6c4a9f094d1589e691261d3c80bfe605c3ba",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_michael_donnellan.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_michael_donnellan_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_michael_donnellan_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_michael_donnellan_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_michael_donnellan.json",
+      "runtime_dds_sha256": "95ef6e29c56a42307dd3963e115ac3bd002c0ddaf99b8d99814694224eaa1658",
+      "processed_preview_sha256": "a2a3c726d958cfe5be7a9f4cfb31d1e4d705cd17992b90d7cfcb4c97af1ad32e",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_edward_joseph_byrne",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_edward_joseph_byrne.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_edward_joseph_byrne.dds",
+      "source_sha256": "05e26c27234c03c58b6e81e011179ea6d9f151cebae4f004baeb3cd7bdb16fe7",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_edward_joseph_byrne.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_edward_joseph_byrne_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_edward_joseph_byrne_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_edward_joseph_byrne_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_edward_joseph_byrne.json",
+      "runtime_dds_sha256": "851f65a61dfff40243a5baea8f61e20e81cbd942b018eebb87b0c25781ecde94",
+      "processed_preview_sha256": "8758cad36f4b759dd420197548ddb656ba289038a6967e23db9d8cc061a08551",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_31",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_31.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_31.dds",
+      "source_sha256": "54b20fbc4e0b49bfe5dcdc2ed3442bf596c0b8d5841ce623417ad429d2608025",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_31.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_31_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_31_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_31_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_31.json",
+      "runtime_dds_sha256": "fb815450ccb1dbbb76a7acc425e0b8204631006655f41cf20b5b6e771e86ec1b",
+      "processed_preview_sha256": "76c5b1f6a50bbb60e95a22d1b542673133208e37994072fca0d15213ba75dd29",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_john_charles_mcquaid",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_john_charles_mcquaid.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_john_charles_mcquaid.dds",
+      "source_sha256": "858f7cc7ee325187d5553512e912033c31154ea8292df902c36bcc570ab18faf",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_john_charles_mcquaid.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_john_charles_mcquaid_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_john_charles_mcquaid_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_john_charles_mcquaid_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_john_charles_mcquaid.json",
+      "runtime_dds_sha256": "df6184ea544fa83f3eafc53e6c3cd9ed192a539b754108cbf83f016054a13dc3",
+      "processed_preview_sha256": "7e3314ca2a7b5be3ab3a07c5eeabb1d0552e176c25bb0c50a3f31e73e4a037f9",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_joseph_macrory",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_joseph_macrory.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_joseph_macrory.dds",
+      "source_sha256": "0623338acf94780ef92a216bb1c27421cf70fa6e121ba98812e82e0865e993ad",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_joseph_macrory.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_joseph_macrory_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_joseph_macrory_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_joseph_macrory_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_joseph_macrory.json",
+      "runtime_dds_sha256": "a20817cea36626eadc417ee9974ce7fdfcd165daf1498b1a6377f2bfb73fc6a2",
+      "processed_preview_sha256": "5702d32edb59f38d820f9239e07ce3160ba9932c4ae45b1d515b50bfefe6bb9e",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_frank_duff",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_frank_duff.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_frank_duff.dds",
+      "source_sha256": "9b5a91671f5dfa3f7b529c622bd59ec6dd6f107c19c4aaa367639d258f269415",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_frank_duff.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_frank_duff_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_frank_duff_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_frank_duff_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_frank_duff.json",
+      "runtime_dds_sha256": "6bfa1bc57016db2d928ebf5a1549bab57f609bf19a5aa20d0033e91b0b0b7e45",
+      "processed_preview_sha256": "2f2ba27af3ffbcae373ae3d2d864cb8ff0ba1808b974163d7bc97e8bb1aaa07a",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_p_33",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_p_33.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_33.dds",
+      "source_sha256": "67a2e723e9a17724a7a2c34f69695be3be91a32e221f963dd0780b0725980fba",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_p_33.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_p_33_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_p_33_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_p_33_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_p_33.json",
+      "runtime_dds_sha256": "f054b86837169f2afab74bdfd46fcb6bb6ed5c4394509b524ae32bd4be1dc4dc",
+      "processed_preview_sha256": "c9a924f5e515c624d2ac18500e9fae119c456bd276f2b5aaa9f1a736da06fc5c",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_maurice_twomey",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_maurice_twomey.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_maurice_twomey.dds",
+      "source_sha256": "04489f68122407375f6f47658e1e413c945578be303ccc38c03270eb15b8a08f",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_maurice_twomey.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_maurice_twomey_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_maurice_twomey_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_maurice_twomey_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_maurice_twomey.json",
+      "runtime_dds_sha256": "a3016dc1a9fc6dd64b06c793dc70fffb679aac42ad28cf34d6ab7504999b3cf1",
+      "processed_preview_sha256": "66a941239e9e451384238697fbb8264640beb07cfad63136d1b0fe066031c520",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_tom_barry",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_tom_barry.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_tom_barry.dds",
+      "source_sha256": "5a82ef8e51da02500783fb6c42d9532ce247f29c3cf467a7b73ac8ed4f525e41",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_tom_barry.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_tom_barry_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_tom_barry_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_tom_barry_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_tom_barry.json",
+      "runtime_dds_sha256": "f5b3293e4aed8147d415e12d0f45fac415d1e2ebdfb23ff6d9465d85e86acf33",
+      "processed_preview_sha256": "014bf35b45c66ca01783814bac5ac609c849508b97ccaecd86b2cfafbab21e27",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_p_37",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_p_37.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_37.dds",
+      "source_sha256": "7eee575be909356d1e6641b0b482050cb052e981cff4aa334e775f07c8354781",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_p_37.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_p_37_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_p_37_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_p_37_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_p_37.json",
+      "runtime_dds_sha256": "3a9b96794b68268afd0382d9d7e779a451d67a611b0e599f04dc6cd16bea8d14",
+      "processed_preview_sha256": "104606dc2c5900616363247cde0e992315e1d33643cad9e357f4ca48b3486ce0",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_p_42",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_p_42.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_42.dds",
+      "source_sha256": "e77ad17967a400771e4fa26159e50d5719a0c02e078748eebcf620944b9f3d65",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_p_42.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_p_42_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_p_42_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_p_42_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_p_42.json",
+      "runtime_dds_sha256": "c06db23741913df7ab118e5a8e7fd8c9a68d6bf325443735be24e75f7e6c7407",
+      "processed_preview_sha256": "0a4e43988cd69a1f46d8054b4950f709192e3d66ae1a092e0801e6dcf535d17e",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_sean_macbride",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_sean_macbride.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_sean_macbride.dds",
+      "source_sha256": "0bd941a52438751937199ced8de1db24d302f5654e349474f6c40212c36b6965",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_sean_macbride.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_sean_macbride_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_sean_macbride_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_sean_macbride_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_sean_macbride.json",
+      "runtime_dds_sha256": "45ed2904658b72db887aa16bcb2e66ec24c7243581ebbcd27e88b712b9db8a03",
+      "processed_preview_sha256": "d5ebfd684a017403b4f350e99e8bb1875a721c75ce4e566cfc2987c074e85bf8",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_george_gilmore",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_george_gilmore.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_george_gilmore.dds",
+      "source_sha256": "5c81c52be1012cfbecff109c4b4d354d272f3cadfd0c660ab071def780a2fa48",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_george_gilmore.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_george_gilmore_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_george_gilmore_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_george_gilmore_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_george_gilmore.json",
+      "runtime_dds_sha256": "f46b31a942805cb5fba0f6301d2edb0052273e4c31b7fcd043761787710a6fbf",
+      "processed_preview_sha256": "62a473f182dd9c77fc8b1d96be125d7c56f7b130fd28bd94de9bb0aa66811e0b",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_nora_connolly_obrien",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_nora_connolly_obrien.dds",
+      "approved_source_input": "docs/plans/ireland_focus_tree/assets/advisors/source_inputs/nora_connolly_commons_original_20201121.png",
+      "source_sha256": "1f319635c37aff7ba4a955660731f9c4cb20ebbdec2a2c64013dbc812e3fa07e",
+      "source_dimensions": [
+        346,
+        489
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_nora_connolly_obrien.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_nora_connolly_obrien_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_nora_connolly_obrien_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_nora_connolly_obrien_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_nora_connolly_obrien.json",
+      "runtime_dds_sha256": "e2030ed87977b076030e0a37441ff7f925762f2abd5fdd6fae5a3fd986c5a228",
+      "processed_preview_sha256": "1d1b81980e1386bb3424a15d537d5997f303df6f816d5a4da51fbb3d6662c3ff",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Selected the archived 2020-11-21 pre-background-removal Commons revision because the current runtime leader DDS and latest Commons derivative have transparent outer alpha; identity retained; archive/photographer remain unknown",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nora_Connolly_O%27Brien,_circa_1910s-1920s.png",
+      "source_archive_revision_url": "https://upload.wikimedia.org/wikipedia/commons/archive/4/40/20201121033158%21Nora_Connolly_O%27Brien%2C_circa_1910s-1920s.png",
+      "source_revision_timestamp": "2020-11-21T03:31:58Z",
+      "source_archive": "We Never Forget source as recorded by Wikimedia Commons; unknown photographer",
+      "source_date": "circa 1910s-1920s (Commons file date 1920)",
+      "license": "Public domain; Commons records PD-US before 1931 and PD-Ireland",
+      "era_fit": "historically attested Nora Connolly O'Brien period portrait; opaque original preserved"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_p_51",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_p_51.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_51.dds",
+      "source_sha256": "61168b46982439bfca4f01e717bd0fd4bc28faa3304431e9ec77e128041e849f",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_p_51.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_p_51_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_p_51_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_p_51_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_p_51.json",
+      "runtime_dds_sha256": "07a0b6e1933141d56ff538becb7eadc0ec564be2cda1aed2b4950f9307cd0805",
+      "processed_preview_sha256": "e9a33070d0f47d75da54ba7980206e4142068ebab85a1ce35d75de4ab6231b28",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_patrick_belton",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_patrick_belton.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_patrick_belton.dds",
+      "source_sha256": "6e2b94d0eaaa426c71a5c957f6d56b6e20a2b55e027c1a3bf9d25e68aa20e150",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_patrick_belton.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_patrick_belton_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_patrick_belton_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_patrick_belton_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_patrick_belton.json",
+      "runtime_dds_sha256": "08cb6055155bfb8739ce122e9d37e4d5d90cd90bc77c420530ee03f769a6e967",
+      "processed_preview_sha256": "6a63843cb7388248907366c56e546832b741baeb1c1022fb26155240298df637",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ernest_blythe",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ernest_blythe.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_ernest_blythe.dds",
+      "source_sha256": "6461c6ed8c73ff30fee21ddf47bbf82e5d898e2b055dbc6163c14ad431c15c23",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ernest_blythe.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ernest_blythe_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ernest_blythe_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ernest_blythe_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ernest_blythe.json",
+      "runtime_dds_sha256": "01b96697431523b39663f2a4b14bd8a38fc987c94fbcbac47cbead64a0e2aa99",
+      "processed_preview_sha256": "98e29054a08daf22beb59883753f3bf4e4f5540f4a42a1ee0beeeb0b6ad79bdf",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_59",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_59.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_j_j_walsh.dds",
+      "source_sha256": "980364de9d7f25e41a5e1f80629c5f6b6904114156e352dfa8c4581ed3205591",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_59.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_59_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_59_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_59_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_59.json",
+      "runtime_dds_sha256": "88c7585cc45b27b11731e26f6b963c043a4542bb7c8e636239fef69a41747c57",
+      "processed_preview_sha256": "426048b5a2470f01647f3e52f225f63af5ecbd420ada4d7407bb2a6b932ac7f3",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_p_60",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_p_60.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_60.dds",
+      "source_sha256": "67683d7d61a9aee7b62fc23b9cdb3653e8e3929bd4e52d068faec8a818114d53",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_p_60.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_p_60_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_p_60_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_p_60_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_p_60.json",
+      "runtime_dds_sha256": "74fb7f4c77024d92d7d66b602c02ccf91bec8e7a5369d98045047be3ed6da086",
+      "processed_preview_sha256": "ddca488bf3c8d1cef777c7399b6c71a69c752ea4f6be7b8b37b39df46dcc1905",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_charlie_kerins",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_charlie_kerins.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_charlie_kerins.dds",
+      "source_sha256": "7fef2658595b9d5065c06228b9b4968fc032aecf48a27a9437f034994a326ef4",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_charlie_kerins.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_charlie_kerins_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_charlie_kerins_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_charlie_kerins_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_charlie_kerins.json",
+      "runtime_dds_sha256": "9b7cb83594b6f6988415f361632d4528e60f5ddb94ca923b8623ad7a6fab1a06",
+      "processed_preview_sha256": "c8f0769891fe0c6326749f4e8db2e941a626b841631dcab36ff55548b2d4b642",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_16",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_16.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_16.dds",
+      "source_sha256": "9631f2a0efe7e613e3797348195900ddaf4d44582ca7ea4cbbe0c0bdb4d7f022",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_16.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_16_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_16_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_16_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_16.json",
+      "runtime_dds_sha256": "d9e93baa5684fdf2672097510f4b6aaa88e414b7f7240eb3ec70930f69585a43",
+      "processed_preview_sha256": "8393e6a02232d8cc8ea23e73c2a0d5cc25b1a7c5c2a3af08ccd9935eeb4977af",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_24",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_24.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_24.dds",
+      "source_sha256": "1c82f6317801d830720027ec0ec85b6b2835dc55ca8568a28a8d863407740b44",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_24.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_24_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_24_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_24_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_24.json",
+      "runtime_dds_sha256": "6f3a976584dc1de1332cacf8cc540cc8a49cf11e48fb1e4d8f26e0198e07a5cd",
+      "processed_preview_sha256": "aa6ffebfb438845f72c4d4fcd23ad6cea8679a1f7c8a2496573efa1764467a56",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_32",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_32.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_32.dds",
+      "source_sha256": "f062d3d4f7a48a760b43ad1c3e65b040d99f92f845a30afef22cff28cef03ab7",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_32.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_32_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_32_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_32_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_32.json",
+      "runtime_dds_sha256": "2f1e8b23edda3055c6af2a1690c57ca9449026303a5e4a5151a6d8ee1cd7c264",
+      "processed_preview_sha256": "432d722a3358d7d1ef7d9b63e582439dbb6853ffca84a1cd75cf40761ac4f82d",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_38",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_38.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_38.dds",
+      "source_sha256": "84ac77f3797f7c4951c3636e7e068cfb79021ddb418a6d78c8a4f7575e6ab480",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_38.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_38_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_38_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_38_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_38.json",
+      "runtime_dds_sha256": "7bb912b4edc142a65d6364881803f729605232ebbf7f9d74abd6dc4fe82cfe7b",
+      "processed_preview_sha256": "980e40b2d9dbe975306fac34802fc61193f3723118daedbb6264e4a6a04eee10",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_39",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_39.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_39.dds",
+      "source_sha256": "da3576cbc925624a9f47ca84d01bb42c7ca6d210011053fec164901440b9a137",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_39.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_39_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_39_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_39_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_39.json",
+      "runtime_dds_sha256": "3656ef1223dfae3b76c69f6d0828b6fb4cc9f7257cc82deb6688c463d6ee8c3e",
+      "processed_preview_sha256": "4807201ec9c568d98600892d7fa19f7aa049a05b58d110eeba1ad0323f8f452c",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_41",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_41.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_41.dds",
+      "source_sha256": "ac64a41ee464511ec2e06ee46edc5d94018e17936a930ac2bef76757a63eb967",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_41.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_41_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_41_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_41_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_41.json",
+      "runtime_dds_sha256": "fd5979a3bbce0c140cfc442974cd453f330bfeab63d71a6f2731ed55637b72fe",
+      "processed_preview_sha256": "d5f4f83d70b7c619c8a482aa0bc78afa984ad5c3fd5afe73c43011856d138e90",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_48",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_48.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_48.dds",
+      "source_sha256": "532d349942acb6152a5497f0353ff49bc9fdb8c932ab3a403ab7e1b0b8261e3b",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_48.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_48_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_48_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_48_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_48.json",
+      "runtime_dds_sha256": "bd209e90f5dacc66dbac1e133373218bb38812333b571bc74b8f8320ce04f089",
+      "processed_preview_sha256": "77360ae96612ab25bf76da869207c7614ee47dbaa6edf879c429c982b45d2a0b",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_50",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_50.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_50.dds",
+      "source_sha256": "b09bcdf69b307b187b5e80eb8b11d4730b635ee5f2d0d1c4cd437b2656b49fe3",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_50.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_50_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_50_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_50_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_50.json",
+      "runtime_dds_sha256": "fa48d44d5b38fe10ee9b93b1e592896bb321f61a25e6acdfcb6d984d5c433448",
+      "processed_preview_sha256": "4c53d0118fd573f50ece51b255794e7ff3ef47064d520feae6ef1e8a67dfe380",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_54",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_54.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_54.dds",
+      "source_sha256": "642ee71e1a69382b1371b8a027c03330fcaa4d172bf284392a5781c6ce869668",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_54.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_54_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_54_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_54_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_54.json",
+      "runtime_dds_sha256": "18ca5b1ea694be46b50c5369e91cf3f5681982082fe0e93976a126e08f84618d",
+      "processed_preview_sha256": "8b76193d177e7168fd42ee06373486e91231cb5cf54292e9001a01c51d609b59",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    },
+    {
+      "sprite_name": "GFX_ireland_advisor_ireland_p_57",
+      "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_ireland_p_57.dds",
+      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_p_57.dds",
+      "source_sha256": "bd9cf06f457739e75c711a78084640b1bd2195c7beef1d66f12884c3c1260ba0",
+      "source_dimensions": [
+        156,
+        210
+      ],
+      "source_mode": "grounded_source_only / sourced real person",
+      "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_ireland_p_57.png",
+      "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_ireland_p_57_4x.png",
+      "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_ireland_p_57_study.png",
+      "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_ireland_p_57_alignment_8x.png",
+      "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_ireland_p_57.json",
+      "runtime_dds_sha256": "d9f9a1e3fc4f4ee94f3780a4d14044035db93e3b1de08d0e8ff1c7b086faa503",
+      "processed_preview_sha256": "5615d92eef8bb95ee933df5c31d26ef6e16a649b1fe2010ddcb1a65473f0b7bc",
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      },
+      "uncertainty": "Existing approved source input"
+    }
+  ]
+}

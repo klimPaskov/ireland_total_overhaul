@@ -38,6 +38,7 @@ A later part overrides an earlier broad statement only where the later part has 
 | `ireland_focus_tree_spec_part_4_statecraft_and_war.md` | National Provision, National Readiness, economy, defence, active neutrality, diplomacy, Northern settlement, integration, expansion, postwar statecraft and material route conclusions |
 | `ireland_focus_tree_spec_part_5_decisions_events_and_lifecycles.md` | fourteen categories, 144 actions, 54 mission families, 484-event minimum, laws, offices, ideas, identity, cleanup and fifteen standard conclusion families |
 | `ireland_focus_tree_spec_part_6_ai_assets_achievements_and_text.md` | 30 AI profiles, ten overlays, foreign reactions, 32 achievements, exact asset budget, GUI, animation, text direction and prompt ownership |
+| `ireland_focus_tree_political_industrial_and_territorial_expansion.md` | exact five-family public gateway contract, advisor-cabinet and company matrix, MIO requirements, territorial state scope, target-scoped diplomacy, postwar per-holding settlement, Parliament availability, and final acceptance criteria |
 
 ## Maps
 
@@ -172,11 +173,11 @@ The fifteen standard Part 5 conclusion families remain fixed. The convergence pr
 
 # Current completion state
 
-The 150-focus runtime tree presents three named opening trunks—government and
+The 215-focus runtime tree presents three named opening trunks—government and
 politics, national development, and defence and security—then progressively
-reveals four ordinary support families, three late constitutional alternatives,
-and eight exceptional route families.
-All 150 focuses expose a focus-specific outcome. Thirty-two focus IDs have
+reveals five public political families, ordinary support families, nine named
+industrial concerns, a territorial lane, and exceptional routes.
+All 215 focuses expose a focus-specific outcome. Thirty-two focus IDs have
 material, construction, or fuel effects; 24 have research, doctrine, agency, or
 event capabilities; and 59 expose named decision or mission unlocks. AI
 focus-ID coverage remains complete. The
@@ -186,5 +187,5 @@ human controls visible from initialization and backed by shared guarded
 executors, a usable opening Dáil decision, native AI equivalents, and a
 four-state slate/amber/gold/green action seal. The current implementation
 and completion evidence are indexed by
-`docs/plans/ireland_focus_tree/source_of_truth_map.md`; historical larger-tree
-counts and passive Parliament layouts are not current runtime authority.
+`docs/plans/ireland_focus_tree/source_of_truth_map.md`; earlier 150-focus and
+passive Parliament layouts are not current runtime authority.

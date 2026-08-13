@@ -28,6 +28,12 @@
 @IRELAND_MEMBER_INTELLIGENCE_ENTRY_COMMAND_POWER_GATE = 49
 @IRELAND_MEMBER_INFRASTRUCTURE_TRAIN_GATE = 4
 @IRELAND_MEMBER_INFRASTRUCTURE_TRUCK_GATE = 4
+@IRELAND_ATLANTIC_MANPOWER_GATE = 4999
+@IRELAND_ATLANTIC_INFANTRY_EQUIPMENT_GATE = 999
+@IRELAND_ATLANTIC_SUPPORT_EQUIPMENT_GATE = 99
+@IRELAND_ATLANTIC_CONVOY_GATE = 19
+@IRELAND_ATLANTIC_FUEL_GATE = 999
+@IRELAND_ATLANTIC_COMMAND_POWER_GATE = 49
 
 ireland_is_ireland = {
 	tag = IRE
@@ -4426,8 +4432,9 @@ ireland_h14_full_terms_met = {
 # office and movement rather than ideology so that an advisor can leave with a
 # government, command convention, party split, or route failure.
 ireland_route_advisor_historical_constitutional = {
+	has_country_flag = ireland_advisor_pool_constitutional_service_unlocked
 	OR = {
-		NOT = { has_country_flag = ireland_route_committed }
+		has_country_flag = ireland_family_democratic
 		has_country_flag = ireland_route_de_valera_stewardship
 		has_country_flag = ireland_route_de_valera_reconciliation
 		has_country_flag = ireland_route_de_valera_emergency
@@ -4442,6 +4449,7 @@ ireland_route_advisor_historical_constitutional = {
 }
 
 ireland_route_advisor_de_valera_lemass = {
+	has_country_flag = ireland_advisor_pool_republican_ministries_unlocked
 	OR = {
 		has_country_flag = ireland_route_de_valera_stewardship
 		has_country_flag = ireland_route_de_valera_reconciliation
@@ -4468,6 +4476,7 @@ ireland_route_advisor_clann = {
 }
 
 ireland_route_advisor_vocational = {
+	has_country_flag = ireland_advisor_pool_estates_unlocked
 	OR = {
 		has_country_flag = ireland_route_constitutional_vocational
 		has_country_flag = ireland_route_clerical_producer
@@ -4494,6 +4503,7 @@ ireland_route_advisor_ira_command = {
 
 ireland_route_advisor_congress_plural = {
 	AND = {
+		has_country_flag = ireland_advisor_pool_congress_unlocked
 		has_country_flag = ireland_route_congress
 		NOT = { has_country_flag = ireland_congress_vanguard_path }
 	}
@@ -4501,15 +4511,145 @@ ireland_route_advisor_congress_plural = {
 
 ireland_route_advisor_congress_vanguard = {
 	AND = {
+		has_country_flag = ireland_advisor_pool_congress_unlocked
+		has_country_flag = ireland_advisor_pool_congress_vanguard_prepared
 		has_country_flag = ireland_route_congress
 		has_country_flag = ireland_congress_vanguard_path
 	}
 }
 
 ireland_route_advisor_oduffy = {
+	has_country_flag = ireland_advisor_pool_blueshirt_unlocked
 	has_country_flag = ireland_route_oduffy
+}
+
+ireland_democratic_family_chosen = {
+	has_country_flag = ireland_family_democratic
+}
+
+ireland_route_advisor_oduffy_command = {
+	has_country_flag = ireland_advisor_pool_blueshirt_unlocked
+	has_country_flag = ireland_advisor_pool_blueshirt_command_unlocked
+	has_country_flag = ireland_route_oduffy
+}
+
+ireland_route_advisor_restoration_public = {
+	has_country_flag = ireland_advisor_pool_household_unlocked
+	has_country_flag = ireland_route_high_king
 }
 
 ireland_route_advisor_ailtiri = {
 	has_country_flag = ireland_route_ailtiri_total_state
+}
+
+ireland_route_advisor_blueshirt_or_ailtiri = {
+	OR = {
+		ireland_route_advisor_oduffy = yes
+		ireland_route_advisor_ailtiri = yes
+	}
+}
+
+# Atlantic settlement is resolved per holding, never by a single campaign-wide
+# marker. A controlled state remains open until one of its state-specific
+# settlement records exists; a Scottish or Welsh subject remains open until
+# its own protectorate record exists. States and subjects which are no longer
+# relevant do not block the review.
+ireland_atlantic_settlement_scope_exists = {
+	OR = {
+		120 = { is_controlled_by = ROOT }
+		122 = { is_controlled_by = ROOT }
+		123 = { is_controlled_by = ROOT }
+		SCO = { is_subject_of = ROOT }
+		WLS = { is_subject_of = ROOT }
+	}
+}
+
+ireland_atlantic_settlement_all_relevant_resolved = {
+	AND = {
+		NOT = {
+			AND = {
+				120 = { is_controlled_by = ROOT }
+				NOT = {
+					OR = {
+						has_country_flag = ireland_highlands_rights_settlement
+						has_country_flag = ireland_highlands_integration_review_complete
+						has_country_flag = ireland_scottish_protectorate_settlement
+					}
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				122 = { is_controlled_by = ROOT }
+				NOT = {
+					OR = {
+						has_country_flag = ireland_wales_rights_settlement
+						has_country_flag = ireland_welsh_protectorate_settlement
+					}
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				123 = { is_controlled_by = ROOT }
+				NOT = { has_country_flag = ireland_cornwall_rights_settlement }
+			}
+		}
+		NOT = {
+			AND = {
+				SCO = { is_subject_of = ROOT }
+				NOT = { has_country_flag = ireland_scottish_protectorate_reconstruction_complete }
+			}
+		}
+		NOT = {
+			AND = {
+				WLS = { is_subject_of = ROOT }
+				NOT = { has_country_flag = ireland_welsh_protectorate_reconstruction_complete }
+			}
+		}
+	}
+}
+
+# The naval escalation lanes require present control of the relevant sea
+# region. These are strategic-region proofs, not a remembered basing flag.
+ireland_territorial_wales_naval_access_proven = {
+	has_naval_control = 2
+	120 = {
+		is_controlled_by = ROOT
+		any_province_building_level = {
+			province = { limit_to_naval_base = yes }
+			building = naval_base
+			level > 0
+		}
+	}
+}
+
+ireland_territorial_cornwall_naval_access_proven = {
+	has_naval_control = 1
+	122 = {
+		is_controlled_by = ROOT
+		any_province_building_level = {
+			province = { limit_to_naval_base = yes }
+			building = naval_base
+			level > 0
+		}
+	}
+}
+
+# Shared readiness gate for coercive Atlantic territorial instruments. The
+# decision still checks its exact target and staged route; this block prevents
+# a government without a concluded readiness programme or fielded army from
+# manufacturing a timed war goal.
+ireland_atlantic_claim_enforcement_ready = {
+	is_at_war = no
+	has_country_flag = ireland_atlantic_claim_enforcement_open
+	has_country_flag = ireland_readiness_conclusion_ready
+	controls_state = 113
+	has_manpower > @IRELAND_ATLANTIC_MANPOWER_GATE
+	has_equipment = { infantry_equipment > @IRELAND_ATLANTIC_INFANTRY_EQUIPMENT_GATE }
+	has_equipment = { support_equipment > @IRELAND_ATLANTIC_SUPPORT_EQUIPMENT_GATE }
+	has_equipment = { convoy > @IRELAND_ATLANTIC_CONVOY_GATE }
+	has_fuel > @IRELAND_ATLANTIC_FUEL_GATE
+	command_power > @IRELAND_ATLANTIC_COMMAND_POWER_GATE
+	ireland_parliament_dail_majority = yes
 }

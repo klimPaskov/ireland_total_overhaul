@@ -944,3 +944,63 @@ sync.
 | `ireland_execute_parliament_seanad_action` | Secures Seanad support in Ireland country scope. | Reads `ireland_parliament_seanad_action_available`; deducts the Seanad PP cost and calls `ireland_record_parliament_seanad_support`. | Does nothing when the gate is false. The record helper adds government seats, Social Consent, Cabinet Cohesion, and the completion flag. | Called by both the Seanad button and native Seanad decision. |
 | `ireland_execute_parliament_confidence_action` | Records the confidence-and-supply compact in Ireland country scope. | Reads `ireland_parliament_confidence_action_available`; deducts the confidence PP cost and calls `ireland_record_parliament_confidence_compact`. | Does nothing when the gate is false. The record helper adds external support, routine votes, Dáil Mandate, Social Consent, Cabinet Cohesion, and the completion flag. | Called by both the confidence button and native confidence decision. |
 | `ireland_execute_parliament_budget_action` | Passes the joint opening budget in Ireland country scope. | Reads `ireland_parliament_joint_budget_action_available`; deducts the budget PP cost and calls `ireland_record_parliament_joint_budget`. | Does nothing when the gate is false. The record helper adds Stability, Administrative Reach, Dáil Mandate, Cabinet Cohesion, and the completion flag. | Called by both the budget button and native budget decision. |
+
+## Territorial-policy admission triggers
+
+### `ireland_atlantic_claim_enforcement_ready`
+
+- Scope: Ireland country scope.
+- Purpose: canonical material and political admission gate for every coercive
+  Atlantic preparation.
+- Inputs: peace, the Atlantic enforcement and readiness conclusions, Dublin
+  control, a Dáil majority, and the centralized manpower, infantry equipment,
+  support equipment, convoy, fuel, and Command Power thresholds.
+- Output: true only while every shared readiness requirement is live. Target
+  ownership, control, faction relation, reach, and relative strength remain
+  decision-specific checks because they require a state-controller scope.
+- Defaults and side effects: false on any missing proof; no side effects.
+- Usage: call from both decision availability and the completion-time
+  revalidation limit before issuing a claim or timed war goal.
+
+### `ireland_can_launch_postwar_mission`
+
+- Scope: Ireland country scope.
+- Purpose: shared admission gate for the Atlantic settlement review mission.
+- Inputs: conclusion state, the active-mission marker, and the global mission
+  capacity maintained by `ireland_update_mission_capacity`.
+- Output: true only while a new postwar mission can reserve a real mission
+  slot. The decision separately requires a free postwar-category slot and at
+  least one relevant controlled holding or subject relationship.
+- Defaults and side effects: false after conclusion, while the mission is
+  active, or when global capacity is full; no side effects.
+- Usage: check at decision availability, cancellation, and completion. Set the
+  active marker, activate the mission, and immediately call
+  `ireland_update_mission_capacity`; repeat the capacity update on every
+  terminal or cleanup path.
+
+### `ireland_clear_territorial_diplomacy_targets`
+
+- Scope: any country scope; normally called from the Ireland result event.
+- Purpose: remove the saved requester, target-controller, and target-state
+  pointers used by the Ulster ultimatum, Belfast compact, and Highlands
+  settlement event chains.
+- Inputs: the three global event targets created by the initiating territorial
+  decision.
+- Outputs: clears all three pointers. The caller remains responsible for
+  clearing its pending/active country flags and applying any outcome-specific
+  cooldown.
+- Defaults and side effects: no political, territorial, diplomatic, or
+  material effect. It is safe to call on a stale or already-cleared target.
+- Usage: call on every terminal accept, refusal, counteroffer resolution, and
+  stale-target/refund branch; never from a daily or monthly on-action.
+
+### `ireland_atlantic_settlement_all_relevant_resolved`
+
+- Scope: Ireland country trigger; used by the Atlantic settlement mission.
+- Purpose: require each currently controlled Atlantic holding and each current
+  Scottish/Welsh subject to have its own resolution record.
+- Inputs: state-specific rights/integration flags and subject-specific
+  protectorate flags.
+- Output: true only when no relevant controlled state or eligible subject is
+  unresolved. Losing a holding or subject removes it from the requirement.
+- Side effects: none. This trigger does not close the mission or clear a flag.

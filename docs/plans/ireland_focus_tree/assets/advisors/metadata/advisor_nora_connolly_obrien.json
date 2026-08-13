@@ -1,0 +1,136 @@
+{
+  "workflow": "chaos-redux-advisor-dossier-v4",
+  "source": {
+    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\source_inputs\\nora_connolly_commons_original_20201121.png",
+    "sha256": "1f319635c37aff7ba4a955660731f9c4cb20ebbdec2a2c64013dbc812e3fa07e",
+    "original_size": [
+      346,
+      489
+    ],
+    "native_output_canvas": [
+      65,
+      67
+    ]
+  },
+  "template": {
+    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\chaos_redux\\.agents\\skills\\chaos-redux-event-assets\\assets\\vanilla_reference\\portraits\\advisors\\advisor_template.png",
+    "sha256": "8f594ef62afba6fdec58de66a80609350dcfe884320b11e6cb6220f1a0e19f58",
+    "opening_center": [
+      24.76151027919129,
+      30.645146882359736
+    ],
+    "opening_size": [
+      30.477406015014285,
+      45.09450833210553
+    ],
+    "opening_rotation_degrees": -4.76,
+    "opening_geometry_alpha_threshold": 128
+  },
+  "selected_transform": {
+    "portrait_size": [
+      30.477406015014285,
+      45.09450833210553
+    ],
+    "portrait_offset": [
+      0.0,
+      0.0
+    ],
+    "portrait_center": [
+      24.76151027919129,
+      30.645146882359736
+    ],
+    "rotation_degrees": -4.76,
+    "rotation_alignment_error_degrees": 0.0,
+    "sepia_strength": 0.18,
+    "zero_rotation_exception": false,
+    "fit_to_opening": {
+      "safety_mask_bbox": [
+        8,
+        8,
+        40,
+        55
+      ],
+      "under_frame_bleed_mask_bbox": [
+        6,
+        6,
+        42,
+        57
+      ],
+      "opening_local_bounds": [
+        -15.238703,
+        -22.547254,
+        15.238703,
+        22.547254
+      ],
+      "required_inset_pixels": 0.0,
+      "under_frame_bleed_pixels": 2,
+      "resampling_edge_guard_pixels": 1,
+      "alpha_coverage": {
+        "opening_alpha_gap_pixels": 0,
+        "inner_edge_alpha_gap_pixels": 0,
+        "exterior_alpha_leak_pixels": 0
+      }
+    },
+    "complete_image_resize": {
+      "mode": "aspect_preserving_cover_with_under_frame_bleed",
+      "source_aspect": 0.707566,
+      "content_aspect": 0.707566,
+      "opening_fill_size": [
+        30.477406015014285,
+        45.09450833210553
+      ],
+      "under_frame_fill_size": [
+        36.47740601501428,
+        51.09450833210553
+      ],
+      "covering_content_size": [
+        36.47740601501428,
+        51.55332815416758
+      ],
+      "covering_content_center": [
+        24.76151027919129,
+        30.645146882359736
+      ],
+      "source_pre_crop": false,
+      "frame_clip_pixels": [
+        0.0,
+        0.22940991103102704,
+        0.0,
+        0.22940991103102704
+      ],
+      "frame_clip": true,
+      "stretch": false
+    }
+  },
+  "placement_candidates": [
+    {
+      "portrait_size": [
+        30.477406015014285,
+        45.09450833210553
+      ],
+      "portrait_offset": [
+        0.0,
+        0.0
+      ],
+      "rotation_degrees": -4.76
+    }
+  ],
+  "outputs": {
+    "preview": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\previews\\advisor_nora_connolly_obrien.png",
+      "sha256": "1d1b81980e1386bb3424a15d537d5997f303df6f816d5a4da51fbb3d6662c3ff"
+    },
+    "runtime_dds": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\interface\\ideas\\ireland\\advisors\\advisor_nora_connolly_obrien.dds",
+      "sha256": "e2030ed87977b076030e0a37441ff7f925762f2abd5fdd6fae5a3fd986c5a228"
+    },
+    "alignment_preview": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\alignment_8x\\advisor_nora_connolly_obrien_alignment_8x.png",
+      "sha256": "85c16f4a19f2f7336eb3a191fa6c27b2b72f0215de8e9868a715e1beafb7f244"
+    },
+    "placement_study": {
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\placement_studies\\advisor_nora_connolly_obrien_study.png",
+      "sha256": "9b51fbb70bc931116d6290658ef29edd1f021ef112a228a1d3e272e80ebc65f4"
+    }
+  }
+}

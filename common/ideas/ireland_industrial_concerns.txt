@@ -1,0 +1,123 @@
+# Ireland Total Overhaul industrial concerns.
+# Civil institutions remain selectable concerns; vehicle and ship producers use
+# the MIO system so their material contracts and specialization can coexist.
+ideas = {
+	industrial_concern = {
+		ireland_company_electricity_supply_board = {
+			name = ireland_company_electricity_supply_board
+			picture = ireland_electricity_supply_board
+			allowed = { original_tag = IRE }
+			visible = { has_country_flag = ireland_company_esb_unlocked }
+			available = { has_country_flag = ireland_company_esb_unlocked }
+			cost = 75
+			removal_cost = 10
+			research_bonus = { industry = 0.10 electronics = 0.05 }
+			modifier = {
+				production_speed_infrastructure_factor = 0.10
+				production_speed_industrial_complex_factor = 0.05
+			}
+			traits = { industrial_concern }
+			ai_will_do = { base = 1 }
+		}
+
+		ireland_company_irish_sugar_company = {
+			name = ireland_company_irish_sugar_company
+			picture = ireland_irish_sugar_company
+			allowed = { original_tag = IRE }
+			visible = { has_country_flag = ireland_company_sugar_unlocked }
+			available = { has_country_flag = ireland_company_sugar_unlocked }
+			cost = 75
+			removal_cost = 10
+			research_bonus = { industry = 0.05 }
+			modifier = {
+				consumer_goods_factor = -0.02
+				production_speed_industrial_complex_factor = 0.05
+			}
+			traits = { industrial_concern }
+			ai_will_do = { base = 1 }
+		}
+
+		ireland_company_turf_development_board = {
+			name = ireland_company_turf_development_board
+			picture = ireland_turf_development_board
+			allowed = { original_tag = IRE }
+			visible = { has_country_flag = ireland_company_turf_unlocked }
+			available = { has_country_flag = ireland_company_turf_unlocked }
+			cost = 75
+			removal_cost = 10
+			research_bonus = { industry = 0.10 }
+			modifier = {
+				base_fuel_gain_factor = 0.10
+				local_resources_factor = 0.05
+			}
+			traits = { industrial_concern }
+			ai_will_do = { base = 1 }
+		}
+
+		ireland_company_great_southern_railways = {
+			name = ireland_company_great_southern_railways
+			picture = ireland_great_southern_railways
+			allowed = { original_tag = IRE }
+			visible = { has_country_flag = ireland_company_railways_unlocked }
+			available = { has_country_flag = ireland_company_railways_unlocked }
+			cost = 75
+			removal_cost = 10
+			research_bonus = { industry = 0.05 }
+			modifier = {
+				production_speed_rail_way_factor = 0.15
+				production_speed_supply_node_factor = 0.10
+			}
+			traits = { industrial_concern }
+			ai_will_do = { base = 1 }
+		}
+
+		ireland_company_aer_lingus_air_link = {
+			name = ireland_company_aer_lingus_air_link
+			picture = ireland_aer_lingus_air_link
+			allowed = { original_tag = IRE }
+			visible = { has_country_flag = ireland_company_aer_lingus_unlocked }
+			available = { has_country_flag = ireland_company_aer_lingus_unlocked }
+			cost = 75
+			removal_cost = 10
+			research_bonus = { air_equipment = 0.10 electronics = 0.05 }
+			modifier = { air_mission_efficiency = 0.05 }
+			traits = { industrial_concern }
+			ai_will_do = { base = 1 }
+		}
+
+		ireland_company_irish_shipping_registry = {
+			name = ireland_company_irish_shipping_registry
+			picture = ireland_irish_shipping_registry
+			allowed = { original_tag = IRE }
+			visible = { has_country_flag = ireland_company_shipping_unlocked }
+			available = { has_country_flag = ireland_company_shipping_unlocked }
+			cost = 75
+			removal_cost = 10
+			research_bonus = { naval_equipment = 0.05 }
+			modifier = {
+				convoy_escort_efficiency = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+			traits = { industrial_concern }
+			ai_will_do = { base = 1 }
+		}
+
+		ireland_company_steel_holdings = {
+			name = ireland_company_steel_holdings
+			picture = ireland_steel_holdings
+			allowed = { original_tag = IRE }
+			visible = { has_country_flag = ireland_company_steel_unlocked }
+			available = { has_country_flag = ireland_company_steel_unlocked }
+			cost = 75
+			removal_cost = 10
+			research_bonus = { industry = 0.10 excavation_tech = 0.05 }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				local_resources_factor = 0.05
+			}
+			traits = { industrial_concern }
+			ai_will_do = { base = 1 }
+		}
+
+	}
+}

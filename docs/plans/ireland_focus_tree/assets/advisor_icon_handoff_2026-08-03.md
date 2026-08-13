@@ -1,5 +1,7 @@
 # Ireland advisor icon handoff
 
+> **Superseded 2026-08-13.** This historical handoff documents the retired copied-Ireland compositor and is not current asset authority. Use [`manifest_current_chaos_redux_2026-08-13.json`](advisors/manifest_current_chaos_redux_2026-08-13.json) and [`gfx_handoff_current_chaos_redux_2026-08-13.md`](advisors/gfx_handoff_current_chaos_redux_2026-08-13.md), which record the direct current Chaos Redux workflow, canonical template, corrected sourced inputs, and all 45 runtime cards. Independent visual approval is recorded in `subagent_handoffs/advisor_card_independent_approval_2026-08-13.md`.
+
 Generated 2026-08-03 for the Ireland Total Overhaul advisor roster.
 
 ## Imported Chaos Redux workflow

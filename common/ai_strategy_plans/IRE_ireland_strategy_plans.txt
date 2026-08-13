@@ -29,11 +29,13 @@ IRE_ireland_historical = {
 		ireland_national_settlement
 		ireland_economic_war_review
 		ireland_defence_estimates
+		ireland_rural_price_board
 		ireland_church_labour_consultation
 		ireland_election_timetable
 		ireland_constitutional_draft
 		ireland_election_mandate
 		ireland_government_formation
+		ireland_replacement_charter
 		ireland_1938_trade_settlement
 		ireland_treaty_port_transfer
 		ireland_emergency_opening
@@ -44,6 +46,10 @@ IRE_ireland_historical = {
 		ireland_coastwatch
 		ireland_port_defence_project
 		ireland_transport_priority
+		ireland_food_ledger
+		ireland_rural_credit
+		ireland_emergency_stockpiles
+		ireland_social_cooperatives
 		ireland_command_audit
 		ireland_establish_naval_staff
 		ireland_harbour_defence_board
@@ -53,19 +59,52 @@ IRE_ireland_historical = {
 		ireland_requisition_trawler_hulls
 		ireland_coastal_patrol_flotilla
 		ireland_professional_army
+		ireland_readiness_command
+		ireland_air_warning
+		ireland_civilian_oversight
+		ireland_emergency_mobilisation
+		ireland_maritime_protection
 		ireland_marine_service_reserve
 		ireland_atlantic_convoy_office
 		ireland_interoperability
 		ireland_regional_maritime_defence_pact
 		ireland_strict_neutrality
 		ireland_neutrality_posture
+		ireland_armed_neutrality
+		ireland_treaty_port_diplomacy
+		ireland_british_leverage_management
+		ireland_american_diaspora_mission
+		ireland_vatican_small_state_mediation
 		ireland_republican_government
+		ireland_constitutional_service_cabinet
+		ireland_republican_ministries
+		ireland_rights_under_emergency
+		ireland_local_government_compact
+		ireland_democratic_security_league
+		ireland_democratic_reconstruction
+		ireland_irish_sugar_company_charter
+		ireland_esb_supply_contracts
+		ireland_turf_development_board_programme
+		ireland_great_southern_railways_contract
+		ireland_ford_cork_works_agreement
+		ireland_aer_lingus_air_link
+		ireland_irish_shipping_registry
+		ireland_steel_holdings_programme
 		ireland_de_valera_stewardship
 		ireland_constitutional_stewardship
 		ireland_de_valera_reconciliation_capstone
 		ireland_recovery_bridge
 		ireland_restore_constitutional_calendar
 		ireland_material_conclusion_proof
+		ireland_define_the_national_question
+		ireland_authorise_reunification_instruments
+		ireland_northern_plebiscite_guarantees
+		ireland_settlement_under_law
+		ireland_atlantic_ambition
+		ireland_atlantic_security_compacts
+		ireland_postwar_settlement_office
+		ireland_local_rights_charter
+		ireland_atlantic_settlement_concluded
 	}
 
 	research = {
@@ -176,6 +215,44 @@ IRE_ireland_route_reactive = {
 		ireland_high_king_capstone
 		ireland_five_provinces_capstone
 		ireland_otherworld_capstone
+		ireland_constitutional_service_cabinet
+		ireland_congress_workers_cabinet
+		ireland_blueshirt_patronage_board
+		ireland_estates_and_professions_council
+		ireland_household_council
+		ireland_irish_sugar_company_charter
+		ireland_esb_supply_contracts
+		ireland_turf_development_board_programme
+		ireland_great_southern_railways_contract
+		ireland_ford_cork_works_agreement
+		ireland_aer_lingus_air_link
+		ireland_irish_shipping_registry
+		ireland_steel_holdings_programme
+		ireland_harland_and_wolff_access
+		ireland_define_the_national_question
+		ireland_authorise_reunification_instruments
+		ireland_northern_plebiscite_guarantees
+		ireland_workers_reunification_campaign
+		ireland_ulster_ultimatum
+		ireland_customs_union_leverage
+		ireland_crown_and_province_mandate
+		ireland_settlement_under_law
+		ireland_all_island_workers_republic
+		ireland_force_the_border_question
+		ireland_belfast_compact
+		ireland_restore_ulsters_place
+		ireland_atlantic_ambition
+		ireland_atlantic_security_compacts
+		ireland_republics_across_the_channel
+		ireland_gaelic_marches
+		ireland_atlantic_concessions
+		ireland_dal_riata_claim
+		ireland_enforce_atlantic_claims
+		ireland_postwar_settlement_office
+		ireland_local_rights_charter
+		ireland_protectorate_statutes
+		ireland_integration_review_commission
+		ireland_atlantic_settlement_concluded
 	}
 
 	research = {
@@ -284,6 +361,7 @@ IRE_ireland_route_de_valera_reconciliation = {
 		ireland_de_valera_reconciliation
 		ireland_de_valera_reconciliation_capstone
 		ireland_recovery_bridge
+		ireland_constitutional_service_cabinet
 	}
 	focus_factors = {
 		ireland_de_valera_reconciliation_capstone = 100
@@ -851,6 +929,8 @@ IRE_ireland_route_high_king = {
 		ireland_serious_cultural_stewardship
 		ireland_cultural_evidence_ledger
 		ireland_high_king_evidence_gate
+		ireland_elective_crown
+		ireland_guardian_crown
 		ireland_crown_powers_charter
 		ireland_high_king_capstone
 		ireland_recovery_bridge
@@ -859,6 +939,133 @@ IRE_ireland_route_high_king = {
 		ireland_high_king_evidence_gate = 90
 		ireland_elective_crown = 80
 		ireland_guardian_crown = 90
+		ireland_high_king_capstone = 100
+	}
+}
+
+# Public family programmes are deliberately separate from the narrower
+# profile plans.  They carry each government's common institutions before
+# the profile queue chooses its leader, constitution, or command doctrine.
+IRE_ireland_family_democratic_programme = {
+	name = "Ireland democratic family programme"
+	desc = "Build constitutional services, republican ministries, accountable security, local government, and audited reconstruction."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_family_democratic }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_constitutional_service_cabinet
+		ireland_republican_ministries
+		ireland_rights_under_emergency
+		ireland_local_government_compact
+		ireland_democratic_security_league
+		ireland_democratic_reconstruction
+	}
+	focus_factors = {
+		ireland_constitutional_service_cabinet = 100
+		ireland_republican_ministries = 90
+		ireland_democratic_reconstruction = 95
+	}
+}
+
+IRE_ireland_family_communist_programme = {
+	name = "Ireland workers' republic family programme"
+	desc = "Organise public and vanguard cabinets, unions, smallholders, self-defence, and a workers' reconstruction board."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_family_communist }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_congress_workers_cabinet
+		ireland_vanguard_organisers
+		ireland_trade_union_congress
+		ireland_workers_smallholders_programme
+		ireland_republican_self_defence
+		ireland_organise_congress
+		ireland_congress_plural_republic
+		ireland_congress_vanguard_cell
+		ireland_congress_plural_capstone
+		ireland_congress_vanguard_capstone
+		ireland_workers_reconstruction_board
+	}
+	focus_factors = {
+		ireland_congress_workers_cabinet = 100
+		ireland_organise_congress = 95
+		ireland_workers_reconstruction_board = 90
+	}
+}
+
+IRE_ireland_family_fascist_programme = {
+	name = "Ireland national corporate family programme"
+	desc = "Join veterans, patronage, employment, corporate estates, motorised command, and emergency government."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_family_fascist }
+	abort = { OR = { has_country_flag = ireland_route_cleanup date > 1944.11.29 } }
+	ai_national_focuses = {
+		ireland_blueshirt_patronage_board
+		ireland_veterans_command_council
+		ireland_veteran_employment_corps
+		ireland_national_corporate_chamber
+		ireland_motorised_command_contracts
+		ireland_personal_command_or_corporate_state
+		ireland_oduffy_personal_command
+		ireland_army_acceptance
+		ireland_corporate_order
+		ireland_oduffy_personal_capstone
+		ireland_oduffy_corporate_capstone
+		ireland_emergency_directorate
+	}
+	focus_factors = {
+		ireland_blueshirt_patronage_board = 100
+		ireland_personal_command_or_corporate_state = 95
+		ireland_emergency_directorate = 90
+	}
+}
+
+IRE_ireland_family_oligarchic_programme = {
+	name = "Ireland producer-estate family programme"
+	desc = "Establish the professional estates, creditor cabinet, syndicates, rural boards, and one durable executive form."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_family_oligarchic }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_estates_and_professions_council
+		ireland_creditor_cabinet
+		ireland_restricted_estate_franchise
+		ireland_industrial_syndicates
+		ireland_rural_producer_boards
+		ireland_executive_estates
+		ireland_producer_directorate
+		ireland_managed_social_peace
+		ireland_vocational_constitution_capstone
+	}
+	focus_factors = {
+		ireland_estates_and_professions_council = 100
+		ireland_industrial_syndicates = 95
+		ireland_managed_social_peace = 90
+		ireland_vocational_constitution_capstone = 100
+	}
+}
+
+IRE_ireland_family_restoration_programme = {
+	name = "Ireland constitutional restoration family programme"
+	desc = "Convene claimants, form a lawful household, draft provincial and legal compacts, and define the crown's defence duties."
+	allowed = { original_tag = IRE }
+	enable = { has_country_flag = ireland_family_restoration }
+	abort = { has_country_flag = ireland_route_cleanup }
+	ai_national_focuses = {
+		ireland_household_council
+		ireland_claimants_convention
+		ireland_elective_crown
+		ireland_guardian_crown
+		ireland_provincial_compact
+		ireland_brehon_law_commission
+		ireland_crown_defence_council
+		ireland_crown_powers_charter
+		ireland_high_king_capstone
+	}
+	focus_factors = {
+		ireland_household_council = 100
+		ireland_elective_crown = 90
+		ireland_crown_defence_council = 90
 		ireland_high_king_capstone = 100
 	}
 }

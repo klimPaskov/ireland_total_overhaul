@@ -466,3 +466,196 @@ defined_text = {
 		localization_key = ireland_concealed_evidence_footer
 	}
 }
+
+# Parliament action requirement rows. Each output is a player-facing statement
+# of the same canonical trigger used by the GUI click gate.
+defined_text = {
+	name = GetIrelandParliamentDailStageStatus
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = ireland_parliament_dail_session_complete
+				ireland_parliament_stage_one = yes
+			}
+		}
+		localization_key = ireland_parliament_requirement_dail_stage_met
+	}
+	text = { localization_key = ireland_parliament_requirement_dail_stage_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentDublinStatus
+	text = {
+		trigger = { any_owned_state = { state = 113 } }
+		localization_key = ireland_parliament_requirement_dublin_met
+	}
+	text = { localization_key = ireland_parliament_requirement_dublin_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentNationalSettlementStatus
+	text = {
+		trigger = {
+			has_country_flag = ireland_settlement_open
+			has_completed_focus = ireland_national_settlement
+		}
+		localization_key = ireland_parliament_requirement_national_settlement_met
+	}
+	text = { localization_key = ireland_parliament_requirement_national_settlement_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentSettlementOpenStatus
+	text = {
+		trigger = { has_country_flag = ireland_settlement_open }
+		localization_key = ireland_parliament_requirement_settlement_open_met
+	}
+	text = { localization_key = ireland_parliament_requirement_settlement_open_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentSeanadStageStatus
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = ireland_parliament_seanad_support_complete
+				ireland_parliament_stage_two_or_later = yes
+			}
+		}
+		localization_key = ireland_parliament_requirement_seanad_stage_met
+	}
+	text = { localization_key = ireland_parliament_requirement_seanad_stage_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentConstitutionStatus
+	text = {
+		trigger = { has_completed_focus = ireland_constitutional_draft }
+		localization_key = ireland_parliament_requirement_constitution_met
+	}
+	text = { localization_key = ireland_parliament_requirement_constitution_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentConfidenceStageStatus
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = ireland_parliament_confidence_compact_complete
+				ireland_parliament_stage_three_or_later = yes
+			}
+		}
+		localization_key = ireland_parliament_requirement_confidence_stage_met
+	}
+	text = { localization_key = ireland_parliament_requirement_confidence_stage_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentGovernmentStatus
+	text = {
+		trigger = { has_completed_focus = ireland_government_formation }
+		localization_key = ireland_parliament_requirement_government_met
+	}
+	text = { localization_key = ireland_parliament_requirement_government_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentBudgetStageStatus
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = ireland_parliament_joint_budget_complete
+				ireland_parliament_stage_four_or_later = yes
+			}
+		}
+		localization_key = ireland_parliament_requirement_budget_stage_met
+	}
+	text = { localization_key = ireland_parliament_requirement_budget_stage_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentDailMajorityStatus
+	text = {
+		trigger = { ireland_parliament_dail_majority = yes }
+		localization_key = ireland_parliament_requirement_dail_majority_met
+	}
+	text = { localization_key = ireland_parliament_requirement_dail_majority_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentSeanadMajorityStatus
+	text = {
+		trigger = { ireland_parliament_seanad_majority = yes }
+		localization_key = ireland_parliament_requirement_seanad_majority_met
+	}
+	text = { localization_key = ireland_parliament_requirement_seanad_majority_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentTwentyFivePowerStatus
+	text = {
+		trigger = { has_political_power > constant:ireland.parliament_seanad_pp_gate }
+		localization_key = ireland_parliament_requirement_twenty_five_power_met
+	}
+	text = { localization_key = ireland_parliament_requirement_twenty_five_power_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentThirtyFivePowerStatus
+	text = {
+		trigger = { has_political_power > constant:ireland.parliament_budget_pp_gate }
+		localization_key = ireland_parliament_requirement_thirty_five_power_met
+	}
+	text = { localization_key = ireland_parliament_requirement_thirty_five_power_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentDailCompletionStatus
+	text = {
+		trigger = { NOT = { has_country_flag = ireland_parliament_dail_session_complete } }
+		localization_key = ireland_parliament_requirement_dail_incomplete
+	}
+	text = { localization_key = ireland_parliament_requirement_dail_complete }
+}
+
+defined_text = {
+	name = GetIrelandParliamentSeanadCompletionStatus
+	text = {
+		trigger = { NOT = { has_country_flag = ireland_parliament_seanad_support_complete } }
+		localization_key = ireland_parliament_requirement_seanad_incomplete
+	}
+	text = { localization_key = ireland_parliament_requirement_seanad_complete }
+}
+
+defined_text = {
+	name = GetIrelandParliamentSeanadBelowMajorityStatus
+	text = {
+		trigger = {
+			check_variable = {
+				var = ireland_seanad_government_seats
+				value = ireland_seanad_majority_threshold
+				compare = less_than
+			}
+		}
+		localization_key = ireland_parliament_requirement_seanad_below_majority_met
+	}
+	text = { localization_key = ireland_parliament_requirement_seanad_below_majority_unmet }
+}
+
+defined_text = {
+	name = GetIrelandParliamentConfidenceCompletionStatus
+	text = {
+		trigger = { NOT = { has_country_flag = ireland_parliament_confidence_compact_complete } }
+		localization_key = ireland_parliament_requirement_confidence_incomplete
+	}
+	text = { localization_key = ireland_parliament_requirement_confidence_complete }
+}
+
+defined_text = {
+	name = GetIrelandParliamentBudgetCompletionStatus
+	text = {
+		trigger = { NOT = { has_country_flag = ireland_parliament_joint_budget_complete } }
+		localization_key = ireland_parliament_requirement_budget_incomplete
+	}
+	text = { localization_key = ireland_parliament_requirement_budget_complete }
+}

@@ -1,0 +1,12 @@
+# Ireland real-company industrial concern portraits.
+spriteTypes = {
+	spriteType = { name = GFX_idea_ireland_electricity_supply_board texturefile = "gfx/interface/ideas/ireland/companies/ireland_electricity_supply_board.dds" }
+	spriteType = { name = GFX_idea_ireland_irish_sugar_company texturefile = "gfx/interface/ideas/ireland/companies/ireland_irish_sugar_company.dds" }
+	spriteType = { name = GFX_idea_ireland_turf_development_board texturefile = "gfx/interface/ideas/ireland/companies/ireland_turf_development_board.dds" }
+	spriteType = { name = GFX_idea_ireland_great_southern_railways texturefile = "gfx/interface/ideas/ireland/companies/ireland_great_southern_railways.dds" }
+	spriteType = { name = GFX_idea_ireland_ford_cork_works texturefile = "gfx/interface/ideas/ireland/companies/ireland_ford_cork_works.dds" }
+	spriteType = { name = GFX_idea_ireland_aer_lingus_air_link texturefile = "gfx/interface/ideas/ireland/companies/ireland_aer_lingus_air_link.dds" }
+	spriteType = { name = GFX_idea_ireland_irish_shipping_registry texturefile = "gfx/interface/ideas/ireland/companies/ireland_irish_shipping_registry.dds" }
+	spriteType = { name = GFX_idea_ireland_steel_holdings texturefile = "gfx/interface/ideas/ireland/companies/ireland_steel_holdings.dds" }
+	spriteType = { name = GFX_idea_ireland_harland_and_wolff_access texturefile = "gfx/interface/ideas/ireland/companies/ireland_harland_and_wolff_access.dds" }
+}

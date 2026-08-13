@@ -3,13 +3,12 @@
 Feature slug: `ireland_focus_tree`
 
 Reconciled: 2026-08-13
-Scope: current focus-tree consolidation, reward contracts, AI references, and
-the Parliament scripted-GUI presentation contract.
+Scope: current focus-tree political/industrial/territorial expansion, reward
+contracts, AI references, and the Parliament scripted-GUI presentation contract.
 
-The authoritative implementation report for this pass is
-`docs/plans/ireland_focus_tree/focus_parliament_reward_density_completion_2026-08-13.md`,
-with `focus_tree_parliament_completion_2026-08-09.md` retaining the broader
-system inventory.
+The authoritative implementation record for this pass is
+`docs/ireland_political_industrial_and_territorial_expansion.md`, with the
+earlier completion reports retaining historical inventories.
 Older 211-focus, 216-focus, and 226-focus snapshots below remain historical provenance and
 must not be used as current completion evidence.
 
@@ -21,25 +20,22 @@ remain under `gfx/`.
 
 ## Current audit authority snapshot: 2026-08-13
 
-The live national tree has 150 focuses, three opening roots/trunks, and 150 visual connectors.
-The final MCP inspection reports zero crossings, zero node intersections, zero
+The live national tree has 215 focuses, three opening roots/trunks, and 222 visual connectors.
+The final MCP inspection revision `d8b63828f71934c3` reports zero crossings, zero node intersections, zero
 long connectors, and zero same-row spacing defects. Its authored horizontal
-span is 47 columns, from x -26 through x 21. All focus titles,
+span is 64 columns, from x -42 through x 21. All focus titles,
 descriptions, icons, prerequisite references,
 and AI-plan focus references resolve.
 
 The opening camera anchors on `ireland_state_still_defined`. Three named
 shortcuts identify the only opening trunks: government and politics, national
-development, and defence and security. Culture, diplomacy and neutrality,
-Northern policy, and the Marine Service are ordinary support families that
-reveal only after their existing prerequisites are satisfied. Norton, Clann na
-Talmhan, and the vocational constitution also remain concealed until their
-full route-selection conditions are met. Eight additional
-crisis, radical, or evidence-gated families retain progressive `allow_branch`
-reveal: IRA, Congress, O'Duffy, clerical failure, Ailtirí, High Kingship, Five
-Provinces, and Otherworld. The source therefore has fifteen reveal roots and no
-more than three opening trunks. The continuous-focus palette is explicitly
-placed at `x = 50, y = 2400`, below the final authored focus row.
+development, and defence and security. The National Settlement reveals five
+mutually exclusive public political families. Culture, diplomacy, Northern
+policy, the Marine Service, seven industrial concerns, two military industrial
+organisations, a dedicated territorial
+lane, and exceptional routes reveal only after their prerequisites. The source
+therefore has no more than three opening trunks. The continuous-focus palette is explicitly
+placed at `x = 50, y = 3000`, below the final authored focus row.
 
 Universal focus-reward profiles have been retired. Every surviving focus owns
 a focus-specific tooltip naming its route, project, ledger, action, mission,
@@ -73,6 +69,11 @@ constant category. The invalid `ireland.maritime` category form is absent.
 
 No fallback tree, placeholder reward, alternative seat model, or substitute UI
 surface was introduced.
+
+The current focus-inspection artifact is
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/b08b004fd287b5d1761161ebe673917f0f9bfb0a5e9685c200577e3fb46bdd9a/40d6dbe67ef52ef9e7b5923279b804889b737f840f2dd776af2ed4e017e7badb/focus-inspect.d8b63828f71934c3.json`.
+The decoded-icon raster has no Ireland-local icon failure; its nine reported
+DDS decode errors belong to vanilla continuous-focus textures.
 
 ## Historical authority snapshot: 2026-08-03
 

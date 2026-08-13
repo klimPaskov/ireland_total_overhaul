@@ -77,3 +77,66 @@ No broader mechanic was identified. This audit file is the required handoff: `do
 ## Skills used
 
 Applied `hoi4-decisions-missions`, `hoi4-events`, and `hoi4-subagents`. No skill was created or changed.
+
+## Closure re-audit | 2026-08-13
+
+### Scope and patch
+
+Re-audited the live industrial-contract and territorial-policy package alongside the Parliament decision surface. The only new patch is in `localisation/english/ireland_l_english.yml`:
+
+| Key | Before | After |
+| --- | --- | --- |
+| `ireland_parliament_seanad_button_tt` | The live checklist omitted the `ireland_settlement_open` condition used by the GUI and native action gate. | It now includes `[ROOT.GetIrelandParliamentSettlementOpenStatus]` between the Dáil-stage and National Settlement rows. |
+
+No thumbnail, focus, event, asset, GUI layout, decision, or scripted-helper source was changed in this closure pass.
+
+### Expansion decision contract
+
+| Required surface | Current evidence |
+| --- | --- |
+| Nine company-specific contracts | `ireland_contract_esb_grid_works`, `ireland_contract_transport_fleet`, `ireland_contract_merchant_tonnage`, `ireland_contract_state_materials`, `ireland_contract_ford_motor_works`, `ireland_contract_aer_lingus_transport`, `ireland_contract_turf_fuel_reserve`, `ireland_contract_steel_foundry`, and `ireland_contract_belfast_refit` each have their own unlock flag, one-use action, effect, AI block, and localisation. |
+| Five Northern methods | The democratic plebiscite, communist workers' campaign, fascist ultimatum, oligarchic Belfast compact, and restoration provincial assent are individually route-gated. The plebiscite delegates to the existing supervised-plebiscite mission. |
+| Three noncoercive Atlantic actions | Welsh and Scottish support actions provide an equipment delivery when the recipient exists and always record their political support. The basing action grants access from the current controller of State 120. None grants an Irish core or claim. |
+| Coercive State 119, 120, 122, and 123 actions | The fascist State 119 ultimatum leads to the State 119 enforcement action; State 120 precedes 122, which precedes 123. Each is one-use, is priced and timed, refunds 25 PP when its target becomes invalid, revalidates the live owner/controller and faction relation at completion, and uses the live controller as the war-goal target. |
+| Readiness and strength safeguards | `ireland_atlantic_claim_enforcement_ready` requires peace, the route and Readiness conclusion, Dublin control, Dáil majority, manpower, infantry equipment, support equipment, convoys, fuel, command power, and `alliance_strength_ratio > 0.74`. Each target also checks that its controller remains below the 1.25 direct strength-ratio limit. |
+| Postwar outcomes | State 120, 122, and 123 receive separate local-rights outcomes; States 120 and 122 have Scottish or Welsh protectorate outcomes; State 120 alone has the bounded integration review. All record `ireland_atlantic_state_settlement_recorded`; the conclusion focus sets `ireland_atlantic_settlement_concluded` and clears the review-start flag. |
+
+### Parliament lifecycle and checklist result
+
+The settlement category and scripted GUI become visible once original Ireland has initialized, use `visible_when_empty = yes`, and retain the free opening Dáil action at stage one while Ireland owns Dublin. All four GUI buttons and native actions still call the same guarded executors, with 0, 25, 25, and 35 PP debits respectively.
+
+The complete grey-button checklists now match their canonical availability helpers. The panel itself is hidden when Parliament is not open, so the omitted open-state condition is not a visible grey-button cause. The Dáil checklist names stage, Dublin, and incomplete status. Seanad now names stage, settlement open, National Settlement, Dublin, incomplete status, below-majority status, and 25 PP. Confidence and budget continue to name every stage, focus, settlement, chamber, Dublin, completion, and PP condition relevant to their action.
+
+### Mission quality and cleanup findings
+
+| Mission | Owner | Category | Region | Duration | Success / failure / cleanup | Duplicate risk |
+| --- | --- | --- | --- | --- | --- | --- |
+| `ireland_mission_conduct_a_supervised_plebiscite` | IRE | existing Northern category | State 119 and Dublin evidence | 240 days | Reuses established full, partial, failure, cancellation, material-refund, and capacity cleanup. | Guarded by its active flag. |
+| `ireland_mission_complete_atlantic_settlement` | IRE | `ireland_territorial_policy` | States 120, 122, 123, SCO, and WLS | 365 days | Cancels on `ireland_atlantic_settlement_concluded`; timeout applies the stated penalty only when no settlement was recorded, clears the start flag, and records expiry. | Its one review-start flag prevents a second review action. |
+
+### Remaining parent review items
+
+1. **Medium:** The Atlantic settlement mission is not presently counted by `ireland_update_mission_capacity`, and `ireland_territorial_open_postwar_review` does not check `ireland_can_launch_postwar_mission` before activating it. This can bypass the postwar mission-capacity model.
+2. **Medium:** The Atlantic mission's `cancel_trigger` only watches the conclusion flag. If Ireland loses every relevant State 120, 122, and 123 control position and both subject relationships before conclusion, the stale mission remains until timeout. No per-state reservation flag currently exists to clean on transfer, release, or peace as described in the accepted addendum.
+3. **Low:** The coercive completion blocks revalidate target ownership, control, and faction relation. They do not repeat the readiness or strength checks at the final tick. This is not contrary to the implemented player-facing contract, which promises target revalidation, but it remains the boundary of the present safeguard.
+
+The expansion sources were being actively amended during this audit, so the three items above were reported to the parent rather than patched from this worker.
+
+### Validation evidence
+
+- Confirmed the nine company, five Northern, three noncoercive Atlantic, and staged coercive IDs directly from `common/decisions/ireland_expansion_decisions.txt`.
+- Confirmed the readiness and alliance-ratio trigger against the offline trigger reference and vanilla POR/SWI strength-ratio precedents.
+- Confirmed company, territorial, mission, and Parliament localisation references and the patched English file's UTF-8 BOM.
+- Fresh full `hoi4.gui_inspect` completed without blockers: revision `b13cbfa44bde350de6cbc5442c9acb47c8e8ee2447151f707f9cd14311478c60`, artifact `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/836f41f25c887929c6d73301c7c6b07f9487cdae19502a20144061c71e754560/5001161d5d6325d39ab8015600553acc861da53c1d545adc1a570c4458b5949d/gui-inspect.b13cbfa44bde350d.json`.
+
+### Parent closure of adjacent expansion findings
+
+The three parent-review items above were subsequently closed. The Atlantic
+mission now uses the canonical launch gate, participates in both global and
+postwar capacity counts, and clears its active marker on conclusion, timeout,
+route cleanup, or loss of every relevant controlled-state/subject relation.
+The State 119, 120, 122, and 123 coercive completion blocks repeat the complete
+readiness and exact controller-strength/faction/control contracts before
+issuing an outcome, with the stated Political Power refund if conditions have
+changed. The earlier alliance-ratio note was removed because the action is
+peace-gated; the live target-controller ratio is the meaningful comparison.

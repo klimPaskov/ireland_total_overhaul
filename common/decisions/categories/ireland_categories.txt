@@ -77,7 +77,10 @@ ireland_provision = {
 	}
 	visible = {
 		original_tag = IRE
-		ireland_reveal_category_provision = yes
+		OR = {
+			ireland_reveal_category_provision = yes
+			has_country_flag = ireland_industrial_contracts_open
+		}
 	}
 	visible_when_empty = no
 	priority = 110
@@ -176,6 +179,21 @@ ireland_regional_external = {
 	}
 	visible_when_empty = no
 	priority = 75
+}
+
+# Route-specific Northern and Atlantic claims, demands, and settlement handling.
+ireland_territorial_policy = {
+	icon = GFX_decision_category_ireland_territorial_policy
+	allowed = {
+		original_tag = IRE
+	}
+	visible = {
+		original_tag = IRE
+		has_country_flag = ireland_territorial_policy_open
+		NOT = { has_country_flag = ireland_route_archived }
+	}
+	visible_when_empty = no
+	priority = 112
 }
 
 ireland_postwar = {

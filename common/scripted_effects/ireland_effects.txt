@@ -1266,6 +1266,16 @@ ireland_update_mission_capacity = {
 	ireland_admit_critical_mission = yes
 }
 
+# Territorial diplomacy owns three global pointers while a controller is
+# considering a demand. Global targets are necessary because the recipient's
+# event may remain open after the initiating decision chain ends; every accept,
+# refusal, counteroffer, and stale-target branch must call this cleanup effect.
+ireland_clear_territorial_diplomacy_targets = {
+	clear_global_event_target = ireland_territorial_diplomacy_requester
+	clear_global_event_target = ireland_territorial_diplomacy_target_controller
+	clear_global_event_target = ireland_territorial_diplomacy_target_state
+}
+
 ireland_set_action_tooltip_values = {
 	clamp_variable = { var = ireland_action_burden_input min = constant:ireland.action_burden_min max = constant:ireland.action_burden_max }
 	clamp_variable = { var = ireland_action_cost_input min = constant:ireland.action_cost_min max = constant:ireland.command_power_action_cap }
@@ -4062,6 +4072,7 @@ ireland_cleanup_mission_objectives = {
 	clr_country_flag = ireland_mission_complete_national_reconstruction_active
 	clr_country_flag = ireland_mission_complete_national_reconstruction_complete
 	clr_country_flag = ireland_mission_complete_national_reconstruction_partial
+	clr_country_flag = ireland_mission_complete_atlantic_settlement_active
 	clr_country_flag = ireland_mission_verify_the_restoration_evidence_paused
 	clr_country_flag = ireland_mission_conduct_a_free_general_election_paused
 	clr_country_flag = ireland_mission_deliver_the_education_settlement_paused
@@ -4095,6 +4106,27 @@ ireland_cleanup_route_state = {
 	# Active decision instances are transient work. Route archival hides the
 	# category, but the cleanup must also release every action slot immediately
 	# so counters and GUI projections cannot retain an orphaned action.
+	ireland_clear_territorial_diplomacy_targets = yes
+	clr_country_flag = ireland_territorial_diplomacy_active
+	clr_country_flag = ireland_atlantic_postwar_review_started
+	clr_country_flag = ireland_territorial_ulster_ultimatum_pending
+	clr_country_flag = ireland_territorial_ulster_ultimatum_accept_pending
+	clr_country_flag = ireland_territorial_ulster_ultimatum_counteroffer_pending
+	clr_country_flag = ireland_territorial_ulster_ultimatum_refusal_pending
+	clr_country_flag = ireland_territorial_belfast_compact_pending
+	clr_country_flag = ireland_territorial_belfast_compact_accept_pending
+	clr_country_flag = ireland_territorial_belfast_compact_counteroffer_pending
+	clr_country_flag = ireland_territorial_belfast_compact_refusal_pending
+	clr_country_flag = ireland_highlands_demand_pending
+	clr_country_flag = ireland_highlands_demand_accept_pending
+	clr_country_flag = ireland_highlands_demand_counteroffer_pending
+	clr_country_flag = ireland_highlands_demand_refusal_pending
+	clr_country_flag = ireland_territorial_border_demand_pending
+	clr_country_flag = ireland_territorial_border_demand_accept_pending
+	clr_country_flag = ireland_territorial_border_demand_counteroffer_pending
+	clr_country_flag = ireland_territorial_border_demand_refusal_pending
+	clr_country_flag = ireland_scottish_protectorate_reconstruction_obligation
+	clr_country_flag = ireland_welsh_protectorate_reconstruction_obligation
 	clr_country_flag = ireland_airspace_forced_landing_pending
 	clr_country_flag = ireland_action_convene_a_cabinet_cohesion_review_active
 	clr_country_flag = ireland_action_request_a_confidence_vote_active

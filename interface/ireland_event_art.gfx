@@ -204,4 +204,24 @@ spriteTypes = {
 		name = "GFX_report_event_ireland_report_workers_smallholders_strike"
 		texturefile = "gfx/event_pictures/ireland/ireland_report_workers_smallholders_strike.dds"
 	}
+	spriteType = {
+		name = "GFX_report_event_ireland_territorial_ulster_ultimatum"
+		texturefile = "gfx/event_pictures/ireland_territorial_diplomacy/report_event_ireland_ulster_ultimatum.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_territorial_belfast_compact"
+		texturefile = "gfx/event_pictures/ireland_territorial_diplomacy/report_event_ireland_belfast_compact.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_territorial_highlands_claim"
+		texturefile = "gfx/event_pictures/ireland_territorial_diplomacy/report_event_ireland_highlands_claim.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_territorial_highlands_negotiation"
+		texturefile = "gfx/event_pictures/ireland_territorial_diplomacy/report_event_ireland_highlands_negotiation.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_territorial_ulster_enforcement"
+		texturefile = "gfx/event_pictures/ireland_territorial_diplomacy/report_event_ireland_ulster_enforcement.dds"
+	}
 }

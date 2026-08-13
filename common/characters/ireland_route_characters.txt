@@ -697,13 +697,19 @@ characters = {
 			allowed = { original_tag = IRE }
 			visible = {
 				NOT = { has_country_flag = ireland_route_archived }
-				ireland_route_advisor_vocational = yes
+				OR = {
+					ireland_route_advisor_vocational = yes
+					ireland_route_advisor_restoration_public = yes
+				}
 			}
 			available = {
 				NOT = { has_country_flag = ireland_route_archived }
 				NOT = { has_country_flag = ireland_government_vacancy }
 				NOT = { has_country_flag = ireland_office_cabinet_minister_vacant }
-				ireland_route_advisor_vocational = yes
+				OR = {
+					ireland_route_advisor_vocational = yes
+					ireland_route_advisor_restoration_public = yes
+				}
 			}
 			traits = { compassionate_gentleman }
 			cost = 100
@@ -721,13 +727,19 @@ characters = {
 			allowed = { original_tag = IRE }
 			visible = {
 				NOT = { has_country_flag = ireland_route_archived }
-				ireland_route_advisor_vocational = yes
+				OR = {
+					ireland_route_advisor_vocational = yes
+					ireland_route_advisor_restoration_public = yes
+				}
 			}
 			available = {
 				NOT = { has_country_flag = ireland_route_archived }
 				NOT = { has_country_flag = ireland_government_vacancy }
 				NOT = { has_country_flag = ireland_office_cabinet_minister_vacant }
-				ireland_route_advisor_vocational = yes
+				OR = {
+					ireland_route_advisor_vocational = yes
+					ireland_route_advisor_restoration_public = yes
+				}
 			}
 			traits = { compassionate_gentleman }
 			cost = 100
@@ -996,14 +1008,14 @@ characters = {
 			visible = {
 				NOT = { has_country_flag = ireland_route_archived }
 				date > "1942.5.31"
-				ireland_route_advisor_ailtiri = yes
+				ireland_route_advisor_blueshirt_or_ailtiri = yes
 			}
 			available = {
 				NOT = { has_country_flag = ireland_route_archived }
 				NOT = { has_country_flag = ireland_route_closed }
 				NOT = { has_country_flag = ireland_route_cleanup }
 				date > "1942.5.31"
-				ireland_route_advisor_ailtiri = yes
+				ireland_route_advisor_blueshirt_or_ailtiri = yes
 			}
 			traits = { war_industrialist }
 			cost = 100
@@ -1125,12 +1137,18 @@ characters = {
 			allowed = { original_tag = IRE }
 			visible = {
 				NOT = { has_country_flag = ireland_route_archived }
-				ireland_route_advisor_vocational = yes
+				OR = {
+					ireland_route_advisor_vocational = yes
+					ireland_route_advisor_restoration_public = yes
+				}
 			}
 			available = {
 				NOT = { has_country_flag = ireland_route_archived }
 				NOT = { has_country_flag = ireland_government_vacancy }
-				ireland_route_advisor_vocational = yes
+				OR = {
+					ireland_route_advisor_vocational = yes
+					ireland_route_advisor_restoration_public = yes
+				}
 			}
 			traits = { popular_figurehead }
 			cost = 100
@@ -1286,12 +1304,12 @@ characters = {
 			allowed = { original_tag = IRE }
 			visible = {
 				NOT = { has_country_flag = ireland_route_archived }
-				ireland_route_advisor_oduffy = yes
+				ireland_route_advisor_oduffy_command = yes
 			}
 			available = {
 				NOT = { has_country_flag = ireland_route_archived }
 				NOT = { has_country_flag = ireland_route_closed }
-				ireland_route_advisor_oduffy = yes
+				ireland_route_advisor_oduffy_command = yes
 			}
 			traits = { war_industrialist }
 			cost = 100

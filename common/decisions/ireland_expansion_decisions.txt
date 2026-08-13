@@ -1,0 +1,923 @@
+# Ireland industrial-contract and territorial-policy decisions.
+# File-local macros are used because native decision cost and timer fields are
+# documented macro consumers and reject fixed-point script-constant tokens.
+@IRELAND_INDUSTRIAL_CONTRACT_PP_COST = 25
+@IRELAND_INDUSTRIAL_CONTRACT_DAYS = 35
+@IRELAND_TERRITORIAL_CLAIM_PP_COST = 50
+@IRELAND_TERRITORIAL_CLAIM_DAYS = 70
+@IRELAND_TERRITORIAL_WARGOAL_DAYS = 180
+@IRELAND_CONTRACT_INFRASTRUCTURE_LEVEL = 1
+@IRELAND_CONTRACT_FACTORY_LEVEL = 1
+@IRELAND_CONTRACT_MOTORISED = 25
+@IRELAND_CONTRACT_TRAINS = 1
+@IRELAND_CONTRACT_CONVOYS = 5
+@IRELAND_CONTRACT_TRANSPORT_PLANES = 2
+@IRELAND_CONTRACT_FUEL = 250
+@IRELAND_CONTRACT_EXPERIENCE = 5
+@IRELAND_CONTRACT_AI_STANDARD = 8
+@IRELAND_CONTRACT_AI_CONSTRUCTION = 6
+@IRELAND_TERRITORIAL_METHOD_PP_COST = 25
+@IRELAND_TERRITORIAL_METHOD_DAYS = 35
+@IRELAND_TERRITORIAL_REVIEW_PP_COST = 25
+@IRELAND_TERRITORIAL_REVIEW_DAYS = 35
+@IRELAND_TERRITORIAL_MISSION_DAYS = 365
+@IRELAND_TERRITORIAL_CANCELLATION_REFUND = 25
+@IRELAND_TERRITORIAL_LEDGER_MAJOR = 5
+@IRELAND_TERRITORIAL_LEDGER_STANDARD = 3
+@IRELAND_TERRITORIAL_LEDGER_MINOR = 2
+@IRELAND_TERRITORIAL_LIBERATION_RIFLES = 250
+@IRELAND_TERRITORIAL_MINOR_STABILITY = 0.02
+@IRELAND_TERRITORIAL_FAILURE_STABILITY = -0.05
+@IRELAND_TERRITORIAL_FAILURE_WAR_SUPPORT = -0.05
+@IRELAND_TERRITORIAL_RIGHTS_RESISTANCE = -10
+@IRELAND_TERRITORIAL_RIGHTS_COMPLIANCE = 10
+@IRELAND_TERRITORIAL_INTEGRATION_COMPLIANCE_GATE = 59
+@IRELAND_TERRITORIAL_INTEGRATION_RESISTANCE_GATE = 15
+@IRELAND_TERRITORIAL_AI_STANDARD = 8
+@IRELAND_TERRITORIAL_AI_PREFERRED = 12
+@IRELAND_TERRITORIAL_AI_REVIEW = 20
+@IRELAND_TERRITORIAL_AI_COERCIVE = 1
+@IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT = 1.25
+
+ireland_provision = {
+	ireland_contract_esb_grid_works = {
+		icon = GFX_decision_ireland_rebalance_fuel_allocation
+		visible = { has_country_flag = ireland_company_esb_unlocked }
+		available = {
+			has_political_power > 24
+			OR = {
+				has_country_flag = ireland_family_democratic
+				has_country_flag = ireland_family_oligarchic
+				has_completed_focus = ireland_democratic_reconstruction
+			}
+		}
+		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
+		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_building_construction = { type = infrastructure level = @IRELAND_CONTRACT_INFRASTRUCTURE_LEVEL instant_build = yes }
+			}
+		}
+		ai_will_do = { base = @IRELAND_CONTRACT_AI_STANDARD modifier = { factor = 0 has_war = yes } }
+	}
+
+	ireland_contract_transport_fleet = {
+		icon = GFX_decision_ireland_motorise_a_strategic_route
+		visible = { has_country_flag = ireland_company_railways_unlocked }
+		available = {
+			has_political_power > 24
+			OR = {
+				has_country_flag = ireland_family_democratic
+				has_country_flag = ireland_family_restoration
+				has_completed_focus = ireland_crown_defence_council
+			}
+		}
+		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
+		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			add_equipment_to_stockpile = { type = motorized_equipment amount = @IRELAND_CONTRACT_MOTORISED }
+			add_equipment_to_stockpile = { type = train_equipment amount = @IRELAND_CONTRACT_TRAINS }
+		}
+		ai_will_do = { base = @IRELAND_CONTRACT_AI_STANDARD }
+	}
+
+	ireland_contract_merchant_tonnage = {
+		icon = GFX_decision_ireland_purchase_a_merchant_vessel
+		visible = { has_country_flag = ireland_company_shipping_unlocked }
+		available = { has_political_power > 24 }
+		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
+		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		fire_only_once = yes
+		complete_effect = { add_equipment_to_stockpile = { type = convoy amount = @IRELAND_CONTRACT_CONVOYS } }
+		ai_will_do = { base = @IRELAND_CONTRACT_AI_STANDARD }
+	}
+
+	ireland_contract_state_materials = {
+		icon = GFX_decision_ireland_commission_a_developmental_plant
+		visible = { has_country_flag = ireland_company_sugar_unlocked }
+		available = {
+			has_political_power > 24
+			OR = {
+				has_country_flag = ireland_family_communist
+				has_country_flag = ireland_family_oligarchic
+				has_completed_focus = ireland_workers_reconstruction_board
+			}
+		}
+		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
+		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = @IRELAND_CONTRACT_FACTORY_LEVEL
+				add_building_construction = { type = industrial_complex level = @IRELAND_CONTRACT_FACTORY_LEVEL instant_build = yes }
+			}
+		}
+		ai_will_do = { base = @IRELAND_CONTRACT_AI_CONSTRUCTION modifier = { factor = 0 has_war = yes } }
+	}
+
+	ireland_contract_ford_motor_works = {
+		icon = GFX_decision_ireland_motorise_a_strategic_route
+		visible = { has_country_flag = ireland_company_ford_cork_unlocked }
+		available = {
+			has_political_power > 24
+			OR = {
+				has_country_flag = ireland_family_fascist
+				has_country_flag = ireland_family_democratic
+				has_completed_focus = ireland_motorised_command_contracts
+			}
+		}
+		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
+		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			add_equipment_to_stockpile = { type = motorized_equipment amount = @IRELAND_CONTRACT_MOTORISED }
+			army_experience = @IRELAND_CONTRACT_EXPERIENCE
+		}
+		ai_will_do = { base = @IRELAND_CONTRACT_AI_STANDARD }
+	}
+
+	ireland_contract_aer_lingus_transport = {
+		icon = GFX_decision_ireland_intercept_an_airspace_violation
+		visible = { has_country_flag = ireland_company_aer_lingus_unlocked }
+		available = { has_political_power > 24 }
+		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
+		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			add_equipment_to_stockpile = { type = transport_plane_equipment_1 amount = @IRELAND_CONTRACT_TRANSPORT_PLANES }
+			air_experience = @IRELAND_CONTRACT_EXPERIENCE
+		}
+		ai_will_do = { base = @IRELAND_CONTRACT_AI_STANDARD }
+	}
+
+	ireland_contract_turf_fuel_reserve = {
+		icon = GFX_decision_ireland_rebalance_fuel_allocation
+		visible = { has_country_flag = ireland_company_turf_unlocked }
+		available = { has_political_power > 24 }
+		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
+		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		fire_only_once = yes
+		complete_effect = { add_fuel = @IRELAND_CONTRACT_FUEL }
+		ai_will_do = { base = @IRELAND_CONTRACT_AI_STANDARD }
+	}
+
+	ireland_contract_steel_foundry = {
+		icon = GFX_decision_ireland_commission_a_developmental_plant
+		visible = { has_country_flag = ireland_company_steel_unlocked }
+		available = { has_political_power > 24 }
+		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
+		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = @IRELAND_CONTRACT_FACTORY_LEVEL
+				add_building_construction = { type = arms_factory level = @IRELAND_CONTRACT_FACTORY_LEVEL instant_build = yes }
+			}
+		}
+		ai_will_do = { base = @IRELAND_CONTRACT_AI_CONSTRUCTION modifier = { factor = 0 has_war = yes } }
+	}
+
+	ireland_contract_belfast_refit = {
+		icon = GFX_decision_ireland_purchase_a_merchant_vessel
+		visible = { has_country_flag = ireland_company_harland_wolff_unlocked }
+		available = { has_political_power > 24 119 = { is_owned_and_controlled_by = ROOT } }
+		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
+		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			119 = {
+				add_extra_state_shared_building_slots = @IRELAND_CONTRACT_FACTORY_LEVEL
+				add_building_construction = { type = dockyard level = @IRELAND_CONTRACT_FACTORY_LEVEL instant_build = yes }
+			}
+			navy_experience = @IRELAND_CONTRACT_EXPERIENCE
+		}
+		ai_will_do = { base = @IRELAND_CONTRACT_AI_STANDARD }
+	}
+}
+
+ireland_territorial_policy = {
+	# Each public political family receives an explicit Northern instrument.
+	ireland_territorial_open_northern_plebiscite = {
+		icon = GFX_decision_ireland_protect_northern_campaign_freedom
+		visible = { has_country_flag = ireland_territorial_method_democratic NOT = { has_country_flag = ireland_territorial_plebiscite_opened } }
+		available = {
+			has_political_power > 24
+			is_at_war = no
+			NOT = { has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_active }
+			119 = { NOT = { is_owned_by = ROOT } }
+		}
+		cost = @IRELAND_TERRITORIAL_METHOD_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_METHOD_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = ireland_territorial_plebiscite_opened
+			set_country_flag = ireland_mission_conduct_a_supervised_plebiscite_active
+			activate_mission = ireland_mission_conduct_a_supervised_plebiscite
+			ireland_update_mission_capacity = yes
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+	}
+
+	ireland_territorial_workers_border_campaign = {
+		icon = GFX_decision_ireland_protect_northern_campaign_freedom
+		visible = { has_country_flag = ireland_territorial_method_communist NOT = { has_country_flag = ireland_territorial_workers_campaign_complete } }
+		available = { has_political_power > 24 is_at_war = no }
+		cost = @IRELAND_TERRITORIAL_METHOD_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_METHOD_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { var = ireland_northern_nationalist_consent value = @IRELAND_TERRITORIAL_LEDGER_MAJOR }
+			add_to_variable = { var = ireland_northern_unionist_consent value = @IRELAND_TERRITORIAL_LEDGER_MINOR }
+			add_to_variable = { var = ireland_social_consent value = @IRELAND_TERRITORIAL_LEDGER_STANDARD }
+			set_country_flag = ireland_territorial_workers_campaign_complete
+			set_country_flag = ireland_northern_policy_selected
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+	}
+
+	ireland_territorial_deliver_ulster_ultimatum = {
+		icon = GFX_decision_ireland_claim_scottish_highlands
+		visible = { has_country_flag = ireland_territorial_method_fascist NOT = { has_country_flag = ireland_territorial_ulster_ultimatum_delivered } NOT = { has_country_flag = ireland_territorial_diplomacy_active } }
+		available = {
+			custom_trigger_tooltip = { tooltip = ireland_territorial_diplomacy_cooldown_requirement_tt NOT = { has_country_flag = ireland_territorial_diplomacy_cooldown } }
+			has_political_power > 49
+			ireland_atlantic_claim_enforcement_ready = yes
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_ulster_target_requirement_tt
+				119 = {
+					NOT = { is_owned_by = ROOT }
+					NOT = { is_controlled_by = ROOT }
+					controller = {
+						NOT = { is_in_faction_with = ROOT }
+						strength_ratio = { tag = ROOT ratio < @IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT }
+					}
+				}
+			}
+		}
+		cost = @IRELAND_TERRITORIAL_CLAIM_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_CLAIM_DAYS
+		fire_only_once = yes
+		cancel_trigger = {
+			119 = { OR = { is_owned_by = ROOT is_controlled_by = ROOT controller = { is_in_faction_with = ROOT } } }
+		}
+		cancel_effect = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
+		complete_effect = {
+			if = {
+				limit = {
+					ireland_atlantic_claim_enforcement_ready = yes
+					119 = {
+						NOT = { is_owned_by = ROOT }
+						NOT = { is_controlled_by = ROOT }
+						controller = {
+							NOT = { is_in_faction_with = ROOT }
+							strength_ratio = { tag = ROOT ratio < @IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT }
+						}
+					}
+				}
+				set_country_flag = ireland_territorial_ulster_ultimatum_delivered
+				set_country_flag = ireland_territorial_ulster_ultimatum_pending
+				set_country_flag = ireland_territorial_diplomacy_active
+				clear_global_event_target = ireland_territorial_diplomacy_requester
+				clear_global_event_target = ireland_territorial_diplomacy_target_controller
+				clear_global_event_target = ireland_territorial_diplomacy_target_state
+				save_global_event_target_as = ireland_territorial_diplomacy_requester
+				119 = {
+					save_global_event_target_as = ireland_territorial_diplomacy_target_state
+					controller = {
+						save_global_event_target_as = ireland_territorial_diplomacy_target_controller
+						country_event = { id = ireland_territorial_diplomacy.1 }
+					}
+				}
+			}
+			else = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_COERCIVE modifier = { factor = 0 is_historical_focus_on = yes } }
+	}
+
+	ireland_territorial_offer_belfast_compact = {
+		icon = GFX_decision_ireland_protect_atlantic_route
+		visible = { has_country_flag = ireland_territorial_method_oligarchic NOT = { has_country_flag = ireland_territorial_belfast_compact_offered } NOT = { has_country_flag = ireland_territorial_diplomacy_active } }
+		available = {
+			custom_trigger_tooltip = { tooltip = ireland_territorial_diplomacy_cooldown_requirement_tt NOT = { has_country_flag = ireland_territorial_diplomacy_cooldown } }
+			has_political_power > 24
+			is_at_war = no
+			119 = {
+				NOT = { is_owned_by = ROOT }
+				NOT = { is_controlled_by = ROOT }
+				controller = { NOT = { is_in_faction_with = ROOT } }
+			}
+		}
+		cost = @IRELAND_TERRITORIAL_METHOD_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_METHOD_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = ireland_territorial_belfast_compact_offered
+			set_country_flag = ireland_territorial_belfast_compact_pending
+			set_country_flag = ireland_territorial_diplomacy_active
+			clear_global_event_target = ireland_territorial_diplomacy_requester
+			clear_global_event_target = ireland_territorial_diplomacy_target_controller
+			clear_global_event_target = ireland_territorial_diplomacy_target_state
+			save_global_event_target_as = ireland_territorial_diplomacy_requester
+			119 = {
+				save_global_event_target_as = ireland_territorial_diplomacy_target_state
+				controller = {
+					save_global_event_target_as = ireland_territorial_diplomacy_target_controller
+					country_event = { id = ireland_territorial_diplomacy.5 }
+				}
+			}
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+	}
+
+	ireland_territorial_convene_provincial_assent = {
+		icon = GFX_decision_ireland_survey_provincial_archives
+		visible = {
+			has_country_flag = ireland_territorial_method_restoration
+			has_country_flag = ireland_provincial_compact_open
+			NOT = { has_country_flag = ireland_territorial_provincial_assent_complete }
+		}
+		available = { has_political_power > 24 has_country_flag = ireland_high_king_evidence_verified is_at_war = no }
+		cost = @IRELAND_TERRITORIAL_METHOD_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_METHOD_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { var = ireland_northern_nationalist_consent value = @IRELAND_TERRITORIAL_LEDGER_STANDARD }
+			add_to_variable = { var = ireland_northern_unionist_consent value = @IRELAND_TERRITORIAL_LEDGER_STANDARD }
+			set_country_flag = ireland_territorial_provincial_assent_complete
+			set_country_flag = ireland_northern_policy_selected
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_STANDARD modifier = { factor = 0 is_historical_focus_on = yes } }
+	}
+
+	ireland_territorial_enforce_border_demand = {
+		icon = GFX_decision_ireland_claim_scottish_highlands
+		visible = { has_country_flag = ireland_territorial_border_enforcement_open NOT = { has_country_flag = ireland_ulster_border_wargoal_issued } NOT = { has_country_flag = ireland_territorial_diplomacy_active } }
+		available = {
+			custom_trigger_tooltip = { tooltip = ireland_territorial_diplomacy_cooldown_requirement_tt NOT = { has_country_flag = ireland_territorial_diplomacy_cooldown } }
+			has_political_power > 49
+			ireland_atlantic_claim_enforcement_ready = yes
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_ulster_target_requirement_tt
+				119 = { NOT = { is_owned_by = ROOT } NOT = { is_controlled_by = ROOT } controller = { NOT = { is_in_faction_with = ROOT } strength_ratio = { tag = ROOT ratio < @IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT } } }
+			}
+		}
+		cost = @IRELAND_TERRITORIAL_CLAIM_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_CLAIM_DAYS
+		fire_only_once = yes
+		cancel_trigger = { 119 = { OR = { is_owned_by = ROOT is_controlled_by = ROOT controller = { is_in_faction_with = ROOT } } } }
+		cancel_effect = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
+		complete_effect = {
+			if = {
+				limit = {
+					ireland_atlantic_claim_enforcement_ready = yes
+					119 = {
+						NOT = { is_owned_by = ROOT }
+						NOT = { is_controlled_by = ROOT }
+						controller = {
+							NOT = { is_in_faction_with = ROOT }
+							strength_ratio = { tag = ROOT ratio < @IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT }
+						}
+					}
+				}
+				set_country_flag = ireland_territorial_border_demand_pending
+				set_country_flag = ireland_territorial_diplomacy_active
+				clear_global_event_target = ireland_territorial_diplomacy_requester
+				clear_global_event_target = ireland_territorial_diplomacy_target_controller
+				clear_global_event_target = ireland_territorial_diplomacy_target_state
+				save_global_event_target_as = ireland_territorial_diplomacy_requester
+				119 = {
+					save_global_event_target_as = ireland_territorial_diplomacy_target_state
+					controller = {
+						save_global_event_target_as = ireland_territorial_diplomacy_target_controller
+						country_event = { id = ireland_territorial_diplomacy.13 }
+					}
+				}
+			}
+			else = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_COERCIVE modifier = { factor = 0 is_historical_focus_on = yes } }
+	}
+
+	# Non-annexation Atlantic policies remain materially useful without claims.
+	ireland_territorial_support_welsh_republic = {
+		icon = GFX_decision_ireland_claim_wales
+		visible = { has_country_flag = ireland_atlantic_liberation_path NOT = { has_country_flag = ireland_welsh_republic_supported } }
+		available = { has_political_power > 24 }
+		cost = @IRELAND_TERRITORIAL_METHOD_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_METHOD_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			if = { limit = { WLS = { exists = yes } } WLS = { add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_TERRITORIAL_LIBERATION_RIFLES } } }
+			set_country_flag = ireland_welsh_republic_supported
+			add_war_support = @IRELAND_TERRITORIAL_MINOR_STABILITY
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_STANDARD }
+	}
+
+	ireland_territorial_support_scottish_republic = {
+		icon = GFX_decision_ireland_claim_scottish_highlands
+		visible = { has_country_flag = ireland_atlantic_liberation_path NOT = { has_country_flag = ireland_scottish_republic_supported } }
+		available = { has_political_power > 24 }
+		cost = @IRELAND_TERRITORIAL_METHOD_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_METHOD_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			if = { limit = { SCO = { exists = yes } } SCO = { add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_TERRITORIAL_LIBERATION_RIFLES } } }
+			set_country_flag = ireland_scottish_republic_supported
+			add_war_support = @IRELAND_TERRITORIAL_MINOR_STABILITY
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_STANDARD }
+	}
+
+	ireland_territorial_negotiate_atlantic_basing = {
+		icon = GFX_decision_ireland_protect_atlantic_route
+		visible = { OR = { has_country_flag = ireland_atlantic_security_path has_country_flag = ireland_atlantic_concessions_path } NOT = { has_country_flag = ireland_atlantic_basing_negotiated } }
+		available = { has_political_power > 24 120 = { controller = { NOT = { tag = ROOT } } } }
+		cost = @IRELAND_TERRITORIAL_METHOD_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_METHOD_DAYS
+		fire_only_once = yes
+		complete_effect = {
+			120 = { controller = { give_military_access = ROOT } }
+			set_country_flag = ireland_atlantic_basing_negotiated
+			add_stability = @IRELAND_TERRITORIAL_MINOR_STABILITY
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_STANDARD }
+	}
+
+	ireland_territorial_demand_highlands_settlement = {
+		icon = GFX_decision_ireland_claim_scottish_highlands
+		visible = {
+			has_country_flag = ireland_atlantic_claim_enforcement_open
+			OR = { has_country_flag = ireland_atlantic_claims_fascist has_country_flag = ireland_atlantic_claims_restoration }
+			NOT = { has_country_flag = ireland_highlands_wargoal_issued }
+			NOT = { has_country_flag = ireland_territorial_diplomacy_active }
+		}
+		available = {
+			custom_trigger_tooltip = { tooltip = ireland_territorial_diplomacy_cooldown_requirement_tt NOT = { has_country_flag = ireland_territorial_diplomacy_cooldown } }
+			custom_trigger_tooltip = {
+				tooltip = ireland_atlantic_claim_enforcement_ready_tt
+				ireland_atlantic_claim_enforcement_ready = yes
+			}
+			has_political_power > 49
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_claim_foreign_controller_requirement_tt
+				120 = {
+					NOT = { is_owned_by = ROOT }
+					NOT = { is_controlled_by = ROOT }
+					controller = { NOT = { is_in_faction_with = ROOT } }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_claim_strength_requirement_tt
+				120 = { controller = { strength_ratio = { tag = ROOT ratio < @IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT } } }
+			}
+		}
+		cost = @IRELAND_TERRITORIAL_CLAIM_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_CLAIM_DAYS
+		cancel_trigger = { 120 = { OR = { is_owned_by = ROOT is_controlled_by = ROOT controller = { is_in_faction_with = ROOT } } } }
+		cancel_effect = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
+		complete_effect = {
+			if = {
+				limit = {
+					ireland_atlantic_claim_enforcement_ready = yes
+					120 = {
+						NOT = { is_owned_by = ROOT }
+						NOT = { is_controlled_by = ROOT }
+						controller = {
+							NOT = { is_in_faction_with = ROOT }
+							strength_ratio = { tag = ROOT ratio < @IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT }
+						}
+					}
+				}
+				set_country_flag = ireland_highlands_demand_delivered
+				set_country_flag = ireland_highlands_demand_pending
+				set_country_flag = ireland_territorial_diplomacy_active
+				clear_global_event_target = ireland_territorial_diplomacy_requester
+				clear_global_event_target = ireland_territorial_diplomacy_target_controller
+				clear_global_event_target = ireland_territorial_diplomacy_target_state
+				save_global_event_target_as = ireland_territorial_diplomacy_requester
+				120 = {
+					save_global_event_target_as = ireland_territorial_diplomacy_target_state
+					controller = {
+						save_global_event_target_as = ireland_territorial_diplomacy_target_controller
+						country_event = { id = ireland_territorial_diplomacy.9 }
+					}
+				}
+			}
+			else = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_COERCIVE modifier = { factor = 0 is_historical_focus_on = yes } }
+	}
+
+	ireland_territorial_claim_wales = {
+		icon = GFX_decision_ireland_claim_wales
+		visible = { has_country_flag = ireland_atlantic_claims_fascist NOT = { has_country_flag = ireland_wales_wargoal_issued } }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_atlantic_claim_enforcement_ready_tt
+				ireland_atlantic_claim_enforcement_ready = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_wales_naval_access_requirement_tt
+				ireland_territorial_wales_naval_access_proven = yes
+			}
+			has_political_power > 49
+			has_country_flag = ireland_highlands_wargoal_issued
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_claim_foreign_controller_requirement_tt
+				122 = {
+					NOT = { is_owned_by = ROOT }
+					NOT = { is_controlled_by = ROOT }
+					controller = { NOT = { is_in_faction_with = ROOT } }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_claim_strength_requirement_tt
+				122 = { controller = { strength_ratio = { tag = ROOT ratio < @IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT } } }
+			}
+		}
+		cost = @IRELAND_TERRITORIAL_CLAIM_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_CLAIM_DAYS
+		cancel_trigger = { 122 = { OR = { is_owned_by = ROOT is_controlled_by = ROOT controller = { is_in_faction_with = ROOT } } } }
+		cancel_effect = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
+		complete_effect = {
+			if = {
+				limit = {
+					ireland_atlantic_claim_enforcement_ready = yes
+					ireland_territorial_wales_naval_access_proven = yes
+					122 = {
+						NOT = { is_owned_by = ROOT }
+						NOT = { is_controlled_by = ROOT }
+						controller = {
+							NOT = { is_in_faction_with = ROOT }
+							strength_ratio = { tag = ROOT ratio < @IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT }
+						}
+					}
+				}
+				122 = { add_claim_by = ROOT controller = { ROOT = { create_wargoal = { type = take_claimed_state target = PREV generator = { 122 } expire = @IRELAND_TERRITORIAL_WARGOAL_DAYS } } } }
+				set_country_flag = ireland_wales_wargoal_issued
+			}
+			else = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_COERCIVE modifier = { factor = 0 is_historical_focus_on = yes } }
+	}
+
+	ireland_territorial_claim_cornwall = {
+		icon = GFX_decision_ireland_claim_cornwall
+		visible = { has_country_flag = ireland_atlantic_claims_fascist NOT = { has_country_flag = ireland_cornwall_wargoal_issued } }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_atlantic_claim_enforcement_ready_tt
+				ireland_atlantic_claim_enforcement_ready = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_cornwall_naval_access_requirement_tt
+				ireland_territorial_cornwall_naval_access_proven = yes
+			}
+			has_political_power > 49
+			has_country_flag = ireland_wales_wargoal_issued
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_claim_foreign_controller_requirement_tt
+				123 = {
+					NOT = { is_owned_by = ROOT }
+					NOT = { is_controlled_by = ROOT }
+					controller = { NOT = { is_in_faction_with = ROOT } }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_claim_strength_requirement_tt
+				123 = { controller = { strength_ratio = { tag = ROOT ratio < @IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT } } }
+			}
+		}
+		cost = @IRELAND_TERRITORIAL_CLAIM_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_CLAIM_DAYS
+		cancel_trigger = { 123 = { OR = { is_owned_by = ROOT is_controlled_by = ROOT controller = { is_in_faction_with = ROOT } } } }
+		cancel_effect = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
+		complete_effect = {
+			if = {
+				limit = {
+					ireland_atlantic_claim_enforcement_ready = yes
+					ireland_territorial_cornwall_naval_access_proven = yes
+					123 = {
+						NOT = { is_owned_by = ROOT }
+						NOT = { is_controlled_by = ROOT }
+						controller = {
+							NOT = { is_in_faction_with = ROOT }
+							strength_ratio = { tag = ROOT ratio < @IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT }
+						}
+					}
+				}
+				123 = { add_claim_by = ROOT controller = { ROOT = { create_wargoal = { type = take_claimed_state target = PREV generator = { 123 } expire = @IRELAND_TERRITORIAL_WARGOAL_DAYS } } } }
+				set_country_flag = ireland_cornwall_wargoal_issued
+			}
+			else = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_COERCIVE modifier = { factor = 0 is_historical_focus_on = yes } }
+	}
+
+	# Postwar handling is explicit and state-scoped. The mission prevents an
+	# external occupation from remaining indefinitely without a declared policy.
+	ireland_territorial_open_postwar_review = {
+		icon = GFX_decision_ireland_claim_scottish_highlands
+		visible = {
+			has_country_flag = ireland_atlantic_postwar_review_open
+			NOT = { has_country_flag = ireland_atlantic_postwar_review_started }
+			NOT = { has_country_flag = ireland_atlantic_settlement_review_expired }
+			NOT = { has_country_flag = ireland_atlantic_settlement_concluded }
+		}
+		available = {
+			has_political_power > 24
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_postwar_unresolved_requirement_tt
+				NOT = { ireland_atlantic_settlement_all_relevant_resolved = yes }
+			}
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_postwar_capacity_requirement_tt
+				ireland_can_launch_postwar_mission = yes
+				NOT = { has_country_flag = ireland_category_postwar_at_capacity }
+			}
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_postwar_scope_requirement_tt
+				ireland_atlantic_settlement_scope_exists = yes
+			}
+		}
+		cost = @IRELAND_TERRITORIAL_REVIEW_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_REVIEW_DAYS
+		cancel_trigger = {
+			OR = {
+				NOT = { ireland_can_launch_postwar_mission = yes }
+				has_country_flag = ireland_category_postwar_at_capacity
+				AND = {
+					120 = { NOT = { is_controlled_by = ROOT } }
+					122 = { NOT = { is_controlled_by = ROOT } }
+					123 = { NOT = { is_controlled_by = ROOT } }
+					SCO = { NOT = { is_subject_of = ROOT } }
+					WLS = { NOT = { is_subject_of = ROOT } }
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = @IRELAND_TERRITORIAL_REVIEW_PP_COST
+			custom_effect_tooltip = ireland_territorial_postwar_launch_cancelled_tt
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					ireland_can_launch_postwar_mission = yes
+					NOT = { has_country_flag = ireland_category_postwar_at_capacity }
+					ireland_atlantic_settlement_scope_exists = yes
+					NOT = { ireland_atlantic_settlement_all_relevant_resolved = yes }
+				}
+				set_country_flag = ireland_atlantic_postwar_review_started
+				set_country_flag = ireland_mission_complete_atlantic_settlement_active
+				activate_mission = ireland_mission_complete_atlantic_settlement
+				ireland_update_mission_capacity = yes
+			}
+			else = {
+				add_political_power = @IRELAND_TERRITORIAL_REVIEW_PP_COST
+				custom_effect_tooltip = ireland_territorial_postwar_launch_cancelled_tt
+			}
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_REVIEW }
+	}
+
+	ireland_territorial_apply_local_rights_highlands = {
+		icon = GFX_decision_ireland_survey_provincial_archives
+		visible = { has_country_flag = ireland_atlantic_rights_charter NOT = { has_country_flag = ireland_highlands_rights_settlement } }
+		available = { 120 = { is_controlled_by = ROOT } }
+		cost = @IRELAND_TERRITORIAL_REVIEW_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_REVIEW_DAYS
+		fire_only_once = yes
+		cancel_trigger = { 120 = { NOT = { is_controlled_by = ROOT } } }
+		cancel_effect = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_settlement_review_cancelled_tt }
+		complete_effect = { 120 = { add_resistance = @IRELAND_TERRITORIAL_RIGHTS_RESISTANCE add_compliance = @IRELAND_TERRITORIAL_RIGHTS_COMPLIANCE } set_country_flag = ireland_highlands_rights_settlement }
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+	}
+
+	ireland_territorial_apply_local_rights_wales = {
+		icon = GFX_decision_ireland_survey_provincial_archives
+		visible = { has_country_flag = ireland_atlantic_rights_charter NOT = { has_country_flag = ireland_wales_rights_settlement } }
+		available = { 122 = { is_controlled_by = ROOT } }
+		cost = @IRELAND_TERRITORIAL_REVIEW_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_REVIEW_DAYS
+		fire_only_once = yes
+		cancel_trigger = { 122 = { NOT = { is_controlled_by = ROOT } } }
+		cancel_effect = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_settlement_review_cancelled_tt }
+		complete_effect = { 122 = { add_resistance = @IRELAND_TERRITORIAL_RIGHTS_RESISTANCE add_compliance = @IRELAND_TERRITORIAL_RIGHTS_COMPLIANCE } set_country_flag = ireland_wales_rights_settlement }
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+	}
+
+	ireland_territorial_apply_local_rights_cornwall = {
+		icon = GFX_decision_ireland_survey_provincial_archives
+		visible = { has_country_flag = ireland_atlantic_rights_charter NOT = { has_country_flag = ireland_cornwall_rights_settlement } }
+		available = { 123 = { is_controlled_by = ROOT } }
+		cost = @IRELAND_TERRITORIAL_REVIEW_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_REVIEW_DAYS
+		fire_only_once = yes
+		cancel_trigger = { 123 = { NOT = { is_controlled_by = ROOT } } }
+		cancel_effect = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_settlement_review_cancelled_tt }
+		complete_effect = { 123 = { add_resistance = @IRELAND_TERRITORIAL_RIGHTS_RESISTANCE add_compliance = @IRELAND_TERRITORIAL_RIGHTS_COMPLIANCE } set_country_flag = ireland_cornwall_rights_settlement }
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+	}
+
+	ireland_territorial_release_scottish_protectorate = {
+		icon = GFX_decision_ireland_claim_scottish_highlands
+		visible = { has_country_flag = ireland_atlantic_protectorate_statutes NOT = { has_country_flag = ireland_scottish_protectorate_settlement } }
+		available = { 120 = { is_owned_and_controlled_by = ROOT } }
+		cost = @IRELAND_TERRITORIAL_REVIEW_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_REVIEW_DAYS
+		fire_only_once = yes
+		cancel_trigger = { 120 = { NOT = { is_owned_and_controlled_by = ROOT } } }
+		cancel_effect = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_settlement_review_cancelled_tt }
+		complete_effect = {
+			if = { limit = { SCO = { exists = no } } release = SCO }
+			if = { limit = { SCO = { exists = yes NOT = { is_subject_of = ROOT } } } puppet = SCO }
+			set_country_flag = ireland_scottish_protectorate_settlement
+			set_country_flag = ireland_scottish_protectorate_reconstruction_obligation
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+	}
+
+	ireland_territorial_release_welsh_protectorate = {
+		icon = GFX_decision_ireland_claim_wales
+		visible = { has_country_flag = ireland_atlantic_protectorate_statutes NOT = { has_country_flag = ireland_welsh_protectorate_settlement } }
+		available = { 122 = { is_owned_and_controlled_by = ROOT } }
+		cost = @IRELAND_TERRITORIAL_REVIEW_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_REVIEW_DAYS
+		fire_only_once = yes
+		cancel_trigger = { 122 = { NOT = { is_owned_and_controlled_by = ROOT } } }
+		cancel_effect = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_settlement_review_cancelled_tt }
+		complete_effect = {
+			if = { limit = { WLS = { exists = no } } release = WLS }
+			if = { limit = { WLS = { exists = yes NOT = { is_subject_of = ROOT } } } puppet = WLS }
+			set_country_flag = ireland_welsh_protectorate_settlement
+			set_country_flag = ireland_welsh_protectorate_reconstruction_obligation
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+	}
+
+	ireland_territorial_reconstruct_scottish_protectorate = {
+		icon = GFX_decision_ireland_claim_scottish_highlands
+		visible = {
+			has_country_flag = ireland_scottish_protectorate_reconstruction_obligation
+			NOT = { has_country_flag = ireland_scottish_protectorate_reconstruction_complete }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_protectorate_reconstruction_site_requirement_tt
+				SCO = {
+					is_subject_of = ROOT
+					any_owned_state = {
+						is_controlled_by = PREV
+						free_building_slots = { building = industrial_complex size > 0 }
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		cost = @IRELAND_TERRITORIAL_REVIEW_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_REVIEW_DAYS
+		fire_only_once = yes
+		cancel_trigger = {
+			NOT = {
+				SCO = {
+					is_subject_of = ROOT
+					any_owned_state = {
+						is_controlled_by = PREV
+						free_building_slots = { building = industrial_complex size > 0 }
+					}
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND
+			custom_effect_tooltip = ireland_territorial_reconstruction_cancelled_tt
+		}
+		complete_effect = {
+			SCO = {
+				random_owned_controlled_state = {
+					limit = { free_building_slots > 0 }
+					add_building_construction = { type = industrial_complex level = @IRELAND_CONTRACT_FACTORY_LEVEL instant_build = yes }
+				}
+			}
+			set_country_flag = ireland_scottish_protectorate_reconstruction_complete
+			clr_country_flag = ireland_scottish_protectorate_reconstruction_obligation
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+	}
+
+	ireland_territorial_reconstruct_welsh_protectorate = {
+		icon = GFX_decision_ireland_claim_wales
+		visible = {
+			has_country_flag = ireland_welsh_protectorate_reconstruction_obligation
+			NOT = { has_country_flag = ireland_welsh_protectorate_reconstruction_complete }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_protectorate_reconstruction_site_requirement_tt
+				WLS = {
+					is_subject_of = ROOT
+					any_owned_state = {
+						is_controlled_by = PREV
+						free_building_slots = { building = industrial_complex size > 0 }
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		cost = @IRELAND_TERRITORIAL_REVIEW_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_REVIEW_DAYS
+		fire_only_once = yes
+		cancel_trigger = {
+			NOT = {
+				WLS = {
+					is_subject_of = ROOT
+					any_owned_state = {
+						is_controlled_by = PREV
+						free_building_slots = { building = industrial_complex size > 0 }
+					}
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND
+			custom_effect_tooltip = ireland_territorial_reconstruction_cancelled_tt
+		}
+		complete_effect = {
+			WLS = {
+				random_owned_controlled_state = {
+					limit = { free_building_slots > 0 }
+					add_building_construction = { type = industrial_complex level = @IRELAND_CONTRACT_FACTORY_LEVEL instant_build = yes }
+				}
+			}
+			set_country_flag = ireland_welsh_protectorate_reconstruction_complete
+			clr_country_flag = ireland_welsh_protectorate_reconstruction_obligation
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+	}
+
+	ireland_territorial_review_highlands_integration = {
+		icon = GFX_decision_ireland_claim_scottish_highlands
+		visible = { has_country_flag = ireland_atlantic_integration_review_open NOT = { has_country_flag = ireland_highlands_integration_review_complete } }
+		available = { 120 = { is_owned_and_controlled_by = ROOT compliance > @IRELAND_TERRITORIAL_INTEGRATION_COMPLIANCE_GATE resistance < @IRELAND_TERRITORIAL_INTEGRATION_RESISTANCE_GATE } }
+		cost = @IRELAND_TERRITORIAL_REVIEW_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_REVIEW_DAYS
+		fire_only_once = yes
+		cancel_trigger = {
+			120 = {
+				NOT = {
+					is_owned_and_controlled_by = ROOT
+					compliance > @IRELAND_TERRITORIAL_INTEGRATION_COMPLIANCE_GATE
+					resistance < @IRELAND_TERRITORIAL_INTEGRATION_RESISTANCE_GATE
+				}
+			}
+		}
+		cancel_effect = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_settlement_review_cancelled_tt }
+		complete_effect = {
+			120 = { add_resistance = @IRELAND_TERRITORIAL_RIGHTS_RESISTANCE add_compliance = @IRELAND_TERRITORIAL_RIGHTS_COMPLIANCE }
+			set_country_flag = ireland_highlands_integration_review_complete
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_STANDARD }
+	}
+
+	ireland_mission_complete_atlantic_settlement = {
+		icon = GFX_decision_ireland_claim_scottish_highlands
+		days_mission_timeout = @IRELAND_TERRITORIAL_MISSION_DAYS
+		activation = { has_country_flag = ireland_atlantic_postwar_review_started }
+		visible = { has_country_flag = ireland_atlantic_postwar_review_started NOT = { has_country_flag = ireland_atlantic_settlement_concluded } }
+		available = {
+			ireland_atlantic_settlement_scope_exists = yes
+			ireland_atlantic_settlement_all_relevant_resolved = yes
+		}
+		is_good = no
+		cancel_trigger = {
+			OR = {
+				has_country_flag = ireland_atlantic_settlement_concluded
+				NOT = { has_country_flag = ireland_atlantic_postwar_review_started }
+				NOT = { ireland_atlantic_settlement_scope_exists = yes }
+			}
+		}
+		complete_effect = {
+			clr_country_flag = ireland_atlantic_postwar_review_started
+			clr_country_flag = ireland_mission_complete_atlantic_settlement_active
+			ireland_update_mission_capacity = yes
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_atlantic_postwar_review_started
+			clr_country_flag = ireland_mission_complete_atlantic_settlement_active
+			ireland_update_mission_capacity = yes
+		}
+		timeout_effect = {
+			if = { limit = { NOT = { ireland_atlantic_settlement_all_relevant_resolved = yes } } add_stability = @IRELAND_TERRITORIAL_FAILURE_STABILITY add_war_support = @IRELAND_TERRITORIAL_FAILURE_WAR_SUPPORT }
+			clr_country_flag = ireland_atlantic_postwar_review_started
+			clr_country_flag = ireland_mission_complete_atlantic_settlement_active
+			set_country_flag = ireland_atlantic_settlement_review_expired
+			ireland_update_mission_capacity = yes
+		}
+	}
+}

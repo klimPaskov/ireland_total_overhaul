@@ -2,14 +2,15 @@
 
 Feature slug: `ireland_focus_tree`
 
-Feature: Ireland gameplay overhaul and national focus tree (current focus/Parliament correction complete)
+Feature: Ireland gameplay overhaul and national focus tree (political, company, and territorial expansion complete)
 
 ## Current focus and Parliament authority: 2026-08-13
 
-The current national tree contains 150 focuses, three opening roots, and 150 connectors.
+The current national tree contains 215 focuses, three opening roots, and 222 connectors.
 Its three named shortcuts expose government and politics, national development,
 and defence and security as the only opening trunks. Focus inspection reports no
-Ireland-local crossing, node-intersection, long-connector, or spacing diagnostic.
+Ireland-local crossing, node-intersection, long-connector, or spacing diagnostic
+at focus-inspection revision `d8b63828f71934c3`.
 One two-column connector inside the concealed clerical-failure route remains a
 nonblocking visual detour because aligning it would collide with the visible
 constitutional lane.
@@ -34,8 +35,8 @@ finding. All maritime focus deltas use the registered
 `ireland_maritime` script constant category, and the invalid dotted category
 form is absent.
 
-The authoritative implementation report is
-`docs/plans/ireland_focus_tree/focus_parliament_reward_density_completion_2026-08-13.md`.
+The authoritative implementation record is
+`docs/ireland_political_industrial_and_territorial_expansion.md`.
 Everything below this line is a superseded historical snapshot and is retained
 only as provenance. Its focus, connector, GUI, audit, and asset counts do not
 describe the current implementation.
