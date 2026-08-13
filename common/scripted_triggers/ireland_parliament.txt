@@ -34,7 +34,6 @@ ireland_parliament_seanad_majority = {
 
 ireland_parliament_dail_action_current = {
 	ireland_parliament_open = yes
-	has_country_flag = ireland_settlement_open
 	ireland_parliament_stage_one = yes
 	NOT = { has_country_flag = ireland_parliament_dail_session_complete }
 	any_owned_state = { state = 113 }
@@ -48,6 +47,7 @@ ireland_parliament_dail_action_available = {
 ireland_parliament_seanad_action_current = {
 	ireland_parliament_open = yes
 	has_country_flag = ireland_settlement_open
+	has_completed_focus = ireland_national_settlement
 	ireland_parliament_stage_two_or_later = yes
 	NOT = { has_country_flag = ireland_parliament_seanad_support_complete }
 	check_variable = {
@@ -66,6 +66,7 @@ ireland_parliament_seanad_action_available = {
 ireland_parliament_confidence_action_current = {
 	ireland_parliament_open = yes
 	has_country_flag = ireland_settlement_open
+	has_completed_focus = ireland_constitutional_draft
 	ireland_parliament_stage_three_or_later = yes
 	NOT = { has_country_flag = ireland_parliament_confidence_compact_complete }
 	any_owned_state = { state = 113 }
@@ -79,6 +80,7 @@ ireland_parliament_confidence_action_available = {
 ireland_parliament_joint_budget_action_current = {
 	ireland_parliament_open = yes
 	has_country_flag = ireland_settlement_open
+	has_completed_focus = ireland_government_formation
 	ireland_parliament_stage_four_or_later = yes
 	NOT = { has_country_flag = ireland_parliament_joint_budget_complete }
 	ireland_parliament_dail_majority = yes

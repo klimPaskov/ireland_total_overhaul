@@ -2,12 +2,14 @@
 
 Feature slug: `ireland_focus_tree`
 
-Reconciled: 2026-08-12
+Reconciled: 2026-08-13
 Scope: current focus-tree consolidation, reward contracts, AI references, and
 the Parliament scripted-GUI presentation contract.
 
 The authoritative implementation report for this pass is
-`docs/plans/ireland_focus_tree/focus_tree_parliament_completion_2026-08-09.md`.
+`docs/plans/ireland_focus_tree/focus_parliament_reward_density_completion_2026-08-13.md`,
+with `focus_tree_parliament_completion_2026-08-09.md` retaining the broader
+system inventory.
 Older 211-focus, 216-focus, and 226-focus snapshots below remain historical provenance and
 must not be used as current completion evidence.
 
@@ -17,12 +19,13 @@ under `docs/portraits/`. Temporary `assets/` paths are retained as staging
 evidence only; processed 156x210 crops are derivatives, and runtime DDS files
 remain under `gfx/`.
 
-## Current audit authority snapshot: 2026-08-12
+## Current audit authority snapshot: 2026-08-13
 
-The live national tree has 150 focuses, one root, and 150 visual connectors.
+The live national tree has 150 focuses, three opening roots/trunks, and 150 visual connectors.
 The final MCP inspection reports zero crossings, zero node intersections, zero
-long connectors, zero same-row spacing defects, and zero Ireland-local focus
-diagnostics. All focus titles, descriptions, icons, prerequisite references,
+long connectors, and zero same-row spacing defects. Its authored horizontal
+span is 41 columns, half the prior 82-column spread. All focus titles,
+descriptions, icons, prerequisite references,
 and AI-plan focus references resolve.
 
 The opening camera anchors on `ireland_state_still_defined`. Three named
@@ -39,21 +42,25 @@ more than three opening trunks. The continuous-focus palette is explicitly
 placed at `x = 50, y = 2400`, below the final authored focus row.
 
 Universal focus-reward profiles have been retired. Every surviving focus owns
-a named route, project, ledger, action, mission, proof, or institutional
-transition contract. Thirty-seven operational rewards also expose precise,
-bounded ledger or experience changes; no generic political-power padding
-remains in the Marine Service chain. Retired focus state that is still consumed
-by events, achievements, profiles, or cleanup is written by its explicit
-survivor.
+a focus-specific tooltip naming its route, project, ledger, action, mission,
+proof, physical delivery, or institutional transition. The direct reward union
+covers 46 focus IDs: 32 material/construction/fuel focuses, 24 capability
+focuses, one legal-claim focus, and 59 focuses with named decision or mission
+unlocks. No generic
+political-power padding remains. Retired focus state that is still
+consumed by events, achievements, profiles, or cleanup is written by its
+explicit survivor.
 
 The Parliament surface is a 510 by 248 interactive panel inside the
 decision-category host. It uses a generated dossier background, one Oireachtas
 title, two equal-width chamber cards with matched 126x70 support strips, and a
 two-by-two action grid. Four human buttons call guarded shared executors; status
 marks occupy separate columns and cannot intercept them. Equivalent native
-decisions are AI-only and call those same executors. The summary
-becomes visible after Ireland initialization, while the action rows remain
-gated by the settlement opening.
+decisions call those same executors. The summary and four programme rows become
+visible after Ireland initialization. The opening Dáil action is immediately
+usable for 15 Political Power when Dublin is controlled. Completing it opens
+the National Settlement focus; that focus, the Constitutional Draft, and
+Government Formation advance the remaining three programme stages.
 
 Each action uses one four-frame status seal: slate locked, amber current but
 unaffordable, gold current and available, and green secured. The same canonical

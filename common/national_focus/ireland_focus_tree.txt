@@ -4,11 +4,28 @@
 # Hidden revolutionary, corporate, restoration, and Otherworld routes retain their authored gates.
 # Route class legend: H = documented historical route; P = plausible constitutional or institutional route;
 # A = deliberate absurdity, concealed behind independent evidence, state-interface failure and rare conditions.
-# Focuses set route/proof flags and hand off lifecycle work to the parent scripted systems. Operational
-# focuses also grant bounded, visible ledger or experience rewards. This file grants no Northern territory,
+# Focuses set route/proof flags and hand off lifecycle work to the parent scripted systems. Every focus owns
+# a specific visible reward; provision, readiness, and naval projects also deliver bounded physical results.
+# This file grants no Northern territory,
 # cores, free armies, annexation, administration, alignment, or recognition.
 # Route capstones call the conclusion-review helper only after material, readiness, foreign, Northern and
 # postwar proof flags are present. Recovery bridges call cleanup so failed routes can be re-entered lawfully.
+@IRELAND_FOCUS_CIVILIAN_FACTORY_LEVEL = 1
+@IRELAND_FOCUS_MILITARY_FACTORY_LEVEL = 1
+@IRELAND_FOCUS_INFRASTRUCTURE_LEVEL = 1
+@IRELAND_FOCUS_AIR_DEFENCE_LEVEL = 1
+@IRELAND_FOCUS_RIFLE_DELIVERY = 300
+@IRELAND_FOCUS_RIFLE_DELIVERY_SMALL = 200
+@IRELAND_FOCUS_RIFLE_DELIVERY_STANDARD = 250
+@IRELAND_FOCUS_SUPPORT_DELIVERY = 50
+@IRELAND_FOCUS_SUPPORT_DELIVERY_SMALL = 25
+@IRELAND_FOCUS_MOTOR_DELIVERY = 25
+@IRELAND_FOCUS_TRAIN_DELIVERY = 2
+@IRELAND_FOCUS_CONVOY_DELIVERY = 5
+@IRELAND_FOCUS_FUEL_DELIVERY = 500
+@IRELAND_FOCUS_RESEARCH_BONUS = 0.5
+@IRELAND_FOCUS_RESEARCH_USES = 1
+
 focus_tree = {
 	id = ireland_focus_tree
 	default = no
@@ -37,9 +54,10 @@ focus_tree = {
 		icon = GFX_focus_ireland_state_still_defined
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -18
+		x = -12
 		y = 0
 		completion_reward = {
+			custom_effect_tooltip = ireland_state_still_defined_reward_tt
 			set_country_flag = ireland_state_still_defined_complete
 			set_country_flag = ireland_campaign_open
 			ireland_initialize_campaign = yes
@@ -53,15 +71,21 @@ focus_tree = {
 		icon = GFX_focus_ireland_national_settlement
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -18
+		x = -12
 		y = 1
 		prerequisite = {
 			focus = ireland_state_still_defined
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_national_settlement_dail_requirement_tt
+				has_country_flag = ireland_parliament_dail_session_complete
+			}
+		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_national_settlement_reward_tt
+			unlock_decision_tooltip = ireland_action_review_the_six_month_settlement
 			set_country_flag = ireland_national_settlement_complete
-			set_country_flag = ireland_settlement_open
-
 			set_country_flag = ireland_civil_war_memory_complete
 			set_country_flag = ireland_civil_war_memory_open
 			set_country_flag = ireland_republican_veterans_complete
@@ -78,12 +102,13 @@ focus_tree = {
 		icon = GFX_focus_ireland_public_order_review
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -24
+		x = -16
 		y = 2
 		prerequisite = {
 			focus = ireland_national_settlement
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_public_order_review_reward_tt
 			set_country_flag = ireland_public_order_review_complete
 			set_country_flag = ireland_security_baseline_ready
 
@@ -96,13 +121,20 @@ focus_tree = {
 		icon = GFX_focus_ireland_economic_war_review
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 8
+		x = -2
 		y = 0
 		available = {
 			has_completed_focus = ireland_state_still_defined
 			has_completed_focus = ireland_national_settlement
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_economic_war_review_reward_tt
+			add_tech_bonus = {
+				name = ireland_economic_war_industry_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = industry
+			}
 			set_country_flag = ireland_economic_war_review_complete
 			set_country_flag = ireland_economic_war_open
 			ireland_recompute_provision = yes
@@ -113,12 +145,20 @@ focus_tree = {
 		icon = GFX_focus_ireland_rural_price_board
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 8
+		x = -2
 		y = 1
 		prerequisite = {
 			focus = ireland_economic_war_review
 		}
 		completion_reward = {
+			add_tech_bonus = {
+				name = ireland_rural_price_board_industry_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = industry
+			}
+			custom_effect_tooltip = ireland_rural_price_board_reward_tt
+			unlock_decision_tooltip = ireland_action_set_agricultural_prices
 			set_country_flag = ireland_rural_price_board_complete
 			set_country_flag = ireland_rural_price_review_ready
 			set_country_flag = ireland_rural_credit_ready
@@ -132,12 +172,16 @@ focus_tree = {
 		icon = GFX_focus_ireland_defence_estimates
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = 38
+		x = 10
 		y = 0
 		available = {
 			has_completed_focus = ireland_state_still_defined
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_defence_estimates_reward_tt
+			add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_FOCUS_RIFLE_DELIVERY_STANDARD }
+			add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_FOCUS_SUPPORT_DELIVERY_SMALL }
+			army_experience = constant:ireland.focus_reward_xp_standard
 			set_country_flag = ireland_defence_estimates_complete
 			set_country_flag = ireland_defence_estimates_open
 			ireland_recompute_readiness = yes
@@ -148,12 +192,18 @@ focus_tree = {
 		icon = GFX_focus_ireland_command_audit
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = 36
+		x = 11
 		y = 1
 		prerequisite = {
 			focus = ireland_defence_estimates
 		}
 		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = ireland_command_audit_doctrine_bonus
+				cost_reduction = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = land_doctrine
+			}
 			set_country_flag = ireland_command_audit_complete
 			set_country_flag = ireland_command_baseline_ready
 			set_country_flag = ireland_port_and_coast_audit_complete
@@ -176,6 +226,8 @@ focus_tree = {
 			focus = ireland_national_settlement
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_church_labour_consultation_reward_tt
+			unlock_decision_tooltip = ireland_action_negotiate_an_education_compact
 			set_country_flag = ireland_church_labour_consultation_complete
 			set_country_flag = ireland_social_consultation_ready
 
@@ -188,7 +240,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_election_timetable
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -18
+		x = -14
 		y = 2
 		prerequisite = {
 			focus = ireland_national_settlement
@@ -197,6 +249,8 @@ focus_tree = {
 			has_completed_focus = ireland_state_still_defined
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_election_timetable_reward_tt
+			unlock_decision_tooltip = ireland_mission_conduct_a_free_general_election
 			set_country_flag = ireland_election_timetable_complete
 			set_country_flag = ireland_election_calendar_ready
 		}
@@ -206,7 +260,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_constitutional_draft
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -18
+		x = -14
 		y = 3
 		prerequisite = {
 			focus = ireland_election_timetable
@@ -215,6 +269,8 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_constitutional_draft_reward_tt
+			unlock_decision_tooltip = ireland_action_secure_polling_stations
 			set_country_flag = ireland_constitutional_draft_complete
 			set_country_flag = ireland_constitutional_draft_ready
 
@@ -236,7 +292,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_election_mandate
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -22
+		x = -14
 		y = 4
 		prerequisite = {
 			focus = ireland_constitutional_draft
@@ -245,6 +301,8 @@ focus_tree = {
 			has_country_flag = ireland_election_result_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_election_mandate_reward_tt
+			unlock_decision_tooltip = ireland_action_count_formal_and_routine_votes
 			set_country_flag = ireland_election_mandate_complete
 			set_country_flag = ireland_election_mandate
 		}
@@ -254,7 +312,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_government_formation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -22
+		x = -12
 		y = 5
 		prerequisite = {
 			focus = ireland_election_mandate
@@ -264,6 +322,8 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			custom_effect_tooltip = ireland_government_formation_reward_tt
+			unlock_decision_tooltip = ireland_mission_form_a_government_after_the_poll
 			set_country_flag = ireland_government_formation_complete
 			set_country_flag = ireland_government_formation_ready
 		}
@@ -273,7 +333,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_replacement_charter
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -14
+		x = -10
 		y = 4
 		prerequisite = {
 			focus = ireland_constitutional_draft
@@ -283,6 +343,8 @@ focus_tree = {
 			has_completed_focus = ireland_constitutional_draft
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_replacement_charter_reward_tt
+			unlock_decision_tooltip = ireland_action_restore_ordinary_constitutional_procedure
 			set_country_flag = ireland_replacement_charter_complete
 			set_country_flag = ireland_replacement_charter_open
 			set_country_flag = ireland_plebiscite_recovered
@@ -293,7 +355,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_1938_trade_settlement
 		cost = 12
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -22
+		x = -12
 		y = 6
 		prerequisite = {
 			focus = ireland_government_formation
@@ -303,6 +365,13 @@ focus_tree = {
 			has_completed_focus = ireland_economic_war_review
 		}
 		completion_reward = {
+			add_tech_bonus = {
+				name = ireland_trade_settlement_industry_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = industry
+			}
+			custom_effect_tooltip = ireland_1938_trade_settlement_reward_tt
 			set_country_flag = ireland_1938_trade_settlement_complete
 			set_country_flag = ireland_trade_settlement_ready
 			set_country_flag = ireland_port_transfer_open
@@ -314,7 +383,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_treaty_port_transfer
 		cost = 12
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = -22
+		x = -15
 		y = 7
 		prerequisite = {
 			focus = ireland_1938_trade_settlement
@@ -327,6 +396,13 @@ focus_tree = {
 			has_completed_focus = ireland_command_audit
 		}
 		completion_reward = {
+			add_tech_bonus = {
+				name = ireland_treaty_port_naval_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = naval_equipment
+			}
+			custom_effect_tooltip = ireland_treaty_port_transfer_reward_tt
 			set_country_flag = ireland_treaty_port_transfer_complete
 			set_country_flag = ireland_treaty_port_project_open
 			ireland_recompute_readiness = yes
@@ -340,13 +416,14 @@ focus_tree = {
 		icon = GFX_focus_ireland_emergency_opening
 		cost = 12
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -28
+		x = -20
 		y = 9
 		prerequisite = { focus = ireland_active_neutrality }
 		available = {
 			date > 1939.9.1
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_emergency_opening_reward_tt
 			set_country_flag = ireland_emergency_opening_complete
 			set_country_flag = ireland_emergency_opening
 			set_country_flag = ireland_emergency_review_started
@@ -357,12 +434,13 @@ focus_tree = {
 		icon = GFX_focus_ireland_active_neutrality
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = -24
+		x = -16
 		y = 8
 		prerequisite = {
 			focus = ireland_treaty_port_transfer
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_active_neutrality_reward_tt
 			set_country_flag = ireland_active_neutrality_complete
 			set_country_flag = ireland_neutrality_open
 		}
@@ -375,13 +453,14 @@ focus_tree = {
 		icon = GFX_focus_ireland_republican_government
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -18
+		x = -12
 		y = 4
 		available = {
 			has_government = democratic
 			has_completed_focus = ireland_government_formation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_republican_government_reward_tt
 			set_country_flag = ireland_republican_government_complete
 			set_country_flag = ireland_republican_government_ready
 
@@ -398,7 +477,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_de_valera_stewardship
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -19
+		x = -10
 		y = 5
 		prerequisite = {
 			focus = ireland_republican_government
@@ -409,6 +488,8 @@ focus_tree = {
 			has_completed_focus = ireland_constitutional_draft
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_de_valera_stewardship_reward_tt
+			unlock_decision_tooltip = ireland_action_convene_a_cabinet_cohesion_review
 			set_country_flag = ireland_de_valera_stewardship_complete
 			set_country_flag = ireland_route_de_valera_stewardship
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -425,7 +506,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_constitutional_stewardship
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -19
+		x = -10
 		y = 6
 		prerequisite = {
 			focus = ireland_de_valera_stewardship
@@ -440,6 +521,8 @@ focus_tree = {
 			has_country_flag = ireland_route_de_valera_stewardship
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_constitutional_stewardship_reward_tt
+			unlock_decision_tooltip = ireland_action_invoke_the_council_of_state
 			set_country_flag = ireland_constitutional_stewardship_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -456,7 +539,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_de_valera_reconciliation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -17
+		x = -8
 		y = 5
 		prerequisite = {
 			focus = ireland_republican_government
@@ -469,6 +552,7 @@ focus_tree = {
 			has_completed_focus = ireland_national_settlement
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_de_valera_reconciliation_reward_tt
 			set_country_flag = ireland_de_valera_reconciliation_complete
 			set_country_flag = ireland_route_de_valera_reconciliation
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -487,7 +571,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_de_valera_reconciliation_capstone
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -17
+		x = -8
 		y = 6
 		prerequisite = {
 			focus = ireland_de_valera_reconciliation
@@ -502,6 +586,7 @@ focus_tree = {
 			has_country_flag = ireland_route_de_valera_reconciliation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_de_valera_reconciliation_capstone_reward_tt
 			set_country_flag = ireland_de_valera_reconciliation_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -521,7 +606,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_emergency_direction
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -28
+		x = -20
 		y = 10
 		available = {
 			NOT = { has_country_flag = ireland_route_committed }
@@ -531,6 +616,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_opening
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_emergency_direction_reward_tt
 			set_country_flag = ireland_emergency_direction_complete
 			set_country_flag = ireland_route_de_valera_emergency
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -542,7 +628,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_statutory_emergency
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -28
+		x = -20
 		y = 11
 		prerequisite = {
 			focus = ireland_emergency_direction
@@ -555,6 +641,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_opening
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_statutory_emergency_reward_tt
 			set_country_flag = ireland_statutory_emergency_complete
 			set_country_flag = ireland_statutory_emergency_ready
 		}
@@ -564,7 +651,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_emergency_review
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -28
+		x = -20
 		y = 12
 		prerequisite = {
 			focus = ireland_statutory_emergency
@@ -574,6 +661,7 @@ focus_tree = {
 			has_completed_focus = ireland_active_neutrality
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_emergency_review_reward_tt
 			set_country_flag = ireland_emergency_review_complete
 			set_country_flag = ireland_emergency_law_reviewed
 		}
@@ -584,10 +672,11 @@ focus_tree = {
 		icon = GFX_focus_ireland_emergency_repeal
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -28
+		x = -20
 		y = 13
 		available = { has_completed_focus = ireland_emergency_review }
 		completion_reward = {
+			custom_effect_tooltip = ireland_emergency_repeal_reward_tt
 			set_country_flag = ireland_emergency_repeal_complete
 			set_country_flag = ireland_emergency_review_complete
 		}
@@ -597,7 +686,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_de_valera_emergency_capstone
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -28
+		x = -20
 		y = 14
 		prerequisite = {
 			focus = ireland_emergency_repeal
@@ -611,6 +700,7 @@ focus_tree = {
 			has_country_flag = ireland_route_de_valera_emergency
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_de_valera_emergency_capstone_reward_tt
 			set_country_flag = ireland_de_valera_emergency_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -630,7 +720,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_lemass_developmental
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = -24
+		x = -18
 		y = 9
 		available = {
 			NOT = { has_country_flag = ireland_route_committed }
@@ -641,6 +731,8 @@ focus_tree = {
 			has_completed_focus = ireland_republican_government
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_lemass_developmental_reward_tt
+			unlock_decision_tooltip = ireland_action_commission_a_developmental_plant
 			set_country_flag = ireland_lemass_developmental_complete
 			set_country_flag = ireland_route_lemass_developmental
 			# The achievement records the dated, peaceful installation itself;
@@ -663,7 +755,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_dail_nomination
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -24
+		x = -18
 		y = 10
 		prerequisite = {
 			focus = ireland_lemass_developmental
@@ -678,6 +770,7 @@ focus_tree = {
 			add_to_variable = { var = ireland_dail_mandate value = constant:ireland.focus_reward_standard_delta }
 			add_to_variable = { var = ireland_social_consent value = constant:ireland.focus_reward_minor_delta }
 			custom_effect_tooltip = ireland_dail_nomination_reward_tt
+			unlock_decision_tooltip = ireland_action_assign_cabinet_portfolios
 		}
 	}
 	focus = {
@@ -685,7 +778,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_lemass_developmental_capstone
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = -24
+		x = -18
 		y = 11
 		prerequisite = {
 			focus = ireland_dail_nomination
@@ -701,6 +794,7 @@ focus_tree = {
 			has_country_flag = ireland_lemass_dail_mandate_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_lemass_developmental_capstone_reward_tt
 			set_country_flag = ireland_lemass_developmental_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -713,13 +807,14 @@ focus_tree = {
 		icon = GFX_focus_ireland_constitutional_opposition
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -20
+		x = -14
 		y = 8
 		available = {
 			OR = { has_country_flag = ireland_fine_gael_mandate has_country_flag = ireland_opposition_gateway }
 			has_completed_focus = ireland_government_formation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_constitutional_opposition_reward_tt
 			set_country_flag = ireland_constitutional_opposition_complete
 			set_country_flag = ireland_fine_gael_opposition_ready
 		}
@@ -729,7 +824,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_close_oduffy_chapter
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -20
+		x = -14
 		y = 9
 		prerequisite = {
 			focus = ireland_constitutional_opposition
@@ -739,6 +834,7 @@ focus_tree = {
 			has_completed_focus = ireland_national_settlement
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_close_oduffy_chapter_reward_tt
 			set_country_flag = ireland_close_oduffy_chapter_complete
 			set_country_flag = ireland_oduffy_chapter_closed
 
@@ -760,7 +856,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_cosgrave_institutional
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -22
+		x = -16
 		y = 10
 		prerequisite = {
 			focus = ireland_close_oduffy_chapter
@@ -772,6 +868,7 @@ focus_tree = {
 			has_completed_focus = ireland_close_oduffy_chapter
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_cosgrave_institutional_reward_tt
 			set_country_flag = ireland_cosgrave_institutional_complete
 			set_country_flag = ireland_route_cosgrave_institutional
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -788,7 +885,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_security_under_law
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = -22
+		x = -16
 		y = 11
 		prerequisite = {
 			focus = ireland_cosgrave_institutional
@@ -797,6 +894,8 @@ focus_tree = {
 			has_completed_focus = ireland_command_audit
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_security_under_law_reward_tt
+			unlock_decision_tooltip = ireland_action_protect_campaign_freedom
 			set_country_flag = ireland_security_under_law_complete
 			set_country_flag = ireland_security_under_law_ready
 		}
@@ -806,7 +905,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_cosgrave_capstone
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -22
+		x = -16
 		y = 12
 		prerequisite = {
 			focus = ireland_security_under_law
@@ -820,6 +919,7 @@ focus_tree = {
 			has_country_flag = ireland_route_cosgrave_institutional
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_cosgrave_capstone_reward_tt
 			set_country_flag = ireland_cosgrave_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -837,7 +937,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_mulcahy_succession
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -20
+		x = -14
 		y = 10
 		available = {
 			NOT = { has_country_flag = ireland_route_committed }
@@ -847,6 +947,7 @@ focus_tree = {
 			has_completed_focus = ireland_defence_estimates
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_mulcahy_succession_reward_tt
 			set_country_flag = ireland_mulcahy_succession_complete
 			set_country_flag = ireland_route_mulcahy_civil_defence
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -865,7 +966,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_mulcahy_capstone
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -20
+		x = -14
 		y = 11
 		prerequisite = {
 			focus = ireland_mulcahy_succession
@@ -879,6 +980,7 @@ focus_tree = {
 			has_country_flag = ireland_route_mulcahy_civil_defence
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_mulcahy_capstone_reward_tt
 			set_country_flag = ireland_mulcahy_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -896,7 +998,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_costello_coalition
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -18
+		x = -12
 		y = 10
 		available = {
 			NOT = { has_country_flag = ireland_route_committed }
@@ -906,6 +1008,8 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_costello_coalition_reward_tt
+			unlock_decision_tooltip = ireland_action_open_coalition_negotiations
 			set_country_flag = ireland_costello_coalition_complete
 			set_country_flag = ireland_route_costello_coalition
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -917,7 +1021,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_written_coalition_charter
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -18
+		x = -12
 		y = 11
 		prerequisite = {
 			focus = ireland_costello_coalition
@@ -927,6 +1031,7 @@ focus_tree = {
 			has_completed_focus = ireland_close_oduffy_chapter
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_written_coalition_charter_reward_tt
 			set_country_flag = ireland_written_coalition_charter_complete
 			set_country_flag = ireland_costello_charter_ready
 
@@ -939,7 +1044,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_costello_capstone
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -18
+		x = -12
 		y = 12
 		prerequisite = {
 			focus = ireland_written_coalition_charter
@@ -953,6 +1058,7 @@ focus_tree = {
 			has_country_flag = ireland_route_costello_coalition
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_costello_capstone_reward_tt
 			set_country_flag = ireland_costello_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -970,7 +1076,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_dillon_public_dissent
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -16
+		x = -10
 		y = 10
 		available = {
 			NOT = { has_country_flag = ireland_route_committed }
@@ -995,6 +1101,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_dillon_public_dissent_reward_tt
 			set_country_flag = ireland_dillon_public_dissent_complete
 			set_country_flag = ireland_route_dillon_intervention
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -1006,7 +1113,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_dillon_intervention_caucus
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -16
+		x = -10
 		y = 11
 		prerequisite = {
 			focus = ireland_dillon_public_dissent
@@ -1037,7 +1144,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_dillon_war_assent
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -16
+		x = -10
 		y = 12
 		prerequisite = {
 			focus = ireland_dillon_intervention_caucus
@@ -1059,6 +1166,7 @@ focus_tree = {
 			has_country_flag = ireland_conclusion_proof
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_dillon_war_assent_reward_tt
 			set_country_flag = ireland_dillon_war_assent_complete
 			set_country_flag = ireland_dillon_wartime_state
 			set_country_flag = ireland_dillon_democracy_at_war
@@ -1079,7 +1187,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_norton_parliamentary
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -16
+		x = -12
 		y = 7
 		allow_branch = {
 			NOT = { has_country_flag = ireland_route_committed }
@@ -1098,6 +1206,8 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_norton_parliamentary_reward_tt
+			unlock_decision_tooltip = ireland_action_charter_collective_bargaining
 			set_country_flag = ireland_norton_parliamentary_complete
 			set_country_flag = ireland_route_norton_parliamentary
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -1109,7 +1219,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_labour_as_conscience
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
-		x = -16
+		x = -12
 		y = 8
 		prerequisite = {
 			focus = ireland_norton_parliamentary
@@ -1118,6 +1228,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_opening
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_labour_as_conscience_reward_tt
 			set_country_flag = ireland_labour_as_conscience_complete
 			set_country_flag = ireland_labour_scrutiny_ready
 
@@ -1132,7 +1243,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_norton_parliamentary_capstone
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -16
+		x = -12
 		y = 9
 		prerequisite = {
 			focus = ireland_labour_as_conscience
@@ -1146,6 +1257,7 @@ focus_tree = {
 			has_country_flag = ireland_route_norton_parliamentary
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_norton_parliamentary_capstone_reward_tt
 			set_country_flag = ireland_norton_parliamentary_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -1164,7 +1276,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_clann_founding
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -14
+		x = -10
 		y = 7
 		allow_branch = {
 			NOT = { has_country_flag = ireland_route_committed }
@@ -1183,6 +1295,7 @@ focus_tree = {
 			has_completed_focus = ireland_election_timetable
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_clann_founding_reward_tt
 			set_country_flag = ireland_clann_founding_complete
 			set_country_flag = ireland_route_clann_agrarian_broker
 			set_country_flag = ireland_clann_founded
@@ -1197,7 +1310,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_clann_by_election
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -14
+		x = -10
 		y = 8
 		prerequisite = {
 			focus = ireland_clann_founding
@@ -1209,6 +1322,8 @@ focus_tree = {
 			has_country_flag = ireland_clann_by_election_open
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_clann_by_election_reward_tt
+			unlock_decision_tooltip = ireland_action_prepare_a_by_election
 			set_country_flag = ireland_clann_by_election_complete
 			set_country_flag = ireland_clann_breakthrough_ready
 
@@ -1229,7 +1344,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_vocational_constitution
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -12
+		x = -8
 		y = 7
 		allow_branch = {
 			NOT = { has_country_flag = ireland_route_committed }
@@ -1248,6 +1363,7 @@ focus_tree = {
 			has_completed_focus = ireland_constitutional_draft
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_vocational_constitution_reward_tt
 			set_country_flag = ireland_vocational_constitution_complete
 			set_country_flag = ireland_route_constitutional_vocational
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -1265,7 +1381,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_vocational_constitution_capstone
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -12
+		x = -8
 		y = 8
 		prerequisite = {
 			focus = ireland_vocational_constitution
@@ -1280,6 +1396,7 @@ focus_tree = {
 			has_country_flag = ireland_vocational_domains_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_vocational_constitution_capstone_reward_tt
 			set_country_flag = ireland_vocational_constitution_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -1291,7 +1408,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_cultural_survey
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-		x = -4
+		x = -8
 		y = 0
 		allow_branch = {
 			has_completed_focus = ireland_replacement_charter
@@ -1304,6 +1421,8 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_cultural_survey_reward_tt
+			unlock_decision_tooltip = ireland_action_fund_gaeltacht_administration
 			set_country_flag = ireland_cultural_survey_complete
 			set_country_flag = ireland_cultural_survey_ready
 
@@ -1318,7 +1437,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_archival_record
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-		x = -4
+		x = -8
 		y = 1
 		prerequisite = {
 			focus = ireland_cultural_survey
@@ -1328,6 +1447,9 @@ focus_tree = {
 			has_completed_focus = ireland_national_settlement
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_archival_record_reward_tt
+			unlock_decision_tooltip = ireland_action_expand_folklore_collection
+			unlock_decision_tooltip = ireland_action_survey_provincial_archives
 			set_country_flag = ireland_archival_record_complete
 			set_country_flag = ireland_archival_record_ready
 
@@ -1341,7 +1463,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_serious_cultural_stewardship
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-		x = -4
+		x = -8
 		y = 2
 		prerequisite = {
 			focus = ireland_archival_record
@@ -1351,6 +1473,8 @@ focus_tree = {
 			has_completed_focus = ireland_cultural_survey
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_serious_cultural_stewardship_reward_tt
+			unlock_decision_tooltip = ireland_action_hold_a_provincial_cultural_congress
 			set_country_flag = ireland_serious_cultural_stewardship_complete
 			set_country_flag = ireland_serious_culture_ready
 
@@ -1363,7 +1487,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_cultural_evidence_ledger
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-		x = -4
+		x = -8
 		y = 3
 		prerequisite = {
 			focus = ireland_serious_cultural_stewardship
@@ -1374,6 +1498,8 @@ focus_tree = {
 			has_completed_focus = ireland_archival_record
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_cultural_evidence_ledger_reward_tt
+			unlock_decision_tooltip = ireland_action_test_a_restoration_claim
 			set_country_flag = ireland_cultural_evidence_ledger_complete
 			set_country_flag = ireland_cultural_evidence_ledger_ready
 			set_country_flag = ireland_hidden_permission
@@ -1390,13 +1516,21 @@ focus_tree = {
 		icon = GFX_focus_ireland_provision_baseline
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 8
+		x = -2
 		y = 2
 		available = {
 			has_completed_focus = ireland_1938_trade_settlement
 			has_completed_focus = ireland_rural_price_board
 		}
 		completion_reward = {
+			add_tech_bonus = {
+				name = ireland_provision_baseline_industry_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = industry
+			}
+			custom_effect_tooltip = ireland_provision_baseline_reward_tt
+			unlock_decision_tooltip = ireland_action_issue_ration_books
 			set_country_flag = ireland_provision_baseline_complete
 			set_country_flag = ireland_provision_baseline_ready
 			set_country_flag = ireland_provision_plan
@@ -1408,7 +1542,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_food_ledger
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 4
+		x = -4
 		y = 3
 		prerequisite = {
 			focus = ireland_provision_baseline
@@ -1417,10 +1551,17 @@ focus_tree = {
 			has_completed_focus = ireland_rural_price_board
 		}
 		completion_reward = {
+			add_tech_bonus = {
+				name = ireland_food_ledger_industry_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = industry
+			}
 			set_country_flag = ireland_food_ledger_complete
 			set_country_flag = ireland_provision_food_project_ready
 			add_to_variable = { var = ireland_provision_food value = constant:ireland.focus_reward_major_delta }
 			custom_effect_tooltip = ireland_food_ledger_reward_tt
+			unlock_decision_tooltip = ireland_action_set_county_tillage_quotas
 			ireland_recompute_provision = yes
 		}
 	}
@@ -1429,7 +1570,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_energy_board
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 8
+		x = -2
 		y = 3
 		prerequisite = {
 			focus = ireland_provision_baseline
@@ -1438,10 +1579,22 @@ focus_tree = {
 			has_completed_focus = ireland_rural_price_board
 		}
 		completion_reward = {
+			add_fuel = @IRELAND_FOCUS_FUEL_DELIVERY
+			if = {
+				limit = { 134 = { is_owned_and_controlled_by = ROOT } }
+				134 = {
+					add_building_construction = {
+						type = infrastructure
+						level = @IRELAND_FOCUS_INFRASTRUCTURE_LEVEL
+						instant_build = yes
+					}
+				}
+			}
 			set_country_flag = ireland_energy_board_complete
 			set_country_flag = ireland_provision_energy_project_ready
 			add_to_variable = { var = ireland_provision_energy value = constant:ireland.focus_reward_major_delta }
 			custom_effect_tooltip = ireland_energy_board_reward_tt
+			unlock_decision_tooltip = ireland_action_rebalance_fuel_allocation
 			ireland_recompute_provision = yes
 		}
 	}
@@ -1451,17 +1604,20 @@ focus_tree = {
 		icon = GFX_focus_ireland_transport_priority
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
-		x = 12
+		x = 0
 		y = 3
 		available = {
 			has_completed_focus = ireland_provision_baseline
 			has_completed_focus = ireland_command_audit
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = motorized_equipment amount = @IRELAND_FOCUS_MOTOR_DELIVERY }
+			add_equipment_to_stockpile = { type = train_equipment amount = @IRELAND_FOCUS_TRAIN_DELIVERY }
 			set_country_flag = ireland_transport_priority_complete
 			set_country_flag = ireland_transport_project_ready
 			add_to_variable = { var = ireland_provision_transport value = constant:ireland.focus_reward_major_delta }
 			custom_effect_tooltip = ireland_transport_priority_reward_tt
+			unlock_decision_tooltip = ireland_action_repair_a_named_rail_corridor
 			ireland_recompute_provision = yes
 		}
 	}
@@ -1470,7 +1626,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_maritime_reserve
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
-		x = 12
+		x = 10
 		y = 5
 		prerequisite = {
 			focus = ireland_emergency_stockpiles
@@ -1480,10 +1636,12 @@ focus_tree = {
 			has_completed_focus = ireland_command_audit
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = convoy amount = @IRELAND_FOCUS_CONVOY_DELIVERY }
 			set_country_flag = ireland_maritime_reserve_complete
 			set_country_flag = ireland_provision_maritime_project_ready
 			add_to_variable = { var = ireland_provision_maritime value = constant:ireland.focus_reward_major_delta }
 			custom_effect_tooltip = ireland_maritime_reserve_reward_tt
+			unlock_decision_tooltip = ireland_action_purchase_a_merchant_vessel
 			ireland_recompute_provision = yes
 		}
 	}
@@ -1492,7 +1650,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_domestic_manufacturing
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 8
+		x = 2
 		y = 4
 		prerequisite = {
 			focus = ireland_energy_board
@@ -1501,11 +1659,23 @@ focus_tree = {
 			has_completed_focus = ireland_rural_price_board
 		}
 		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = @IRELAND_FOCUS_CIVILIAN_FACTORY_LEVEL
+				add_building_construction = { type = industrial_complex level = @IRELAND_FOCUS_CIVILIAN_FACTORY_LEVEL instant_build = yes }
+			}
+			add_tech_bonus = {
+				name = ireland_domestic_manufacturing_industry_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = industry
+			}
 			set_country_flag = ireland_domestic_manufacturing_complete
 			set_country_flag = ireland_material_projects_ready
 			add_to_variable = { var = ireland_provision_energy value = constant:ireland.focus_reward_standard_delta }
 			add_to_variable = { var = ireland_provision_transport value = constant:ireland.focus_reward_standard_delta }
 			custom_effect_tooltip = ireland_domestic_manufacturing_reward_tt
+			unlock_decision_tooltip = ireland_action_license_protected_workshops
 			ireland_recompute_provision = yes
 		}
 	}
@@ -1514,7 +1684,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_rural_credit
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 4
+		x = 0
 		y = 4
 		prerequisite = {
 			focus = ireland_food_ledger
@@ -1527,7 +1697,14 @@ focus_tree = {
 			set_country_flag = ireland_rural_credit_complete
 			set_country_flag = ireland_rural_credit_project_ready
 			add_to_variable = { var = ireland_provision_food value = constant:ireland.focus_reward_standard_delta }
+			add_tech_bonus = {
+				name = ireland_rural_credit_industry_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = industry
+			}
 			custom_effect_tooltip = ireland_rural_credit_reward_tt
+			unlock_decision_tooltip = ireland_action_fund_a_western_regional_portfolio
 			ireland_recompute_provision = yes
 		}
 	}
@@ -1536,7 +1713,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_emergency_stockpiles
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 12
+		x = 4
 		y = 4
 		prerequisite = {
 			focus = ireland_energy_board
@@ -1550,11 +1727,14 @@ focus_tree = {
 			has_completed_focus = ireland_transport_priority
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_FOCUS_RIFLE_DELIVERY }
+			add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_FOCUS_SUPPORT_DELIVERY }
 			set_country_flag = ireland_emergency_stockpiles_complete
 			set_country_flag = ireland_emergency_stockpile_project_ready
 			add_to_variable = { var = ireland_provision_energy value = constant:ireland.focus_reward_standard_delta }
 			add_to_variable = { var = ireland_provision_transport value = constant:ireland.focus_reward_standard_delta }
 			custom_effect_tooltip = ireland_emergency_stockpiles_reward_tt
+			unlock_decision_tooltip = ireland_action_establish_a_strategic_depot
 			ireland_recompute_provision = yes
 		}
 	}
@@ -1573,13 +1753,24 @@ focus_tree = {
 			has_country_flag = ireland_development_authority_ready
 		}
 		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_building_construction = { type = infrastructure level = @IRELAND_FOCUS_INFRASTRUCTURE_LEVEL instant_build = yes }
+			}
 			set_country_flag = ireland_development_authority_complete
 			set_country_flag = ireland_development_authority_open
 			add_to_variable = { var = ireland_provision_food value = constant:ireland.focus_reward_minor_delta }
 			add_to_variable = { var = ireland_provision_energy value = constant:ireland.focus_reward_minor_delta }
 			add_to_variable = { var = ireland_provision_transport value = constant:ireland.focus_reward_minor_delta }
 			add_to_variable = { var = ireland_provision_maritime value = constant:ireland.focus_reward_minor_delta }
+			add_tech_bonus = {
+				name = ireland_development_authority_industry_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = industry
+			}
 			custom_effect_tooltip = ireland_development_authority_reward_tt
+			unlock_decision_tooltip = ireland_action_commission_a_developmental_plant
 			ireland_recompute_provision = yes
 
 			set_country_flag = ireland_cabinet_of_production_complete
@@ -1595,7 +1786,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_social_cooperatives
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 4
+		x = 6
 		y = 5
 		prerequisite = {
 			focus = ireland_rural_credit
@@ -1609,6 +1800,7 @@ focus_tree = {
 			set_country_flag = ireland_social_cooperative_project_ready
 			add_to_variable = { var = ireland_provision_food value = constant:ireland.focus_reward_standard_delta }
 			custom_effect_tooltip = ireland_social_cooperatives_reward_tt
+			unlock_decision_tooltip = ireland_action_launch_an_emergency_housing_scheme
 			ireland_recompute_provision = yes
 		}
 	}
@@ -1617,7 +1809,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_producer_accounting
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 4
+		x = 6
 		y = 6
 		prerequisite = {
 			focus = ireland_social_cooperatives
@@ -1627,6 +1819,12 @@ focus_tree = {
 			has_completed_focus = ireland_development_authority
 		}
 		completion_reward = {
+			add_tech_bonus = {
+				name = ireland_producer_accounting_industry_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = industry
+			}
 			set_country_flag = ireland_producer_accounting_complete
 			set_country_flag = ireland_producer_accounting_project_ready
 			add_to_variable = { var = ireland_provision_food value = constant:ireland.focus_reward_minor_delta }
@@ -1634,6 +1832,7 @@ focus_tree = {
 			add_to_variable = { var = ireland_provision_transport value = constant:ireland.focus_reward_minor_delta }
 			add_to_variable = { var = ireland_provision_maritime value = constant:ireland.focus_reward_minor_delta }
 			custom_effect_tooltip = ireland_producer_accounting_reward_tt
+			unlock_decision_tooltip = ireland_mission_commission_the_protected_workshop_network
 			ireland_recompute_provision = yes
 		}
 	}
@@ -1642,7 +1841,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_provision_conclusion
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 4
+		x = 5
 		y = 7
 		prerequisite = {
 			focus = ireland_producer_accounting
@@ -1662,6 +1861,11 @@ focus_tree = {
 			not = { ireland_has_provision_dual_bottleneck = yes }
 		}
 		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = @IRELAND_FOCUS_CIVILIAN_FACTORY_LEVEL
+				add_building_construction = { type = industrial_complex level = @IRELAND_FOCUS_CIVILIAN_FACTORY_LEVEL instant_build = yes }
+			}
 			set_country_flag = ireland_provision_conclusion_complete
 			set_country_flag = ireland_provision_conclusion_ready
 			add_to_variable = { var = ireland_provision_food value = constant:ireland.focus_reward_standard_delta }
@@ -1669,6 +1873,7 @@ focus_tree = {
 			add_to_variable = { var = ireland_provision_transport value = constant:ireland.focus_reward_standard_delta }
 			add_to_variable = { var = ireland_provision_maritime value = constant:ireland.focus_reward_standard_delta }
 			custom_effect_tooltip = ireland_provision_conclusion_reward_tt
+			unlock_decision_tooltip = ireland_action_complete_the_route_conclusion_review
 			ireland_recompute_provision = yes
 		}
 	}
@@ -1680,7 +1885,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_readiness_baseline
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 40
+		x = 14
 		y = 1
 		available = {
 			has_completed_focus = ireland_defence_estimates
@@ -1695,7 +1900,14 @@ focus_tree = {
 			add_to_variable = { var = ireland_readiness_command value = constant:ireland.focus_reward_minor_delta }
 			add_to_variable = { var = ireland_readiness_equipment value = constant:ireland.focus_reward_minor_delta }
 			add_to_variable = { var = ireland_readiness_supply value = constant:ireland.focus_reward_minor_delta }
+			add_doctrine_cost_reduction = {
+				name = ireland_readiness_baseline_doctrine_bonus
+				cost_reduction = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = land_doctrine
+			}
 			custom_effect_tooltip = ireland_readiness_baseline_reward_tt
+			unlock_decision_tooltip = ireland_action_standardise_infantry_equipment
 			ireland_recompute_readiness = yes
 		}
 	}
@@ -1704,7 +1916,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_readiness_command
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = 38
+		x = 13
 		y = 2
 		prerequisite = {
 			focus = ireland_readiness_baseline
@@ -1713,11 +1925,14 @@ focus_tree = {
 			has_country_flag = ireland_command_structure_ready
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_FOCUS_RIFLE_DELIVERY_SMALL }
+			add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_FOCUS_SUPPORT_DELIVERY_SMALL }
 			set_country_flag = ireland_readiness_command_complete
 			set_country_flag = ireland_readiness_command_ready
 			add_to_variable = { var = ireland_readiness_command value = constant:ireland.focus_reward_major_delta }
 			army_experience = constant:ireland.focus_reward_xp_standard
 			custom_effect_tooltip = ireland_readiness_command_reward_tt
+			unlock_decision_tooltip = ireland_action_run_a_command_district_exercise
 			ireland_recompute_readiness = yes
 		}
 	}
@@ -1727,7 +1942,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_coastwatch
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP }
-		x = 42
+		x = 16
 		y = 2
 		available = {
 			has_country_flag = ireland_coastwatch_network_ready
@@ -1735,12 +1950,23 @@ focus_tree = {
 			has_completed_focus = ireland_national_settlement
 		}
 		completion_reward = {
+			if = {
+				limit = { 113 = { is_owned_and_controlled_by = ROOT } }
+				113 = { add_building_construction = { type = radar_station level = 1 instant_build = yes } }
+			}
 			set_country_flag = ireland_coastwatch_complete
 			set_country_flag = ireland_coastwatch_ready
 			add_to_variable = { var = ireland_readiness_warning value = constant:ireland.focus_reward_standard_delta }
 			add_to_variable = { var = ireland_readiness_intelligence value = constant:ireland.focus_reward_standard_delta }
 			navy_experience = constant:ireland.focus_reward_xp_standard
+			add_tech_bonus = {
+				name = ireland_coastwatch_electronics_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = electronics
+			}
 			custom_effect_tooltip = ireland_coastwatch_reward_tt
+			unlock_decision_tooltip = ireland_action_build_a_coastwatch_sector_network
 			ireland_recompute_readiness = yes
 		}
 	}
@@ -1749,7 +1975,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_air_warning
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_AIR_XP }
-		x = 42
+		x = 15
 		y = 3
 		prerequisite = {
 			focus = ireland_coastwatch
@@ -1760,11 +1986,19 @@ focus_tree = {
 			has_country_flag = ireland_civilian_defence_review_ready
 		}
 		completion_reward = {
+			113 = { add_building_construction = { type = anti_air_building level = @IRELAND_FOCUS_AIR_DEFENCE_LEVEL instant_build = yes } }
+			add_tech_bonus = {
+				name = ireland_air_warning_electronics_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = electronics
+			}
 			set_country_flag = ireland_air_warning_complete
 			set_country_flag = ireland_air_warning_ready
 			add_to_variable = { var = ireland_readiness_warning value = constant:ireland.focus_reward_major_delta }
 			air_experience = constant:ireland.focus_reward_xp_standard
 			custom_effect_tooltip = ireland_air_warning_reward_tt
+			unlock_decision_tooltip = ireland_action_intercept_an_airspace_violation
 			ireland_recompute_readiness = yes
 		}
 	}
@@ -1773,7 +2007,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_port_defence_project
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP FOCUS_FILTER_ARMY_XP }
-		x = 44
+		x = 17
 		y = 3
 		prerequisite = {
 			focus = ireland_coastwatch
@@ -1783,12 +2017,23 @@ focus_tree = {
 			has_completed_focus = ireland_treaty_port_transfer
 		}
 		completion_reward = {
+			if = {
+				limit = { 135 = { is_owned_and_controlled_by = ROOT } }
+				135 = { add_building_construction = { type = anti_air_building level = @IRELAND_FOCUS_AIR_DEFENCE_LEVEL instant_build = yes } }
+			}
 			set_country_flag = ireland_port_defence_project_complete
 			set_country_flag = ireland_port_defence_project_ready
 			add_to_variable = { var = ireland_readiness_maritime_protection value = constant:ireland.focus_reward_major_delta }
 			army_experience = constant:ireland.focus_reward_xp_standard
 			navy_experience = constant:ireland.focus_reward_xp_standard
+			add_tech_bonus = {
+				name = ireland_port_defence_artillery_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = artillery
+			}
 			custom_effect_tooltip = ireland_port_defence_project_reward_tt
+			unlock_decision_tooltip = ireland_action_install_harbour_defences
 			ireland_recompute_readiness = yes
 		}
 	}
@@ -1797,7 +2042,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_maritime_protection
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP }
-		x = 44
+		x = 17
 		y = 4
 		prerequisite = {
 			focus = ireland_port_defence_project
@@ -1807,11 +2052,19 @@ focus_tree = {
 			has_completed_focus = ireland_maritime_reserve
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = convoy amount = @IRELAND_FOCUS_CONVOY_DELIVERY }
 			set_country_flag = ireland_maritime_protection_complete
 			set_country_flag = ireland_maritime_protection_ready
 			add_to_variable = { var = ireland_readiness_maritime_protection value = constant:ireland.focus_reward_major_delta }
 			navy_experience = constant:ireland.focus_reward_xp_standard
+			add_tech_bonus = {
+				name = ireland_maritime_protection_naval_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = naval_equipment
+			}
 			custom_effect_tooltip = ireland_maritime_protection_reward_tt
+			unlock_decision_tooltip = ireland_action_organise_marine_patrols
 			ireland_recompute_readiness = yes
 		}
 	}
@@ -1824,7 +2077,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_rebuild_marine_service
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP }
-		x = 48
+		x = 19
 		y = 1
 		prerequisite = {
 			focus = ireland_establish_naval_staff
@@ -1835,6 +2088,7 @@ focus_tree = {
 			has_completed_focus = ireland_maritime_protection
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_rebuild_marine_service_reward_tt
 			set_country_flag = ireland_marine_service_ready
 			set_country_flag = ireland_rebuild_marine_service_complete
 			set_country_flag = ireland_marine_patrol_authority_ready
@@ -1863,7 +2117,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_requisition_trawler_hulls
 		cost = 10
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
-		x = 48
+		x = 19
 		y = 2
 		prerequisite = {
 			focus = ireland_rebuild_marine_service
@@ -1876,6 +2130,7 @@ focus_tree = {
 			has_completed_focus = ireland_provision_baseline
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_requisition_trawler_hulls_reward_tt
 			set_country_flag = ireland_trawler_hulls_requisitioned
 			set_country_flag = ireland_trawler_hull_project_ready
 			add_equipment_to_stockpile = {
@@ -1907,7 +2162,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_coastal_patrol_flotilla
 		cost = 10
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_HISTORICAL }
-		x = 48
+		x = 19
 		y = 3
 		prerequisite = {
 			focus = ireland_requisition_trawler_hulls
@@ -1917,6 +2172,13 @@ focus_tree = {
 			has_full_control_of_state = 135
 		}
 		completion_reward = {
+			add_tech_bonus = {
+				name = ireland_coastal_patrol_naval_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = naval_equipment
+			}
+			custom_effect_tooltip = ireland_coastal_patrol_flotilla_reward_tt
 			set_country_flag = ireland_coastal_patrol_flotilla_ready
 			set_country_flag = ireland_coastal_patrol_flotilla_complete
 			135 = {
@@ -1948,7 +2210,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_marine_service_reserve
 		cost = 10
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_MANPOWER FOCUS_FILTER_HISTORICAL }
-		x = 48
+		x = 19
 		y = 4
 		prerequisite = {
 			focus = ireland_coastal_patrol_flotilla
@@ -1958,6 +2220,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_mobilisation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_marine_service_reserve_reward_tt
 			set_country_flag = ireland_marine_service_reserve_ready
 			set_country_flag = ireland_marine_service_reserve_complete
 			army_experience = 10
@@ -1984,7 +2247,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_establish_naval_staff
 		cost = 10
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
-		x = 50
+		x = 15
 		y = 0
 		allow_branch = {
 			has_completed_focus = ireland_port_defence_project
@@ -1997,6 +2260,7 @@ focus_tree = {
 			has_country_flag = ireland_readiness_plan
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_establish_naval_staff_reward_tt
 			set_country_flag = ireland_naval_staff_ready
 			set_country_flag = ireland_establish_naval_staff_complete
 			hidden_effect = {
@@ -2036,7 +2300,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_harbour_defence_board
 		cost = 10
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
-		x = 52
+		x = 21
 		y = 1
 		prerequisite = {
 			focus = ireland_establish_naval_staff
@@ -2046,6 +2310,7 @@ focus_tree = {
 			has_completed_focus = ireland_port_defence_project
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_harbour_defence_board_reward_tt
 			set_country_flag = ireland_harbour_defence_board_ready
 			set_country_flag = ireland_harbour_defence_board_complete
 			113 = {
@@ -2083,7 +2348,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_cobh_dockyard_programme
 		cost = 10
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
-		x = 52
+		x = 21
 		y = 2
 		prerequisite = {
 			focus = ireland_harbour_defence_board
@@ -2093,6 +2358,7 @@ focus_tree = {
 			has_country_flag = ireland_port_defence_project_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_cobh_dockyard_programme_reward_tt
 			set_country_flag = ireland_cobh_dockyard_programme_ready
 			set_country_flag = ireland_cobh_dockyard_programme_complete
 			135 = {
@@ -2129,7 +2395,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_lough_swilly_watch
 		cost = 10
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
-		x = 52
+		x = 21
 		y = 3
 		prerequisite = {
 			focus = ireland_cobh_dockyard_programme
@@ -2140,6 +2406,7 @@ focus_tree = {
 			has_completed_focus = ireland_neutrality_posture
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_lough_swilly_watch_reward_tt
 			set_country_flag = ireland_lough_swilly_watch_ready
 			set_country_flag = ireland_lough_swilly_watch_complete
 			134 = {
@@ -2171,7 +2438,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_atlantic_convoy_office
 		cost = 10
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INTERNATIONAL_TRADE FOCUS_FILTER_HISTORICAL }
-		x = 52
+		x = 21
 		y = 4
 		prerequisite = {
 			focus = ireland_lough_swilly_watch
@@ -2181,6 +2448,7 @@ focus_tree = {
 			has_completed_focus = ireland_coastal_patrol_flotilla
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_atlantic_convoy_office_reward_tt
 			set_country_flag = ireland_atlantic_convoy_office_ready
 			set_country_flag = ireland_atlantic_convoy_office_complete
 			set_country_flag = ireland_marine_convoy_authority_ready
@@ -2212,7 +2480,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_regional_maritime_defence_pact
 		cost = 14
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INTERNATIONAL_TRADE FOCUS_FILTER_HISTORICAL }
-		x = 52
+		x = 21
 		y = 5
 		prerequisite = {
 			focus = ireland_atlantic_convoy_office
@@ -2222,6 +2490,7 @@ focus_tree = {
 			has_completed_focus = ireland_interoperability
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_regional_maritime_defence_pact_reward_tt
 			set_country_flag = ireland_regional_maritime_defence_pact_ready
 			set_country_flag = ireland_regional_maritime_defence_pact_complete
 			set_country_flag = ireland_regional_maritime_defence_pact_signed
@@ -2252,7 +2521,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_professional_army
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = 38
+		x = 13
 		y = 3
 		prerequisite = {
 			focus = ireland_readiness_command
@@ -2262,12 +2531,21 @@ focus_tree = {
 			has_completed_focus = ireland_cosgrave_institutional
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_FOCUS_RIFLE_DELIVERY_SMALL }
+			add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_FOCUS_SUPPORT_DELIVERY_SMALL }
+			add_tech_bonus = {
+				name = ireland_professional_army_support_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = support_tech
+			}
 			set_country_flag = ireland_professional_army_complete
 			set_country_flag = ireland_professional_army_ready
 			add_to_variable = { var = ireland_readiness_command value = constant:ireland.focus_reward_standard_delta }
 			add_to_variable = { var = ireland_readiness_equipment value = constant:ireland.focus_reward_standard_delta }
 			army_experience = constant:ireland.focus_reward_xp_major
 			custom_effect_tooltip = ireland_professional_army_reward_tt
+			unlock_decision_tooltip = ireland_action_procure_rifles_and_support_equipment
 			ireland_recompute_readiness = yes
 		}
 	}
@@ -2276,7 +2554,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_civilian_oversight
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 38
+		x = 13
 		y = 4
 		prerequisite = {
 			focus = ireland_professional_army
@@ -2291,6 +2569,7 @@ focus_tree = {
 			add_to_variable = { var = ireland_readiness_mobilisation value = constant:ireland.focus_reward_standard_delta }
 			add_to_variable = { var = ireland_readiness_supply value = constant:ireland.focus_reward_standard_delta }
 			custom_effect_tooltip = ireland_civilian_oversight_reward_tt
+			unlock_decision_tooltip = ireland_action_demobilise_a_force_tier
 			ireland_recompute_readiness = yes
 		}
 	}
@@ -2299,7 +2578,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_interoperability
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = 38
+		x = 14
 		y = 5
 		prerequisite = {
 			focus = ireland_civilian_oversight
@@ -2310,6 +2589,14 @@ focus_tree = {
 			has_completed_focus = ireland_foreign_safeguards
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = motorized_equipment amount = @IRELAND_FOCUS_MOTOR_DELIVERY }
+			add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_FOCUS_SUPPORT_DELIVERY_SMALL }
+			add_tech_bonus = {
+				name = ireland_interoperability_support_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = support_tech
+			}
 			set_country_flag = ireland_interoperability_complete
 			set_country_flag = ireland_interoperability_project_ready
 			add_to_variable = { var = ireland_readiness_command value = constant:ireland.focus_reward_standard_delta }
@@ -2317,6 +2604,7 @@ focus_tree = {
 			army_experience = constant:ireland.focus_reward_xp_standard
 			air_experience = constant:ireland.focus_reward_xp_standard
 			custom_effect_tooltip = ireland_interoperability_reward_tt
+			unlock_decision_tooltip = ireland_action_motorise_a_strategic_route
 			ireland_recompute_readiness = yes
 		}
 	}
@@ -2325,7 +2613,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_emergency_mobilisation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
-		x = 42
+		x = 15
 		y = 4
 		prerequisite = {
 			focus = ireland_air_warning
@@ -2335,12 +2623,14 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_opening
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_FOCUS_RIFLE_DELIVERY }
 			set_country_flag = ireland_emergency_mobilisation_complete
 			set_country_flag = ireland_emergency_mobilisation_ready
 			add_to_variable = { var = ireland_readiness_mobilisation value = constant:ireland.focus_reward_major_delta }
 			add_to_variable = { var = ireland_readiness_supply value = constant:ireland.focus_reward_major_delta }
 			army_experience = constant:ireland.focus_reward_xp_standard
 			custom_effect_tooltip = ireland_emergency_mobilisation_reward_tt
+			unlock_decision_tooltip = ireland_action_activate_a_cadre_reserve
 			ireland_recompute_readiness = yes
 		}
 	}
@@ -2349,7 +2639,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_readiness_conclusion
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 44
+		x = 17
 		y = 5
 		prerequisite = {
 			focus = ireland_maritime_protection
@@ -2366,6 +2656,11 @@ focus_tree = {
 			has_completed_focus = ireland_interoperability
 		}
 		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = @IRELAND_FOCUS_MILITARY_FACTORY_LEVEL
+				add_building_construction = { type = arms_factory level = @IRELAND_FOCUS_MILITARY_FACTORY_LEVEL instant_build = yes }
+			}
 			set_country_flag = ireland_readiness_conclusion_complete
 			set_country_flag = ireland_readiness_conclusion_ready
 			add_to_variable = { var = ireland_readiness_command value = constant:ireland.focus_reward_standard_delta }
@@ -2377,6 +2672,7 @@ focus_tree = {
 			add_to_variable = { var = ireland_readiness_intelligence value = constant:ireland.focus_reward_standard_delta }
 			add_command_power = constant:ireland.focus_reward_xp_major
 			custom_effect_tooltip = ireland_readiness_conclusion_reward_tt
+			unlock_decision_tooltip = ireland_action_complete_the_route_conclusion_review
 			ireland_recompute_readiness = yes
 		}
 	}
@@ -2387,7 +2683,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_strict_neutrality
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 19
+		x = 2
 		y = 0
 		allow_branch = {
 			has_completed_focus = ireland_readiness_baseline
@@ -2404,6 +2700,7 @@ focus_tree = {
 			set_country_flag = ireland_strict_neutrality_ready
 			add_to_variable = { var = ireland_neutrality_integrity value = constant:ireland.focus_reward_major_delta }
 			custom_effect_tooltip = ireland_strict_neutrality_reward_tt
+			unlock_decision_tooltip = ireland_action_intern_a_belligerent_crew
 		}
 	}
 	focus = {
@@ -2411,7 +2708,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_armed_neutrality
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 16
+		x = 1
 		y = 1
 		prerequisite = {
 			focus = ireland_strict_neutrality
@@ -2421,6 +2718,8 @@ focus_tree = {
 			has_completed_focus = ireland_readiness_baseline
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_FOCUS_RIFLE_DELIVERY_STANDARD }
+			add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_FOCUS_SUPPORT_DELIVERY_SMALL }
 			set_country_flag = ireland_armed_neutrality_complete
 			set_country_flag = ireland_armed_neutrality_ready
 			add_to_variable = { var = ireland_neutrality_integrity value = constant:ireland.focus_reward_standard_delta }
@@ -2429,7 +2728,14 @@ focus_tree = {
 				add_to_variable = { ireland_readiness_warning = constant:ireland_maritime.ledger_standard_delta }
 				ireland_recompute_readiness = yes
 			}
+			add_tech_bonus = {
+				name = ireland_armed_neutrality_support_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = support_tech
+			}
 			custom_effect_tooltip = ireland_armed_neutrality_reward_tt
+			unlock_decision_tooltip = ireland_action_restore_neutrality_integrity
 		}
 	}
 	focus = {
@@ -2437,7 +2743,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_treaty_port_diplomacy
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 18
+		x = 3
 		y = 1
 		prerequisite = {
 			focus = ireland_strict_neutrality
@@ -2451,6 +2757,7 @@ focus_tree = {
 			set_country_flag = ireland_treaty_port_diplomacy_ready
 			add_to_variable = { var = ireland_neutrality_integrity value = constant:ireland.focus_reward_standard_delta }
 			custom_effect_tooltip = ireland_treaty_port_diplomacy_reward_tt
+			unlock_decision_tooltip = ireland_action_answer_a_foreign_access_request
 		}
 	}
 	focus = {
@@ -2458,7 +2765,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_british_leverage_management
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 18
+		x = 3
 		y = 2
 		prerequisite = {
 			focus = ireland_treaty_port_diplomacy
@@ -2473,6 +2780,7 @@ focus_tree = {
 			set_country_flag = ireland_british_channel_open
 			add_to_variable = { var = ireland_neutrality_integrity value = constant:ireland.focus_reward_standard_delta }
 			custom_effect_tooltip = ireland_british_leverage_management_reward_tt
+			unlock_decision_tooltip = ireland_action_renegotiate_a_british_supply_contract
 		}
 	}
 	focus = {
@@ -2480,7 +2788,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_american_diaspora_mission
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 20
+		x = 5
 		y = 1
 		prerequisite = {
 			focus = ireland_strict_neutrality
@@ -2496,6 +2804,7 @@ focus_tree = {
 			add_to_variable = { var = ireland_neutrality_integrity value = constant:ireland.focus_reward_standard_delta }
 			add_to_variable = { var = ireland_social_consent value = constant:ireland.focus_reward_minor_delta }
 			custom_effect_tooltip = ireland_american_diaspora_mission_reward_tt
+			unlock_decision_tooltip = ireland_action_send_an_american_procurement_mission
 		}
 	}
 	focus = {
@@ -2504,7 +2813,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_vatican_small_state_mediation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 22
+		x = 7
 		y = 1
 		available = {
 			ireland_vatican_partner_valid = yes
@@ -2518,6 +2827,7 @@ focus_tree = {
 			add_to_variable = { var = ireland_neutrality_integrity value = constant:ireland.focus_reward_standard_delta }
 			add_to_variable = { var = ireland_social_consent value = constant:ireland.focus_reward_minor_delta }
 			custom_effect_tooltip = ireland_vatican_small_state_mediation_reward_tt
+			unlock_decision_tooltip = ireland_action_seek_vatican_humanitarian_mediation
 		}
 	}
 	focus = {
@@ -2525,7 +2835,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_foreign_safeguards
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 19
+		x = 5
 		y = 3
 		prerequisite = {
 			focus = ireland_british_leverage_management
@@ -2546,6 +2856,7 @@ focus_tree = {
 			set_country_flag = ireland_neutral_states_channel_open
 			add_to_variable = { var = ireland_neutrality_integrity value = constant:ireland.focus_reward_major_delta }
 			custom_effect_tooltip = ireland_foreign_safeguards_reward_tt
+			unlock_decision_tooltip = ireland_action_convene_a_neutral_states_consultation
 		}
 	}
 	focus = {
@@ -2553,7 +2864,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_neutrality_posture
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = 19
+		x = 6
 		y = 4
 		prerequisite = {
 			focus = ireland_foreign_safeguards
@@ -2566,6 +2877,7 @@ focus_tree = {
 			set_country_flag = ireland_foreign_posture_selected
 			add_to_variable = { var = ireland_neutrality_integrity value = constant:ireland.focus_reward_major_delta }
 			custom_effect_tooltip = ireland_neutrality_posture_reward_tt
+			unlock_decision_tooltip = ireland_mission_maintain_equal_belligerent_rules
 		}
 	}
 
@@ -2575,7 +2887,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_northern_settlement_ledger
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 28
+		x = 5
 		y = 0
 		allow_branch = {
 			has_completed_focus = ireland_national_settlement
@@ -2586,6 +2898,8 @@ focus_tree = {
 			has_completed_focus = ireland_treaty_port_transfer
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_northern_settlement_ledger_reward_tt
+			unlock_decision_tooltip = ireland_action_open_cross_border_confidence_measures
 			set_country_flag = ireland_northern_ledger_open
 			set_country_flag = ireland_northern_negotiation_open
 			119 = {
@@ -2598,7 +2912,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_northern_local_authorities
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 28
+		x = 9
 		y = 1
 		prerequisite = {
 			focus = ireland_northern_settlement_ledger
@@ -2608,6 +2922,8 @@ focus_tree = {
 			has_completed_focus = ireland_public_order_review
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_northern_local_authorities_reward_tt
+			unlock_decision_tooltip = ireland_action_invite_northern_delegations
 			set_country_flag = ireland_northern_local_authorities_complete
 			set_country_flag = ireland_northern_local_authority_ready
 		}
@@ -2617,7 +2933,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_northern_trade_corridor
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = 26
+		x = 7
 		y = 2
 		prerequisite = {
 			focus = ireland_northern_local_authorities
@@ -2627,6 +2943,8 @@ focus_tree = {
 			has_completed_focus = ireland_1938_trade_settlement
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_northern_trade_corridor_reward_tt
+			unlock_decision_tooltip = ireland_action_open_a_border_corridor
 			set_country_flag = ireland_northern_trade_corridor_complete
 			set_country_flag = ireland_northern_trade_corridor_ready
 		}
@@ -2636,7 +2954,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_northern_labour_social_bridge
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
-		x = 28
+		x = 9
 		y = 2
 		prerequisite = {
 			focus = ireland_northern_local_authorities
@@ -2646,6 +2964,8 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_northern_labour_social_bridge_reward_tt
+			unlock_decision_tooltip = ireland_action_build_a_labour_industrial_settlement
 			set_country_flag = ireland_northern_labour_social_bridge_complete
 			set_country_flag = ireland_northern_labour_bridge_ready
 
@@ -2658,7 +2978,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_northern_federal_preparation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 30
+		x = 11
 		y = 2
 		prerequisite = {
 			focus = ireland_northern_local_authorities
@@ -2668,6 +2988,8 @@ focus_tree = {
 			has_completed_focus = ireland_northern_settlement_ledger
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_northern_federal_preparation_reward_tt
+			unlock_decision_tooltip = ireland_action_convene_a_federal_powers_conference
 			set_country_flag = ireland_northern_federal_preparation_complete
 			set_country_flag = ireland_northern_federal_prepared
 
@@ -2680,7 +3002,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_northern_unitary_preparation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 26
+		x = 7
 		y = 3
 		prerequisite = {
 			focus = ireland_northern_trade_corridor
@@ -2690,6 +3012,8 @@ focus_tree = {
 			has_completed_focus = ireland_northern_settlement_ledger
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_northern_unitary_preparation_reward_tt
+			unlock_decision_tooltip = ireland_action_draft_a_unitary_safeguards_charter
 			set_country_flag = ireland_northern_unitary_preparation_complete
 			set_country_flag = ireland_northern_unitary_prepared
 		}
@@ -2699,7 +3023,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_northern_wartime_bargain
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 28
+		x = 9
 		y = 3
 		prerequisite = {
 			focus = ireland_northern_trade_corridor
@@ -2715,6 +3039,8 @@ focus_tree = {
 			has_completed_focus = ireland_treaty_port_transfer
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_northern_wartime_bargain_reward_tt
+			unlock_decision_tooltip = ireland_action_prepare_a_wartime_unity_bargain
 			set_country_flag = ireland_northern_wartime_bargain_complete
 			clr_country_flag = ireland_northern_wartime_bargain_ready
 			set_country_flag = ireland_northern_war_plan
@@ -2725,7 +3051,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_northern_policy_proof
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 30
+		x = 11
 		y = 4
 		prerequisite = {
 			focus = ireland_northern_federal_preparation focus = ireland_northern_unitary_preparation focus = ireland_northern_wartime_bargain
@@ -2735,6 +3061,8 @@ focus_tree = {
 			OR = { has_country_flag = ireland_northern_integration_complete has_country_flag = ireland_northern_deferment_accepted }
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_northern_policy_proof_reward_tt
+			unlock_decision_tooltip = ireland_action_review_foreign_guarantees
 			set_country_flag = ireland_northern_policy_proof_complete
 			set_country_flag = ireland_northern_policy_selected
 			set_country_flag = ireland_northern_policy_active
@@ -2748,7 +3076,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_recovery_bridge
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -26
+		x = -15
 		y = 14
 		available = {
 			OR = {
@@ -2760,6 +3088,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_opening
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_recovery_bridge_reward_tt
 			set_country_flag = ireland_recovery_bridge_complete
 			set_country_flag = ireland_postwar_review_started
 			if = {
@@ -2799,7 +3128,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_restore_constitutional_calendar
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -26
+		x = -15
 		y = 15
 		prerequisite = {
 			focus = ireland_recovery_bridge
@@ -2808,6 +3137,7 @@ focus_tree = {
 			has_completed_focus = ireland_emergency_review
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_restore_constitutional_calendar_reward_tt
 			set_country_flag = ireland_restore_constitutional_calendar_complete
 			set_country_flag = ireland_constitutional_calendar_restored
 			if = {
@@ -2832,7 +3162,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_material_conclusion_proof
 		cost = 14
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		x = -26
+		x = -15
 		y = 16
 		prerequisite = {
 			focus = ireland_restore_constitutional_calendar
@@ -2867,7 +3197,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_ira_republican_bridge
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -26
+		x = -18
 		y = 3
 		allow_branch = {
 			has_country_flag = ireland_ira_organization_ready
@@ -2884,6 +3214,7 @@ focus_tree = {
 			has_completed_focus = ireland_national_settlement
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_ira_republican_bridge_reward_tt
 			set_country_flag = ireland_ira_republican_bridge_complete
 			set_country_flag = ireland_route_ira_republican
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -2895,7 +3226,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_reassemble_ghq
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -26
+		x = -18
 		y = 4
 		prerequisite = {
 			focus = ireland_ira_republican_bridge
@@ -2904,6 +3235,7 @@ focus_tree = {
 			has_country_flag = ireland_security_exposure_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_reassemble_ghq_reward_tt
 			set_country_flag = ireland_reassemble_ghq_complete
 			set_country_flag = ireland_ira_ghq_reassembled
 
@@ -2919,7 +3251,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_arms_before_authority
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = -28
+		x = -19
 		y = 5
 		mutually_exclusive = {
 			focus = ireland_authority_before_arms
@@ -2929,6 +3261,9 @@ focus_tree = {
 			has_completed_focus = ireland_reassemble_ghq
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_arms_before_authority_reward_tt
+			add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_FOCUS_RIFLE_DELIVERY_STANDARD }
+			add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_FOCUS_SUPPORT_DELIVERY_SMALL }
 			set_country_flag = ireland_arms_before_authority_complete
 			set_country_flag = ireland_ira_army_council_path
 		}
@@ -2938,7 +3273,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_authority_before_arms
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = -26
+		x = -17
 		y = 5
 		mutually_exclusive = {
 			focus = ireland_arms_before_authority
@@ -2950,6 +3285,7 @@ focus_tree = {
 			has_country_flag = ireland_ira_civil_authority_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_authority_before_arms_reward_tt
 			set_country_flag = ireland_authority_before_arms_complete
 			set_country_flag = ireland_ira_civil_path
 		}
@@ -2959,7 +3295,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_german_channel
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNATIONAL_TRADE }
-		x = -30
+		x = -20
 		y = 6
 		prerequisite = {
 			focus = ireland_arms_before_authority
@@ -2969,6 +3305,13 @@ focus_tree = {
 			has_completed_focus = ireland_foreign_safeguards
 		}
 		completion_reward = {
+			add_tech_bonus = {
+				name = ireland_german_channel_support_bonus
+				bonus = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = support_tech
+			}
+			custom_effect_tooltip = ireland_german_channel_reward_tt
 			set_country_flag = ireland_german_channel_complete
 			set_country_flag = ireland_ira_foreign_channel_open
 			set_country_flag = ireland_german_channel_open
@@ -2979,7 +3322,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_northern_question_in_arms
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = -28
+		x = -18
 		y = 6
 		prerequisite = {
 			focus = ireland_arms_before_authority
@@ -2994,6 +3337,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_northern_question_in_arms_reward_tt
+			add_equipment_to_stockpile = { type = motorized_equipment amount = @IRELAND_FOCUS_MOTOR_DELIVERY }
 			set_country_flag = ireland_northern_question_in_arms_complete
 			set_country_flag = ireland_ira_northern_policy_ready
 		}
@@ -3003,7 +3348,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_ira_civil_authority
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -26
+		x = -16
 		y = 6
 		prerequisite = {
 			focus = ireland_authority_before_arms
@@ -3012,6 +3357,7 @@ focus_tree = {
 			has_country_flag = ireland_ira_civil_authority_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_ira_civil_authority_reward_tt
 			set_country_flag = ireland_ira_civil_authority_complete
 			set_country_flag = ireland_ira_civil_transition_ready
 		}
@@ -3021,7 +3367,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_ira_army_council
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -30
+		x = -20
 		y = 7
 		prerequisite = {
 			focus = ireland_german_channel
@@ -3030,6 +3376,8 @@ focus_tree = {
 			has_country_flag = ireland_ira_command_ready
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_FOCUS_RIFLE_DELIVERY_STANDARD }
+			add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_FOCUS_SUPPORT_DELIVERY_SMALL }
 			set_country_flag = ireland_ira_army_council_complete
 			set_country_flag = ireland_ira_army_council_transition_ready
 			set_country_flag = ireland_armed_takeover
@@ -3044,7 +3392,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_ira_route_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -28
+		x = -18
 		y = 8
 		prerequisite = {
 			focus = ireland_ira_civil_authority
@@ -3061,6 +3409,7 @@ focus_tree = {
 			has_completed_focus = ireland_northern_question_in_arms
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_ira_route_capstone_reward_tt
 			set_country_flag = ireland_ira_route_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -3095,6 +3444,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_congress_reform_bridge_reward_tt
 			set_country_flag = ireland_congress_reform_bridge_complete
 			set_country_flag = ireland_route_congress
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -3106,7 +3456,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_organise_congress
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -12
+		x = -8
 		y = 4
 		prerequisite = {
 			focus = ireland_congress_reform_bridge
@@ -3115,6 +3465,7 @@ focus_tree = {
 			has_country_flag = ireland_union_local_mandate_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_organise_congress_reward_tt
 			set_country_flag = ireland_organise_congress_complete
 			set_country_flag = ireland_congress_organised
 
@@ -3127,7 +3478,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_congress_plural_republic
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -13
+		x = -4
 		y = 5
 		mutually_exclusive = {
 			focus = ireland_congress_vanguard_cell
@@ -3139,6 +3490,7 @@ focus_tree = {
 			has_country_flag = ireland_congress_plural_mandate_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_congress_plural_republic_reward_tt
 			set_country_flag = ireland_congress_plural_republic_complete
 			set_country_flag = ireland_congress_plural_path
 
@@ -3151,7 +3503,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_congress_vanguard_cell
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -15
+		x = -6
 		y = 5
 		mutually_exclusive = {
 			focus = ireland_congress_plural_republic
@@ -3163,6 +3515,14 @@ focus_tree = {
 			has_country_flag = ireland_congress_vanguard_capture_ready
 		}
 		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = ireland_congress_vanguard_doctrine_bonus
+				cost_reduction = @IRELAND_FOCUS_RESEARCH_BONUS
+				uses = @IRELAND_FOCUS_RESEARCH_USES
+				category = land_doctrine
+			}
+			custom_effect_tooltip = ireland_congress_vanguard_cell_reward_tt
+			add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_FOCUS_RIFLE_DELIVERY_STANDARD }
 			set_country_flag = ireland_congress_vanguard_cell_complete
 			set_country_flag = ireland_congress_vanguard_path
 		}
@@ -3172,7 +3532,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_congress_plural_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -13
+		x = -4
 		y = 6
 		prerequisite = { focus = ireland_congress_plural_republic }
 		available = {
@@ -3184,6 +3544,7 @@ focus_tree = {
 			has_country_flag = ireland_congress_plural_path
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_congress_plural_capstone_reward_tt
 			set_country_flag = ireland_congress_plural_capstone_complete
 			set_country_flag = ireland_congress_transition_complete
 			ireland_begin_conclusion_review = yes
@@ -3194,7 +3555,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_congress_vanguard_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -15
+		x = -6
 		y = 6
 		prerequisite = { focus = ireland_congress_vanguard_cell }
 		available = {
@@ -3206,6 +3567,7 @@ focus_tree = {
 			has_country_flag = ireland_congress_vanguard_path
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_congress_vanguard_capstone_reward_tt
 			set_country_flag = ireland_congress_vanguard_capstone_complete
 			set_country_flag = ireland_congress_transition_complete
 			ireland_begin_conclusion_review = yes
@@ -3226,7 +3588,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_oduffy_network_revival
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -14
+		x = -8
 		y = 10
 		allow_branch = {
 			has_country_flag = ireland_oduffy_network_ready
@@ -3241,6 +3603,7 @@ focus_tree = {
 			has_completed_focus = ireland_close_oduffy_chapter
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_oduffy_network_revival_reward_tt
 			set_country_flag = ireland_oduffy_network_revival_complete
 			set_country_flag = ireland_route_oduffy
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -3257,7 +3620,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_oduffy_personal_command
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = -14
+		x = -8
 		y = 11
 		prerequisite = {
 			focus = ireland_oduffy_network_revival
@@ -3274,6 +3637,9 @@ focus_tree = {
 			clr_country_flag = ireland_oduffy_personal_command_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_oduffy_personal_command_reward_tt
+			add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_FOCUS_RIFLE_DELIVERY_STANDARD }
+			add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_FOCUS_SUPPORT_DELIVERY_SMALL }
 			set_country_flag = ireland_oduffy_personal_command_complete
 			set_country_flag = ireland_oduffy_personal_path
 		}
@@ -3283,7 +3649,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_army_acceptance
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
-		x = -12
+		x = -6
 		y = 11
 		prerequisite = {
 			focus = ireland_oduffy_network_revival
@@ -3293,6 +3659,8 @@ focus_tree = {
 			has_completed_focus = ireland_oduffy_network_revival
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_army_acceptance_reward_tt
+			add_equipment_to_stockpile = { type = motorized_equipment amount = @IRELAND_FOCUS_MOTOR_DELIVERY }
 			set_country_flag = ireland_army_acceptance_complete
 			set_country_flag = ireland_oduffy_army_acceptance_ready
 		}
@@ -3302,7 +3670,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_corporate_order
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -12
+		x = -6
 		y = 12
 		prerequisite = {
 			focus = ireland_army_acceptance
@@ -3311,6 +3679,7 @@ focus_tree = {
 			has_country_flag = ireland_corporate_order_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_corporate_order_reward_tt
 			set_country_flag = ireland_corporate_order_complete
 			set_country_flag = ireland_oduffy_corporate_path
 		}
@@ -3320,7 +3689,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_oduffy_personal_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -14
+		x = -8
 		y = 12
 		mutually_exclusive = {
 			focus = ireland_oduffy_corporate_capstone
@@ -3338,6 +3707,7 @@ focus_tree = {
 			has_completed_focus = ireland_oduffy_personal_command
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_oduffy_personal_capstone_reward_tt
 			set_country_flag = ireland_oduffy_personal_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -3347,7 +3717,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_oduffy_corporate_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -12
+		x = -6
 		y = 13
 		mutually_exclusive = {
 			focus = ireland_oduffy_personal_capstone
@@ -3364,6 +3734,7 @@ focus_tree = {
 			has_country_flag = ireland_oduffy_corporate_path
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_oduffy_corporate_capstone_reward_tt
 			set_country_flag = ireland_oduffy_corporate_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -3397,6 +3768,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_clerical_failure_bridge_reward_tt
 			set_country_flag = ireland_clerical_failure_bridge_complete
 			set_country_flag = ireland_route_clerical_producer
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -3413,7 +3785,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_clerical_guardianship
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -10
+		x = -6
 		y = 4
 		prerequisite = {
 			focus = ireland_clerical_failure_bridge
@@ -3423,6 +3795,7 @@ focus_tree = {
 			has_completed_focus = ireland_church_labour_consultation
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_clerical_guardianship_reward_tt
 			set_country_flag = ireland_clerical_guardianship_complete
 			set_country_flag = ireland_clerical_guardianship_path
 		}
@@ -3432,7 +3805,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_producer_constitution
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -10
+		x = -2
 		y = 5
 		prerequisite = {
 			focus = ireland_clerical_guardianship
@@ -3442,6 +3815,7 @@ focus_tree = {
 			has_completed_focus = ireland_clerical_failure_bridge
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_producer_constitution_reward_tt
 			set_country_flag = ireland_producer_constitution_complete
 			set_country_flag = ireland_producer_constitution_path
 		}
@@ -3451,7 +3825,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_clerical_route_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -10
+		x = -2
 		y = 6
 		prerequisite = {
 			focus = ireland_producer_constitution
@@ -3465,6 +3839,7 @@ focus_tree = {
 			OR = { has_country_flag = ireland_clerical_guardianship_path has_country_flag = ireland_producer_constitution_path }
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_clerical_route_capstone_reward_tt
 			set_country_flag = ireland_clerical_route_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}
@@ -3477,7 +3852,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_ailtiri_cell_network
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -24
+		x = -16
 		y = 3
 		allow_branch = {
 			date > 1940.9.1
@@ -3522,6 +3897,9 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_ailtiri_cell_network_reward_tt
+			add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_FOCUS_RIFLE_DELIVERY_STANDARD }
+			add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_FOCUS_SUPPORT_DELIVERY_SMALL }
 			set_country_flag = ireland_ailtiri_cell_network_complete
 			set_country_flag = ireland_route_ailtiri_total_state
 			set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
@@ -3536,7 +3914,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_june_1942_public_launch
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -24
+		x = -16
 		y = 4
 		prerequisite = {
 			focus = ireland_ailtiri_cell_network
@@ -3547,6 +3925,7 @@ focus_tree = {
 			has_country_flag = ireland_language_cells_complete
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_june_1942_public_launch_reward_tt
 			set_country_flag = ireland_june_1942_public_launch_complete
 			set_country_flag = ireland_ailtiri_public_launch
 			set_country_flag = ireland_ailtiri_crisis
@@ -3558,7 +3937,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_ceannaire_state
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_AIR_XP }
-		x = -24
+		x = -14
 		y = 5
 		prerequisite = {
 			focus = ireland_june_1942_public_launch
@@ -3568,6 +3947,8 @@ focus_tree = {
 			has_completed_focus = ireland_public_order_review
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_ceannaire_state_reward_tt
+			add_equipment_to_stockpile = { type = motorized_equipment amount = @IRELAND_FOCUS_MOTOR_DELIVERY }
 			set_country_flag = ireland_ceannaire_state_complete
 			set_country_flag = ireland_ailtiri_ceannaire_ready
 
@@ -3580,7 +3961,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_ailtiri_total_state_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -24
+		x = -14
 		y = 6
 		prerequisite = {
 			focus = ireland_ceannaire_state
@@ -3594,6 +3975,7 @@ focus_tree = {
 			has_country_flag = ireland_route_ailtiri_total_state
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_ailtiri_total_state_capstone_reward_tt
 			set_country_flag = ireland_ailtiri_total_state_capstone_complete
 			set_country_flag = ireland_ailtiri_total_state_complete
 			ireland_begin_conclusion_review = yes
@@ -3628,6 +4010,7 @@ focus_tree = {
 			has_completed_focus = ireland_serious_cultural_stewardship
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_high_king_evidence_gate_reward_tt
 			set_country_flag = ireland_high_king_evidence_gate_complete
 			set_country_flag = ireland_route_high_king
 
@@ -3639,7 +4022,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_elective_crown
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -3
+		x = 2
 		y = 5
 		mutually_exclusive = {
 			focus = ireland_guardian_crown
@@ -3651,6 +4034,7 @@ focus_tree = {
 			has_country_flag = ireland_high_king_constitutional_mandate
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_elective_crown_reward_tt
 			set_country_flag = ireland_elective_crown_complete
 			set_country_flag = ireland_high_king_constitutional_path
 		}
@@ -3660,7 +4044,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_guardian_crown
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -1
+		x = 4
 		y = 5
 		mutually_exclusive = {
 			focus = ireland_elective_crown
@@ -3672,6 +4056,7 @@ focus_tree = {
 			has_country_flag = ireland_high_king_rare_condition
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_guardian_crown_reward_tt
 			set_country_flag = ireland_guardian_crown_complete
 			set_country_flag = ireland_high_king_constitutional_path
 		}
@@ -3681,7 +4066,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_crown_powers_charter
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -2
+		x = 4
 		y = 6
 		prerequisite = {
 			focus = ireland_elective_crown
@@ -3725,7 +4110,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_high_king_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -2
+		x = 3
 		y = 7
 		prerequisite = {
 			focus = ireland_crown_powers_charter
@@ -3739,6 +4124,7 @@ focus_tree = {
 			has_country_flag = ireland_crown_conclusion_valid
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_high_king_capstone_reward_tt
 			set_country_flag = ireland_high_king_capstone_complete
 			country_event = { id = ireland_events.432 }
 
@@ -3771,7 +4157,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_five_province_mandates
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 30
+		x = 12
 		y = 5
 		allow_branch = {
 			has_country_flag = ireland_five_provinces_mandates_ready
@@ -3785,6 +4171,7 @@ focus_tree = {
 			has_completed_focus = ireland_cultural_survey
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_five_province_mandates_reward_tt
 			set_country_flag = ireland_five_province_mandates_complete
 			set_country_flag = ireland_route_five_provinces
 
@@ -3797,13 +4184,14 @@ focus_tree = {
 		icon = GFX_focus_ireland_federal_republic
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 28
+		x = 11
 		y = 6
 		prerequisite = { focus = ireland_five_province_mandates }
 		available = {
 			has_country_flag = ireland_federal_powers_ready
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_federal_republic_reward_tt
 			set_country_flag = ireland_federal_republic_complete
 			set_country_flag = ireland_federal_republic_path
 		}
@@ -3813,7 +4201,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_pentarchy_guardians
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 32
+		x = 13
 		y = 6
 		prerequisite = {
 			focus = ireland_five_province_mandates
@@ -3822,6 +4210,7 @@ focus_tree = {
 			has_country_flag = ireland_five_provinces_impossible_confirmed
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_pentarchy_guardians_reward_tt
 			set_country_flag = ireland_pentarchy_guardians_complete
 			set_country_flag = ireland_pentarchy_path
 		}
@@ -3831,7 +4220,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_five_provinces_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = 30
+		x = 7
 		y = 7
 		prerequisite = {
 			focus = ireland_federal_republic
@@ -3848,6 +4237,7 @@ focus_tree = {
 			has_completed_focus = ireland_five_province_mandates
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_five_provinces_capstone_reward_tt
 			set_country_flag = ireland_five_provinces_capstone_complete
 			set_country_flag = ireland_five_provinces_conclusion_valid
 			ireland_begin_conclusion_review = yes
@@ -3868,7 +4258,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_otherworld_investigation
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -6
+		x = -4
 		y = 4
 		allow_branch = {
 			has_country_flag = ireland_hidden_content_permission
@@ -3887,6 +4277,7 @@ focus_tree = {
 			has_completed_focus = ireland_serious_cultural_stewardship
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_otherworld_investigation_reward_tt
 			set_country_flag = ireland_otherworld_investigation_complete
 			set_country_flag = ireland_route_otherworld
 
@@ -3899,7 +4290,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_otherworld_evidence_ledger
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -6
+		x = 0
 		y = 5
 		prerequisite = {
 			focus = ireland_otherworld_investigation
@@ -3910,6 +4301,7 @@ focus_tree = {
 			has_completed_focus = ireland_cultural_evidence_ledger
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_otherworld_evidence_ledger_reward_tt
 			set_country_flag = ireland_otherworld_evidence_ledger_complete
 			set_country_flag = ireland_otherworld_evidence_ledger_ready
 			set_country_flag = ireland_otherworld_verified
@@ -3922,7 +4314,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_compact_with_otherworld
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -8
+		x = 0
 		y = 6
 		prerequisite = {
 			focus = ireland_otherworld_evidence_ledger
@@ -3932,6 +4324,7 @@ focus_tree = {
 			has_country_flag = ireland_otherworld_archive_reveal_complete
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_compact_with_otherworld_reward_tt
 			set_country_flag = ireland_compact_with_otherworld_complete
 			set_country_flag = ireland_otherworld_compact_path
 
@@ -3947,7 +4340,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_containment_protocol
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -6
+		x = 2
 		y = 6
 		available = {
 			has_country_flag = ireland_otherworld_containment_ready
@@ -3968,7 +4361,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_dominion_claim
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = -8
+		x = -5
 		y = 7
 		prerequisite = {
 			focus = ireland_compact_with_otherworld
@@ -3982,6 +4375,7 @@ focus_tree = {
 			has_completed_focus = ireland_containment_protocol
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_dominion_claim_reward_tt
 			set_country_flag = ireland_dominion_claim_complete
 			set_country_flag = ireland_otherworld_dominion_path
 
@@ -3994,7 +4388,7 @@ focus_tree = {
 		icon = GFX_focus_ireland_otherworld_capstone
 		cost = 20
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
-		x = -8
+		x = -5
 		y = 8
 		prerequisite = {
 			focus = ireland_dominion_claim
@@ -4008,6 +4402,7 @@ focus_tree = {
 			has_country_flag = ireland_otherworld_conclusion_valid
 		}
 		completion_reward = {
+			custom_effect_tooltip = ireland_otherworld_capstone_reward_tt
 			set_country_flag = ireland_otherworld_capstone_complete
 			ireland_begin_conclusion_review = yes
 		}

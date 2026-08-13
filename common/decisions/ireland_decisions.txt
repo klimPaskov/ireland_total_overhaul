@@ -193,15 +193,13 @@
 @IRELAND_COMPACT_SUPPORT_EQUIPMENT_GATE = 19
 @IRELAND_COMPACT_SUPPORT_EQUIPMENT_CHARGE = -20
 ireland_settlement_government = {
-	# Parliamentary opening: one visible action at a time, with the next chamber
-	# only appearing after the preceding institutional step is completed.
+	# Parliamentary opening: the native Dáil action is usable from initialization;
+	# the shared executor also drives the scripted GUI and advances the same stage.
 	ireland_action_convene_the_dail = {
 		icon = GFX_decision_ireland_convene_a_cabinet_cohesion_review
 		visible = {
-			is_ai = yes
 			original_tag = IRE
 			NOT = { has_country_flag = ireland_route_archived }
-			ireland_reveal_settlement_open = yes
 			ireland_parliament_stage_one = yes
 			NOT = { has_country_flag = ireland_parliament_dail_session_complete }
 		}

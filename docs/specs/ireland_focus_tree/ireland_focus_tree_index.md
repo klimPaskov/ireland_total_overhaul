@@ -176,11 +176,15 @@ The 150-focus runtime tree presents three named opening trunks—government and
 politics, national development, and defence and security—then progressively
 reveals four ordinary support families, three late constitutional alternatives,
 and eight exceptional route families.
-It retains bounded operational reward contracts and complete AI focus-ID
-coverage. The canonical Parliament contract is a
+All 150 focuses expose a focus-specific outcome. Thirty-two focus IDs have
+material, construction, or fuel effects; 24 have research, doctrine, agency, or
+event capabilities; and 59 expose named decision or mission unlocks. AI
+focus-ID coverage remains complete. The
+canonical Parliament contract is a
 510x248 interactive surface with matched 126x70 chamber diagrams, four 204x32
-human controls backed by shared guarded executors, AI-only native equivalents,
-and a four-state slate/amber/gold/green action seal. The current implementation
+human controls visible from initialization and backed by shared guarded
+executors, a usable opening Dáil decision, native AI equivalents, and a
+four-state slate/amber/gold/green action seal. The current implementation
 and completion evidence are indexed by
 `docs/plans/ireland_focus_tree/source_of_truth_map.md`; historical larger-tree
 counts and passive Parliament layouts are not current runtime authority.

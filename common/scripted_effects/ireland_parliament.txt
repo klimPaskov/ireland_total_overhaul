@@ -6,7 +6,7 @@
 @IRELAND_PARLIAMENT_SEANAD_STAGE_COMPLETE = 5
 @IRELAND_PARLIAMENT_SEANAD_FORMAL_SEATS = 60
 
-# Human GUI clicks and AI-only native decisions use these idempotent executors.
+# Human GUI clicks and native decision actions use these idempotent executors.
 # Each action therefore shares one gate, one political-power debit, and one
 # record helper.
 
@@ -51,6 +51,7 @@ ireland_record_parliament_dail_session = {
 	add_to_variable = { var = ireland_social_consent value = constant:ireland.parliament_dail_consent_gain }
 	add_to_variable = { var = ireland_parliament_dail_sessions_held value = constant:ireland.one }
 	set_country_flag = ireland_parliament_dail_session_complete
+	set_country_flag = ireland_settlement_open
 	ireland_update_parliament = yes
 }
 

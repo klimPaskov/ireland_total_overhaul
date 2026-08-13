@@ -1,9 +1,9 @@
 # Ireland Total Overhaul - interactive Parliament chamber and opening programme.
 # Human players use the four scripted-GUI controls below; the matching native
-# decisions remain an AI-only execution path with the same gates and effects.
+# decisions use the same guarded executors, gates, and effects.
 @PARLIAMENT_WIDTH = 510
 @PARLIAMENT_HEIGHT = 248
-@TITLE_Y = 1
+@TITLE_Y = 4
 
 @CHAMBER_WIDTH = 247
 @CHAMBER_HEIGHT = 126
@@ -45,12 +45,12 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "ireland_parliament_title"
 			position = { x = 0 y = @TITLE_Y }
-			font = "vic_18_black"
+			font = "hoi_16mbs"
 			text = "ireland_parliament_title"
 			format = center
 			fixedsize = yes
 			maxWidth = @PARLIAMENT_WIDTH
-			maxHeight = 18
+			maxHeight = 16
 		}
 
 		containerWindowType = {

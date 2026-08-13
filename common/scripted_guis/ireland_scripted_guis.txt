@@ -53,11 +53,9 @@ scripted_gui = {
 		triggers = {
 			ireland_dail_composition_visible = { ireland_parliament_open = yes }
 			ireland_seanad_composition_visible = { ireland_parliament_open = yes }
-			ireland_parliament_powers_panel_visible = { has_country_flag = ireland_settlement_open }
-			ireland_parliament_dail_button_visible = { has_country_flag = ireland_settlement_open }
-			ireland_parliament_seanad_button_visible = { has_country_flag = ireland_settlement_open }
-			ireland_parliament_confidence_button_visible = { has_country_flag = ireland_settlement_open }
-			ireland_parliament_budget_button_visible = { has_country_flag = ireland_settlement_open }
+			# The programme is always legible while Parliament is open. Its canonical
+			# availability triggers below keep future actions locked until their stage.
+			ireland_parliament_powers_panel_visible = { ireland_parliament_open = yes }
 			ireland_parliament_dail_button_click_enabled = { ireland_parliament_dail_action_available = yes }
 			ireland_parliament_seanad_button_click_enabled = { ireland_parliament_seanad_action_available = yes }
 			ireland_parliament_confidence_button_click_enabled = { ireland_parliament_confidence_action_available = yes }

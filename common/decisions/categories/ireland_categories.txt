@@ -4,8 +4,8 @@
 ireland_settlement_government = {
 	icon = GFX_decision_category_ireland_settlement_government
 	# Vanilla USA Congress pattern: the category and chamber summary are visible
-	# after Ireland initialization. Human actions live in the GUI; equivalent
-	# native decisions are retained for AI execution only.
+	# after Ireland initialization. The opening Dáil action is also available as
+	# a native decision; both surfaces call the same idempotent executor.
 	scripted_gui = ireland_parliament_decision_ui
 	allowed = {
 		original_tag = IRE

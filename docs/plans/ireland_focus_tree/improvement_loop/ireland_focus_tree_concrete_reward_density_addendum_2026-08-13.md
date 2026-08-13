@@ -4,7 +4,13 @@ Feature slug: `ireland_focus_tree`
 
 Date: 2026-08-13
 
-Status: proposed implementation addendum; not implemented by this plan
+Status: implemented and promoted on 2026-08-13
+
+Implementation disposition: the stable source meets the target bands with 32
+material/construction/fuel focus IDs, 24 capability focus IDs, 59 focus IDs
+with named decision or mission unlocks, and a usable opening Dáil action. The
+canonical outcome is recorded in the focus-tree index, Part 2, the reward
+contract, source-of-truth map, and 2026-08-13 completion report.
 
 ## Decision and prior-plan disposition
 
@@ -20,7 +26,7 @@ before the user reopened this issue under a stricter standard. It is therefore
 not an unresolved duplicate. The concurrent 2026-08-13 tranche already:
 
 - gives all 150 focuses focus-specific reward tooltips;
-- compresses the authored tree from x `-30..52` to x `-15..26`, retaining
+- compresses the authored tree from x `-30..52` to a 41-column x span, retaining
   y `0..16` and exactly three opening roots;
 - retains 150 connectors with zero crossings, connector-through-node
   intersections, or long connectors; and
@@ -31,37 +37,32 @@ Those changes are the baseline for this addendum and must not be redone.
 
 ## Evidence and the remaining gap
 
-Current source has 150 `custom_effect_tooltip` calls, but the direct engine
-effect inventory remains narrow:
+The implemented source has 150 focus-specific `custom_effect_tooltip` calls.
+The accepted reward pass expanded the direct and playable inventory to:
 
 | Direct effect in focus rewards | Current calls |
 | --- | ---: |
-| `add_equipment_to_stockpile` | 15 |
-| `add_building_construction` | 11 |
-| `add_tech_bonus` | 1 |
+| focus IDs with material, construction, or fuel | 32 |
+| focus IDs with research, doctrine, agency, or event capabilities | 24 |
+| focus IDs with named decision or mission unlocks | 59 |
 | `create_intelligence_agency` | 1 |
 | `country_event` | 1 |
-| army / navy / air experience | 10 / 9 / 4 |
-| `activate_mission` | 0 |
-| `unlock_decision_tooltip` | 0 |
+| named unlock calls / existing decision and mission IDs | 60 / 58 |
 | `create_unit` | 0 |
 | `set_technology` | 0 |
 
-The concurrent material pass documents 12 non-Marine deliveries in
-`docs/ireland_material_focus_rewards.md`: trucks, trains, convoys, factories,
-infrastructure, rifles, support equipment, anti-air, and a military factory.
-Together with the Marine Service, about twenty focuses now have a concrete
-material, technology, agency, or event payoff. This is a useful first tranche,
-not a sufficient density for a 150-focus total overhaul.
+The material pass is documented in `docs/ireland_material_focus_rewards.md`.
+It covers trucks, trains, convoys, factories, infrastructure, fuel, rifles,
+support equipment, radar, anti-air, and the Marine Service. Political,
+cultural, foreign, Northern, and exceptional-route focuses use named playable
+procedures, branch commitments, institutional profiles, and conclusion reviews
+instead of receiving arbitrary factories or equipment.
 
-Fresh focus inspection revision `3cce611c70e65ae2` records the compact
-`-15..26` layout, 150 focuses, 150 connectors, and no blocking diagnostic:
+Final focus inspection evidence is maintained in
+`docs/plans/ireland_focus_tree/focus_parliament_reward_density_completion_2026-08-13.md`.
 
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/cea06c5334d63ab28e62c8f5e18726dd804889018537a92cb2d31e6fc831057a/a12d274f362d9498b93fe7a331a5e8fd36923760da9fc0b2d9d759c50bb68759/focus-inspect.3cce611c70e65ae2.json`
-
-The remaining layout warnings are non-blocking linear detours. They should be
-cleaned only where the change preserves the existing footprint and reveal
-logic; reward implementation takes priority.
+The final compact layout preserves the three opening trunks and has no
+crossing, connector-through-node, long-connector, or same-row spacing defect.
 
 ## Design rule: a focus must deliver or enable something
 
@@ -209,9 +210,10 @@ Parliament keeps the existing shared executors, native AI decisions, costs
 6. final completion/archival: controls retain green historical state until the
    category is lawfully archived.
 
-The AI-only native decisions must use the same gates. Do not create a fifth
-button, another Parliament category, a parallel executor, or a preview-only
-decision.
+The native decisions must use the same gates as their GUI controls. The opening
+Dáil decision is human-visible; later native steps remain AI-facing. Do not
+create a fifth button, another Parliament category, a parallel executor, or a
+preview-only decision.
 
 ### Development and provision
 
@@ -293,7 +295,7 @@ No reward work may widen the tree or add nodes. Preserve:
 - 150 focus IDs and exactly three opening roots:
   `ireland_state_still_defined`, `ireland_economic_war_review`, and
   `ireland_defence_estimates`;
-- authored bounds no wider than x `-15..26`, y `0..16`;
+- authored bounds no wider than 41 columns at y `0..16`;
 - zero connector crossings, connector-through-node intersections, and long
   connectors; and
 - existing `allow_branch` concealment and exactly three opening shortcuts.
@@ -372,7 +374,7 @@ Northern annexation.
   match the executable effect.
 - A full compatible historical route stays within every material, industry,
   XP, spirit, and unit cap.
-- Focus inspection preserves x `-15..26`, y `0..16`, zero crossings, zero node
+- Focus inspection preserves a 41-column span at y `0..16`, zero crossings, zero node
   intersections, zero long connectors, and exactly three opening roots.
 
 ## Assets, text/audio research, and scope limits
@@ -406,4 +408,3 @@ Connaught infrastructure level plus 500 fuel, or preserve the infrastructure
 cap for `ireland_development_authority` and use a synthetic-resource research
 bonus. The plan recommends the first option because it is immediately visible
 and regionally grounded.
-

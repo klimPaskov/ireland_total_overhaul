@@ -22,7 +22,7 @@ Part 2 resolves the political questions left open by Part 1.
 
 1. `The National Settlement` uses the native balance-of-power presentation.
 2. A paired dynamic decision category provides elections, cabinet bargaining, stakeholder action, constitutional missions, and crises.
-3. A custom scripted GUI is not required for this mechanic. It would add presentation cost without adding control or clarity.
+3. The National Settlement does not need a second full-screen interface. A compact Parliament scripted GUI supplements the native balance and decision surfaces with chamber seats and four legislative actions.
 4. The opening balance runs from unfinished revolutionary authority on the negative side to constitutional state authority on the positive side.
 5. The mechanic begins at `+25`, giving the state an advantage without making its legitimacy complete.
 6. The mechanic has seven visible stages, route-specific labels, controlled momentum, stage persistence, and crisis thresholds.
@@ -166,13 +166,13 @@ The mechanic uses three native surfaces.
 2. A dynamic decision category displays the actions, missions, elections, negotiations, and crises that can move the settlement.
 3. National spirit and law tooltips display durable institutional consequences without duplicating the bar.
 
-The design does not call for a separate scripted GUI.
+The design does not call for a separate full National Settlement interface. The compact Parliament scripted GUI is deliberately limited to chamber composition and the four-step legislative programme.
 
 Reasons:
 
 - the native bar already provides the most important spatial information
 - the decision category already supports costs, timers, mission objectives, and conditional visibility
-- a second full interface would divide information and create duplicate controls
+- a second full settlement interface would divide information, while the compact Parliament panel keeps its controls in one bounded programme
 - the mechanic needs active gameplay depth rather than ornamental animation
 
 Part 6 may plan a static seal family and stage icons for the category. Animation is not a requirement for the constitutional mechanic.
@@ -4755,9 +4755,24 @@ and Otherworld families retain progressive `allow_branch` reveal.
 Distant proof dependencies use player-facing `available` gates rather than
 long connectors across unrelated lanes.
 
+The authored tree occupies x `-20..21` and y `0..16`, retaining half the former
+horizontal span. It retains 150 focuses and 150 connectors with no crossing,
+connector-through-node, long-connector, or same-row spacing defect. Every
+focus has a focus-specific completion tooltip. Physical development and
+readiness milestones deliver factories, infrastructure, anti-air defences,
+rifles, support equipment, trucks, trains, and convoys; political, diplomatic,
+cultural, Northern, and route focuses name the actual decisions, missions,
+channels, institutional transitions, or conclusion review they open.
+The executable mix is 32 material/construction/fuel focus IDs, 24 capability
+focus IDs, and 59 focus IDs with named decision or mission unlocks.
+
 The National Settlement decision category owns a 510x248 Parliament surface.
-Its chamber summary is visible after Ireland initialization; the action grid
-appears only after `ireland_settlement_open`. Two 247x126 cards contain matched
+Its chamber summary and four-step programme are visible after Ireland
+initialization. The opening Dáil action is usable for 15 Political Power when
+Dublin is controlled; its shared executor opens the National Settlement focus.
+National Settlement advances Seanad support, the Constitutional Draft advances
+the confidence compact, and Government Formation advances the joint budget.
+Two 247x126 cards contain matched
 126x70, 21-frame Dáil and Seanad support diagrams. Four 204x32 human controls
 form a two-column, two-row grid. AI uses equivalent hidden native decisions;
 both paths call the same guarded executors. The canonical costs are 15, 25, 25,

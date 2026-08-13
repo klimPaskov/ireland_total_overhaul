@@ -99,12 +99,13 @@ step without enough Political Power, cream-gold for the current available
 action, and green for a secured result. Red is reserved for an actual failure
 or crisis rather than ordinary unfinished business.
 
-The chamber summary is visible as soon as `ireland_initialized` is present. The
-four action rows appear only when the national settlement opens, so early
-visibility does not bypass political prerequisites. The corresponding native
-decisions are `is_ai = yes` and call idempotent shared executors; human players
-therefore use the GUI while AI retains an ordinary decision path without a
-double charge.
+The chamber summary and four programme steps are visible as soon as
+`ireland_initialized` is present. The opening Dáil action is immediately usable
+when Ireland controls Dublin and can pay 15 Political Power. Its shared
+executor opens the National Settlement focus, which advances the Seanad stage;
+the Constitutional Draft and Government Formation advance the later stages.
+Native decisions and scripted-GUI buttons call the same idempotent executors,
+so neither surface can bypass a gate or double-charge an action.
 
 All costs and outcome increments live in
 `common/script_constants/ireland_constants.txt`. The four record helpers remain
@@ -118,31 +119,24 @@ owned by the shared script-constant contract.
 
 ## Validation evidence
 
-Final focus inspection revision `c1112c666cadee8b` reports:
+Final focus inspection revision `b1c47582375c4bad` reports:
 
-- 150 focuses and one root;
+- 150 focuses and exactly three opening roots/trunks;
 - 150 connectors;
 - 0 crossings;
 - 0 connector-through-node intersections;
 - 0 long connectors;
-- maximum horizontal span 6 and maximum vertical span 2;
-- 0 same-row spacing defects;
-- 0 Ireland focus diagnostics.
+- maximum horizontal span 7 and maximum vertical span 2;
+- 0 same-row spacing defects; and
+- authored bounds x `-20..21`, retaining a 41-column span that is half the previous width.
 
 Artifact:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/8e37b3d8fcc978bbf66674414714882544fc5cff8323faf385d1767986d682e9/0b87357b7b1ecce8e9b5ace730122d922763cb6bc052ff602b2eb53bc3219d66/focus-inspect.c1112c666cadee8b.json`
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/38eaf03718c2057898eaab76ca811b380b412a07dc8d61190231e212dc1e09bc/905da3cd351731b79e9f6725233efad61df2e9a31bee5a3988fe0975750c2720/focus-inspect.b1c47582375c4bad.json`
 
 Structural render:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/0f9501fc221c42155cac3ac66aa33cede2cba3e7f4bf08b07bc5a85a1aa73ea2/7b61e92441dda7b16c3c2dd4bc61d82b402bcf48d53dcb942f1430d09fac6c22/ireland_focus_tree.focus.html`
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/92d07d264a68b616d43ed374a60c688281c0e9abe57baa9fc0125d0859954c12/676be3973e1ff0ed8c9b9e274a097cd3b95d3db4b09a69484f84e236d64ef64a/ireland_focus_tree.focus.html`
 
-High-fidelity raster:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/15cf201ce13947b67834a4a1fa6924373584cf7c2ea2a361c18a13a27b273a5a/d8f9f0d646d6fff4b03ee9043d730d4504a2c8c4876bd3cb155d53a7812da62c/ireland_focus_tree.focus.png`
-
-The raster resolves all 150 Ireland focus icons. Its reported DDS failures are
-limited to vanilla continuous-focus textures that the offline decoder cannot
-read; no Ireland focus asset is implicated.
-
-Final Parliament inspection revision `7efa20fde6ec3fcc` reports no overlap,
+Final Parliament inspection revision `3afccc6805fec771` reports no overlap,
 off-centre label, clipping, missing sprite, missing texture, missing font, or
 spacing diagnostic. The four unresolved-value notices are the offline
 scenario's placeholders for live country seat variables. The cost checker does
@@ -152,13 +146,14 @@ delta, and the same cost constant drives its availability gate and visible
 label.
 
 Inspection artifact:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/5c8de1b3855e70055af0ba10c9caea6919f47bc2f8c43ae2a840c3249a63e550/fb846fb7dce35268e11e732521378bca818238e0bc2974c11ace082437d5fd84/gui-inspect.7efa20fde6ec3fcc.json`
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/73c95f48e5bd3e7e39d3de317b1b255b9c2ee9a74b2380dd1934e7398c1791e8/7cf73984dfd95fa45447ca63b1248cdae9cc36d203f1a0a6fe7caa16df305bff/gui-inspect.3afccc6805fec771.json`
 
 Render artifact:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/965590013ce89528f81de25146a533349082c8a6d3ce50a2b0aabbe95147fb0b/2aa71812eb4b40a11d9e20ed073e264bbd4570e26616419f595feff8a54dff58/ireland_parliament_decision_ui_window-full.svg`
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/9a4d05d71d3da947f271917a80ff70f41efc3023cd952119c17f9b6c6aa5c53d/841b57e1febfe485571063de136297b80331197fa9264c057e9e6b2df73c18be/ireland_parliament_decision_ui_window-full.svg`
 
 Static cross-surface checks confirm 150/150 focus title and description
-coverage, three shortcut labels, 37/37 reward tooltips, 21/21 Parliament GUI
+coverage, three shortcut labels, 150/150 reward tooltips, 32 direct material
+focuses, 24 capability focuses, 59 decision/mission-unlock focuses, and all Parliament GUI
 localisation references, zero duplicate English keys, no dotted maritime
 constant references, and no undefined script-constant references in the
 touched focus, Parliament, decision, trigger, or AI surfaces.
@@ -167,7 +162,7 @@ touched focus, Parliament, decision, trigger, or AI surfaces.
 
 - National focus graph, semantic coordinates, visible dependencies, navigation
   shortcuts, AI plan ordering, and bounded rewards.
-- Parliament decision category, human GUI effects, AI-only native decisions,
+- Parliament decision category, human GUI effects, shared native decisions,
   canonical action triggers, shared executors, record effects, constants,
   English localisation, and dynamic-effect documentation.
 - Parliament background, enlarged chamber strips, action-button texture,
