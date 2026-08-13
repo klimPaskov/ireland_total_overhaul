@@ -25,6 +25,7 @@ country_event = {
 	}
 	option = {
 		name = ireland_events.high_king_public_conclusion.accept
+		custom_effect_tooltip = ireland_events.high_king_public_conclusion.accept.effects
 		ai_chance = { base = 100 }
 		set_country_flag = ireland_high_king_public_conclusion
 		ireland_begin_conclusion_review = yes
@@ -57,6 +58,7 @@ country_event = {
 	}
 	option = {
 		name = ireland_events.northern_unity_public_settlement.accept
+		custom_effect_tooltip = ireland_events.northern_unity_public_settlement.accept.effects
 		ai_chance = { base = 100 }
 		set_country_flag = ireland_northern_unity_settlement_public
 	}

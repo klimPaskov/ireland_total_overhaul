@@ -23,20 +23,21 @@ The 150-focus runtime tree uses the following player-facing layout contract:
 
 | Spatial band | Authored range | Subject family |
 | --- | ---: | --- |
-| far left | x -24 to -18 | emergency, recovery, and radical political crises |
-| left | x -16 to -8 | constitutional government and party succession |
-| left-centre | x -6 to 0 | Northern policy and all-Ireland settlement |
-| centre | x 0 to 12 | culture, society, and evidence-gated institutions |
-| right-centre | x 12 to 20 | industry, transport, and National Provision |
-| right | x 20 to 26 | diplomacy and neutrality |
-| outer right | x 22 to 32 | command, army/air readiness, coastwatch, and port defence |
-| far right | x 36 to 38 | the Marine Service and dockyard family |
+| far left | x -26 to -20 | emergency, recovery, and radical political crises |
+| left | x -18 to -12 | constitutional government and party succession |
+| left-centre | x -8 to -2 | culture, society, and evidence-gated institutions |
+| centre | x 0 to 4 | industry, transport, and National Provision |
+| right-centre | x 4 to 12 | diplomacy, neutrality, and Northern policy |
+| right | x 12 to 17 | command, army/air readiness, coastwatch, and port defence |
+| far right | x 19 to 21 | the Marine Service and dockyard family |
 
-The opening camera anchors on `ireland_state_still_defined`. Ordinary politics,
-Northern policy, culture, industry, diplomacy, defence, and naval focuses are
-visible from the start, even while unavailable. Only the eight authored IRA,
-Congress, O'Duffy, clerical-failure, Ailtirí, High Kingship, Five Provinces,
-and Otherworld roots use `allow_branch` progressive reveal.
+The opening camera anchors on `ireland_state_still_defined`. Only government
+and politics, national development, and defence and security are presented as
+opening trunks. Culture, diplomacy and neutrality, Northern policy, and the
+Marine Service reveal after their parent milestones. The three late
+constitutional alternatives and the eight authored IRA, Congress, O'Duffy,
+clerical-failure, Ailtirí, High Kingship, Five Provinces, and Otherworld roots
+also use progressive `allow_branch` reveal.
 
 The visible dependency graph follows subject meaning. Defence Estimates fans
 to Command Audit and the readiness programme; readiness remains unavailable

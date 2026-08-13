@@ -20,6 +20,14 @@ All structural event names are working labels. No final event prose or option te
 
 The planned minimum is 484 player-facing events. Hidden bookkeeping events, AI-only routing events, and debug events do not count.
 
+Cadence is shared across families. The ordinary historical, political, incident,
+Northern, route, regional and postwar programme admits at most one report on a
+monthly Ireland pulse and then skips one monthly pulse. Foreign reactions use a
+separate 14-day window: one unresolved actor response appears after four quiet
+days, any additional eligible reactions are summarised in one digest, and the
+programme cannot reopen for 120 days. Actor nodes already shown remain durable
+campaign records, while undisplayed nodes remain eligible for later windows.
+
 # Event family schema
 
 Every family records actor, scope, class, trigger, date window, player knowledge, uncertainty, choices, immediate effects, memory, follow-up, AI intent, asset class, text research need, and cleanup.

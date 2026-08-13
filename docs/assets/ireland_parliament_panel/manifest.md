@@ -37,25 +37,32 @@ Source mode: generated background plus project-owned mechanical derivatives
 - Runtime sprite: `GFX_ireland_gui_parliament_step_button`.
 - Runtime use: four 204x32 click regions in a two-column, two-row grid. Each completion mark occupies its own 31px status column outside the click region, while the button natively centres its label.
 
-## Action-state derivative
+## Action-state derivatives
 
-- Asset name: `parliament_action_states`.
-- Sources: project-owned shared `status_locked`, `status_warning`, and
-  `status_ready` seals.
-- Processed PNG:
-  `docs/assets/ireland_parliament_panel/processed_png/parliament_action_states_32x32.png`
-  (four 32x32 frames in a 128x32 strip).
-- Final DDS:
-  `gfx/interface/ireland/gui/parliament/parliament_action_states.dds`.
-- Runtime sprite: `GFX_ireland_gui_parliament_action_state`, four frames.
+- Assets: `parliament_dail_action_states`, `parliament_seanad_action_states`,
+  `parliament_confidence_action_states`, and `parliament_budget_action_states`.
+- Sources: the four existing project-owned 32x32 decision emblems used by the
+  matching native decisions. Source PNG copies are retained under
+  `docs/assets/ireland_parliament_panel/source_png/action_icons/`.
+- Processed PNG strips live under
+  `docs/assets/ireland_parliament_panel/processed_png/action_states/`. Each is
+  128x32 and contains four independently processed 32x32 state frames.
+- Final DDS files live under `gfx/interface/ireland/gui/parliament/` with the
+  same four stable stems.
+- Runtime sprites are `GFX_ireland_gui_parliament_*_action_state`, each with
+  four frames.
 - Frame contract: slate locked, amber current-but-unaffordable, cream-gold
-  current-and-available, green secured. Red is reserved for genuine failure.
+  current-and-available, and green secured. Every action retains its distinct
+  book, harp, statute, or globe emblem in every state.
 - Runtime consumers: the four `ireland_parliament_power_*_state` icons. Their
   frame variables are recomputed from the same canonical triggers that enable
-  the buttons and AI-only decisions.
+  the buttons and native decisions.
+- Contact sheet:
+  `docs/assets/ireland_parliament_panel/processed_png/action_states/parliament_action_states_contact_sheet.png`.
 
 ## Review notes
 
 - Keep essential controls away from the perimeter fasteners and folio corners.
 - The background, chamber strips, and button texture match their declared GUI dimensions exactly.
-- Contact sheet: `not_needed`; the generated package has one selected background and mechanical derivatives only.
+- The action-state contact sheet verifies the four distinct emblems and all
+  four state treatments at final size.

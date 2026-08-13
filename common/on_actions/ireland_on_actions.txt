@@ -52,7 +52,6 @@ on_actions = {
 				ireland_update_achievement_trackers = yes
 				ireland_open_event_gateways = yes
 				ireland_tick_h14_bargain_lifecycle = yes
-				ireland_dispatch_event_programme = yes
 				ireland_update_action_cost_preview = yes
 				if = {
 					limit = { has_country_flag = ireland_mission_capacity_rebuild_pending }
@@ -89,6 +88,10 @@ on_actions = {
 				ireland_sync_dillon_crisis_boundary = yes
 				ireland_update_achievement_trackers = yes
 				ireland_sync_ai_priority_flags = yes
+				# At most one player-facing programme event is considered on the
+				# monthly Ireland pulse. The dispatcher adds an additional empty
+				# month after a successful dispatch.
+				ireland_dispatch_event_programme = yes
 				ireland_update_action_cost_preview = yes
 			}
 		}

@@ -41,7 +41,6 @@ ireland_parliament_dail_action_current = {
 
 ireland_parliament_dail_action_available = {
 	ireland_parliament_dail_action_current = yes
-	has_political_power > constant:ireland.parliament_dail_pp_gate
 }
 
 ireland_parliament_seanad_action_current = {

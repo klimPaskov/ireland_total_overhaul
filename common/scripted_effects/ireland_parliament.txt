@@ -7,13 +7,12 @@
 @IRELAND_PARLIAMENT_SEANAD_FORMAL_SEATS = 60
 
 # Human GUI clicks and native decision actions use these idempotent executors.
-# Each action therefore shares one gate, one political-power debit, and one
-# record helper.
+# Each action therefore shares one gate and one record helper. Convening the
+# opening Dail is free so the parliamentary programme is usable on day one.
 
 ireland_execute_parliament_dail_action = {
 	if = {
 		limit = { ireland_parliament_dail_action_available = yes }
-		add_political_power = constant:ireland.parliament_dail_pp_delta
 		ireland_record_parliament_dail_session = yes
 	}
 }

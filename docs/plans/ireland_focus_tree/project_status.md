@@ -4,13 +4,15 @@ Feature slug: `ireland_focus_tree`
 
 Feature: Ireland gameplay overhaul and national focus tree (current focus/Parliament correction complete)
 
-## Current focus and Parliament authority: 2026-08-12
+## Current focus and Parliament authority: 2026-08-13
 
-The current national tree contains 150 focuses, one root, and 150 connectors.
+The current national tree contains 150 focuses, three opening roots, and 150 connectors.
 Its three named shortcuts expose government and politics, national development,
 and defence and security as the only opening trunks. Focus inspection reports no
-Ireland-local crossing, node-intersection, long-connector, spacing, linear
-detour, or staircase diagnostic.
+Ireland-local crossing, node-intersection, long-connector, or spacing diagnostic.
+One two-column connector inside the concealed clerical-failure route remains a
+nonblocking visual detour because aligning it would collide with the visible
+constitutional lane.
 
 Culture, diplomacy and neutrality, Northern policy, and the Marine Service
 reveal only after their prerequisites. Three late constitutional alternatives
@@ -21,17 +23,23 @@ unconsumed terminal remains.
 
 The Parliament chamber summary becomes visible after Ireland initialization.
 Its 510 by 248 panel has two 126x70 chamber diagrams and four functional human
-buttons in an aligned two-by-two grid. The buttons remain gated by the
-settlement opening, while equivalent native decisions are AI-only. One
-four-frame seal per action distinguishes slate locked, amber unaffordable, gold
-current, and green secured states without overlapping the click region. The
-rendered panel has no overlap, off-centre label, clipping, or spacing finding at
-1366 by 768 and 1920 by 1080. All maritime focus deltas use the registered
+buttons in an aligned two-by-two grid. Convening the Dáil is a free opening
+action; the Seanad, confidence, and joint-budget actions reveal sequentially
+after their named focus gates and cost 25, 25, and 35 Political Power. The same
+four guarded executors own both GUI clicks and human-visible native decisions.
+Four distinct four-frame emblems distinguish slate locked, amber unaffordable,
+gold current, and green secured states without overlapping the click region.
+The rendered panel has no overlap, off-centre label, clipping, or spacing
+finding. All maritime focus deltas use the registered
 `ireland_maritime` script constant category, and the invalid dotted category
 form is absent.
 
 The authoritative implementation report is
-`docs/plans/ireland_focus_tree/focus_tree_parliament_completion_2026-08-09.md`.
+`docs/plans/ireland_focus_tree/focus_parliament_reward_density_completion_2026-08-13.md`.
+Everything below this line is a superseded historical snapshot and is retained
+only as provenance. Its focus, connector, GUI, audit, and asset counts do not
+describe the current implementation.
+
 The 2026-08-05 snapshot below is retained as historical provenance.
 
 ## Full-mod audit refresh: 2026-08-05

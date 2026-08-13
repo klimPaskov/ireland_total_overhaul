@@ -20,6 +20,7 @@ country_event = {
 	}
 	option = {
 		name = ireland_events.member_contribution_selection.troops
+		custom_effect_tooltip = ireland_events.member_contribution_selection.troops.effects
 		trigger = { ireland_member_contribution_troops_available = yes }
 		ai_chance = {
 			base = 25
@@ -35,6 +36,7 @@ country_event = {
 	}
 	option = {
 		name = ireland_events.member_contribution_selection.ships
+		custom_effect_tooltip = ireland_events.member_contribution_selection.ships.effects
 		trigger = { ireland_member_contribution_ships_available = yes }
 		ai_chance = {
 			base = 20
@@ -47,6 +49,7 @@ country_event = {
 	}
 	option = {
 		name = ireland_events.member_contribution_selection.finance
+		custom_effect_tooltip = ireland_events.member_contribution_selection.finance.effects
 		trigger = { ireland_member_contribution_finance_option_available = yes }
 		ai_chance = {
 			base = 20
@@ -59,6 +62,7 @@ country_event = {
 	}
 	option = {
 		name = ireland_events.member_contribution_selection.intelligence
+		custom_effect_tooltip = ireland_events.member_contribution_selection.intelligence.effects
 		trigger = { ireland_member_contribution_intelligence_option_available = yes }
 		ai_chance = {
 			base = 15
@@ -71,6 +75,7 @@ country_event = {
 	}
 	option = {
 		name = ireland_events.member_contribution_selection.infrastructure
+		custom_effect_tooltip = ireland_events.member_contribution_selection.infrastructure.effects
 		trigger = { ireland_member_contribution_infrastructure_available = yes }
 		ai_chance = {
 			base = 25

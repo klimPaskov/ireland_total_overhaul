@@ -9,6 +9,8 @@
 @ireland_achievement_neutrality_incident_floor = 6
 @ireland_achievement_office_days = 365
 @ireland_foreign_reaction_saturation_days = 60
+@ireland_foreign_reaction_programme_cooldown_days = 120
+@ireland_foreign_reaction_digest_delay_days = 1
 @IRELAND_PARLIAMENT_SEANAD_FORMAL_SEATS = 60
 
 ireland_initialize_campaign = {
@@ -1476,51 +1478,16 @@ ireland_clear_foreign_reaction_subjects = {
 	clr_country_flag = ireland_foreign_reaction_subject_flavour_f19_un_campaign
 }
 
-ireland_clear_foreign_reaction_node_resolutions = {
-	# A resolution flag means that this window's node actually closed through
-	# a response or a deliberate digest closure. It is never carried into the
-	# next ledger and therefore cannot unlock a later chain from old history.
-	clr_country_flag = ireland_foreign_actor_fr05_collapse_valid
-	clr_country_flag = ireland_foreign_reaction_event_400_resolved
-	clr_country_flag = ireland_foreign_reaction_event_401_resolved
-	clr_country_flag = ireland_foreign_reaction_event_402_resolved
-	clr_country_flag = ireland_foreign_reaction_event_403_resolved
-	clr_country_flag = ireland_foreign_reaction_event_404_resolved
-	clr_country_flag = ireland_foreign_reaction_event_405_resolved
-	clr_country_flag = ireland_foreign_reaction_event_406_resolved
-	clr_country_flag = ireland_foreign_reaction_event_407_resolved
-	clr_country_flag = ireland_foreign_reaction_event_408_resolved
-	clr_country_flag = ireland_foreign_reaction_event_409_resolved
-	clr_country_flag = ireland_foreign_reaction_event_410_resolved
-	clr_country_flag = ireland_foreign_reaction_event_411_resolved
-	clr_country_flag = ireland_foreign_reaction_event_412_resolved
-	clr_country_flag = ireland_foreign_reaction_event_413_resolved
-	clr_country_flag = ireland_foreign_reaction_event_414_resolved
-	clr_country_flag = ireland_foreign_reaction_event_415_resolved
-	clr_country_flag = ireland_foreign_reaction_event_416_resolved
-	clr_country_flag = ireland_foreign_reaction_event_417_resolved
-	clr_country_flag = ireland_foreign_reaction_event_418_resolved
-	clr_country_flag = ireland_foreign_reaction_event_419_resolved
-	clr_country_flag = ireland_foreign_reaction_event_420_resolved
-	clr_country_flag = ireland_foreign_reaction_event_421_resolved
-	clr_country_flag = ireland_foreign_reaction_event_422_resolved
-	clr_country_flag = ireland_foreign_reaction_event_423_resolved
-	clr_country_flag = ireland_foreign_reaction_event_424_resolved
-	clr_country_flag = ireland_foreign_reaction_event_425_resolved
-	clr_country_flag = ireland_foreign_reaction_event_426_resolved
-	clr_country_flag = ireland_foreign_reaction_event_427_resolved
-	clr_country_flag = ireland_foreign_reaction_event_428_resolved
-	clr_country_flag = ireland_foreign_reaction_event_429_resolved
-}
-
 ireland_open_foreign_reaction_window = {
 	if = {
 		limit = {
 			NOT = { has_country_flag = ireland_foreign_reaction_window_active }
+			NOT = { has_country_flag = ireland_foreign_reaction_programme_cooldown }
 			NOT = { has_country_flag = ireland_route_closed }
 		}
 		ireland_clear_foreign_reaction_subjects = yes
-		ireland_clear_foreign_reaction_node_resolutions = yes
+		# Actor nodes and their seen state are campaign records. A new source opens
+		# a new reaction window without replaying earlier responses.
 		add_to_variable = { var = ireland_foreign_reaction_digest_resolved value = constant:ireland.one }
 		clr_country_flag = ireland_foreign_reaction_window_closed
 		clr_country_flag = ireland_foreign_reaction_digest_required
@@ -1598,67 +1565,40 @@ ireland_open_foreign_reaction_window = {
 		clr_country_flag = ireland_foreign_reaction_event_427_available
 		clr_country_flag = ireland_foreign_reaction_event_428_available
 		clr_country_flag = ireland_foreign_reaction_event_429_available
-		clr_country_flag = ireland_event_seen_400
 		clr_country_flag = ireland_foreign_reaction_current_400
-		clr_country_flag = ireland_event_seen_401
 		clr_country_flag = ireland_foreign_reaction_current_401
-		clr_country_flag = ireland_event_seen_402
 		clr_country_flag = ireland_foreign_reaction_current_402
-		clr_country_flag = ireland_event_seen_403
 		clr_country_flag = ireland_foreign_reaction_current_403
-		clr_country_flag = ireland_event_seen_404
 		clr_country_flag = ireland_foreign_reaction_current_404
-		clr_country_flag = ireland_event_seen_405
 		clr_country_flag = ireland_foreign_reaction_current_405
-		clr_country_flag = ireland_event_seen_406
 		clr_country_flag = ireland_foreign_reaction_current_406
-		clr_country_flag = ireland_event_seen_407
 		clr_country_flag = ireland_foreign_reaction_current_407
-		clr_country_flag = ireland_event_seen_408
 		clr_country_flag = ireland_foreign_reaction_current_408
-		clr_country_flag = ireland_event_seen_409
 		clr_country_flag = ireland_foreign_reaction_current_409
-		clr_country_flag = ireland_event_seen_410
 		clr_country_flag = ireland_foreign_reaction_current_410
-		clr_country_flag = ireland_event_seen_411
 		clr_country_flag = ireland_foreign_reaction_current_411
-		clr_country_flag = ireland_event_seen_412
 		clr_country_flag = ireland_foreign_reaction_current_412
-		clr_country_flag = ireland_event_seen_413
 		clr_country_flag = ireland_foreign_reaction_current_413
-		clr_country_flag = ireland_event_seen_414
 		clr_country_flag = ireland_foreign_reaction_current_414
-		clr_country_flag = ireland_event_seen_415
 		clr_country_flag = ireland_foreign_reaction_current_415
-		clr_country_flag = ireland_event_seen_416
 		clr_country_flag = ireland_foreign_reaction_current_416
-		clr_country_flag = ireland_event_seen_417
 		clr_country_flag = ireland_foreign_reaction_current_417
-		clr_country_flag = ireland_event_seen_418
 		clr_country_flag = ireland_foreign_reaction_current_418
-		clr_country_flag = ireland_event_seen_419
 		clr_country_flag = ireland_foreign_reaction_current_419
-		clr_country_flag = ireland_event_seen_420
 		clr_country_flag = ireland_foreign_reaction_current_420
-		clr_country_flag = ireland_event_seen_421
 		clr_country_flag = ireland_foreign_reaction_current_421
-		clr_country_flag = ireland_event_seen_422
 		clr_country_flag = ireland_foreign_reaction_current_422
-		clr_country_flag = ireland_event_seen_423
 		clr_country_flag = ireland_foreign_reaction_current_423
-		clr_country_flag = ireland_event_seen_424
 		clr_country_flag = ireland_foreign_reaction_current_424
-		clr_country_flag = ireland_event_seen_425
 		clr_country_flag = ireland_foreign_reaction_current_425
-		clr_country_flag = ireland_event_seen_426
 		clr_country_flag = ireland_foreign_reaction_current_426
-		clr_country_flag = ireland_event_seen_427
 		clr_country_flag = ireland_foreign_reaction_current_427
-		clr_country_flag = ireland_event_seen_428
 		clr_country_flag = ireland_foreign_reaction_current_428
-		clr_country_flag = ireland_event_seen_429
 		clr_country_flag = ireland_foreign_reaction_current_429
 		set_country_flag = ireland_foreign_reaction_window_active
+		set_country_flag = { flag = ireland_foreign_reaction_programme_cooldown days = @ireland_foreign_reaction_programme_cooldown_days }
+		clr_country_flag = ireland_foreign_reaction_response_dispatched
+		clr_country_flag = ireland_foreign_reaction_digest_scheduled
 		set_variable = { var = ireland_foreign_reaction_window_days value = constant:ireland.foreign_reaction_window_days }
 		set_variable = { var = ireland_foreign_reaction_count value = constant:ireland.zero }
 		set_variable = { var = ireland_foreign_reaction_visible_count value = constant:ireland.zero }
@@ -1708,6 +1648,84 @@ ireland_open_foreign_reaction_window = {
 		set_variable = { var = ireland_foreign_reaction_visible_fr12 value = constant:ireland.zero }
 		set_variable = { var = ireland_foreign_reaction_severe_pending_count value = constant:ireland.zero }
 		clr_country_flag = ireland_foreign_reaction_digest_required
+	}
+}
+
+# One actor response is presented per foreign-reaction window. The remaining
+# eligible responses are summarised by the digest, while unresolved actor nodes
+# remain available for a later campaign window instead of replaying or vanishing.
+ireland_dispatch_foreign_reaction_response = {
+	if = {
+		limit = {
+			has_country_flag = ireland_foreign_reaction_window_active
+			NOT = { has_country_flag = ireland_foreign_reaction_response_dispatched }
+			check_variable = { var = ireland_foreign_reaction_window_days value = constant:ireland.foreign_reaction_response_dispatch_day compare = less_than_or_equals }
+			OR = {
+				AND = { has_country_flag = ireland_foreign_reaction_event_400_available NOT = { has_country_flag = ireland_event_seen_400 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_401_available NOT = { has_country_flag = ireland_event_seen_401 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_402_available NOT = { has_country_flag = ireland_event_seen_402 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_403_available NOT = { has_country_flag = ireland_event_seen_403 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_404_available NOT = { has_country_flag = ireland_event_seen_404 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_405_available NOT = { has_country_flag = ireland_event_seen_405 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_406_available NOT = { has_country_flag = ireland_event_seen_406 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_407_available NOT = { has_country_flag = ireland_event_seen_407 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_408_available NOT = { has_country_flag = ireland_event_seen_408 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_409_available NOT = { has_country_flag = ireland_event_seen_409 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_410_available NOT = { has_country_flag = ireland_event_seen_410 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_411_available NOT = { has_country_flag = ireland_event_seen_411 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_412_available NOT = { has_country_flag = ireland_event_seen_412 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_413_available NOT = { has_country_flag = ireland_event_seen_413 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_414_available NOT = { has_country_flag = ireland_event_seen_414 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_415_available NOT = { has_country_flag = ireland_event_seen_415 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_416_available NOT = { has_country_flag = ireland_event_seen_416 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_417_available NOT = { has_country_flag = ireland_event_seen_417 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_418_available NOT = { has_country_flag = ireland_event_seen_418 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_419_available NOT = { has_country_flag = ireland_event_seen_419 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_420_available NOT = { has_country_flag = ireland_event_seen_420 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_421_available NOT = { has_country_flag = ireland_event_seen_421 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_422_available NOT = { has_country_flag = ireland_event_seen_422 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_423_available NOT = { has_country_flag = ireland_event_seen_423 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_424_available NOT = { has_country_flag = ireland_event_seen_424 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_425_available NOT = { has_country_flag = ireland_event_seen_425 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_426_available NOT = { has_country_flag = ireland_event_seen_426 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_427_available NOT = { has_country_flag = ireland_event_seen_427 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_428_available NOT = { has_country_flag = ireland_event_seen_428 } }
+				AND = { has_country_flag = ireland_foreign_reaction_event_429_available NOT = { has_country_flag = ireland_event_seen_429 } }
+			}
+		}
+		set_country_flag = ireland_foreign_reaction_response_dispatched
+		random_list = {
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_400_available } has_country_flag = ireland_event_seen_400 } } country_event = { id = ireland_events.400 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_401_available } has_country_flag = ireland_event_seen_401 } } country_event = { id = ireland_events.401 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_402_available } has_country_flag = ireland_event_seen_402 } } country_event = { id = ireland_events.402 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_403_available } has_country_flag = ireland_event_seen_403 } } country_event = { id = ireland_events.403 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_404_available } has_country_flag = ireland_event_seen_404 } } country_event = { id = ireland_events.404 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_405_available } has_country_flag = ireland_event_seen_405 } } country_event = { id = ireland_events.405 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_406_available } has_country_flag = ireland_event_seen_406 } } country_event = { id = ireland_events.406 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_407_available } has_country_flag = ireland_event_seen_407 } } country_event = { id = ireland_events.407 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_408_available } has_country_flag = ireland_event_seen_408 } } country_event = { id = ireland_events.408 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_409_available } has_country_flag = ireland_event_seen_409 } } country_event = { id = ireland_events.409 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_410_available } has_country_flag = ireland_event_seen_410 } } country_event = { id = ireland_events.410 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_411_available } has_country_flag = ireland_event_seen_411 } } country_event = { id = ireland_events.411 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_412_available } has_country_flag = ireland_event_seen_412 } } country_event = { id = ireland_events.412 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_413_available } has_country_flag = ireland_event_seen_413 } } country_event = { id = ireland_events.413 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_414_available } has_country_flag = ireland_event_seen_414 } } country_event = { id = ireland_events.414 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_415_available } has_country_flag = ireland_event_seen_415 } } country_event = { id = ireland_events.415 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_416_available } has_country_flag = ireland_event_seen_416 } } country_event = { id = ireland_events.416 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_417_available } has_country_flag = ireland_event_seen_417 } } country_event = { id = ireland_events.417 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_418_available } has_country_flag = ireland_event_seen_418 } } country_event = { id = ireland_events.418 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_419_available } has_country_flag = ireland_event_seen_419 } } country_event = { id = ireland_events.419 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_420_available } has_country_flag = ireland_event_seen_420 } } country_event = { id = ireland_events.420 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_421_available } has_country_flag = ireland_event_seen_421 } } country_event = { id = ireland_events.421 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_422_available } has_country_flag = ireland_event_seen_422 } } country_event = { id = ireland_events.422 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_423_available } has_country_flag = ireland_event_seen_423 } } country_event = { id = ireland_events.423 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_424_available } has_country_flag = ireland_event_seen_424 } } country_event = { id = ireland_events.424 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_425_available } has_country_flag = ireland_event_seen_425 } } country_event = { id = ireland_events.425 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_426_available } has_country_flag = ireland_event_seen_426 } } country_event = { id = ireland_events.426 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_427_available } has_country_flag = ireland_event_seen_427 } } country_event = { id = ireland_events.427 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_428_available } has_country_flag = ireland_event_seen_428 } } country_event = { id = ireland_events.428 } }
+			10 = { modifier = { factor = 0 OR = { NOT = { has_country_flag = ireland_foreign_reaction_event_429_available } has_country_flag = ireland_event_seen_429 } } country_event = { id = ireland_events.429 } }
+		}
 	}
 }
 
@@ -2501,40 +2519,40 @@ ireland_prepare_foreign_reaction_ledger = {
 		if = { limit = { has_country_flag = ireland_foreign_actor_fr11_valid check_variable = { var = ireland_foreign_reaction_score_fr11 value = constant:ireland.foreign_reaction_score_rc02_min compare = less_than } } set_country_flag = ireland_foreign_observation_fr11 add_to_variable = { ireland_foreign_reaction_observation_count = constant:ireland.one } }
 		if = { limit = { has_country_flag = ireland_foreign_actor_fr12_valid check_variable = { var = ireland_foreign_reaction_score_fr12 value = constant:ireland.foreign_reaction_score_rc02_min compare = less_than } } set_country_flag = ireland_foreign_observation_fr12 add_to_variable = { ireland_foreign_reaction_observation_count = constant:ireland.one } }
 
-		# Only capability-valid response classes enter the expected ledger. The
-		# chained nodes inherit their predecessor so an unavailable first response
-		# cannot leave an orphaned follow-up in the digest.
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr01_valid check_variable = { var = ireland_foreign_reaction_score_fr01 value = constant:ireland.foreign_reaction_score_rc06_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_400_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr01 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc06 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr01_valid has_country_flag = ireland_foreign_reaction_event_400_resolved check_variable = { var = ireland_foreign_reaction_score_fr01 value = constant:ireland.foreign_reaction_score_rc02_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_401_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr01 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc02 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr01_valid has_country_flag = ireland_foreign_reaction_event_401_resolved check_variable = { var = ireland_foreign_reaction_score_fr01 value = constant:ireland.foreign_reaction_score_rc09_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_402_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr01 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc09 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr02_valid check_variable = { var = ireland_foreign_reaction_score_fr02 value = constant:ireland.foreign_reaction_score_rc11_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_403_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr02 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc11 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr02_valid has_country_flag = ireland_foreign_reaction_event_403_resolved check_variable = { var = ireland_foreign_reaction_score_fr02 value = constant:ireland.foreign_reaction_score_rc07_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_404_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr02 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc07 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr02_valid has_country_flag = ireland_foreign_reaction_event_404_resolved check_variable = { var = ireland_foreign_reaction_score_fr02 value = constant:ireland.foreign_reaction_score_rc11_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_405_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr02 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc11 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr03_valid check_variable = { var = ireland_foreign_reaction_score_fr03 value = constant:ireland.foreign_reaction_score_rc06_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_406_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr03 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc06 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr03_valid has_country_flag = ireland_foreign_reaction_event_406_resolved check_variable = { var = ireland_foreign_reaction_score_fr03 value = constant:ireland.foreign_reaction_score_rc03_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_407_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr03 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc03 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr03_valid has_country_flag = ireland_foreign_reaction_event_407_resolved check_variable = { var = ireland_foreign_reaction_score_fr03 value = constant:ireland.foreign_reaction_score_rc06_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_408_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr03 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc06 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr04_valid check_variable = { var = ireland_foreign_reaction_score_fr04 value = constant:ireland.foreign_reaction_score_rc07_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_409_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr04 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc07 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr04_valid has_country_flag = ireland_foreign_reaction_event_409_resolved check_variable = { var = ireland_foreign_reaction_score_fr04 value = constant:ireland.foreign_reaction_score_rc03_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_410_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr04 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc03 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr05_valid check_variable = { var = ireland_foreign_reaction_score_fr05 value = constant:ireland.foreign_reaction_score_rc10_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_411_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr05 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc10 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr05_valid has_country_flag = ireland_foreign_reaction_event_411_resolved check_variable = { var = ireland_foreign_reaction_score_fr05 value = constant:ireland.foreign_reaction_score_rc03_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_412_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr05 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc03 = constant:ireland.one } }
-		if = { limit = { OR = { AND = { has_country_flag = ireland_foreign_actor_fr05_valid has_country_flag = ireland_foreign_reaction_event_412_resolved check_variable = { var = ireland_foreign_reaction_score_fr05 value = constant:ireland.foreign_reaction_score_rc12_min compare = greater_than_or_equals } } AND = { has_country_flag = ireland_foreign_actor_fr05_collapse_valid check_variable = { var = ireland_foreign_reaction_score_fr05_collapse value = constant:ireland.foreign_reaction_score_rc12_min compare = greater_than_or_equals } } } } set_country_flag = ireland_foreign_reaction_event_413_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr05 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc12 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr06_valid check_variable = { var = ireland_foreign_reaction_score_fr06 value = constant:ireland.foreign_reaction_score_rc04_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_414_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr06 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc04 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr06_valid has_country_flag = ireland_foreign_reaction_event_414_resolved check_variable = { var = ireland_foreign_reaction_score_fr06 value = constant:ireland.foreign_reaction_score_rc03_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_415_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr06 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc03 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr07_valid check_variable = { var = ireland_foreign_reaction_score_fr07 value = constant:ireland.foreign_reaction_score_rc05_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_416_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr07 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc05 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr07_valid has_country_flag = ireland_foreign_reaction_event_416_resolved check_variable = { var = ireland_foreign_reaction_score_fr07 value = constant:ireland.foreign_reaction_score_rc06_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_417_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr07 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc06 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr08_valid check_variable = { var = ireland_foreign_reaction_score_fr08 value = constant:ireland.foreign_reaction_score_rc04_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_418_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr08 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc04 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr08_valid has_country_flag = ireland_foreign_reaction_event_418_resolved check_variable = { var = ireland_foreign_reaction_score_fr08 value = constant:ireland.foreign_reaction_score_rc01_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_419_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr08 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc01 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr09_valid check_variable = { var = ireland_foreign_reaction_score_fr09 value = constant:ireland.foreign_reaction_score_rc08_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_420_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr09 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc08 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr09_valid has_country_flag = ireland_foreign_reaction_event_420_resolved check_variable = { var = ireland_foreign_reaction_score_fr09 value = constant:ireland.foreign_reaction_score_rc09_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_421_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr09 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc09 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr09_valid has_country_flag = ireland_foreign_reaction_event_421_resolved check_variable = { var = ireland_foreign_reaction_score_fr09 value = constant:ireland.foreign_reaction_score_rc11_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_422_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr09 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc11 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr10_valid check_variable = { var = ireland_foreign_reaction_score_fr10 value = constant:ireland.foreign_reaction_score_rc10_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_423_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr10 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc10 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr10_valid has_country_flag = ireland_foreign_reaction_event_423_resolved check_variable = { var = ireland_foreign_reaction_score_fr10 value = constant:ireland.foreign_reaction_score_rc11_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_424_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr10 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc11 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr11_valid check_variable = { var = ireland_foreign_reaction_score_fr11 value = constant:ireland.foreign_reaction_score_rc05_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_425_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr11 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc05 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr11_valid has_country_flag = ireland_foreign_reaction_event_425_resolved check_variable = { var = ireland_foreign_reaction_score_fr11 value = constant:ireland.foreign_reaction_score_rc07_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_426_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr11 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc07 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr11_valid has_country_flag = ireland_foreign_reaction_event_426_resolved check_variable = { var = ireland_foreign_reaction_score_fr11 value = constant:ireland.foreign_reaction_score_rc11_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_427_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr11 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc11 = constant:ireland.one } }
+		# Only capability-valid unresolved response classes enter this window.
+		# Actor chains advance across later windows through their durable resolved
+		# predecessors, while the digest summarises the current eligible set.
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_400 } has_country_flag = ireland_foreign_actor_fr01_valid check_variable = { var = ireland_foreign_reaction_score_fr01 value = constant:ireland.foreign_reaction_score_rc06_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_400_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr01 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc06 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_401 } has_country_flag = ireland_foreign_actor_fr01_valid has_country_flag = ireland_foreign_reaction_event_400_resolved check_variable = { var = ireland_foreign_reaction_score_fr01 value = constant:ireland.foreign_reaction_score_rc02_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_401_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr01 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc02 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_402 } has_country_flag = ireland_foreign_actor_fr01_valid has_country_flag = ireland_foreign_reaction_event_401_resolved check_variable = { var = ireland_foreign_reaction_score_fr01 value = constant:ireland.foreign_reaction_score_rc09_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_402_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr01 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc09 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_403 } has_country_flag = ireland_foreign_actor_fr02_valid check_variable = { var = ireland_foreign_reaction_score_fr02 value = constant:ireland.foreign_reaction_score_rc11_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_403_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr02 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc11 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_404 } has_country_flag = ireland_foreign_actor_fr02_valid has_country_flag = ireland_foreign_reaction_event_403_resolved check_variable = { var = ireland_foreign_reaction_score_fr02 value = constant:ireland.foreign_reaction_score_rc07_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_404_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr02 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc07 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_405 } has_country_flag = ireland_foreign_actor_fr02_valid has_country_flag = ireland_foreign_reaction_event_404_resolved check_variable = { var = ireland_foreign_reaction_score_fr02 value = constant:ireland.foreign_reaction_score_rc11_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_405_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr02 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc11 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_406 } has_country_flag = ireland_foreign_actor_fr03_valid check_variable = { var = ireland_foreign_reaction_score_fr03 value = constant:ireland.foreign_reaction_score_rc06_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_406_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr03 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc06 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_407 } has_country_flag = ireland_foreign_actor_fr03_valid has_country_flag = ireland_foreign_reaction_event_406_resolved check_variable = { var = ireland_foreign_reaction_score_fr03 value = constant:ireland.foreign_reaction_score_rc03_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_407_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr03 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc03 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_408 } has_country_flag = ireland_foreign_actor_fr03_valid has_country_flag = ireland_foreign_reaction_event_407_resolved check_variable = { var = ireland_foreign_reaction_score_fr03 value = constant:ireland.foreign_reaction_score_rc06_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_408_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr03 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc06 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_409 } has_country_flag = ireland_foreign_actor_fr04_valid check_variable = { var = ireland_foreign_reaction_score_fr04 value = constant:ireland.foreign_reaction_score_rc07_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_409_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr04 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc07 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_410 } has_country_flag = ireland_foreign_actor_fr04_valid has_country_flag = ireland_foreign_reaction_event_409_resolved check_variable = { var = ireland_foreign_reaction_score_fr04 value = constant:ireland.foreign_reaction_score_rc03_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_410_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr04 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc03 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_411 } has_country_flag = ireland_foreign_actor_fr05_valid check_variable = { var = ireland_foreign_reaction_score_fr05 value = constant:ireland.foreign_reaction_score_rc10_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_411_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr05 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc10 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_412 } has_country_flag = ireland_foreign_actor_fr05_valid has_country_flag = ireland_foreign_reaction_event_411_resolved check_variable = { var = ireland_foreign_reaction_score_fr05 value = constant:ireland.foreign_reaction_score_rc03_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_412_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr05 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc03 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_413 } OR = { AND = { has_country_flag = ireland_foreign_actor_fr05_valid has_country_flag = ireland_foreign_reaction_event_412_resolved check_variable = { var = ireland_foreign_reaction_score_fr05 value = constant:ireland.foreign_reaction_score_rc12_min compare = greater_than_or_equals } } AND = { has_country_flag = ireland_foreign_actor_fr05_collapse_valid check_variable = { var = ireland_foreign_reaction_score_fr05_collapse value = constant:ireland.foreign_reaction_score_rc12_min compare = greater_than_or_equals } } } } set_country_flag = ireland_foreign_reaction_event_413_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr05 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc12 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_414 } has_country_flag = ireland_foreign_actor_fr06_valid check_variable = { var = ireland_foreign_reaction_score_fr06 value = constant:ireland.foreign_reaction_score_rc04_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_414_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr06 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc04 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_415 } has_country_flag = ireland_foreign_actor_fr06_valid has_country_flag = ireland_foreign_reaction_event_414_resolved check_variable = { var = ireland_foreign_reaction_score_fr06 value = constant:ireland.foreign_reaction_score_rc03_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_415_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr06 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc03 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_416 } has_country_flag = ireland_foreign_actor_fr07_valid check_variable = { var = ireland_foreign_reaction_score_fr07 value = constant:ireland.foreign_reaction_score_rc05_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_416_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr07 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc05 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_417 } has_country_flag = ireland_foreign_actor_fr07_valid has_country_flag = ireland_foreign_reaction_event_416_resolved check_variable = { var = ireland_foreign_reaction_score_fr07 value = constant:ireland.foreign_reaction_score_rc06_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_417_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr07 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc06 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_418 } has_country_flag = ireland_foreign_actor_fr08_valid check_variable = { var = ireland_foreign_reaction_score_fr08 value = constant:ireland.foreign_reaction_score_rc04_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_418_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr08 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc04 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_419 } has_country_flag = ireland_foreign_actor_fr08_valid has_country_flag = ireland_foreign_reaction_event_418_resolved check_variable = { var = ireland_foreign_reaction_score_fr08 value = constant:ireland.foreign_reaction_score_rc01_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_419_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr08 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc01 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_420 } has_country_flag = ireland_foreign_actor_fr09_valid check_variable = { var = ireland_foreign_reaction_score_fr09 value = constant:ireland.foreign_reaction_score_rc08_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_420_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr09 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc08 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_421 } has_country_flag = ireland_foreign_actor_fr09_valid has_country_flag = ireland_foreign_reaction_event_420_resolved check_variable = { var = ireland_foreign_reaction_score_fr09 value = constant:ireland.foreign_reaction_score_rc09_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_421_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr09 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc09 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_422 } has_country_flag = ireland_foreign_actor_fr09_valid has_country_flag = ireland_foreign_reaction_event_421_resolved check_variable = { var = ireland_foreign_reaction_score_fr09 value = constant:ireland.foreign_reaction_score_rc11_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_422_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr09 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc11 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_423 } has_country_flag = ireland_foreign_actor_fr10_valid check_variable = { var = ireland_foreign_reaction_score_fr10 value = constant:ireland.foreign_reaction_score_rc10_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_423_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr10 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc10 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_424 } has_country_flag = ireland_foreign_actor_fr10_valid has_country_flag = ireland_foreign_reaction_event_423_resolved check_variable = { var = ireland_foreign_reaction_score_fr10 value = constant:ireland.foreign_reaction_score_rc11_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_424_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr10 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc11 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_425 } has_country_flag = ireland_foreign_actor_fr11_valid check_variable = { var = ireland_foreign_reaction_score_fr11 value = constant:ireland.foreign_reaction_score_rc05_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_425_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr11 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc05 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_426 } has_country_flag = ireland_foreign_actor_fr11_valid has_country_flag = ireland_foreign_reaction_event_425_resolved check_variable = { var = ireland_foreign_reaction_score_fr11 value = constant:ireland.foreign_reaction_score_rc07_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_426_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr11 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc07 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_427 } has_country_flag = ireland_foreign_actor_fr11_valid has_country_flag = ireland_foreign_reaction_event_426_resolved check_variable = { var = ireland_foreign_reaction_score_fr11 value = constant:ireland.foreign_reaction_score_rc11_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_427_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr11 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc11 = constant:ireland.one } }
 
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr12_valid check_variable = { var = ireland_foreign_reaction_score_fr12 value = constant:ireland.foreign_reaction_score_rc04_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_428_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr12 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc04 = constant:ireland.one } }
-		if = { limit = { has_country_flag = ireland_foreign_actor_fr12_valid has_country_flag = ireland_foreign_reaction_event_428_resolved check_variable = { var = ireland_foreign_reaction_score_fr12 value = constant:ireland.foreign_reaction_score_rc03_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_429_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr12 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc03 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_428 } has_country_flag = ireland_foreign_actor_fr12_valid check_variable = { var = ireland_foreign_reaction_score_fr12 value = constant:ireland.foreign_reaction_score_rc04_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_428_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr12 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc04 = constant:ireland.one } }
+		if = { limit = { NOT = { has_country_flag = ireland_event_seen_429 } has_country_flag = ireland_foreign_actor_fr12_valid has_country_flag = ireland_foreign_reaction_event_428_resolved check_variable = { var = ireland_foreign_reaction_score_fr12 value = constant:ireland.foreign_reaction_score_rc03_min compare = greater_than_or_equals } } set_country_flag = ireland_foreign_reaction_event_429_available add_to_variable = { ireland_foreign_reaction_expected_count = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_fr12 = constant:ireland.one } add_to_variable = { ireland_foreign_reaction_expected_rc03 = constant:ireland.one } }
 		# Valid actors contribute to the displayed aggregate; invalid actors only
 		# retain their explicit inability reduction in their own score.
 		if = { limit = { has_country_flag = ireland_foreign_actor_fr01_valid } add_to_variable = { ireland_foreign_reaction_score = ireland_foreign_reaction_score_fr01 } }
@@ -2559,9 +2577,8 @@ ireland_prepare_foreign_reaction_ledger = {
 }
 
 ireland_resolve_foreign_digest_reactions = {
-	# Resolve only eligible response nodes. Observations remain separate, severe
-	# classes remain visible requirements, and the digest records only hidden
-	# non-severe nodes instead of manufacturing a fixed response total.
+	# Summarise eligible unresolved response nodes. Observations remain separate,
+	# while actor-node state changes only when that actor report was displayed.
 	if = {
 		limit = { has_country_flag = ireland_foreign_reaction_window_active }
 		if = {
@@ -2783,7 +2800,6 @@ ireland_resolve_foreign_digest_reactions = {
 
 		set_variable = { var = ireland_foreign_reaction_digest_pending value = ireland_foreign_reaction_expected_count }
 		subtract_from_variable = { ireland_foreign_reaction_digest_pending = ireland_foreign_reaction_visible_count }
-		subtract_from_variable = { ireland_foreign_reaction_digest_pending = ireland_foreign_reaction_severe_pending_count }
 		if = {
 			limit = { check_variable = { var = ireland_foreign_reaction_digest_pending value = constant:ireland.zero compare = less_than } }
 			set_variable = { var = ireland_foreign_reaction_digest_pending value = constant:ireland.zero }
@@ -2984,7 +3000,6 @@ ireland_resolve_foreign_digest_reactions = {
 		if = {
 			limit = {
 				check_variable = { var = ireland_foreign_reaction_digest_pending value = constant:ireland.zero compare = greater_than }
-				NOT = { has_country_flag = ireland_foreign_reaction_severe_pending }
 			}
 			set_country_flag = ireland_foreign_digest_classes_recorded
 			set_country_flag = ireland_foreign_reaction_digest_required
@@ -2992,99 +3007,8 @@ ireland_resolve_foreign_digest_reactions = {
 		}
 		else = { clr_country_flag = ireland_foreign_reaction_digest_required }
 
-		# Eligible non-severe nodes are closed into the digest after their window.
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_400_available } set_country_flag = ireland_event_seen_400 set_country_flag = ireland_foreign_reaction_event_400_resolved set_country_flag = ireland_followup_foreign_fr01_uk_treaty_ports_trade_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_401_available } set_country_flag = ireland_event_seen_401 set_country_flag = ireland_foreign_reaction_event_401_resolved set_country_flag = ireland_followup_foreign_fr01_uk_neutrality_shipping_note_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_402_available } set_country_flag = ireland_event_seen_402 set_country_flag = ireland_foreign_reaction_event_402_resolved set_country_flag = ireland_followup_foreign_fr01_uk_northern_guarantee_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_404_available } set_country_flag = ireland_event_seen_404 set_country_flag = ireland_foreign_reaction_event_404_resolved set_country_flag = ireland_followup_foreign_fr02_ni_relief_delegation_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_406_available } set_country_flag = ireland_event_seen_406 set_country_flag = ireland_foreign_reaction_event_406_resolved set_country_flag = ireland_followup_foreign_fr03_us_procurement_licence_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_407_available } set_country_flag = ireland_event_seen_407 set_country_flag = ireland_foreign_reaction_event_407_resolved set_country_flag = ireland_followup_foreign_fr03_us_diaspora_pressure_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_408_available } set_country_flag = ireland_event_seen_408 set_country_flag = ireland_foreign_reaction_event_408_resolved set_country_flag = ireland_followup_foreign_fr03_us_postwar_credit_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_409_available } set_country_flag = ireland_event_seen_409 set_country_flag = ireland_foreign_reaction_event_409_resolved set_country_flag = ireland_followup_foreign_fr04_diaspora_fundraising_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_410_available } set_country_flag = ireland_event_seen_410 set_country_flag = ireland_foreign_reaction_event_410_resolved set_country_flag = ireland_followup_foreign_fr04_diaspora_split_boycott_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_411_available } set_country_flag = ireland_event_seen_411 set_country_flag = ireland_foreign_reaction_event_411_resolved set_country_flag = ireland_followup_foreign_fr05_german_promise_agents_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_412_available } set_country_flag = ireland_event_seen_412 set_country_flag = ireland_foreign_reaction_event_412_resolved set_country_flag = ireland_followup_foreign_fr05_german_radio_propaganda_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_414_available } set_country_flag = ireland_event_seen_414 set_country_flag = ireland_foreign_reaction_event_414_resolved set_country_flag = ireland_followup_foreign_fr06_vatican_mediation_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_415_available } set_country_flag = ireland_event_seen_415 set_country_flag = ireland_foreign_reaction_event_415_resolved set_country_flag = ireland_followup_foreign_fr06_vatican_public_criticism_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_416_available } set_country_flag = ireland_event_seen_416 set_country_flag = ireland_foreign_reaction_event_416_resolved set_country_flag = ireland_followup_foreign_fr07_commonwealth_recognition_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_417_available } set_country_flag = ireland_event_seen_417 set_country_flag = ireland_foreign_reaction_event_417_resolved set_country_flag = ireland_followup_foreign_fr07_commonwealth_trade_reservation_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_418_available } set_country_flag = ireland_event_seen_418 set_country_flag = ireland_foreign_reaction_event_418_resolved set_country_flag = ireland_followup_foreign_fr08_neutral_forum_consultation_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_419_available } set_country_flag = ireland_event_seen_419 set_country_flag = ireland_foreign_reaction_event_419_resolved set_country_flag = ireland_followup_foreign_fr08_neutral_shipping_observation_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_420_available } set_country_flag = ireland_event_seen_420 set_country_flag = ireland_foreign_reaction_event_420_resolved set_country_flag = ireland_followup_foreign_fr09_allied_access_request_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_421_available } set_country_flag = ireland_event_seen_421 set_country_flag = ireland_foreign_reaction_event_421_resolved set_country_flag = ireland_followup_foreign_fr09_allied_command_consultation_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_423_available } set_country_flag = ireland_event_seen_423 set_country_flag = ireland_foreign_reaction_event_423_resolved set_country_flag = ireland_followup_foreign_fr10_axis_liaison_offer_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_426_available } set_country_flag = ireland_event_seen_426 set_country_flag = ireland_foreign_reaction_event_426_resolved set_country_flag = ireland_followup_foreign_fr11_postwar_reconstruction_conditions_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_428_available } set_country_flag = ireland_event_seen_428 set_country_flag = ireland_foreign_reaction_event_428_resolved set_country_flag = ireland_followup_foreign_fr12_celtic_cultural_delegation_closed }
-		if = { limit = { has_country_flag = ireland_foreign_reaction_event_429_available } set_country_flag = ireland_event_seen_429 set_country_flag = ireland_foreign_reaction_event_429_resolved set_country_flag = ireland_followup_foreign_fr12_celtic_federal_overclaim_closed }
-		if = {
-			limit = {
-				OR = {
-					NOT = { has_country_flag = ireland_foreign_reaction_event_403_available }
-					has_country_flag = ireland_foreign_reaction_current_403
-					has_country_flag = ireland_foreign_reaction_current_403
-				}
-			}
-			set_country_flag = ireland_event_seen_403
-		}
-		if = {
-			limit = {
-				OR = {
-					NOT = { has_country_flag = ireland_foreign_reaction_event_405_available }
-					has_country_flag = ireland_foreign_reaction_current_405
-					has_country_flag = ireland_foreign_reaction_current_405
-				}
-			}
-			set_country_flag = ireland_event_seen_405
-		}
-		if = {
-			limit = {
-				OR = {
-					NOT = { has_country_flag = ireland_foreign_reaction_event_413_available }
-					has_country_flag = ireland_foreign_reaction_current_413
-					has_country_flag = ireland_foreign_reaction_current_413
-				}
-			}
-			set_country_flag = ireland_event_seen_413
-		}
-		if = {
-			limit = {
-				OR = {
-					NOT = { has_country_flag = ireland_foreign_reaction_event_422_available }
-					has_country_flag = ireland_foreign_reaction_current_422
-					has_country_flag = ireland_foreign_reaction_current_422
-				}
-			}
-			set_country_flag = ireland_event_seen_422
-		}
-		if = {
-			limit = {
-				OR = {
-					NOT = { has_country_flag = ireland_foreign_reaction_event_424_available }
-					has_country_flag = ireland_foreign_reaction_current_424
-					has_country_flag = ireland_foreign_reaction_current_424
-				}
-			}
-			set_country_flag = ireland_event_seen_424
-		}
-		if = {
-			limit = {
-				OR = {
-					NOT = { has_country_flag = ireland_foreign_reaction_event_425_available }
-					has_country_flag = ireland_foreign_reaction_current_425
-				}
-			}
-			set_country_flag = ireland_event_seen_425
-		}
-		if = {
-			limit = {
-				OR = {
-					NOT = { has_country_flag = ireland_foreign_reaction_event_427_available }
-					has_country_flag = ireland_foreign_reaction_current_427
-					has_country_flag = ireland_foreign_reaction_current_427
-				}
-			}
-			set_country_flag = ireland_event_seen_427
-		}
+		# Unselected actor nodes remain unresolved, allowing later windows to
+		# surface them without replaying responses already shown.
 
 		# A completed response saturates that actor for the configured cooldown.
 		if = {
@@ -3238,27 +3162,19 @@ ireland_consolidate_foreign_reactions = {
 		limit = { has_country_flag = ireland_foreign_reaction_window_active }
 		ireland_resolve_foreign_digest_reactions = yes
 		if = {
-			limit = { has_country_flag = ireland_foreign_reaction_severe_pending }
-			# Ultimatums, war/guarantee responses, recognition ruptures,
-			# occupation threats, sponsor collapse, and postwar admission
-			# cannot be hidden. Keep the ledger open for their visible node.
-			set_variable = { var = ireland_foreign_reaction_window_days value = constant:ireland.one }
+			limit = { check_variable = { var = ireland_foreign_reaction_visible_count value = constant:ireland.foreign_reaction_visible_max compare = greater_than } }
+			set_variable = { var = ireland_foreign_reaction_visible_count value = constant:ireland.foreign_reaction_visible_max }
 		}
 		if = {
-			limit = { NOT = { has_country_flag = ireland_foreign_reaction_severe_pending } }
-			if = {
-				limit = { check_variable = { var = ireland_foreign_reaction_visible_count value = constant:ireland.foreign_reaction_visible_max compare = greater_than } }
-				set_variable = { var = ireland_foreign_reaction_visible_count value = constant:ireland.foreign_reaction_visible_max }
-			}
-			if = {
-				limit = { check_variable = { var = ireland_foreign_reaction_digest_pending value = constant:ireland.zero compare = greater_than } }
-				set_country_flag = ireland_foreign_reaction_digest_required
-			}
-			else = { clr_country_flag = ireland_foreign_reaction_digest_required }
-			clr_country_flag = ireland_foreign_reaction_window_active
-			set_variable = { var = ireland_foreign_reaction_window_days value = constant:ireland.zero }
-			set_country_flag = ireland_foreign_reaction_window_closed
+			limit = { check_variable = { var = ireland_foreign_reaction_digest_pending value = constant:ireland.zero compare = greater_than } }
+			set_country_flag = ireland_foreign_reaction_digest_required
 		}
+		else = { clr_country_flag = ireland_foreign_reaction_digest_required }
+		clr_country_flag = ireland_foreign_reaction_severe_pending
+		clr_country_flag = ireland_foreign_reaction_severe_visible_required
+		clr_country_flag = ireland_foreign_reaction_window_active
+		set_variable = { var = ireland_foreign_reaction_window_days value = constant:ireland.zero }
+		set_country_flag = ireland_foreign_reaction_window_closed
 	}
 }
 
@@ -3313,11 +3229,21 @@ ireland_tick_reviews_and_windows = {
 	if = {
 		limit = { has_country_flag = ireland_foreign_reaction_window_active }
 		ireland_prepare_foreign_reaction_ledger = yes
+		ireland_dispatch_foreign_reaction_response = yes
 		subtract_from_variable = { ireland_foreign_reaction_window_days = constant:ireland.one }
 		if = {
 			limit = { check_variable = { var = ireland_foreign_reaction_window_days value = constant:ireland.zero compare = less_than_or_equals } }
 			ireland_consolidate_foreign_reactions = yes
 		}
+	}
+	if = {
+		limit = {
+			has_country_flag = ireland_foreign_reaction_window_closed
+			has_country_flag = ireland_foreign_reaction_digest_required
+			NOT = { has_country_flag = ireland_foreign_reaction_digest_scheduled }
+		}
+		set_country_flag = ireland_foreign_reaction_digest_scheduled
+		country_event = { id = ireland_events.430 days = @ireland_foreign_reaction_digest_delay_days }
 	}
 	if = {
 		limit = {
@@ -3862,6 +3788,8 @@ ireland_cleanup_foreign_reaction_window = {
 	clr_country_flag = ireland_foreign_reaction_severe_pending
 	clr_country_flag = ireland_foreign_reaction_severe_visible_required
 	clr_country_flag = ireland_foreign_reaction_digest_required
+	clr_country_flag = ireland_foreign_reaction_response_dispatched
+	clr_country_flag = ireland_foreign_reaction_digest_scheduled
 	clr_country_flag = ireland_foreign_reaction_window_closed
 	clr_country_flag = ireland_foreign_reaction_current_400
 	clr_country_flag = ireland_foreign_reaction_current_401
@@ -3924,7 +3852,6 @@ ireland_cleanup_foreign_reaction_window = {
 	clr_country_flag = ireland_foreign_reaction_event_428_available
 	clr_country_flag = ireland_foreign_reaction_event_429_available
 	ireland_clear_foreign_reaction_subjects = yes
-	ireland_clear_foreign_reaction_node_resolutions = yes
 	set_variable = { var = ireland_foreign_reaction_window_days value = constant:ireland.zero }
 }
 

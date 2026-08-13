@@ -46,9 +46,8 @@ ireland = {
 	value_max = 100
 	# Opening Oireachtas programme. The gate is one point below the matching
 	# cost because has_political_power uses a strict greater-than comparison.
-	parliament_dail_pp_cost = 15
-	parliament_dail_pp_delta = -15
-	parliament_dail_pp_gate = 14
+	parliament_dail_pp_cost = 0
+	parliament_dail_pp_delta = 0
 	parliament_seanad_pp_cost = 25
 	parliament_seanad_pp_delta = -25
 	parliament_seanad_pp_gate = 24
@@ -626,7 +625,9 @@ ireland = {
 	ai_action_burden_7_penalty = -56
 
 	foreign_reaction_window_days = 14
-	foreign_reaction_visible_max = 4
+	# The single visible actor response is selected after four quiet days.
+	foreign_reaction_response_dispatch_day = 10
+	foreign_reaction_visible_max = 1
 	foreign_reaction_total_nodes = 30
 	foreign_reaction_digest_score_per_node = 1
 	foreign_reaction_rc01_nodes = 1
@@ -798,7 +799,9 @@ ireland = {
 	neutrality_incident_high_severity = 3
 	neutrality_incident_medium_severity = 2
 	neutrality_incident_low_severity = 1
-	event_dispatch_cooldown_days = 1
+	# The dispatcher runs monthly. One skipped pulse after a successful event
+	# limits the ordinary programme to six player-facing events per year.
+	event_dispatch_cooldown_months = 1
 	event_dispatch_first = 100
 	# 437 is a direct hidden-permission lifecycle event; the generic dispatcher
 	# remains intentionally unrolled from 436 to the flavour range at 500.

@@ -682,7 +682,7 @@ The following country-scoped helpers live in `common/scripted_effects/ireland_ru
 
 - `ireland_rebuild_mission_counters`: scans all 54 active mission flags, rebuilds thirteen named category counters and their 2/3/4/12-cap policy, then reserves one global slot for live constitutional, provision, invasion, neutrality-incident, Northern, occupation, or route-review work. Critical mission families are the only activations exempted from that reservation, and only while their corresponding need flag is set; routine missions already running are allowed to finish or fail under their own deadlines.
 - `ireland_cleanup_mission_objectives`: clears transient active/full/partial flags for all 54 mission families during route archival while preserving durable result-history flags.
-- `ireland_dispatch_event_programme`: validates and recovers the bounded 100–735 dispatch cursor before the one-event-per-day scan; event family follow-up flags are the causal gates for subsequent nodes.
+- `ireland_dispatch_event_programme`: validates the bounded 100–735 scan marker and admits at most one ordinary event on Ireland's monthly pulse; a one-pulse cooldown limits that programme to six reports per year.
 - `ireland_sync_route_profile`: selects the durable H/P/A AI profile from committed route and hidden evidence flags, then calls `ireland_enforce_hpa_boundary`.
 - `ireland_enforce_hpa_boundary`: clears contradictory H/P/A classification and active-route flags after profile synchronisation. Historical routes have neither plausible nor absurd active status; plausible routes have only the plausible active status; absurd routes have only the absurd active status. It never grants hidden permission or verifies impossible evidence.
 - `ireland_sync_route_gate_flags`: derives the Clann Agrarian Support Bloc and constitutional vocational mandate gates from their dated/prerequisite flags, Agrarian Cohesion, Social Consent, and Minority Confidence.
@@ -701,8 +701,8 @@ The following country-scoped helpers live in `common/scripted_effects/ireland_ru
 - `ireland_update_achievement_trackers`: records durable minima, maxima, route conclusions, mission records, and witnessed war/neutrality history.
 - `ireland_update_achievement_history`: records durable route, law, office, evidence, obligation, Northern, ratification, and failure history, including expiry of temporary confidence-and-supply support.
 - `ireland_sync_operational_state`: derives emergency, command, mobilisation, security, and neutrality-family state from live ledgers and numbered incident sources.
-- `ireland_open_event_gateways`: opens or closes the route event programme and schedules the foreign-reaction digest.
-- `ireland_dispatch_event_programme`: scans copied source triggers with a persisted cursor and fires at most one authored event per day, including incident prelude state and cleanup guards.
+- `ireland_open_event_gateways`: opens or closes the route event programme and maintains family gateways.
+- `ireland_dispatch_foreign_reaction_response`: selects one unresolved eligible actor response after four quiet days in a reaction window. Previously shown actor nodes remain durable campaign records; undisplayed nodes remain available to later windows.
 
 Canonical variables are authoritative and are read directly by the decision and runtime consumers. The legacy decision-facing names remain compatibility aliases refreshed from them after each daily tick; they never overwrite provision, readiness, Northern, or consent values.
 
@@ -710,8 +710,8 @@ Canonical variables are authoritative and are read directly by the decision and 
 
 - Scope: country.
 - Inputs: none; actor-specific caller effects set reaction score and targets.
-- Outputs: 14-day active window, visible result count, and digest state.
-- Side effects: supports the four-visible-reaction cap and later consolidation; it does not grant diplomatic access or recognition by itself.
+- Outputs: a 14-day active window, a one-response broker state, and digest state.
+- Side effects: starts a 120-day global reaction-programme cooldown, presents at most one actor report, and schedules one aggregate digest only when additional reactions exist. It does not grant diplomatic access or recognition by itself.
 
 ## `ireland_record_foreign_rc01_observation`
 
@@ -926,7 +926,7 @@ Usage contract: the four action blocks call their admission helper inside the vi
 ## Parliament action executors
 
 The opening Oireachtas programme has one guarded executor per action. Both the
-human scripted-GUI click and the AI-only native decision call that executor, so
+scripted-GUI click and the sequential native decision call that executor, so
 the availability gate, political-power debit, record helper, and completion
 lock have one owner. All tuning values live in
 `common/script_constants/ireland_constants.txt`.
@@ -940,7 +940,7 @@ sync.
 
 | Effect | Purpose and scope | Inputs and outputs | Defaults and side effects | Usage |
 | --- | --- | --- | --- | --- |
-| `ireland_execute_parliament_dail_action` | Executes the opening Dáil sitting in Ireland country scope. | Reads `ireland_parliament_dail_action_available`; deducts the Dáil PP cost and calls `ireland_record_parliament_dail_session`. | Does nothing when the gate is false. The record helper adds routine votes, Dáil Mandate, Cabinet Cohesion, Social Consent, and the completion flag. | Called by both the human Dáil button and the AI-only Dáil decision. |
-| `ireland_execute_parliament_seanad_action` | Secures Seanad support in Ireland country scope. | Reads `ireland_parliament_seanad_action_available`; deducts the Seanad PP cost and calls `ireland_record_parliament_seanad_support`. | Does nothing when the gate is false. The record helper adds government seats, Social Consent, Cabinet Cohesion, and the completion flag. | Called by both the human Seanad button and the AI-only Seanad decision. |
-| `ireland_execute_parliament_confidence_action` | Records the confidence-and-supply compact in Ireland country scope. | Reads `ireland_parliament_confidence_action_available`; deducts the confidence PP cost and calls `ireland_record_parliament_confidence_compact`. | Does nothing when the gate is false. The record helper adds external support, routine votes, Dáil Mandate, Social Consent, Cabinet Cohesion, and the completion flag. | Called by both the human confidence button and the AI-only confidence decision. |
-| `ireland_execute_parliament_budget_action` | Passes the joint opening budget in Ireland country scope. | Reads `ireland_parliament_joint_budget_action_available`; deducts the budget PP cost and calls `ireland_record_parliament_joint_budget`. | Does nothing when the gate is false. The record helper adds Stability, Administrative Reach, Dáil Mandate, Cabinet Cohesion, and the completion flag. | Called by both the human budget button and the AI-only budget decision. |
+| `ireland_execute_parliament_dail_action` | Executes the opening Dáil sitting in Ireland country scope. | Reads `ireland_parliament_dail_action_available`; calls `ireland_record_parliament_dail_session` without a political-power charge. | Does nothing when the gate is false. The record helper adds routine votes, Dáil Mandate, Cabinet Cohesion, Social Consent, and the completion flag. | Called by both the Dáil button and native Dáil decision. |
+| `ireland_execute_parliament_seanad_action` | Secures Seanad support in Ireland country scope. | Reads `ireland_parliament_seanad_action_available`; deducts the Seanad PP cost and calls `ireland_record_parliament_seanad_support`. | Does nothing when the gate is false. The record helper adds government seats, Social Consent, Cabinet Cohesion, and the completion flag. | Called by both the Seanad button and native Seanad decision. |
+| `ireland_execute_parliament_confidence_action` | Records the confidence-and-supply compact in Ireland country scope. | Reads `ireland_parliament_confidence_action_available`; deducts the confidence PP cost and calls `ireland_record_parliament_confidence_compact`. | Does nothing when the gate is false. The record helper adds external support, routine votes, Dáil Mandate, Social Consent, Cabinet Cohesion, and the completion flag. | Called by both the confidence button and native confidence decision. |
+| `ireland_execute_parliament_budget_action` | Passes the joint opening budget in Ireland country scope. | Reads `ireland_parliament_joint_budget_action_available`; deducts the budget PP cost and calls `ireland_record_parliament_joint_budget`. | Does nothing when the gate is false. The record helper adds Stability, Administrative Reach, Dáil Mandate, Cabinet Cohesion, and the completion flag. | Called by both the budget button and native budget decision. |

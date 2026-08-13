@@ -18,7 +18,7 @@
 # ai_hint_pp_cost is a literal-only parser field. Keep its four file-local
 # macros synchronized with the matching ireland.parliament_*_pp_cost script
 # constants used by the shared executors and visible GUI labels.
-@IRELAND_PARLIAMENT_DAIL_AI_PP_COST = 15
+@IRELAND_PARLIAMENT_DAIL_AI_PP_COST = 0
 @IRELAND_PARLIAMENT_SEANAD_AI_PP_COST = 25
 @IRELAND_PARLIAMENT_CONFIDENCE_AI_PP_COST = 25
 @IRELAND_PARLIAMENT_BUDGET_AI_PP_COST = 35
@@ -228,7 +228,6 @@ ireland_settlement_government = {
 	ireland_action_negotiate_seanad_support = {
 		icon = GFX_decision_ireland_negotiate_confidence_and_supply
 		visible = {
-			is_ai = yes
 			original_tag = IRE
 			NOT = { has_country_flag = ireland_route_archived }
 			ireland_reveal_settlement_open = yes
@@ -260,7 +259,6 @@ ireland_settlement_government = {
 	ireland_action_secure_a_confidence_compact = {
 		icon = GFX_decision_ireland_request_a_confidence_vote
 		visible = {
-			is_ai = yes
 			original_tag = IRE
 			NOT = { has_country_flag = ireland_route_archived }
 			ireland_reveal_settlement_open = yes
@@ -292,7 +290,6 @@ ireland_settlement_government = {
 	ireland_action_pass_a_joint_budget = {
 		icon = GFX_decision_ireland_publish_a_government_programme
 		visible = {
-			is_ai = yes
 			original_tag = IRE
 			NOT = { has_country_flag = ireland_route_archived }
 			ireland_reveal_settlement_open = yes

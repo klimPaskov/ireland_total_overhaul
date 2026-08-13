@@ -1,6 +1,6 @@
 # Ireland Total Overhaul scripted GUI registrations.
 # The parliament surface combines live chamber diagrams with four human-facing
-# institutional controls. Human clicks and the AI-only native decisions use
+# institutional controls. Human clicks and the sequential native decisions use
 # the same guarded executors, tuning constants, and record helpers.
 
 scripted_gui = {

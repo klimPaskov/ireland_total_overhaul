@@ -3,11 +3,11 @@
 # decisions use the same guarded executors, gates, and effects.
 @PARLIAMENT_WIDTH = 510
 @PARLIAMENT_HEIGHT = 248
-@TITLE_Y = 4
+@TITLE_Y = 7
 
 @CHAMBER_WIDTH = 247
 @CHAMBER_HEIGHT = 126
-@CHAMBER_PANEL_Y = 22
+@CHAMBER_PANEL_Y = 25
 @DAIL_PANEL_X = 4
 @SEANAD_PANEL_X = 259
 @CHAMBER_HEADER_LOCAL_Y = 0
@@ -18,8 +18,8 @@
 @CHAMBER_STATUS_LOCAL_Y = 90
 @CHAMBER_COMPOSITION_LOCAL_Y = 108
 
-@POWERS_PANEL_Y = 148
-@POWERS_PANEL_HEIGHT = 100
+@POWERS_PANEL_Y = 151
+@POWERS_PANEL_HEIGHT = 97
 @POWERS_HEADER_LOCAL_Y = 0
 @POWER_LEFT_X = 44
 @POWER_RIGHT_X = 296
@@ -45,12 +45,12 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "ireland_parliament_title"
 			position = { x = 0 y = @TITLE_Y }
-			font = "hoi_16mbs"
+			font = "vic_18_black"
 			text = "ireland_parliament_title"
 			format = center
 			fixedsize = yes
 			maxWidth = @PARLIAMENT_WIDTH
-			maxHeight = 16
+			maxHeight = 18
 		}
 
 		containerWindowType = {
@@ -214,7 +214,7 @@ guiTypes = {
 			# green secured. Red remains reserved for genuine failure states.
 			iconType = {
 				name = "ireland_parliament_power_dail_state"
-				spriteType = "GFX_ireland_gui_parliament_action_state"
+				spriteType = "GFX_ireland_gui_parliament_dail_action_state"
 				position = { x = @POWER_STATE_LEFT_X y = @POWER_STATE_FIRST_ROW_Y }
 				frame = 1
 				pdx_tooltip = "ireland_parliament_power_state_tt"
@@ -222,7 +222,7 @@ guiTypes = {
 			}
 			iconType = {
 				name = "ireland_parliament_power_seanad_state"
-				spriteType = "GFX_ireland_gui_parliament_action_state"
+				spriteType = "GFX_ireland_gui_parliament_seanad_action_state"
 				position = { x = @POWER_STATE_RIGHT_X y = @POWER_STATE_FIRST_ROW_Y }
 				frame = 1
 				pdx_tooltip = "ireland_parliament_power_state_tt"
@@ -230,7 +230,7 @@ guiTypes = {
 			}
 			iconType = {
 				name = "ireland_parliament_power_confidence_state"
-				spriteType = "GFX_ireland_gui_parliament_action_state"
+				spriteType = "GFX_ireland_gui_parliament_confidence_action_state"
 				position = { x = @POWER_STATE_LEFT_X y = @POWER_STATE_SECOND_ROW_Y }
 				frame = 1
 				pdx_tooltip = "ireland_parliament_power_state_tt"
@@ -238,7 +238,7 @@ guiTypes = {
 			}
 			iconType = {
 				name = "ireland_parliament_power_budget_state"
-				spriteType = "GFX_ireland_gui_parliament_action_state"
+				spriteType = "GFX_ireland_gui_parliament_budget_action_state"
 				position = { x = @POWER_STATE_RIGHT_X y = @POWER_STATE_SECOND_ROW_Y }
 				frame = 1
 				pdx_tooltip = "ireland_parliament_power_state_tt"

@@ -4,6 +4,12 @@ Date: 2026-08-12
 
 Feature slug: `ireland_focus_tree`
 
+Status: historical implementation inventory. Current focus geometry, reveal,
+reward, Parliament cost, interaction, and asset evidence is superseded by
+`focus_parliament_reward_density_completion_2026-08-13.md` and
+`source_of_truth_map.md`. Numerical and presentation claims below describe the
+2026-08-12 snapshot and must not be used as current completion evidence.
+
 ## Outcome
 
 The Ireland national tree is a single 150-focus directed acyclic graph arranged

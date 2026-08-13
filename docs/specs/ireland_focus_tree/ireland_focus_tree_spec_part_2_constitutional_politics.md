@@ -4755,7 +4755,7 @@ and Otherworld families retain progressive `allow_branch` reveal.
 Distant proof dependencies use player-facing `available` gates rather than
 long connectors across unrelated lanes.
 
-The authored tree occupies x `-20..21` and y `0..16`, retaining half the former
+The authored tree occupies x `-26..21` and y `0..16`, retaining a compact lane map
 horizontal span. It retains 150 focuses and 150 connectors with no crossing,
 connector-through-node, long-connector, or same-row spacing defect. Every
 focus has a focus-specific completion tooltip. Physical development and
@@ -4768,18 +4768,19 @@ focus IDs, and 59 focus IDs with named decision or mission unlocks.
 
 The National Settlement decision category owns a 510x248 Parliament surface.
 Its chamber summary and four-step programme are visible after Ireland
-initialization. The opening Dáil action is usable for 15 Political Power when
-Dublin is controlled; its shared executor opens the National Settlement focus.
-National Settlement advances Seanad support, the Constitutional Draft advances
+initialization. The opening Dáil action is free when Ireland owns Dublin; its
+shared executor opens the settlement programme. National Settlement authorises
+Seanad support, the Constitutional Draft advances
 the confidence compact, and Government Formation advances the joint budget.
 Two 247x126 cards contain matched
 126x70, 21-frame Dáil and Seanad support diagrams. Four 204x32 human controls
-form a two-column, two-row grid. AI uses equivalent hidden native decisions;
-both paths call the same guarded executors. The canonical costs are 15, 25, 25,
+form a two-column, two-row grid. Human and AI paths can use the sequential native
+decisions, and both native and GUI paths call the same guarded executors. The
+canonical costs are 0, 25, 25,
 and 35 Political Power for the Dáil sitting, Seanad support, confidence pact,
 and joint budget.
 
-Each action owns one 32x32 four-frame status seal in a separate, click-through
+Each action owns a distinct 32x32 four-frame status emblem in a separate, click-through
 column: slate means future/locked, amber means current but unaffordable, gold
 means current and available, and green means secured. Red is reserved for an
 actual failure or crisis. The same current and availability triggers drive the

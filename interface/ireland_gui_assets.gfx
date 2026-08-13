@@ -9,11 +9,12 @@ spriteTypes = {
 	spriteType = { name = GFX_ireland_gui_status_warning texturefile = "gfx/interface/ireland/gui/shared/status_warning.dds" }
 	spriteType = { name = GFX_ireland_gui_status_critical texturefile = "gfx/interface/ireland/gui/shared/status_critical.dds" }
 	spriteType = { name = GFX_ireland_parliament_summary_background texturefile = "gfx/interface/ireland/gui/parliament/parliament_summary_background.dds" }
-	spriteType = {
-		name = "GFX_ireland_gui_parliament_action_state"
-		texturefile = "gfx/interface/ireland/gui/parliament/parliament_action_states.dds"
-		noOfFrames = 4
-	}
+	# Each parliamentary action has its own emblem while retaining the shared
+	# four-state vocabulary: locked, current but unaffordable, available, complete.
+	spriteType = { name = "GFX_ireland_gui_parliament_dail_action_state" texturefile = "gfx/interface/ireland/gui/parliament/parliament_dail_action_states.dds" noOfFrames = 4 }
+	spriteType = { name = "GFX_ireland_gui_parliament_seanad_action_state" texturefile = "gfx/interface/ireland/gui/parliament/parliament_seanad_action_states.dds" noOfFrames = 4 }
+	spriteType = { name = "GFX_ireland_gui_parliament_confidence_action_state" texturefile = "gfx/interface/ireland/gui/parliament/parliament_confidence_action_states.dds" noOfFrames = 4 }
+	spriteType = { name = "GFX_ireland_gui_parliament_budget_action_state" texturefile = "gfx/interface/ireland/gui/parliament/parliament_budget_action_states.dds" noOfFrames = 4 }
 	# USA Congress-style 21-frame chamber indicators. The frame is set by
 	# ireland_update_parliament from the live Dáil and Seanad support ratios.
 	spriteType = {

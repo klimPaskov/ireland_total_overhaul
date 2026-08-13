@@ -10,8 +10,12 @@ Wired by the main implementation.
 - Seanad sprite: `GFX_ireland_parliament_seanad_large_ui`.
 - Button DDS: `gfx/interface/ireland/gui/parliament/parliament_step_button.dds` (204x32).
 - Button sprite: `GFX_ireland_gui_parliament_step_button`.
-- Action-state DDS: `gfx/interface/ireland/gui/parliament/parliament_action_states.dds` (four 32x32 frames).
-- Action-state sprite: `GFX_ireland_gui_parliament_action_state`.
+- Action-state DDS files: `parliament_dail_action_states.dds`,
+  `parliament_seanad_action_states.dds`,
+  `parliament_confidence_action_states.dds`, and
+  `parliament_budget_action_states.dds` under
+  `gfx/interface/ireland/gui/parliament/` (four 32x32 frames each).
+- Action-state sprites: `GFX_ireland_gui_parliament_*_action_state`.
 - Registration file: `interface/ireland_gui_assets.gfx`.
 - Runtime consumer: `interface/ireland_parliament_scripted_gui.gui`.
 
@@ -23,7 +27,8 @@ native centring so neither can intercept or offset the action.
 
 The generated background has no state semantics. The chamber sprites use the
 live Dáil and Seanad frame variables, while scripted-GUI visibility and enabled
-triggers own the action states. Each action has one non-overlapping state seal:
-slate locked, amber unaffordable, gold current, or green secured. The gold state
+triggers own the action states. Each action has one distinct, non-overlapping
+emblem with four states: slate locked, amber unaffordable, gold current, or
+green secured. The gold state
 uses the enabled button's native hover and pressed treatment; red is reserved
 for actual failure states.

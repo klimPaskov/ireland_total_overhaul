@@ -5,7 +5,7 @@
 This tranche corrects the three reported surfaces together:
 
 - the national tree keeps exactly three opening trunks while reducing its
-  horizontal span from 82 columns to 41;
+  horizontal span from 82 columns to 47;
 - all 150 focuses expose a focus-specific completion outcome, and the material
   lanes add real equipment, construction, industrial, fuel, and research deliveries; and
 - the Parliament surface shows its four programme controls from initialization,
@@ -16,21 +16,21 @@ This tranche corrects the three reported surfaces together:
 
 The source retains 150 focuses, 150 connectors, and the three opening roots
 `ireland_state_still_defined`, `ireland_economic_war_review`, and
-`ireland_defence_estimates`. Authored coordinates now occupy x `-20..21` and y
+`ireland_defence_estimates`. Authored coordinates now occupy x `-26..21` and y
 `0..16`. Culture, diplomacy, Northern policy, naval work, constitutional
 alternatives, and exceptional routes remain progressively revealed rather than
 becoming extra opening trunks.
 
-Focus inspection revision `b1c47582375c4bad` reports zero connector crossings,
+Focus inspection revision `c449f5b90475357b` reports zero connector crossings,
 zero connector-through-node intersections, zero long connectors, zero same-row
-spacing defects, a maximum horizontal connector span of seven, and a maximum
+spacing defects, a maximum horizontal connector span of six, and a maximum
 vertical span of two.
 
 Inspect artifact:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/38eaf03718c2057898eaab76ca811b380b412a07dc8d61190231e212dc1e09bc/905da3cd351731b79e9f6725233efad61df2e9a31bee5a3988fe0975750c2720/focus-inspect.b1c47582375c4bad.json`
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/ab0589809014e4ae6dcc4b3c9b3ef2acca67a058be59d7c35c99bc957dab2f69/08f2395c5aa9c69e9ec5b1fc6fc10ec336936e1a4f30d3e3bfe385620fa3dd21/focus-inspect.c449f5b90475357b.json`
 
 Render artifact:
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/92d07d264a68b616d43ed374a60c688281c0e9abe57baa9fc0125d0859954c12/676be3973e1ff0ed8c9b9e274a097cd3b95d3db4b09a69484f84e236d64ef64a/ireland_focus_tree.focus.html`
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/8d43b121a5ebaf13fa1ffc3bcacf102e010fdf9409b48a287bbc509d1fe91dec/ce7830f770cebc83495a50920d0ad090fd69f1ffbfe56da6ba0f7fcf4429b733/ireland_focus_tree.focus.html`
 
 ## Reward contract
 
@@ -46,6 +46,11 @@ one records Ireland's legal claim to Northern Ireland without granting a core
 or control;
 and 59 focus IDs expose named decision or mission unlocks. These classes
 overlap where a project both delivers capacity and opens playable work.
+
+Search filters follow direct rewards. Army, navy, and air experience filters
+match their respective experience effects exactly (11, 9, and 4 focuses), all
+23 research-filtered focuses grant a research or doctrine bonus, and no focus
+uses the manpower filter without a direct manpower or unit reward.
 
 - development and defence trunks provide bounded factories, infrastructure,
   fuel, radar, anti-air defence, rifles, support equipment, trucks, trains, and
@@ -63,8 +68,8 @@ reviews that their completion flags actually unlock.
 ## Parliament behaviour
 
 The `510x248` Parliament panel keeps its two `247x126` chamber cards and four
-`204x32` programme buttons. The title is moved from y `1` to y `4` and changed
-from black to the white `hoi_16mbs` font. Chamber parties, support values,
+`204x32` programme buttons. The title is positioned at y `7` in the dark
+`vic_18_black` font on the light parchment rail. Chamber parties, support values,
 majorities, opposition, costs, and the programme header use distinct colour
 roles.
 
@@ -74,7 +79,7 @@ panel can no longer show only seals while hiding its controls. Each control
 remains locked by its canonical `*_action_available` trigger and still calls
 the guarded shared executor; no cost or effect is duplicated.
 
-The first Dáil action is available from initialization for 15 Political Power
+The first Dáil action is available from initialization at no Political Power cost
 through both the category and the scripted GUI. Both call the same guarded,
 idempotent executor. Convening the Dáil records the first sitting and opens the
 National Settlement focus; that focus advances the programme to Seanad support.
@@ -89,7 +94,7 @@ GUI render artifact:
 
 The GUI analyzer's four cost notices are a known static-analysis limitation: it
 does not follow the click effect into the shared executor. The executor owns the
-15/25/25/35 Political Power debits and repeats the same availability test used
+0/25/25/35 Political Power costs and repeats the same availability test used
 by the buttons and AI decisions.
 
 ## Files and systems changed
@@ -104,8 +109,9 @@ by the buttons and AI decisions.
 - `localisation/english/ireland_l_english.yml`
 - focus reward and canonical feature documentation under `docs/`
 
-No new visual asset was required. The existing Parliament background, chamber
-sprites, four-state seals, and button texture remain the final art package.
+Four project-owned action emblems were processed into separate four-frame state
+strips for the Dáil, Seanad, confidence, and budget rows. The existing Parliament
+background, chamber sprites, and button texture remain part of the final package.
 
 ## Simplifications, omissions, and blockers
 
