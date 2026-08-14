@@ -8,6 +8,11 @@ add_namespace = ireland_territorial_diplomacy
 @IRELAND_TERRITORIAL_DIPLOMACY_AI_ACCEPT = 20
 @IRELAND_TERRITORIAL_DIPLOMACY_AI_COUNTEROFFER = 35
 @IRELAND_TERRITORIAL_DIPLOMACY_AI_REFUSE = 45
+# Timed country flags reject variables and fixed-point constants. Mirror
+# ireland.territorial_diplomacy_cooldown_days here.
+@IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS = 180
+# A stale result refunds the exact 50 PP administrative charge only. Any
+# manpower, equipment, convoy, fuel, and command reserve spent at launch stays spent.
 @IRELAND_TERRITORIAL_DIPLOMACY_STALE_REFUND = 50
 # Provincial assent is a domestic response, not an automatic restoration reward.
 @IRELAND_TERRITORIAL_ASSENT_AI_BASE = 1
@@ -82,8 +87,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_ulster_ultimatum_pending
 		clr_country_flag = ireland_territorial_ulster_ultimatum_accept_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 	option = {
@@ -99,8 +103,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_ulster_ultimatum_pending
 		clr_country_flag = ireland_territorial_ulster_ultimatum_accept_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -126,8 +129,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_ulster_ultimatum_pending
 		clr_country_flag = ireland_territorial_ulster_ultimatum_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 	option = {
@@ -139,8 +141,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_ulster_ultimatum_pending
 		clr_country_flag = ireland_territorial_ulster_ultimatum_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -160,8 +161,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_ulster_ultimatum_pending
 		clr_country_flag = ireland_territorial_ulster_ultimatum_refusal_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -213,8 +213,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_belfast_compact_pending
 		clr_country_flag = ireland_territorial_belfast_compact_accept_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -234,8 +233,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_belfast_compact_pending
 		clr_country_flag = ireland_territorial_belfast_compact_refusal_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -258,8 +256,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_belfast_compact_pending
 		clr_country_flag = ireland_territorial_belfast_compact_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 	option = {
@@ -271,8 +268,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_belfast_compact_pending
 		clr_country_flag = ireland_territorial_belfast_compact_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -323,8 +319,7 @@ country_event = {
 		clr_country_flag = ireland_highlands_demand_pending
 		clr_country_flag = ireland_highlands_demand_accept_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 	option = {
@@ -340,8 +335,7 @@ country_event = {
 		clr_country_flag = ireland_highlands_demand_pending
 		clr_country_flag = ireland_highlands_demand_accept_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -363,8 +357,7 @@ country_event = {
 		clr_country_flag = ireland_highlands_demand_pending
 		clr_country_flag = ireland_highlands_demand_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 	option = {
@@ -380,8 +373,7 @@ country_event = {
 		clr_country_flag = ireland_highlands_demand_pending
 		clr_country_flag = ireland_highlands_demand_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -405,8 +397,7 @@ country_event = {
 		clr_country_flag = ireland_highlands_demand_pending
 		clr_country_flag = ireland_highlands_demand_refusal_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -457,8 +448,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_border_demand_pending
 		clr_country_flag = ireland_territorial_border_demand_accept_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 	option = {
@@ -474,8 +464,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_border_demand_pending
 		clr_country_flag = ireland_territorial_border_demand_accept_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -497,8 +486,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_border_demand_pending
 		clr_country_flag = ireland_territorial_border_demand_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 	option = {
@@ -514,8 +502,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_border_demand_pending
 		clr_country_flag = ireland_territorial_border_demand_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -539,8 +526,7 @@ country_event = {
 		clr_country_flag = ireland_territorial_border_demand_pending
 		clr_country_flag = ireland_territorial_border_demand_refusal_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -591,8 +577,7 @@ country_event = {
 		clr_country_flag = ireland_wales_demand_pending
 		clr_country_flag = ireland_wales_demand_accept_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 	option = {
@@ -603,8 +588,7 @@ country_event = {
 		clr_country_flag = ireland_wales_demand_pending
 		clr_country_flag = ireland_wales_demand_accept_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -626,8 +610,7 @@ country_event = {
 		clr_country_flag = ireland_wales_demand_pending
 		clr_country_flag = ireland_wales_demand_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 	option = {
@@ -641,8 +624,7 @@ country_event = {
 		clr_country_flag = ireland_wales_demand_pending
 		clr_country_flag = ireland_wales_demand_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -664,8 +646,7 @@ country_event = {
 		clr_country_flag = ireland_wales_demand_pending
 		clr_country_flag = ireland_wales_demand_refusal_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -715,8 +696,7 @@ country_event = {
 		clr_country_flag = ireland_cornwall_demand_pending
 		clr_country_flag = ireland_cornwall_demand_accept_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 	option = {
@@ -727,8 +707,7 @@ country_event = {
 		clr_country_flag = ireland_cornwall_demand_pending
 		clr_country_flag = ireland_cornwall_demand_accept_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -750,8 +729,7 @@ country_event = {
 		clr_country_flag = ireland_cornwall_demand_pending
 		clr_country_flag = ireland_cornwall_demand_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 	option = {
@@ -765,8 +743,7 @@ country_event = {
 		clr_country_flag = ireland_cornwall_demand_pending
 		clr_country_flag = ireland_cornwall_demand_counteroffer_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -788,8 +765,7 @@ country_event = {
 		clr_country_flag = ireland_cornwall_demand_pending
 		clr_country_flag = ireland_cornwall_demand_refusal_pending
 		clr_country_flag = ireland_territorial_diplomacy_active
-		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
-		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = @IRELAND_TERRITORIAL_DIPLOMACY_COOLDOWN_DAYS }
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
@@ -808,6 +784,15 @@ country_event = {
 	}
 	option = {
 		name = ireland_territorial_diplomacy.provincial_assent.record
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_provincial_assent_record_requirements_tt
+				check_variable = { var = ireland_northern_unionist_consent value = constant:ireland.territorial_provincial_assent_reconvene_unionist_floor compare = greater_than_or_equals }
+				check_variable = { var = ireland_northern_nationalist_consent value = constant:ireland.territorial_provincial_assent_reconvene_nationalist_floor compare = greater_than_or_equals }
+				check_variable = { var = ireland_royal_legitimacy value = constant:ireland.territorial_provincial_assent_reconvene_legitimacy_floor compare = greater_than_or_equals }
+				check_variable = { var = ireland_administrative_reach value = constant:ireland.northern_core_admin_floor compare = greater_than_or_equals }
+			}
+		}
 		custom_effect_tooltip = ireland_territorial_diplomacy.provincial_assent.record.effects
 		ai_chance = {
 			base = @IRELAND_TERRITORIAL_ASSENT_AI_BASE

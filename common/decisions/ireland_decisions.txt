@@ -49238,7 +49238,22 @@ ireland_postwar = {
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
 			custom_effect_tooltip = ireland_action_record_an_alternate_postwar_order_effects_tt
+			set_country_flag = ireland_postwar_alternate_order_in_progress
+		}
+		remove_effect = {
 			set_country_flag = ireland_postwar_alternate_order_resolved
+			clr_country_flag = ireland_postwar_alternate_order_in_progress
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+				has_country_flag = ireland_route_archived
+				ireland_un_admission_authority = yes
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_postwar_alternate_order_in_progress
 		}
 		ai_will_do = {
 			base = 1
@@ -49285,6 +49300,9 @@ ireland_postwar = {
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
 			custom_effect_tooltip = ireland_action_ratify_the_postwar_republic_effects_tt
+			set_country_flag = ireland_postwar_democratic_settlement_in_progress
+		}
+		remove_effect = {
 			set_country_flag = ireland_family_postwar_settlement_complete
 			set_country_flag = ireland_postwar_democratic_settlement_recorded
 			if = {
@@ -49309,14 +49327,18 @@ ireland_postwar = {
 			else = {
 				set_country_flag = ireland_postwar_external_association_settled
 			}
+			clr_country_flag = ireland_postwar_democratic_settlement_in_progress
 			ireland_begin_conclusion_review = yes
 		}
-		remove_trigger = {
+		cancel_trigger = {
 			OR = {
 				NOT = { original_tag = IRE }
 				has_country_flag = ireland_route_cleanup
 				has_country_flag = ireland_route_archived
 			}
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_postwar_democratic_settlement_in_progress
 		}
 		ai_will_do = {
 			base = 0
@@ -49356,18 +49378,25 @@ ireland_postwar = {
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
 			custom_effect_tooltip = ireland_action_civilianise_the_workers_congress_effects_tt
+			set_country_flag = ireland_postwar_congress_settlement_in_progress
+		}
+		remove_effect = {
 			set_country_flag = ireland_family_postwar_settlement_complete
 			set_country_flag = ireland_postwar_congress_settlement_recorded
 			set_country_flag = ireland_postwar_civilian_congress_supremacy_recorded
 			set_country_flag = ireland_postwar_wartime_command_bodies_closed
+			clr_country_flag = ireland_postwar_congress_settlement_in_progress
 			ireland_begin_conclusion_review = yes
 		}
-		remove_trigger = {
+		cancel_trigger = {
 			OR = {
 				NOT = { original_tag = IRE }
 				has_country_flag = ireland_route_cleanup
 				has_country_flag = ireland_route_archived
 			}
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_postwar_congress_settlement_in_progress
 		}
 		ai_will_do = {
 			base = 0
@@ -49407,6 +49436,9 @@ ireland_postwar = {
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
 			custom_effect_tooltip = ireland_action_place_the_directorate_under_statute_effects_tt
+			set_country_flag = ireland_postwar_fascist_settlement_in_progress
+		}
+		remove_effect = {
 			set_country_flag = ireland_family_postwar_settlement_complete
 			set_country_flag = ireland_postwar_fascist_settlement_recorded
 			set_country_flag = ireland_postwar_temporary_mobilisation_authority_closed
@@ -49417,14 +49449,18 @@ ireland_postwar = {
 			else = {
 				set_country_flag = ireland_postwar_corporate_state_demobilised_recorded
 			}
+			clr_country_flag = ireland_postwar_fascist_settlement_in_progress
 			ireland_begin_conclusion_review = yes
 		}
-		remove_trigger = {
+		cancel_trigger = {
 			OR = {
 				NOT = { original_tag = IRE }
 				has_country_flag = ireland_route_cleanup
 				has_country_flag = ireland_route_archived
 			}
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_postwar_fascist_settlement_in_progress
 		}
 		ai_will_do = {
 			base = 0
@@ -49464,18 +49500,25 @@ ireland_postwar = {
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
 			custom_effect_tooltip = ireland_action_convert_contracts_to_reconstruction_credit_effects_tt
+			set_country_flag = ireland_postwar_oligarchic_settlement_in_progress
+		}
+		remove_effect = {
 			set_country_flag = ireland_family_postwar_settlement_complete
 			set_country_flag = ireland_postwar_producer_estate_settlement_recorded
 			set_country_flag = ireland_postwar_reconstruction_credit_ledger_recorded
 			set_country_flag = ireland_postwar_creditor_obligations_recorded
+			clr_country_flag = ireland_postwar_oligarchic_settlement_in_progress
 			ireland_begin_conclusion_review = yes
 		}
-		remove_trigger = {
+		cancel_trigger = {
 			OR = {
 				NOT = { original_tag = IRE }
 				has_country_flag = ireland_route_cleanup
 				has_country_flag = ireland_route_archived
 			}
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_postwar_oligarchic_settlement_in_progress
 		}
 		ai_will_do = {
 			base = 0
@@ -49512,18 +49555,25 @@ ireland_postwar = {
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
 			custom_effect_tooltip = ireland_action_define_the_postwar_crown_effects_tt
+			set_country_flag = ireland_postwar_restoration_settlement_in_progress
+		}
+		remove_effect = {
 			set_country_flag = ireland_family_postwar_settlement_complete
 			set_country_flag = ireland_postwar_restoration_settlement_recorded
 			set_country_flag = ireland_postwar_crown_settlement_recorded
 			set_country_flag = ireland_postwar_temporary_crown_authority_closed
+			clr_country_flag = ireland_postwar_restoration_settlement_in_progress
 			ireland_begin_conclusion_review = yes
 		}
-		remove_trigger = {
+		cancel_trigger = {
 			OR = {
 				NOT = { original_tag = IRE }
 				has_country_flag = ireland_route_cleanup
 				has_country_flag = ireland_route_archived
 			}
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_postwar_restoration_settlement_in_progress
 		}
 		ai_will_do = {
 			base = 0
@@ -49561,19 +49611,26 @@ ireland_postwar = {
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
 			custom_effect_tooltip = ireland_action_reconstitute_the_postwar_coalition_effects_tt
+			set_country_flag = ireland_postwar_democratic_recovery_in_progress
+		}
+		remove_effect = {
 			set_country_flag = ireland_family_conclusion_recovery_complete
 			set_country_flag = ireland_postwar_coalition_reconstituted
 			clr_country_flag = ireland_route_conclusion_blocked_government
 			clr_country_flag = ireland_route_conclusion_blocked_law
 			clr_country_flag = ireland_conclusion_recovery_open
+			clr_country_flag = ireland_postwar_democratic_recovery_in_progress
 			ireland_begin_conclusion_review = yes
 		}
-		remove_trigger = {
+		cancel_trigger = {
 			OR = {
 				NOT = { original_tag = IRE }
 				has_country_flag = ireland_route_cleanup
 				has_country_flag = ireland_route_archived
 			}
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_postwar_democratic_recovery_in_progress
 		}
 		ai_will_do = {
 			base = 0
@@ -49609,19 +49666,26 @@ ireland_postwar = {
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
 			custom_effect_tooltip = ireland_action_reconvene_the_workers_congress_effects_tt
+			set_country_flag = ireland_postwar_congress_recovery_in_progress
+		}
+		remove_effect = {
 			set_country_flag = ireland_family_conclusion_recovery_complete
 			set_country_flag = ireland_postwar_workers_congress_reconvened
 			clr_country_flag = ireland_route_conclusion_blocked_government
 			clr_country_flag = ireland_route_conclusion_blocked_defence
 			clr_country_flag = ireland_conclusion_recovery_open
+			clr_country_flag = ireland_postwar_congress_recovery_in_progress
 			ireland_begin_conclusion_review = yes
 		}
-		remove_trigger = {
+		cancel_trigger = {
 			OR = {
 				NOT = { original_tag = IRE }
 				has_country_flag = ireland_route_cleanup
 				has_country_flag = ireland_route_archived
 			}
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_postwar_congress_recovery_in_progress
 		}
 		ai_will_do = {
 			base = 0
@@ -49657,18 +49721,25 @@ ireland_postwar = {
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
 			custom_effect_tooltip = ireland_action_demobilise_the_failed_directorate_effects_tt
+			set_country_flag = ireland_postwar_fascist_recovery_in_progress
+		}
+		remove_effect = {
 			set_country_flag = ireland_family_conclusion_recovery_complete
 			set_country_flag = ireland_postwar_failed_directorate_demobilised
 			clr_country_flag = ireland_route_conclusion_blocked_defence
 			clr_country_flag = ireland_conclusion_recovery_open
+			clr_country_flag = ireland_postwar_fascist_recovery_in_progress
 			ireland_begin_conclusion_review = yes
 		}
-		remove_trigger = {
+		cancel_trigger = {
 			OR = {
 				NOT = { original_tag = IRE }
 				has_country_flag = ireland_route_cleanup
 				has_country_flag = ireland_route_archived
 			}
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_postwar_fascist_recovery_in_progress
 		}
 		ai_will_do = {
 			base = 0
@@ -49704,18 +49775,25 @@ ireland_postwar = {
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
 			custom_effect_tooltip = ireland_action_rebalance_the_producer_estates_effects_tt
+			set_country_flag = ireland_postwar_oligarchic_recovery_in_progress
+		}
+		remove_effect = {
 			set_country_flag = ireland_family_conclusion_recovery_complete
 			set_country_flag = ireland_postwar_producer_estates_rebalanced
 			clr_country_flag = ireland_route_conclusion_blocked_economy
 			clr_country_flag = ireland_conclusion_recovery_open
+			clr_country_flag = ireland_postwar_oligarchic_recovery_in_progress
 			ireland_begin_conclusion_review = yes
 		}
-		remove_trigger = {
+		cancel_trigger = {
 			OR = {
 				NOT = { original_tag = IRE }
 				has_country_flag = ireland_route_cleanup
 				has_country_flag = ireland_route_archived
 			}
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_postwar_oligarchic_recovery_in_progress
 		}
 		ai_will_do = {
 			base = 0
@@ -49751,19 +49829,26 @@ ireland_postwar = {
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
 			custom_effect_tooltip = ireland_action_reconvene_the_crown_council_effects_tt
+			set_country_flag = ireland_postwar_restoration_recovery_in_progress
+		}
+		remove_effect = {
 			set_country_flag = ireland_family_conclusion_recovery_complete
 			set_country_flag = ireland_postwar_crown_council_reconvened
 			clr_country_flag = ireland_route_conclusion_blocked_government
 			clr_country_flag = ireland_route_conclusion_blocked_identity
 			clr_country_flag = ireland_conclusion_recovery_open
+			clr_country_flag = ireland_postwar_restoration_recovery_in_progress
 			ireland_begin_conclusion_review = yes
 		}
-		remove_trigger = {
+		cancel_trigger = {
 			OR = {
 				NOT = { original_tag = IRE }
 				has_country_flag = ireland_route_cleanup
 				has_country_flag = ireland_route_archived
 			}
+		}
+		cancel_effect = {
+			clr_country_flag = ireland_postwar_restoration_recovery_in_progress
 		}
 		ai_will_do = {
 			base = 0

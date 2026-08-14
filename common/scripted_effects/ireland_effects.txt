@@ -1202,6 +1202,7 @@ ireland_finalize_route_conclusion = {
 						OR = {
 							has_country_flag = ireland_northern_policy_selected
 							has_country_flag = ireland_northern_deferment_accepted
+							has_country_flag = ireland_territorial_fascist_partial_recorded
 						}
 					}
 				}
@@ -4255,6 +4256,22 @@ ireland_cleanup_route_state = {
 	clr_country_flag = ireland_territorial_provincial_assent_pending
 	clr_country_flag = ireland_territorial_provincial_assent_response_pending
 	clr_country_flag = ireland_territorial_provincial_assent_adjournment_pending
+	# Timed postwar projects have no durable outcome until their natural expiry.
+	# Route cleanup therefore clears launch markers without recording a result.
+	clr_country_flag = ireland_postwar_alternate_order_in_progress
+	clr_country_flag = ireland_postwar_democratic_settlement_in_progress
+	clr_country_flag = ireland_postwar_congress_settlement_in_progress
+	clr_country_flag = ireland_postwar_fascist_settlement_in_progress
+	clr_country_flag = ireland_postwar_oligarchic_settlement_in_progress
+	clr_country_flag = ireland_postwar_restoration_settlement_in_progress
+	clr_country_flag = ireland_postwar_democratic_recovery_in_progress
+	clr_country_flag = ireland_postwar_congress_recovery_in_progress
+	clr_country_flag = ireland_postwar_fascist_recovery_in_progress
+	clr_country_flag = ireland_postwar_oligarchic_recovery_in_progress
+	clr_country_flag = ireland_postwar_restoration_recovery_in_progress
+	clr_country_flag = ireland_territorial_workers_campaign_rebuild_in_progress
+	clr_country_flag = ireland_territorial_provincial_assent_reconvene_in_progress
+	clr_country_flag = ireland_territorial_border_enforcement_withdrawal_in_progress
 	clr_country_flag = ireland_wales_demand_pending
 	clr_country_flag = ireland_wales_demand_accept_pending
 	clr_country_flag = ireland_wales_demand_counteroffer_pending
