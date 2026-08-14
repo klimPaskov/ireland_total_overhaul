@@ -6,11 +6,20 @@
 
 ireland_historical_de_valera = {
 	allowed = { original_tag = IRE }
-	enable = { has_country_flag = ireland_profile_historical_de_valera NOT = { has_country_flag = ireland_route_committed } }
+	# Historical AI is a non-coercive constitutional profile. The extra
+	# exclusions keep stale Atlantic claim markers from re-opening an
+	# ahistorical strategy after a malformed or migrated save.
+	enable = {
+		has_country_flag = ireland_profile_historical_de_valera
+		NOT = { has_country_flag = ireland_route_committed }
+		NOT = { has_country_flag = ireland_atlantic_force_authorised }
+		NOT = { has_country_flag = ireland_atlantic_claims_fascist }
+		NOT = { has_country_flag = ireland_atlantic_claims_restoration }
+	}
 	abort_when_not_enabled = yes
 	ai_strategy = { type = pp_spend_priority id = political_power value = 100 }
 	ai_strategy = { type = research_weight_factor id = basic_machine_tools value = 35 }
-	ai_strategy = { type = avoid_starting_wars value = 100 }
+	ai_strategy = { type = avoid_starting_wars value = 220 }
 }
 
 ireland_de_valera_reconciliation = {
@@ -377,7 +386,14 @@ ireland_overlay_leadership_and_office_vacancy = {
 
 ireland_overlay_postwar_demobilisation_and_reconstruction = {
 	allowed = { original_tag = IRE }
-	enable = { OR = { has_country_flag = ireland_overlay_postwar_demobilisation_and_reconstruction has_country_flag = ireland_postwar_review_started } }
+	# A family conclusion recovery is a reserved repair lane. Do not keep
+	# optional postwar construction pressure active while its family action is
+	# available; the decision layer owns the free-factory/material gates.
+	enable = {
+		NOT = { has_country_flag = ireland_conclusion_recovery_open }
+		num_of_civilian_factories_available_for_projects > 0
+		OR = { has_country_flag = ireland_overlay_postwar_demobilisation_and_reconstruction has_country_flag = ireland_postwar_review_started }
+	}
 	abort_when_not_enabled = yes
 	ai_strategy = { type = build_building id = industrial_complex value = 150 }
 	ai_strategy = { type = build_building id = infrastructure value = 120 }
@@ -385,7 +401,12 @@ ireland_overlay_postwar_demobilisation_and_reconstruction = {
 
 ireland_overlay_route_conclusion_review_and_consolidation = {
 	allowed = { original_tag = IRE }
-	enable = { OR = { has_country_flag = ireland_overlay_route_conclusion_review_and_consolidation has_country_flag = ireland_conclusion_review_active has_country_flag = ireland_conclusion_review_due } }
+	# The conclusion review cannot compete with the family recovery action. The
+	# review overlay resumes only after that action clears its recovery marker.
+	enable = {
+		NOT = { has_country_flag = ireland_conclusion_recovery_open }
+		OR = { has_country_flag = ireland_overlay_route_conclusion_review_and_consolidation has_country_flag = ireland_conclusion_review_active has_country_flag = ireland_conclusion_review_due }
+	}
 	abort_when_not_enabled = yes
 	ai_strategy = { type = avoid_starting_wars value = 220 }
 	ai_strategy = { type = pp_spend_priority id = political_power value = 180 }
