@@ -840,9 +840,11 @@ ireland = {
 	# 437 is a direct hidden-permission lifecycle event; the generic dispatcher
 	# remains intentionally unrolled from 436 to the flavour range at 500.
 	event_dispatch_main_last = 437
+	# The ordered cursor crosses the separately paced 400-430 foreign-response
+	# range through one explicit sentinel before the Frank Ryan continuation.
+	event_dispatch_foreign_skip_cursor = 400
 	event_dispatch_flavour_first = 500
 	event_dispatch_flavour_last = 735
-	event_dispatch_cursor_reset = 100
 	achievement_coastwatch_days = 180
 	coastwatch_posts_total = 83
 	coastwatch_sector_count = 6

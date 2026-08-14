@@ -17,6 +17,15 @@ a maximum of six ordinary programme reports per year. Focus conclusions,
 player-invoked parliamentary or contribution events, and other direct milestone
 events remain immediate because they report an action the player just took.
 
+The ordinary catalogue contains 457 ordered launch slots: 221 main-route
+reports and 236 flavour reports. `ireland_event_dispatch_cursor` stores the next
+slot between monthly pulses. A slot at or after the cursor either launches its
+eligible report and stores the following slot, or advances the cursor without
+consuming the monthly dispatch. The scan stops after one launch. If no later
+slot is eligible, the final slot returns the cursor to event 100 for the next
+available monthly pulse. This rotation prevents an early unseen or temporarily
+ineligible report from forcing every scan to restart at the beginning.
+
 A source that merits foreign attention may open a 14-day reaction window. The
 window waits four days, selects one unresolved eligible actor response, and then
 closes. When other actors also qualify, one aggregate digest follows. A global
@@ -50,6 +59,15 @@ so a monthly pulse cannot produce a second actor popup. The one-response flag,
 the digest-scheduled flag and durable `ireland_event_seen_400` through `_429`
 records prevent duplicate scheduling and replay.
 
+`ireland_flavour_events.500` is reserved for de Valera's historical cabinet.
+Both its event trigger and dispatcher admission require the historical de
+Valera profile, Éamon de Valera as the active ruler, occupied Taoiseach and
+cabinet offices, and no government vacancy. If he is displaced, the cursor
+advances to event 501 without recording event 500 as seen and without consuming
+the monthly dispatch. A later lawful restoration may therefore make the report
+eligible on a subsequent catalogue rotation, while its de Valera-specific
+localisation can never appear under another government.
+
 `ireland_event_option_<choice>_target_<n>_delta` values are presentation previews
 calculated in the report's hidden immediate block. They mirror each option's
 arithmetic and destination-ledger clamp without mutating the destination. The
@@ -71,6 +89,8 @@ placeholder is part of the programme.
 
 All event choices retain authored `ai_chance` weights and route modifiers. The
 cadence changes when a choice is presented, not which effect the AI selects.
+Event 500 keeps its 55/45 base choice balance and historical-profile modifiers
+as file-scoped tuning constants beside the event namespace.
 Foreign actor selection is weighted evenly among currently eligible unresolved
 nodes; actor validity, leverage thresholds and saturation still determine which
 weights are non-zero.

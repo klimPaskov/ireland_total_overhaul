@@ -82,7 +82,9 @@ preview variables. Report events use distinct registered images.
 Cadence:
 
 - dated historical events fire once in a bounded window;
-- ordinary flavour dispatch runs monthly or through explicit pulses;
+- ordinary flavour dispatch runs monthly or through explicit pulses, resumes
+  from a durable next-entry cursor, and advances past ineligible slots without
+  consuming that pulse's single report admission.
 - urgent incidents are launched by their system or mission, not a universal daily
   dispatcher;
 - foreign reactions use one paced broker with a 120-day replay cooldown and at

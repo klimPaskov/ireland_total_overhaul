@@ -88,9 +88,9 @@ on_actions = {
 				ireland_sync_dillon_crisis_boundary = yes
 				ireland_update_achievement_trackers = yes
 				ireland_sync_ai_priority_flags = yes
-				# At most one player-facing programme event is considered on the
-				# monthly Ireland pulse. The dispatcher adds an additional empty
-				# month after a successful dispatch.
+				# The monthly Ireland pulse resumes the ordered programme from its
+				# durable cursor. It admits at most one report, then leaves one
+				# additional monthly pulse empty after a successful dispatch.
 				ireland_dispatch_event_programme = yes
 				ireland_update_action_cost_preview = yes
 			}

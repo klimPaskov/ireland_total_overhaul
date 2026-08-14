@@ -83,10 +83,12 @@ buttons retain the engine-darkened treatment. This is the bounded Parliament
 button repair, not a separate UI design.
 
 Ordinary flavour reports use the monthly dispatcher with at most one report per
-pulse and a skipped following pulse. Foreign reaction admission uses its own
-120-day cooldown. The five family conclusion reports bypass the ordinary pool,
-use distinct 210x176 report art, and are archived after their player-facing
-decision. The exact decision lifecycle is terminal on natural expiry and
+pulse and a skipped following pulse. The 457-slot catalogue stores the next
+ordered entry, advances past ineligible slots in the current scan, resumes after
+the last successful report, and wraps only at the end. Foreign reaction
+admission uses its own 120-day cooldown. The five family conclusion reports
+bypass the ordinary pool, use distinct 210x176 report art, and are archived
+after their player-facing decision. The exact decision lifecycle is terminal on natural expiry and
 cleanup-only on cancellation: selection reserves inputs and marks work in
 progress, while the durable settlement/recovery result is created at natural
 expiry or authored cancellation cleanup, never at selection.

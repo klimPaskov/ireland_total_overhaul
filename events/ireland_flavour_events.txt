@@ -4,6 +4,11 @@
 
 add_namespace = ireland_flavour_events
 
+@IRELAND_F01_CABINET_STEWARDSHIP_AI_BASE = 55
+@IRELAND_F01_CABINET_COUNTY_AI_BASE = 45
+@IRELAND_F01_CABINET_PROFILE_FAVOURED_FACTOR = 2
+@IRELAND_F01_CABINET_PROFILE_DISFAVOURED_FACTOR = 0.5
+
 # F01 De Valera constitutional government | cabinet_routine | node 1/10 | knowledge: dated ledger, route profile and local actor record
 country_event = {
 	id = ireland_flavour_events.500
@@ -19,11 +24,18 @@ country_event = {
 		NOT = { has_country_flag = ireland_flavour_f01_cabinet_routine_closed }
 		NOT = { has_country_flag = ireland_route_closed }
 		check_variable = { var = ireland_social_consent value = constant:ireland.zero compare = greater_than }
-		OR = {
-			AND = { has_country_flag = ireland_profile_historical_de_valera date > 1937.1.1 date < 1950.1.1 }
-			AND = { has_country_flag = ireland_plausible_route_active date > 1937.1.1 date < 1950.1.1 }
-			AND = { has_country_flag = ireland_absurd_route_active date > 1937.1.1 date < 1950.1.1 }
+		has_country_flag = ireland_profile_historical_de_valera
+		has_country_leader = {
+			ruling_only = yes
+			character = IRE_Éamon_de_valera
 		}
+		check_variable = { var = ireland_office_taoiseach_occupied value = constant:ireland.one compare = equals }
+		check_variable = { var = ireland_office_cabinet_minister_occupied value = constant:ireland.one compare = equals }
+		NOT = { has_country_flag = ireland_office_taoiseach_vacant }
+		NOT = { has_country_flag = ireland_office_cabinet_minister_vacant }
+		NOT = { has_country_flag = ireland_government_vacancy }
+		date > 1937.1.1
+		date < 1950.1.1
 	}
 	immediate = {
 		hidden_effect = {
@@ -65,9 +77,8 @@ country_event = {
 		name = ireland_flavour_events.f01_cabinet_routine.constitutional_stewardship
 		custom_effect_tooltip = ireland_flavour_events.f01_cabinet_routine.constitutional_stewardship.effects
 		ai_chance = {
-			base = 55
-			modifier = { factor = 2 has_country_flag = ireland_profile_historical_de_valera }
-			modifier = { factor = 0.5 has_country_flag = ireland_absurd_route_active }
+			base = @IRELAND_F01_CABINET_STEWARDSHIP_AI_BASE
+			modifier = { factor = @IRELAND_F01_CABINET_PROFILE_FAVOURED_FACTOR has_country_flag = ireland_profile_historical_de_valera }
 		}
 		set_country_flag = ireland_flavour_f01_cabinet_routine_a
 		set_country_flag = ireland_memory_f01_cabinet_routine_a
@@ -87,9 +98,8 @@ country_event = {
 		name = ireland_flavour_events.f01_cabinet_routine.county_compromise
 		custom_effect_tooltip = ireland_flavour_events.f01_cabinet_routine.county_compromise.effects
 		ai_chance = {
-			base = 45
-			modifier = { factor = 2 has_country_flag = ireland_absurd_route_active }
-			modifier = { factor = 0.5 has_country_flag = ireland_profile_historical_de_valera }
+			base = @IRELAND_F01_CABINET_COUNTY_AI_BASE
+			modifier = { factor = @IRELAND_F01_CABINET_PROFILE_DISFAVOURED_FACTOR has_country_flag = ireland_profile_historical_de_valera }
 		}
 		set_country_flag = ireland_flavour_f01_cabinet_routine_b
 		set_country_flag = ireland_memory_f01_cabinet_routine_b
