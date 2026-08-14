@@ -5442,7 +5442,7 @@ focus_tree = {
 		y = 13
 		prerequisite = { focus = ireland_atlantic_ambition }
 		available = { has_country_flag = ireland_family_democratic }
-		completion_reward = { custom_effect_tooltip = ireland_atlantic_security_compacts_reward_tt unlock_decision_tooltip = ireland_territorial_negotiate_atlantic_basing set_country_flag = ireland_atlantic_security_path set_country_flag = ireland_atlantic_external_policy_selected mark_focus_tree_layout_dirty = yes add_stability = @IRELAND_FOCUS_STABILITY_MAJOR }
+		completion_reward = { custom_effect_tooltip = ireland_atlantic_security_compacts_reward_tt unlock_decision_tooltip = ireland_territorial_negotiate_atlantic_basing set_country_flag = ireland_atlantic_security_path set_country_flag = ireland_atlantic_external_policy_selected mark_focus_tree_layout_dirty = yes }
 	}
 	focus = {
 		id = ireland_republics_across_the_channel
@@ -5453,7 +5453,7 @@ focus_tree = {
 		y = 13
 		prerequisite = { focus = ireland_atlantic_ambition }
 		available = { has_country_flag = ireland_family_communist }
-		completion_reward = { custom_effect_tooltip = ireland_republics_across_the_channel_reward_tt unlock_decision_tooltip = ireland_territorial_support_welsh_republic unlock_decision_tooltip = ireland_territorial_support_scottish_republic set_country_flag = ireland_atlantic_liberation_path set_country_flag = ireland_atlantic_external_policy_selected mark_focus_tree_layout_dirty = yes add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_FOCUS_SUPPORT_DELIVERY } }
+		completion_reward = { custom_effect_tooltip = ireland_republics_across_the_channel_reward_tt unlock_decision_tooltip = ireland_territorial_support_welsh_republic unlock_decision_tooltip = ireland_territorial_support_scottish_republic set_country_flag = ireland_atlantic_liberation_path set_country_flag = ireland_atlantic_external_policy_selected mark_focus_tree_layout_dirty = yes }
 	}
 	focus = {
 		id = ireland_gaelic_marches
@@ -5475,7 +5475,7 @@ focus_tree = {
 		y = 13
 		prerequisite = { focus = ireland_atlantic_ambition }
 		available = { has_country_flag = ireland_family_oligarchic }
-		completion_reward = { custom_effect_tooltip = ireland_atlantic_concessions_reward_tt unlock_decision_tooltip = ireland_territorial_negotiate_atlantic_basing set_country_flag = ireland_atlantic_concessions_path set_country_flag = ireland_atlantic_external_policy_selected mark_focus_tree_layout_dirty = yes add_stability = @IRELAND_FOCUS_STABILITY_MINOR }
+		completion_reward = { custom_effect_tooltip = ireland_atlantic_concessions_reward_tt unlock_decision_tooltip = ireland_territorial_negotiate_atlantic_basing set_country_flag = ireland_atlantic_concessions_path set_country_flag = ireland_atlantic_external_policy_selected mark_focus_tree_layout_dirty = yes }
 	}
 	focus = {
 		id = ireland_dal_riata_claim
@@ -5509,22 +5509,22 @@ focus_tree = {
 		id = ireland_postwar_settlement_office
 		icon = GFX_focus_ireland_postwar_settlement_office
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 14
 		y = 15
 		allow_branch = { has_country_flag = ireland_atlantic_external_policy_selected }
 		available = { OR = { has_country_flag = ireland_atlantic_security_path has_country_flag = ireland_atlantic_liberation_path has_country_flag = ireland_atlantic_claims_fascist has_country_flag = ireland_atlantic_concessions_path has_country_flag = ireland_atlantic_claims_restoration } }
-		completion_reward = { custom_effect_tooltip = ireland_postwar_settlement_office_reward_tt unlock_decision_tooltip = ireland_territorial_open_postwar_review set_country_flag = ireland_atlantic_postwar_review_open add_stability = @IRELAND_FOCUS_STABILITY_MINOR }
+		completion_reward = { custom_effect_tooltip = ireland_postwar_settlement_office_reward_tt unlock_decision_tooltip = ireland_territorial_open_postwar_review set_country_flag = ireland_atlantic_postwar_review_open }
 	}
 	focus = {
 		id = ireland_local_rights_charter
 		icon = GFX_focus_ireland_local_rights_charter
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 12
 		y = 16
 		prerequisite = { focus = ireland_postwar_settlement_office }
-		completion_reward = { custom_effect_tooltip = ireland_local_rights_charter_reward_tt unlock_decision_tooltip = ireland_territorial_apply_local_rights_highlands unlock_decision_tooltip = ireland_territorial_apply_local_rights_wales unlock_decision_tooltip = ireland_territorial_apply_local_rights_cornwall set_country_flag = ireland_atlantic_rights_charter add_stability = @IRELAND_FOCUS_STABILITY_MAJOR }
+		completion_reward = { custom_effect_tooltip = ireland_local_rights_charter_reward_tt unlock_decision_tooltip = ireland_territorial_apply_local_rights_highlands unlock_decision_tooltip = ireland_territorial_apply_local_rights_wales unlock_decision_tooltip = ireland_territorial_apply_local_rights_cornwall set_country_flag = ireland_atlantic_rights_charter }
 	}
 	focus = {
 		id = ireland_protectorate_statutes
@@ -5540,7 +5540,7 @@ focus_tree = {
 		id = ireland_integration_review_commission
 		icon = GFX_focus_ireland_integration_review_commission
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 16
 		y = 16
 		prerequisite = { focus = ireland_postwar_settlement_office }
@@ -5550,12 +5550,14 @@ focus_tree = {
 		id = ireland_atlantic_settlement_concluded
 		icon = GFX_focus_ireland_atlantic_settlement_concluded
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		x = 14
 		y = 17
-		prerequisite = { focus = ireland_local_rights_charter }
-		prerequisite = { focus = ireland_protectorate_statutes }
-		prerequisite = { focus = ireland_integration_review_commission }
+		prerequisite = {
+			focus = ireland_local_rights_charter
+			focus = ireland_protectorate_statutes
+			focus = ireland_integration_review_commission
+		}
 		available = {
 			ireland_atlantic_settlement_all_relevant_resolved = yes
 		}
@@ -5565,7 +5567,6 @@ focus_tree = {
 			clr_country_flag = ireland_atlantic_postwar_review_started
 			clr_country_flag = ireland_mission_complete_atlantic_settlement_active
 			ireland_update_mission_capacity = yes
-			add_stability = @IRELAND_FOCUS_STABILITY_MAJOR
 		}
 	}
 
