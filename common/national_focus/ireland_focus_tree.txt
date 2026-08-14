@@ -5336,6 +5336,15 @@ focus_tree = {
 		x = 4
 		y = 11
 		prerequisite = { focus = ireland_northern_plebiscite_guarantees }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_settlement_under_law_operation_requirement_tt
+				OR = {
+					has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_full_recorded
+					has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_partial_recorded
+				}
+			}
+		}
 		completion_reward = { custom_effect_tooltip = ireland_settlement_under_law_reward_tt set_country_flag = ireland_territorial_resolution_democratic set_country_flag = ireland_northern_policy_selected }
 	}
 	focus = {
@@ -5346,6 +5355,12 @@ focus_tree = {
 		x = 6
 		y = 11
 		prerequisite = { focus = ireland_workers_reunification_campaign }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_all_island_workers_republic_operation_requirement_tt
+				has_country_flag = ireland_territorial_workers_campaign_complete
+			}
+		}
 		completion_reward = { custom_effect_tooltip = ireland_all_island_workers_republic_reward_tt set_country_flag = ireland_territorial_resolution_communist set_country_flag = ireland_northern_policy_selected }
 	}
 	focus = {
@@ -5356,6 +5371,21 @@ focus_tree = {
 		x = 8
 		y = 11
 		prerequisite = { focus = ireland_ulster_ultimatum }
+		bypass = {
+			OR = {
+				has_country_flag = ireland_territorial_ulster_ultimatum_accepted
+				has_country_flag = ireland_territorial_ulster_counteroffer_accepted
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_force_the_border_question_operation_requirement_tt
+				OR = {
+					has_country_flag = ireland_territorial_ulster_ultimatum_refused
+					has_country_flag = ireland_territorial_ulster_counteroffer_rejected
+				}
+			}
+		}
 		completion_reward = { custom_effect_tooltip = ireland_force_the_border_question_reward_tt unlock_decision_tooltip = ireland_territorial_enforce_border_demand set_country_flag = ireland_territorial_resolution_fascist set_country_flag = ireland_atlantic_force_authorised }
 	}
 	focus = {
@@ -5366,6 +5396,15 @@ focus_tree = {
 		x = 10
 		y = 11
 		prerequisite = { focus = ireland_customs_union_leverage }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_belfast_compact_operation_requirement_tt
+				OR = {
+					has_country_flag = ireland_territorial_belfast_compact_accepted
+					has_country_flag = ireland_territorial_belfast_counteroffer_accepted
+				}
+			}
+		}
 		completion_reward = { custom_effect_tooltip = ireland_belfast_compact_reward_tt set_country_flag = ireland_territorial_resolution_oligarchic set_country_flag = ireland_northern_policy_selected }
 	}
 	focus = {
@@ -5376,6 +5415,12 @@ focus_tree = {
 		x = 12
 		y = 11
 		prerequisite = { focus = ireland_crown_and_province_mandate }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_restore_ulsters_place_operation_requirement_tt
+				has_country_flag = ireland_territorial_provincial_assent_complete
+			}
+		}
 		completion_reward = { custom_effect_tooltip = ireland_restore_ulsters_place_reward_tt set_country_flag = ireland_territorial_resolution_restoration set_country_flag = ireland_northern_policy_selected }
 	}
 	focus = {

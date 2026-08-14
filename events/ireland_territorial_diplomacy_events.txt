@@ -72,6 +72,8 @@ country_event = {
 		}
 		event_target:ireland_territorial_diplomacy_target_state = { transfer_state_to = ROOT }
 		set_country_flag = ireland_territorial_ulster_ultimatum_accepted
+		set_country_flag = ireland_territorial_resolution_fascist
+		set_country_flag = ireland_northern_policy_selected
 		add_to_variable = { var = ireland_northern_british_flexibility value = constant:ireland.territorial_diplomacy_compact_major }
 		add_to_variable = { var = ireland_northern_unionist_consent value = constant:ireland.territorial_diplomacy_compact_standard }
 		clr_country_flag = ireland_territorial_ulster_ultimatum_pending
@@ -114,6 +116,8 @@ country_event = {
 		trigger = { event_target:ireland_territorial_diplomacy_target_state = { is_controlled_by = event_target:ireland_territorial_diplomacy_target_controller } }
 		event_target:ireland_territorial_diplomacy_target_state = { transfer_state_to = ROOT }
 		set_country_flag = ireland_territorial_ulster_counteroffer_accepted
+		set_country_flag = ireland_territorial_resolution_fascist
+		set_country_flag = ireland_northern_policy_selected
 		add_to_variable = { var = ireland_northern_british_flexibility value = constant:ireland.territorial_diplomacy_compact_standard }
 		add_to_variable = { var = ireland_northern_unionist_consent value = constant:ireland.four }
 		clr_country_flag = ireland_territorial_ulster_ultimatum_pending

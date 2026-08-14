@@ -46,6 +46,8 @@
 @IRELAND_TERRITORIAL_DOSSIER_DAYS = 35
 @IRELAND_TERRITORIAL_DOSSIER_CP_COST = 5
 @IRELAND_TERRITORIAL_DOSSIER_CP_DELTA = -5
+@IRELAND_TERRITORIAL_RECOVERY_PP_COST = 15
+@IRELAND_TERRITORIAL_RECOVERY_DAYS = 35
 
 ireland_provision = {
 	ireland_contract_esb_grid_works = {
@@ -373,6 +375,37 @@ ireland_territorial_policy = {
 					country_event = { id = ireland_territorial_diplomacy.5 }
 				}
 			}
+		}
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+	}
+
+	ireland_territorial_reopen_belfast_compact = {
+		icon = GFX_decision_ireland_negotiate_british_flexibility
+		visible = {
+			has_country_flag = ireland_territorial_method_oligarchic
+			OR = {
+				has_country_flag = ireland_territorial_belfast_compact_refused
+				has_country_flag = ireland_territorial_belfast_counteroffer_rejected
+			}
+			NOT = { has_country_flag = ireland_territorial_diplomacy_active }
+		}
+		available = {
+			has_political_power > 14
+			custom_trigger_tooltip = {
+				tooltip = ireland_territorial_diplomacy_cooldown_requirement_tt
+				NOT = { has_country_flag = ireland_territorial_diplomacy_cooldown }
+			}
+		}
+		cost = @IRELAND_TERRITORIAL_RECOVERY_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_RECOVERY_DAYS
+		complete_effect = {
+			custom_effect_tooltip = ireland_territorial_reopen_belfast_compact_tt
+			add_to_variable = { var = ireland_northern_british_flexibility value = @IRELAND_TERRITORIAL_LEDGER_STANDARD }
+			add_to_variable = { var = ireland_northern_unionist_consent value = @IRELAND_TERRITORIAL_LEDGER_MINOR }
+			clr_country_flag = ireland_territorial_belfast_compact_offered
+			clr_country_flag = ireland_territorial_belfast_compact_refused
+			clr_country_flag = ireland_territorial_belfast_counteroffer_rejected
+			set_country_flag = ireland_territorial_belfast_compact_reopened
 		}
 		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
 	}
