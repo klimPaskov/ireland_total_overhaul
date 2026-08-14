@@ -32,8 +32,9 @@ Source mode: generated background plus project-owned mechanical derivatives
 
 - Asset name: `parliament_step_button`.
 - Source: generated active-state treatment derived from the existing project-owned
-  action-button silhouette. The active face is bottle green with an antique-brass
-  rim so an enabled control is visually distinct from the engine-darkened disabled
+  action-button silhouette. The active face is saturated emerald and bottle green
+  with a clear antique-brass rim, so an enabled control remains visibly green and
+  clickable after downscaling and is distinct from the engine-darkened disabled
   state.
 - Source PNG: `docs/assets/ireland_parliament_panel/source_png/parliament_step_button_active_source.png`.
 - Processed PNG: `docs/assets/ireland_parliament_panel/processed_png/parliament_step_button_204x32.png`.
