@@ -331,6 +331,20 @@ ireland = {
 	territorial_diplomacy_compact_major = 5
 	territorial_diplomacy_compact_standard = 3
 	territorial_diplomacy_refusal_leverage_delta = -2
+	# National Question recovery. Native decision duration fields mirror these
+	# values through file-local macros because they do not accept constant tokens.
+	territorial_workers_campaign_mission_days = 180
+	territorial_plebiscite_relaunch_cooldown_days = 180
+	territorial_recovery_mission_days = 120
+	territorial_recovery_factory_use = 1
+	territorial_workers_campaign_social_consent_full = 60
+	territorial_workers_campaign_social_consent_partial = 45
+	territorial_workers_campaign_rebuild_nationalist_consent = 3
+	territorial_workers_campaign_rebuild_social_consent = 3
+	territorial_workers_campaign_rebuild_labour_cooperation = 3
+	territorial_provincial_assent_reconvene_unionist_floor = 25
+	territorial_provincial_assent_reconvene_nationalist_floor = 50
+	territorial_provincial_assent_reconvene_legitimacy_floor = 55
 	atlantic_enforcement_manpower_charge = -1000
 	atlantic_enforcement_infantry_charge = -200
 	atlantic_enforcement_support_charge = -20

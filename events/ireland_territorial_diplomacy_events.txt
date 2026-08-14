@@ -9,6 +9,9 @@ add_namespace = ireland_territorial_diplomacy
 @IRELAND_TERRITORIAL_DIPLOMACY_AI_COUNTEROFFER = 35
 @IRELAND_TERRITORIAL_DIPLOMACY_AI_REFUSE = 45
 @IRELAND_TERRITORIAL_DIPLOMACY_STALE_REFUND = 50
+# Provincial assent is a domestic response, not an automatic restoration reward.
+@IRELAND_TERRITORIAL_ASSENT_AI_BASE = 1
+@IRELAND_TERRITORIAL_ASSENT_AI_FAVOURABLE_FACTOR = 2
 
 # State 119: first-stage Ulster ultimatum.
 country_event = {
@@ -788,5 +791,112 @@ country_event = {
 		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
 		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
 		ireland_clear_territorial_diplomacy_targets = yes
+	}
+}
+
+# Provincial assent is intentionally event-led: the crown can convene the
+# convention, but unionist and nationalist consent, royal legitimacy, and the
+# administrative record determine whether assent is actually recorded.
+country_event = {
+	id = ireland_territorial_diplomacy.25
+	title = ireland_territorial_diplomacy.provincial_assent.t
+	desc = ireland_territorial_diplomacy.provincial_assent.d
+	is_triggered_only = yes
+	trigger = {
+		original_tag = IRE
+		has_country_flag = ireland_territorial_provincial_assent_pending
+	}
+	option = {
+		name = ireland_territorial_diplomacy.provincial_assent.record
+		custom_effect_tooltip = ireland_territorial_diplomacy.provincial_assent.record.effects
+		ai_chance = {
+			base = @IRELAND_TERRITORIAL_ASSENT_AI_BASE
+			modifier = {
+				factor = @IRELAND_TERRITORIAL_ASSENT_AI_FAVOURABLE_FACTOR
+				check_variable = { var = ireland_northern_unionist_consent value = constant:ireland.territorial_provincial_assent_reconvene_unionist_floor compare = greater_than_or_equals }
+			}
+			modifier = {
+				factor = @IRELAND_TERRITORIAL_ASSENT_AI_FAVOURABLE_FACTOR
+				check_variable = { var = ireland_northern_nationalist_consent value = constant:ireland.territorial_provincial_assent_reconvene_nationalist_floor compare = greater_than_or_equals }
+			}
+			modifier = {
+				factor = @IRELAND_TERRITORIAL_ASSENT_AI_FAVOURABLE_FACTOR
+				check_variable = { var = ireland_royal_legitimacy value = constant:ireland.territorial_provincial_assent_reconvene_legitimacy_floor compare = greater_than_or_equals }
+			}
+			modifier = {
+				factor = @IRELAND_TERRITORIAL_ASSENT_AI_FAVOURABLE_FACTOR
+				check_variable = { var = ireland_administrative_reach value = constant:ireland.northern_core_admin_floor compare = greater_than_or_equals }
+			}
+			modifier = { factor = 0 is_historical_focus_on = yes }
+		}
+		set_country_flag = ireland_territorial_provincial_assent_response_pending
+		country_event = { id = ireland_territorial_diplomacy.26 }
+	}
+	option = {
+		name = ireland_territorial_diplomacy.provincial_assent.adjourn
+		custom_effect_tooltip = ireland_territorial_diplomacy.provincial_assent.adjourn.effects
+		ai_chance = {
+			base = @IRELAND_TERRITORIAL_ASSENT_AI_BASE
+			modifier = {
+				factor = @IRELAND_TERRITORIAL_ASSENT_AI_FAVOURABLE_FACTOR
+				NOT = { check_variable = { var = ireland_northern_unionist_consent value = constant:ireland.territorial_provincial_assent_reconvene_unionist_floor compare = greater_than_or_equals } }
+			}
+			modifier = {
+				factor = @IRELAND_TERRITORIAL_ASSENT_AI_FAVOURABLE_FACTOR
+				NOT = { check_variable = { var = ireland_northern_nationalist_consent value = constant:ireland.territorial_provincial_assent_reconvene_nationalist_floor compare = greater_than_or_equals } }
+			}
+			modifier = {
+				factor = @IRELAND_TERRITORIAL_ASSENT_AI_FAVOURABLE_FACTOR
+				NOT = { check_variable = { var = ireland_royal_legitimacy value = constant:ireland.territorial_provincial_assent_reconvene_legitimacy_floor compare = greater_than_or_equals } }
+			}
+			modifier = {
+				factor = @IRELAND_TERRITORIAL_ASSENT_AI_FAVOURABLE_FACTOR
+				NOT = { check_variable = { var = ireland_administrative_reach value = constant:ireland.northern_core_admin_floor compare = greater_than_or_equals } }
+			}
+		}
+		set_country_flag = ireland_territorial_provincial_assent_adjournment_pending
+		country_event = { id = ireland_territorial_diplomacy.27 }
+	}
+}
+
+country_event = {
+	id = ireland_territorial_diplomacy.26
+	title = ireland_territorial_diplomacy.provincial_assent_recorded.t
+	desc = ireland_territorial_diplomacy.provincial_assent_recorded.d
+	is_triggered_only = yes
+	trigger = {
+		original_tag = IRE
+		has_country_flag = ireland_territorial_provincial_assent_response_pending
+	}
+	option = {
+		name = ireland_territorial_diplomacy.provincial_assent_recorded.confirm
+		custom_effect_tooltip = ireland_territorial_diplomacy.provincial_assent_recorded.effects
+		set_country_flag = ireland_territorial_provincial_assent_complete
+		set_country_flag = ireland_territorial_provincial_assent_recorded
+		set_country_flag = ireland_northern_policy_selected
+		clr_country_flag = ireland_territorial_provincial_assent_pending
+		clr_country_flag = ireland_territorial_provincial_assent_response_pending
+	}
+}
+
+country_event = {
+	id = ireland_territorial_diplomacy.27
+	title = ireland_territorial_diplomacy.provincial_assent_adjourned.t
+	desc = ireland_territorial_diplomacy.provincial_assent_adjourned.d
+	is_triggered_only = yes
+	trigger = {
+		original_tag = IRE
+		has_country_flag = ireland_territorial_provincial_assent_adjournment_pending
+	}
+	option = {
+		name = ireland_territorial_diplomacy.provincial_assent_adjourned.confirm
+		custom_effect_tooltip = ireland_territorial_diplomacy.provincial_assent_adjourned.effects
+		set_country_flag = ireland_territorial_provincial_assent_adjourned
+		if = {
+			limit = { NOT = { has_country_flag = ireland_territorial_provincial_first_adjournment_recorded } }
+			set_country_flag = ireland_territorial_provincial_first_adjournment_recorded
+		}
+		clr_country_flag = ireland_territorial_provincial_assent_pending
+		clr_country_flag = ireland_territorial_provincial_assent_adjournment_pending
 	}
 }

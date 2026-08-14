@@ -659,3 +659,168 @@ defined_text = {
 	}
 	text = { localization_key = ireland_parliament_requirement_budget_complete }
 }
+
+# Territorial Policy category status. Each line is a live player-facing
+# summary of the selected method, recovery history, outstanding settlement
+# work, and the next valid territorial action.
+defined_text = {
+	name = GetIrelandTerritorialMethod
+	text = { trigger = { has_country_flag = ireland_territorial_method_democratic } localization_key = ireland_territorial_status_method_democratic }
+	text = { trigger = { has_country_flag = ireland_territorial_method_communist } localization_key = ireland_territorial_status_method_communist }
+	text = { trigger = { has_country_flag = ireland_territorial_method_fascist } localization_key = ireland_territorial_status_method_fascist }
+	text = { trigger = { has_country_flag = ireland_territorial_method_oligarchic } localization_key = ireland_territorial_status_method_oligarchic }
+	text = { trigger = { has_country_flag = ireland_territorial_method_restoration } localization_key = ireland_territorial_status_method_restoration }
+	text = { localization_key = ireland_territorial_status_method_unselected }
+}
+
+defined_text = {
+	name = GetIrelandTerritorialTarget
+	text = { trigger = { has_country_flag = ireland_highlands_demand_pending } localization_key = ireland_territorial_status_target_highlands }
+	text = { trigger = { has_country_flag = ireland_wales_demand_pending } localization_key = ireland_territorial_status_target_wales }
+	text = { trigger = { has_country_flag = ireland_cornwall_demand_pending } localization_key = ireland_territorial_status_target_cornwall }
+	text = { trigger = { has_country_flag = ireland_territorial_diplomacy_active } localization_key = ireland_territorial_status_target_northern }
+	text = { trigger = { 120 = { is_controlled_by = ROOT } } localization_key = ireland_territorial_status_target_highlands }
+	text = { trigger = { 122 = { is_controlled_by = ROOT } } localization_key = ireland_territorial_status_target_wales }
+	text = { trigger = { 123 = { is_controlled_by = ROOT } } localization_key = ireland_territorial_status_target_cornwall }
+	text = { trigger = { SCO = { is_subject_of = ROOT } } localization_key = ireland_territorial_status_target_scottish_protectorate }
+	text = { trigger = { WLS = { is_subject_of = ROOT } } localization_key = ireland_territorial_status_target_welsh_protectorate }
+	text = { localization_key = ireland_territorial_status_target_none }
+}
+
+defined_text = {
+	name = GetIrelandTerritorialResponse
+	text = { trigger = { has_country_flag = ireland_territorial_diplomacy_active } localization_key = ireland_territorial_status_response_active }
+	text = { trigger = { has_country_flag = ireland_territorial_diplomacy_cooldown } localization_key = ireland_territorial_status_response_cooldown }
+	text = { trigger = { has_country_flag = ireland_territorial_plebiscite_relaunch_cooldown } localization_key = ireland_territorial_status_response_plebiscite_cooldown }
+	text = { localization_key = ireland_territorial_status_response_ready }
+}
+
+defined_text = {
+	name = GetIrelandTerritorialRecord
+	text = { trigger = { has_country_flag = ireland_territorial_fascist_enforcement_withdrawn } localization_key = ireland_territorial_status_record_withdrawn }
+	text = { trigger = { OR = { has_country_flag = ireland_territorial_ulster_ultimatum_refused has_country_flag = ireland_territorial_ulster_counteroffer_rejected } } localization_key = ireland_territorial_status_record_ulster_refused }
+	text = { trigger = { has_country_flag = ireland_territorial_workers_campaign_rebuilt } localization_key = ireland_territorial_status_record_workers_rebuilt }
+	text = { trigger = { has_country_flag = ireland_territorial_workers_campaign_failed } localization_key = ireland_territorial_status_record_workers_failed }
+	text = { trigger = { has_country_flag = ireland_territorial_workers_campaign_partial } localization_key = ireland_territorial_status_record_workers_partial }
+	text = { trigger = { has_country_flag = ireland_mission_sustain_the_workers_border_campaign_full_recorded } localization_key = ireland_territorial_status_record_workers_full }
+	text = { trigger = { has_country_flag = ireland_territorial_plebiscite_reopened } localization_key = ireland_territorial_status_record_plebiscite_reopened }
+	text = { trigger = { OR = { has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_failure_recorded has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_cancellation_recorded } } localization_key = ireland_territorial_status_record_plebiscite_failed }
+	text = { trigger = { has_country_flag = ireland_territorial_provincial_assent_reconvened } localization_key = ireland_territorial_status_record_provincial_reconvened }
+	text = { trigger = { has_country_flag = ireland_territorial_provincial_assent_adjourned } localization_key = ireland_territorial_status_record_provincial_adjourned }
+	text = { trigger = { has_country_flag = ireland_territorial_provincial_assent_recorded } localization_key = ireland_territorial_status_record_provincial_recorded }
+	text = { trigger = { has_country_flag = ireland_territorial_belfast_compact_reopened } localization_key = ireland_territorial_status_record_belfast_reopened }
+	text = { trigger = { OR = { has_country_flag = ireland_territorial_belfast_compact_refused has_country_flag = ireland_territorial_belfast_counteroffer_rejected } } localization_key = ireland_territorial_status_record_belfast_refused }
+	text = { localization_key = ireland_territorial_status_record_none }
+}
+
+defined_text = {
+	name = GetIrelandTerritorialHighlandsObligation
+	text = {
+		trigger = {
+			120 = { is_controlled_by = ROOT }
+			NOT = { OR = { has_country_flag = ireland_highlands_rights_settlement has_country_flag = ireland_highlands_integration_review_complete has_country_flag = ireland_scottish_protectorate_settlement } }
+		}
+		localization_key = ireland_territorial_status_highlands_unresolved
+	}
+	text = { localization_key = ireland_territorial_status_highlands_resolved }
+}
+
+defined_text = {
+	name = GetIrelandTerritorialWalesObligation
+	text = {
+		trigger = {
+			122 = { is_controlled_by = ROOT }
+			NOT = { OR = { has_country_flag = ireland_wales_rights_settlement has_country_flag = ireland_welsh_protectorate_settlement } }
+		}
+		localization_key = ireland_territorial_status_wales_unresolved
+	}
+	text = { localization_key = ireland_territorial_status_wales_resolved }
+}
+
+defined_text = {
+	name = GetIrelandTerritorialCornwallObligation
+	text = {
+		trigger = {
+			123 = { is_controlled_by = ROOT }
+			NOT = { has_country_flag = ireland_cornwall_rights_settlement }
+		}
+		localization_key = ireland_territorial_status_cornwall_unresolved
+	}
+	text = { localization_key = ireland_territorial_status_cornwall_resolved }
+}
+
+defined_text = {
+	name = GetIrelandTerritorialScottishProtectorateObligation
+	text = { trigger = { has_country_flag = ireland_scottish_protectorate_reconstruction_obligation } localization_key = ireland_territorial_status_scottish_protectorate_unresolved }
+	text = { localization_key = ireland_territorial_status_scottish_protectorate_resolved }
+}
+
+defined_text = {
+	name = GetIrelandTerritorialWelshProtectorateObligation
+	text = { trigger = { has_country_flag = ireland_welsh_protectorate_reconstruction_obligation } localization_key = ireland_territorial_status_welsh_protectorate_unresolved }
+	text = { localization_key = ireland_territorial_status_welsh_protectorate_resolved }
+}
+
+defined_text = {
+	name = GetIrelandTerritorialNextAction
+	text = {
+		trigger = {
+			has_country_flag = ireland_territorial_method_democratic
+			OR = {
+				has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_failure_recorded
+				has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_cancellation_recorded
+			}
+			NOT = { has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_active }
+			NOT = { has_country_flag = ireland_territorial_diplomacy_active }
+		}
+		localization_key = ireland_territorial_status_next_plebiscite
+	}
+	text = {
+		trigger = {
+			has_country_flag = ireland_territorial_method_communist
+			has_country_flag = ireland_territorial_workers_campaign_failed
+			NOT = { has_country_flag = ireland_territorial_workers_campaign_complete }
+			NOT = { has_country_flag = ireland_mission_sustain_the_workers_border_campaign_active }
+		}
+		localization_key = ireland_territorial_status_next_workers_rebuild
+	}
+	text = {
+		trigger = {
+			has_country_flag = ireland_territorial_method_communist
+			NOT = { has_country_flag = ireland_territorial_workers_campaign_complete }
+			NOT = { has_country_flag = ireland_territorial_workers_campaign_failed }
+			NOT = { has_country_flag = ireland_mission_sustain_the_workers_border_campaign_active }
+		}
+		localization_key = ireland_territorial_status_next_workers_launch
+	}
+	text = { trigger = { ireland_territorial_border_enforcement_withdrawal_required = yes } localization_key = ireland_territorial_status_next_withdraw }
+	text = { trigger = { has_country_flag = ireland_territorial_atlantic_security_exit_open NOT = { has_country_flag = ireland_atlantic_basing_negotiated } } localization_key = ireland_territorial_status_next_atlantic_security }
+	text = {
+		trigger = {
+			has_country_flag = ireland_territorial_method_oligarchic
+			OR = { has_country_flag = ireland_territorial_belfast_compact_refused has_country_flag = ireland_territorial_belfast_counteroffer_rejected }
+			NOT = { has_country_flag = ireland_territorial_diplomacy_active }
+		}
+		localization_key = ireland_territorial_status_next_belfast
+	}
+	text = {
+		trigger = {
+			has_country_flag = ireland_territorial_method_restoration
+			has_country_flag = ireland_territorial_provincial_assent_adjourned
+			NOT = { has_country_flag = ireland_territorial_provincial_assent_complete }
+			NOT = { has_country_flag = ireland_territorial_provincial_assent_pending }
+		}
+		localization_key = ireland_territorial_status_next_provincial_reconvene
+	}
+	text = {
+		trigger = {
+			has_country_flag = ireland_territorial_method_restoration
+			has_country_flag = ireland_provincial_compact_open
+			NOT = { has_country_flag = ireland_territorial_provincial_assent_complete }
+			NOT = { has_country_flag = ireland_territorial_provincial_assent_pending }
+			NOT = { has_country_flag = ireland_territorial_provincial_assent_adjourned }
+		}
+		localization_key = ireland_territorial_status_next_provincial_convene
+	}
+	text = { localization_key = ireland_territorial_status_next_none }
+}

@@ -558,6 +558,11 @@ ireland_rebuild_mission_counters = {
 		set_country_flag = ireland_mission_active
 	}
 	if = {
+		limit = { has_country_flag = ireland_mission_sustain_the_workers_border_campaign_active }
+		add_to_variable = { ireland_active_mission_count = constant:ireland.one }
+		set_country_flag = ireland_mission_active
+	}
+	if = {
 		limit = { has_country_flag = ireland_mission_cut_and_dry_the_turf_active }
 		add_to_variable = { ireland_active_mission_count = constant:ireland.one }
 		set_country_flag = ireland_mission_active
@@ -819,6 +824,7 @@ ireland_rebuild_mission_counters = {
 	if = { limit = { has_country_flag = ireland_mission_open_the_cross_border_health_service_active } add_to_variable = { ireland_mission_count_northern = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_secure_a_representative_northern_convention_active } add_to_variable = { ireland_mission_count_northern = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_active } add_to_variable = { ireland_mission_count_northern = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_mission_sustain_the_workers_border_campaign_active } add_to_variable = { ireland_mission_count_northern = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_ratify_the_federal_settlement_active } add_to_variable = { ireland_mission_count_northern = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_take_and_hold_belfast_active } add_to_variable = { ireland_mission_count_occupation_integration = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_restore_ordinary_policing_active } add_to_variable = { ireland_mission_count_occupation_integration = constant:ireland.one } }
@@ -960,7 +966,10 @@ ireland_rebuild_mission_counters = {
 		set_country_flag = ireland_occupation_slot_needed
 	}
 	if = {
-		limit = { OR = { has_country_flag = ireland_overlay_route_conclusion_review_and_consolidation has_country_flag = ireland_route_review_active has_country_flag = ireland_conclusion_review_active } }
+		# A family conclusion recovery reserves the same scheduler lane as the
+		# conclusion review. This keeps routine postwar missions from filling the
+		# slot while the family action is waiting on its civilian-factory gate.
+		limit = { OR = { has_country_flag = ireland_overlay_route_conclusion_review_and_consolidation has_country_flag = ireland_route_review_active has_country_flag = ireland_conclusion_review_active has_country_flag = ireland_conclusion_recovery_open } }
 		set_country_flag = ireland_route_review_slot_needed
 	}
 	set_variable = { var = ireland_critical_slots_required value = constant:ireland.mission_reserved_slots_normal }
@@ -1000,6 +1009,13 @@ ireland_rebuild_mission_counters = {
 	}
 	else = {
 		clr_country_flag = ireland_critical_slot_reserved
+	}
+	if = {
+		# Recovery is a hard AI reservation, not a second route. Keep routine
+		# mission admission closed until the family action clears this marker;
+		# critical mission blocks with their own slot flags remain eligible.
+		limit = { has_country_flag = ireland_conclusion_recovery_open }
+		set_country_flag = ireland_critical_slot_reserved
 	}
 }
 
@@ -6653,10 +6669,19 @@ ireland_sync_ai_overlays = {
 		set_country_flag = ireland_overlay_leadership_and_office_vacancy
 	}
 	else = { clr_country_flag = ireland_overlay_leadership_and_office_vacancy }
-	if = { limit = { has_country_flag = ireland_postwar_review_started } set_country_flag = ireland_overlay_postwar_demobilisation_and_reconstruction }
+	if = {
+		# A family recovery is a reserved repair lane. Suppress optional postwar
+		# construction pressure until the family action clears the marker.
+		limit = {
+			NOT = { has_country_flag = ireland_conclusion_recovery_open }
+			has_country_flag = ireland_postwar_review_started
+		}
+		set_country_flag = ireland_overlay_postwar_demobilisation_and_reconstruction
+	}
 	else = { clr_country_flag = ireland_overlay_postwar_demobilisation_and_reconstruction }
 	if = {
 		limit = {
+			NOT = { has_country_flag = ireland_conclusion_recovery_open }
 			OR = {
 				has_country_flag = ireland_conclusion_review_active
 				has_country_flag = ireland_conclusion_review_due
@@ -6798,6 +6823,7 @@ ireland_sync_ai_decision_utility = {
 				has_country_flag = ireland_route_failure
 				has_country_flag = ireland_route_conclusion_failed
 				has_country_flag = ireland_route_conclusion_partial
+				has_country_flag = ireland_conclusion_recovery_open
 				has_country_flag = ireland_foreign_access_failure
 				has_country_flag = ireland_northern_settlement_failure
 				has_country_flag = ireland_national_emergency_active
@@ -6820,6 +6846,14 @@ ireland_sync_ai_decision_utility = {
 			}
 		}
 		set_country_flag = ireland_ai_utility_recovery_needed
+	}
+	if = {
+		# The report has already closed the review flags by the time the family
+		# recovery card appears. Restore recovery pressure explicitly and suppress
+		# any stale conclusion score until that card clears the marker.
+		limit = { has_country_flag = ireland_conclusion_recovery_open }
+		set_country_flag = ireland_ai_utility_recovery_needed
+		clr_country_flag = ireland_ai_utility_conclusion_needed
 	}
 	if = {
 		limit = {
@@ -6848,6 +6882,10 @@ ireland_sync_ai_decision_utility = {
 			}
 			check_variable = { var = ireland_provision_display value = constant:ireland.provision_severe_cap compare = greater_than_or_equals }
 			check_variable = { var = ireland_readiness_display value = constant:ireland.readiness_provision_floor compare = greater_than_or_equals }
+			# Family settlement and recovery both reserve one civilian factory. Do
+			# not advertise material readiness to the AI while that factory is not
+			# actually free for a project.
+			num_of_civilian_factories_available_for_projects > 0
 		}
 		set_country_flag = ireland_ai_utility_material_ready
 	}
@@ -7045,6 +7083,12 @@ ireland_sync_ai_priority_flags = {
 			has_country_flag = ireland_overlay_route_conclusion_review_and_consolidation
 		} }
 		set_country_flag = ireland_ai_priority_postwar
+	}
+	if = {
+		# Durable profiles may normally support postwar work, but a live family
+		# recovery owns the queue until its repair action completes.
+		limit = { has_country_flag = ireland_conclusion_recovery_open }
+		clr_country_flag = ireland_ai_priority_postwar
 	}
 	ireland_sync_ai_domain_flags = yes
 	ireland_sync_ai_decision_utility = yes
@@ -7311,7 +7355,7 @@ ireland_sync_ai_candidate_ledger = {
 	if = { limit = { OR = { has_country_flag = ireland_ai_utility_recovery_needed has_country_flag = ireland_route_conclusion_partial has_country_flag = ireland_route_conclusion_failed has_country_flag = ireland_overlay_route_conclusion_review_and_consolidation } } set_country_flag = ireland_ai_candidate_repair_regional_external }
 	if = { limit = { OR = { has_country_flag = ireland_route_review_slot_needed has_country_flag = ireland_conclusion_review_active has_country_flag = ireland_conclusion_review_due has_country_flag = ireland_overlay_route_conclusion_review_and_consolidation } } set_country_flag = ireland_ai_candidate_dependency_regional_external }
 	if = { limit = { OR = { has_country_flag = ireland_overlay_postwar_demobilisation_and_reconstruction has_country_flag = ireland_postwar_review_started has_country_flag = ireland_major_war_ended has_country_flag = ireland_overlay_route_conclusion_review_and_consolidation has_country_flag = ireland_conclusion_review_due } } set_country_flag = ireland_ai_candidate_cause_postwar }
-	if = { limit = { OR = { has_country_flag = ireland_ai_utility_recovery_needed has_country_flag = ireland_overlay_postwar_demobilisation_and_reconstruction has_country_flag = ireland_route_conclusion_partial has_country_flag = ireland_route_conclusion_failed } } set_country_flag = ireland_ai_candidate_repair_postwar }
+	if = { limit = { OR = { has_country_flag = ireland_ai_utility_recovery_needed has_country_flag = ireland_conclusion_recovery_open has_country_flag = ireland_overlay_postwar_demobilisation_and_reconstruction has_country_flag = ireland_route_conclusion_partial has_country_flag = ireland_route_conclusion_failed } } set_country_flag = ireland_ai_candidate_repair_postwar }
 	if = { limit = { OR = { has_country_flag = ireland_route_review_slot_needed has_country_flag = ireland_conclusion_review_active has_country_flag = ireland_conclusion_review_due has_country_flag = ireland_overlay_postwar_demobilisation_and_reconstruction } } set_country_flag = ireland_ai_candidate_dependency_postwar }
 
 	# Turn the shared environment into the matrix's expected-utility envelope.

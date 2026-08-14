@@ -2658,6 +2658,7 @@ ireland_has_active_critical_mission = {
 		has_country_flag = ireland_mission_open_the_cross_border_health_service_active
 		has_country_flag = ireland_mission_secure_a_representative_northern_convention_active
 		has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_active
+		has_country_flag = ireland_mission_sustain_the_workers_border_campaign_active
 		has_country_flag = ireland_mission_ratify_the_federal_settlement_active
 		has_country_flag = ireland_mission_take_and_hold_belfast_active
 		has_country_flag = ireland_mission_restore_ordinary_policing_active
@@ -2841,6 +2842,7 @@ ireland_can_launch_keep_the_blacksod_station_reporting_mission = { ireland_can_l
 ireland_can_launch_open_the_cross_border_health_service_mission = { ireland_can_launch_northern_critical_mission = yes }
 ireland_can_launch_secure_a_representative_northern_convention_mission = { ireland_can_launch_northern_critical_mission = yes }
 ireland_can_launch_conduct_a_supervised_plebiscite_mission = { ireland_can_launch_northern_critical_mission = yes }
+ireland_can_launch_sustain_the_workers_border_campaign_mission = { ireland_can_launch_northern_critical_mission = yes }
 ireland_can_launch_ratify_the_federal_settlement_mission = { ireland_can_launch_northern_critical_mission = yes }
 ireland_can_launch_take_and_hold_belfast_mission = { ireland_can_launch_occupation_critical_mission = yes }
 ireland_can_launch_restore_ordinary_policing_mission = { ireland_can_launch_occupation_critical_mission = yes }
@@ -4671,6 +4673,90 @@ ireland_route_advisor_blueshirt_or_ailtiri = {
 	OR = {
 		ireland_route_advisor_oduffy = yes
 		ireland_route_advisor_ailtiri = yes
+	}
+}
+
+# Recover the National Question. These tests keep the recovery cards readable
+# while the detailed ledger thresholds remain centrally tunable.
+ireland_territorial_workers_campaign_full_ready = {
+	AND = {
+		has_country_flag = ireland_mission_sustain_the_workers_border_campaign_active
+		check_variable = {
+			var = ireland_social_consent
+			value = constant:ireland.territorial_workers_campaign_social_consent_full
+			compare = greater_than_or_equals
+		}
+		check_variable = {
+			var = ireland_northern_nationalist_consent
+			value = constant:ireland.northern_core_nationalist_floor
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+ireland_territorial_workers_campaign_partial_ready = {
+	AND = {
+		has_country_flag = ireland_mission_sustain_the_workers_border_campaign_active
+		check_variable = {
+			var = ireland_social_consent
+			value = constant:ireland.territorial_workers_campaign_social_consent_partial
+			compare = greater_than_or_equals
+		}
+		check_variable = {
+			var = ireland_northern_nationalist_consent
+			value = constant:ireland.northern_wartime_bargain_nationalist_consent_floor
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+ireland_territorial_provincial_assent_reconvene_ready = {
+	OR = {
+		check_variable = {
+			var = ireland_northern_nationalist_consent
+			value = constant:ireland.territorial_provincial_assent_reconvene_nationalist_floor
+			compare = greater_than_or_equals
+		}
+		check_variable = {
+			var = ireland_northern_unionist_consent
+			value = constant:ireland.territorial_provincial_assent_reconvene_unionist_floor
+			compare = greater_than_or_equals
+		}
+		check_variable = {
+			var = ireland_royal_legitimacy
+			value = constant:ireland.territorial_provincial_assent_reconvene_legitimacy_floor
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+ireland_territorial_border_enforcement_withdrawal_required = {
+	AND = {
+		original_tag = IRE
+		has_country_flag = ireland_territorial_method_fascist
+		has_country_flag = ireland_territorial_border_enforcement_open
+		NOT = { has_country_flag = ireland_ulster_border_wargoal_issued }
+		NOT = { has_country_flag = ireland_territorial_diplomacy_active }
+		OR = {
+			has_country_flag = ireland_territorial_ulster_ultimatum_refused
+			has_country_flag = ireland_territorial_ulster_counteroffer_rejected
+		}
+		OR = {
+			NOT = { ireland_atlantic_claim_enforcement_ready = yes }
+			119 = {
+				OR = {
+					is_owned_by = ROOT
+					is_controlled_by = ROOT
+					controller = {
+						OR = {
+							NOT = { exists = yes }
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
