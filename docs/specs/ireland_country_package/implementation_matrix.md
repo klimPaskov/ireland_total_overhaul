@@ -4,7 +4,7 @@
 
 | Surface | Current evidence | Required repair |
 | --- | --- | --- |
-| opening tree | 256 focuses, 265 connectors, exactly three opening trunks; current inspection has zero crossings, intersections, long connectors, duplicates, or spacing defects | preserve the final centered family-band reflow and the promoted exceptional-route renderer artifacts |
+| opening tree | 256 focuses, 263 connectors, exactly three opening trunks; current inspection has zero crossings, intersections, long connectors, duplicates, spacing defects, or remaining layout diagnostics | preserve the final centered family-band reflow and the promoted exceptional-route renderer artifacts; Federal Compact and Sealed State retain their parent-completion checks under `available` instead of drawing lines through unrelated cards |
 | public politics | five gateways share y `14`; route-specific programmes, five settlements, and five recoveries are implemented; the five family lanes are centered beneath the political tree | preserve the accepted family-lane coordinates, IDs, locks, availability requirements, and route descendants |
 | expansion | the National Question is a connected preparation chain with target-scoped Wales/Cornwall responses, per-holding outcomes, and P1 recovery paths | keep the source-to-source contract aligned and carry the final layout/audit evidence into the completion record |
 | rewards | P2 removed unrelated Atlantic filler rewards; current focuses expose named capabilities, operations, policy outcomes, or institutional records | retain route-level payoff and filter evidence; report any remaining shallow or unvalidated route in the final audit rather than adding filler |

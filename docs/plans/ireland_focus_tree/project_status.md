@@ -6,13 +6,21 @@ Feature: Ireland gameplay overhaul and national focus tree (country-package game
 
 ## Current focus and Parliament authority: 2026-08-14
 
-The current national tree contains 256 focuses, three opening roots, and 265
+The current national tree contains 256 focuses, three opening roots, and 263
 connectors. Its three named shortcuts identify government and politics, national
 development, and defence and security as the opening trunks. Every authored
 branch is visible from initialization; locked focuses retain their prerequisites,
 availability triggers, route permissions, dates, and mutual exclusions. Final focus inspection reports
 zero crossings, node intersections, long connectors, duplicate coordinates,
 and same-row spacing defects.
+
+The final connector-routing pass straightens the De Valera, IRA, Congress,
+clerical, Five Provinces, confederation, and Otherworld lanes. Two outcome cards
+whose visible lines could not be routed without crossing unrelated nodes retain
+their exact parent-completion checks under `available`: `ireland_fund_the_federal_compact`
+requires `ireland_federal_republic`, and `ireland_the_sealed_state` requires
+`ireland_containment_protocol`. Their gameplay order is unchanged while the
+unhelpful crossing lines are omitted.
 
 Culture, diplomacy and neutrality, Northern policy, the Marine Service,
 territorial expansion, and the exceptional routes are all drawn at once. Their

@@ -9,13 +9,13 @@ Supersedes for current-state completion purposes: `final_completion_report_2026-
 **INCOMPLETE only because of the four external portrait-source blockers.**
 
 The exceptional-route tranche is implemented and its headline
-inventory is present: 256 focuses with 265 connectors, 38 exceptional focuses, 11
+inventory is present: 256 focuses with 263 connectors, 38 exceptional focuses, 11
 actions and 11 missions, events `ireland_events.438` through `.460` with four options
 each, seven exceptional spirits, ten cosmetic identities, and the corresponding
 player-facing assets. The previously reported `.d` localisation collision and missing
 callers for `.438`, `.439`, and `.446` are resolved and are not open findings.
 
-No non-portrait blocker remains. All 28 `allow_branch` blocks are unconditional
+No focus-layout or gameplay blocker remains. All 28 `allow_branch` blocks are unconditional
 presentation gates. `ireland_republican_ministries`,
 `ireland_vanguard_organisers`, `ireland_veterans_command_council`, and
 `ireland_creditor_cabinet` separately retain their democratic, communist, fascist,
@@ -39,7 +39,7 @@ No gameplay file or `thumbnail.png` was changed by this audit.
 | Surface | Status | Current evidence |
 | --- | --- | --- |
 | Canonical country-package specification | **Complete** | The active files under `docs/specs/ireland_country_package/` contain the exceptional architecture, lifecycles, AI, balance, asset, and implementation requirements. The accepted addendum is marked implemented/promoted; its retained historical resolution paragraph is superseded by that status. |
-| National focus graph | **Complete** | `common/national_focus/ireland_focus_tree.txt` contains 256 focuses. Fresh read-only focus inspection reports 265 connectors, zero crossings, zero node intersections, zero long connectors, and zero too-close pairs. All 28 branches are visible, and the four family programme roots retain their route conditions under `available`. |
+| National focus graph | **Complete** | `common/national_focus/ireland_focus_tree.txt` contains 256 focuses. Fresh read-only inspect and render report 263 connectors, zero crossings, zero node intersections, zero long connectors, zero too-close pairs, and no `FOCUS_LAYOUT_*` diagnostic. The expected `FOCUS_ISOLATED` warning identifies the deliberately connectorless `ireland_the_sealed_state`; its exact parent completion remains under `available`. All 28 branches are visible, and the four family programme roots retain their route conditions under `available`. |
 | Exceptional focus tranche | **Complete** | All 38 planned focuses are present across High Kingship, Five Provinces, Otherworld, and convergence. Historical AI weights remain zero. The convergence gates are mechanically exact and all four reduced connector patterns now have exact localized availability tooltips. |
 | Exceptional decisions and missions | **Complete** | `common/decisions/ireland_decisions.txt` contains 11 actions and 11 timed missions with activation, cancellation, completion/timeout, cleanup, capacity, and AI paths. Fian readiness checks an Ireland-owned division in state 113, 134, or 135 at inclusive 90% strength and 80% organisation, plus the specified material and command-power costs. |
 | Exceptional events | **Complete at source level** | `events/ireland_exceptional_route_events.txt` contains exactly 23 events, `.438`-`.460`, and 92 options. Every event has a caller after the parent wiring of `.438`, `.439`, and `.446`. Event descriptions use `.desc`; option D retains `.d`. |
@@ -50,7 +50,7 @@ No gameplay file or `thumbnail.png` was changed by this audit.
 | AI and balance logic | **Complete at the documented evidence boundary** | Historical-mode blocking and alternate-profile weights are present. `acceptance_scenario_evidence_post_exceptional_2026-08-14.md` records the nine source-backed scenarios and bounded balance/exploit checks without claiming a live playthrough. Its Fian statement now matches the frozen trigger. |
 | Parliament scripted GUI | **Complete at source level** | The Dáil decision and scripted GUI both call `ireland_parliament_dail_action_available`; the decision uses an always-true custom cost and localisation states no PP cost. The Dáil button uses the green normal presentation supplied by `interface/ireland_parliament_scripted_gui.gui`; later actions retain their exact 25/25/35 PP requirement text. The renderer cannot execute `buttonstate.lua`, so this is source-state rather than live transition proof. |
 | Country characters and portraits | **Partial** | The implemented character/advisor/leader package is wired, but the three canonical portrait rows and the separate Father Edward Cahill extension remain blocked on exact, reusable source objects. |
-| Documentation and tracking | **Complete except for the external portrait blockers** | Specs and this report match the complete-map presentation: all branches are visible from initialization while route conditions remain mechanical availability gates. Accepted-plan disposition and supersession records are current. |
+| Documentation and tracking | **Complete except for the external portrait blockers** | The complete-map visibility contract and active specifications record the verified 256-focus, 263-connector layout. Federal Compact and Sealed State retain their exact parent-completion checks under `available` rather than drawing lines through unrelated cards. |
 
 ## Closed non-portrait findings
 
@@ -83,7 +83,7 @@ through-node connectors.
 | --- | --- |
 | `improvement_loop/ireland_country_package_post_tranche_addendum_2026-08-14.md` | **Implemented and closed.** The exceptional addendum records its promotion at commit `89ff719`. |
 | `improvement_loop/ireland_exceptional_routes_depth_addendum_2026-08-14.md` | **Accepted, implemented, and promoted.** Its status line is authoritative over the retained historical resolution paragraph. The current Fian acceptance wording is represented by the post-exceptional scenario record, subject to the source defect above. |
-| `improvement_loop/subagent_handoffs/exceptional_routes_depth_focus_ai_handoff_2026-08-14.md` | **Superseded historical implementation snapshot.** Its lead notice explicitly redirects the 253-connector and 32-plus-six figures to the current 256-focus/265-connector/38-distinct-consumer audit. |
+| `improvement_loop/subagent_handoffs/exceptional_routes_depth_focus_ai_handoff_2026-08-14.md` | **Superseded historical implementation snapshot.** Its lead notice explicitly redirects the 253-connector and 32-plus-six figures to the current 256-focus/263-connector/38-distinct-consumer audit. |
 | `subagent_handoffs/ireland_exceptional_routes_asset_handoff_2026-08-14.md` | **Delivered and wired.** It records 38 distinct focus assets, 22 distinct action/mission assets, 23 distinct reports, and ten three-size flag sets. Runtime source now consumes the distinct focus files. |
 
 No second broad `hoi4_improvement_loop_planner` pass is recommended. The accepted
@@ -113,9 +113,11 @@ portrait clearance/source-research handoffs under
 
 Completed for this final audit and its immediately preceding bounded audits:
 
-- Fresh focus graph inspection of the closure source: 256 focuses, 265 connectors,
+- Fresh focus graph inspection and render of the closure source: 256 focuses, 263 connectors,
   zero crossings, zero node intersections, zero long connectors, zero too-close
-  pairs, and no blocking diagnostics.
+  pairs, and no `FOCUS_LAYOUT_*` diagnostics. The expected `FOCUS_ISOLATED` warning
+  for `ireland_the_sealed_state` is presentation-only because its exact parent gate
+  remains under `available`.
 - Static event reachability for `.438`-.460, including the repaired `.438`, `.439`,
   and `.446` callers; exact 23-event/92-option coverage.
 - Static lifecycle review of all 11 exceptional actions and 11 missions, including
@@ -134,6 +136,13 @@ Completed for this final audit and its immediately preceding bounded audits:
   reciprocal mutual-exclusion blocks from the earlier parser correction are the only
   such field additions relative to the current commit. The four family programme roots
   now preserve their former family flags as explicit `available` gates.
+- Compared focus mechanics with the current committed source. Completion rewards and
+  `ai_will_do` blocks are unchanged; mutual exclusions are unchanged and fully
+  reciprocal. The only removed prerequisite connectors are
+  `ireland_federal_republic -> ireland_fund_the_federal_compact` and
+  `ireland_containment_protocol -> ireland_the_sealed_state`. The same exact parent
+  completion tests remain under `available`; Federal Compact's availability was
+  strengthened to carry its parent test explicitly.
 - Rechecked the documented parser corrections: no invalid `is_at_war` trigger remains
   on the repaired surfaces; building-slot checks are typed; Fian charges use negative
   file-local macros; all eleven postwar projects use the supported literal
@@ -141,9 +150,13 @@ Completed for this final audit and its immediately preceding bounded audits:
   localisation uses `localization_key`; and the three KOM democratic flags are
   uncompressed 32-bit bottom-origin TGAs at 82x52, 41x26, and 10x7.
 
-Fresh focus artifact:
+Fresh focus artifacts:
 
-`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/aed1081e898a06a518b0fb9614a2f8c092127a9a13ecaae5160269806dd2fedf/3f29185d016fbf918d0e3d95ff5496d5da028fb72aff1daac72ea12fb4883ea2/focus-inspect.bdc18510945f9be2.json`
+`hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/06c49f184fc6732b71f17efa4dc975411b6e358c78741958e2af9f80be7db39e/c86413f21988bbc7fb166390ca9a7ad4e35fd3e6ca81660776d467417f38b21b/focus-inspect.3f5098b48b871114.json`
+
+- HTML render: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/02c5a0fe9001804d9b0d46659c4ede5115b43ee98bfe2f128d5cdec422b7676a/93e413309faddac8b3587038d018e1bda79f35c4fc63d1ab5527ef8e1a42bc29/ireland_focus_tree.focus.html`
+- SVG render: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/2200cdf34b64349190487ec647af81c6efd77efed5f2e791734b1a29716ea38e/680db568d2bcde07b09eed2b73fcff281110ff043fca9798a7bfbcc3c3543783/ireland_focus_tree.focus.svg`
+- JSON render: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/209d2f8b7b8a23316ee233dae7a80544909eb93191350275c6f79efd89cc1332/7786f818fb988f5fd8a60fdb5b496f9da6390f4488fc79af6a618b1671f25a65/ireland_focus_tree.focus.json`
 
 `docs/plans/ireland_country_package/acceptance_scenario_evidence_post_exceptional_2026-08-14.md`
 records all nine current-spec scenarios at a source-backed offline boundary and now
@@ -162,10 +175,11 @@ remaining completion blocker.
 ## Simplification statement
 
 No gameplay, focus, decision/mission, event, AI, localisation, GUI-source, asset,
-parser-correction, documentation-disposition, or task-specific validation
-simplification remains. The connector layout remains intentionally geometry-safe,
-with its omitted visual lines fully compensated by exact availability tooltips. The
-four portrait gaps are the only remaining blockers and are external-source blockers.
+parser-correction, or task-specific validation simplification remains. The connector layout is geometry-safe. The Federal Compact
+and Sealed State cards retain their exact parent-completion checks under `available`
+instead of drawing lines that crossed unrelated nodes; this changes presentation only,
+not route order or availability. No non-portrait blocker remains. The four portrait
+gaps remain external-source blockers.
 
 ## Engine-parser correction closure
 
@@ -188,9 +202,12 @@ The reported post-tranche load errors were corrected at their source boundary:
 All 28 focus-level `allow_branch` blocks are unconditional presentation gates.
 The full 256-focus map is visible from initialization, including political
 families, territorial policy, Atlantic settlement, and exceptional routes. The
-fresh tree remains 256 focuses and 265 connectors with a stable layout hash,
+fresh tree remains 256 focuses and 263 connectors with a stable layout hash,
 zero crossings, zero node intersections, zero long connectors, and zero
-too-close same-row pairs.
+too-close same-row pairs. No `FOCUS_LAYOUT_*` diagnostic remains.
+The remaining `FOCUS_ISOLATED` warning identifies `ireland_the_sealed_state`, whose
+visual connector was deliberately removed while its exact parent completion remains
+under `available`; it is not a route-order or reachability blocker.
 
 The presentation-only contract is met. The four family programme roots that require a
 separate route condition contain these exact `available` gates:
@@ -202,6 +219,8 @@ separate route condition contain these exact `available` gates:
 | `ireland_veterans_command_council` | `always = yes` | `has_country_flag = ireland_family_fascist` |
 | `ireland_creditor_cabinet` | `always = yes` | `has_country_flag = ireland_family_oligarchic` |
 
-No existing `available`, prerequisite, or mutual-exclusion block was removed by
-the presentation patch, and all mutual exclusions remain reciprocal. Complete-map
-visibility no longer grants cross-family access.
+No `available` or mutual-exclusion block was removed, and all mutual exclusions remain
+reciprocal. Connector cleanup removed exactly the Federal Compact and Sealed State
+prerequisite lines; both exact parent-completion tests remain under `available`.
+Complete-map visibility therefore grants neither cross-family access nor an order
+bypass.

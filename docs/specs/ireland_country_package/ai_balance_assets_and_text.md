@@ -3,12 +3,12 @@
 ## Current implementation evidence
 
 At the `89ff719` evidence boundary the pre-addendum focus source contained 218
-focuses. The current promoted source contains 256 focuses and 265 connectors
+focuses. The current promoted source contains 256 focuses and 263 connectors
 with three opening trunks. Its authored bounds are x `-44..31`, y `0..27`,
 with zero crossings, node intersections, long connectors, duplicate
-coordinates, or same-row spacing defects. Nonblocking detour and isolated-card
-advisories remain where a hidden `available` lock intentionally replaces a
-crossing visible connector. Seven industrial concerns and two
+coordinates, same-row spacing defects, or layout diagnostics. One nonblocking
+isolated-card advisory remains where an exact `available` lock intentionally
+replaces a crossing visible connector. Seven industrial concerns and two
 MIOs expose nine distinct material contracts; five family settlements and five
 family recoveries use distinct decision icons; and the five directly dispatched
 family reports use distinct 210x176 art. The Parliament enabled button is

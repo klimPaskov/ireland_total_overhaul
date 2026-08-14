@@ -7,7 +7,7 @@ Parent: `/root`
 > Superseded implementation snapshot: the figures below describe the first
 > focus/AI pass. Parent integration completed all 38 distinct focus sprites and
 > shines, added the final visible connectors, and validated the current
-> 256-focus/265-connector source. Current evidence is recorded in
+> 256-focus/263-connector source. Current evidence is recorded in
 > `docs/plans/ireland_country_package/subagent_handoffs/final_focus_audit_256_2026-08-14.md`.
 
 ## Result
