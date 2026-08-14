@@ -144,6 +144,8 @@ ireland_initialize_campaign = {
 		set_variable = { var = ireland_evidence_gui_dirty value = constant:ireland.zero }
 		set_variable = { var = ireland_conditions_selected_row value = constant:ireland.zero }
 		set_variable = { var = ireland_conditions_last_reviewed_row value = constant:ireland.zero }
+		set_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state }
+		set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_none }
 		set_variable = { var = ireland_northern_selected_row value = constant:ireland.zero }
 		set_variable = { var = ireland_northern_last_reviewed_row value = constant:ireland.zero }
 		set_variable = { var = ireland_evidence_selected_row value = constant:ireland.zero }
@@ -4231,6 +4233,10 @@ ireland_cleanup_mission_objectives = {
 }
 
 ireland_cleanup_route_state = {
+	# Reset presentation-only selection state without clearing any national ledger.
+	set_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state }
+	set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_none }
+	add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one }
 	# Active decision instances are transient work. Route archival hides the
 	# category, but the cleanup must also release every action slot immediately
 	# so counters and GUI projections cannot retain an orphaned action.

@@ -1,5 +1,7 @@
 # National Situation Ledger implementation prompt
 
+Status: implemented on 2026-08-15; retained as the historical acceptance checklist. It is not an open implementation request.
+
 Implement the accepted Ireland mechanics-hub specification without changing the underlying balance or route logic.
 
 ## Ordered work
@@ -24,4 +26,3 @@ Implement the accepted Ireland mechanics-hub specification without changing the 
 - No focus prerequisite, reward, search filter, coordinate, AI weight, or route gate changes merely to place the inlay.
 - No placeholder or fallback art.
 - `thumbnail.png` remains untouched.
-

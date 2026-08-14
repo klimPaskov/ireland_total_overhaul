@@ -1,0 +1,26 @@
+# Shared identifiers for the National Situation Ledger and its compact focus inlay.
+# These values are presentation state only. Gameplay thresholds remain in the
+# canonical ireland constants category and are read by the hub triggers.
+
+ireland_mechanics_hub = {
+	schema = {
+		any_key = yes
+		data = int
+	}
+
+	tab_state = 1
+	tab_provision = 2
+	tab_readiness = 3
+	tab_foreign = 4
+	tab_northern = 5
+	tab_culture = 6
+
+	row_none = 0
+	row_one = 1
+	row_two = 2
+	row_three = 3
+	row_four = 4
+	row_five = 5
+	row_six = 6
+	row_seven = 7
+}

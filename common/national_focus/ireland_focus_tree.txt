@@ -48,6 +48,13 @@ focus_tree = {
 	# of allowing the engine default to cover the middle branch lanes.
 	continuous_focus_position = { x = 50 y = 3000 }
 
+	# Compact national-mechanics summary in the empty upper gap between the
+	# opening political and economic/defence trunks. Position is in pixels.
+	inlay_window = {
+		id = ireland_national_situation_inlay
+		position = { x = -600 y = 10 }
+	}
+
 	# The opening navigation budget is deliberately limited to three trunks.
 	# Supporting and route-specific families reveal later through allow_branch.
 	shortcut = { name = ireland_focus_shortcut_politics target = ireland_government_formation scroll_wheel_factor = 0.66 }

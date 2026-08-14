@@ -1,6 +1,10 @@
 # Ireland value-purpose matrix
 
+Status: implemented on 2026-08-15. This matrix remains the authoritative player-facing value and consequence contract for the implemented ledger.
+
 This matrix defines the values the player is expected to understand. “Consumer” means a real gameplay gate, result, or action family. The GUI tooltip should name representative player-facing consumers rather than script identifiers.
+
+The selected-row consequence line must also state whether the current public gate is locked, warning, critical, or passing and direct the player to an existing focus, decision, mission, guarded review, or Parliament step. It never creates a new reward or exposes an unrevealed Northern or Evidence value.
 
 ## State
 
@@ -14,7 +18,7 @@ This matrix defines the values the player is expected to understand. “Consumer
 
 ## Provision
 
-National Provision is the lowest effective component, not an average. The hub must say which component limits it.
+National Provision begins from the rounded average of Food, Energy, Transport, and Maritime Access. Severe or multiple weak components then cap that result, so the hub must identify the active bottleneck rather than presenting the average as unconditional capacity.
 
 | Value | Purpose | Representative consumers | Improvement sources |
 | --- | --- | --- | --- |
@@ -25,7 +29,7 @@ National Provision is the lowest effective component, not an average. The hub mu
 
 ## Readiness
 
-National Readiness is the lowest effective component. A large army does not compensate for a missing command, supply, warning, or intelligence system.
+National Readiness begins from the rounded average of its seven components. Equipment, supply, warning, and maritime failures can cap the result, so a strong average cannot conceal a critical operational bottleneck.
 
 | Value | Purpose | Representative consumers | Improvement sources |
 | --- | --- | --- | --- |
@@ -73,4 +77,3 @@ National Readiness is the lowest effective component. A large army does not comp
 ## Values intentionally not shown
 
 The following classes remain internal: event option preview deltas, event dispatch cursors, cached AI profile values, dirty counters, temporary clamp variables, mission-capacity accounting, frame indices, selection variables, and one-use helper flags. They may be documented for maintainers, but presenting them as national mechanics would increase confusion without giving the player agency.
-

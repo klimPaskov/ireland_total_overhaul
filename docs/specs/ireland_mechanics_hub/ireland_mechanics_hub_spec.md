@@ -1,5 +1,7 @@
 # Ireland National Situation Ledger specification
 
+Status: implemented on 2026-08-15. The durable presentation, access, archive, progressive-reveal, and canonical-action rules below are promoted from the corrective addendum; current evidence is recorded in the mechanics-hub documentation reconciliation handoff.
+
 ## 1. Purpose
 
 Ireland has several connected systems, but their presentation currently forces the player to remember individual values across focuses, decisions, event options, and tooltips. The National Situation Ledger turns those systems into a single readable control surface.
@@ -43,7 +45,7 @@ The 510 by 590 window contains:
 - a title, concise instruction, and current overall warning marker;
 - six persistent tab buttons;
 - a summary card with the current tab's governing value and status;
-- up to eight clickable rows, enough for the Readiness family without scrolling;
+- up to seven clickable rows, enough for the Readiness family without scrolling;
 - a selected-value explanation panel;
 - an exact “purpose” line naming the decisions, missions, routes, or gates affected;
 - a guarded context action;
@@ -72,9 +74,11 @@ Each row selection provides:
 - direct consumers, expressed as named player-facing focuses, decisions, missions, or conclusions;
 - common positive sources;
 - common negative sources;
-- the current next gate where one exists.
+- a dynamic consequence line naming the current operational state, binding public gate, and next canonical focus, decision, mission, or review.
 
 The explanation must describe current gameplay, never implementation history or internal variable names.
+
+Exactly one tab carries a persistent brass underline and at most one visible row carries a persistent brass selector. Northern rows use the same progressive focus reveals for visibility and click eligibility as the dedicated ledger; an unrevealed value never appears as a live number in this surface.
 
 ## 4. Interactive actions
 
@@ -82,7 +86,7 @@ The hub exposes two action slots.
 
 ### 4.1 Refresh national report
 
-`ireland_refresh_national_situation` recomputes Provision, Readiness, operational state, Northern records, cultural evidence, and dirty variables through existing shared helpers. It has no reward, no cost, and no hidden state advance.
+`ireland_refresh_national_situation` recomputes Provision, Readiness, operational state, and the opened Northern and cultural projections through existing shared helpers. It has no reward, no cost, and no hidden state advance, and it is unavailable after route archival.
 
 ### 4.2 Context action
 
@@ -91,7 +95,7 @@ The context action changes by tab and is always backed by an existing canonical 
 - State: perform the next available parliamentary programme step through the same four guarded Parliament executors. If none is available, the button is disabled and the tooltip states the missing focus, majority, PP, ownership, or prior step.
 - Provision: refresh the capacity report and select the weakest Provision component. It does not add points.
 - Readiness: refresh the capacity report and select the weakest Readiness component. It does not add points.
-- Foreign: review current exposure and sponsor dependence; this is informational and does not create diplomatic leverage.
+- Foreign: select the greater current value of Foreign Exposure and Sponsor Dependence; this is informational and does not create diplomatic leverage.
 - National Question: call the same Northern review helper used by the dedicated ledger, only when its canonical review trigger passes.
 - Culture: call the same Evidence inspection helper when revealed; otherwise review ordinary cultural capacity without exposing concealed evidence.
 
@@ -120,6 +124,8 @@ The compact inlay shows six colour-coded summaries:
 - Northern settlement;
 - Cultural capacity/evidence.
 
+The National Question uses a locked or integration-stage phrase rather than presenting Integration Capacity as a complete settlement aggregate. Culture displays public capacity and a sealed or revealed evidence marker rather than allowing a lone capacity value to explain an evidence-driven status.
+
 It has two scripted buttons:
 
 - Refresh report, calling the same idempotent refresh helper as the full hub;
@@ -147,15 +153,15 @@ All visible labels, values, lock reasons, status explanations, action requiremen
 
 ## 9. Asset contract
 
-The implementation reuses the existing 510 by 590 National Conditions background and the shared value-row, compact-row, action-button, lock, warning, critical, and ready sprites. New art is created only if the reuse pass cannot express the state vocabulary clearly.
+The implementation reuses the existing 510 by 590 National Conditions background and the shared value-row, compact-row, action-button, lock, warning, critical, and ready sprites. A distinct open-ledger category icon prevents National Situation from being confused with Parliament, while small brass tab and row markers provide persistent selection without changing the status-colour vocabulary.
 
 The focus inlay uses vanilla tiled panel framing plus the registered Ireland status sprites. Static state is always readable; animation is optional and may only communicate a real warning or completed-state transition. Transform-only animation is forbidden.
 
 ## 10. Acceptance scenarios
 
 1. Opening: State is readable immediately; unrevealed tabs remain present with exact unlock explanations.
-2. Weak Provision: the aggregate and weakest component are amber/red, the detail explains affected actions, and refresh does not grant points.
-3. Weak Readiness: the governing minimum and failed military gates are named.
+2. Weak Provision: the aggregate and active bottleneck are amber/red, the detail explains the bottleneck cap and affected actions, and refresh does not grant points.
+3. Weak Readiness: the rounded aggregate, active bottleneck cap, and failed military gates are named.
 4. Foreign imbalance: bilateral leverage remains neutral while exposure/dependence carries risk colour.
 5. Northern opening: the summary activates, its six rows match the dedicated ledger, and review uses the same helper.
 6. Evidence concealed: the Culture tab shows ordinary cultural capacity and a locked evidence row without leaking hidden content.
@@ -167,4 +173,3 @@ The focus inlay uses vanilla tiled panel framing plus the registered Ireland sta
 ## 11. Completion boundary
 
 Completion requires the decision category, scripted GUI, focus inlay, shared triggers/effects, dynamic localisation, asset wiring, focus declaration, initialization, cleanup, AI-equivalent paths, GUI inspection at 1920x1080 and 2560x1440, focus render/raster review, documentation, and independent audits. No placeholder art or unexplained displayed value is accepted.
-

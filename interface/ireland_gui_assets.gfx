@@ -1,7 +1,10 @@
-# Static presentation assets for the three Ireland scripted GUI surfaces. Runtime DDS files live under gfx/interface/ireland/gui/.
+# Static presentation assets for the four Ireland scripted GUI surfaces and the focus inlay. Runtime DDS files live under gfx/interface/ireland/gui/.
 # The generated package's source, processed, and static-fallback evidence remains under assets/.
 spriteTypes = {
 	spriteType = { name = GFX_ireland_gui_conditions_background texturefile = "gfx/interface/ireland/gui/conditions/background.dds" }
+	spriteType = { name = GFX_ireland_mechanics_hub_inlay_background texturefile = "gfx/interface/ireland/gui/conditions/focus_inlay_background.dds" }
+	spriteType = { name = GFX_ireland_mechanics_hub_tab_selected texturefile = "gfx/interface/ireland/gui/conditions/tab_selected.dds" }
+	spriteType = { name = GFX_ireland_mechanics_hub_row_selected texturefile = "gfx/interface/ireland/gui/conditions/row_selected.dds" }
 	spriteType = { name = GFX_ireland_gui_northern_background texturefile = "gfx/interface/ireland/gui/northern/background.dds" }
 	spriteType = { name = GFX_ireland_gui_evidence_background texturefile = "gfx/interface/ireland/gui/evidence/background.dds" }
 	spriteType = { name = GFX_ireland_gui_status_ready texturefile = "gfx/interface/ireland/gui/shared/status_ready.dds" }

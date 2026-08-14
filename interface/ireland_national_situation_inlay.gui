@@ -1,0 +1,31 @@
+# Compact national-mechanics summary shown inside the Ireland focus tree.
+guiTypes = {
+	containerWindowType = {
+		name = "ireland_national_situation_inlay_window"
+		orientation = lower_left
+		position = { x = 0 y = 0 }
+		size = { width = 460 height = 248 }
+		clipping = no
+
+		background = { name = "ireland_focus_inlay_background" quadTextureSprite = "GFX_ireland_mechanics_hub_inlay_background" alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_inlay_title" position = { x = 12 y = 8 } text = "ireland_focus_inlay_title" font = "hoi_24header" format = center maxWidth = 436 maxHeight = 28 }
+		instantTextBoxType = { name = "ireland_focus_inlay_instruction" position = { x = 20 y = 38 } text = "ireland_focus_inlay_instruction" font = "hoi_16mbs" format = center maxWidth = 420 maxHeight = 20 }
+
+		iconType = { name = "ireland_focus_inlay_state_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 20 y = 66 } pdx_tooltip = "ireland_focus_inlay_state_tt" }
+		iconType = { name = "ireland_focus_inlay_provision_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 236 y = 66 } pdx_tooltip = "ireland_focus_inlay_provision_tt" }
+		iconType = { name = "ireland_focus_inlay_readiness_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 20 y = 105 } pdx_tooltip = "ireland_focus_inlay_readiness_tt" }
+		iconType = { name = "ireland_focus_inlay_neutrality_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 236 y = 105 } pdx_tooltip = "ireland_focus_inlay_neutrality_tt" }
+		iconType = { name = "ireland_focus_inlay_northern_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 20 y = 144 } pdx_tooltip = "ireland_focus_inlay_northern_tt" }
+		iconType = { name = "ireland_focus_inlay_culture_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 236 y = 144 } pdx_tooltip = "ireland_focus_inlay_culture_tt" }
+
+		instantTextBoxType = { name = "ireland_focus_inlay_state_text" position = { x = 58 y = 71 } text = "ireland_focus_inlay_state" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_inlay_provision_text" position = { x = 274 y = 71 } text = "ireland_focus_inlay_provision" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_inlay_readiness_text" position = { x = 58 y = 110 } text = "ireland_focus_inlay_readiness" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_inlay_neutrality_text" position = { x = 274 y = 110 } text = "ireland_focus_inlay_neutrality" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_inlay_northern_text" position = { x = 58 y = 149 } text = "ireland_focus_inlay_northern" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_inlay_culture_text" position = { x = 274 y = 149 } text = "ireland_focus_inlay_culture" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
+
+		buttonType = { name = "ireland_focus_inlay_refresh_button" quadTextureSprite = "GFX_ireland_gui_parliament_step_button" position = { x = 20 y = 198 } buttonFont = "hoi_16mbs" buttonText = "ireland_mechanics_hub_refresh_action" format = center clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_refresh_action_tt" }
+		buttonType = { name = "ireland_focus_inlay_state_action_button" quadTextureSprite = "GFX_ireland_gui_parliament_step_button" position = { x = 236 y = 198 } buttonFont = "hoi_16mbs" buttonText = "ireland_focus_inlay_state_action" format = center clicksound = click_default pdx_tooltip = "ireland_focus_inlay_state_action_tt" }
+	}
+}

@@ -945,6 +945,149 @@ sync.
 | `ireland_execute_parliament_confidence_action` | Records the confidence-and-supply compact in Ireland country scope. | Reads `ireland_parliament_confidence_action_available`; deducts the confidence PP cost and calls `ireland_record_parliament_confidence_compact`. | Does nothing when the gate is false. The record helper adds external support, routine votes, Dáil Mandate, Social Consent, Cabinet Cohesion, and the completion flag. | Called by both the confidence button and native confidence decision. |
 | `ireland_execute_parliament_budget_action` | Passes the joint opening budget in Ireland country scope. | Reads `ireland_parliament_joint_budget_action_available`; deducts the budget PP cost and calls `ireland_record_parliament_joint_budget`. | Does nothing when the gate is false. The record helper adds Stability, Administrative Reach, Dáil Mandate, Cabinet Cohesion, and the completion flag. | Called by both the budget button and native budget decision. |
 
+## National Situation Ledger helpers
+
+The National Situation Ledger is a presentation layer over the canonical
+Ireland ledgers. Its shared identifiers live in
+`common/script_constants/ireland_mechanics_hub.txt`. Tab IDs are State `1`,
+Provision `2`, Readiness `3`, Foreign `4`, Northern `5`, and Culture `6`.
+Row IDs are `0` for no selection and `1` through `7` for the displayed row
+order. No balance threshold is duplicated in this category.
+
+### Visibility and status triggers
+
+- `ireland_mechanics_hub_state_visible`, `ireland_mechanics_hub_provision_visible`,
+  `ireland_mechanics_hub_readiness_visible`, `ireland_mechanics_hub_foreign_visible`,
+  `ireland_mechanics_hub_northern_visible`, and `ireland_mechanics_hub_culture_visible`
+  expose the initialized State tab and the existing institutional reveal gates
+  for the other tabs. The Northern and Culture evidence helpers add their own
+  row or evidence reveal checks.
+- `ireland_mechanics_hub_state_ready/warning/critical` use the existing
+  Settlement stage bands and constitutional crisis flags.
+- `ireland_mechanics_hub_provision_ready/warning/critical` use the existing
+  Provision display thresholds and named component bottleneck triggers. A
+  high average cannot hide a named shortage.
+- `ireland_mechanics_hub_readiness_ready/warning/critical` use the existing
+  Readiness display thresholds and material bottlenecks.
+- `ireland_mechanics_hub_neutrality_ready/warning/critical` use the existing
+  Neutrality Integrity bands and make a live neutrality incident warning.
+- `ireland_mechanics_hub_northern_locked/ready/warning/critical` mirror the
+  dedicated Northern ledger's reveal, including the completed
+  `ireland_northern_settlement_ledger` focus, failure, Security Stability,
+  British Flexibility, and local-authority/trade-corridor gates.
+- `ireland_mechanics_hub_culture_locked/ready/warning/critical` keep public
+  Cultural Capacity separate from concealed Evidence. A public disqualifier is
+  considered only after `ireland_concealed_evidence_revealed` is set.
+- `ireland_mechanics_hub_status_ready`, `ireland_mechanics_hub_status_warning`,
+  `ireland_mechanics_hub_status_critical`, and
+  `ireland_mechanics_hub_status_locked` dispatch those family statuses for the
+  selected tab. `ireland_next_state_action_available` is independent of the
+  selected tab for the focus inlay. `ireland_mechanics_hub_context_action_available`
+  gates the full dashboard action button.
+
+All status triggers are country-scoped and side-effect free. They do not write
+flags, variables, diplomatic leverage, or hidden evidence state.
+
+The selected-row projection adds four side-effect-free country triggers:
+`ireland_mechanics_hub_selected_provision_is_lowest`,
+`ireland_mechanics_hub_selected_readiness_is_lowest`, and
+`ireland_mechanics_hub_selected_culture_is_lowest` compare the selected row
+with every public peer using the same stable tie order as the three selectors;
+`ireland_mechanics_hub_selected_foreign_is_greater_risk` compares Foreign
+Exposure with Sponsor Dependence and preserves the Exposure-wins-ties rule.
+They take only the current selected-row and canonical ledger variables as
+inputs, return a boolean result, write nothing, and allow scripted localisation
+to distinguish an active bottleneck from a problem elsewhere in the family.
+
+Example:
+
+```txt
+if = {
+	limit = { ireland_mechanics_hub_selected_readiness_is_lowest = yes }
+	# The selected row matches the canonical Diagnose Bottleneck result.
+}
+```
+
+### `ireland_refresh_national_situation`
+
+- Scope: initialized Ireland country scope while the route is not archived.
+- Inputs: canonical Provision and Readiness components, operational incident
+  sources, named Northern objective records, and public Cultural Capacity and
+  Evidence inputs.
+- Outputs: existing Provision and Readiness display values, operational flags,
+  named Northern objective counters when that tab is revealed, public culture
+  components when Culture is revealed, and the shared conditions dirty counter.
+- Defaults: no reward, cost, political-power change, review timer advance,
+  Northern core, hidden-permission grant, or material stockpile.
+- Side effects: calls `ireland_recompute_provision`,
+  `ireland_recompute_readiness`, `ireland_sync_operational_state`,
+  `ireland_sync_named_northern_objectives`, and
+  `ireland_sync_cultural_evidence` only for the revealed surfaces. It does not
+  call `ireland_sync_northern_ledger`, whose dedicated review path owns
+  stateful Northern review and core eligibility.
+- Usage: call from the dashboard or focus inlay refresh button. Existing daily
+  runtime producers remain responsible for ordinary automatic synchronisation.
+
+### `ireland_execute_next_state_action`
+
+- Scope: initialized, non-archived Ireland country scope.
+- Inputs: the canonical four Parliament availability triggers.
+- Outputs: at most one action in the authored order Dáil, Seanad, confidence,
+  then joint budget.
+- Defaults: no-op when no action is currently available. Each branch invokes
+  the existing guarded Parliament executor, so Political Power, focus, stage,
+  ownership, majority, and prior-step checks remain authoritative.
+- Side effects: the canonical Parliament record helper owns all ledger changes
+  and costs. The adapter only dirties the hub display after a valid action.
+- Usage: call from both `ireland_execute_mechanics_hub_context_action` on the
+  State tab and the focus-inlay next-state button.
+
+### Weakest-component selectors
+
+- `ireland_select_weakest_provision_component` reads Food, Energy, Transport,
+  and Maritime Access and writes the matching hub row ID.
+- `ireland_select_weakest_readiness_component` reads Command, Equipment,
+  Mobilisation, Supply, Warning, Maritime Protection, and Intelligence and
+  writes the matching hub row ID.
+- `ireland_select_weakest_culture_component` reads public Cultural Capacity,
+  Language Service, Archival Record, Regional Participation, and Site
+  Stewardship and writes the matching row one through five ID.
+
+These effects are country-scoped, require the corresponding tab reveal, and use
+the first row in display order when values tie. They use a temporary comparison
+variable only, then dirty the shared hub cache. They add no capacity, points,
+equipment, units, fuel, shipping, or political power.
+
+The selectors do not replace the canonical aggregate formulas. Provision and
+Readiness displays remain their existing rounded averages with bottleneck caps;
+the selectors only identify the raw component that currently limits the report.
+
+### Review delegation and dispatcher
+
+- `ireland_review_national_situation_northern` sets the existing Northern
+  review request only when the hub's selected-row review trigger passes, then
+  calls `ireland_sync_gui_requests`.
+- `ireland_review_national_situation_evidence` does the same for the existing
+  concealed Evidence inspection request, and is available only for the
+  revealed Evidence row.
+- `ireland_review_national_situation_culture` recomputes public culture when
+  Evidence is not selected or not revealed. It never calls hidden-permission
+  synchronisation.
+- `ireland_review_national_situation_foreign` is informational. It refreshes
+  the report and selects the higher current Exposure or Sponsor Dependence row
+  with Exposure winning ties, but it never creates leverage or diplomatic
+  access.
+- `ireland_execute_mechanics_hub_context_action` dispatches State to the next
+  guarded Parliament action, Provision and Readiness to recompute plus weakest
+  row selection, Foreign to its risk review, Northern to the existing
+  request/synchroniser path, and Culture to the weakest public row or the
+  existing Evidence inspection path when the revealed Evidence row is selected.
+
+These effects use no event targets. Selection variables are initialized and
+cleaned by the existing Ireland lifecycle helpers. The Northern and Evidence
+request flags are cleared by `ireland_sync_gui_requests` after their canonical
+sync paths run.
+
 ## Territorial-policy admission triggers
 
 ### `ireland_atlantic_claim_enforcement_ready`

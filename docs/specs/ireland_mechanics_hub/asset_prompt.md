@@ -1,5 +1,7 @@
 # National Situation Ledger asset prompt
 
+Status: implemented on 2026-08-15; the registered static asset package and selection markers satisfy this presentation contract. Retain this file as the asset acceptance record, not as an open production request.
+
 ## Existing assets to reuse
 
 - `gfx/interface/ireland/gui/conditions/background.dds` — 510 by 590 dashboard background;
@@ -25,4 +27,3 @@ The focus inlay should look like the compact summary sheet pinned beside the foc
 ## Asset gate
 
 Do not create new assets if the existing conditions and shared GUI package meets the layout and state requirements. Any new sprite receives a stable `GFX_ireland_mechanics_hub_*` identifier, source PNG, processed PNG, runtime DDS, manifest row, contact sheet, and `.gfx` handoff before wiring.
-

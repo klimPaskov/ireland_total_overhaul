@@ -1,0 +1,59 @@
+# Compact national-mechanics summary embedded in the Ireland focus view.
+ireland_national_situation_inlay = {
+	window_name = ireland_national_situation_inlay_window
+	internal = yes
+	visible = {
+		original_tag = IRE
+		has_country_flag = ireland_initialized
+	}
+
+	scripted_images = {
+		ireland_focus_inlay_state_status = {
+			GFX_ireland_gui_status_ready = { ireland_mechanics_hub_state_ready = yes }
+			GFX_ireland_gui_status_warning = { ireland_mechanics_hub_state_warning = yes }
+			GFX_ireland_gui_status_critical = { ireland_mechanics_hub_state_critical = yes }
+			GFX_ireland_gui_status_locked = yes
+		}
+		ireland_focus_inlay_provision_status = {
+			GFX_ireland_gui_status_ready = { ireland_mechanics_hub_provision_ready = yes }
+			GFX_ireland_gui_status_warning = { ireland_mechanics_hub_provision_warning = yes }
+			GFX_ireland_gui_status_critical = { ireland_mechanics_hub_provision_critical = yes }
+			GFX_ireland_gui_status_locked = yes
+		}
+		ireland_focus_inlay_readiness_status = {
+			GFX_ireland_gui_status_ready = { ireland_mechanics_hub_readiness_ready = yes }
+			GFX_ireland_gui_status_warning = { ireland_mechanics_hub_readiness_warning = yes }
+			GFX_ireland_gui_status_critical = { ireland_mechanics_hub_readiness_critical = yes }
+			GFX_ireland_gui_status_locked = yes
+		}
+		ireland_focus_inlay_neutrality_status = {
+			GFX_ireland_gui_status_ready = { ireland_mechanics_hub_neutrality_ready = yes }
+			GFX_ireland_gui_status_warning = { ireland_mechanics_hub_neutrality_warning = yes }
+			GFX_ireland_gui_status_critical = { ireland_mechanics_hub_neutrality_critical = yes }
+			GFX_ireland_gui_status_locked = yes
+		}
+		ireland_focus_inlay_northern_status = {
+			GFX_ireland_gui_status_ready = { ireland_mechanics_hub_northern_ready = yes }
+			GFX_ireland_gui_status_warning = { ireland_mechanics_hub_northern_warning = yes }
+			GFX_ireland_gui_status_critical = { ireland_mechanics_hub_northern_critical = yes }
+			GFX_ireland_gui_status_locked = yes
+		}
+		ireland_focus_inlay_culture_status = {
+			GFX_ireland_gui_status_ready = { ireland_mechanics_hub_culture_ready = yes }
+			GFX_ireland_gui_status_warning = { ireland_mechanics_hub_culture_warning = yes }
+			GFX_ireland_gui_status_critical = { ireland_mechanics_hub_culture_critical = yes }
+			GFX_ireland_gui_status_locked = yes
+		}
+	}
+
+	scripted_buttons = {
+		ireland_focus_inlay_refresh_button = {
+			available = { ireland_mechanics_hub_open = yes }
+			click_effect = { ireland_refresh_national_situation = yes }
+		}
+		ireland_focus_inlay_state_action_button = {
+			available = { ireland_next_state_action_available = yes }
+			click_effect = { ireland_execute_next_state_action = yes }
+		}
+	}
+}

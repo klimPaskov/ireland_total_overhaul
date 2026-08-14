@@ -4,6 +4,111 @@
 # the same guarded executors, tuning constants, and record helpers.
 
 scripted_gui = {
+	ireland_national_situation_scripted_gui = {
+		context_type = decision_category
+		window_name = "ireland_national_situation_window"
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_initialized
+		}
+		dirty = ireland_conditions_gui_dirty
+		ai_enabled = { always = no }
+		ai_check = { always = no }
+		effects = {
+			ireland_mechanics_hub_state_tab_click = {
+				set_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state }
+				set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_none }
+				add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one }
+			}
+			ireland_mechanics_hub_provision_tab_click = {
+				set_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_provision }
+				set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_none }
+				add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one }
+			}
+			ireland_mechanics_hub_readiness_tab_click = {
+				set_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness }
+				set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_none }
+				add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one }
+			}
+			ireland_mechanics_hub_foreign_tab_click = {
+				set_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign }
+				set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_none }
+				add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one }
+			}
+			ireland_mechanics_hub_northern_tab_click = {
+				set_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern }
+				set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_none }
+				add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one }
+			}
+			ireland_mechanics_hub_culture_tab_click = {
+				set_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture }
+				set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_none }
+				add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one }
+			}
+			ireland_mechanics_hub_row_1_click = { set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_one } add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one } }
+			ireland_mechanics_hub_row_2_click = { set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_two } add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one } }
+			ireland_mechanics_hub_row_3_click = { set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_three } add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one } }
+			ireland_mechanics_hub_row_4_click = { set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_four } add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one } }
+			ireland_mechanics_hub_row_5_click = { set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_five } add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one } }
+			ireland_mechanics_hub_row_6_click = { set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_six } add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one } }
+			ireland_mechanics_hub_row_7_click = { set_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_seven } add_to_variable = { var = ireland_conditions_gui_dirty value = constant:ireland.one } }
+			ireland_mechanics_hub_context_action_click = { ireland_execute_mechanics_hub_context_action = yes }
+			ireland_mechanics_hub_refresh_action_click = { ireland_refresh_national_situation = yes }
+		}
+		triggers = {
+			ireland_mechanics_hub_status_ready_visible = { ireland_mechanics_hub_status_ready = yes }
+			ireland_mechanics_hub_status_warning_visible = { ireland_mechanics_hub_status_warning = yes }
+			ireland_mechanics_hub_status_critical_visible = { ireland_mechanics_hub_status_critical = yes }
+			ireland_mechanics_hub_status_locked_visible = { ireland_mechanics_hub_status_locked = yes }
+
+			ireland_mechanics_hub_state_tab_click_enabled = { original_tag = IRE has_country_flag = ireland_initialized }
+			ireland_mechanics_hub_provision_tab_click_enabled = { original_tag = IRE has_country_flag = ireland_initialized }
+			ireland_mechanics_hub_readiness_tab_click_enabled = { original_tag = IRE has_country_flag = ireland_initialized }
+			ireland_mechanics_hub_foreign_tab_click_enabled = { original_tag = IRE has_country_flag = ireland_initialized }
+			ireland_mechanics_hub_northern_tab_click_enabled = { original_tag = IRE has_country_flag = ireland_initialized }
+			ireland_mechanics_hub_culture_tab_click_enabled = { original_tag = IRE has_country_flag = ireland_initialized }
+			ireland_mechanics_hub_state_selected_visible = { check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state compare = equals } }
+			ireland_mechanics_hub_provision_selected_visible = { check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_provision compare = equals } }
+			ireland_mechanics_hub_readiness_selected_visible = { check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals } }
+			ireland_mechanics_hub_foreign_selected_visible = { check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals } }
+			ireland_mechanics_hub_northern_selected_visible = { check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals } }
+			ireland_mechanics_hub_culture_selected_visible = { check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals } }
+
+			ireland_mechanics_hub_row_1_click_enabled = { ireland_mechanics_hub_row_one_visible = yes }
+			ireland_mechanics_hub_row_2_click_enabled = { ireland_mechanics_hub_row_two_visible = yes }
+			ireland_mechanics_hub_row_3_click_enabled = { ireland_mechanics_hub_row_three_visible = yes }
+			ireland_mechanics_hub_row_4_click_enabled = { ireland_mechanics_hub_row_four_visible = yes }
+			ireland_mechanics_hub_row_5_click_enabled = { ireland_mechanics_hub_row_five_visible = yes }
+			ireland_mechanics_hub_row_6_click_enabled = { ireland_mechanics_hub_row_six_visible = yes }
+			ireland_mechanics_hub_row_7_click_enabled = { ireland_mechanics_hub_row_seven_visible = yes }
+
+			ireland_mechanics_hub_row_1_visible = { ireland_mechanics_hub_row_one_visible = yes }
+			ireland_mechanics_hub_row_1_text_visible = { ireland_mechanics_hub_row_one_visible = yes }
+			ireland_mechanics_hub_row_2_visible = { ireland_mechanics_hub_row_two_visible = yes }
+			ireland_mechanics_hub_row_2_text_visible = { ireland_mechanics_hub_row_two_visible = yes }
+			ireland_mechanics_hub_row_3_visible = { ireland_mechanics_hub_row_three_visible = yes }
+			ireland_mechanics_hub_row_3_text_visible = { ireland_mechanics_hub_row_three_visible = yes }
+			ireland_mechanics_hub_row_4_visible = { ireland_mechanics_hub_row_four_visible = yes }
+			ireland_mechanics_hub_row_4_text_visible = { ireland_mechanics_hub_row_four_visible = yes }
+			ireland_mechanics_hub_row_5_visible = { ireland_mechanics_hub_row_five_visible = yes }
+			ireland_mechanics_hub_row_5_text_visible = { ireland_mechanics_hub_row_five_visible = yes }
+			ireland_mechanics_hub_row_6_visible = { ireland_mechanics_hub_row_six_visible = yes }
+			ireland_mechanics_hub_row_6_text_visible = { ireland_mechanics_hub_row_six_visible = yes }
+			ireland_mechanics_hub_row_7_visible = { ireland_mechanics_hub_row_seven_visible = yes }
+			ireland_mechanics_hub_row_7_text_visible = { ireland_mechanics_hub_row_seven_visible = yes }
+			ireland_mechanics_hub_row_1_selected_visible = { ireland_mechanics_hub_row_one_visible = yes check_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_one compare = equals } }
+			ireland_mechanics_hub_row_2_selected_visible = { ireland_mechanics_hub_row_two_visible = yes check_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_two compare = equals } }
+			ireland_mechanics_hub_row_3_selected_visible = { ireland_mechanics_hub_row_three_visible = yes check_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_three compare = equals } }
+			ireland_mechanics_hub_row_4_selected_visible = { ireland_mechanics_hub_row_four_visible = yes check_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_four compare = equals } }
+			ireland_mechanics_hub_row_5_selected_visible = { ireland_mechanics_hub_row_five_visible = yes check_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_five compare = equals } }
+			ireland_mechanics_hub_row_6_selected_visible = { ireland_mechanics_hub_row_six_visible = yes check_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_six compare = equals } }
+			ireland_mechanics_hub_row_7_selected_visible = { ireland_mechanics_hub_row_seven_visible = yes check_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_seven compare = equals } }
+
+			ireland_mechanics_hub_context_action_click_enabled = { ireland_mechanics_hub_context_action_available = yes }
+			ireland_mechanics_hub_refresh_action_click_enabled = { ireland_mechanics_hub_open = yes }
+		}
+	}
+
 	ireland_parliament_decision_ui = {
 		context_type = decision_category
 		window_name = "ireland_parliament_decision_ui_window"

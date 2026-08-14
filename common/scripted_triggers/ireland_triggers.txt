@@ -3480,7 +3480,7 @@ ireland_map_objective_replace_a_lost_merchant_vessel_met = {
 		has_full_control_of_state = 135
 		any_owned_state = { state = 135 industrial_complex > 0 }
 		any_owned_state = { state = 135 dockyard > 0 }
-		check_variable = { var = ireland_readiness_maritime value = 0 compare = greater_than }
+		check_variable = { var = ireland_readiness_maritime_protection value = 0 compare = greater_than }
 	}
 }
 ireland_map_objective_deliver_a_western_regional_portfolio_met = {

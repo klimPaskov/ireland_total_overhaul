@@ -1,0 +1,108 @@
+# Ireland National Situation Ledger.
+# The six tabs present the country's public mechanic families in one place.
+guiTypes = {
+	containerWindowType = {
+		name = "ireland_national_situation_window"
+		orientation = upper_left
+		position = { x = 0 y = 0 }
+		size = { width = 510 height = 590 }
+		clipping = yes
+
+		background = {
+			name = "ireland_national_situation_background"
+			quadTextureSprite = "GFX_ireland_gui_conditions_background"
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "ireland_national_situation_title"
+			position = { x = 18 y = 7 }
+			text = "ireland_national_situation_title"
+			font = "hoi_24header"
+			format = left
+			maxWidth = 220
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name = "ireland_national_situation_instruction"
+			position = { x = 250 y = 13 }
+			text = "ireland_national_situation_instruction"
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 190
+			maxHeight = 30
+		}
+
+		iconType = { name = "ireland_mechanics_hub_status_ready" spriteType = "GFX_ireland_gui_status_ready" position = { x = 458 y = 10 } pdx_tooltip = "ireland_mechanics_hub_ready_tt" }
+		iconType = { name = "ireland_mechanics_hub_status_warning" spriteType = "GFX_ireland_gui_status_warning" position = { x = 458 y = 10 } pdx_tooltip = "ireland_mechanics_hub_warning_tt" }
+		iconType = { name = "ireland_mechanics_hub_status_critical" spriteType = "GFX_ireland_gui_status_critical" position = { x = 458 y = 10 } pdx_tooltip = "ireland_mechanics_hub_critical_tt" }
+		iconType = { name = "ireland_mechanics_hub_status_locked" spriteType = "GFX_ireland_gui_status_locked" position = { x = 458 y = 10 } pdx_tooltip = "ireland_mechanics_hub_locked_tt" }
+
+		# Six permanent tabs use the already registered decision-category emblems.
+		buttonType = { name = "ireland_mechanics_hub_state_tab" spriteType = "GFX_decision_category_ireland_settlement_government" position = { x = 42 y = 50 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_state_tab_tt" }
+		buttonType = { name = "ireland_mechanics_hub_provision_tab" spriteType = "GFX_decision_category_ireland_provision" position = { x = 118 y = 50 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_provision_tab_tt" }
+		buttonType = { name = "ireland_mechanics_hub_readiness_tab" spriteType = "GFX_decision_category_ireland_readiness" position = { x = 194 y = 50 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_readiness_tab_tt" }
+		buttonType = { name = "ireland_mechanics_hub_foreign_tab" spriteType = "GFX_decision_category_ireland_foreign" position = { x = 270 y = 50 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_foreign_tab_tt" }
+		buttonType = { name = "ireland_mechanics_hub_northern_tab" spriteType = "GFX_decision_category_ireland_northern" position = { x = 346 y = 50 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_northern_tab_tt" }
+		buttonType = { name = "ireland_mechanics_hub_culture_tab" spriteType = "GFX_decision_category_ireland_cultural_archival" position = { x = 422 y = 50 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_culture_tab_tt" }
+
+		instantTextBoxType = { name = "ireland_mechanics_hub_state_tab_label" position = { x = 20 y = 90 } text = "ireland_mechanics_hub_state_tab" font = "hoi_16mbs" format = center maxWidth = 95 maxHeight = 18 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_provision_tab_label" position = { x = 96 y = 90 } text = "ireland_mechanics_hub_provision_tab" font = "hoi_16mbs" format = center maxWidth = 95 maxHeight = 18 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_readiness_tab_label" position = { x = 172 y = 90 } text = "ireland_mechanics_hub_readiness_tab" font = "hoi_16mbs" format = center maxWidth = 95 maxHeight = 18 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_foreign_tab_label" position = { x = 248 y = 90 } text = "ireland_mechanics_hub_foreign_tab" font = "hoi_16mbs" format = center maxWidth = 95 maxHeight = 18 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_northern_tab_label" position = { x = 324 y = 90 } text = "ireland_mechanics_hub_northern_tab" font = "hoi_16mbs" format = center maxWidth = 95 maxHeight = 18 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_culture_tab_label" position = { x = 400 y = 90 } text = "ireland_mechanics_hub_culture_tab" font = "hoi_16mbs" format = center maxWidth = 95 maxHeight = 18 alwaystransparent = yes }
+
+		iconType = { name = "ireland_mechanics_hub_state_selected" spriteType = "GFX_ireland_mechanics_hub_tab_selected" position = { x = 44 y = 82 } alwaystransparent = yes }
+		iconType = { name = "ireland_mechanics_hub_provision_selected" spriteType = "GFX_ireland_mechanics_hub_tab_selected" position = { x = 120 y = 82 } alwaystransparent = yes }
+		iconType = { name = "ireland_mechanics_hub_readiness_selected" spriteType = "GFX_ireland_mechanics_hub_tab_selected" position = { x = 196 y = 82 } alwaystransparent = yes }
+		iconType = { name = "ireland_mechanics_hub_foreign_selected" spriteType = "GFX_ireland_mechanics_hub_tab_selected" position = { x = 272 y = 82 } alwaystransparent = yes }
+		iconType = { name = "ireland_mechanics_hub_northern_selected" spriteType = "GFX_ireland_mechanics_hub_tab_selected" position = { x = 348 y = 82 } alwaystransparent = yes }
+		iconType = { name = "ireland_mechanics_hub_culture_selected" spriteType = "GFX_ireland_mechanics_hub_tab_selected" position = { x = 424 y = 82 } alwaystransparent = yes }
+
+		instantTextBoxType = {
+			name = "ireland_mechanics_hub_summary"
+			position = { x = 35 y = 112 }
+			context_aware_text = [GetIrelandMechanicsHubSummary]
+			font = "hoi_18b"
+			format = left
+			maxWidth = 440
+			maxHeight = 24
+		}
+
+		# Dynamic rows: the scripted localisation changes label, value and colour by tab.
+		buttonType = { name = "ireland_mechanics_hub_row_1" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 138 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_row_tt" }
+		buttonType = { name = "ireland_mechanics_hub_row_2" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 168 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_row_tt" }
+		buttonType = { name = "ireland_mechanics_hub_row_3" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 198 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_row_tt" }
+		buttonType = { name = "ireland_mechanics_hub_row_4" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 228 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_row_tt" }
+		buttonType = { name = "ireland_mechanics_hub_row_5" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 258 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_row_tt" }
+		buttonType = { name = "ireland_mechanics_hub_row_6" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 288 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_row_tt" }
+		buttonType = { name = "ireland_mechanics_hub_row_7" quadTextureSprite = "GFX_ireland_gui_value_row" position = { x = 45 y = 318 } clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_row_tt" }
+
+		iconType = { name = "ireland_mechanics_hub_row_1_selected" spriteType = "GFX_ireland_mechanics_hub_row_selected" position = { x = 24 y = 146 } alwaystransparent = yes }
+		iconType = { name = "ireland_mechanics_hub_row_2_selected" spriteType = "GFX_ireland_mechanics_hub_row_selected" position = { x = 24 y = 176 } alwaystransparent = yes }
+		iconType = { name = "ireland_mechanics_hub_row_3_selected" spriteType = "GFX_ireland_mechanics_hub_row_selected" position = { x = 24 y = 206 } alwaystransparent = yes }
+		iconType = { name = "ireland_mechanics_hub_row_4_selected" spriteType = "GFX_ireland_mechanics_hub_row_selected" position = { x = 24 y = 236 } alwaystransparent = yes }
+		iconType = { name = "ireland_mechanics_hub_row_5_selected" spriteType = "GFX_ireland_mechanics_hub_row_selected" position = { x = 24 y = 266 } alwaystransparent = yes }
+		iconType = { name = "ireland_mechanics_hub_row_6_selected" spriteType = "GFX_ireland_mechanics_hub_row_selected" position = { x = 24 y = 296 } alwaystransparent = yes }
+		iconType = { name = "ireland_mechanics_hub_row_7_selected" spriteType = "GFX_ireland_mechanics_hub_row_selected" position = { x = 24 y = 326 } alwaystransparent = yes }
+
+		instantTextBoxType = { name = "ireland_mechanics_hub_row_1_text" position = { x = 67 y = 144 } context_aware_text = [GetIrelandMechanicsHubRowOne] font = "hoi_16mbs" format = left maxWidth = 375 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_row_2_text" position = { x = 67 y = 174 } context_aware_text = [GetIrelandMechanicsHubRowTwo] font = "hoi_16mbs" format = left maxWidth = 375 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_row_3_text" position = { x = 67 y = 204 } context_aware_text = [GetIrelandMechanicsHubRowThree] font = "hoi_16mbs" format = left maxWidth = 375 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_row_4_text" position = { x = 67 y = 234 } context_aware_text = [GetIrelandMechanicsHubRowFour] font = "hoi_16mbs" format = left maxWidth = 375 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_row_5_text" position = { x = 67 y = 264 } context_aware_text = [GetIrelandMechanicsHubRowFive] font = "hoi_16mbs" format = left maxWidth = 375 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_row_6_text" position = { x = 67 y = 294 } context_aware_text = [GetIrelandMechanicsHubRowSix] font = "hoi_16mbs" format = left maxWidth = 375 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_row_7_text" position = { x = 67 y = 324 } context_aware_text = [GetIrelandMechanicsHubRowSeven] font = "hoi_16mbs" format = left maxWidth = 375 maxHeight = 20 alwaystransparent = yes }
+
+		instantTextBoxType = { name = "ireland_mechanics_hub_detail_header" position = { x = 18 y = 354 } text = "ireland_mechanics_hub_detail_header" font = "hoi_18b" format = left maxWidth = 470 maxHeight = 22 }
+		instantTextBoxType = { name = "ireland_mechanics_hub_selection" position = { x = 18 y = 378 } context_aware_text = [GetIrelandMechanicsHubSelection] font = "hoi_16mbs" format = left maxWidth = 470 maxHeight = 64 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_family_purpose" position = { x = 18 y = 444 } context_aware_text = [GetIrelandMechanicsHubFamilyPurpose] font = "hoi_16mbs" format = left maxWidth = 470 maxHeight = 32 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_selected_status" position = { x = 18 y = 478 } context_aware_text = [GetIrelandMechanicsHubSelectedStatus] font = "hoi_16mbs" format = left maxWidth = 470 maxHeight = 16 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_consequence" position = { x = 18 y = 496 } context_aware_text = [GetIrelandMechanicsHubConsequence] font = "hoi_16mbs" format = left maxWidth = 470 maxHeight = 34 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_mechanics_hub_next_action" position = { x = 18 y = 532 } context_aware_text = [GetIrelandMechanicsHubAction] font = "hoi_16mbs" format = left maxWidth = 470 maxHeight = 16 alwaystransparent = yes }
+
+		buttonType = { name = "ireland_mechanics_hub_context_action" quadTextureSprite = "GFX_ireland_gui_parliament_step_button" position = { x = 45 y = 550 } buttonFont = "hoi_16mbs" buttonText = "ireland_mechanics_hub_context_action" format = center clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_context_action_tt" }
+		buttonType = { name = "ireland_mechanics_hub_refresh_action" quadTextureSprite = "GFX_ireland_gui_parliament_step_button" position = { x = 261 y = 550 } buttonFont = "hoi_16mbs" buttonText = "ireland_mechanics_hub_refresh_action" format = center clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_refresh_action_tt" }
+	}
+}
