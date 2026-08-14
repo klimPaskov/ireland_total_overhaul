@@ -12,7 +12,7 @@ The current static focus source contains 256 focuses and 265 connectors with
 exactly three opening trunks. The authored bounds are x `-44..31`, y `0..26`;
 focus inspection reports zero crossings, node intersections, long connectors,
 duplicate coordinates, and same-row spacing defects. Nonblocking detour
-advisories remain where concealed route geometry avoids unrelated public lanes.
+advisories remain where route geometry avoids unrelated public lanes.
 Five family settlement projects, five family recovery projects, four P1
 territorial recovery paths alongside the existing Belfast Compact reopening,
 seven industrial concerns plus two MIOs, five family report images, the
@@ -38,7 +38,7 @@ The existing `docs/specs/ireland_focus_tree/` package remains authoritative for
 historical research and detailed subsystem contracts unless this package names a
 conflict. This package has final authority over campaign navigation, route
 identity, territorial expansion visibility, concrete payoff standards, route
-conclusions, progressive disclosure, and implementation order.
+conclusions, complete-map presentation, and implementation order.
 
 ## Player promise
 
@@ -48,10 +48,11 @@ Ireland begins with three understandable national problems:
 2. rebuild a weak agricultural and infrastructural economy;
 3. create a credible defence and neutrality policy.
 
-The opening does not expose a wall of ideology. The National Settlement then
-reveals five public political families: democratic republican government,
-Congress socialism, Blueshirt authoritarianism, producer-estate oligarchy, and
-constitutional restoration. Each family changes advisors, companies, laws,
+The complete focus map is visible at the opening so its five public political
+families, territorial ambitions, and exceptional destinations can be inspected
+before commitment. National Settlement still governs access to democratic
+republican government, Congress socialism, Blueshirt authoritarianism,
+producer-estate oligarchy, and constitutional restoration. Each family changes advisors, companies, laws,
 security, economic institutions, military doctrine, diplomacy, Northern policy,
 territorial ambition, and the postwar settlement.
 

@@ -22,6 +22,7 @@
 @IRELAND_PARLIAMENT_SEANAD_AI_PP_COST = 25
 @IRELAND_PARLIAMENT_CONFIDENCE_AI_PP_COST = 25
 @IRELAND_PARLIAMENT_BUDGET_AI_PP_COST = 35
+@IRELAND_POSTWAR_FAMILY_FACTORY_USE = 1
 @IRELAND_DEVELOPMENTAL_PLANT_SUPPORT_EQUIPMENT_GATE = 49
 @IRELAND_DEVELOPMENTAL_PLANT_SUPPORT_EQUIPMENT_CHARGE = -50
 @IRELAND_DEVELOPMENTAL_PLANT_CONVOY_GATE = 4
@@ -232,10 +233,10 @@
 @IRELAND_EXCEPTIONAL_COMMAND_LOW_GATE = 19
 @IRELAND_EXCEPTIONAL_ROYAL_CIRCUIT_MOTORIZED_GATE = 19
 @IRELAND_EXCEPTIONAL_ROYAL_CIRCUIT_INFANTRY_GATE = 499
-@IRELAND_EXCEPTIONAL_FIAN_MANPOWER_COST = 500
-@IRELAND_EXCEPTIONAL_FIAN_INFANTRY_EQUIPMENT_COST = 500
-@IRELAND_EXCEPTIONAL_FIAN_SUPPORT_EQUIPMENT_COST = 20
-@IRELAND_EXCEPTIONAL_FIAN_COMMAND_COST = 20
+@IRELAND_EXCEPTIONAL_FIAN_MANPOWER_CHARGE = -500
+@IRELAND_EXCEPTIONAL_FIAN_INFANTRY_EQUIPMENT_CHARGE = -500
+@IRELAND_EXCEPTIONAL_FIAN_SUPPORT_EQUIPMENT_CHARGE = -20
+@IRELAND_EXCEPTIONAL_FIAN_COMMAND_CHARGE = -20
 ireland_settlement_government = {
 	# Parliamentary opening: the native Dáil action is usable from initialization;
 	# the shared executor also drives the scripted GUI and advances the same stage.
@@ -28838,7 +28839,7 @@ ireland_readiness = {
 		available = { has_country_flag = ireland_fian_service_charter custom_trigger_tooltip = { tooltip = ireland_mission_equip_a_fian_company_requirements_tt ireland_exceptional_fian_material_ready = yes } }
 		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_fian_equipment_commitment } } }
 		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_FIAN_DAYS
-		complete_effect = { custom_effect_tooltip = ireland_mission_equip_a_fian_company_cost_tt add_manpower = -@IRELAND_EXCEPTIONAL_FIAN_MANPOWER_COST add_equipment_to_stockpile = { type = infantry_equipment amount = -@IRELAND_EXCEPTIONAL_FIAN_INFANTRY_EQUIPMENT_COST } add_equipment_to_stockpile = { type = support_equipment amount = -@IRELAND_EXCEPTIONAL_FIAN_SUPPORT_EQUIPMENT_COST } add_command_power = -@IRELAND_EXCEPTIONAL_FIAN_COMMAND_COST set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_equip_a_fian_company_full_recorded set_variable = { var = ireland_fian_readiness value = constant:ireland_exceptional_routes.fian_readiness_delta } clr_country_flag = ireland_fian_equipment_commitment set_country_flag = ireland_fian_service_objective_open ireland_refresh_exceptional_route_state = yes }
+		complete_effect = { custom_effect_tooltip = ireland_mission_equip_a_fian_company_cost_tt add_manpower = @IRELAND_EXCEPTIONAL_FIAN_MANPOWER_CHARGE add_equipment_to_stockpile = { type = infantry_equipment amount = @IRELAND_EXCEPTIONAL_FIAN_INFANTRY_EQUIPMENT_CHARGE } add_equipment_to_stockpile = { type = support_equipment amount = @IRELAND_EXCEPTIONAL_FIAN_SUPPORT_EQUIPMENT_CHARGE } add_command_power = @IRELAND_EXCEPTIONAL_FIAN_COMMAND_CHARGE set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_equip_a_fian_company_full_recorded set_variable = { var = ireland_fian_readiness value = constant:ireland_exceptional_routes.fian_readiness_delta } clr_country_flag = ireland_fian_equipment_commitment set_country_flag = ireland_fian_service_objective_open ireland_refresh_exceptional_route_state = yes }
 		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_failure } ireland_record_mission_result = yes set_country_flag = ireland_mission_equip_a_fian_company_failure_recorded set_country_flag = ireland_fian_route_fraud clr_country_flag = ireland_fian_equipment_commitment ireland_refresh_exceptional_route_state = yes }
 		cancel_effect = { clr_country_flag = ireland_fian_equipment_commitment ireland_refresh_exceptional_route_state = yes }
 		ai_will_do = { base = constant:ireland_exceptional_routes.ai_fianna modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor NOT = { ireland_exceptional_fian_material_ready = yes } } }
@@ -49566,7 +49567,7 @@ ireland_postwar = {
 		}
 		fire_only_once = yes
 		days_remove = constant:ireland.postwar_family_recovery_days
-		modifier = { civilian_factory_use = constant:ireland.postwar_family_factory_use }
+		modifier = { civilian_factory_use = @IRELAND_POSTWAR_FAMILY_FACTORY_USE }
 		custom_cost_trigger = { num_of_civilian_factories_available_for_projects > 0 }
 		custom_cost_text = decision_cost_civ_factory_1
 		complete_effect = {
@@ -49625,7 +49626,7 @@ ireland_postwar = {
 		fire_only_once = yes
 		days_remove = constant:ireland.postwar_family_settlement_days
 		modifier = {
-			civilian_factory_use = constant:ireland.postwar_family_factory_use
+			civilian_factory_use = @IRELAND_POSTWAR_FAMILY_FACTORY_USE
 		}
 		custom_cost_trigger = {
 			num_of_civilian_factories_available_for_projects > 0
@@ -49703,7 +49704,7 @@ ireland_postwar = {
 		fire_only_once = yes
 		days_remove = constant:ireland.postwar_family_settlement_days
 		modifier = {
-			civilian_factory_use = constant:ireland.postwar_family_factory_use
+			civilian_factory_use = @IRELAND_POSTWAR_FAMILY_FACTORY_USE
 		}
 		custom_cost_trigger = {
 			num_of_civilian_factories_available_for_projects > 0
@@ -49761,7 +49762,7 @@ ireland_postwar = {
 		fire_only_once = yes
 		days_remove = constant:ireland.postwar_family_settlement_days
 		modifier = {
-			civilian_factory_use = constant:ireland.postwar_family_factory_use
+			civilian_factory_use = @IRELAND_POSTWAR_FAMILY_FACTORY_USE
 		}
 		custom_cost_trigger = {
 			num_of_civilian_factories_available_for_projects > 0
@@ -49825,7 +49826,7 @@ ireland_postwar = {
 		fire_only_once = yes
 		days_remove = constant:ireland.postwar_family_settlement_days
 		modifier = {
-			civilian_factory_use = constant:ireland.postwar_family_factory_use
+			civilian_factory_use = @IRELAND_POSTWAR_FAMILY_FACTORY_USE
 		}
 		custom_cost_trigger = {
 			num_of_civilian_factories_available_for_projects > 0
@@ -49880,7 +49881,7 @@ ireland_postwar = {
 		fire_only_once = yes
 		days_remove = constant:ireland.postwar_family_settlement_days
 		modifier = {
-			civilian_factory_use = constant:ireland.postwar_family_factory_use
+			civilian_factory_use = @IRELAND_POSTWAR_FAMILY_FACTORY_USE
 		}
 		custom_cost_trigger = {
 			num_of_civilian_factories_available_for_projects > 0
@@ -49936,7 +49937,7 @@ ireland_postwar = {
 		}
 		days_remove = constant:ireland.postwar_family_recovery_days
 		modifier = {
-			civilian_factory_use = constant:ireland.postwar_family_factory_use
+			civilian_factory_use = @IRELAND_POSTWAR_FAMILY_FACTORY_USE
 		}
 		custom_cost_trigger = {
 			num_of_civilian_factories_available_for_projects > 0
@@ -49991,7 +49992,7 @@ ireland_postwar = {
 		}
 		days_remove = constant:ireland.postwar_family_recovery_days
 		modifier = {
-			civilian_factory_use = constant:ireland.postwar_family_factory_use
+			civilian_factory_use = @IRELAND_POSTWAR_FAMILY_FACTORY_USE
 		}
 		custom_cost_trigger = {
 			num_of_civilian_factories_available_for_projects > 0
@@ -50046,7 +50047,7 @@ ireland_postwar = {
 		}
 		days_remove = constant:ireland.postwar_family_recovery_days
 		modifier = {
-			civilian_factory_use = constant:ireland.postwar_family_factory_use
+			civilian_factory_use = @IRELAND_POSTWAR_FAMILY_FACTORY_USE
 		}
 		custom_cost_trigger = {
 			num_of_civilian_factories_available_for_projects > 0
@@ -50100,7 +50101,7 @@ ireland_postwar = {
 		}
 		days_remove = constant:ireland.postwar_family_recovery_days
 		modifier = {
-			civilian_factory_use = constant:ireland.postwar_family_factory_use
+			civilian_factory_use = @IRELAND_POSTWAR_FAMILY_FACTORY_USE
 		}
 		custom_cost_trigger = {
 			num_of_civilian_factories_available_for_projects > 0
@@ -50154,7 +50155,7 @@ ireland_postwar = {
 		}
 		days_remove = constant:ireland.postwar_family_recovery_days
 		modifier = {
-			civilian_factory_use = constant:ireland.postwar_family_factory_use
+			civilian_factory_use = @IRELAND_POSTWAR_FAMILY_FACTORY_USE
 		}
 		custom_cost_trigger = {
 			num_of_civilian_factories_available_for_projects > 0

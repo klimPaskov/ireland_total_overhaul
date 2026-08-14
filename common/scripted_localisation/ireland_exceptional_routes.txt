@@ -2,9 +2,9 @@
 
 defined_text = {
 	name = GetIrelandExceptionalRouteStatus
-	text = { trigger = { has_country_flag = ireland_exceptional_broken_compact } localisation_key = ireland_exceptional_status_broken_compact }
-	text = { trigger = { has_country_flag = ireland_exceptional_geis_due } localisation_key = ireland_exceptional_status_geis_due }
-	text = { trigger = { has_country_flag = ireland_conclusion_five_provinces_rival_irelands } localisation_key = ireland_exceptional_status_rival_irelands }
-	text = { trigger = { has_country_flag = ireland_convergence_order_concluded } localisation_key = ireland_exceptional_status_concluded }
-	text = { localisation_key = ireland_exceptional_status_open }
+	text = { trigger = { has_country_flag = ireland_exceptional_broken_compact } localization_key = ireland_exceptional_status_broken_compact }
+	text = { trigger = { has_country_flag = ireland_exceptional_geis_due } localization_key = ireland_exceptional_status_geis_due }
+	text = { trigger = { has_country_flag = ireland_conclusion_five_provinces_rival_irelands } localization_key = ireland_exceptional_status_rival_irelands }
+	text = { trigger = { has_country_flag = ireland_convergence_order_concluded } localization_key = ireland_exceptional_status_concluded }
+	text = { localization_key = ireland_exceptional_status_open }
 }

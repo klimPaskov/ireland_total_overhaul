@@ -6,22 +6,18 @@ Feature: Ireland gameplay overhaul and national focus tree (country-package game
 
 ## Current focus and Parliament authority: 2026-08-14
 
-The current national tree contains 218 focuses, three opening roots, and 226
-connectors. Its three named shortcuts expose government and politics, national
-development, and defence and security as the only opening trunks. The accepted
-coordinate-only family-lane reflow in `89ff719` places the five substantive
-family lanes within x `-26..21` and y `0..22`. Final focus inspection reports
+The current national tree contains 256 focuses, three opening roots, and 265
+connectors. Its three named shortcuts identify government and politics, national
+development, and defence and security as the opening trunks. Every authored
+branch is visible from initialization; locked focuses retain their prerequisites,
+availability triggers, route permissions, dates, and mutual exclusions. Final focus inspection reports
 zero crossings, node intersections, long connectors, duplicate coordinates,
-and same-row spacing defects; the one pre-existing clerical-failure linear
-detour remains recorded as a nonblocking advisory because straightening it
-would cross the adjacent Congress corridor.
+and same-row spacing defects.
 
-Culture, diplomacy and neutrality, Northern policy, and the Marine Service
-reveal only after their prerequisites. Three late constitutional alternatives
-and eight crisis, radical, or evidence-gated families also use progressive
-`allow_branch` reveal. The 36 structural leaves are
-named endpoints or have downstream consumers; no generic reward profile or
-unconsumed terminal remains.
+Culture, diplomacy and neutrality, Northern policy, the Marine Service,
+territorial expansion, and the exceptional routes are all drawn at once. Their
+existing gameplay gates remain authoritative, so presentation does not bypass
+route commitment or exceptional-content permissions.
 
 The Parliament chamber summary becomes visible after Ireland initialization.
 Its 510 by 248 panel has two 126x70 chamber diagrams and four functional human

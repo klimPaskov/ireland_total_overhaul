@@ -22,25 +22,21 @@ an unmistakable fan:
 
 The first screen shows the identity of each trunk through title, icon family,
 colour grouping, and straight vertical geometry. Politics and industry do not
-drift horizontally across unrelated lanes. Branch navigation centres on the
-middle of the chosen lane, including its revealed descendants.
+drift horizontally across unrelated lanes. The complete authored tree is
+visible from game start so the player can inspect every political, industrial,
+military, territorial, and exceptional destination before committing.
 
-## Progressive disclosure
+## Complete-map presentation
 
-| Reveal | Trigger | What appears |
-| --- | --- | --- |
-| opening | game initialization | only three trunks and their first shared projects |
-| constitutional debate | first Parliament stage | constitutional/election continuations and visible locked family band |
-| National Settlement | settlement recorded | five public family gateways and National Question foreshadowing |
-| family commitment | one gateway completed | that family’s internal profiles, cabinet, economy, security and foreign posture |
-| Northern proof | Northern contacts + safeguards | territorial method stage and its exact prerequisites |
-| wartime emergency | world war/incident/readiness condition | emergency supply, neutrality incidents, intelligence and mobilisation |
-| cultural evidence | serious research projects | restoration/exceptional evidence lane; impossible content remains hidden |
-| Atlantic policy | Northern method resolved | family-specific external policy and postwar settlement |
+All focus-level `allow_branch` gates resolve true from initialization. This is a
+visibility rule only. Individual `available` triggers, prerequisites, route
+flags, dates, mutual exclusions, game-rule permissions, evidence requirements,
+and territorial proof continue to determine whether a visible focus may be
+started.
 
-`allow_branch` may conceal exceptional families. Ordinary content should prefer a
-visible locked card with explicit requirements so the player can understand the
-campaign ahead.
+Locked cards must expose exact requirement tooltips. Exceptional families are
+therefore legible as possible campaign destinations without being granted or
+made mechanically reachable before their authored conditions are satisfied.
 
 ## Exceptional route depth promotion — 2026-08-14
 
