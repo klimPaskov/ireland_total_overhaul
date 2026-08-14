@@ -82,7 +82,7 @@ cooldown.
 
 The coordinate-only family-lane reflow is also accepted at this boundary. Its
 pre-addendum 218-focus/222-connector evidence kept three opening trunks; the
-promoted exceptional tranche extends that source to 256 focuses and 263
+promoted exceptional tranche extends that source to 256 focuses and 234
 connectors while retaining the same three roots and zero crossing, intersection,
 long-connector, and spacing defects.
 

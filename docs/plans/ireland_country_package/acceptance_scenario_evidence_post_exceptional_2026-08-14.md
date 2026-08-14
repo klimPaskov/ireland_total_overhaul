@@ -32,7 +32,7 @@ asset/localisation audits. It does not claim a live engine playthrough.
 - Mission cleanup removes active markers and updates the shared mission-capacity
   ledger. Household audits are capped, material commitments are consumed once,
   and failed paths retain explicit recovery rather than a repeatable reward.
-- The final focus inspection reports 256 focuses, 263 connectors, exactly three
+- The final focus inspection reports 256 focuses, 234 connectors, exactly three
   opening roots, and zero crossings, node intersections, long connectors,
   duplicate positions, or cramped same-row pairs.
 

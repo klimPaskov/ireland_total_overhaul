@@ -6,7 +6,7 @@ Feature: Ireland gameplay overhaul and national focus tree (country-package game
 
 ## Current focus and Parliament authority: 2026-08-14
 
-The current national tree contains 256 focuses, three opening roots, and 263
+The current national tree contains 256 focuses, three opening roots, and 234
 connectors. Its three named shortcuts identify government and politics, national
 development, and defence and security as the opening trunks. Every authored
 branch is visible from initialization; locked focuses retain their prerequisites,
@@ -15,12 +15,20 @@ zero crossings, node intersections, long connectors, duplicate coordinates,
 and same-row spacing defects.
 
 The final connector-routing pass straightens the De Valera, IRA, Congress,
-clerical, Five Provinces, confederation, and Otherworld lanes. Two outcome cards
-whose visible lines could not be routed without crossing unrelated nodes retain
-their exact parent-completion checks under `available`: `ireland_fund_the_federal_compact`
-requires `ireland_federal_republic`, and `ireland_the_sealed_state` requires
-`ireland_containment_protocol`. Their gameplay order is unchanged while the
-unhelpful crossing lines are omitted.
+clerical, High Kingship, Five Provinces, confederation, and Otherworld lanes.
+Wide political-family exclusion webs, exceptional-route exclusion webs, and
+multi-parent conclusion fans retain their exact locks under `available` instead
+of drawing engine lines through unrelated cards. Their gameplay order and route
+exclusivity are unchanged. Every remaining visible prerequisite or exclusion
+line spans at most four columns.
+
+Effect-driven filters have exact source parity: Army, Navy, and Air Experience,
+research, stability, war-support, and manpower/equipment filters neither omit a
+matching direct reward nor highlight a focus without one. Every direct building
+reward carries Industry; the 1938 trade settlement, Northern trade corridor,
+and customs-union leverage carry International Trade. `FOCUS_FILTER_ANNEXATION`
+covers all 36 Northern lead-in, policy, reunification, Atlantic-expansion, enforcement,
+and postwar-settlement focuses.
 
 Culture, diplomacy and neutrality, Northern policy, the Marine Service,
 territorial expansion, and the exceptional routes are all drawn at once. Their

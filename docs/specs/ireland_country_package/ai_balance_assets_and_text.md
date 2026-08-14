@@ -3,7 +3,7 @@
 ## Current implementation evidence
 
 At the `89ff719` evidence boundary the pre-addendum focus source contained 218
-focuses. The current promoted source contains 256 focuses and 263 connectors
+focuses. The current promoted source contains 256 focuses and 234 connectors
 with three opening trunks. Its authored bounds are x `-44..31`, y `0..27`,
 with zero crossings, node intersections, long connectors, duplicate
 coordinates, same-row spacing defects, or layout diagnostics. One nonblocking

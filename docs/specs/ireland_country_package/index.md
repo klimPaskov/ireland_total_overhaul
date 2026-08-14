@@ -8,7 +8,7 @@ Evidence boundary: gameplay after the final 2026-08-14 family-band correction
 is the current source baseline. It includes the accepted P0/P1/P2
 implementation tranches, the timed-decision lifecycle audit fixes, the
 authored family-lane reflow, and the promoted exceptional-route depth tranche.
-The current static focus source contains 256 focuses and 263 connectors with
+The current static focus source contains 256 focuses and 234 connectors with
 exactly three opening trunks. The authored bounds are x `-44..31`, y `0..26`;
 focus inspection reports zero crossings, node intersections, long connectors,
 duplicate coordinates, same-row spacing defects, and layout diagnostics. One
