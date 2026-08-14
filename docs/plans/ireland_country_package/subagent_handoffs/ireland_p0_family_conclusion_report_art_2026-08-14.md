@@ -2,7 +2,7 @@
 
 Date: 2026-08-14
 
-Status: complete for all five requested static report-event images.
+Status: complete and wired for all five requested static report-event images.
 
 ## Deliverables
 
@@ -32,4 +32,9 @@ Status: complete for all five requested static report-event images.
 
 ## Parent-owned next step
 
-Add the five sprite definitions from `docs/assets/ireland_p0_family_conclusion_reports/gfx_handoff.md` to the appropriate existing `.gfx` file, then wire the event picture references in the parent-owned event implementation.
+The parent registered the five sprite definitions in
+`interface/ireland_event_art.gfx` and wired `ireland_country_conclusion.1`–`.5`
+to the matching report pictures. The asset package is therefore closed. The
+separate family-lane focus layout is accepted at `89ff719` and recorded in
+`ireland_country_package_family_lane_reflow_completion_2026-08-14.md`; parent
+completion audit/live evidence remains separate.

@@ -1,5 +1,14 @@
 # Focus Density, Reward, and Parliament Completion - 2026-08-13
 
+> Historical snapshot notice: this report predates the current country-package
+> integration and is superseded for counts, lifecycle contracts, and completion
+> status by `docs/specs/ireland_country_package/index.md`,
+> `docs/specs/ireland_country_package/implementation_matrix.md`, and the
+> 2026-08-14 documentation-curator handoff. Its 150-focus inventory and
+> earlier presentation evidence are retained as provenance only. At the time
+> of this snapshot, final family-band evidence was unavailable; that historical
+> state is superseded by the accepted `89ff719` family-lane handoff.
+
 ## Outcome
 
 This tranche corrects the three reported surfaces together:

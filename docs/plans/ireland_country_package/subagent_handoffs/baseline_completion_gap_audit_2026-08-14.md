@@ -5,6 +5,12 @@ Feature slug: `ireland_country_package`
 Mode: read-only baseline completion audit. This is not a final completion
 claim and it does not validate the concurrent implementation tranche.
 
+Disposition: historical baseline, superseded as current status by the
+implementation tranches through `1984ff0` and the current source-of-truth
+summary in `documentation_cleanup_handoff_2026-08-14.md`. Preserve this audit
+for its pre-tranche gap evidence; its 215-focus counts, missing P0/P1 findings,
+and baseline verdict must not be used to reopen implemented work.
+
 ## Audit anchor and authority
 
 The gameplay baseline is revision `3dbd237`, the last committed gameplay state

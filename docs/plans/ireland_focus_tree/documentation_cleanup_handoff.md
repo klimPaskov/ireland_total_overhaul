@@ -5,13 +5,13 @@ Reconciled: 2026-07-22
 Scope: documentation only; HOI4 was not launched.
 
 Current-status addendum (2026-08-02): this handoff remains a historical
-documentation-cleanup record. The current authority is
-`source_of_truth_map.md` and `project_status.md`: 132 of 169 source-manifest
-rows are complete and 37 are blocked (15 portraits, 7 symbols/documents, and
-15 event/news records), with no remaining user-review rows. Five cleared FRUS
-event/news packages are now consumed by the four H04 emergency-news nodes and
-the F15 neutral-markings node. The exact sourced event/news budget is still
-short 15 blocked slots; no fallback or substitute asset is used.
+documentation-cleanup record. The current authority is now
+`docs/specs/ireland_country_package/index.md`,
+`docs/specs/ireland_country_package/implementation_matrix.md`, and the
+2026-08-14 country-package documentation handoff. The old manifest totals and
+focus/package counts below are retained as historical evidence only; they do
+not describe the current country-package status. The historical pending
+family-band state is superseded by the accepted `89ff719` family-lane handoff.
 
 ## Outcome
 

@@ -1,5 +1,22 @@
 # Ireland Country Package — AI, Balance, Assets, and Text
 
+## Current implementation evidence
+
+At the `89ff719` evidence boundary the focus source contains 218 focuses and
+226 connectors with three opening trunks. The accepted family-lane reflow spans
+x `-26..21` and y `0..22`, with zero crossings, intersections, long
+connectors, duplicate coordinates, or same-row spacing defects; the retained
+clerical linear detour is nonblocking. Seven industrial concerns and two
+MIOs expose nine distinct material contracts; five family settlements and five
+family recoveries use distinct decision icons; and the five directly dispatched
+family reports use distinct 210x176 art. The Parliament enabled button is
+green/brass while unavailable controls remain engine-darkened. Ordinary event
+dispatch remains monthly and paced, foreign reactions use the 120-day broker,
+and family reports bypass the flavour pool. The final renderer-backed
+family-lane reflow is accepted at `89ff719` in the country-package completion
+handoff; parent completion audit/live evidence remains separate, so these
+implementation facts do not constitute a whole-package completion claim.
+
 ## AI contract
 
 Historical AI priorities:

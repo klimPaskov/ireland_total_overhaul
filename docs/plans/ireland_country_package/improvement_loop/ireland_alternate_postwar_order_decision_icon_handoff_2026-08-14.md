@@ -1,6 +1,6 @@
 # Alternate postwar order decision-icon asset handoff
 
-Status: complete asset package, ready for parent wiring.  
+Status: complete asset package; runtime wiring closed by the parent.
 Produced: 2026-08-14  
 Parent: `/root`  
 Scope: one static 32x32 decision icon for the alternate postwar-order action. No commit made.
@@ -10,7 +10,7 @@ Scope: one static 32x32 decision icon for the alternate postwar-order action. No
 - Decision ID: `ireland_action_record_an_alternate_postwar_order`
 - Sprite: `GFX_decision_ireland_action_record_an_alternate_postwar_order`
 - DDS: `gfx/interface/decisions/ireland/actions/decision_ireland_record_an_alternate_postwar_order.dds`
-- Suggested target `.gfx`: `interface/ireland_icons.gfx`
+- Registered target `.gfx`: `interface/ireland_icons.gfx`
 - Target: 32x32 transparent decision icon
 
 ## Deliverables
@@ -27,4 +27,4 @@ Scope: one static 32x32 decision icon for the alternate postwar-order action. No
 
 The selected generated artwork uses an open diplomatic ledger, compact globe, and brass compass as one sober institutional silhouette. It is distinct from the existing family settlement icons and was designed specifically for 32x32 decision readability. The final source contains no UN emblem, laurel, text, or UI plate. The checkerboard contact sheet was reviewed after alpha crop and resize.
 
-DDS verification found exact 32x32 dimensions, 32-bit uncompressed BGRA masks, and a 4096-byte pixel payload. No fallback or placeholder was used. The parent owns `.gfx` insertion, decision wiring, localisation, and final game validation.
+DDS verification found exact 32x32 dimensions, 32-bit uncompressed BGRA masks, and a 4096-byte pixel payload. No fallback or placeholder was used. The parent registered the exact sprite in `interface/ireland_icons.gfx` and the decision consumes it. Asset wiring is closed; the separate family-lane focus layout is accepted at `89ff719`, while final game validation remains parent-owned.

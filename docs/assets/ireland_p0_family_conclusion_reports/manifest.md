@@ -6,6 +6,12 @@ Asset package: `ireland_p0_family_conclusion_reports`
 
 Target surface: HOI4 report-event picture, finished `210x176` RGBA canvas.
 
+Runtime wiring status: all five report sprites are registered in
+`interface/ireland_event_art.gfx` and consumed by
+`events/ireland_country_conclusion_events.txt` events `.1` through `.5`.
+The separate family-lane focus layout is accepted at `89ff719`; this asset
+status does not replace the parent completion audit.
+
 Processing: source artwork was passed through `.agents/skills/hoi4-feature-assets/tools/process_report_event_image.py`, which applies the report-event card treatment (cover crop, black-and-white conversion, sepia, grain, paper edge, deterministic tilt, transparent margins, and soft shadow). Each processed PNG was converted with `convert_to_dds.py` using `--width 210 --height 176`.
 
 ## Assets

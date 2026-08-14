@@ -1,5 +1,11 @@
 # Final decision, mission, and territorial-recovery audit — 2026-08-14
 
+Disposition: superseded by `decision_audit_fixes_handoff_2026-08-14.md` and
+commit `1984ff0`. The six issues below are historical pre-fix findings retained
+for audit traceability; they are not current blockers. The exact terminal
+lifecycle now uses launch markers, natural expiry effects, cancellation cleanup,
+and file-local cooldown literals as recorded by the replacement handoff.
+
 ## Audit boundary
 
 Read-only audit of committed `317ce37` (*Implement Ireland territorial recovery paths*) and `f7e5e64` (*Implement Ireland family postwar conclusions*). I did not inspect the concurrent uncommitted focus-tree, thumbnail, or handoff changes as implementation evidence, and made no gameplay edits or commit.

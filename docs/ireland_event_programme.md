@@ -6,6 +6,11 @@ It contains 495 top-level triggered country events and 998 event choices.
 
 ## Player cadence
 
+The five family postwar conclusion reports are direct milestone events rather
+than ordinary flavour-pool entries. Each uses distinct 210x176 report art and is
+archived after its settlement decision, so the monthly cadence cannot replay a
+conclusion or produce a second family popup.
+
 The ordinary programme runs from `on_monthly_IRE`. It presents at most one
 eligible report on a monthly pulse and then skips the next monthly pulse, giving
 a maximum of six ordinary programme reports per year. Focus conclusions,

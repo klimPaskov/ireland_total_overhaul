@@ -2,9 +2,29 @@
 
 Date: 2026-08-14
 
-Status: accepted and promoted; P0 implementation in progress
+Status: accepted and promoted; P0/P1/P2 gameplay surfaces and the coordinate-only
+family-lane reflow are implemented through commit `89ff719`. One nonblocking
+clerical linear detour is retained by the clean inspection.
 
 Owner after acceptance: parent implementation agent
+
+## Current disposition at the `89ff719` boundary
+
+| Tranche | Disposition | Evidence / remaining gate |
+| --- | --- | --- |
+| P0 | Gameplay, conclusion, report, AI, and family-lane presentation contracts implemented | `p0_family_postwar_conclusion_implementation_2026-08-14.md`, `ireland_country_package_p0_conclusion_architecture_handoff_2026-08-14.md`, `ireland_country_package_p0_ai_priority_handoff_2026-08-14.md`, `ireland_country_package_family_lane_reflow_completion_2026-08-14.md` |
+| P1 | Implemented | `ireland_p1_territorial_recovery_handoff_2026-08-14.md` and `decision_audit_fixes_handoff_2026-08-14.md` |
+| P2 | Implemented | `p0_atlantic_and_p2_payoff_implementation_2026-08-14.md` |
+
+The accepted addendum remains useful as design provenance, but it is no longer
+an instruction to re-run P0/P1/P2 mechanics. The earlier gateway-only layout
+trial is superseded by the accepted coordinate-only family-lane reflow. Only
+parent-owned completion evidence and live/scenario validation remain open.
+
+> Historical planning note: the decision analysis and evidence sections below
+> describe the pre-`89ff719` gap. They are retained for provenance and must not
+> be read as current claims that the family lanes, recoveries, or report
+> architecture are still missing.
 
 ## Decision
 
@@ -37,7 +57,7 @@ If accepted, keep this file under `docs/plans/ireland_country_package/improvemen
 
 ### Focus layout evidence
 
-The current `ireland_focus_tree` contains 218 focuses and 226 connectors. Read-only focus inspection found no connector crossings, no node intersections, and no long connectors. It also found:
+The current `ireland_focus_tree` contains 218 focuses and 222 connectors. Read-only focus inspection found no connector crossings, no node intersections, and no long connectors. It also found:
 
 - layout bounds from x = -42 to x = 21
 - a bounding-center offset of 21 half-columns
@@ -77,7 +97,9 @@ The postwar category already includes emergency review, rationing, veterans, mer
 | P1 | Recover the National Question | High | four missing territorial recovery surfaces, preservation of the existing Belfast Compact recovery, territorial status text |
 | P2 | Make Every Focus Pay for a Capability | Medium | remove arbitrary Atlantic rewards, add outcome accounting, finish art and AI validation |
 
-P0 is the bounded next tranche. P1 and P2 must remain queued until P0 is implemented, promoted, or rejected with a reason.
+This ranking is historical planning order. The current disposition is recorded
+above: P0 gameplay and family-lane presentation, P1 recovery, and P2 payoff work
+are implemented; parent-owned completion evidence remains separate.
 
 ## P0: Five Families Survive the Peace
 
@@ -562,4 +584,8 @@ If accepted and implemented, merge:
 - AI, tuning, asset, and test contracts into `docs/specs/ireland_country_package/ai_balance_assets_and_text.md`
 - final disposition and implementation evidence into `docs/specs/ireland_country_package/implementation_matrix.md`
 
-Until that promotion occurs, this addendum remains a plan and is not implementation evidence.
+The accepted P0/P1/P2 contracts and family-lane presentation have been promoted
+into the country-package specifications and implementation records. This
+addendum remains a plan provenance document, not the current completion report;
+the accepted layout evidence is
+`docs/plans/ireland_country_package/subagent_handoffs/ireland_country_package_family_lane_reflow_completion_2026-08-14.md`.

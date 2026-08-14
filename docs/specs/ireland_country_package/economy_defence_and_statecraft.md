@@ -140,3 +140,12 @@ statute or demobilise it; producer estates convert contracts into reconstruction
 credit; restoration defines the postwar crown. Each reserves one civilian
 factory and produces an institutional settlement rather than free equipment,
 factories, cores, or generic stability.
+
+Each family also owns one repeatable 120-day recovery project, exposed only by a
+blocked or failed family conclusion. Democratic recovery reconstitutes the
+coalition; Congress reconvenes the workers' congress; Blueshirt recovery
+demobilises the failed directorate; producer-estate recovery rebalances the
+estates; and restoration recovery reconvenes the Crown Council. Recovery clears
+only the named current blocker, preserves durable failure history, and starts a
+new 180-day review. A family report archives full or partial results only from
+its terminal report option.

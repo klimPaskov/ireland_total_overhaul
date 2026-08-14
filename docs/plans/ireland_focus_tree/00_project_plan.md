@@ -2,7 +2,15 @@
 
 Feature slug: `ireland_focus_tree`
 
-Status at this planning checkpoint: Parts 1 through 6 complete and Part 7 canonical candidate assembled. The mandatory improvement-loop worker has since completed with `fork_context=false`; implementation follow-up remains incomplete because source clearance, engine-reference checks, and required runtime scenarios are still open. See `docs/plans/ireland_focus_tree/source_of_truth_map.md` for the normalized status ledger and `docs/plans/ireland_focus_tree/audits/ireland_completion_followup_2026-07-18.md` for the current implementation evidence snapshot.
+Status at this planning checkpoint: historical planning program retained for
+provenance. The current country-package gameplay and accepted family-lane
+layout evidence runs through commit `89ff719`; accepted P0/P1/P2 contracts and
+the coordinate-only reflow are implemented. Use
+`docs/specs/ireland_country_package/index.md`,
+`docs/specs/ireland_country_package/implementation_matrix.md`, and
+`docs/plans/ireland_country_package/subagent_handoffs/documentation_cleanup_handoff_2026-08-14.md`
+for the current source of truth. This file does not claim whole-package
+completion; parent audit and live/scenario evidence remain separate gates.
 
 This file is a working program plan. It is not part of the final player-facing design and it contains no final localisation.
 

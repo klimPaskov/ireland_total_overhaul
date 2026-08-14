@@ -5,6 +5,15 @@ Date: 2026-08-13
 Status: complete after public-family depth, target-scoped diplomacy,
 per-holding postwar settlement, and promised MIO contracts passed re-audit.
 
+> Historical snapshot notice: this report predates the country-package
+> integration and is superseded for current counts and package status by
+> `docs/specs/ireland_country_package/index.md`,
+> `docs/specs/ireland_country_package/implementation_matrix.md`, and the
+> 2026-08-14 documentation-curator handoff. Its 215-focus inventory and
+> pre-P0/P1/P2 gaps are retained as evidence only. At the time of this report,
+> final family-band evidence was unavailable; that historical state is
+> superseded by the accepted `89ff719` family-lane handoff.
+
 ## Delivered systems
 
 ### Political focus architecture

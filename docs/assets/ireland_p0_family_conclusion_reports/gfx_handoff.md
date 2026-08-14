@@ -1,6 +1,10 @@
 # GFX handoff — Ireland P0 family conclusion report art
 
-The main agent should add the following five `spriteType` definitions to the appropriate existing event-picture `.gfx` file. If no suitable shared file exists, `interface/ireland_country_conclusion.gfx` is the suggested feature-owned target. Do not change the sprite IDs.
+Status: wired by the parent implementation. The five sprite definitions below
+are registered in `interface/ireland_event_art.gfx` and consumed by
+`events/ireland_country_conclusion_events.txt` events `.1`–`.5`. This handoff is
+retained as the asset registration and provenance record; no further `.gfx`
+insertion is pending for this package.
 
 ```text
 spriteTypes = {
@@ -27,4 +31,10 @@ spriteTypes = {
 }
 ```
 
-All five DDS files are final `210x176` report-event card textures with transparent corners and soft shadows. The democratic asset is the sourced archival frame documented in `manifest.md`; the other four are generated alternate-history documentary scenes. The event implementation should reference the exact sprite IDs above.
+All five DDS files are final `210x176` report-event card textures with
+transparent corners and soft shadows. The democratic asset is the sourced
+archival frame documented in `manifest.md`; the other four are generated
+alternate-history documentary scenes. The family conclusion event consumers
+reference the exact sprite IDs above. Layout status is separate; the final
+family-lane reflow is accepted at `89ff719` in the country-package completion
+handoff. Parent completion audit/live evidence remains separate.

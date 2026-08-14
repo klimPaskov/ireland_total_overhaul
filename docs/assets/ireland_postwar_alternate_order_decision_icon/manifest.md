@@ -10,6 +10,12 @@ Reference inspected: `.agents/skills/hoi4-feature-assets/assets/vanilla_referenc
 Processing: alpha-aware crop to the generated subject bounds, LANCZOS resize to exact 32x32 RGBA, then `.agents/skills/hoi4-feature-assets/tools/convert_to_dds.py` using the repository's 32-bit BGRA DDS workflow.  
 Scope note: no gameplay, decision, localisation, `.gfx`, GUI, or thumbnail file was edited.
 
+Runtime wiring status: the parent has registered the exact sprite
+`GFX_decision_ireland_action_record_an_alternate_postwar_order` in
+`interface/ireland_icons.gfx`; the asset package is wired. The separate
+family-lane focus layout is accepted at `89ff719`; parent completion
+audit/live evidence remains separate.
+
 ## Requirement-to-runtime coverage
 
 | Requirement | In-game purpose | Source package and manifest entry | Runtime registration | Live consumer | Status |

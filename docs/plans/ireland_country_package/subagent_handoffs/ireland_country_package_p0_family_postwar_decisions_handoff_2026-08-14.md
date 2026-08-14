@@ -1,5 +1,13 @@
 # P0 Family Postwar Decisions — Handoff
 
+Disposition: implementation handoff retained for the ten action contracts.
+Its initial terminal-event, evaluator, and AI-runtime concerns were resolved by
+the parent integration closure and `1984ff0`; the old issue list below is
+historical evidence, not an open work queue. The remaining package-level gate
+is parent-owned completion audit/live evidence. The separate family-lane layout
+is accepted at `89ff719` and recorded in
+`ireland_country_package_family_lane_reflow_completion_2026-08-14.md`.
+
 Date: 2026-08-14
 
 Owner: `hoi4_decision_mission_auditor`

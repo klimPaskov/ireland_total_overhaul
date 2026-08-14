@@ -6,9 +6,9 @@ Source mode: generated symbolic art via Codex built-in image generation (`image_
 
 | ID | Type | Target | Source PNG | Processed PNG | Final DDS | Sprite | Size | Source mode | Status |
 |---|---|---|---|---|---|---|---:|---|---|
-| `ireland_unfinished_national_question` | focus | `focus:ireland_unfinished_national_question` | `assets/ireland_focus_tree/icons/expansion_focus_icons/source_png/ireland_unfinished_national_question.png` | `assets/ireland_focus_tree/icons/expansion_focus_icons/processed_png/ireland_unfinished_national_question.png` | `gfx/interface/goals/ireland_unfinished_national_question.dds` | `GFX_focus_ireland_unfinished_national_question` (proposed) | 94x86 RGBA | generated | complete |
-| `ireland_border_and_atlantic_dossier` | focus | `focus:ireland_border_and_atlantic_dossier` | `assets/ireland_focus_tree/icons/expansion_focus_icons/source_png/ireland_border_and_atlantic_dossier.png` | `assets/ireland_focus_tree/icons/expansion_focus_icons/processed_png/ireland_border_and_atlantic_dossier.png` | `gfx/interface/goals/ireland_border_and_atlantic_dossier.dds` | `GFX_focus_ireland_border_and_atlantic_dossier` (proposed) | 94x86 RGBA | generated | complete |
-| `ireland_test_the_state_instruments` | focus | `focus:ireland_test_the_state_instruments` | `assets/ireland_focus_tree/icons/expansion_focus_icons/source_png/ireland_test_the_state_instruments.png` | `assets/ireland_focus_tree/icons/expansion_focus_icons/processed_png/ireland_test_the_state_instruments.png` | `gfx/interface/goals/ireland_test_the_state_instruments.dds` | `GFX_focus_ireland_test_the_state_instruments` (proposed) | 94x86 RGBA | generated | complete |
+| `ireland_unfinished_national_question` | focus | `focus:ireland_unfinished_national_question` | `assets/ireland_focus_tree/icons/expansion_focus_icons/source_png/ireland_unfinished_national_question.png` | `assets/ireland_focus_tree/icons/expansion_focus_icons/processed_png/ireland_unfinished_national_question.png` | `gfx/interface/goals/ireland_unfinished_national_question.dds` | `GFX_focus_ireland_unfinished_national_question` | 94x86 RGBA | generated | complete / wired |
+| `ireland_border_and_atlantic_dossier` | focus | `focus:ireland_border_and_atlantic_dossier` | `assets/ireland_focus_tree/icons/expansion_focus_icons/source_png/ireland_border_and_atlantic_dossier.png` | `assets/ireland_focus_tree/icons/expansion_focus_icons/processed_png/ireland_border_and_atlantic_dossier.png` | `gfx/interface/goals/ireland_border_and_atlantic_dossier.dds` | `GFX_focus_ireland_border_and_atlantic_dossier` | 94x86 RGBA | generated | complete / wired |
+| `ireland_test_the_state_instruments` | focus | `focus:ireland_test_the_state_instruments` | `assets/ireland_focus_tree/icons/expansion_focus_icons/source_png/ireland_test_the_state_instruments.png` | `assets/ireland_focus_tree/icons/expansion_focus_icons/processed_png/ireland_test_the_state_instruments.png` | `gfx/interface/goals/ireland_test_the_state_instruments.dds` | `GFX_focus_ireland_test_the_state_instruments` | 94x86 RGBA | generated | complete / wired |
 
 ## Generation and processing notes
 
@@ -22,5 +22,13 @@ Source mode: generated symbolic art via Codex built-in image generation (`image_
 - Generated source outputs retained for provenance in `C:\Users\klimp\.codex\generated_images\019fff94-e7a0-7442-ab22-196b5bbf3238`:
   - `exec-23f3014c-f5f4-4464-9215-d0160847eccd.png` → `ireland_unfinished_national_question`
   - `exec-d507ac86-4768-4650-9801-59f95501b8a6.png` → `ireland_border_and_atlantic_dossier`
-  - `exec-7b1a8134-d39f-4286-9803-7081b6259bd4.png` → `ireland_test_the_state_instruments`
+- `exec-7b1a8134-d39f-4286-9803-7081b6259bd4.png` → `ireland_test_the_state_instruments`
 
+## Runtime wiring status
+
+The three sprite names are no longer proposed. They are registered in
+`interface/ireland_icons.gfx`, with matching focus shine registrations in
+`interface/ireland_focus_expansion_shine.gfx`. The runtime focus source,
+localisation, and AI references resolve against these stable names. The final
+family-lane layout is a separate accepted presentation surface at `89ff719`;
+parent completion audit/live evidence remains separate.

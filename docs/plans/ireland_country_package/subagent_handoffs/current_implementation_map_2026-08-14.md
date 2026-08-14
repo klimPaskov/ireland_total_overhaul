@@ -1,5 +1,12 @@
 # Repo Explorer Handoff
 
+Disposition: historical pre-integration map. The map is retained as evidence
+of the baseline risks it found, but its 215-focus-era findings about unregistered
+National Question icons, missing Wales/Cornwall events, P0 terminal reports,
+and recovery mappings are superseded by the dated implementation and lifecycle
+handoffs through `1984ff0`. Use the country-package source-of-truth summary for
+current status.
+
 ## Scope read
 
 - Parent task: map the current Ireland country-package implementation before the campaign-depth overhaul. The reported player problem is that expansionism is hard to understand, many rewards feel insignificant, and the package lacks a convincing 1936–late-1940s/early-1950s campaign. The requested target includes historical, alternate, radical, and hidden routes; active economy, military, diplomacy, AI, failure/recovery, and identity systems; progressive disclosure; concrete rewards; and no shallow Political Power shop or instant external cores.

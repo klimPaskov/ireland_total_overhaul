@@ -2,6 +2,10 @@
 
 Date: 2026-08-14
 
+Status: implemented for the postwar conclusion, report, recovery, AI, and
+family-lane presentation surfaces. The coordinate-only reflow is accepted in
+`89ff719`; the parent-owned completion audit remains separate.
+
 Implemented the accepted family-conclusion architecture:
 
 - five 180-day family institutional settlement projects;
@@ -19,6 +23,7 @@ The final conclusion review is repeatable after recovery. No whole-world pulse
 or flavour dispatcher owns these reports. No project grants free factories,
 equipment, cores, stability, or territorial transfers.
 
-The remaining P0 surface is the complete renderer-backed five-family focus-band
-layout pass. P1 territorial recovery and final AI prioritisation remain queued
-behind that layout result.
+P1 territorial recovery, final AI prioritisation, and the five-family
+focus-lane reflow are implemented in their dated handoffs; they are not queued
+behind one another. The only remaining package gate is the parent-owned
+completion audit and live/scenario evidence.

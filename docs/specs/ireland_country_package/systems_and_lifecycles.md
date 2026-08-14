@@ -42,6 +42,37 @@ Parliament decisions or transfers human interaction to the GUI without duplicate
 - Mission capacity is centralized. Starting, completing, cancelling, or timing
   out a mission recomputes capacity.
 
+### Current timed-project lifecycle
+
+The current implementation boundary is commit `89ff719`. The five 180-day
+family settlements, five 120-day family recoveries, alternate postwar-order
+record, Congress rebuild, Provincial Assent reconvening, and fascist withdrawal
+use the same terminal model: selection reserves the project inputs and sets an
+`_in_progress` marker; natural `days_remove` expiry performs the durable record,
+mission/event handoff, and review restart; route cleanup, archive, invalid scope,
+or tag loss cancel the project and clear only launch state. No durable result is
+recorded at selection. The democratic plebiscite relaunch remains a distinct
+35-day political relaunch with its existing material mission gate and 180-day
+cooldown.
+
+The coordinate-only family-lane reflow is also accepted at this boundary. It
+keeps the 218-focus/222-connector tree at three opening trunks and records zero
+layout defects apart from the retained nonblocking clerical linear detour.
+
+The five family settlement/recovery pairs are:
+
+| Family | 180-day settlement | 120-day recovery |
+| --- | --- | --- |
+| democratic | `ireland_action_ratify_the_postwar_republic` | `ireland_action_reconstitute_the_postwar_coalition` |
+| Congress | `ireland_action_civilianise_the_workers_congress` | `ireland_action_reconvene_the_workers_congress` |
+| Blueshirt | `ireland_action_place_the_directorate_under_statute` | `ireland_action_demobilise_the_failed_directorate` |
+| producer-estate | `ireland_action_convert_contracts_to_reconstruction_credit` | `ireland_action_rebalance_the_producer_estates` |
+| restoration | `ireland_action_define_the_postwar_crown` | `ireland_action_reconvene_the_crown_council` |
+
+Territorial stale-target branches return the documented 50 Political Power
+administrative charge while leaving consumed enforcement reserves spent; this
+is an explicit contract, not a material refund or a repeatable reward loop.
+
 ## Event families and pacing
 
 Event descriptions explain the situation, the stake, and the system affected.
@@ -56,6 +87,9 @@ Cadence:
   dispatcher;
 - foreign reactions use one paced broker with a 120-day replay cooldown and at
   most one actor response per pulse, plus an optional digest;
+- family conclusion reports are dispatched directly by conclusion evaluation,
+  never enter the monthly flavour pool, and use one distinct 210x176 report
+  image per family;
 - every reusable pool tracks seen state and resets only for a named new campaign.
 
 ## Ideas, laws, offices, advisors, and companies

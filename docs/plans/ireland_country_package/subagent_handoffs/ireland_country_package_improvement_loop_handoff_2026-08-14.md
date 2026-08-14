@@ -6,6 +6,15 @@ Subagent: `hoi4_improvement_loop_planner`
 
 Mode: plan only
 
+Disposition: historical design handoff. Its P0/P1/P2 recommendations were
+implemented and promoted, and the final renderer-backed family-lane reflow was
+accepted at `89ff719`. The current geometry and its one retained nonblocking
+clerical detour are recorded in
+`ireland_country_package_family_lane_reflow_completion_2026-08-14.md`.
+Pending wording and pre-reflow measurements below are retained as historical
+provenance; do not re-run the completed mechanics or treat this file as the
+current layout contract.
+
 ## Design problem
 
 The latest implementation tranches closed the largest mechanical gaps, but the country package still has three player-facing discontinuities. The five family commitments are scattered across four rows, Atlantic settlement forces all three policy focuses, and the shared conclusion helper archives failed and blocked outcomes before recovery or a family-specific postwar settlement.
@@ -107,23 +116,39 @@ Supporting:
 - restoration Provincial Assent gate
 - per-holding rights, protectorate, reconstruction, and integration logic
 
-## Open questions for parent review
+## Historical open questions and disposition
 
-1. The layout contract specifies a centered two-row band and diagnostic limits rather than hardcoding collision-prone x positions. The implementation agent should accept the renderer's collision-free coordinates only if every numerical acceptance condition passes.
-2. United Nations admission needs an explicit alternate-order completion flag when the organisation is unavailable. The current postwar action set should be inspected for an existing durable flag before adding one.
-3. Full and partial family reports can share one report image per family. Recovery options should use the same family report image, not a generic fallback.
+1. The layout contract's renderer-backed acceptance conditions were satisfied by
+   the five ordered lanes in `89ff719`; the one retained nonblocking clerical
+   detour is explained in the current completion handoff.
+2. The alternate-order completion flag is implemented by the postwar decision
+   surface; see the current lifecycle specification and alternate-order
+   handoff rather than adding a second flag.
+3. The five family report images are registered and consumed by the conclusion
+   reports; recovery options retain the family-specific report context.
 
 ## Prior addendum status
 
-No prior country-package improvement addendum remains unresolved. This is the sole open addendum for the current gap.
+No prior country-package improvement addendum remains unresolved. The addendum
+and its accepted contracts were implemented and promoted; this handoff retains
+the original research/provenance record.
 
 ## Promotion status
 
-Keep the addendum in `docs/plans` until accepted and implemented. After implementation and audits, promote its accepted contracts into the five `docs/specs/ireland_country_package/` files listed in the addendum and record the disposition in `implementation_matrix.md`.
+The addendum remains in `docs/plans` as working provenance. Its accepted
+contracts are promoted into the five
+`docs/specs/ireland_country_package/` files listed in the addendum, with the
+disposition recorded in `implementation_matrix.md`.
 
 ## Completion position
 
-This is not a closure handoff. P0 remains a real player-visible gap. After P0, P1, and P2 are resolved, the parent should rerun focus, decision, country-package, localisation, and feature-completion audits. A later improvement-loop pass should produce closure only if those audits find no fallback, simplification, missing AI, missing assets, unresolved plan, or shallow conclusion.
+The final family-lane reflow now has an accepted clean renderer result at
+`89ff719`, with one retained nonblocking clerical two-column detour documented
+in the completion handoff. P0 gameplay/conclusion/AI surfaces, P1 territorial
+recovery, and P2 capability payoffs are implemented. The parent should still
+run the focus/layout and country-package completion audits and live scenarios;
+no whole-package completion claim follows from this historical design handoff
+alone.
 
 ## Simplifications and omissions
 

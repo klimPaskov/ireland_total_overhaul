@@ -2,15 +2,20 @@
 
 Feature slug: `ireland_focus_tree`
 
-Reconciled: 2026-08-13
+Reconciled: 2026-08-14
 Scope: current focus-tree political/industrial/territorial expansion, reward
 contracts, AI references, and the Parliament scripted-GUI presentation contract.
 
-The authoritative implementation record for this pass is
-`docs/ireland_political_industrial_and_territorial_expansion.md`, with the
-earlier completion reports retaining historical inventories.
-Older 211-focus, 216-focus, and 226-focus snapshots below remain historical provenance and
-must not be used as current completion evidence.
+The country-package specification is the current design authority:
+`docs/specs/ireland_country_package/index.md` and
+`docs/specs/ireland_country_package/implementation_matrix.md`. The current
+implementation reconciliation and accepted family-lane layout are recorded in
+`docs/plans/ireland_country_package/subagent_handoffs/documentation_cleanup_handoff_2026-08-14.md`
+and
+`docs/plans/ireland_country_package/subagent_handoffs/ireland_country_package_family_lane_reflow_completion_2026-08-14.md`.
+The evidence boundary is commit `89ff719` and the parent country-package work.
+Earlier focus-tree completion reports retain historical inventories and are not
+current completion evidence.
 
 The portrait-source boundary is flat and explicit: every complete portrait
 `source_path` in the current manifest points to an unmodified original directly
@@ -18,14 +23,16 @@ under `docs/portraits/`. Temporary `assets/` paths are retained as staging
 evidence only; processed 156x210 crops are derivatives, and runtime DDS files
 remain under `gfx/`.
 
-## Current audit authority snapshot: 2026-08-13
+## Current audit authority snapshot: 2026-08-14
 
-The live national tree has 215 focuses, three opening roots/trunks, and 222 visual connectors.
-The final MCP inspection revision `d8b63828f71934c3` reports zero crossings, zero node intersections, zero
-long connectors, and zero same-row spacing defects. Its authored horizontal
-span is 64 columns, from x -42 through x 21. All focus titles,
-descriptions, icons, prerequisite references,
-and AI-plan focus references resolve.
+The live national tree has 218 focuses, three opening roots/trunks, and 226
+visual connectors. The accepted family-lane inspection reports bounds x
+`-26..21` and y `0..22`, zero crossings, node intersections, long connectors,
+duplicate coordinates, and same-row spacing defects. One pre-existing
+clerical-failure linear detour remains documented as nonblocking because
+straightening it would cross the adjacent Congress corridor. All focus titles,
+descriptions, icons, prerequisite references, and AI-plan focus references
+resolve within the current source boundary.
 
 The opening camera anchors on `ireland_state_still_defined`. Three named
 shortcuts identify the only opening trunks: government and politics, national
@@ -36,6 +43,14 @@ organisations, a dedicated territorial
 lane, and exceptional routes reveal only after their prerequisites. The source
 therefore has no more than three opening trunks. The continuous-focus palette is explicitly
 placed at `x = 50, y = 3000`, below the final authored focus row.
+
+The five public families now have five 180-day settlement projects and five
+120-day recovery projects. The P1 territorial recovery surfaces are democratic
+plebiscite relaunch, Congress workers' border campaign, fascist border
+withdrawal, restoration Provincial Assent reconvening, and the existing
+producer-estate Belfast compact. Seven selectable industrial concerns and two
+military industrial organisations expose nine 35-day contracts that reserve
+one or two civilian factories and produce distinct named outputs.
 
 Universal focus-reward profiles have been retired. Every surviving focus owns
 a focus-specific tooltip naming its route, project, ledger, action, mission,
@@ -63,12 +78,28 @@ Each action uses its own four-frame emblem: slate locked, amber current but
 unaffordable, gold current and available, and green secured. The same canonical
 current/available triggers drive both the seal frame and the button state; red
 is reserved for genuine failure rather than ordinary incomplete business.
+The enabled button treatment is the registered green/brass surface; unavailable
+buttons retain the engine-darkened treatment. This is the bounded Parliament
+button repair, not a separate UI design.
+
+Ordinary flavour reports use the monthly dispatcher with at most one report per
+pulse and a skipped following pulse. Foreign reaction admission uses its own
+120-day cooldown. The five family conclusion reports bypass the ordinary pool,
+use distinct 210x176 report art, and are archived after their player-facing
+decision. The exact decision lifecycle is terminal on natural expiry and
+cleanup-only on cancellation: selection reserves inputs and marks work in
+progress, while the durable settlement/recovery result is created at natural
+expiry or authored cancellation cleanup, never at selection.
 
 All maritime ledger deltas use the registered `ireland_maritime` script
 constant category. The invalid `ireland.maritime` category form is absent.
 
 No fallback tree, placeholder reward, alternative seat model, or substitute UI
 surface was introduced.
+
+This current snapshot does not claim whole-package completion: the accepted
+family-lane reflow is complete, while the parent-owned completion audit and
+live/scenario evidence remain open.
 
 The current focus-inspection artifact is
 `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/b08b004fd287b5d1761161ebe673917f0f9bfb0a5e9685c200577e3fb46bdd9a/40d6dbe67ef52ef9e7b5923279b804889b737f840f2dd776af2ed4e017e7badb/focus-inspect.d8b63828f71934c3.json`.

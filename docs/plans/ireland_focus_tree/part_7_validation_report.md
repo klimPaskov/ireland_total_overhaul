@@ -4,7 +4,13 @@ Feature slug: `ireland_focus_tree`
 
 Validation status: historical planning report; its mandatory worker gate was later satisfied, while gameplay implementation and engine validation remain incomplete
 
-Current-status note: this report describes the pre-implementation planning package and is retained as historical evidence. The accepted worker execution is recorded under `docs/plans/ireland_focus_tree/improvement_loop/`, and current implementation blockers are tracked in `docs/plans/ireland_focus_tree/audits/ireland_completion_followup_2026-07-18.md`.
+Current-status note: this report describes the pre-implementation planning
+package and is retained as historical evidence. The current country-package
+authority is `docs/specs/ireland_country_package/index.md` and
+`docs/specs/ireland_country_package/implementation_matrix.md`; the accepted
+worker execution and current family-lane layout handoff are recorded under
+`docs/plans/ireland_country_package/`. The historical pending-layout state in
+this report is superseded by `89ff719`.
 
 Count-scope note (2026-07-22): the `active completion blockers | 1` result below is the historical planning-gate count for this report. It is not the current implementation-blocker count. Use `docs/plans/ireland_focus_tree/source_of_truth_map.md` for the reconciled status ledger and `docs/plans/ireland_focus_tree/audits/ireland_completion_followup_2026-07-18.md` for the latest implementation evidence.
 

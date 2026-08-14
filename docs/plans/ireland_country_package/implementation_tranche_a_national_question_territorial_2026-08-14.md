@@ -1,6 +1,8 @@
 # National Question and territorial campaign implementation tranche
 
-Status: implemented and validated on 2026-08-14.
+Status: implemented and validated on 2026-08-14; the coordinate-only family-lane
+reflow is accepted in `89ff719`. One nonblocking clerical linear detour remains
+documented by the final focus inspection.
 
 ## Player-facing campaign
 
@@ -34,11 +36,15 @@ The territorial lane was compacted into a single readable campaign fan. It prese
 
 ## Validation evidence
 
-- Focus inspection revision `832e9024b0a74bdf`: 218 focuses, 226 connectors, zero crossings, zero connector-through-node cases, zero long connectors, and zero same-row spacing defects. The three new focus sprites, titles, and descriptions resolve. The only Ireland advisory is the pre-existing concealed clerical bridge detour.
+- Final focus inspection revision `ea067e4f28da98eb`: 218 focuses, 222 connectors, bounds x `-26..21` and y `0..22`, zero crossings, zero connector-through-node cases, zero long connectors, zero duplicate coordinates, and zero same-row spacing defects. The three new focus sprites, titles, and descriptions resolve. The only Ireland advisory is the pre-existing concealed clerical bridge detour; its straightening would cross the adjacent Congress corridor.
 - The territorial namespace defines 24 unique top-level events. Every numeric decision reference resolves to a defined event.
 - All 112 title, description, option, and custom-effect localisation references used by the territorial event file resolve.
 - All seven territorial report-picture references resolve to registered sprites and existing DDS files.
 
 ## Remaining country-package tranches
 
-This tranche does not close the larger country-package specification. The next implementation work is the industrial contract input pass, route-specific failure/recovery and late-game conclusions, public-family navigation/reward depth, and AI decision utility. The improvement loop is intentionally deferred until those meaningful implementation tranches are present.
+This tranche is implemented and its National Question/territorial evidence is
+current. Industrial contract inputs, family conclusion/recovery, P1 recovery,
+P2 payoff, AI priority, and the accepted family-lane reflow are recorded in
+their dated follow-up handoffs. The parent-owned completion audit remains a
+separate release gate.

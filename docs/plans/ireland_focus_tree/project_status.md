@@ -2,18 +2,19 @@
 
 Feature slug: `ireland_focus_tree`
 
-Feature: Ireland gameplay overhaul and national focus tree (political, company, and territorial expansion complete)
+Feature: Ireland gameplay overhaul and national focus tree (country-package gameplay and accepted family-lane layout implemented; parent completion audit pending)
 
-## Current focus and Parliament authority: 2026-08-13
+## Current focus and Parliament authority: 2026-08-14
 
-The current national tree contains 215 focuses, three opening roots, and 222 connectors.
-Its three named shortcuts expose government and politics, national development,
-and defence and security as the only opening trunks. Focus inspection reports no
-Ireland-local crossing, node-intersection, long-connector, or spacing diagnostic
-at focus-inspection revision `d8b63828f71934c3`.
-One two-column connector inside the concealed clerical-failure route remains a
-nonblocking visual detour because aligning it would collide with the visible
-constitutional lane.
+The current national tree contains 218 focuses, three opening roots, and 226
+connectors. Its three named shortcuts expose government and politics, national
+development, and defence and security as the only opening trunks. The accepted
+coordinate-only family-lane reflow in `89ff719` places the five substantive
+family lanes within x `-26..21` and y `0..22`. Final focus inspection reports
+zero crossings, node intersections, long connectors, duplicate coordinates,
+and same-row spacing defects; the one pre-existing clerical-failure linear
+detour remains recorded as a nonblocking advisory because straightening it
+would cross the adjacent Congress corridor.
 
 Culture, diplomacy and neutrality, Northern policy, and the Marine Service
 reveal only after their prerequisites. Three late constitutional alternatives
@@ -35,8 +36,24 @@ finding. All maritime focus deltas use the registered
 `ireland_maritime` script constant category, and the invalid dotted category
 form is absent.
 
-The authoritative implementation record is
-`docs/ireland_political_industrial_and_territorial_expansion.md`.
+The authoritative implementation record is the country-package specification
+and reconciliation ledger:
+`docs/specs/ireland_country_package/index.md`,
+`docs/specs/ireland_country_package/implementation_matrix.md`, and
+`docs/plans/ireland_country_package/subagent_handoffs/documentation_cleanup_handoff_2026-08-14.md`.
+The current implementation boundary is commit `89ff719` and its parent
+country-package work. It records five family settlements and five 120-day
+recoveries, four P1 territorial recovery paths plus the existing Belfast
+compact, seven industrial concerns and two MIOs with nine material contracts,
+five direct conclusion reports with report art, the enabled Parliament button
+repair, and the paced monthly/foreign event cadence. The exact timed-project
+lifecycle is terminal on natural expiry and cleanup-only on cancellation; no
+selection result is implied.
+
+The final family-lane layout is implemented and recorded in
+`docs/plans/ireland_country_package/subagent_handoffs/ireland_country_package_family_lane_reflow_completion_2026-08-14.md`.
+This document does not claim whole-package completion; the parent-owned final
+audit and live/scenario evidence remain separate gates.
 Everything below this line is a superseded historical snapshot and is retained
 only as provenance. Its focus, connector, GUI, audit, and asset counts do not
 describe the current implementation.

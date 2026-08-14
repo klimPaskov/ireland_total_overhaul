@@ -1,6 +1,6 @@
 # P0 family settlement decision-icon asset handoff
 
-Status: complete asset package, ready for parent wiring.  
+Status: complete asset package; runtime wiring closed by the parent.
 Produced: 2026-08-14  
 Scope: ten static decision icons requested for the accepted P0 “Five Families Survive the Peace” tranche.
 
@@ -8,7 +8,7 @@ Scope: ten static decision icons requested for the accepted P0 “Five Families 
 
 - Source PNGs: `docs/assets/ireland_p0_family_settlement_decision_icons/source_png/` (ten generated RGBA sources).
 - Exact 32x32 processed RGBA PNGs: `docs/assets/ireland_p0_family_settlement_decision_icons/processed_png/`.
-- Runtime DDS: `gfx/interface/decisions/ireland/actions/` using the proposed `decision_ireland_<name>.dds` paths recorded in the package manifest.
+- Runtime DDS: `gfx/interface/decisions/ireland/actions/` using the final `decision_ireland_<name>.dds` paths recorded in the package manifest.
 - Review contact sheets: `docs/assets/ireland_p0_family_settlement_decision_icons/contact_sheet.png` plus the source and processed sheets under `contact_sheets/`.
 - Prompt log: `docs/assets/ireland_p0_family_settlement_decision_icons/prompts.md`.
 - Manifest: `docs/assets/ireland_p0_family_settlement_decision_icons/manifest.md`.
@@ -32,9 +32,15 @@ Recovery actions:
 - `ireland_action_rebalance_the_producer_estates`
 - `ireland_action_reconvene_the_crown_council`
 
-## Parent-agent action
+## Runtime closure
 
-The parent agent should add the ten **PROPOSED** sprite definitions to the existing `interface/ireland_icons.gfx` surface, then assign the corresponding sprite names to the exact decision IDs in `common/decisions/ireland_decisions.txt`. The parent owns gameplay wiring, localisation, and any final naming change. No gameplay, localisation, `.gfx`, or thumbnail files were edited here.
+The parent registered all ten sprites in `interface/ireland_icons.gfx` using
+`GFX_decision_<exact decision ID>` names, including the `ireland_action_`
+segment, and the decision implementation consumes those stable IDs. The
+shorter proposed names from this historical handoff are superseded by the
+registered names documented in
+`docs/assets/ireland_p0_family_settlement_decision_icons/manifest.md`.
+No gameplay, localisation, `.gfx`, or thumbnail files were edited here.
 
 ## Evidence and review
 

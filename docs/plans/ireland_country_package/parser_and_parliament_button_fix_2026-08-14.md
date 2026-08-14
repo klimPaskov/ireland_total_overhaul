@@ -1,5 +1,9 @@
 # Parser and Parliament Button Fix — 2026-08-14
 
+Status: implemented in commit `070fbb5`; the lifecycle/parser follow-up is
+covered by commit `1984ff0`. This document is a bounded repair record, not a
+feature-completion claim.
+
 ## Scope
 
 This tranche fixes the reported Ireland-owned trigger/parser errors and restores a visually distinct enabled state for the National Settlement Parliament controls.

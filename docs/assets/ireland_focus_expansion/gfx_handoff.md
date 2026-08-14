@@ -1,10 +1,16 @@
 # Ireland expansion focus icon GFX handoff
 
+Status: wired by the parent implementation. All 42 sprite names in this
+handoff are registered in `interface/ireland_icons.gfx`; the snippets below
+are retained as the asset crosswalk and provenance record. The separate final
+family-lane focus layout is accepted at `89ff719` in
+`docs/plans/ireland_country_package/subagent_handoffs/ireland_country_package_family_lane_reflow_completion_2026-08-14.md`.
+
 Scope: 38 focus icons plus one territorial decision category and three territorial route decision icons. This worker produced source/processed PNG, runtime DDS, manifest, and contact sheet only; no `.gfx`, gameplay, or localisation files were edited.
 
 ## Focus sprites
 
-Copy each row into the existing focus sprite surface (suggested target: `interface/ireland_icons.gfx`):
+Registered target: existing focus sprite surface `interface/ireland_icons.gfx`:
 
 ```text
 spriteType = { name = GFX_focus_ireland_aer_lingus_air_link texturefile = "gfx/interface/goals/ireland_aer_lingus_air_link.dds" }
@@ -51,7 +57,7 @@ All focus sprites are 94x86. Apply the shared focus shine layer `gfx/interface/g
 
 ## Territorial decisions and category
 
-Suggested decision surface: `interface/ireland_decisions.gfx` or the repository?s existing decision sprite file.
+Registered decision surface: `interface/ireland_icons.gfx`.
 
 ```text
 spriteType = { name = GFX_decision_category_ireland_territorial_policy texturefile = "gfx/interface/decisions/categories/ireland/ireland_territorial_policy.dds" }
@@ -69,4 +75,6 @@ spriteType = { name = GFX_decision_ireland_claim_cornwall texturefile = "gfx/int
 - Contact sheet: `docs/assets/ireland_focus_expansion/contact_sheet.png`
 - Manifest: `docs/assets/ireland_focus_expansion/manifest.md`
 - Prompt log: `docs/assets/ireland_focus_expansion/prompts.md`
-- All 42 records are marked `complete`; no blocked or needs-review icons remain.
+- All 42 records are marked `complete` and wired; no blocked or needs-review
+  icons remain. The current parent registration was matched against every
+  sprite name in this handoff.

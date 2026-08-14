@@ -1,6 +1,6 @@
 # Wales and Cornwall report-event art handoff
 
-Status: complete / handed off  
+Status: complete / wired
 Feature slug: `ireland_territorial_diplomacy`  
 Asset type: generated HOI4 report-event imagery  
 Source mode: built-in `$imagegen` generation  
@@ -24,6 +24,15 @@ Wales is a wet slate-and-coal harbour memorandum exchange. Cornwall is an expose
 - `docs/assets/ireland_territorial_diplomacy/contact_sheet.png`
 - `docs/assets/ireland_territorial_diplomacy/contact_sheets/territorial_diplomacy_report_event_contact_sheet.png`
 
+## Runtime closure
+
+The parent registered both sprites in `interface/ireland_event_art.gfx` and
+wired events `.17`–`.20` to the Wales sprite and `.21`–`.24` to the Cornwall
+sprite. The seven-sprite territorial package is therefore complete for its
+picture-bearing events; Provincial Assent record events `.25`–`.27` remain
+event-led and have no picture field. The separate family-band focus layout is
+not covered by this asset handoff and remains pending.
+
 The contact sheet contains all seven territorial-diplomacy report images. The prompt record documents the generated scenes and constraints.
 
 ## Processing and validation
@@ -36,6 +45,11 @@ The contact sheet contains all seven territorial-diplomacy report images. The pr
 
 ## Main-agent wiring
 
-Add the two sprite definitions to the established event-art `.gfx` surface, proposed in `docs/assets/ireland_territorial_diplomacy/gfx_handoff.md`, and route `.17`–`.20` to the Wales sprite and `.21`–`.24` to the Cornwall sprite. This subagent did not edit `.gfx`, gameplay, events, localisation, GUI, focus, decisions, or `thumbnail.png`.
-
-No known asset blockers or simplifications remain. No commit was created; the parent agent owns final wiring and commit.
+The parent-owned wiring is closed as described above. This subagent did not edit
+`.gfx`, gameplay, events, localisation, GUI, focus, decisions, or
+`thumbnail.png`; no known asset blocker or simplification remains in this
+package. The separate family-lane focus layout is accepted at `89ff719` and
+recorded in
+`docs/plans/ireland_country_package/subagent_handoffs/ireland_country_package_family_lane_reflow_completion_2026-08-14.md`;
+parent completion audit/live evidence remains separate. No commit was created;
+the parent agent owns final documentation review and commit.

@@ -2,6 +2,12 @@
 
 Source mode: generated symbolic art via Codex built-in image generation (`image_gen`), cropped from distinct generated panel artworks. Vanilla visual reference inspected: `.agents/skills/hoi4-feature-assets/assets/vanilla_reference/icons/national_focus/contact_sheet.png`; decision/category references inspected in corresponding canonical contact sheets. All icons are complete static packages with source PNG, processed PNG, DDS, and contact-sheet evidence.
 
+Runtime wiring status: all 42 sprite names in this manifest are registered in
+`interface/ireland_icons.gfx` and matched to their listed focus, category, or
+decision consumers. The separate final family-lane focus layout is accepted at
+`89ff719` in the country-package completion handoff; this manifest remains an
+asset crosswalk and does not replace the parent completion audit.
+
 | ID | Type | Target | Source PNG | Processed PNG | Final DDS | Sprite | Size | Status |
 |---|---|---|---|---|---|---|---:|---|
 | `ireland_aer_lingus_air_link` | focus | `focus:ireland_aer_lingus_air_link` | `assets/ireland_focus_tree/icons/expansion_focus_icons/source_png/ireland_aer_lingus_air_link.png` | `assets/ireland_focus_tree/icons/expansion_focus_icons/processed_png/ireland_aer_lingus_air_link.png` | `gfx/interface/goals/ireland_aer_lingus_air_link.dds` | `GFX_focus_ireland_aer_lingus_air_link` | 94x86 | complete |
