@@ -130,3 +130,13 @@ The emergency ends through decisions and focuses:
 The conclusion opens continuing investment, settlement, and foreign-policy
 decisions so the campaign does not end when the capstone completes.
 
+## Family postwar settlements
+
+After 1946, completed emergency rollback, demobilisation, reconstruction,
+constitutional status, and international-order work unlocks one 180-day family
+settlement project. Democratic government ratifies the postwar republic;
+Congress civilianises wartime command; Blueshirts place the directorate under
+statute or demobilise it; producer estates convert contracts into reconstruction
+credit; restoration defines the postwar crown. Each reserves one civilian
+factory and produces an institutional settlement rather than free equipment,
+factories, cores, or generic stability.

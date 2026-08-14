@@ -107,3 +107,11 @@ Achievements verify campaign mastery, not focus clicks. Candidate families:
 Every achievement has route, difficulty, failure/disqualifier, and exact trigger
 ownership before implementation.
 
+## Postwar family AI and presentation
+
+Once its capstone and shared postwar foundation are complete, AI treats its own
+family settlement as critical. Blocked AI prioritises recovery before optional
+postwar work and waits for a free civilian factory. Historical AI remains
+non-coercive. Five family reports use distinct 210x176 art, and the ten settlement
+and recovery actions use distinct decision icons; no generic or unrelated art is
+an acceptable substitute.

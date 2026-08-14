@@ -138,6 +138,16 @@ No external core is automatic. Northern core review remains a final high-stage
 settlement requiring control, compliance, legitimacy, and completed integration.
 The Atlantic conclusion is blocked until all relevant holdings are resolved.
 
+The conclusion requires at least one of the rights-charter, protectorate-statute,
+or integration-review policies, not all three. One policy is sufficient when it
+resolves every relevant holding; mixed holdings may require several policies.
+The per-holding scripted resolution trigger remains authoritative.
+
+Each public method has a recoverable failure path: supervised plebiscite
+relaunch, workers' campaign reconstruction, Belfast Compact reopening, coercive
+withdrawal before a war goal, or a reconvened provincial assent convention.
+Recovery never refunds reserves or erases the first failure record.
+
 ## Concrete focus payoffs
 
 Territorial focuses visibly grant one of:
@@ -151,4 +161,3 @@ Territorial focuses visibly grant one of:
 
 Flags that only make later source code work remain undocumented implementation
 state and do not replace these payoffs.
-

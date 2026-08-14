@@ -98,3 +98,13 @@
 - cumulative balance totals and territorial exploit review;
 - canonical docs agree with final source.
 
+## Accepted post-tranche work
+
+The 2026-08-14 improvement loop is promoted into the source specifications.
+P0 is active: center the five-family commitment band, correct the Atlantic policy
+prerequisite, separate evaluation from archival, and implement five family
+settlements, five recovery projects, and five terminal reports. P1 then completes
+the four missing territorial recoveries while retaining Belfast Compact
+reopening. P2 removes unrelated Atlantic filler rewards and makes every payoff a
+named capability or outcome record. Completion remains blocked until all three
+passes and their audits are finished.

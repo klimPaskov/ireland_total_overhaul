@@ -172,3 +172,17 @@ Every public family conclusion requires:
 
 Capstones that merely set a `*_complete` flag are intermediate milestones.
 
+## Family band and postwar conclusion contract
+
+After the National Settlement, the five public commitments form one centered
+band: democratic, Congress socialist, producer-estate, Blueshirt, and
+restoration. All remain visible as locked choices after reveal, retain separate
+family and profile locks, and connect visibly to the public Settlement
+architecture. Their downstream programmes remain spatially centered on the
+chosen family rather than appearing as detached focus islands.
+
+Each family owns one 1946–1951 institutional settlement and one recovery project.
+A full or partial conclusion is archived only after its family report records the
+durable settlement. A blocked or failed conclusion remains open, names the
+blocking surface, exposes the matching recovery project, and waits for a new
+180-day review. Failure history is durable and is never erased by recovery.

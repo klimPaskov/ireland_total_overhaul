@@ -94,3 +94,12 @@ Every family owns one cleanup effect that clears:
 
 Persistent achievements and historical records are not cleared.
 
+## Conclusion evaluation and recovery
+
+Route evaluation and archival are separate operations. Full and partial results
+dispatch the matching family report and archive only from that report's terminal
+option. Blocked and failed results keep the route open, preserve the exact
+blocked-surface flags, and expose a 120-day family recovery project. Recovery
+clears only the repairable current blockage, retains durable failure history, and
+starts a fresh 180-day review. Conclusion reports are direct-dispatch events and
+never enter the ordinary flavour dispatcher.
