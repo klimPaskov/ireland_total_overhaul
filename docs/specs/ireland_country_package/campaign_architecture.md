@@ -42,6 +42,34 @@ middle of the chosen lane, including its revealed descendants.
 visible locked card with explicit requirements so the player can understand the
 campaign ahead.
 
+## Exceptional route depth promotion — 2026-08-14
+
+The accepted exceptional-route addendum is now promoted into the campaign
+architecture. The source tree contains exactly 38 additional route focuses:
+7 High Kingship, 9 Five Provinces, 18 Otherworld, and 4 convergence. These
+focuses deepen the existing restoration, provincial, and evidence corridors;
+they do not create a fourth opening trunk or a new public family.
+
+High Kingship distinguishes an independent household, a party-captured crown,
+the captive-throne failure, witnessed stone and geasa obligations, the bounded
+Living Land conclusion, and the unbounded-sacral failure. Five Provinces
+separates the powers convention, funded federation, protected Empty Chair,
+confederation, five sovereign orders, Pentarchy, Fifth Province, and Rival
+Irelands. Otherworld play separates deliberate exploitation, local guardians,
+Tuatha-associated courts, Fianna service, regional courts, civil restoration,
+and the Sealed State. The text treats Tuatha and Fianna as literary or folkloric
+associations and never as evidence of a historical twentieth-century state.
+
+The three pair conclusions and the final Fivefold High Kingdom are selectable
+only after their exact component conclusions and route floors are recorded.
+The final focus starts a 180-day review; it does not grant free cores,
+ownership, war goals, divisions, manpower, equipment, or magical resources.
+Failure preserves durable history and reopens the named recovery surface.
+Hidden conclusion locks use `available` completion checks where a visible
+connector would cross an unrelated public lane; this keeps the route AND
+semantics exact while retaining the three roots and the five public gateways at
+`y = 14`.
+
 ## Public family band
 
 All five gateways sit on one centered post-Settlement row and are pairwise

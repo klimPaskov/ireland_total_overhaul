@@ -13018,6 +13018,7 @@ country_event = {
 		set_country_flag = ireland_foreign_reaction_subject_p16
 		set_variable = { var = ireland_route_commitment_input value = ireland_national_settlement }
 		ireland_commit_route = yes
+		country_event = { id = ireland_events.438 }
 	}
 	option = {
 		name = ireland_events.kingship_candidate_convention.b

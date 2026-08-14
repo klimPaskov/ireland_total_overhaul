@@ -1,0 +1,13 @@
+# Overview: exceptional-route cosmetic identities only. These definitions do
+# not confer claims, cores, state ownership, diplomatic recognition, or units.
+
+IRE_IRELAND_CAPTIVE_THRONE = { color = rgb { 94 56 42 } color_ui = rgb { 144 84 64 } }
+IRE_IRELAND_CONFEDERATION = { color = rgb { 58 104 112 } color_ui = rgb { 86 154 164 } }
+IRE_IRELAND_FIFTH_PROVINCE = { color = rgb { 108 92 54 } color_ui = rgb { 158 136 80 } }
+IRE_IRELAND_RIVAL_PROVINCES = { color = rgb { 104 58 66 } color_ui = rgb { 154 86 98 } }
+IRE_IRELAND_TUATHA_SOVEREIGNTY = { color = rgb { 74 76 124 } color_ui = rgb { 108 112 184 } }
+IRE_IRELAND_FIANNA_GUARDIANSHIP = { color = rgb { 48 92 76 } color_ui = rgb { 72 136 112 } }
+IRE_IRELAND_SEALED_STATE = { color = rgb { 78 78 86 } color_ui = rgb { 116 116 128 } }
+IRE_IRELAND_CROWN_AND_PROVINCES = { color = rgb { 66 96 112 } color_ui = rgb { 98 142 164 } }
+IRE_IRELAND_HIGH_KING_TWO_IRELANDS = { color = rgb { 112 84 46 } color_ui = rgb { 164 124 68 } }
+IRE_IRELAND_FIVE_COURTS_OTHERWORLD = { color = rgb { 72 102 94 } color_ui = rgb { 106 150 138 } }

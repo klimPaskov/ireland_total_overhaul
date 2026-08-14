@@ -6,13 +6,13 @@ Status: implementation source of truth for the 2026-08-14 campaign-depth pass.
 
 Evidence boundary: gameplay after the final 2026-08-14 family-band correction
 is the current source baseline. It includes the accepted P0/P1/P2
-implementation tranches, the timed-decision lifecycle audit fixes, and the
-authored family-lane reflow. The current static focus source contains 218 focuses and 222
-connectors with exactly three opening trunks. The five family lanes now occupy
-the centered x `-26..21`, y `0..22` bounds; focus inspection reports zero
-crossings, node intersections, long connectors, duplicate coordinates, and
-same-row spacing defects. Nonblocking detour/staircase advisories remain only
-in concealed clerical and Otherworld evidence corridors.
+implementation tranches, the timed-decision lifecycle audit fixes, the
+authored family-lane reflow, and the promoted exceptional-route depth tranche.
+The current static focus source contains 256 focuses and 265 connectors with
+exactly three opening trunks. The authored bounds are x `-44..31`, y `0..26`;
+focus inspection reports zero crossings, node intersections, long connectors,
+duplicate coordinates, and same-row spacing defects. Nonblocking detour
+advisories remain where concealed route geometry avoids unrelated public lanes.
 Five family settlement projects, five family recovery projects, four P1
 territorial recovery paths alongside the existing Belfast Compact reopening,
 seven industrial concerns plus two MIOs, five family report images, the

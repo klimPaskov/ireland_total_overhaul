@@ -227,6 +227,44 @@ spriteTypes = {
 	spriteType = { name = GFX_focus_ireland_fivefold_obligation texturefile = "gfx/interface/goals/ireland/goal_ireland_fivefold_obligation.dds" }
 	spriteType = { name = GFX_focus_ireland_otherworld_convergence texturefile = "gfx/interface/goals/ireland/goal_ireland_otherworld_convergence.dds" }
 	spriteType = { name = GFX_focus_ireland_convergence_order_capstone texturefile = "gfx/interface/goals/ireland/goal_ireland_convergence_order_capstone.dds" }
+	spriteType = { name = GFX_focus_ireland_crown_in_party_hands texturefile = "gfx/interface/goals/ireland/goal_ireland_crown_in_party_hands.dds" }
+	spriteType = { name = GFX_focus_ireland_break_the_captive_crown texturefile = "gfx/interface/goals/ireland/goal_ireland_break_the_captive_crown.dds" }
+	spriteType = { name = GFX_focus_ireland_the_captive_throne texturefile = "gfx/interface/goals/ireland/goal_ireland_the_captive_throne.dds" }
+	spriteType = { name = GFX_focus_ireland_the_stone_gives_its_answer texturefile = "gfx/interface/goals/ireland/goal_ireland_the_stone_gives_its_answer.dds" }
+	spriteType = { name = GFX_focus_ireland_geasa_of_the_crown texturefile = "gfx/interface/goals/ireland/goal_ireland_geasa_of_the_crown.dds" }
+	spriteType = { name = GFX_focus_ireland_high_kingdom_of_the_living_land texturefile = "gfx/interface/goals/ireland/goal_ireland_high_kingdom_of_the_living_land.dds" }
+	spriteType = { name = GFX_focus_ireland_unbounded_sacred_rule texturefile = "gfx/interface/goals/ireland/goal_ireland_unbounded_sacred_rule.dds" }
+	spriteType = { name = GFX_focus_ireland_provincial_powers_convention texturefile = "gfx/interface/goals/ireland/goal_ireland_provincial_powers_convention.dds" }
+	spriteType = { name = GFX_focus_ireland_fund_the_federal_compact texturefile = "gfx/interface/goals/ireland/goal_ireland_fund_the_federal_compact.dds" }
+	spriteType = { name = GFX_focus_ireland_four_provinces_and_an_empty_chair texturefile = "gfx/interface/goals/ireland/goal_ireland_four_provinces_and_an_empty_chair.dds" }
+	spriteType = { name = GFX_focus_ireland_council_by_provincial_mandate texturefile = "gfx/interface/goals/ireland/goal_ireland_council_by_provincial_mandate.dds" }
+	spriteType = { name = GFX_focus_ireland_irish_confederation texturefile = "gfx/interface/goals/ireland/goal_ireland_irish_confederation.dds" }
+	spriteType = { name = GFX_focus_ireland_five_sovereign_orders texturefile = "gfx/interface/goals/ireland/goal_ireland_five_sovereign_orders.dds" }
+	spriteType = { name = GFX_focus_ireland_pentarchy_of_ireland texturefile = "gfx/interface/goals/ireland/goal_ireland_pentarchy_of_ireland.dds" }
+	spriteType = { name = GFX_focus_ireland_the_fifth_province texturefile = "gfx/interface/goals/ireland/goal_ireland_the_fifth_province.dds" }
+	spriteType = { name = GFX_focus_ireland_rival_irelands texturefile = "gfx/interface/goals/ireland/goal_ireland_rival_irelands.dds" }
+	spriteType = { name = GFX_focus_ireland_turn_contact_into_power texturefile = "gfx/interface/goals/ireland/goal_ireland_turn_contact_into_power.dds" }
+	spriteType = { name = GFX_focus_ireland_compel_an_answer texturefile = "gfx/interface/goals/ireland/goal_ireland_compel_an_answer.dds" }
+	spriteType = { name = GFX_focus_ireland_a_breach_made_deliberately texturefile = "gfx/interface/goals/ireland/goal_ireland_a_breach_made_deliberately.dds" }
+	spriteType = { name = GFX_focus_ireland_the_rights_of_local_guardians texturefile = "gfx/interface/goals/ireland/goal_ireland_the_rights_of_local_guardians.dds" }
+	spriteType = { name = GFX_focus_ireland_a_law_for_two_orders texturefile = "gfx/interface/goals/ireland/goal_ireland_a_law_for_two_orders.dds" }
+	spriteType = { name = GFX_focus_ireland_recognise_the_elder_claim texturefile = "gfx/interface/goals/ireland/goal_ireland_recognise_the_elder_claim.dds" }
+	spriteType = { name = GFX_focus_ireland_the_courts_beneath_the_hills texturefile = "gfx/interface/goals/ireland/goal_ireland_the_courts_beneath_the_hills.dds" }
+	spriteType = { name = GFX_focus_ireland_a_government_under_the_mounds texturefile = "gfx/interface/goals/ireland/goal_ireland_a_government_under_the_mounds.dds" }
+	spriteType = { name = GFX_focus_ireland_the_hounds_are_heard_again texturefile = "gfx/interface/goals/ireland/goal_ireland_the_hounds_are_heard_again.dds" }
+	spriteType = { name = GFX_focus_ireland_muster_a_modern_fian texturefile = "gfx/interface/goals/ireland/goal_ireland_muster_a_modern_fian.dds" }
+	spriteType = { name = GFX_focus_ireland_no_host_without_equipment texturefile = "gfx/interface/goals/ireland/goal_ireland_no_host_without_equipment.dds" }
+	spriteType = { name = GFX_focus_ireland_regional_otherworld_courts texturefile = "gfx/interface/goals/ireland/goal_ireland_regional_otherworld_courts.dds" }
+	spriteType = { name = GFX_focus_ireland_no_single_story_rules_them_all texturefile = "gfx/interface/goals/ireland/goal_ireland_no_single_story_rules_them_all.dds" }
+	spriteType = { name = GFX_focus_ireland_the_emergency_must_end texturefile = "gfx/interface/goals/ireland/goal_ireland_the_emergency_must_end.dds" }
+	spriteType = { name = GFX_focus_ireland_human_sovereignty_restored texturefile = "gfx/interface/goals/ireland/goal_ireland_human_sovereignty_restored.dds" }
+	spriteType = { name = GFX_focus_ireland_the_sealed_state texturefile = "gfx/interface/goals/ireland/goal_ireland_the_sealed_state.dds" }
+	spriteType = { name = GFX_focus_ireland_the_state_owns_the_mounds texturefile = "gfx/interface/goals/ireland/goal_ireland_the_state_owns_the_mounds.dds" }
+	spriteType = { name = GFX_focus_ireland_guardians_of_two_irelands texturefile = "gfx/interface/goals/ireland/goal_ireland_guardians_of_two_irelands.dds" }
+	spriteType = { name = GFX_focus_ireland_high_king_of_two_irelands texturefile = "gfx/interface/goals/ireland/goal_ireland_high_king_of_two_irelands.dds" }
+	spriteType = { name = GFX_focus_ireland_crown_and_five_provinces texturefile = "gfx/interface/goals/ireland/goal_ireland_crown_and_five_provinces.dds" }
+	spriteType = { name = GFX_focus_ireland_five_courts_of_the_otherworld texturefile = "gfx/interface/goals/ireland/goal_ireland_five_courts_of_the_otherworld.dds" }
+	spriteType = { name = GFX_focus_ireland_fivefold_high_kingdom_of_two_irelands texturefile = "gfx/interface/goals/ireland/goal_ireland_fivefold_high_kingdom_of_two_irelands.dds" }
 	# The live surface has 144 named action sprites backed by 70 controlled
 	# reuse textures: 140 primary decision sprites plus four Marine Service
 	# sprites. Four opening parliamentary decisions intentionally reuse semantic
@@ -478,4 +516,27 @@ spriteTypes = {
 	spriteType = { name = GFX_decision_ireland_action_rebalance_the_producer_estates texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_rebalance_the_producer_estates.dds" }
 	spriteType = { name = GFX_decision_ireland_action_reconvene_the_crown_council texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_reconvene_the_crown_council.dds" }
 	spriteType = { name = GFX_decision_ireland_action_record_an_alternate_postwar_order texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_record_an_alternate_postwar_order.dds" }
+
+	spriteType = { name = GFX_decision_ireland_action_audit_the_royal_household texturefile = "gfx/interface/decisions/ireland/exceptional_routes/decision_ireland_action_audit_the_royal_household.dds" }
+	spriteType = { name = GFX_decision_ireland_action_break_the_party_crown texturefile = "gfx/interface/decisions/ireland/exceptional_routes/decision_ireland_action_break_the_party_crown.dds" }
+	spriteType = { name = GFX_decision_ireland_action_accept_a_royal_geis texturefile = "gfx/interface/decisions/ireland/exceptional_routes/decision_ireland_action_accept_a_royal_geis.dds" }
+	spriteType = { name = GFX_decision_ireland_action_negotiate_a_provincial_budget texturefile = "gfx/interface/decisions/ireland/exceptional_routes/decision_ireland_action_negotiate_a_provincial_budget.dds" }
+	spriteType = { name = GFX_decision_ireland_action_reserve_the_ulster_chair texturefile = "gfx/interface/decisions/ireland/exceptional_routes/decision_ireland_action_reserve_the_ulster_chair.dds" }
+	spriteType = { name = GFX_decision_ireland_action_call_a_confederal_council texturefile = "gfx/interface/decisions/ireland/exceptional_routes/decision_ireland_action_call_a_confederal_council.dds" }
+	spriteType = { name = GFX_decision_ireland_action_arbitrate_a_provincial_veto texturefile = "gfx/interface/decisions/ireland/exceptional_routes/decision_ireland_action_arbitrate_a_provincial_veto.dds" }
+	spriteType = { name = GFX_decision_ireland_action_record_an_otherworld_obligation texturefile = "gfx/interface/decisions/ireland/exceptional_routes/decision_ireland_action_record_an_otherworld_obligation.dds" }
+	spriteType = { name = GFX_decision_ireland_action_hear_a_regional_court texturefile = "gfx/interface/decisions/ireland/exceptional_routes/decision_ireland_action_hear_a_regional_court.dds" }
+	spriteType = { name = GFX_decision_ireland_action_restitute_a_seized_site texturefile = "gfx/interface/decisions/ireland/exceptional_routes/decision_ireland_action_restitute_a_seized_site.dds" }
+	spriteType = { name = GFX_decision_ireland_action_narrow_the_containment_perimeter texturefile = "gfx/interface/decisions/ireland/exceptional_routes/decision_ireland_action_narrow_the_containment_perimeter.dds" }
+	spriteType = { name = GFX_mission_ireland_mission_complete_the_royal_circuit texturefile = "gfx/interface/decisions/ireland/exceptional_routes/mission_ireland_mission_complete_the_royal_circuit.dds" }
+	spriteType = { name = GFX_mission_ireland_mission_break_the_party_crown texturefile = "gfx/interface/decisions/ireland/exceptional_routes/mission_ireland_mission_break_the_party_crown.dds" }
+	spriteType = { name = GFX_mission_ireland_mission_fund_the_common_compact texturefile = "gfx/interface/decisions/ireland/exceptional_routes/mission_ireland_mission_fund_the_common_compact.dds" }
+	spriteType = { name = GFX_mission_ireland_mission_keep_the_fifth_seat_open texturefile = "gfx/interface/decisions/ireland/exceptional_routes/mission_ireland_mission_keep_the_fifth_seat_open.dds" }
+	spriteType = { name = GFX_mission_ireland_mission_prevent_rival_irelands texturefile = "gfx/interface/decisions/ireland/exceptional_routes/mission_ireland_mission_prevent_rival_irelands.dds" }
+	spriteType = { name = GFX_mission_ireland_mission_equip_a_fian_company texturefile = "gfx/interface/decisions/ireland/exceptional_routes/mission_ireland_mission_equip_a_fian_company.dds" }
+	spriteType = { name = GFX_mission_ireland_mission_keep_the_veil_at_five_sites texturefile = "gfx/interface/decisions/ireland/exceptional_routes/mission_ireland_mission_keep_the_veil_at_five_sites.dds" }
+	spriteType = { name = GFX_mission_ireland_mission_repair_the_broken_compact texturefile = "gfx/interface/decisions/ireland/exceptional_routes/mission_ireland_mission_repair_the_broken_compact.dds" }
+	spriteType = { name = GFX_mission_ireland_mission_reconcile_regional_compacts texturefile = "gfx/interface/decisions/ireland/exceptional_routes/mission_ireland_mission_reconcile_regional_compacts.dds" }
+	spriteType = { name = GFX_mission_ireland_mission_extract_from_a_protected_site texturefile = "gfx/interface/decisions/ireland/exceptional_routes/mission_ireland_mission_extract_from_a_protected_site.dds" }
+	spriteType = { name = GFX_mission_ireland_mission_survive_the_first_convergence_review texturefile = "gfx/interface/decisions/ireland/exceptional_routes/mission_ireland_mission_survive_the_first_convergence_review.dds" }
 }

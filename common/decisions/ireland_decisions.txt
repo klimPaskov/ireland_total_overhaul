@@ -192,11 +192,55 @@
 @IRELAND_COMPACT_MANPOWER_CHARGE = -500
 @IRELAND_COMPACT_SUPPORT_EQUIPMENT_GATE = 19
 @IRELAND_COMPACT_SUPPORT_EQUIPMENT_CHARGE = -20
+# Native decision cost and duration fields accept file-local macro substitution,
+# not `constant:`. Keep these exact values synchronized with
+# `ireland_exceptional_routes`: `cost_watch_pp = 20`, `cost_severe_pp = 25`,
+# `decision_cooldown_short_days = 90`, `decision_cooldown_long_days = 120`,
+# `mission_royal_circuit_days = 120`, `mission_party_crown_days = 120`,
+# `mission_common_compact_days = 120`, `mission_fifth_seat_days = 180`,
+# `mission_rival_irelands_days = 120`, `mission_fian_company_days = 120`,
+# `mission_five_sites_days = 180`, `mission_broken_compact_days = 120`,
+# `mission_regional_compacts_days = 150`, `mission_extraction_days = 90`, and
+# `mission_convergence_review_days = 180`.
+@IRELAND_EXCEPTIONAL_COOLDOWN_SHORT = 90
+@IRELAND_EXCEPTIONAL_COOLDOWN_LONG = 120
+@IRELAND_EXCEPTIONAL_COST_WATCH_PP = 20
+@IRELAND_EXCEPTIONAL_COST_SEVERE_PP = 25
+@IRELAND_EXCEPTIONAL_MISSION_ROYAL_CIRCUIT_DAYS = 120
+@IRELAND_EXCEPTIONAL_MISSION_PARTY_CROWN_DAYS = 120
+@IRELAND_EXCEPTIONAL_MISSION_COMMON_COMPACT_DAYS = 120
+@IRELAND_EXCEPTIONAL_MISSION_FIFTH_SEAT_DAYS = 180
+@IRELAND_EXCEPTIONAL_MISSION_RIVAL_IRELANDS_DAYS = 120
+@IRELAND_EXCEPTIONAL_MISSION_FIAN_DAYS = 120
+@IRELAND_EXCEPTIONAL_MISSION_FIVE_SITES_DAYS = 180
+@IRELAND_EXCEPTIONAL_MISSION_BROKEN_COMPACT_DAYS = 120
+@IRELAND_EXCEPTIONAL_MISSION_REGIONAL_COMPACTS_DAYS = 150
+@IRELAND_EXCEPTIONAL_MISSION_EXTRACTION_DAYS = 90
+@IRELAND_EXCEPTIONAL_MISSION_CONVERGENCE_DAYS = 180
+
+# Native political-power, command-power, and equipment triggers accept local
+# macro substitution rather than `constant:`. Keep these exact values
+# synchronized with `ireland_exceptional_routes`: `pp_low_gate_exclusive = 14`,
+# `pp_watch_gate_exclusive = 19`, `pp_severe_gate_exclusive = 24`,
+# `command_low_gate_exclusive = 19`, `fian_motorized_equipment_gate_exclusive = 19`,
+# `fian_infantry_equipment_gate_exclusive = 499`, `fian_manpower_cost = 500`,
+# `fian_infantry_equipment_cost = 500`, `fian_support_equipment_cost = 20`, and
+# `fian_command_cost = 20`.
+@IRELAND_EXCEPTIONAL_PP_LOW_GATE = 14
+@IRELAND_EXCEPTIONAL_PP_WATCH_GATE = 19
+@IRELAND_EXCEPTIONAL_PP_SEVERE_GATE = 24
+@IRELAND_EXCEPTIONAL_COMMAND_LOW_GATE = 19
+@IRELAND_EXCEPTIONAL_ROYAL_CIRCUIT_MOTORIZED_GATE = 19
+@IRELAND_EXCEPTIONAL_ROYAL_CIRCUIT_INFANTRY_GATE = 499
+@IRELAND_EXCEPTIONAL_FIAN_MANPOWER_COST = 500
+@IRELAND_EXCEPTIONAL_FIAN_INFANTRY_EQUIPMENT_COST = 500
+@IRELAND_EXCEPTIONAL_FIAN_SUPPORT_EQUIPMENT_COST = 20
+@IRELAND_EXCEPTIONAL_FIAN_COMMAND_COST = 20
 ireland_settlement_government = {
 	# Parliamentary opening: the native Dáil action is usable from initialization;
 	# the shared executor also drives the scripted GUI and advances the same stage.
 	ireland_action_convene_the_dail = {
-		icon = GFX_decision_ireland_convene_a_cabinet_cohesion_review
+		icon = GFX_decision_ireland_action_audit_the_royal_household
 		visible = {
 			original_tag = IRE
 			NOT = { has_country_flag = ireland_route_archived }
@@ -257,7 +301,7 @@ ireland_settlement_government = {
 	}
 
 	ireland_action_secure_a_confidence_compact = {
-		icon = GFX_decision_ireland_request_a_confidence_vote
+		icon = GFX_decision_ireland_action_break_the_party_crown
 		visible = {
 			original_tag = IRE
 			NOT = { has_country_flag = ireland_route_archived }
@@ -3363,6 +3407,103 @@ ireland_settlement_government = {
 				}
 			}
 		}
+	}
+
+	# Exceptional crown and provincial actions. They are route-locked and use
+	# the existing mission-capacity ledger rather than creating a new category.
+	ireland_action_audit_the_royal_household = {
+		icon = GFX_decision_ireland_action_audit_the_royal_household
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_high_king_captured_crown_path }
+		available = {
+			custom_trigger_tooltip = { tooltip = ireland_action_audit_the_royal_household_requirements_tt has_country_flag = ireland_high_king_captured_crown_path check_variable = { var = ireland_exceptional_household_audits value = constant:ireland_exceptional_routes.party_crown_audits_required compare = less_than } OR = { AND = { check_variable = { var = ireland_household_reach value = constant:ireland_exceptional_routes.cost_anchor_watch_threshold compare = less_than } has_political_power > @IRELAND_EXCEPTIONAL_PP_LOW_GATE } AND = { check_variable = { var = ireland_household_reach value = constant:ireland_exceptional_routes.cost_anchor_watch_threshold compare = greater_than_or_equals } check_variable = { var = ireland_household_reach value = constant:ireland_exceptional_routes.cost_anchor_severe_threshold compare = less_than } has_political_power > @IRELAND_EXCEPTIONAL_PP_WATCH_GATE } AND = { check_variable = { var = ireland_household_reach value = constant:ireland_exceptional_routes.cost_anchor_severe_threshold compare = greater_than_or_equals } has_political_power > @IRELAND_EXCEPTIONAL_PP_SEVERE_GATE } } }
+		}
+		custom_cost_trigger = { always = yes }
+		custom_cost_text = ireland_exceptional_dynamic_pp_cost
+		days_re_enable = @IRELAND_EXCEPTIONAL_COOLDOWN_SHORT
+		complete_effect = { set_temp_variable = { var = ireland_exceptional_cost_anchor value = ireland_household_reach } ireland_pay_exceptional_action_cost = yes add_to_variable = { var = ireland_household_reach value = constant:ireland_exceptional_routes.audit_reach_delta } add_to_variable = { var = ireland_royal_legitimacy value = constant:ireland_exceptional_routes.audit_legitimacy_delta } add_to_variable = { var = ireland_exceptional_household_audits value = constant:ireland.one } set_country_flag = ireland_household_audit_complete ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_independent_household modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } modifier = { factor = constant:ireland_exceptional_routes.ai_recovery_priority_factor ireland_exceptional_route_recovery_active = yes } }
+	}
+
+	ireland_action_break_the_party_crown = {
+		icon = GFX_decision_ireland_action_break_the_party_crown
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_high_king_captured_crown_path }
+		available = { ireland_can_launch_route_review_critical_mission = yes custom_trigger_tooltip = { tooltip = ireland_action_break_the_party_crown_requirements_tt has_country_flag = ireland_high_king_captured_crown_path check_variable = { var = ireland_exceptional_household_audits value = constant:ireland_exceptional_routes.party_crown_audits_required compare = greater_than_or_equals } check_variable = { var = ireland_social_consent value = constant:ireland_exceptional_routes.action_social_consent_ready compare = greater_than_or_equals } command_power > @IRELAND_EXCEPTIONAL_COMMAND_LOW_GATE has_political_power > @IRELAND_EXCEPTIONAL_PP_SEVERE_GATE } }
+		custom_cost_trigger = { always = yes }
+		custom_cost_text = ireland_exceptional_party_crown_cost
+		fire_only_once = yes
+		complete_effect = { set_temp_variable = { var = ireland_exceptional_party_crown_pp value = constant:ireland_exceptional_routes.cost_severe_pp } multiply_temp_variable = { ireland_exceptional_party_crown_pp = -1 } add_political_power = ireland_exceptional_party_crown_pp set_temp_variable = { var = ireland_exceptional_party_crown_cp value = constant:ireland_exceptional_routes.cost_low_cp } multiply_temp_variable = { ireland_exceptional_party_crown_cp = -1 } add_command_power = ireland_exceptional_party_crown_cp set_country_flag = ireland_mission_break_the_party_crown_active activate_mission = ireland_mission_break_the_party_crown ireland_update_mission_capacity = yes ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_party_crown modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } modifier = { factor = constant:ireland_exceptional_routes.ai_recovery_priority_factor ireland_exceptional_route_recovery_active = yes } }
+	}
+
+	ireland_action_accept_a_royal_geis = {
+		icon = GFX_decision_ireland_action_accept_a_royal_geis
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_high_king_sacral_path NOT = { has_country_flag = ireland_exceptional_geis_due } }
+		available = { custom_trigger_tooltip = { tooltip = ireland_action_accept_a_royal_geis_requirements_tt has_country_flag = ireland_high_king_sacral_path has_political_power > @IRELAND_EXCEPTIONAL_PP_LOW_GATE OR = { has_full_control_of_state = 113 has_full_control_of_state = 134 has_full_control_of_state = 135 } } }
+		custom_cost_trigger = { always = yes }
+		custom_cost_text = ireland_exceptional_dynamic_pp_cost
+		days_re_enable = @IRELAND_EXCEPTIONAL_COOLDOWN_LONG
+		complete_effect = { set_temp_variable = { var = ireland_exceptional_cost_anchor value = ireland_royal_obligation_burden } ireland_pay_exceptional_action_cost = yes country_event = { id = ireland_events.443 } ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_sacral_crown modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor ireland_exceptional_route_recovery_active = yes } }
+	}
+
+	ireland_mission_complete_the_royal_circuit = {
+		icon = GFX_mission_ireland_mission_complete_the_royal_circuit
+		selectable_mission = no
+		is_good = yes
+		activation = { ireland_has_active_mission_capacity = yes has_country_flag = ireland_exceptional_geis_circuit_due NOT = { has_country_flag = ireland_category_settlement_government_at_capacity } OR = { NOT = { has_country_flag = ireland_critical_slot_reserved } has_country_flag = ireland_route_review_slot_needed } }
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_exceptional_geis_circuit_due }
+		available = { has_full_control_of_state = 113 has_full_control_of_state = 134 has_full_control_of_state = 135 has_equipment = { motorized_equipment > @IRELAND_EXCEPTIONAL_ROYAL_CIRCUIT_MOTORIZED_GATE infantry_equipment > @IRELAND_EXCEPTIONAL_ROYAL_CIRCUIT_INFANTRY_GATE } command_power > @IRELAND_EXCEPTIONAL_COMMAND_LOW_GATE }
+		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_exceptional_geis_circuit_due } } }
+		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_ROYAL_CIRCUIT_DAYS
+		complete_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_complete_the_royal_circuit_full_recorded clr_country_flag = ireland_exceptional_geis_circuit_due clr_country_flag = ireland_exceptional_geis_due add_to_variable = { var = ireland_royal_legitimacy value = constant:ireland_exceptional_routes.royal_circuit_legitimacy_delta } add_to_variable = { var = ireland_cultural_site_stewardship value = constant:ireland_exceptional_routes.royal_circuit_stewardship_delta } ireland_refresh_exceptional_route_state = yes }
+		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_failure } ireland_record_mission_result = yes set_country_flag = ireland_mission_complete_the_royal_circuit_failure_recorded set_country_flag = ireland_exceptional_geis_broken add_to_variable = { var = ireland_otherworld_broken_obligations value = constant:ireland_exceptional_routes.otherworld_obligation_increment } clr_country_flag = ireland_exceptional_geis_circuit_due ireland_refresh_exceptional_route_state = yes }
+		cancel_effect = { clr_country_flag = ireland_exceptional_geis_circuit_due ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_royal_circuit_mission modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
+	}
+
+	ireland_mission_break_the_party_crown = {
+		icon = GFX_mission_ireland_mission_break_the_party_crown
+		selectable_mission = no
+		is_good = yes
+		activation = { ireland_has_active_mission_capacity = yes has_country_flag = ireland_mission_break_the_party_crown_active NOT = { has_country_flag = ireland_category_settlement_government_at_capacity } OR = { NOT = { has_country_flag = ireland_critical_slot_reserved } has_country_flag = ireland_route_review_slot_needed } }
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_mission_break_the_party_crown_active }
+		available = { check_variable = { var = ireland_household_reach value = constant:ireland_exceptional_routes.party_crown_household_reach_max compare = less_than } check_variable = { var = ireland_social_consent value = constant:ireland_exceptional_routes.action_social_consent_ready compare = greater_than_or_equals } NOT = { has_country_flag = ireland_security_command_partisan } }
+		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_mission_break_the_party_crown_active } } }
+		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_PARTY_CROWN_DAYS
+		complete_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_break_the_party_crown_full_recorded set_country_flag = ireland_break_captive_crown_focus_open clr_country_flag = ireland_mission_break_the_party_crown_active country_event = { id = ireland_events.442 } ireland_refresh_exceptional_route_state = yes }
+		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_failure } ireland_record_mission_result = yes set_country_flag = ireland_mission_break_the_party_crown_failure_recorded clr_country_flag = ireland_mission_break_the_party_crown_active ireland_refresh_exceptional_route_state = yes }
+		cancel_effect = { clr_country_flag = ireland_mission_break_the_party_crown_active ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_party_crown_mission modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
+	}
+
+	ireland_action_negotiate_a_provincial_budget = {
+		icon = GFX_decision_ireland_action_negotiate_a_provincial_budget
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_route_five_provinces }
+		available = { ireland_can_launch_routine_mission = yes custom_trigger_tooltip = { tooltip = ireland_action_negotiate_a_provincial_budget_requirements_tt has_country_flag = ireland_route_five_provinces has_political_power > @IRELAND_EXCEPTIONAL_PP_LOW_GATE any_owned_state = { state = 113 industrial_complex > 0 } } }
+		custom_cost_trigger = { always = yes }
+		custom_cost_text = ireland_exceptional_dynamic_pp_factory_cost
+		days_re_enable = @IRELAND_EXCEPTIONAL_COOLDOWN_SHORT
+		complete_effect = { set_temp_variable = { var = ireland_exceptional_cost_anchor value = ireland_federal_cohesion } ireland_pay_exceptional_action_cost = yes set_country_flag = ireland_provincial_budget_contribution_recorded add_to_variable = { var = ireland_mandate_leinster value = constant:ireland_exceptional_routes.mandate_budget_delta } add_to_variable = { var = ireland_federal_cohesion value = constant:ireland_exceptional_routes.federal_cohesion_action_delta } set_country_flag = ireland_mission_fund_the_common_compact_active activate_mission = ireland_mission_fund_the_common_compact ireland_update_mission_capacity = yes country_event = { id = ireland_events.446 } ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_federal modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
+	}
+
+	ireland_action_reserve_the_ulster_chair = {
+		icon = GFX_decision_ireland_action_reserve_the_ulster_chair
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_route_five_provinces NOT = { has_country_flag = ireland_protected_ulster_chair } }
+		available = { ireland_can_launch_routine_mission = yes custom_trigger_tooltip = { tooltip = ireland_action_reserve_the_ulster_chair_requirements_tt has_political_power > @IRELAND_EXCEPTIONAL_PP_WATCH_GATE check_variable = { var = ireland_minority_confidence value = constant:ireland_exceptional_routes.empty_chair_minority_confidence_ready compare = greater_than_or_equals } NOT = { has_country_flag = ireland_coercive_northern_campaign } } }
+		cost = @IRELAND_EXCEPTIONAL_COST_WATCH_PP
+		complete_effect = { set_country_flag = ireland_protected_ulster_chair set_country_flag = ireland_mission_keep_the_fifth_seat_open_active activate_mission = ireland_mission_keep_the_fifth_seat_open ireland_update_mission_capacity = yes country_event = { id = ireland_events.445 } ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_federal modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
+	}
+
+	ireland_action_call_a_confederal_council = {
+		icon = GFX_decision_ireland_action_call_a_confederal_council
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_confederal_council_path }
+		available = { custom_trigger_tooltip = { tooltip = ireland_action_call_a_confederal_council_requirements_tt has_political_power > @IRELAND_EXCEPTIONAL_PP_WATCH_GATE check_variable = { var = ireland_mandate_leinster value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals } check_variable = { var = ireland_mandate_munster value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals } check_variable = { var = ireland_mandate_connacht value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals } check_variable = { var = ireland_mandate_mide value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals } } }
+		cost = @IRELAND_EXCEPTIONAL_COST_WATCH_PP
+		days_re_enable = @IRELAND_EXCEPTIONAL_COOLDOWN_SHORT
+		complete_effect = { set_country_flag = ireland_confederal_contribution_settled add_to_variable = { var = ireland_middle_balance value = constant:ireland_exceptional_routes.confederal_middle_balance_delta } ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_confederation modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
 	}
 }
 
@@ -12622,6 +12763,109 @@ ireland_cultural_archival = {
 				}
 			}
 		}
+	}
+
+	# Otherworld record, custody, and repair work. Benefits are conditional on
+	# obligations and site safety; no action creates a unit, resource, or claim.
+	ireland_action_record_an_otherworld_obligation = {
+		icon = GFX_decision_ireland_action_record_an_otherworld_obligation
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_otherworld_compact_path }
+		available = { ireland_can_launch_routine_mission = yes custom_trigger_tooltip = { tooltip = ireland_action_record_an_otherworld_obligation_requirements_tt has_political_power > @IRELAND_EXCEPTIONAL_PP_LOW_GATE ireland_compact_obligation_authority = yes NOT = { has_country_flag = ireland_exceptional_geis_due } } }
+		custom_cost_trigger = { always = yes }
+		custom_cost_text = ireland_exceptional_dynamic_pp_material_cost
+		days_re_enable = @IRELAND_EXCEPTIONAL_COOLDOWN_SHORT
+		complete_effect = { set_temp_variable = { var = ireland_exceptional_cost_anchor value = ireland_otherworld_active_obligations } ireland_pay_exceptional_action_cost = yes set_country_flag = ireland_exceptional_geis_due set_country_flag = ireland_exceptional_compact_obligation_due add_to_variable = { var = ireland_otherworld_active_obligations value = constant:ireland_exceptional_routes.compact_obligation_delta } activate_mission = ireland_mission_keep_the_veil_at_five_sites ireland_update_mission_capacity = yes country_event = { id = ireland_events.451 } ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_balanced_compact modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor ireland_exceptional_route_recovery_active = yes } }
+	}
+
+	ireland_action_hear_a_regional_court = {
+		icon = GFX_decision_ireland_action_hear_a_regional_court
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_otherworld_compact_path }
+		available = { custom_trigger_tooltip = { tooltip = ireland_action_hear_a_regional_court_requirements_tt has_political_power > @IRELAND_EXCEPTIONAL_PP_WATCH_GATE check_variable = { var = ireland_cultural_regional_participation value = constant:ireland_exceptional_routes.regional_court_participation_ready compare = greater_than_or_equals } OR = { has_full_control_of_state = 113 has_full_control_of_state = 134 has_full_control_of_state = 135 } } }
+		cost = @IRELAND_EXCEPTIONAL_COST_WATCH_PP
+		days_re_enable = @IRELAND_EXCEPTIONAL_COOLDOWN_SHORT
+		complete_effect = { set_country_flag = ireland_regional_hearing_active country_event = { id = ireland_events.453 } ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_regional_courts modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
+	}
+
+	ireland_action_restitute_a_seized_site = {
+		icon = GFX_decision_ireland_action_restitute_a_seized_site
+		visible = { ireland_exceptional_route_open = yes OR = { has_country_flag = ireland_mound_full_seizure has_country_flag = ireland_exceptional_extraction_restitution_due has_country_flag = ireland_exceptional_deliberate_breach } }
+		available = { custom_trigger_tooltip = { tooltip = ireland_action_restitute_a_seized_site_requirements_tt has_political_power > @IRELAND_EXCEPTIONAL_PP_SEVERE_GATE NOT = { has_country_flag = ireland_security_command_partisan } } }
+		cost = @IRELAND_EXCEPTIONAL_COST_SEVERE_PP
+		days_re_enable = @IRELAND_EXCEPTIONAL_COOLDOWN_LONG
+		complete_effect = { clr_country_flag = ireland_mound_full_seizure clr_country_flag = ireland_exceptional_extraction_restitution_due clr_country_flag = ireland_exceptional_extraction_benefit_active add_to_variable = { var = ireland_compact_trust value = constant:ireland_exceptional_routes.compact_trust_delta } add_to_variable = { var = ireland_veil_stability value = constant:ireland_exceptional_routes.veil_repair_delta } ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_restitution_action modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } modifier = { factor = constant:ireland_exceptional_routes.ai_recovery_priority_factor ireland_exceptional_route_recovery_active = yes } }
+	}
+
+	ireland_action_narrow_the_containment_perimeter = {
+		icon = GFX_decision_ireland_action_narrow_the_containment_perimeter
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_otherworld_containment_path }
+		available = { custom_trigger_tooltip = { tooltip = ireland_action_narrow_the_containment_perimeter_requirements_tt has_political_power > @IRELAND_EXCEPTIONAL_PP_WATCH_GATE check_variable = { var = ireland_social_consent value = constant:ireland_exceptional_routes.action_social_consent_ready compare = greater_than_or_equals } has_country_flag = ireland_otherworld_human_inquiry } }
+		cost = @IRELAND_EXCEPTIONAL_COST_WATCH_PP
+		days_re_enable = @IRELAND_EXCEPTIONAL_COOLDOWN_SHORT
+		complete_effect = { country_event = { id = ireland_events.456 } ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_containment modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } modifier = { factor = constant:ireland_exceptional_routes.ai_recovery_support_factor ireland_exceptional_route_recovery_active = yes } }
+	}
+
+	ireland_mission_keep_the_veil_at_five_sites = {
+		icon = GFX_mission_ireland_mission_keep_the_veil_at_five_sites
+		selectable_mission = no
+		is_good = yes
+		activation = { ireland_has_active_mission_capacity = yes has_country_flag = ireland_exceptional_compact_obligation_due NOT = { has_country_flag = ireland_category_cultural_archival_at_capacity } NOT = { has_country_flag = ireland_critical_slot_reserved } }
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_exceptional_compact_obligation_due }
+		available = { ireland_map_objective_fulfil_the_compact_at_five_sites_met = yes NOT = { has_country_flag = ireland_otherworld_hostile_occupation_shortcut } }
+		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_exceptional_compact_obligation_due } } }
+		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_FIVE_SITES_DAYS
+		complete_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_keep_the_veil_at_five_sites_full_recorded clr_country_flag = ireland_exceptional_compact_obligation_due clr_country_flag = ireland_exceptional_geis_due add_to_variable = { var = ireland_veil_stability value = constant:ireland_exceptional_routes.veil_repair_delta } add_to_variable = { var = ireland_cultural_site_stewardship value = constant:ireland_exceptional_routes.royal_circuit_stewardship_delta } ireland_refresh_exceptional_route_state = yes }
+		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_failure } ireland_record_mission_result = yes set_country_flag = ireland_mission_keep_the_veil_at_five_sites_failure_recorded set_country_flag = ireland_exceptional_broken_compact add_to_variable = { var = ireland_otherworld_broken_obligations value = constant:ireland_exceptional_routes.otherworld_obligation_increment } clr_country_flag = ireland_exceptional_compact_obligation_due ireland_refresh_exceptional_route_state = yes }
+		cancel_effect = { clr_country_flag = ireland_exceptional_compact_obligation_due ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_compact_obligation_mission modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
+	}
+
+	ireland_mission_repair_the_broken_compact = {
+		icon = GFX_mission_ireland_mission_repair_the_broken_compact
+		selectable_mission = no
+		is_good = yes
+		activation = { ireland_has_active_mission_capacity = yes has_country_flag = ireland_exceptional_broken_compact NOT = { has_country_flag = ireland_category_cultural_archival_at_capacity } NOT = { has_country_flag = ireland_critical_slot_reserved } }
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_exceptional_broken_compact }
+		available = { check_variable = { var = ireland_compact_trust value = constant:ireland_exceptional_routes.broken_compact_trust_ready compare = greater_than_or_equals } check_variable = { var = ireland_veil_stability value = constant:ireland_exceptional_routes.broken_compact_veil_ready compare = greater_than_or_equals } has_country_flag = ireland_mound_restitution_open }
+		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_exceptional_broken_compact } } }
+		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_BROKEN_COMPACT_DAYS
+		complete_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_repair_the_broken_compact_full_recorded clr_country_flag = ireland_exceptional_broken_compact clr_country_flag = ireland_exceptional_geis_broken set_variable = { var = ireland_otherworld_broken_obligations value = constant:ireland_exceptional_routes.otherworld_obligations_opening } ireland_refresh_exceptional_route_state = yes }
+		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_failure } ireland_record_mission_result = yes set_country_flag = ireland_mission_repair_the_broken_compact_failure_recorded add_to_variable = { var = ireland_veil_stability value = constant:ireland_exceptional_routes.broken_compact_failure_veil_delta } ireland_refresh_exceptional_route_state = yes }
+		cancel_effect = { ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_broken_compact_mission modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
+	}
+
+	ireland_mission_reconcile_regional_compacts = {
+		icon = GFX_mission_ireland_mission_reconcile_regional_compacts
+		selectable_mission = no
+		is_good = yes
+		activation = { ireland_has_active_mission_capacity = yes has_country_flag = ireland_regional_compact_framework NOT = { has_country_flag = ireland_category_cultural_archival_at_capacity } NOT = { has_country_flag = ireland_critical_slot_reserved } }
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_regional_compact_framework }
+		available = { check_variable = { var = ireland_regional_compact_count value = constant:ireland_exceptional_routes.regional_compacts_ready compare = greater_than_or_equals } check_variable = { var = ireland_cultural_regional_participation value = constant:ireland_exceptional_routes.convergence_regional_participation compare = greater_than_or_equals } has_country_flag = ireland_otherworld_rights_floor }
+		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_regional_compact_framework } } }
+		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_REGIONAL_COMPACTS_DAYS
+		complete_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_reconcile_regional_compacts_full_recorded set_country_flag = ireland_fivefold_obligation_ready clr_country_flag = ireland_regional_compact_framework ireland_refresh_exceptional_route_state = yes }
+		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_partial } ireland_record_mission_result = yes set_country_flag = ireland_mission_reconcile_regional_compacts_partial_recorded clr_country_flag = ireland_regional_compact_framework ireland_refresh_exceptional_route_state = yes }
+		cancel_effect = { clr_country_flag = ireland_regional_compact_framework ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_regional_courts modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
+	}
+
+	ireland_mission_extract_from_a_protected_site = {
+		icon = GFX_mission_ireland_mission_extract_from_a_protected_site
+		selectable_mission = no
+		is_good = no
+		activation = { ireland_has_active_mission_capacity = yes has_country_flag = ireland_otherworld_dominion_path has_country_flag = ireland_mound_reversible_extraction NOT = { has_country_flag = ireland_category_cultural_archival_at_capacity } NOT = { has_country_flag = ireland_critical_slot_reserved } }
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_otherworld_dominion_path has_country_flag = ireland_mound_reversible_extraction }
+		available = { has_full_control_of_state = 134 any_owned_state = { state = 134 industrial_complex > 0 } command_power > @IRELAND_EXCEPTIONAL_COMMAND_LOW_GATE }
+		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_otherworld_dominion_path } NOT = { has_country_flag = ireland_mound_reversible_extraction } } }
+		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_EXTRACTION_DAYS
+		complete_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_extract_from_a_protected_site_full_recorded set_country_flag = ireland_exceptional_extraction_benefit_active set_country_flag = ireland_exceptional_extraction_restitution_due add_to_variable = { var = ireland_compact_trust value = constant:ireland_exceptional_routes.extraction_trust_delta } add_to_variable = { var = ireland_veil_stability value = constant:ireland_exceptional_routes.extraction_veil_delta } country_event = { id = ireland_events.455 } ireland_refresh_exceptional_route_state = yes }
+		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_failure } ireland_record_mission_result = yes set_country_flag = ireland_mission_extract_from_a_protected_site_failure_recorded add_to_variable = { var = ireland_compact_trust value = constant:ireland_exceptional_routes.extraction_trust_delta } add_to_variable = { var = ireland_veil_stability value = constant:ireland_exceptional_routes.extraction_veil_delta } country_event = { id = ireland_events.455 } ireland_refresh_exceptional_route_state = yes }
+		cancel_effect = { ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_exploitation modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
 	}
 }
 
@@ -28581,6 +28825,23 @@ ireland_readiness = {
 				}
 			}
 		}
+	}
+
+	# Fianna certification recognises a player-trained company; it never creates
+	# manpower, equipment, or a division.
+	ireland_mission_equip_a_fian_company = {
+		icon = GFX_mission_ireland_mission_equip_a_fian_company
+		selectable_mission = no
+		is_good = yes
+		activation = { ireland_has_active_mission_capacity = yes has_country_flag = ireland_fian_equipment_commitment NOT = { has_country_flag = ireland_category_readiness_at_capacity } OR = { NOT = { has_country_flag = ireland_critical_slot_reserved } has_country_flag = ireland_invasion_slot_needed } }
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_fian_equipment_commitment }
+		available = { has_country_flag = ireland_fian_service_charter custom_trigger_tooltip = { tooltip = ireland_mission_equip_a_fian_company_requirements_tt ireland_exceptional_fian_material_ready = yes } }
+		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_fian_equipment_commitment } } }
+		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_FIAN_DAYS
+		complete_effect = { custom_effect_tooltip = ireland_mission_equip_a_fian_company_cost_tt add_manpower = -@IRELAND_EXCEPTIONAL_FIAN_MANPOWER_COST add_equipment_to_stockpile = { type = infantry_equipment amount = -@IRELAND_EXCEPTIONAL_FIAN_INFANTRY_EQUIPMENT_COST } add_equipment_to_stockpile = { type = support_equipment amount = -@IRELAND_EXCEPTIONAL_FIAN_SUPPORT_EQUIPMENT_COST } add_command_power = -@IRELAND_EXCEPTIONAL_FIAN_COMMAND_COST set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_equip_a_fian_company_full_recorded set_variable = { var = ireland_fian_readiness value = constant:ireland_exceptional_routes.fian_readiness_delta } clr_country_flag = ireland_fian_equipment_commitment set_country_flag = ireland_fian_service_objective_open ireland_refresh_exceptional_route_state = yes }
+		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_failure } ireland_record_mission_result = yes set_country_flag = ireland_mission_equip_a_fian_company_failure_recorded set_country_flag = ireland_fian_route_fraud clr_country_flag = ireland_fian_equipment_commitment ireland_refresh_exceptional_route_state = yes }
+		cancel_effect = { clr_country_flag = ireland_fian_equipment_commitment ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_fianna modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor NOT = { ireland_exceptional_fian_material_ready = yes } } }
 	}
 }
 
@@ -46904,6 +47165,78 @@ ireland_regional_external = {
 				}
 			}
 		}
+	}
+
+	# Exceptional federal and convergence objectives use this existing regional
+	# category because each one is a live cross-region commitment.
+	ireland_action_arbitrate_a_provincial_veto = {
+		icon = GFX_decision_ireland_action_arbitrate_a_provincial_veto
+		visible = { ireland_exceptional_route_open = yes OR = { has_country_flag = ireland_confederal_council_path has_country_flag = ireland_pentarchy_path has_country_flag = ireland_conclusion_crown_and_five_provinces } }
+		available = { custom_trigger_tooltip = { tooltip = ireland_action_arbitrate_a_provincial_veto_requirements_tt has_political_power > @IRELAND_EXCEPTIONAL_PP_WATCH_GATE check_variable = { var = ireland_middle_balance value = constant:ireland_exceptional_routes.provincial_veto_middle_balance_max compare = less_than } } }
+		cost = @IRELAND_EXCEPTIONAL_COST_WATCH_PP
+		days_re_enable = @IRELAND_EXCEPTIONAL_COOLDOWN_SHORT
+		complete_effect = { add_to_variable = { var = ireland_middle_balance value = constant:ireland_exceptional_routes.middle_balance_recovery_delta } clr_country_flag = ireland_provincial_veto_unresolved ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_confederation modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } modifier = { factor = constant:ireland_exceptional_routes.ai_recovery_priority_factor ireland_exceptional_route_recovery_active = yes } }
+	}
+
+	ireland_mission_fund_the_common_compact = {
+		icon = GFX_mission_ireland_mission_fund_the_common_compact
+		selectable_mission = no
+		is_good = yes
+		activation = { ireland_has_active_mission_capacity = yes has_country_flag = ireland_mission_fund_the_common_compact_active NOT = { has_country_flag = ireland_category_regional_external_at_capacity } NOT = { has_country_flag = ireland_critical_slot_reserved } }
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_mission_fund_the_common_compact_active }
+		available = { has_country_flag = ireland_provincial_budget_contribution_recorded has_full_control_of_state = 113 has_full_control_of_state = 135 any_owned_state = { state = 113 industrial_complex > 0 } any_owned_state = { state = 135 infrastructure > 0 } }
+		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_mission_fund_the_common_compact_active } } }
+		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_COMMON_COMPACT_DAYS
+		complete_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_fund_the_common_compact_full_recorded set_country_flag = ireland_federal_common_budget_funded add_to_variable = { var = ireland_federal_cohesion value = constant:ireland_exceptional_routes.common_compact_cohesion_delta } clr_country_flag = ireland_mission_fund_the_common_compact_active ireland_refresh_exceptional_route_state = yes }
+		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_failure } ireland_record_mission_result = yes set_country_flag = ireland_mission_fund_the_common_compact_failure_recorded add_to_variable = { var = ireland_provincial_fiscal_failures value = constant:ireland_exceptional_routes.provincial_fiscal_failure_increment } add_to_variable = { var = ireland_federal_cohesion value = constant:ireland_exceptional_routes.common_compact_failure_delta } clr_country_flag = ireland_mission_fund_the_common_compact_active ireland_refresh_exceptional_route_state = yes }
+		cancel_effect = { clr_country_flag = ireland_mission_fund_the_common_compact_active ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_federal modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
+	}
+
+	ireland_mission_keep_the_fifth_seat_open = {
+		icon = GFX_mission_ireland_mission_keep_the_fifth_seat_open
+		selectable_mission = no
+		is_good = yes
+		activation = { ireland_has_active_mission_capacity = yes has_country_flag = ireland_mission_keep_the_fifth_seat_open_active NOT = { has_country_flag = ireland_category_regional_external_at_capacity } NOT = { has_country_flag = ireland_critical_slot_reserved } }
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_mission_keep_the_fifth_seat_open_active }
+		available = { has_country_flag = ireland_protected_ulster_chair check_variable = { var = ireland_minority_confidence value = constant:ireland_exceptional_routes.empty_chair_minority_confidence_ready compare = greater_than_or_equals } NOT = { has_country_flag = ireland_ulster_mandate_invented } NOT = { has_country_flag = ireland_coercive_northern_campaign } }
+		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_mission_keep_the_fifth_seat_open_active } } }
+		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_FIFTH_SEAT_DAYS
+		complete_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_keep_the_fifth_seat_open_full_recorded clr_country_flag = ireland_mission_keep_the_fifth_seat_open_active ireland_refresh_exceptional_route_state = yes }
+		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_partial } ireland_record_mission_result = yes set_country_flag = ireland_mission_keep_the_fifth_seat_open_partial_recorded clr_country_flag = ireland_mission_keep_the_fifth_seat_open_active ireland_refresh_exceptional_route_state = yes }
+		cancel_effect = { clr_country_flag = ireland_mission_keep_the_fifth_seat_open_active ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_federal modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
+	}
+
+	ireland_mission_prevent_rival_irelands = {
+		icon = GFX_mission_ireland_mission_prevent_rival_irelands
+		selectable_mission = no
+		is_good = yes
+		activation = { ireland_has_active_mission_capacity = yes has_country_flag = ireland_mission_prevent_rival_irelands_active NOT = { has_country_flag = ireland_category_regional_external_at_capacity } OR = { NOT = { has_country_flag = ireland_critical_slot_reserved } has_country_flag = ireland_route_review_slot_needed } }
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_mission_prevent_rival_irelands_active }
+		available = { check_variable = { var = ireland_federal_cohesion value = constant:ireland_exceptional_routes.confederal_cohesion_ready compare = greater_than_or_equals } has_country_flag = ireland_provincial_budget_contribution_recorded NOT = { has_country_flag = ireland_provincial_guard_refuses_common_command } }
+		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_mission_prevent_rival_irelands_active } } }
+		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_RIVAL_IRELANDS_DAYS
+		complete_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_prevent_rival_irelands_full_recorded clr_country_flag = ireland_mission_prevent_rival_irelands_active clr_country_flag = ireland_provincial_guard_refuses_common_command ireland_refresh_exceptional_route_state = yes }
+		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_failure } ireland_record_mission_result = yes set_country_flag = ireland_mission_prevent_rival_irelands_failure_recorded set_country_flag = ireland_conclusion_five_provinces_rival_irelands clr_country_flag = ireland_mission_prevent_rival_irelands_active country_event = { id = ireland_events.449 } ireland_refresh_exceptional_route_state = yes }
+		cancel_effect = { clr_country_flag = ireland_mission_prevent_rival_irelands_active ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_rival_irelands_mission modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } }
+	}
+
+	ireland_mission_survive_the_first_convergence_review = {
+		icon = GFX_mission_ireland_mission_survive_the_first_convergence_review
+		selectable_mission = no
+		is_good = yes
+		activation = { ireland_has_active_mission_capacity = yes has_country_flag = ireland_mission_survive_the_first_convergence_review_ready NOT = { has_country_flag = ireland_category_regional_external_at_capacity } OR = { NOT = { has_country_flag = ireland_critical_slot_reserved } has_country_flag = ireland_route_review_slot_needed } }
+		visible = { ireland_exceptional_route_open = yes has_country_flag = ireland_mission_survive_the_first_convergence_review_ready }
+		available = { ireland_three_orders_convergence_ready = yes has_country_flag = ireland_mission_complete_the_royal_circuit_full_recorded has_country_flag = ireland_five_courts_rights_floor NOT = { has_country_flag = ireland_foreign_patron } }
+		cancel_trigger = { OR = { NOT = { ireland_exceptional_route_open = yes } NOT = { has_country_flag = ireland_mission_survive_the_first_convergence_review_ready } } }
+		days_mission_timeout = @IRELAND_EXCEPTIONAL_MISSION_CONVERGENCE_DAYS
+		complete_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_full } ireland_record_mission_result = yes set_country_flag = ireland_mission_survive_the_first_convergence_review_full_recorded set_country_flag = ireland_convergence_order_capstone_complete set_country_flag = ireland_convergence_order_concluded set_country_flag = ireland_convergence_verified clr_country_flag = ireland_mission_survive_the_first_convergence_review_ready ireland_refresh_exceptional_route_state = yes }
+		timeout_effect = { set_variable = { var = ireland_mission_result value = constant:ireland.mission_result_failure } ireland_record_mission_result = yes set_country_flag = ireland_mission_survive_the_first_convergence_review_failure_recorded set_country_flag = ireland_convergence_components_separated clr_country_flag = ireland_mission_survive_the_first_convergence_review_ready ireland_close_exceptional_route_decisions = yes ireland_refresh_exceptional_route_state = yes }
+		cancel_effect = { clr_country_flag = ireland_mission_survive_the_first_convergence_review_ready ireland_refresh_exceptional_route_state = yes }
+		ai_will_do = { base = constant:ireland_exceptional_routes.ai_convergence modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor has_country_flag = ireland_profile_historical_de_valera } modifier = { factor = constant:ireland_exceptional_routes.ai_historical_block_factor ireland_exceptional_route_recovery_active = yes } }
 	}
 }
 

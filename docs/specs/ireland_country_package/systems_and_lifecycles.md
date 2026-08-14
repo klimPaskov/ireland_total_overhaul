@@ -42,6 +42,31 @@ Parliament decisions or transfers human interaction to the GUI without duplicate
 - Mission capacity is centralized. Starting, completing, cancelling, or timing
   out a mission recomputes capacity.
 
+### Exceptional route lifecycle promotion
+
+The High Kingship, Five Provinces, and Otherworld corridors share one
+country-scoped value contract. Their focus completions call
+`ireland_refresh_exceptional_route_state`, which initializes missing ledgers,
+recomputes provincial mandates, synchronizes the active route profile and
+spirits, and commits only the conclusion represented by a completed focus.
+Terminal focuses do not manufacture component flags: pair and final
+conclusions read their completed-focus history and exact scripted triggers.
+
+The new focus effects fire the bounded event range `ireland_events.440` through
+`ireland_events.460` where the route requires a player decision. Decisions and
+missions own the timed work: palace rescue and federal funding use 120-day
+windows, regional reconciliation uses 150 days, site extraction uses 90 days,
+and the first full convergence review uses 180 days. A timeout records the
+failure and exposes recovery; it never awards the terminal focus for free.
+
+The route ledgers retain named obligations, failed bargains, fabricated
+evidence, patron pressure, provincial fiscal failures, and convergence review
+history through cleanup. Recovery can narrow containment, repair a broken
+compact, reopen a provincial convention, disarm Rival Irelands, fulfil penance,
+or separate failed convergence components. No route uses a daily or monthly
+world scan, automatic core/ownership transfer, free war, free division, free
+manpower/equipment, or unexplained resource deposit.
+
 ### Current timed-project lifecycle
 
 The current implementation boundary is commit `89ff719`. The five 180-day
@@ -55,9 +80,11 @@ recorded at selection. The democratic plebiscite relaunch remains a distinct
 35-day political relaunch with its existing material mission gate and 180-day
 cooldown.
 
-The coordinate-only family-lane reflow is also accepted at this boundary. It
-keeps the 218-focus/222-connector tree at three opening trunks and records zero
-layout defects apart from the retained nonblocking clerical linear detour.
+The coordinate-only family-lane reflow is also accepted at this boundary. Its
+pre-addendum 218-focus/222-connector evidence kept three opening trunks; the
+promoted exceptional tranche extends that source to 256 focuses and 265
+connectors while retaining the same three roots and zero crossing, intersection,
+long-connector, and spacing defects.
 
 The five family settlement/recovery pairs are:
 

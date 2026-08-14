@@ -767,6 +767,19 @@ ireland_rebuild_mission_counters = {
 		add_to_variable = { ireland_active_mission_count = constant:ireland.one }
 		set_country_flag = ireland_mission_active
 	}
+	# Exceptional-route missions participate in the same global queue; none can
+	# bypass capacity merely because it is activated by a direct focus event.
+	if = { limit = { has_country_flag = ireland_exceptional_geis_circuit_due } add_to_variable = { ireland_active_mission_count = constant:ireland.one } set_country_flag = ireland_mission_active }
+	if = { limit = { has_country_flag = ireland_mission_break_the_party_crown_active } add_to_variable = { ireland_active_mission_count = constant:ireland.one } set_country_flag = ireland_mission_active }
+	if = { limit = { has_country_flag = ireland_mission_fund_the_common_compact_active } add_to_variable = { ireland_active_mission_count = constant:ireland.one } set_country_flag = ireland_mission_active }
+	if = { limit = { has_country_flag = ireland_mission_keep_the_fifth_seat_open_active } add_to_variable = { ireland_active_mission_count = constant:ireland.one } set_country_flag = ireland_mission_active }
+	if = { limit = { has_country_flag = ireland_mission_prevent_rival_irelands_active } add_to_variable = { ireland_active_mission_count = constant:ireland.one } set_country_flag = ireland_mission_active }
+	if = { limit = { has_country_flag = ireland_fian_equipment_commitment } add_to_variable = { ireland_active_mission_count = constant:ireland.one } set_country_flag = ireland_mission_active }
+	if = { limit = { has_country_flag = ireland_exceptional_compact_obligation_due } add_to_variable = { ireland_active_mission_count = constant:ireland.one } set_country_flag = ireland_mission_active }
+	if = { limit = { has_country_flag = ireland_exceptional_broken_compact } add_to_variable = { ireland_active_mission_count = constant:ireland.one } set_country_flag = ireland_mission_active }
+	if = { limit = { has_country_flag = ireland_regional_compact_framework } add_to_variable = { ireland_active_mission_count = constant:ireland.one } set_country_flag = ireland_mission_active }
+	if = { limit = { has_country_flag = ireland_mound_reversible_extraction } add_to_variable = { ireland_active_mission_count = constant:ireland.one } set_country_flag = ireland_mission_active }
+	if = { limit = { has_country_flag = ireland_mission_survive_the_first_convergence_review_ready } add_to_variable = { ireland_active_mission_count = constant:ireland.one } set_country_flag = ireland_mission_active }
 	# Rebuild category occupancy separately from the global queue. A category
 	# cap is a real active-mission count, not a projection of the global cap.
 	set_variable = { var = ireland_mission_count_settlement_government value = constant:ireland.zero }
@@ -786,6 +799,8 @@ ireland_rebuild_mission_counters = {
 	if = { limit = { has_country_flag = ireland_mission_maintain_cabinet_discipline_active } add_to_variable = { ireland_mission_count_settlement_government = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_assemble_seventy_routine_votes_active } add_to_variable = { ireland_mission_count_settlement_government = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_complete_six_month_settlement_review_active } add_to_variable = { ireland_mission_count_settlement_government = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_exceptional_geis_circuit_due } add_to_variable = { ireland_mission_count_settlement_government = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_mission_break_the_party_crown_active } add_to_variable = { ireland_mission_count_settlement_government = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_conduct_a_free_general_election_active } add_to_variable = { ireland_mission_count_elections = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_form_a_government_after_the_poll_active } add_to_variable = { ireland_mission_count_elections = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_deliver_the_education_settlement_active } add_to_variable = { ireland_mission_count_organised_society = constant:ireland.one } }
@@ -795,6 +810,10 @@ ireland_rebuild_mission_counters = {
 	if = { limit = { has_country_flag = ireland_mission_collect_a_national_folklore_cycle_active } add_to_variable = { ireland_mission_count_cultural_archival = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_hold_a_five_region_cultural_congress_active } add_to_variable = { ireland_mission_count_cultural_archival = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_verify_the_restoration_evidence_active } add_to_variable = { ireland_mission_count_cultural_archival = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_exceptional_compact_obligation_due } add_to_variable = { ireland_mission_count_cultural_archival = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_exceptional_broken_compact } add_to_variable = { ireland_mission_count_cultural_archival = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_regional_compact_framework } add_to_variable = { ireland_mission_count_cultural_archival = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_mound_reversible_extraction } add_to_variable = { ireland_mission_count_cultural_archival = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_meet_the_county_tillage_schedule_active } add_to_variable = { ireland_mission_count_provision = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_bring_the_harvest_to_market_active } add_to_variable = { ireland_mission_count_provision = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_commission_the_protected_workshop_network_active } add_to_variable = { ireland_mission_count_provision = constant:ireland.one } }
@@ -813,6 +832,7 @@ ireland_rebuild_mission_counters = {
 	if = { limit = { has_country_flag = ireland_mission_patrol_the_neutral_approaches_active } add_to_variable = { ireland_mission_count_readiness = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_protect_plan_w_active } add_to_variable = { ireland_mission_count_readiness = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_demobilise_without_losing_the_cadre_active } add_to_variable = { ireland_mission_count_readiness = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_fian_equipment_commitment } add_to_variable = { ireland_mission_count_readiness = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_resolve_an_aircrew_internment_case_active } add_to_variable = { ireland_mission_count_neutrality_incidents = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_investigate_a_merchant_sinking_active } add_to_variable = { ireland_mission_count_neutrality_incidents = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_maintain_equal_belligerent_rules_active } add_to_variable = { ireland_mission_count_neutrality_incidents = constant:ireland.one } }
@@ -833,6 +853,10 @@ ireland_rebuild_mission_counters = {
 	if = { limit = { has_country_flag = ireland_mission_ratify_a_regional_charter_active } add_to_variable = { ireland_mission_count_regional_external = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_meet_the_member_contribution_schedule_active } add_to_variable = { ireland_mission_count_regional_external = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_fulfil_the_compact_at_five_sites_active } add_to_variable = { ireland_mission_count_regional_external = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_mission_fund_the_common_compact_active } add_to_variable = { ireland_mission_count_regional_external = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_mission_keep_the_fifth_seat_open_active } add_to_variable = { ireland_mission_count_regional_external = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_mission_prevent_rival_irelands_active } add_to_variable = { ireland_mission_count_regional_external = constant:ireland.one } }
+	if = { limit = { has_country_flag = ireland_mission_survive_the_first_convergence_review_ready } add_to_variable = { ireland_mission_count_regional_external = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_end_wartime_rationing_safely_active } add_to_variable = { ireland_mission_count_postwar = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_settle_the_demobilised_forces_active } add_to_variable = { ireland_mission_count_postwar = constant:ireland.one } }
 	if = { limit = { has_country_flag = ireland_mission_bring_the_republic_settlement_into_force_active } add_to_variable = { ireland_mission_count_postwar = constant:ireland.one } }

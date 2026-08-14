@@ -2626,6 +2626,10 @@ ireland_has_preemptible_routine_mission = {
 
 ireland_has_active_critical_mission = {
 	OR = {
+		has_country_flag = ireland_exceptional_geis_circuit_due
+		has_country_flag = ireland_mission_break_the_party_crown_active
+		has_country_flag = ireland_mission_prevent_rival_irelands_active
+		has_country_flag = ireland_mission_survive_the_first_convergence_review_ready
 		has_country_flag = ireland_mission_complete_six_month_settlement_review_active
 		AND = {
 			has_country_flag = ireland_mission_conduct_a_free_general_election_active

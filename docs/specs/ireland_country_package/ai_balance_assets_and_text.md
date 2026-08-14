@@ -2,11 +2,13 @@
 
 ## Current implementation evidence
 
-At the `89ff719` evidence boundary the focus source contains 218 focuses and
-226 connectors with three opening trunks. The accepted family-lane reflow spans
-x `-26..21` and y `0..22`, with zero crossings, intersections, long
-connectors, duplicate coordinates, or same-row spacing defects; the retained
-clerical linear detour is nonblocking. Seven industrial concerns and two
+At the `89ff719` evidence boundary the pre-addendum focus source contained 218
+focuses. The current promoted source contains 256 focuses and 265 connectors
+with three opening trunks. Its authored bounds are x `-44..31`, y `0..27`,
+with zero crossings, node intersections, long connectors, duplicate
+coordinates, or same-row spacing defects. Nonblocking detour and isolated-card
+advisories remain where a hidden `available` lock intentionally replaces a
+crossing visible connector. Seven industrial concerns and two
 MIOs expose nine distinct material contracts; five family settlements and five
 family recoveries use distinct decision icons; and the five directly dispatched
 family reports use distinct 210x176 art. The Parliament enabled button is
@@ -41,6 +43,25 @@ Territorial AI rules:
   proof, diplomatic refusal, supply access, and favourable strength ratios;
 - no AI launches a second demand or settlement mission while one is active;
 - timeout/failure changes priorities and can select recovery.
+
+### Exceptional route AI contract
+
+`IRE_ireland_strategy_plans.txt` keeps all 38 exceptional and convergence
+focuses at factor `0` in `IRE_ireland_historical`. Nonhistorical plans become
+route-aware only after the corresponding evidence, family, or conclusion flag
+exists. Their relative commitment weights are centralized as follows:
+
+| Decision point | Relative weights | Guardrails |
+| --- | --- | --- |
+| High Kingship | independent household `10`; captured crown `4`; sacral crown `3`; bounded recovery `4` | no captive route without a sponsor; no geis or stone choice without evidence and affordable obligations |
+| Five Provinces | federal `10`; confederation `7`; Empty Chair `6`; sovereignty outcomes `3` | no invented Ulster mandate; no federal conclusion below mandate/cohesion/budget floors |
+| Otherworld | balanced compact `10`; containment `6`; Tuatha `4`; Fianna `5`; regional courts `6`; exploitation `2` | no exploitation without material capacity; no Fianna certification without a real equipped, supplied, trained formation |
+| convergence | each pair/final focus `1` | no selection while a recovery mission or exact disqualifier is active; final review requires every component floor |
+
+Failure priorities point to penance, renewed convention, confederation, civil
+restoration, restitution, or component separation before optional focuses. No
+AI path invents a mandate, accepts an unfulfillable geis, proclaims an
+unequipped Fian, or treats a failed extraction as a permanent free benefit.
 
 ## Balance budgets
 
@@ -97,6 +118,18 @@ Search filters are strict direct-effect metadata:
   family. No missing or unrelated fallback report image.
 - Parliament enabled buttons use green/brass; unavailable buttons are visibly
   greyed by engine state. Seat diagrams and text remain aligned at 1920 and 2560.
+
+The 38 exceptional focus consumers use distinct `GFX_focus_ireland_<id>`
+registrations and matching one-frame shine registrations in
+`interface/ireland_icons.gfx` and `interface/ireland_focus_shine.gfx`. Their
+final 94x86 DDS files, source PNGs, processed previews, and manifest are recorded
+under `docs/assets/ireland_exceptional_routes_depth_2026-08-14/`. No exceptional
+focus reuses another focus's sprite.
+
+Every new focus, reward tooltip, and description has an English key in
+`localisation/english/ireland_l_english.yml` encoded with UTF-8 BOM. Otherworld
+copy distinguishes local courts, literary associations, and human interpreters
+and does not present folklore as twentieth-century institutional evidence.
 
 ## Localisation direction
 

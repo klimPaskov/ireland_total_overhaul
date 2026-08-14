@@ -1196,3 +1196,69 @@ an automatic fallback. The United Nations admission caller may set it only when
 United Nations path invalid. Skipping the mission while a valid United Nations
 authority exists must not set the flag. This keeps the foundation trigger
 auditable and prevents a date-only shortcut.
+
+## Exceptional route lifecycle helpers
+
+### `ireland_initialize_high_kingship_values`
+
+- Scope: Ireland country effect.
+- Purpose: initialises Royal Legitimacy, Royal Obligation Burden, and Household Reach once at the High Kingship gateway.
+- Inputs/outputs: no inputs; writes the three canonical values and an initialization flag.
+- Defaults and side effects: no-op after initialization; creates no crown, unit, claim, or cosmetic identity.
+- Usage: call from the High Kingship evidence gate and `ireland_refresh_exceptional_route_state`.
+
+### `ireland_initialize_five_provinces_values`
+
+- Scope: Ireland country effect.
+- Purpose: initialises Federal Cohesion, the provincial mandate ledger, and Middle Balance.
+- Inputs/outputs: no inputs; writes the seven ledger variables and an initialization flag.
+- Defaults and side effects: no-op after initialization; the Ulster mandate remains zero until a lawful Northern-access flag exists.
+- Usage: call from the Five Provinces entry and the shared refresh helper.
+
+### `ireland_refresh_provincial_mandates`
+
+- Scope: Ireland country effect.
+- Purpose: clamps provincial values and recognises Ulster only through lawful settlement, convention, cultural delegation, or special status.
+- Inputs/outputs: provincial values and lawful-access flags; outputs a clamped ledger and, where lawful, a valid Ulster mandate.
+- Defaults and side effects: never derives a mandate from core, claim, occupation, or ownership.
+- Usage: call after provincial focus, event, and decision changes.
+
+### `ireland_initialize_otherworld_obligations`
+
+- Scope: Ireland country effect.
+- Purpose: initialises the named-obligation count, broken-obligation count, Fian Readiness, and regional compact count.
+- Inputs/outputs: no inputs; writes the four values and initialization flag.
+- Defaults and side effects: creates no formation, manpower, equipment, or stockpile.
+- Usage: call at verified Otherworld entry and via the shared refresh helper.
+
+### `ireland_pay_exceptional_action_cost` / `ireland_pay_exceptional_command_cost`
+
+- Scope: Ireland country effect.
+- Purpose: deduct the 15/20/25 political-power and 20/30/40 command-power tiers from a caller-selected pressure anchor.
+- Inputs/outputs: temporary `ireland_exceptional_cost_anchor`; deducts the matching resource tier.
+- Defaults and side effects: does not change route state or grant a benefit; callers own availability checks.
+- Usage: set the action-specific anchor immediately before invoking the payment helper.
+
+### `ireland_commit_exceptional_conclusion`
+
+- Scope: Ireland country effect.
+- Purpose: converts completed exceptional terminal focus history into active conclusion flags.
+- Inputs/outputs: exceptional completed focuses and the existing final-convergence record; outputs conclusion flags.
+- Defaults and side effects: preserves focus, patron, fabrication, and failure history; never grants territory, cores, wars, units, equipment, or recovery.
+- Usage: call from terminal focus rewards and the shared refresh helper.
+
+### `ireland_close_exceptional_route_decisions`
+
+- Scope: Ireland country effect.
+- Purpose: clears active exceptional missions and temporary due-benefit flags when an exceptional component closes.
+- Inputs/outputs: active mission and due flags; removes only stale activation state.
+- Defaults and side effects: preserves completed and failure records for AI and convergence review.
+- Usage: call on failed convergence, explicit component separation, or route cleanup.
+
+### `ireland_refresh_exceptional_route_state`
+
+- Scope: Ireland country effect.
+- Purpose: the single idempotent refresh for route initialization, mandate legality, conclusion recognition, existing profile/spirit refresh, same-slot exceptional forms, and cosmetic identity.
+- Inputs/outputs: route values, flags, and focus history; outputs clamped values, conclusion flags, a valid three-spirit trio, and any materially distinct cosmetic identity.
+- Defaults and side effects: no global on-action, core, state, war, unit, stockpile, or resource effect.
+- Usage: call after every exceptional focus, action, event option, and mission outcome.

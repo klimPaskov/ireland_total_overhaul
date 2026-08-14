@@ -4459,5 +4459,6 @@ ireland_cleanup_route_state = {
 	set_variable = { var = ireland_settlement_pending_stage value = constant:ireland.zero }
 	set_variable = { var = ireland_settlement_pending_days value = constant:ireland.zero }
 	set_variable = { var = ireland_route_review_days value = constant:ireland.zero }
+	ireland_close_exceptional_route_decisions = yes
 	ireland_rebuild_mission_counters = yes
 }

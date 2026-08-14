@@ -1,0 +1,22 @@
+# Overview: same-slot forms for exceptional conclusions. Route runtime replaces
+# rather than stacks these with the governing, society, and security trio.
+
+# Native idea modifier fields accept local macro substitution, not `constant:`.
+# Keep these exact values synchronized with `ireland_exceptional_routes`
+# `spirit_minor_positive_factor = 0.05`, `spirit_minor_negative_factor = -0.05`,
+# and `spirit_major_negative_factor = -0.10`.
+@IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE = 0.05
+@IRELAND_EXCEPTIONAL_SPIRIT_MINOR_NEGATIVE = -0.05
+@IRELAND_EXCEPTIONAL_SPIRIT_MAJOR_NEGATIVE = -0.10
+
+ideas = {
+	country = {
+		ireland_spirit_governing_five_provinces_confederation = { picture = ireland_spirit_governing_five_provinces modifier = { political_power_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE stability_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE } }
+		ireland_spirit_governing_five_provinces_empty_chair = { picture = ireland_spirit_governing_five_provinces modifier = { stability_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE consumer_goods_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE } }
+		ireland_spirit_governing_five_provinces_fifth_province = { picture = ireland_spirit_governing_five_provinces_pentarchy modifier = { political_power_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE stability_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_NEGATIVE } }
+		ireland_spirit_governing_high_king_unbounded = { picture = ireland_spirit_governing_high_king_sacral modifier = { war_support_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE stability_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MAJOR_NEGATIVE political_power_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_NEGATIVE } }
+		ireland_spirit_governing_otherworld_tuatha = { picture = ireland_spirit_governing_otherworld modifier = { stability_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE political_power_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_NEGATIVE } }
+		ireland_spirit_security_otherworld_fianna = { picture = ireland_spirit_security_otherworld modifier = { army_defence_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE supply_consumption_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE } }
+		ireland_spirit_society_otherworld_regional_courts = { picture = ireland_spirit_society_otherworld modifier = { stability_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE consumer_goods_factor = @IRELAND_EXCEPTIONAL_SPIRIT_MINOR_POSITIVE } }
+	}
+}

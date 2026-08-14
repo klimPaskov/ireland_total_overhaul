@@ -1,5 +1,10 @@
 # Ireland Country Package Final Completion Audit — 2026-08-14
 
+> Historical audit boundary: this report records the pre-exceptional-route
+> `8fe5c62` state and is superseded by the later 256-focus completion audit.
+> Its incomplete verdict remains useful as implementation history, not as the
+> current package status.
+
 ## Audit identity
 
 - Audit mode: read-only feature-completion audit.

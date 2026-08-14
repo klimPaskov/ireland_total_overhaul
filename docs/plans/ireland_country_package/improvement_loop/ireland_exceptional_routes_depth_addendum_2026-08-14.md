@@ -1,14 +1,14 @@
 # Ireland Exceptional Routes Depth Addendum
 
 Date: 2026-08-14  
-Status: implementation-ready improvement addendum  
+Status: implemented and promoted into the country-package specification
 Scope: High Kingship, Five Provinces, Otherworld, and their convergence conclusions  
 Classification: concealed P/A route expansion  
 
 ## Decision
 
-The exceptional routes still need one bounded depth tranche. This is not a new
-sovereignty family. It replaces the current compressed five-focus High
+The exceptional routes received one bounded depth tranche. This is not a new
+sovereignty family. It replaces the former compressed five-focus High
 Kingship, four-focus Five Provinces, and six-focus Otherworld selections with
 the already specified internal branches, failures, recoveries, and
 convergences.

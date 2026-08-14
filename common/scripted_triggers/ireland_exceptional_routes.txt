@@ -1,0 +1,224 @@
+# Overview: route-value, lawful-participation, mission, and convergence checks
+# for Ireland's exceptional conclusions. These are country-scoped.
+
+# Native manpower, equipment, and command-power trigger operands accept
+# file-local macro substitution rather than `constant:`. Keep these exact values
+# synchronized with `ireland_exceptional_routes` `fian_manpower_gate_exclusive = 499`,
+# `fian_infantry_equipment_gate_exclusive = 499`,
+# `fian_support_equipment_gate_exclusive = 19`, and
+# `command_low_gate_exclusive = 19`.
+@IRELAND_EXCEPTIONAL_FIAN_MANPOWER_GATE = 499
+@IRELAND_EXCEPTIONAL_FIAN_INFANTRY_EQUIPMENT_GATE = 499
+@IRELAND_EXCEPTIONAL_FIAN_SUPPORT_EQUIPMENT_GATE = 19
+@IRELAND_EXCEPTIONAL_COMMAND_LOW_GATE = 19
+
+ireland_exceptional_route_open = {
+	AND = {
+		original_tag = IRE
+		NOT = { has_country_flag = ireland_route_archived }
+		NOT = { has_country_flag = ireland_route_cleanup }
+	}
+}
+
+ireland_high_king_clean_constitutional_conclusion = {
+	AND = {
+		check_variable = { var = ireland_royal_legitimacy value = constant:ireland_exceptional_routes.royal_legitimacy_ready compare = greater_than_or_equals }
+		check_variable = { var = ireland_household_reach value = constant:ireland_exceptional_routes.household_reach_clean_max compare = less_than_or_equals }
+		check_variable = { var = ireland_national_settlement value = constant:ireland_exceptional_routes.constitutional_settlement_min compare = greater_than_or_equals }
+		check_variable = { var = ireland_national_settlement value = constant:ireland_exceptional_routes.constitutional_settlement_max compare = less_than_or_equals }
+		NOT = { has_country_flag = ireland_foreign_claimant_sponsor }
+		NOT = { has_country_flag = ireland_high_king_captured_crown_path }
+	}
+}
+
+ireland_high_king_sacral_conclusion_ready = {
+	AND = {
+		check_variable = { var = ireland_royal_legitimacy value = constant:ireland_exceptional_routes.royal_legitimacy_sacral_ready compare = greater_than_or_equals }
+		check_variable = { var = ireland_cultural_site_stewardship value = constant:ireland_exceptional_routes.sacral_site_stewardship_ready compare = greater_than_or_equals }
+		check_variable = { var = ireland_national_settlement value = constant:ireland_exceptional_routes.sacral_settlement_min compare = greater_than_or_equals }
+		check_variable = { var = ireland_national_settlement value = constant:ireland_exceptional_routes.sacral_settlement_max compare = less_than_or_equals }
+		has_country_flag = ireland_mission_complete_the_royal_circuit_full_recorded
+		NOT = { has_country_flag = ireland_exceptional_geis_due }
+		NOT = { has_country_flag = ireland_exceptional_geis_broken }
+	}
+}
+
+ireland_high_king_captured_failure_ready = {
+	OR = {
+		check_variable = { var = ireland_national_settlement value = constant:ireland_exceptional_routes.captured_settlement_threshold compare = greater_than }
+		has_country_flag = ireland_mission_break_the_party_crown_failure_recorded
+	}
+}
+
+ireland_five_provinces_federal_conclusion_ready = {
+	AND = {
+		check_variable = { var = ireland_federal_cohesion value = constant:ireland_exceptional_routes.federal_cohesion_ready compare = greater_than_or_equals }
+		check_variable = { var = ireland_mandate_leinster value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals }
+		check_variable = { var = ireland_mandate_munster value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals }
+		check_variable = { var = ireland_mandate_connacht value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals }
+		check_variable = { var = ireland_mandate_mide value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals }
+		has_country_flag = ireland_federal_common_budget_funded
+		has_country_flag = ireland_provincial_rights_recorded
+	}
+}
+
+ireland_five_provinces_empty_chair_ready = {
+	AND = {
+		ireland_five_provinces_federal_conclusion_ready = yes
+		check_variable = { var = ireland_minority_confidence value = constant:ireland_exceptional_routes.empty_chair_minority_confidence_ready compare = greater_than_or_equals }
+		has_country_flag = ireland_protected_ulster_chair
+		NOT = { has_country_flag = ireland_ulster_mandate_invented }
+	}
+}
+
+ireland_five_provinces_confederation_ready = {
+	AND = {
+		check_variable = { var = ireland_federal_cohesion value = constant:ireland_exceptional_routes.confederal_cohesion_ready compare = greater_than_or_equals }
+		check_variable = { var = ireland_mandate_leinster value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals }
+		check_variable = { var = ireland_mandate_munster value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals }
+		check_variable = { var = ireland_mandate_connacht value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals }
+		has_country_flag = ireland_confederal_budget_funded
+		has_country_flag = ireland_provincial_rights_recorded
+	}
+}
+
+ireland_five_provinces_sovereignty_conclusion_ready = {
+	AND = {
+		check_variable = { var = ireland_mandate_leinster value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals }
+		check_variable = { var = ireland_mandate_munster value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals }
+		check_variable = { var = ireland_mandate_connacht value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals }
+		check_variable = { var = ireland_mandate_mide value = constant:ireland_exceptional_routes.mandate_valid compare = greater_than_or_equals }
+		check_variable = { var = ireland_middle_balance value = constant:ireland_exceptional_routes.middle_balance_ready compare = greater_than_or_equals }
+	}
+}
+
+ireland_otherworld_balanced_conclusion_ready = {
+	AND = {
+		check_variable = { var = ireland_compact_trust value = constant:ireland_exceptional_routes.compact_ready compare = greater_than_or_equals }
+		check_variable = { var = ireland_veil_stability value = constant:ireland_exceptional_routes.compact_ready compare = greater_than_or_equals }
+		check_variable = { var = ireland_national_settlement value = constant:ireland_exceptional_routes.balanced_settlement_min compare = greater_than_or_equals }
+		check_variable = { var = ireland_national_settlement value = constant:ireland_exceptional_routes.balanced_settlement_max compare = less_than_or_equals }
+		NOT = { has_country_flag = ireland_exceptional_geis_due }
+		NOT = { has_country_flag = ireland_exceptional_broken_compact }
+		NOT = { has_country_flag = ireland_exceptional_deliberate_breach }
+	}
+}
+
+ireland_otherworld_tuatha_ready = {
+	AND = {
+		check_variable = { var = ireland_compact_trust value = constant:ireland_exceptional_routes.tuatha_compact_trust_ready compare = greater_than_or_equals }
+		check_variable = { var = ireland_national_settlement value = constant:ireland_exceptional_routes.tuatha_settlement_min compare = greater_than_or_equals }
+		check_variable = { var = ireland_national_settlement value = constant:ireland_exceptional_routes.tuatha_settlement_max compare = less_than_or_equals }
+		has_country_flag = ireland_otherworld_rights_floor
+		NOT = { has_country_flag = ireland_exceptional_deliberate_breach }
+	}
+}
+
+ireland_otherworld_fianna_ready = {
+	AND = {
+		check_variable = { var = ireland_fian_readiness value = constant:ireland_exceptional_routes.fian_readiness_ready compare = greater_than_or_equals }
+		has_country_flag = ireland_mission_equip_a_fian_company_full_recorded
+		NOT = { has_country_flag = ireland_exceptional_geis_broken }
+	}
+}
+
+ireland_otherworld_exploitation_ready = {
+	OR = {
+		has_country_flag = ireland_mission_extract_from_a_protected_site_failure_recorded
+		has_country_flag = ireland_exceptional_deliberate_breach
+	}
+}
+
+ireland_crown_five_provinces_convergence_ready = {
+	AND = {
+		OR = { has_country_flag = ireland_conclusion_high_king_independent_household has_country_flag = ireland_conclusion_high_king_crown_rescued }
+		OR = { has_country_flag = ireland_conclusion_five_provinces_federal has_country_flag = ireland_conclusion_five_provinces_empty_chair has_country_flag = ireland_conclusion_five_provinces_confederation has_country_flag = ireland_conclusion_five_provinces_pentarchy has_country_flag = ireland_conclusion_five_provinces_fifth_province }
+		NOT = { has_country_flag = ireland_conclusion_high_king_captive_throne }
+		NOT = { has_country_flag = ireland_conclusion_five_provinces_rival_irelands }
+	}
+}
+
+ireland_high_king_otherworld_convergence_ready = {
+	AND = {
+		has_country_flag = ireland_conclusion_high_king_living_land
+		OR = { has_country_flag = ireland_conclusion_otherworld_compact has_country_flag = ireland_conclusion_otherworld_tuatha_sovereignty }
+		NOT = { has_country_flag = ireland_conclusion_high_king_captive_throne }
+		NOT = { has_country_flag = ireland_conclusion_high_king_unbounded_sacred_rule }
+		NOT = { has_country_flag = ireland_conclusion_otherworld_dominion }
+		NOT = { has_country_flag = ireland_conclusion_otherworld_sealed_state }
+	}
+}
+
+ireland_five_courts_convergence_ready = {
+	AND = {
+		ireland_five_provinces_sovereignty_conclusion_ready = yes
+		check_variable = { var = ireland_regional_compact_count value = constant:ireland_exceptional_routes.regional_compacts_ready compare = greater_than_or_equals }
+		NOT = { has_country_flag = ireland_conclusion_five_provinces_rival_irelands }
+		NOT = { has_country_flag = ireland_conclusion_otherworld_dominion }
+		NOT = { has_country_flag = ireland_conclusion_otherworld_sealed_state }
+	}
+}
+
+ireland_three_orders_convergence_ready = {
+	AND = {
+		has_country_flag = ireland_conclusion_crown_and_five_provinces
+		has_country_flag = ireland_conclusion_high_king_two_irelands
+		has_country_flag = ireland_conclusion_five_courts_otherworld
+		check_variable = { var = ireland_cultural_site_stewardship value = constant:ireland_exceptional_routes.convergence_site_stewardship compare = greater_than_or_equals }
+		check_variable = { var = ireland_cultural_regional_participation value = constant:ireland_exceptional_routes.convergence_regional_participation compare = greater_than_or_equals }
+		check_variable = { var = ireland_cultural_archival_record value = constant:ireland_exceptional_routes.convergence_archival_record compare = greater_than_or_equals }
+		check_variable = { var = ireland_social_consent value = constant:ireland_exceptional_routes.convergence_social_consent compare = greater_than_or_equals }
+		NOT = { has_country_flag = ireland_conclusion_high_king_captive_throne }
+		NOT = { has_country_flag = ireland_conclusion_high_king_unbounded_sacred_rule }
+		NOT = { has_country_flag = ireland_conclusion_five_provinces_rival_irelands }
+		NOT = { has_country_flag = ireland_conclusion_otherworld_dominion }
+		NOT = { has_country_flag = ireland_conclusion_otherworld_sealed_state }
+		NOT = { has_country_flag = ireland_fabricated_evidence }
+		NOT = { has_country_flag = ireland_ulster_mandate_invented }
+		NOT = { has_country_flag = ireland_foreign_patron }
+		NOT = { has_country_flag = ireland_exceptional_deliberate_breach }
+		NOT = { has_country_flag = ireland_exceptional_geis_broken }
+		NOT = { has_country_flag = ireland_exceptional_broken_compact }
+	}
+}
+
+ireland_exceptional_fian_material_ready = {
+	AND = {
+		has_manpower > @IRELAND_EXCEPTIONAL_FIAN_MANPOWER_GATE
+		has_equipment = { infantry_equipment > @IRELAND_EXCEPTIONAL_FIAN_INFANTRY_EQUIPMENT_GATE support_equipment > @IRELAND_EXCEPTIONAL_FIAN_SUPPORT_EQUIPMENT_GATE }
+		command_power > @IRELAND_EXCEPTIONAL_COMMAND_LOW_GATE
+		OR = {
+			113 = {
+				any_state_division = {
+					OWNER = { tag = ROOT }
+					NOT = { unit_strength < constant:ireland_exceptional_routes.fian_unit_strength_ready }
+					NOT = { unit_organization < constant:ireland_exceptional_routes.fian_unit_organization_ready }
+				}
+			}
+			134 = {
+				any_state_division = {
+					OWNER = { tag = ROOT }
+					NOT = { unit_strength < constant:ireland_exceptional_routes.fian_unit_strength_ready }
+					NOT = { unit_organization < constant:ireland_exceptional_routes.fian_unit_organization_ready }
+				}
+			}
+			135 = {
+				any_state_division = {
+					OWNER = { tag = ROOT }
+					NOT = { unit_strength < constant:ireland_exceptional_routes.fian_unit_strength_ready }
+					NOT = { unit_organization < constant:ireland_exceptional_routes.fian_unit_organization_ready }
+				}
+			}
+		}
+	}
+}
+
+ireland_exceptional_route_recovery_active = {
+	OR = {
+		has_country_flag = ireland_exceptional_geis_broken
+		has_country_flag = ireland_exceptional_broken_compact
+		has_country_flag = ireland_mission_prevent_rival_irelands_active
+		has_country_flag = ireland_mission_repair_the_broken_compact_active
+		has_country_flag = ireland_mission_survive_the_first_convergence_review_active
+	}
+}

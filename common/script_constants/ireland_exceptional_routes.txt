@@ -1,0 +1,184 @@
+# Overview: canonical thresholds, costs, durations, and AI weights for the
+# concealed High Kingship, Five Provinces, and Otherworld lifecycles.
+
+ireland_exceptional_routes = {
+	schema = {
+		any_key = yes
+		data = fixed_point
+	}
+
+	value_min = 0
+	value_max = 100
+	royal_legitimacy_opening = 55
+	royal_obligation_opening = 20
+	household_reach_opening = 20
+	federal_cohesion_opening = 50
+	mandate_opening = 45
+	mandate_ulster_opening = 0
+	mandate_mide_opening = 35
+	middle_balance_opening = 50
+	otherworld_obligations_opening = 0
+	fian_readiness_opening = 0
+	regional_compacts_opening = 0
+
+	constitutional_settlement_min = 20
+	constitutional_settlement_max = 50
+	sacral_settlement_min = -45
+	sacral_settlement_max = -20
+	captured_settlement_threshold = 75
+	unbounded_settlement_threshold = -75
+	royal_legitimacy_ready = 60
+	royal_legitimacy_sacral_ready = 65
+	household_reach_clean_max = 45
+	federal_cohesion_ready = 60
+	federal_cohesion_failure = 25
+	mandate_valid = 55
+	middle_balance_ready = 50
+	compact_ready = 60
+	compact_entry_floor = 45
+	regional_compacts_partial = 4
+	regional_compacts_ready = 5
+	fian_readiness_ready = 100
+	convergence_site_stewardship = 85
+	convergence_regional_participation = 80
+	convergence_archival_record = 85
+	convergence_social_consent = 65
+	sacral_site_stewardship_ready = 60
+	empty_chair_minority_confidence_ready = 60
+	confederal_cohesion_ready = 45
+	balanced_settlement_min = -15
+	balanced_settlement_max = 15
+	tuatha_compact_trust_ready = 50
+	tuatha_settlement_min = -75
+	tuatha_settlement_max = -46
+	party_crown_household_reach_max = 60
+	action_social_consent_ready = 55
+	party_crown_audits_required = 2
+	regional_court_participation_ready = 60
+	provincial_veto_middle_balance_max = 35
+	broken_compact_trust_ready = 45
+	broken_compact_veil_ready = 45
+
+	# Exclusive resource gates are used by native resource triggers, whose
+	# operands are injected through documented file-local macros at call sites.
+	pp_low_gate_exclusive = 14
+	pp_watch_gate_exclusive = 19
+	pp_severe_gate_exclusive = 24
+	command_low_gate_exclusive = 19
+	fian_manpower_gate_exclusive = 499
+	fian_infantry_equipment_gate_exclusive = 499
+	fian_support_equipment_gate_exclusive = 19
+	fian_motorized_equipment_gate_exclusive = 19
+	fian_manpower_cost = 500
+	fian_infantry_equipment_cost = 500
+	fian_support_equipment_cost = 20
+	fian_command_cost = 20
+	fian_unit_strength_ready = 0.9
+	fian_unit_organization_ready = 0.8
+	ai_royal_legitimacy_pressure = 60
+	ai_household_reach_pressure = 45
+	ai_royal_burden_pressure = 45
+	ai_social_consent_pressure = 60
+	ai_federal_cohesion_pressure = 45
+	ai_middle_balance_pressure = 45
+	ai_minority_confidence_pressure = 60
+	ai_compact_trust_pressure = 45
+	ai_veil_stability_pressure = 45
+	ai_site_stewardship_pressure = 60
+	ai_archival_pressure = 60
+	ai_fian_readiness_pressure = 50
+	ai_foreign_exposure_pressure = 30
+
+	cost_low_pp = 15
+	cost_watch_pp = 20
+	cost_severe_pp = 25
+	cost_low_cp = 20
+	cost_watch_cp = 30
+	cost_severe_cp = 40
+	cost_anchor_watch_threshold = 45
+	cost_anchor_severe_threshold = 70
+	audit_reach_delta = -10
+	audit_legitimacy_delta = 5
+	capture_reach_delta = 20
+	capture_legitimacy_delta = -10
+	rescue_reach_delta = -25
+	mandate_budget_delta = 10
+	cohesion_budget_failure_delta = -10
+	compact_obligation_delta = 1
+	compact_trust_delta = 5
+	compact_breach_delta = -10
+	veil_repair_delta = 10
+	extraction_trust_delta = -15
+	extraction_veil_delta = -15
+	fian_readiness_delta = 100
+	federal_cohesion_action_delta = 5
+	confederal_middle_balance_delta = 5
+	royal_circuit_legitimacy_delta = 10
+	royal_circuit_stewardship_delta = 10
+	common_compact_cohesion_delta = 10
+	common_compact_failure_delta = -10
+	middle_balance_recovery_delta = 10
+	broken_compact_failure_veil_delta = -10
+	otherworld_obligation_increment = 1
+	provincial_fiscal_failure_increment = 1
+
+	# Event option deltas are deliberately tiered so the 92-option direct event
+	# package can be tuned without editing option effects.
+	event_minor_positive_delta = 5
+	event_minor_negative_delta = -5
+	event_major_positive_delta = 10
+	event_major_negative_delta = -10
+	event_severe_negative_delta = -15
+	event_foreign_exposure_delta = 15
+
+	mission_royal_circuit_days = 120
+	mission_party_crown_days = 120
+	mission_common_compact_days = 120
+	mission_fifth_seat_days = 180
+	mission_rival_irelands_days = 120
+	mission_fian_company_days = 120
+	mission_five_sites_days = 180
+	mission_broken_compact_days = 120
+	mission_regional_compacts_days = 150
+	mission_extraction_days = 90
+	mission_convergence_review_days = 180
+	decision_cooldown_short_days = 90
+	decision_cooldown_long_days = 120
+
+	ai_independent_household = 10
+	ai_captured_crown = 4
+	ai_sacral_crown = 3
+	ai_federal = 10
+	ai_confederation = 7
+	ai_provincial_sovereignty = 3
+	ai_balanced_compact = 10
+	ai_containment = 6
+	ai_exploitation = 2
+	ai_tuatha = 4
+	ai_fianna = 5
+	ai_regional_courts = 6
+	ai_convergence = 1
+	ai_event_primary = 80
+	ai_event_supported = 45
+	ai_event_conditional = 20
+	ai_event_risk = 6
+	ai_event_last_resort = 2
+	ai_historical_block_factor = 0
+	ai_route_match_factor = 3
+	ai_ledger_pressure_factor = 2
+	ai_recovery_priority_factor = 3
+	ai_recovery_support_factor = 2
+	ai_party_crown = 5
+	ai_royal_circuit_mission = 10
+	ai_party_crown_mission = 8
+	ai_restitution_action = 8
+	ai_compact_obligation_mission = 10
+	ai_broken_compact_mission = 10
+	ai_rival_irelands_mission = 10
+
+	# Idea modifier values are injected through documented file-local macros
+	# because native idea modifier fields do not accept `constant:` tokens.
+	spirit_minor_positive_factor = 0.05
+	spirit_minor_negative_factor = -0.05
+	spirit_major_negative_factor = -0.10
+}

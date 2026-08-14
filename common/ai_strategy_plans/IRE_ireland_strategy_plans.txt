@@ -177,6 +177,68 @@ IRE_ireland_historical = {
 		ireland_postwar_settlement_office = 0
 		ireland_local_rights_charter = 0
 		ireland_atlantic_settlement_concluded = 0
+		# Exceptional route commitments and every convergence focus remain
+		# concealed from the historical constitutional plan. The route-reactive
+		# and profile plans below own these choices explicitly.
+		ireland_high_king_evidence_gate = 0
+		ireland_claimants_convention = 0
+		ireland_elective_crown = 0
+		ireland_guardian_crown = 0
+		ireland_crown_powers_charter = 0
+		ireland_provincial_compact = 0
+		ireland_brehon_law_commission = 0
+		ireland_crown_defence_council = 0
+		ireland_household_council = 0
+		ireland_high_king_capstone = 0
+		ireland_crown_in_party_hands = 0
+		ireland_break_the_captive_crown = 0
+		ireland_the_captive_throne = 0
+		ireland_the_stone_gives_its_answer = 0
+		ireland_geasa_of_the_crown = 0
+		ireland_high_kingdom_of_the_living_land = 0
+		ireland_unbounded_sacred_rule = 0
+		ireland_five_province_mandates = 0
+		ireland_federal_republic = 0
+		ireland_northern_policy_proof = 0
+		ireland_pentarchy_guardians = 0
+		ireland_five_provinces_capstone = 0
+		ireland_provincial_powers_convention = 0
+		ireland_fund_the_federal_compact = 0
+		ireland_four_provinces_and_an_empty_chair = 0
+		ireland_council_by_provincial_mandate = 0
+		ireland_irish_confederation = 0
+		ireland_five_sovereign_orders = 0
+		ireland_pentarchy_of_ireland = 0
+		ireland_the_fifth_province = 0
+		ireland_rival_irelands = 0
+		ireland_otherworld_investigation = 0
+		ireland_otherworld_evidence_ledger = 0
+		ireland_compact_with_otherworld = 0
+		ireland_containment_protocol = 0
+		ireland_dominion_claim = 0
+		ireland_otherworld_capstone = 0
+		ireland_turn_contact_into_power = 0
+		ireland_compel_an_answer = 0
+		ireland_the_state_owns_the_mounds = 0
+		ireland_a_breach_made_deliberately = 0
+		ireland_the_rights_of_local_guardians = 0
+		ireland_a_law_for_two_orders = 0
+		ireland_recognise_the_elder_claim = 0
+		ireland_the_courts_beneath_the_hills = 0
+		ireland_a_government_under_the_mounds = 0
+		ireland_the_hounds_are_heard_again = 0
+		ireland_muster_a_modern_fian = 0
+		ireland_no_host_without_equipment = 0
+		ireland_guardians_of_two_irelands = 0
+		ireland_regional_otherworld_courts = 0
+		ireland_no_single_story_rules_them_all = 0
+		ireland_the_emergency_must_end = 0
+		ireland_human_sovereignty_restored = 0
+		ireland_the_sealed_state = 0
+		ireland_high_king_of_two_irelands = 0
+		ireland_crown_and_five_provinces = 0
+		ireland_five_courts_of_the_otherworld = 0
+		ireland_fivefold_high_kingdom_of_two_irelands = 0
 	}
 }
 
@@ -943,6 +1005,9 @@ IRE_ireland_route_high_king = {
 			has_country_flag = ireland_route_high_king
 			has_country_flag = ireland_high_king_constitutional_path
 			has_country_flag = ireland_high_king_sacral_path
+			has_country_flag = ireland_high_king_captured_crown_path
+			has_country_flag = ireland_high_king_crown_rescued
+			has_country_flag = ireland_high_king_conclusion_valid
 			has_country_flag = ireland_profile_high_king
 		}
 	}
@@ -956,6 +1021,14 @@ IRE_ireland_route_high_king = {
 		ireland_elective_crown
 		ireland_guardian_crown
 		ireland_crown_powers_charter
+		ireland_household_council
+		ireland_crown_in_party_hands
+		ireland_break_the_captive_crown
+		ireland_the_captive_throne
+		ireland_the_stone_gives_its_answer
+		ireland_geasa_of_the_crown
+		ireland_high_kingdom_of_the_living_land
+		ireland_unbounded_sacred_rule
 		ireland_high_king_capstone
 		ireland_recovery_bridge
 	}
@@ -963,6 +1036,17 @@ IRE_ireland_route_high_king = {
 		ireland_high_king_evidence_gate = 90
 		ireland_elective_crown = 80
 		ireland_guardian_crown = 90
+		ireland_household_council = 10
+		# Relative commitment weights mirror the accepted route table:
+		# captured crown 4, sacral crown 3, and independent rescue/recovery
+		# work stays below the lawful household route.
+		ireland_crown_in_party_hands = 4
+		ireland_break_the_captive_crown = 4
+		ireland_the_captive_throne = 4
+		ireland_the_stone_gives_its_answer = 3
+		ireland_geasa_of_the_crown = 3
+		ireland_high_kingdom_of_the_living_land = 3
+		ireland_unbounded_sacred_rule = 1
 		ireland_high_king_capstone = 100
 	}
 }
@@ -1188,6 +1272,13 @@ IRE_ireland_family_restoration_programme = {
 		ireland_brehon_law_commission
 		ireland_crown_defence_council
 		ireland_crown_powers_charter
+		ireland_crown_in_party_hands
+		ireland_break_the_captive_crown
+		ireland_the_captive_throne
+		ireland_the_stone_gives_its_answer
+		ireland_geasa_of_the_crown
+		ireland_high_kingdom_of_the_living_land
+		ireland_unbounded_sacred_rule
 		ireland_high_king_capstone
 		ireland_recovery_bridge
 		ireland_restore_constitutional_calendar
@@ -1205,9 +1296,16 @@ IRE_ireland_family_restoration_programme = {
 		ireland_dal_riata_claim
 	}
 	focus_factors = {
-		ireland_household_council = 100
+		ireland_household_council = 10
 		ireland_elective_crown = 90
 		ireland_crown_defence_council = 90
+		ireland_crown_in_party_hands = 4
+		ireland_break_the_captive_crown = 4
+		ireland_the_captive_throne = 4
+		ireland_the_stone_gives_its_answer = 3
+		ireland_geasa_of_the_crown = 3
+		ireland_high_kingdom_of_the_living_land = 3
+		ireland_unbounded_sacred_rule = 1
 		ireland_high_king_capstone = 100
 		ireland_recovery_bridge = 95
 		ireland_restore_constitutional_calendar = 85
@@ -1270,6 +1368,12 @@ IRE_ireland_route_five_provinces = {
 		OR = {
 			has_country_flag = ireland_route_five_provinces
 			has_country_flag = ireland_federal_republic_path
+			has_country_flag = ireland_five_provinces_federal_path
+			has_country_flag = ireland_five_provinces_empty_chair_path
+			has_country_flag = ireland_five_provinces_confederation_path
+			has_country_flag = ireland_pentarchy_of_ireland_complete
+			has_country_flag = ireland_the_fifth_province_complete
+			has_country_flag = ireland_rival_irelands_complete
 			has_country_flag = ireland_pentarchy_path
 			has_country_flag = ireland_profile_five_provinces
 		}
@@ -1283,12 +1387,30 @@ IRE_ireland_route_five_provinces = {
 		ireland_federal_republic
 		ireland_northern_policy_proof
 		ireland_pentarchy_guardians
+		ireland_provincial_powers_convention
+		ireland_fund_the_federal_compact
+		ireland_four_provinces_and_an_empty_chair
+		ireland_council_by_provincial_mandate
+		ireland_irish_confederation
+		ireland_five_sovereign_orders
+		ireland_pentarchy_of_ireland
+		ireland_the_fifth_province
+		ireland_rival_irelands
 		ireland_five_provinces_capstone
 		ireland_recovery_bridge
 	}
 	focus_factors = {
 		ireland_five_province_mandates = 90
 		ireland_federal_republic = 90
+		ireland_provincial_powers_convention = 10
+		ireland_fund_the_federal_compact = 10
+		ireland_four_provinces_and_an_empty_chair = 6
+		ireland_council_by_provincial_mandate = 7
+		ireland_irish_confederation = 7
+		ireland_five_sovereign_orders = 3
+		ireland_pentarchy_of_ireland = 3
+		ireland_the_fifth_province = 3
+		ireland_rival_irelands = 1
 		ireland_five_provinces_capstone = 100
 	}
 }
@@ -1303,6 +1425,12 @@ IRE_ireland_route_otherworld = {
 			has_country_flag = ireland_otherworld_compact_path
 			has_country_flag = ireland_otherworld_containment_path
 			has_country_flag = ireland_otherworld_dominion_path
+			has_country_flag = ireland_otherworld_exploitation_path
+			has_country_flag = ireland_otherworld_coercive_obligation
+			has_country_flag = ireland_otherworld_state_custody_open
+			has_country_flag = ireland_otherworld_tuatha_path
+			has_country_flag = ireland_otherworld_fianna_path
+			has_country_flag = ireland_otherworld_sealed_conclusion_valid
 			has_country_flag = ireland_profile_otherworld
 		}
 	}
@@ -1317,12 +1445,91 @@ IRE_ireland_route_otherworld = {
 		ireland_compact_with_otherworld
 		ireland_containment_protocol
 		ireland_dominion_claim
+		ireland_turn_contact_into_power
+		ireland_compel_an_answer
+		ireland_the_state_owns_the_mounds
+		ireland_a_breach_made_deliberately
+		ireland_the_rights_of_local_guardians
+		ireland_a_law_for_two_orders
+		ireland_recognise_the_elder_claim
+		ireland_the_courts_beneath_the_hills
+		ireland_a_government_under_the_mounds
+		ireland_the_hounds_are_heard_again
+		ireland_muster_a_modern_fian
+		ireland_no_host_without_equipment
+		ireland_guardians_of_two_irelands
+		ireland_regional_otherworld_courts
+		ireland_no_single_story_rules_them_all
+		ireland_the_emergency_must_end
+		ireland_human_sovereignty_restored
+		ireland_the_sealed_state
 		ireland_foreign_safeguards
 		ireland_otherworld_capstone
 	}
 	focus_factors = {
 		ireland_otherworld_investigation = 90
 		ireland_otherworld_evidence_ledger = 95
+		ireland_turn_contact_into_power = 2
+		ireland_compel_an_answer = 2
+		ireland_the_state_owns_the_mounds = 2
+		ireland_a_breach_made_deliberately = 1
+		ireland_the_rights_of_local_guardians = 10
+		ireland_a_law_for_two_orders = 10
+		ireland_recognise_the_elder_claim = 4
+		ireland_the_courts_beneath_the_hills = 4
+		ireland_a_government_under_the_mounds = 4
+		ireland_the_hounds_are_heard_again = 5
+		ireland_muster_a_modern_fian = 5
+		ireland_no_host_without_equipment = 5
+		ireland_guardians_of_two_irelands = 5
+		ireland_regional_otherworld_courts = 6
+		ireland_no_single_story_rules_them_all = 6
+		ireland_the_emergency_must_end = 6
+		ireland_human_sovereignty_restored = 10
+		ireland_the_sealed_state = 1
 		ireland_otherworld_capstone = 100
+	}
+}
+
+# Pair conclusions and the final three-family review are deliberately kept in
+# their own plan. This prevents an active family plan from treating a
+# convergence focus as an ordinary terminal and lets the exact recovery and
+# obligation gates remain authoritative.
+IRE_ireland_exceptional_convergence = {
+	name = "Ireland exceptional convergence review plan"
+	desc = "Select only the lawful pair conclusions and the final three-family review after every component floor is met."
+	allowed = { original_tag = IRE }
+	enable = {
+		NOT = { ireland_exceptional_route_recovery_active = yes }
+		OR = {
+			has_country_flag = ireland_conclusion_high_king_two_irelands
+			has_country_flag = ireland_conclusion_crown_and_five_provinces
+			has_country_flag = ireland_conclusion_five_courts_otherworld
+			has_country_flag = ireland_convergence_components_ready
+			ireland_crown_five_provinces_convergence_ready = yes
+			ireland_high_king_otherworld_convergence_ready = yes
+			ireland_five_courts_convergence_ready = yes
+		}
+	}
+	abort = {
+		OR = {
+			has_country_flag = ireland_route_cleanup
+			has_country_flag = ireland_route_archived
+			has_country_flag = ireland_convergence_order_concluded
+		}
+	}
+	ai_national_focuses = {
+		ireland_high_king_of_two_irelands
+		ireland_crown_and_five_provinces
+		ireland_five_courts_of_the_otherworld
+		ireland_fivefold_high_kingdom_of_two_irelands
+	}
+	focus_factors = {
+		# Pair routes are a low-priority bridge; the final review is always
+		# weight 1 and may never outrank an active recovery mission.
+		ireland_high_king_of_two_irelands = 1
+		ireland_crown_and_five_provinces = 1
+		ireland_five_courts_of_the_otherworld = 1
+		ireland_fivefold_high_kingdom_of_two_irelands = 1
 	}
 }

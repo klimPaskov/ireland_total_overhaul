@@ -1,0 +1,27 @@
+# Ireland exceptional-route report pictures. Each direct event has a distinct
+# period report card; no route event aliases another event's visual.
+spriteTypes = {
+	spriteType = { name = GFX_report_event_ireland_exceptional_438 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_438.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_439 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_439.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_440 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_440.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_441 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_441.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_442 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_442.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_443 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_443.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_444 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_444.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_445 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_445.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_446 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_446.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_447 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_447.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_448 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_448.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_449 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_449.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_450 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_450.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_451 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_451.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_452 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_452.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_453 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_453.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_454 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_454.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_455 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_455.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_456 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_456.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_457 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_457.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_458 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_458.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_459 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_459.dds" }
+	spriteType = { name = GFX_report_event_ireland_exceptional_460 texturefile = "gfx/event_pictures/ireland_exceptional_routes/report_event_ireland_exceptional_460.dds" }
+}

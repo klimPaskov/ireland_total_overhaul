@@ -1,0 +1,144 @@
+# Overview: idempotent state initialization, conclusion reconciliation, spirit
+# replacement, cost payment, and lifecycle cleanup for exceptional routes.
+
+ireland_initialize_high_kingship_values = {
+	if = { limit = { NOT = { has_country_flag = ireland_exceptional_high_king_values_initialized } } set_variable = { var = ireland_royal_legitimacy value = constant:ireland_exceptional_routes.royal_legitimacy_opening } set_variable = { var = ireland_royal_obligation_burden value = constant:ireland_exceptional_routes.royal_obligation_opening } set_variable = { var = ireland_household_reach value = constant:ireland_exceptional_routes.household_reach_opening } set_country_flag = ireland_exceptional_high_king_values_initialized }
+}
+
+ireland_initialize_five_provinces_values = {
+	if = {
+		limit = { NOT = { has_country_flag = ireland_exceptional_five_provinces_values_initialized } }
+		set_variable = { var = ireland_federal_cohesion value = constant:ireland_exceptional_routes.federal_cohesion_opening }
+		set_variable = { var = ireland_mandate_leinster value = constant:ireland_exceptional_routes.mandate_opening }
+		set_variable = { var = ireland_mandate_munster value = constant:ireland_exceptional_routes.mandate_opening }
+		set_variable = { var = ireland_mandate_connacht value = constant:ireland_exceptional_routes.mandate_opening }
+		set_variable = { var = ireland_mandate_ulster value = constant:ireland_exceptional_routes.mandate_ulster_opening }
+		set_variable = { var = ireland_mandate_mide value = constant:ireland_exceptional_routes.mandate_mide_opening }
+		set_variable = { var = ireland_middle_balance value = constant:ireland_exceptional_routes.middle_balance_opening }
+		set_country_flag = ireland_exceptional_five_provinces_values_initialized
+	}
+}
+
+ireland_initialize_otherworld_obligations = {
+	if = { limit = { NOT = { has_country_flag = ireland_exceptional_otherworld_values_initialized } } set_variable = { var = ireland_otherworld_active_obligations value = constant:ireland_exceptional_routes.otherworld_obligations_opening } set_variable = { var = ireland_otherworld_broken_obligations value = constant:ireland_exceptional_routes.otherworld_obligations_opening } set_variable = { var = ireland_fian_readiness value = constant:ireland_exceptional_routes.fian_readiness_opening } set_variable = { var = ireland_regional_compact_count value = constant:ireland_exceptional_routes.regional_compacts_opening } set_country_flag = ireland_exceptional_otherworld_values_initialized }
+}
+
+ireland_refresh_provincial_mandates = {
+	clamp_variable = { var = ireland_federal_cohesion min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_mandate_leinster min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_mandate_munster min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_mandate_connacht min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_mandate_ulster min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_mandate_mide min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_middle_balance min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	if = { limit = { OR = { has_country_flag = ireland_northern_lawful_settlement has_country_flag = ireland_northern_representative_convention has_country_flag = ireland_northern_cultural_delegation has_country_flag = ireland_northern_special_status_agreed } } set_variable = { var = ireland_mandate_ulster value = constant:ireland_exceptional_routes.mandate_valid } }
+}
+
+ireland_pay_exceptional_action_cost = {
+	set_temp_variable = { var = ireland_exceptional_payment value = constant:ireland_exceptional_routes.cost_low_pp }
+	if = { limit = { check_variable = { var = ireland_exceptional_cost_anchor value = constant:ireland_exceptional_routes.cost_anchor_watch_threshold compare = greater_than_or_equals } } set_temp_variable = { var = ireland_exceptional_payment value = constant:ireland_exceptional_routes.cost_watch_pp } }
+	if = { limit = { check_variable = { var = ireland_exceptional_cost_anchor value = constant:ireland_exceptional_routes.cost_anchor_severe_threshold compare = greater_than_or_equals } } set_temp_variable = { var = ireland_exceptional_payment value = constant:ireland_exceptional_routes.cost_severe_pp } }
+	multiply_temp_variable = { ireland_exceptional_payment = -1 }
+	add_political_power = ireland_exceptional_payment
+}
+
+ireland_pay_exceptional_command_cost = {
+	set_temp_variable = { var = ireland_exceptional_command_payment value = constant:ireland_exceptional_routes.cost_low_cp }
+	if = { limit = { check_variable = { var = ireland_exceptional_cost_anchor value = constant:ireland_exceptional_routes.cost_anchor_watch_threshold compare = greater_than_or_equals } } set_temp_variable = { var = ireland_exceptional_command_payment value = constant:ireland_exceptional_routes.cost_watch_cp } }
+	if = { limit = { check_variable = { var = ireland_exceptional_cost_anchor value = constant:ireland_exceptional_routes.cost_anchor_severe_threshold compare = greater_than_or_equals } } set_temp_variable = { var = ireland_exceptional_command_payment value = constant:ireland_exceptional_routes.cost_severe_cp } }
+	multiply_temp_variable = { ireland_exceptional_command_payment = -1 }
+	add_command_power = ireland_exceptional_command_payment
+}
+
+ireland_commit_exceptional_conclusion = {
+	# Completion flags remain history; only active conclusion flags are exclusive.
+	if = { limit = { has_completed_focus = ireland_household_council } set_country_flag = ireland_conclusion_high_king_independent_household }
+	if = { limit = { has_completed_focus = ireland_break_the_captive_crown } set_country_flag = ireland_conclusion_high_king_crown_rescued }
+	if = { limit = { has_completed_focus = ireland_the_captive_throne } set_country_flag = ireland_conclusion_high_king_captive_throne }
+	if = { limit = { has_completed_focus = ireland_high_kingdom_of_the_living_land } set_country_flag = ireland_conclusion_high_king_living_land }
+	if = { limit = { has_completed_focus = ireland_unbounded_sacred_rule } set_country_flag = ireland_conclusion_high_king_unbounded_sacred_rule }
+	if = { limit = { has_completed_focus = ireland_fund_the_federal_compact } set_country_flag = ireland_conclusion_five_provinces_federal }
+	if = { limit = { has_completed_focus = ireland_four_provinces_and_an_empty_chair } set_country_flag = ireland_conclusion_five_provinces_empty_chair }
+	if = { limit = { has_completed_focus = ireland_irish_confederation } set_country_flag = ireland_conclusion_five_provinces_confederation }
+	if = { limit = { has_completed_focus = ireland_pentarchy_of_ireland } set_country_flag = ireland_conclusion_five_provinces_pentarchy }
+	if = { limit = { has_completed_focus = ireland_the_fifth_province } set_country_flag = ireland_conclusion_five_provinces_fifth_province }
+	if = { limit = { has_completed_focus = ireland_rival_irelands } set_country_flag = ireland_conclusion_five_provinces_rival_irelands }
+	if = { limit = { has_completed_focus = ireland_a_law_for_two_orders } set_country_flag = ireland_conclusion_otherworld_compact }
+	if = { limit = { has_completed_focus = ireland_a_government_under_the_mounds } set_country_flag = ireland_conclusion_otherworld_tuatha_sovereignty }
+	if = { limit = { has_completed_focus = ireland_guardians_of_two_irelands } set_country_flag = ireland_conclusion_otherworld_fianna_guardianship }
+	if = { limit = { has_completed_focus = ireland_human_sovereignty_restored } set_country_flag = ireland_conclusion_otherworld_human_sovereignty }
+	if = { limit = { has_completed_focus = ireland_the_sealed_state } set_country_flag = ireland_conclusion_otherworld_sealed_state }
+	if = { limit = { has_completed_focus = ireland_dominion_claim } set_country_flag = ireland_conclusion_otherworld_dominion }
+	if = { limit = { has_completed_focus = ireland_crown_and_five_provinces } set_country_flag = ireland_conclusion_crown_and_five_provinces }
+	if = { limit = { has_completed_focus = ireland_high_king_of_two_irelands } set_country_flag = ireland_conclusion_high_king_two_irelands }
+	if = { limit = { has_completed_focus = ireland_five_courts_of_the_otherworld } set_country_flag = ireland_conclusion_five_courts_otherworld }
+	if = { limit = { has_country_flag = ireland_convergence_order_concluded } set_country_flag = ireland_conclusion_fivefold_high_kingdom_two_irelands }
+}
+
+ireland_close_exceptional_route_decisions = {
+	clr_country_flag = ireland_mission_complete_the_royal_circuit_active
+	clr_country_flag = ireland_mission_break_the_party_crown_active
+	clr_country_flag = ireland_mission_fund_the_common_compact_active
+	clr_country_flag = ireland_mission_keep_the_fifth_seat_open_active
+	clr_country_flag = ireland_mission_prevent_rival_irelands_active
+	clr_country_flag = ireland_mission_equip_a_fian_company_active
+	clr_country_flag = ireland_mission_keep_the_veil_at_five_sites_active
+	clr_country_flag = ireland_mission_repair_the_broken_compact_active
+	clr_country_flag = ireland_mission_reconcile_regional_compacts_active
+	clr_country_flag = ireland_mission_extract_from_a_protected_site_active
+	clr_country_flag = ireland_mission_survive_the_first_convergence_review_active
+	clr_country_flag = ireland_exceptional_geis_due
+	clr_country_flag = ireland_exceptional_geis_circuit_due
+	clr_country_flag = ireland_exceptional_compact_obligation_due
+	clr_country_flag = ireland_fian_equipment_commitment
+	clr_country_flag = ireland_regional_compact_framework
+	clr_country_flag = ireland_mound_reversible_extraction
+	clr_country_flag = ireland_exceptional_extraction_benefit_active
+}
+
+ireland_refresh_exceptional_route_state = {
+	ireland_initialize_high_kingship_values = yes
+	ireland_initialize_five_provinces_values = yes
+	ireland_initialize_otherworld_obligations = yes
+	clamp_variable = { var = ireland_royal_legitimacy min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_royal_obligation_burden min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_household_reach min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_otherworld_active_obligations min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_otherworld_broken_obligations min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_fian_readiness min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	clamp_variable = { var = ireland_regional_compact_count min = constant:ireland_exceptional_routes.value_min max = constant:ireland_exceptional_routes.value_max }
+	ireland_refresh_provincial_mandates = yes
+	ireland_commit_exceptional_conclusion = yes
+	if = {
+		limit = {
+			OR = {
+				check_variable = { var = ireland_federal_cohesion value = constant:ireland_exceptional_routes.federal_cohesion_failure compare = less_than }
+				has_country_flag = ireland_provincial_guard_refuses_common_command
+			}
+			NOT = { has_country_flag = ireland_mission_prevent_rival_irelands_full_recorded }
+			NOT = { has_country_flag = ireland_conclusion_five_provinces_rival_irelands }
+		}
+		set_country_flag = ireland_mission_prevent_rival_irelands_active
+	}
+	ireland_sync_route_profile = yes
+	set_country_flag = ireland_spirit_sync_required
+	ireland_refresh_route_spirits = yes
+	# Replace only exceptional conclusion forms after the durable-profile trio
+	# has been installed; the project remains at exactly three persistent spirits.
+	remove_ideas = { ireland_spirit_governing_five_provinces_confederation ireland_spirit_governing_five_provinces_empty_chair ireland_spirit_governing_five_provinces_fifth_province ireland_spirit_governing_high_king_unbounded ireland_spirit_governing_otherworld_tuatha ireland_spirit_security_otherworld_fianna ireland_spirit_society_otherworld_regional_courts }
+	if = { limit = { has_country_flag = ireland_conclusion_five_provinces_confederation } ireland_remove_governing_spirit_forms = yes add_ideas = { ireland_spirit_governing_five_provinces_confederation ireland_spirit_society_five_provinces ireland_spirit_security_five_provinces } set_cosmetic_tag = IRE_IRELAND_CONFEDERATION }
+	else_if = { limit = { has_country_flag = ireland_conclusion_five_provinces_empty_chair } ireland_remove_governing_spirit_forms = yes add_ideas = { ireland_spirit_governing_five_provinces_empty_chair ireland_spirit_society_five_provinces ireland_spirit_security_five_provinces } }
+	else_if = { limit = { has_country_flag = ireland_conclusion_five_provinces_fifth_province } ireland_remove_governing_spirit_forms = yes add_ideas = { ireland_spirit_governing_five_provinces_fifth_province ireland_spirit_society_five_provinces_pentarchy ireland_spirit_security_five_provinces_pentarchy } set_cosmetic_tag = IRE_IRELAND_FIFTH_PROVINCE }
+	else_if = { limit = { has_country_flag = ireland_conclusion_high_king_unbounded_sacred_rule } ireland_remove_governing_spirit_forms = yes add_ideas = { ireland_spirit_governing_high_king_unbounded ireland_spirit_society_high_king_sacral ireland_spirit_security_high_king_sacral } }
+	else_if = { limit = { has_country_flag = ireland_conclusion_otherworld_tuatha_sovereignty } ireland_remove_governing_spirit_forms = yes add_ideas = { ireland_spirit_governing_otherworld_tuatha ireland_spirit_society_otherworld ireland_spirit_security_otherworld } set_cosmetic_tag = IRE_IRELAND_TUATHA_SOVEREIGNTY }
+	else_if = { limit = { has_country_flag = ireland_conclusion_otherworld_fianna_guardianship } ireland_remove_security_spirit_forms = yes add_ideas = { ireland_spirit_governing_otherworld ireland_spirit_society_otherworld ireland_spirit_security_otherworld_fianna } set_cosmetic_tag = IRE_IRELAND_FIANNA_GUARDIANSHIP }
+	else_if = { limit = { check_variable = { var = ireland_regional_compact_count value = constant:ireland_exceptional_routes.regional_compacts_partial compare = greater_than_or_equals } } ireland_remove_society_spirit_forms = yes add_ideas = { ireland_spirit_governing_otherworld ireland_spirit_society_otherworld_regional_courts ireland_spirit_security_otherworld } }
+	# Captive throne is mutually exclusive with the convergence outcomes below.
+	if = { limit = { has_country_flag = ireland_conclusion_high_king_captive_throne } set_cosmetic_tag = IRE_IRELAND_CAPTIVE_THRONE }
+	if = { limit = { has_country_flag = ireland_conclusion_five_provinces_rival_irelands } set_cosmetic_tag = IRE_IRELAND_RIVAL_PROVINCES }
+	if = { limit = { has_country_flag = ireland_conclusion_otherworld_sealed_state } set_cosmetic_tag = IRE_IRELAND_SEALED_STATE }
+	if = { limit = { has_country_flag = ireland_conclusion_crown_and_five_provinces } set_cosmetic_tag = IRE_IRELAND_CROWN_AND_PROVINCES }
+	if = { limit = { has_country_flag = ireland_conclusion_high_king_two_irelands } set_cosmetic_tag = IRE_IRELAND_HIGH_KING_TWO_IRELANDS }
+	if = { limit = { has_country_flag = ireland_conclusion_five_courts_otherworld } set_cosmetic_tag = IRE_IRELAND_FIVE_COURTS_OTHERWORLD }
+	ireland_rebuild_mission_counters = yes
+}
