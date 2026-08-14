@@ -276,3 +276,58 @@ Artifact:
 `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/cef93413019260f758c5bd8c1d6cd3ba02f4105da571f2ecf98b759c39ce3e00/ff8b072165eb89950c5dcac511e230c7e1ee962b90a7b2a985ec6e815fd8eb5a/focus-inspect.97013150a7474f29.json`
 
 Final verdict after correction: **COMPLETE for the static focus-tree contract.**
+
+## Re-audit closure after `e5a7492` / `8fe5c62`
+
+The corrected stable source was re-inspected read-only at `HEAD = 8fe5c62`.
+The prior gateway blocker and strict-filter concern are resolved:
+
+- the five public gateways share `y = 14`, at x `-24, -18, -12, -6, 0`:
+  democratic `ireland_republican_government` (line 460), Congress
+  `ireland_congress_reform_bridge` (3448), producer-estate
+  `ireland_vocational_constitution` (1359), Blueshirt
+  `ireland_oduffy_network_revival` (3615), and restoration
+  `ireland_high_king_evidence_gate` (4029);
+- each gateway remains reveal-gated by `ireland_political_routes_revealed`,
+  pairwise mutually exclusive, and retains its former route requirements in
+  `available` after removal of the long visible prerequisite connectors;
+- programme roots are aligned at y `18`: democratic x `-24`, Congress x `-18`,
+  producer-estate x `-12`, Blueshirt x `-6`, restoration x `0`; the Blueshirt
+  advisor card `ireland_blueshirt_patronage_board` is now in its corridor at
+  `(-4,15)`;
+- strict-effect parsing finds 22 Industry, 5 Annexation, and 8 Political
+  Character filters, with no unsupported candidate remaining. Army/Navy/Air
+  XP and Research filters also retain direct matching effects;
+- `territorial_campaign.md` now explicitly accepts
+  `ireland_settlement_under_law`, `ireland_all_island_workers_republic`,
+  `ireland_belfast_compact`, `ireland_restore_ulsters_place`, and
+  `ireland_atlantic_ambition` as durable settlement/policy capability
+  handoffs, with tooltips naming the records or surfaces they enable.
+
+Fresh `hoi4.focus_inspect` revision `97013150a7474f29e4dc8fea9ebe4e163875d57faff0b3fc69b630da1fda5756`
+reports:
+
+- 218 focuses and 222 connectors;
+- bounds x `-26..21`, y `0..22`;
+- zero crossings, node intersections, long connectors, duplicate coordinates,
+  or cramped same-row pairs;
+- minimum same-row spacing 2 (required 2);
+- maximum connector span 6 columns / 2 rows;
+- total horizontal / vertical span 240 / 226.
+
+The only Ireland diagnostics are four nonblocking concealed-corridor advisories:
+two linear detours and one staircase chain in the clerical/otherworld branches.
+The generic `continuous_restrict_freedom_desc` warning remains vanilla and
+outside the Ireland tree. Fresh render succeeded at 4660 x 2940:
+
+- HTML: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/965860e12e6bb0f02e554804774de46a348d16c527751f8017e2f10a59a5cab1/2e8a8de387486a83eb20d75316e51f2278833a1f30a13a38dbc5e92d6bc7fd51/ireland_focus_tree.focus.html`
+- SVG: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/596a9cb9b9c7448cfa8b8b5c6eb503ef3873ad102ae80d95f75e18bc3ec04885/e4d7e7634aea669abb04c5289ea3eefa9d4e734be8df57f621c8456eee707aa1/ireland_focus_tree.focus.svg`
+- JSON: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/cc67a5157851f77ca0a62b01b519b2ca7bb971f96baeb7a033619ffe6e4139de/d635581276b399a6b3c7a9d5409aa34462a8d261abca8efa1c875462a2f993aa/ireland_focus_tree.focus.json`
+
+Source crosswalk remains complete: 218/218 titles, descriptions, custom
+tooltips, regular icons, shine icons, and AI-plan references; advisor,
+company, and both MIO identifiers remain consumed by their target systems.
+No gameplay source, asset, or `thumbnail.png` was changed by this re-audit.
+
+Final re-audit verdict: **COMPLETE for the static focus-tree contract.** Live
+game/scenario evidence remains the parent-owned release gate.
