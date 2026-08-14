@@ -994,6 +994,23 @@ sync.
 - Usage: call on every terminal accept, refusal, counteroffer resolution, and
   stale-target/refund branch; never from a daily or monthly on-action.
 
+### `ireland_consume_atlantic_enforcement_reserves`
+
+- Scope: Ireland country scope.
+- Purpose: consume the material deployment committed when a coercive Atlantic
+  diplomatic or claim operation actually launches.
+- Inputs: the caller must first pass
+  `ireland_atlantic_claim_enforcement_ready` and its live target-specific
+  completion checks.
+- Outputs: removes 1,000 manpower, 200 infantry equipment, 20 support equipment,
+  5 convoys, 250 fuel, and 10 Command Power using centralized script constants;
+  prints the matching player-facing effect tooltip.
+- Defaults and side effects: it performs no admission check, target selection,
+  claim, war goal, flag, or refund. A cancelled or invalid preparation must not
+  call it.
+- Usage: call once inside the successful completion branch immediately before
+  saving a territorial demand target or issuing a staged claim war goal.
+
 ### `ireland_atlantic_settlement_all_relevant_resolved`
 
 - Scope: Ireland country trigger; used by the Atlantic settlement mission.

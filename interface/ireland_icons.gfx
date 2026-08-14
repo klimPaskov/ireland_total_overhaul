@@ -458,6 +458,9 @@ spriteTypes = {
 	spriteType = { name = GFX_focus_ireland_provincial_compact texturefile = "gfx/interface/goals/ireland_provincial_compact.dds" }
 	spriteType = { name = GFX_focus_ireland_brehon_law_commission texturefile = "gfx/interface/goals/ireland_brehon_law_commission.dds" }
 	spriteType = { name = GFX_focus_ireland_crown_defence_council texturefile = "gfx/interface/goals/ireland_crown_defence_council.dds" }
+	spriteType = { name = GFX_focus_ireland_unfinished_national_question texturefile = "gfx/interface/goals/ireland_unfinished_national_question.dds" }
+	spriteType = { name = GFX_focus_ireland_border_and_atlantic_dossier texturefile = "gfx/interface/goals/ireland_border_and_atlantic_dossier.dds" }
+	spriteType = { name = GFX_focus_ireland_test_the_state_instruments texturefile = "gfx/interface/goals/ireland_test_the_state_instruments.dds" }
 
 	spriteType = { name = GFX_decision_category_ireland_territorial_policy texturefile = "gfx/interface/decisions/categories/ireland/ireland_territorial_policy.dds" }
 	spriteType = { name = GFX_decision_ireland_claim_scottish_highlands texturefile = "gfx/interface/decisions/ireland/ireland_claim_scottish_highlands.dds" }

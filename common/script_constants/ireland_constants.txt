@@ -324,6 +324,12 @@ ireland = {
 	territorial_diplomacy_compact_major = 5
 	territorial_diplomacy_compact_standard = 3
 	territorial_diplomacy_refusal_leverage_delta = -2
+	atlantic_enforcement_manpower_charge = -1000
+	atlantic_enforcement_infantry_charge = -200
+	atlantic_enforcement_support_charge = -20
+	atlantic_enforcement_convoy_charge = -5
+	atlantic_enforcement_fuel_charge = -250
+	atlantic_enforcement_command_charge = -10
 
 	dillon_intervention_mandate = 90
 	dillon_readiness = 45

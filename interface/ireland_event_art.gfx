@@ -224,4 +224,12 @@ spriteTypes = {
 		name = "GFX_report_event_ireland_territorial_ulster_enforcement"
 		texturefile = "gfx/event_pictures/ireland_territorial_diplomacy/report_event_ireland_ulster_enforcement.dds"
 	}
+	spriteType = {
+		name = "GFX_report_event_ireland_territorial_wales_demand"
+		texturefile = "gfx/event_pictures/ireland_territorial_diplomacy/report_event_ireland_wales_demand.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_ireland_territorial_cornwall_demand"
+		texturefile = "gfx/event_pictures/ireland_territorial_diplomacy/report_event_ireland_cornwall_demand.dds"
+	}
 }

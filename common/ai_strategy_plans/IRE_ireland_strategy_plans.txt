@@ -96,6 +96,9 @@ IRE_ireland_historical = {
 		ireland_recovery_bridge
 		ireland_restore_constitutional_calendar
 		ireland_material_conclusion_proof
+		ireland_unfinished_national_question
+		ireland_border_and_atlantic_dossier
+		ireland_test_the_state_instruments
 		ireland_define_the_national_question
 		ireland_authorise_reunification_instruments
 		ireland_northern_plebiscite_guarantees
@@ -229,6 +232,9 @@ IRE_ireland_route_reactive = {
 		ireland_irish_shipping_registry
 		ireland_steel_holdings_programme
 		ireland_harland_and_wolff_access
+		ireland_unfinished_national_question
+		ireland_border_and_atlantic_dossier
+		ireland_test_the_state_instruments
 		ireland_define_the_national_question
 		ireland_authorise_reunification_instruments
 		ireland_northern_plebiscite_guarantees
@@ -667,10 +673,7 @@ IRE_ireland_route_oduffy_personal = {
 	allowed = { original_tag = IRE }
 	enable = { has_country_flag = ireland_profile_oduffy_personal }
 	abort = {
-		OR = {
-			has_country_flag = ireland_route_cleanup
-			date > 1944.11.29
-		}
+		has_country_flag = ireland_route_cleanup
 	}
 	ai_national_focuses = {
 		ireland_public_order_review
@@ -822,7 +825,6 @@ IRE_ireland_route_oduffy = {
 			has_country_flag = ireland_route_cleanup
 			has_country_flag = ireland_profile_oduffy_personal
 			has_country_flag = ireland_profile_oduffy_corporate
-			date > 1944.11.29
 		}
 	}
 	ai_national_focuses = {
@@ -998,7 +1000,7 @@ IRE_ireland_family_fascist_programme = {
 	desc = "Join veterans, patronage, employment, corporate estates, motorised command, and emergency government."
 	allowed = { original_tag = IRE }
 	enable = { has_country_flag = ireland_family_fascist }
-	abort = { OR = { has_country_flag = ireland_route_cleanup date > 1944.11.29 } }
+	abort = { has_country_flag = ireland_route_cleanup }
 	ai_national_focuses = {
 		ireland_blueshirt_patronage_board
 		ireland_veterans_command_council

@@ -38,6 +38,10 @@
 @IRELAND_TERRITORIAL_AI_REVIEW = 20
 @IRELAND_TERRITORIAL_AI_COERCIVE = 1
 @IRELAND_TERRITORIAL_STRENGTH_RATIO_LIMIT = 1.25
+@IRELAND_TERRITORIAL_DOSSIER_PP_COST = 15
+@IRELAND_TERRITORIAL_DOSSIER_DAYS = 35
+@IRELAND_TERRITORIAL_DOSSIER_CP_COST = 5
+@IRELAND_TERRITORIAL_DOSSIER_CP_DELTA = -5
 
 ireland_provision = {
 	ireland_contract_esb_grid_works = {
@@ -201,28 +205,33 @@ ireland_provision = {
 }
 
 ireland_territorial_policy = {
-	# Each public political family receives an explicit Northern instrument.
-	ireland_territorial_open_northern_plebiscite = {
-		icon = GFX_decision_ireland_protect_northern_campaign_freedom
-		visible = { has_country_flag = ireland_territorial_method_democratic NOT = { has_country_flag = ireland_territorial_plebiscite_opened } }
-		available = {
-			has_political_power > 24
-			has_war = no
-			NOT = { has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_active }
-			119 = { NOT = { is_owned_by = ROOT } }
+	ireland_territorial_commission_border_atlas = {
+		icon = GFX_decision_ireland_survey_provincial_archives
+		visible = {
+			has_country_flag = ireland_border_and_atlantic_dossier_complete
+			NOT = { has_country_flag = ireland_territorial_border_atlas_complete }
 		}
-		cost = @IRELAND_TERRITORIAL_METHOD_PP_COST
-		days_remove = @IRELAND_TERRITORIAL_METHOD_DAYS
+		available = {
+			has_political_power > 14
+			command_power > 4
+			has_war = no
+		}
+		cost = @IRELAND_TERRITORIAL_DOSSIER_PP_COST
+		days_remove = @IRELAND_TERRITORIAL_DOSSIER_DAYS
 		fire_only_once = yes
 		complete_effect = {
-			set_country_flag = ireland_territorial_plebiscite_opened
-			set_country_flag = ireland_mission_conduct_a_supervised_plebiscite_active
-			activate_mission = ireland_mission_conduct_a_supervised_plebiscite
-			ireland_update_mission_capacity = yes
+			custom_effect_tooltip = ireland_territorial_commission_border_atlas_tt
+			add_command_power = @IRELAND_TERRITORIAL_DOSSIER_CP_DELTA
+			army_experience = @IRELAND_CONTRACT_EXPERIENCE
+			navy_experience = @IRELAND_CONTRACT_EXPERIENCE
+			add_to_variable = { var = ireland_northern_nationalist_consent value = @IRELAND_TERRITORIAL_LEDGER_MINOR }
+			add_to_variable = { var = ireland_northern_british_flexibility value = @IRELAND_TERRITORIAL_LEDGER_MINOR }
+			set_country_flag = ireland_territorial_border_atlas_complete
 		}
-		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_PREFERRED }
+		ai_will_do = { base = @IRELAND_TERRITORIAL_AI_STANDARD }
 	}
 
+	# Each public political family receives an explicit Northern instrument.
 	ireland_territorial_workers_border_campaign = {
 		icon = GFX_decision_ireland_protect_northern_campaign_freedom
 		visible = { has_country_flag = ireland_territorial_method_communist NOT = { has_country_flag = ireland_territorial_workers_campaign_complete } }
@@ -279,6 +288,7 @@ ireland_territorial_policy = {
 						}
 					}
 				}
+				ireland_consume_atlantic_enforcement_reserves = yes
 				set_country_flag = ireland_territorial_ulster_ultimatum_delivered
 				set_country_flag = ireland_territorial_ulster_ultimatum_pending
 				set_country_flag = ireland_territorial_diplomacy_active
@@ -384,6 +394,7 @@ ireland_territorial_policy = {
 						}
 					}
 				}
+				ireland_consume_atlantic_enforcement_reserves = yes
 				set_country_flag = ireland_territorial_border_demand_pending
 				set_country_flag = ireland_territorial_diplomacy_active
 				clear_global_event_target = ireland_territorial_diplomacy_requester
@@ -494,6 +505,7 @@ ireland_territorial_policy = {
 						}
 					}
 				}
+				ireland_consume_atlantic_enforcement_reserves = yes
 				set_country_flag = ireland_highlands_demand_delivered
 				set_country_flag = ireland_highlands_demand_pending
 				set_country_flag = ireland_territorial_diplomacy_active
@@ -516,8 +528,9 @@ ireland_territorial_policy = {
 
 	ireland_territorial_claim_wales = {
 		icon = GFX_decision_ireland_claim_wales
-		visible = { has_country_flag = ireland_atlantic_claims_fascist NOT = { has_country_flag = ireland_wales_wargoal_issued } }
+		visible = { has_country_flag = ireland_atlantic_claims_fascist NOT = { has_country_flag = ireland_wales_campaign_resolved } NOT = { has_country_flag = ireland_territorial_diplomacy_active } }
 		available = {
+			custom_trigger_tooltip = { tooltip = ireland_territorial_diplomacy_cooldown_requirement_tt NOT = { has_country_flag = ireland_territorial_diplomacy_cooldown } }
 			custom_trigger_tooltip = {
 				tooltip = ireland_atlantic_claim_enforcement_ready_tt
 				ireland_atlantic_claim_enforcement_ready = yes
@@ -559,8 +572,20 @@ ireland_territorial_policy = {
 						}
 					}
 				}
-				122 = { add_claim_by = ROOT controller = { ROOT = { create_wargoal = { type = take_claimed_state target = PREV generator = { 122 } expire = @IRELAND_TERRITORIAL_WARGOAL_DAYS } } } }
-				set_country_flag = ireland_wales_wargoal_issued
+				ireland_consume_atlantic_enforcement_reserves = yes
+				set_country_flag = ireland_wales_demand_pending
+				set_country_flag = ireland_territorial_diplomacy_active
+				clear_global_event_target = ireland_territorial_diplomacy_requester
+				clear_global_event_target = ireland_territorial_diplomacy_target_controller
+				clear_global_event_target = ireland_territorial_diplomacy_target_state
+				save_global_event_target_as = ireland_territorial_diplomacy_requester
+				122 = {
+					save_global_event_target_as = ireland_territorial_diplomacy_target_state
+					controller = {
+						save_global_event_target_as = ireland_territorial_diplomacy_target_controller
+						country_event = { id = ireland_territorial_diplomacy.17 }
+					}
+				}
 			}
 			else = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
 		}
@@ -569,8 +594,9 @@ ireland_territorial_policy = {
 
 	ireland_territorial_claim_cornwall = {
 		icon = GFX_decision_ireland_claim_cornwall
-		visible = { has_country_flag = ireland_atlantic_claims_fascist NOT = { has_country_flag = ireland_cornwall_wargoal_issued } }
+		visible = { has_country_flag = ireland_atlantic_claims_fascist NOT = { has_country_flag = ireland_cornwall_campaign_resolved } NOT = { has_country_flag = ireland_territorial_diplomacy_active } }
 		available = {
+			custom_trigger_tooltip = { tooltip = ireland_territorial_diplomacy_cooldown_requirement_tt NOT = { has_country_flag = ireland_territorial_diplomacy_cooldown } }
 			custom_trigger_tooltip = {
 				tooltip = ireland_atlantic_claim_enforcement_ready_tt
 				ireland_atlantic_claim_enforcement_ready = yes
@@ -580,7 +606,7 @@ ireland_territorial_policy = {
 				ireland_territorial_cornwall_naval_access_proven = yes
 			}
 			has_political_power > 49
-			has_country_flag = ireland_wales_wargoal_issued
+			has_country_flag = ireland_wales_campaign_resolved
 			custom_trigger_tooltip = {
 				tooltip = ireland_territorial_claim_foreign_controller_requirement_tt
 				123 = {
@@ -612,8 +638,20 @@ ireland_territorial_policy = {
 						}
 					}
 				}
-				123 = { add_claim_by = ROOT controller = { ROOT = { create_wargoal = { type = take_claimed_state target = PREV generator = { 123 } expire = @IRELAND_TERRITORIAL_WARGOAL_DAYS } } } }
-				set_country_flag = ireland_cornwall_wargoal_issued
+				ireland_consume_atlantic_enforcement_reserves = yes
+				set_country_flag = ireland_cornwall_demand_pending
+				set_country_flag = ireland_territorial_diplomacy_active
+				clear_global_event_target = ireland_territorial_diplomacy_requester
+				clear_global_event_target = ireland_territorial_diplomacy_target_controller
+				clear_global_event_target = ireland_territorial_diplomacy_target_state
+				save_global_event_target_as = ireland_territorial_diplomacy_requester
+				123 = {
+					save_global_event_target_as = ireland_territorial_diplomacy_target_state
+					controller = {
+						save_global_event_target_as = ireland_territorial_diplomacy_target_controller
+						country_event = { id = ireland_territorial_diplomacy.21 }
+					}
+				}
 			}
 			else = { add_political_power = @IRELAND_TERRITORIAL_CANCELLATION_REFUND custom_effect_tooltip = ireland_territorial_preparation_cancelled_tt }
 		}

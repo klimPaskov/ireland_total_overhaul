@@ -537,3 +537,252 @@ country_event = {
 		ireland_clear_territorial_diplomacy_targets = yes
 	}
 }
+
+# Wales demand. A claim and war goal exist only after Ireland rejects a
+# counteroffer or the target controller records a refusal.
+country_event = {
+	id = ireland_territorial_diplomacy.17
+	title = ireland_territorial_diplomacy.wales_demand.t
+	desc = ireland_territorial_diplomacy.wales_demand.d
+	picture = GFX_report_event_ireland_territorial_wales_demand
+	is_triggered_only = yes
+	trigger = { has_event_target = ireland_territorial_diplomacy_requester event_target:ireland_territorial_diplomacy_requester = { has_country_flag = ireland_wales_demand_pending } }
+	option = {
+		name = ireland_territorial_diplomacy.wales_demand.accept
+		custom_effect_tooltip = ireland_territorial_diplomacy.wales_demand.accept.effects
+		ai_chance = { base = @IRELAND_TERRITORIAL_DIPLOMACY_AI_ACCEPT }
+		event_target:ireland_territorial_diplomacy_requester = { set_country_flag = ireland_wales_demand_accept_pending country_event = { id = ireland_territorial_diplomacy.18 } }
+	}
+	option = {
+		name = ireland_territorial_diplomacy.wales_demand.counteroffer
+		custom_effect_tooltip = ireland_territorial_diplomacy.wales_demand.counteroffer.effects
+		ai_chance = { base = @IRELAND_TERRITORIAL_DIPLOMACY_AI_COUNTEROFFER }
+		event_target:ireland_territorial_diplomacy_requester = { set_country_flag = ireland_wales_demand_counteroffer_pending country_event = { id = ireland_territorial_diplomacy.19 } }
+	}
+	option = {
+		name = ireland_territorial_diplomacy.wales_demand.refuse
+		custom_effect_tooltip = ireland_territorial_diplomacy.wales_demand.refuse.effects
+		ai_chance = { base = @IRELAND_TERRITORIAL_DIPLOMACY_AI_REFUSE }
+		event_target:ireland_territorial_diplomacy_requester = { set_country_flag = ireland_wales_demand_refusal_pending country_event = { id = ireland_territorial_diplomacy.20 } }
+	}
+}
+
+country_event = {
+	id = ireland_territorial_diplomacy.18
+	title = ireland_territorial_diplomacy.wales_result.t
+	desc = ireland_territorial_diplomacy.wales_result.accepted
+	picture = GFX_report_event_ireland_territorial_wales_demand
+	is_triggered_only = yes
+	trigger = { original_tag = IRE has_country_flag = ireland_wales_demand_accept_pending }
+	option = {
+		name = ireland_territorial_diplomacy.result.accept
+		custom_effect_tooltip = ireland_territorial_diplomacy.wales_result.accept.effects
+		trigger = { event_target:ireland_territorial_diplomacy_target_state = { is_controlled_by = event_target:ireland_territorial_diplomacy_target_controller NOT = { is_owned_by = ROOT } } }
+		event_target:ireland_territorial_diplomacy_target_state = { transfer_state_to = ROOT }
+		set_country_flag = ireland_wales_demand_accepted
+		set_country_flag = ireland_wales_campaign_resolved
+		clr_country_flag = ireland_wales_demand_pending
+		clr_country_flag = ireland_wales_demand_accept_pending
+		clr_country_flag = ireland_territorial_diplomacy_active
+		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		ireland_clear_territorial_diplomacy_targets = yes
+	}
+	option = {
+		name = ireland_territorial_diplomacy.result.stale
+		custom_effect_tooltip = ireland_territorial_diplomacy.wales_result.stale.effects
+		trigger = { OR = { NOT = { event_target:ireland_territorial_diplomacy_target_state = { is_controlled_by = event_target:ireland_territorial_diplomacy_target_controller } } event_target:ireland_territorial_diplomacy_target_state = { is_owned_by = ROOT } } }
+		add_political_power = @IRELAND_TERRITORIAL_DIPLOMACY_STALE_REFUND
+		clr_country_flag = ireland_wales_demand_pending
+		clr_country_flag = ireland_wales_demand_accept_pending
+		clr_country_flag = ireland_territorial_diplomacy_active
+		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		ireland_clear_territorial_diplomacy_targets = yes
+	}
+}
+
+country_event = {
+	id = ireland_territorial_diplomacy.19
+	title = ireland_territorial_diplomacy.wales_counteroffer.t
+	desc = ireland_territorial_diplomacy.wales_counteroffer.d
+	picture = GFX_report_event_ireland_territorial_wales_demand
+	is_triggered_only = yes
+	trigger = { original_tag = IRE has_country_flag = ireland_wales_demand_counteroffer_pending }
+	option = {
+		name = ireland_territorial_diplomacy.counteroffer.accept
+		custom_effect_tooltip = ireland_territorial_diplomacy.wales_counteroffer.accept.effects
+		ai_chance = { base = @IRELAND_TERRITORIAL_DIPLOMACY_AI_COUNTEROFFER }
+		event_target:ireland_territorial_diplomacy_target_controller = { give_military_access = ROOT }
+		set_country_flag = ireland_wales_counteroffer_accepted
+		set_country_flag = ireland_wales_campaign_resolved
+		clr_country_flag = ireland_wales_demand_pending
+		clr_country_flag = ireland_wales_demand_counteroffer_pending
+		clr_country_flag = ireland_territorial_diplomacy_active
+		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		ireland_clear_territorial_diplomacy_targets = yes
+	}
+	option = {
+		name = ireland_territorial_diplomacy.counteroffer.reject
+		custom_effect_tooltip = ireland_territorial_diplomacy.wales_counteroffer.reject.effects
+		ai_chance = { base = @IRELAND_TERRITORIAL_DIPLOMACY_AI_REFUSE }
+		event_target:ireland_territorial_diplomacy_target_state = { add_claim_by = ROOT controller = { ROOT = { create_wargoal = { type = take_claimed_state target = PREV generator = { 122 } expire = @IRELAND_TERRITORIAL_WARGOAL_DAYS } } } }
+		set_country_flag = ireland_wales_counteroffer_rejected
+		set_country_flag = ireland_wales_wargoal_issued
+		set_country_flag = ireland_wales_campaign_resolved
+		clr_country_flag = ireland_wales_demand_pending
+		clr_country_flag = ireland_wales_demand_counteroffer_pending
+		clr_country_flag = ireland_territorial_diplomacy_active
+		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		ireland_clear_territorial_diplomacy_targets = yes
+	}
+}
+
+country_event = {
+	id = ireland_territorial_diplomacy.20
+	title = ireland_territorial_diplomacy.wales_result.t
+	desc = ireland_territorial_diplomacy.wales_result.refused
+	picture = GFX_report_event_ireland_territorial_wales_demand
+	is_triggered_only = yes
+	trigger = { original_tag = IRE has_country_flag = ireland_wales_demand_refusal_pending }
+	option = {
+		name = ireland_territorial_diplomacy.result.refuse
+		custom_effect_tooltip = ireland_territorial_diplomacy.wales_result.refused.effects
+		event_target:ireland_territorial_diplomacy_target_state = { add_claim_by = ROOT controller = { ROOT = { create_wargoal = { type = take_claimed_state target = PREV generator = { 122 } expire = @IRELAND_TERRITORIAL_WARGOAL_DAYS } } } }
+		set_country_flag = ireland_wales_demand_refused
+		set_country_flag = ireland_wales_wargoal_issued
+		set_country_flag = ireland_wales_campaign_resolved
+		clr_country_flag = ireland_wales_demand_pending
+		clr_country_flag = ireland_wales_demand_refusal_pending
+		clr_country_flag = ireland_territorial_diplomacy_active
+		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		ireland_clear_territorial_diplomacy_targets = yes
+	}
+}
+
+# Cornwall repeats the same live target/refusal contract after Wales is resolved.
+country_event = {
+	id = ireland_territorial_diplomacy.21
+	title = ireland_territorial_diplomacy.cornwall_demand.t
+	desc = ireland_territorial_diplomacy.cornwall_demand.d
+	picture = GFX_report_event_ireland_territorial_cornwall_demand
+	is_triggered_only = yes
+	trigger = { has_event_target = ireland_territorial_diplomacy_requester event_target:ireland_territorial_diplomacy_requester = { has_country_flag = ireland_cornwall_demand_pending } }
+	option = {
+		name = ireland_territorial_diplomacy.cornwall_demand.accept
+		custom_effect_tooltip = ireland_territorial_diplomacy.cornwall_demand.accept.effects
+		ai_chance = { base = @IRELAND_TERRITORIAL_DIPLOMACY_AI_ACCEPT }
+		event_target:ireland_territorial_diplomacy_requester = { set_country_flag = ireland_cornwall_demand_accept_pending country_event = { id = ireland_territorial_diplomacy.22 } }
+	}
+	option = {
+		name = ireland_territorial_diplomacy.cornwall_demand.counteroffer
+		custom_effect_tooltip = ireland_territorial_diplomacy.cornwall_demand.counteroffer.effects
+		ai_chance = { base = @IRELAND_TERRITORIAL_DIPLOMACY_AI_COUNTEROFFER }
+		event_target:ireland_territorial_diplomacy_requester = { set_country_flag = ireland_cornwall_demand_counteroffer_pending country_event = { id = ireland_territorial_diplomacy.23 } }
+	}
+	option = {
+		name = ireland_territorial_diplomacy.cornwall_demand.refuse
+		custom_effect_tooltip = ireland_territorial_diplomacy.cornwall_demand.refuse.effects
+		ai_chance = { base = @IRELAND_TERRITORIAL_DIPLOMACY_AI_REFUSE }
+		event_target:ireland_territorial_diplomacy_requester = { set_country_flag = ireland_cornwall_demand_refusal_pending country_event = { id = ireland_territorial_diplomacy.24 } }
+	}
+}
+
+country_event = {
+	id = ireland_territorial_diplomacy.22
+	title = ireland_territorial_diplomacy.cornwall_result.t
+	desc = ireland_territorial_diplomacy.cornwall_result.accepted
+	picture = GFX_report_event_ireland_territorial_cornwall_demand
+	is_triggered_only = yes
+	trigger = { original_tag = IRE has_country_flag = ireland_cornwall_demand_accept_pending }
+	option = {
+		name = ireland_territorial_diplomacy.result.accept
+		custom_effect_tooltip = ireland_territorial_diplomacy.cornwall_result.accept.effects
+		trigger = { event_target:ireland_territorial_diplomacy_target_state = { is_controlled_by = event_target:ireland_territorial_diplomacy_target_controller NOT = { is_owned_by = ROOT } } }
+		event_target:ireland_territorial_diplomacy_target_state = { transfer_state_to = ROOT }
+		set_country_flag = ireland_cornwall_demand_accepted
+		set_country_flag = ireland_cornwall_campaign_resolved
+		clr_country_flag = ireland_cornwall_demand_pending
+		clr_country_flag = ireland_cornwall_demand_accept_pending
+		clr_country_flag = ireland_territorial_diplomacy_active
+		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		ireland_clear_territorial_diplomacy_targets = yes
+	}
+	option = {
+		name = ireland_territorial_diplomacy.result.stale
+		custom_effect_tooltip = ireland_territorial_diplomacy.cornwall_result.stale.effects
+		trigger = { OR = { NOT = { event_target:ireland_territorial_diplomacy_target_state = { is_controlled_by = event_target:ireland_territorial_diplomacy_target_controller } } event_target:ireland_territorial_diplomacy_target_state = { is_owned_by = ROOT } } }
+		add_political_power = @IRELAND_TERRITORIAL_DIPLOMACY_STALE_REFUND
+		clr_country_flag = ireland_cornwall_demand_pending
+		clr_country_flag = ireland_cornwall_demand_accept_pending
+		clr_country_flag = ireland_territorial_diplomacy_active
+		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		ireland_clear_territorial_diplomacy_targets = yes
+	}
+}
+
+country_event = {
+	id = ireland_territorial_diplomacy.23
+	title = ireland_territorial_diplomacy.cornwall_counteroffer.t
+	desc = ireland_territorial_diplomacy.cornwall_counteroffer.d
+	picture = GFX_report_event_ireland_territorial_cornwall_demand
+	is_triggered_only = yes
+	trigger = { original_tag = IRE has_country_flag = ireland_cornwall_demand_counteroffer_pending }
+	option = {
+		name = ireland_territorial_diplomacy.counteroffer.accept
+		custom_effect_tooltip = ireland_territorial_diplomacy.cornwall_counteroffer.accept.effects
+		ai_chance = { base = @IRELAND_TERRITORIAL_DIPLOMACY_AI_COUNTEROFFER }
+		event_target:ireland_territorial_diplomacy_target_controller = { give_military_access = ROOT }
+		set_country_flag = ireland_cornwall_counteroffer_accepted
+		set_country_flag = ireland_cornwall_campaign_resolved
+		clr_country_flag = ireland_cornwall_demand_pending
+		clr_country_flag = ireland_cornwall_demand_counteroffer_pending
+		clr_country_flag = ireland_territorial_diplomacy_active
+		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		ireland_clear_territorial_diplomacy_targets = yes
+	}
+	option = {
+		name = ireland_territorial_diplomacy.counteroffer.reject
+		custom_effect_tooltip = ireland_territorial_diplomacy.cornwall_counteroffer.reject.effects
+		ai_chance = { base = @IRELAND_TERRITORIAL_DIPLOMACY_AI_REFUSE }
+		event_target:ireland_territorial_diplomacy_target_state = { add_claim_by = ROOT controller = { ROOT = { create_wargoal = { type = take_claimed_state target = PREV generator = { 123 } expire = @IRELAND_TERRITORIAL_WARGOAL_DAYS } } } }
+		set_country_flag = ireland_cornwall_counteroffer_rejected
+		set_country_flag = ireland_cornwall_wargoal_issued
+		set_country_flag = ireland_cornwall_campaign_resolved
+		clr_country_flag = ireland_cornwall_demand_pending
+		clr_country_flag = ireland_cornwall_demand_counteroffer_pending
+		clr_country_flag = ireland_territorial_diplomacy_active
+		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		ireland_clear_territorial_diplomacy_targets = yes
+	}
+}
+
+country_event = {
+	id = ireland_territorial_diplomacy.24
+	title = ireland_territorial_diplomacy.cornwall_result.t
+	desc = ireland_territorial_diplomacy.cornwall_result.refused
+	picture = GFX_report_event_ireland_territorial_cornwall_demand
+	is_triggered_only = yes
+	trigger = { original_tag = IRE has_country_flag = ireland_cornwall_demand_refusal_pending }
+	option = {
+		name = ireland_territorial_diplomacy.result.refuse
+		custom_effect_tooltip = ireland_territorial_diplomacy.cornwall_result.refused.effects
+		event_target:ireland_territorial_diplomacy_target_state = { add_claim_by = ROOT controller = { ROOT = { create_wargoal = { type = take_claimed_state target = PREV generator = { 123 } expire = @IRELAND_TERRITORIAL_WARGOAL_DAYS } } } }
+		set_country_flag = ireland_cornwall_demand_refused
+		set_country_flag = ireland_cornwall_wargoal_issued
+		set_country_flag = ireland_cornwall_campaign_resolved
+		clr_country_flag = ireland_cornwall_demand_pending
+		clr_country_flag = ireland_cornwall_demand_refusal_pending
+		clr_country_flag = ireland_territorial_diplomacy_active
+		set_temp_variable = { var = ireland_territorial_diplomacy_cooldown_days value = constant:ireland.territorial_diplomacy_cooldown_days }
+		set_country_flag = { flag = ireland_territorial_diplomacy_cooldown days = ireland_territorial_diplomacy_cooldown_days }
+		ireland_clear_territorial_diplomacy_targets = yes
+	}
+}

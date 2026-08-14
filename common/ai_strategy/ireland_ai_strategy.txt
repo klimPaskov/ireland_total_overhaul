@@ -162,10 +162,7 @@ ireland_oduffy_personal = {
 	allowed = { original_tag = IRE }
 	enable = { OR = { has_country_flag = ireland_profile_oduffy_personal has_country_flag = ireland_oduffy_personal_path } }
 	abort = {
-		OR = {
-			has_country_flag = ireland_route_cleanup
-			date > 1944.11.29
-		}
+		has_country_flag = ireland_route_cleanup
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = { type = build_army value = 100 }

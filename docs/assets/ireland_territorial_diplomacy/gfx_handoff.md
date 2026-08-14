@@ -20,4 +20,18 @@ Suggested event picture routing (main agent owns the event edit):
 - `.11`–`.12`: `GFX_report_event_ireland_territorial_highlands_negotiation`.
 - `.13`–`.16`: `GFX_report_event_ireland_territorial_ulster_enforcement`.
 
+Additional Wales/Cornwall demand sprites:
+
+```text
+spriteType = { name = "GFX_report_event_ireland_territorial_wales_demand" texturefile = "gfx/event_pictures/ireland_territorial_diplomacy/report_event_ireland_wales_demand.dds" }
+spriteType = { name = "GFX_report_event_ireland_territorial_cornwall_demand" texturefile = "gfx/event_pictures/ireland_territorial_diplomacy/report_event_ireland_cornwall_demand.dds" }
+```
+
+Suggested event picture routing for the new demand chains:
+
+- `.17`–`.20`: `GFX_report_event_ireland_territorial_wales_demand` (wet Welsh slate-and-coal harbour memorandum exchange).
+- `.21`–`.24`: `GFX_report_event_ireland_territorial_cornwall_demand` (granite Atlantic headland, lookout, and small harbour delegation).
+
+Both assets are generated final-source art, not placeholders. The processed PNGs and DDS files are 210x176 report-card assets with the existing package's black-and-white/sepia, transparent-corner, tilt, and soft-shadow treatment. Suggested target remains `interface/ireland_event_art.gfx`; no `.gfx` file was edited by the asset worker.
+
 The existing `GFX_report_event_ireland_report_flavour_northern_bridge` is not a replacement for this package; it may remain for unrelated flavour events. The Highlands events currently have no `picture` field and should receive the proposed Highlands sprite assignments when wired.

@@ -1276,6 +1276,28 @@ ireland_clear_territorial_diplomacy_targets = {
 	clear_global_event_target = ireland_territorial_diplomacy_target_state
 }
 
+# Consumes the field force, escort tonnage, fuel, and command effort committed
+# when a coercive Atlantic diplomatic operation actually launches. Admission
+# gates are owned by ireland_atlantic_claim_enforcement_ready.
+ireland_consume_atlantic_enforcement_reserves = {
+	custom_effect_tooltip = ireland_atlantic_enforcement_reserve_charge_tt
+	add_manpower = constant:ireland.atlantic_enforcement_manpower_charge
+	add_equipment_to_stockpile = {
+		type = infantry_equipment
+		amount = constant:ireland.atlantic_enforcement_infantry_charge
+	}
+	add_equipment_to_stockpile = {
+		type = support_equipment
+		amount = constant:ireland.atlantic_enforcement_support_charge
+	}
+	add_equipment_to_stockpile = {
+		type = convoy
+		amount = constant:ireland.atlantic_enforcement_convoy_charge
+	}
+	add_fuel = constant:ireland.atlantic_enforcement_fuel_charge
+	add_command_power = constant:ireland.atlantic_enforcement_command_charge
+}
+
 ireland_set_action_tooltip_values = {
 	clamp_variable = { var = ireland_action_burden_input min = constant:ireland.action_burden_min max = constant:ireland.action_burden_max }
 	clamp_variable = { var = ireland_action_cost_input min = constant:ireland.action_cost_min max = constant:ireland.command_power_action_cap }
@@ -4125,6 +4147,14 @@ ireland_cleanup_route_state = {
 	clr_country_flag = ireland_territorial_border_demand_accept_pending
 	clr_country_flag = ireland_territorial_border_demand_counteroffer_pending
 	clr_country_flag = ireland_territorial_border_demand_refusal_pending
+	clr_country_flag = ireland_wales_demand_pending
+	clr_country_flag = ireland_wales_demand_accept_pending
+	clr_country_flag = ireland_wales_demand_counteroffer_pending
+	clr_country_flag = ireland_wales_demand_refusal_pending
+	clr_country_flag = ireland_cornwall_demand_pending
+	clr_country_flag = ireland_cornwall_demand_accept_pending
+	clr_country_flag = ireland_cornwall_demand_counteroffer_pending
+	clr_country_flag = ireland_cornwall_demand_refusal_pending
 	clr_country_flag = ireland_scottish_protectorate_reconstruction_obligation
 	clr_country_flag = ireland_welsh_protectorate_reconstruction_obligation
 	clr_country_flag = ireland_airspace_forced_landing_pending
