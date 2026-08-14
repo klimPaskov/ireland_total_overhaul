@@ -889,10 +889,99 @@ ireland_commit_route = {
 
 ireland_begin_conclusion_review = {
 	if = {
-		limit = { NOT = { has_country_flag = ireland_conclusion_review_active } }
+		limit = {
+			NOT = { has_country_flag = ireland_conclusion_review_active }
+			NOT = { has_country_flag = ireland_conclusion_recovery_open }
+		}
 		set_country_flag = ireland_conclusion_review_active
-		set_variable = { var = ireland_conclusion_review_days value = constant:ireland.settlement_review_days }
+		set_variable = { var = ireland_conclusion_review_days value = constant:ireland.postwar_family_review_days }
 		clr_country_flag = ireland_conclusion_review_due
+		if = {
+			limit = { has_country_flag = ireland_family_conclusion_recovery_complete }
+			# Recovery is a repair record, not a deletion of the failed review.
+			# The recovered marker lets the next evaluation classify remaining
+			# damage as partial while retaining ireland_route_failure history.
+			set_country_flag = ireland_route_failure_recovered
+		}
+	}
+}
+
+ireland_open_family_conclusion_recovery = {
+	if = {
+		limit = {
+			NOT = { has_country_flag = ireland_route_archived }
+			OR = {
+				has_country_flag = ireland_route_conclusion_blocked
+				has_country_flag = ireland_route_conclusion_failed
+			}
+		}
+		set_country_flag = ireland_conclusion_recovery_open
+		clr_country_flag = ireland_family_conclusion_recovery_complete
+		clr_country_flag = ireland_route_failure_recovered
+		# A report has resolved the current review. Do not let its due marker
+		# start a second review until the family action explicitly repairs it.
+		clr_country_flag = ireland_conclusion_review_active
+		clr_country_flag = ireland_conclusion_review_due
+		set_variable = { var = ireland_conclusion_review_days value = constant:ireland.zero }
+	}
+}
+
+ireland_dispatch_family_conclusion_event = {
+	# Family flags are mutually exclusive in the route-entry contract. The
+	# else-if chain is still deliberate: malformed saves can never receive two
+	# terminal reports from one evaluation.
+	if = {
+		limit = { has_country_flag = ireland_family_democratic }
+		country_event = { id = ireland_country_conclusion.1 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_family_communist }
+		country_event = { id = ireland_country_conclusion.2 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_family_fascist }
+		country_event = { id = ireland_country_conclusion.3 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_family_oligarchic }
+		country_event = { id = ireland_country_conclusion.4 }
+	}
+	else_if = {
+		limit = { has_country_flag = ireland_family_restoration }
+		country_event = { id = ireland_country_conclusion.5 }
+	}
+}
+
+ireland_archive_successful_route = {
+	if = {
+		limit = {
+			NOT = { has_country_flag = ireland_route_archived }
+			NOT = { has_country_flag = ireland_conclusion_recovery_open }
+			has_country_flag = ireland_route_conclusion_review_complete
+			ireland_family_postwar_settlement_complete = yes
+			OR = {
+				has_country_flag = ireland_route_conclusion_full
+				has_country_flag = ireland_route_conclusion_partial
+			}
+		}
+		# Foreign reaction and neutrality ledgers are closed only after the
+		# report option accepts a full or partial outcome. Blocked/failed
+		# reports retain their live recovery surfaces until the family repair.
+		if = {
+			limit = { has_country_flag = ireland_foreign_reaction_window_active }
+			ireland_consolidate_foreign_reactions = yes
+		}
+		if = {
+			limit = { has_country_flag = ireland_neutrality_incident_active }
+			ireland_close_neutrality_incident = yes
+		}
+		set_country_flag = ireland_route_cleanup
+		set_country_flag = ireland_route_closed
+		set_country_flag = ireland_route_archived
+		ireland_cleanup_route_state = yes
+		ireland_rebuild_mission_counters = yes
+		set_country_flag = ireland_spirit_sync_required
+		set_country_flag = ireland_route_profile_sync_required
 	}
 }
 
@@ -1018,8 +1107,9 @@ ireland_record_route_conclusion_flags = {
 }
 
 ireland_finalize_route_conclusion = {
-	# The conclusion action is terminal only after the 180-day review is due.
-	# Re-entry is harmless: route archival is the idempotence guard.
+	# This helper evaluates the due review and dispatches exactly one family
+	# report. It is intentionally non-terminal: only a successful report option
+	# may call ireland_archive_successful_route.
 	if = {
 		limit = {
 			has_country_flag = ireland_conclusion_review_due
@@ -1050,7 +1140,10 @@ ireland_finalize_route_conclusion = {
 					has_country_flag = ireland_military_command_collapse
 					has_country_flag = ireland_security_command_collapse
 					has_country_flag = ireland_northern_settlement_failure
-					has_country_flag = ireland_route_failure
+					AND = {
+						has_country_flag = ireland_route_failure
+						NOT = { has_country_flag = ireland_route_failure_recovered }
+					}
 				}
 			}
 			set_variable = { var = ireland_route_conclusion_result value = constant:ireland.route_conclusion_result_failed }
@@ -1063,6 +1156,7 @@ ireland_finalize_route_conclusion = {
 			# variables in ordinary focus or event prose.
 			if = {
 				limit = {
+					NOT = { ireland_family_postwar_government_repair_recorded = yes }
 					OR = {
 						NOT = { has_country_flag = ireland_route_leader_transition_complete }
 						has_country_flag = ireland_office_vacancy
@@ -1072,15 +1166,24 @@ ireland_finalize_route_conclusion = {
 				set_country_flag = ireland_route_conclusion_blocked_government
 			}
 			if = {
-				limit = { NOT = { has_country_flag = ireland_conclusion_proof } }
+				limit = {
+					NOT = { ireland_family_postwar_law_repair_recorded = yes }
+					NOT = { has_country_flag = ireland_conclusion_proof }
+				}
 				set_country_flag = ireland_route_conclusion_blocked_law
 			}
 			if = {
-				limit = { NOT = { has_country_flag = ireland_provision_conclusion_ready } }
+				limit = {
+					NOT = { ireland_family_postwar_economy_repair_recorded = yes }
+					NOT = { has_country_flag = ireland_provision_conclusion_ready }
+				}
 				set_country_flag = ireland_route_conclusion_blocked_economy
 			}
 			if = {
-				limit = { NOT = { has_country_flag = ireland_readiness_conclusion_ready } }
+				limit = {
+					NOT = { ireland_family_postwar_defence_repair_recorded = yes }
+					NOT = { has_country_flag = ireland_readiness_conclusion_ready }
+				}
 				set_country_flag = ireland_route_conclusion_blocked_defence
 			}
 			if = {
@@ -1105,12 +1208,18 @@ ireland_finalize_route_conclusion = {
 				set_country_flag = ireland_route_conclusion_blocked_northern
 			}
 			if = {
-				limit = { has_country_flag = ireland_route_identity_sync_required }
+				limit = {
+					has_country_flag = ireland_route_identity_sync_required
+					NOT = { ireland_family_postwar_identity_repair_recorded = yes }
+				}
 				set_country_flag = ireland_route_conclusion_blocked_identity
 			}
 			if = {
 				limit = {
-					check_variable = { var = ireland_active_mission_count value = constant:ireland.zero compare = greater_than }
+					OR = {
+						check_variable = { var = ireland_active_mission_count value = constant:ireland.zero compare = greater_than }
+						NOT = { ireland_family_postwar_settlement_complete = yes }
+					}
 				}
 				set_country_flag = ireland_route_conclusion_blocked_objectives
 			}
@@ -1172,27 +1281,20 @@ ireland_finalize_route_conclusion = {
 			set_country_flag = ireland_clann_agrarian_programme_government_qualified
 		}
 
-		# Reactions and incidents are closed before route targets are cleared so
-		# their durable digest and achievement history are retained.
-		if = {
-			limit = { has_country_flag = ireland_foreign_reaction_window_active }
-			ireland_consolidate_foreign_reactions = yes
-		}
-		if = {
-			limit = { has_country_flag = ireland_neutrality_incident_active }
-			ireland_close_neutrality_incident = yes
-		}
 		clr_country_flag = ireland_conclusion_review_active
 		clr_country_flag = ireland_conclusion_review_due
 		set_variable = { var = ireland_conclusion_review_days value = constant:ireland.zero }
 		set_country_flag = ireland_route_conclusion_review_complete
-		set_country_flag = ireland_route_cleanup
-		set_country_flag = ireland_route_closed
-		set_country_flag = ireland_route_archived
-		ireland_cleanup_route_state = yes
-		ireland_rebuild_mission_counters = yes
-		set_country_flag = ireland_spirit_sync_required
-		set_country_flag = ireland_route_profile_sync_required
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = ireland_route_conclusion_blocked
+					has_country_flag = ireland_route_conclusion_failed
+				}
+			}
+			ireland_open_family_conclusion_recovery = yes
+		}
+		ireland_dispatch_family_conclusion_event = yes
 	}
 }
 

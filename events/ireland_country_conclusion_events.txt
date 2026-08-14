@@ -1,0 +1,163 @@
+# Ireland family-specific postwar conclusion reports. These events are dispatched
+# directly by ireland_finalize_route_conclusion and never enter the flavour pool.
+add_namespace = ireland_country_conclusion
+
+country_event = {
+	id = ireland_country_conclusion.1
+	title = ireland_country_conclusion.1.title
+	desc = ireland_country_conclusion.1.desc
+	picture = GFX_report_event_ireland_postwar_democratic_settlement
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = { original_tag = IRE has_country_flag = ireland_family_democratic NOT = { has_country_flag = ireland_postwar_democratic_report_recorded } }
+	option = {
+		name = ireland_country_conclusion.1.full
+		trigger = { has_country_flag = ireland_route_conclusion_full }
+		custom_effect_tooltip = ireland_country_conclusion.1.full.effects
+		set_country_flag = ireland_postwar_democratic_report_recorded
+		set_country_flag = ireland_postwar_democratic_full_settlement
+		ireland_archive_successful_route = yes
+	}
+	option = {
+		name = ireland_country_conclusion.1.partial
+		trigger = { has_country_flag = ireland_route_conclusion_partial }
+		custom_effect_tooltip = ireland_country_conclusion.1.partial.effects
+		set_country_flag = ireland_postwar_democratic_report_recorded
+		set_country_flag = ireland_postwar_democratic_compromise_settlement
+		ireland_archive_successful_route = yes
+	}
+	option = {
+		name = ireland_country_conclusion.1.recovery
+		trigger = { OR = { has_country_flag = ireland_route_conclusion_blocked has_country_flag = ireland_route_conclusion_failed } }
+		custom_effect_tooltip = ireland_country_conclusion.1.recovery.effects
+		set_country_flag = ireland_postwar_democratic_recovery_reported
+	}
+}
+
+country_event = {
+	id = ireland_country_conclusion.2
+	title = ireland_country_conclusion.2.title
+	desc = ireland_country_conclusion.2.desc
+	picture = GFX_report_event_ireland_postwar_congress_settlement
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = { original_tag = IRE has_country_flag = ireland_family_communist NOT = { has_country_flag = ireland_postwar_congress_report_recorded } }
+	option = {
+		name = ireland_country_conclusion.2.full
+		trigger = { has_country_flag = ireland_route_conclusion_full }
+		custom_effect_tooltip = ireland_country_conclusion.2.full.effects
+		set_country_flag = ireland_postwar_congress_report_recorded
+		set_country_flag = ireland_postwar_congress_full_settlement
+		ireland_archive_successful_route = yes
+	}
+	option = {
+		name = ireland_country_conclusion.2.partial
+		trigger = { has_country_flag = ireland_route_conclusion_partial }
+		custom_effect_tooltip = ireland_country_conclusion.2.partial.effects
+		set_country_flag = ireland_postwar_congress_report_recorded
+		set_country_flag = ireland_postwar_congress_compromise_settlement
+		ireland_archive_successful_route = yes
+	}
+	option = {
+		name = ireland_country_conclusion.2.recovery
+		trigger = { OR = { has_country_flag = ireland_route_conclusion_blocked has_country_flag = ireland_route_conclusion_failed } }
+		custom_effect_tooltip = ireland_country_conclusion.2.recovery.effects
+		set_country_flag = ireland_postwar_congress_recovery_reported
+	}
+}
+
+country_event = {
+	id = ireland_country_conclusion.3
+	title = ireland_country_conclusion.3.title
+	desc = ireland_country_conclusion.3.desc
+	picture = GFX_report_event_ireland_postwar_blueshirt_settlement
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = { original_tag = IRE has_country_flag = ireland_family_fascist NOT = { has_country_flag = ireland_postwar_blueshirt_report_recorded } }
+	option = {
+		name = ireland_country_conclusion.3.full
+		trigger = { has_country_flag = ireland_route_conclusion_full }
+		custom_effect_tooltip = ireland_country_conclusion.3.full.effects
+		set_country_flag = ireland_postwar_blueshirt_report_recorded
+		set_country_flag = ireland_postwar_blueshirt_full_settlement
+		ireland_archive_successful_route = yes
+	}
+	option = {
+		name = ireland_country_conclusion.3.partial
+		trigger = { has_country_flag = ireland_route_conclusion_partial }
+		custom_effect_tooltip = ireland_country_conclusion.3.partial.effects
+		set_country_flag = ireland_postwar_blueshirt_report_recorded
+		set_country_flag = ireland_postwar_blueshirt_compromise_settlement
+		ireland_archive_successful_route = yes
+	}
+	option = {
+		name = ireland_country_conclusion.3.recovery
+		trigger = { OR = { has_country_flag = ireland_route_conclusion_blocked has_country_flag = ireland_route_conclusion_failed } }
+		custom_effect_tooltip = ireland_country_conclusion.3.recovery.effects
+		set_country_flag = ireland_postwar_blueshirt_recovery_reported
+	}
+}
+
+country_event = {
+	id = ireland_country_conclusion.4
+	title = ireland_country_conclusion.4.title
+	desc = ireland_country_conclusion.4.desc
+	picture = GFX_report_event_ireland_postwar_producer_estates_settlement
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = { original_tag = IRE has_country_flag = ireland_family_oligarchic NOT = { has_country_flag = ireland_postwar_producer_estates_report_recorded } }
+	option = {
+		name = ireland_country_conclusion.4.full
+		trigger = { has_country_flag = ireland_route_conclusion_full }
+		custom_effect_tooltip = ireland_country_conclusion.4.full.effects
+		set_country_flag = ireland_postwar_producer_estates_report_recorded
+		set_country_flag = ireland_postwar_producer_estates_full_settlement
+		ireland_archive_successful_route = yes
+	}
+	option = {
+		name = ireland_country_conclusion.4.partial
+		trigger = { has_country_flag = ireland_route_conclusion_partial }
+		custom_effect_tooltip = ireland_country_conclusion.4.partial.effects
+		set_country_flag = ireland_postwar_producer_estates_report_recorded
+		set_country_flag = ireland_postwar_producer_estates_compromise_settlement
+		ireland_archive_successful_route = yes
+	}
+	option = {
+		name = ireland_country_conclusion.4.recovery
+		trigger = { OR = { has_country_flag = ireland_route_conclusion_blocked has_country_flag = ireland_route_conclusion_failed } }
+		custom_effect_tooltip = ireland_country_conclusion.4.recovery.effects
+		set_country_flag = ireland_postwar_producer_estates_recovery_reported
+	}
+}
+
+country_event = {
+	id = ireland_country_conclusion.5
+	title = ireland_country_conclusion.5.title
+	desc = ireland_country_conclusion.5.desc
+	picture = GFX_report_event_ireland_postwar_restoration_settlement
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = { original_tag = IRE has_country_flag = ireland_family_restoration NOT = { has_country_flag = ireland_postwar_restoration_report_recorded } }
+	option = {
+		name = ireland_country_conclusion.5.full
+		trigger = { has_country_flag = ireland_route_conclusion_full }
+		custom_effect_tooltip = ireland_country_conclusion.5.full.effects
+		set_country_flag = ireland_postwar_restoration_report_recorded
+		set_country_flag = ireland_postwar_restoration_full_settlement
+		ireland_archive_successful_route = yes
+	}
+	option = {
+		name = ireland_country_conclusion.5.partial
+		trigger = { has_country_flag = ireland_route_conclusion_partial }
+		custom_effect_tooltip = ireland_country_conclusion.5.partial.effects
+		set_country_flag = ireland_postwar_restoration_report_recorded
+		set_country_flag = ireland_postwar_restoration_compromise_settlement
+		ireland_archive_successful_route = yes
+	}
+	option = {
+		name = ireland_country_conclusion.5.recovery
+		trigger = { OR = { has_country_flag = ireland_route_conclusion_blocked has_country_flag = ireland_route_conclusion_failed } }
+		custom_effect_tooltip = ireland_country_conclusion.5.recovery.effects
+		set_country_flag = ireland_postwar_restoration_recovery_reported
+	}
+}

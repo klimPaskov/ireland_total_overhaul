@@ -1021,3 +1021,178 @@ sync.
 - Output: true only when no relevant controlled state or eligible subject is
   unresolved. Losing a holding or subject removes it from the requirement.
 - Side effects: none. This trigger does not close the mission or clear a flag.
+
+## Postwar family conclusion architecture
+
+The postwar family layer separates material foundation, family settlement,
+terminal evaluation, report presentation, recovery, and route archival. The
+review evaluator is not terminal: a full or partial report must explicitly
+accept its result before the route is closed and archived. Blocked and failed
+reports keep the route playable and open one family recovery action.
+
+### Shared postwar constants
+
+The `ireland` script-constant category owns the postwar timing and project
+reservation values:
+
+| Constant | Value | Used by |
+| --- | ---: | --- |
+| `postwar_family_settlement_days` | 180 | five one-time family settlement actions (`days_remove`) |
+| `postwar_family_recovery_days` | 120 | five family recovery actions (`days_remove`) |
+| `postwar_family_factory_use` | 1 | settlement/recovery project `civilian_factory_use` modifier |
+| `postwar_family_review_days` | 180 | `ireland_begin_conclusion_review` countdown |
+
+Do not duplicate these values in a decision, event, or scripted helper.
+
+### `ireland_family_postwar_settlement_complete`
+
+- Scope: Ireland country trigger.
+- Purpose: canonical completion gate for the one family-specific postwar
+  settlement project.
+- Inputs: initialized Ireland scope and the shared country flag
+  `ireland_family_postwar_settlement_complete`, set by exactly one of the five
+  family settlement actions.
+- Output: true when the shared institutional settlement is recorded. The
+  trigger does not infer completion from a route, ideology, capstone, or mission
+  result.
+- Defaults and side effects: false before the action completes; no side effects.
+- Usage: use in terminal-report success options and
+  `ireland_archive_successful_route`, not as a substitute for the foundation
+  requirements.
+
+### `ireland_has_active_route_review_critical_mission`
+
+- Scope: Ireland country trigger.
+- Purpose: distinguish the route-review mission queue from unrelated
+  constitutional, component, invasion, neutrality, Northern, occupation, and
+  routine critical missions.
+- Inputs: active flags for the six-month settlement review, constituent
+  authority, wartime rationing, demobilised forces, Republic/Commonwealth
+  settlement, United Nations admission, and national reconstruction missions.
+- Output: true while any named route-review critical mission is active.
+- Defaults and side effects: false when all listed missions are terminal or have
+  not started; no side effects.
+- Usage: `ireland_postwar_foundation_ready` uses the trigger so a family
+  settlement project cannot start while a route-review objective is unresolved.
+
+### Family recovery surface triggers
+
+The evaluator maps each recovery action's durable `ireland_postwar_*` repair
+record back to only the surfaces that action owns. Every mapping also requires
+`ireland_family_conclusion_recovery_complete`, so a similarly named flag cannot
+silently bypass a review before the action completes:
+
+- `ireland_family_postwar_government_repair_recorded`: democratic coalition,
+  communist Congress, or restoration Crown Council repair.
+- `ireland_family_postwar_law_repair_recorded`: democratic coalition repair.
+- `ireland_family_postwar_defence_repair_recorded`: communist Congress or
+  fascist directorate repair.
+- `ireland_family_postwar_economy_repair_recorded`: oligarchic producer-estate
+  repair.
+- `ireland_family_postwar_identity_repair_recorded`: restoration Crown Council
+  repair.
+
+These are country triggers with no side effects. They are evaluator-only
+admission proofs; they do not set, clear, or rewrite the underlying route
+surface flags.
+
+### `ireland_postwar_foundation_ready`
+
+- Scope: Ireland country trigger; intended callers are the five family
+  settlement decisions and their AI weights.
+- Purpose: require the dated, material postwar foundation before a family can
+  convert its route proof into an institutional settlement.
+- Inputs: initialized, unarchived Ireland; date after `1946.1.1`; peace or the
+  recorded `ireland_major_war_ended` flag; completed emergency declaration
+  review; full/partial records for rationing, demobilisation, and national
+  reconstruction; a full/partial Republic/Commonwealth settlement mission;
+  and a full/partial United Nations admission mission or the explicit
+  `ireland_postwar_alternate_order_resolved` flag when
+  `ireland_un_admission_authority` is false. It also requires no active
+  `ireland_has_active_route_review_critical_mission` mission.
+- Output: true only when all material foundation records are present. The date
+  opens the era but never substitutes for mission or institutional proof.
+- Defaults and side effects: false before any requirement is met; no side
+  effects.
+- Usage: put `ireland_postwar_foundation_ready = yes` in settlement action
+  `available` and `ai_will_do` blocks. The caller still owns family/capstone
+  visibility and the settlement action's completion flags.
+
+### `ireland_begin_conclusion_review`
+
+- Scope: Ireland country effect.
+- Inputs: no parameters; the caller must have completed the relevant settlement
+  or family recovery action. The helper reads
+  `ireland_family_conclusion_recovery_complete` when a recovery action has just
+  repaired a blocked/failed result.
+- Outputs: starts the 180-day `ireland_conclusion_review_days` countdown and
+  clears the due marker. After a recovery action, it also sets
+  `ireland_route_failure_recovered`; this preserves `ireland_route_failure`
+  history while allowing the next evaluation to classify the repaired route as
+  partial instead of failed.
+- Defaults and side effects: no-op while a review is already active or while
+  `ireland_conclusion_recovery_open` remains set; no route closure, archival,
+  cleanup, or report dispatch.
+- Usage: call at the end of every family settlement/recovery action, after its
+  own institutional flags are set. A recovery caller must clear
+  `ireland_conclusion_recovery_open` before calling it.
+
+### `ireland_open_family_conclusion_recovery`
+
+- Scope: Ireland country effect.
+- Inputs: current `ireland_route_conclusion_blocked` or
+  `ireland_route_conclusion_failed` result; no parameters.
+- Outputs: sets `ireland_conclusion_recovery_open`, clears the prior recovery
+  completion/recovered markers for the new cycle, and clears the review timer so
+  no second 180-day review can begin before a recovery action completes.
+- Defaults and side effects: no-op after route archival or when the current
+  result is full/partial. It does not clear any named blocked-surface flag or
+  durable failure history, and it does not call route cleanup.
+- Usage: called by `ireland_finalize_route_conclusion` before dispatching a
+  blocked/failed family report. The matching recovery action clears the open
+  flag, sets `ireland_family_conclusion_recovery_complete`, clears only its
+  named blocked surfaces, and calls `ireland_begin_conclusion_review`.
+
+### `ireland_dispatch_family_conclusion_event`
+
+- Scope: Ireland country effect; direct terminal-report dispatch.
+- Inputs: one mutually exclusive family flag among
+  `ireland_family_democratic`, `ireland_family_communist`,
+  `ireland_family_fascist`, `ireland_family_oligarchic`, and
+  `ireland_family_restoration`.
+- Outputs: fires exactly one triggered-only report event from the
+  `ireland_country_conclusion` namespace: `.1` democratic, `.2` Congress, `.3`
+  Blueshirt, `.4` producer-estate, or `.5` restoration.
+- Defaults and side effects: no-op when no family flag is present. The ordered
+  `else_if` chain prevents multiple report events even if a malformed scope has
+  more than one family flag. It does not add a world scan, generic dispatcher
+  candidate, event target, or `fire_only_once` guard.
+- Usage: call once at the end of `ireland_finalize_route_conclusion`, after the
+  result flags and recovery-open state are set. Report options own durable
+  report records and decide whether to archive or keep recovery open.
+
+### `ireland_archive_successful_route`
+
+- Scope: Ireland country effect; terminal success option only.
+- Inputs: `ireland_route_conclusion_review_complete`, full or partial result,
+  `ireland_family_postwar_settlement_complete`, and a closed recovery state.
+- Outputs: consolidates foreign reactions and neutrality incidents, sets
+  `ireland_route_cleanup`, `ireland_route_closed`, and
+  `ireland_route_archived`, runs `ireland_cleanup_route_state`, rebuilds mission
+  counters, and requests spirit/profile synchronisation.
+- Defaults and side effects: no-op when the result is blocked/failed, the family
+  settlement is missing, recovery is open, or the route is already archived.
+  This is the only P0 conclusion helper that sets route closure/archive flags.
+- Usage: call from the full/partial option of the matching
+  `ireland_country_conclusion.1-.5` report after the option records its durable
+  family report flag. Never call it from the evaluator, a blocked/failed option,
+  a daily scan, or a generic event dispatcher.
+
+### Caller contract for the alternate-order branch
+
+`ireland_postwar_alternate_order_resolved` is an explicit external record, not
+an automatic fallback. The United Nations admission caller may set it only when
+`ireland_un_admission_authority` is false and the world state makes the named
+United Nations path invalid. Skipping the mission while a valid United Nations
+authority exists must not set the flag. This keeps the foundation trigger
+auditable and prevents a date-only shortcut.

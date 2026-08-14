@@ -20,6 +20,13 @@ ireland = {
 	settlement_route_min = -60
 	settlement_route_max = 60
 	settlement_review_days = 180
+	# Postwar family settlement, recovery, and terminal-review tuning. Keep the
+	# shared values here so every family action and conclusion path uses the same
+	# authored duration and project reservation.
+	postwar_family_settlement_days = 180
+	postwar_family_recovery_days = 120
+	postwar_family_factory_use = 1
+	postwar_family_review_days = 180
 	settlement_bop_scale = 100
 	settlement_stage_1 = 1
 	settlement_stage_2 = 2

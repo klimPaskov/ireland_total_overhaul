@@ -803,6 +803,131 @@ ireland_reveal_postwar_conclusion = {
 	ireland_has_route_conclusion_capstone = yes
 }
 
+# The terminal family layer is deliberately narrower than the ordinary
+# postwar reveal. The reveal can still expose a blocked review report; these
+# helpers gate the material settlement projects and their success handoff.
+ireland_family_postwar_settlement_complete = {
+	original_tag = IRE
+	has_country_flag = ireland_initialized
+	has_country_flag = ireland_family_postwar_settlement_complete
+}
+
+ireland_has_active_route_review_critical_mission = {
+	OR = {
+		has_country_flag = ireland_mission_complete_six_month_settlement_review_active
+		has_country_flag = ireland_mission_secure_constituent_authority_active
+		has_country_flag = ireland_mission_end_wartime_rationing_safely_active
+		has_country_flag = ireland_mission_settle_the_demobilised_forces_active
+		has_country_flag = ireland_mission_bring_the_republic_settlement_into_force_active
+		has_country_flag = ireland_mission_build_support_for_united_nations_admission_active
+		has_country_flag = ireland_mission_complete_national_reconstruction_active
+	}
+}
+
+# Family recovery actions write durable institutional repair records. These
+# surface-specific gates let the next evaluator honour the completed repair
+# without deleting ireland_route_failure history or silently granting an
+# unrelated family's recovery a free pass.
+ireland_family_postwar_government_repair_recorded = {
+	AND = {
+		has_country_flag = ireland_family_conclusion_recovery_complete
+		OR = {
+			AND = {
+				has_country_flag = ireland_family_democratic
+				has_country_flag = ireland_postwar_coalition_reconstituted
+			}
+			AND = {
+				has_country_flag = ireland_family_communist
+				has_country_flag = ireland_postwar_workers_congress_reconvened
+			}
+			AND = {
+				has_country_flag = ireland_family_restoration
+				has_country_flag = ireland_postwar_crown_council_reconvened
+			}
+		}
+	}
+}
+
+ireland_family_postwar_law_repair_recorded = {
+	AND = {
+		has_country_flag = ireland_family_conclusion_recovery_complete
+		has_country_flag = ireland_family_democratic
+		has_country_flag = ireland_postwar_coalition_reconstituted
+	}
+}
+
+ireland_family_postwar_defence_repair_recorded = {
+	AND = {
+		has_country_flag = ireland_family_conclusion_recovery_complete
+		OR = {
+			AND = {
+				has_country_flag = ireland_family_communist
+				has_country_flag = ireland_postwar_workers_congress_reconvened
+			}
+			AND = {
+				has_country_flag = ireland_family_fascist
+				has_country_flag = ireland_postwar_failed_directorate_demobilised
+			}
+		}
+	}
+}
+
+ireland_family_postwar_economy_repair_recorded = {
+	AND = {
+		has_country_flag = ireland_family_conclusion_recovery_complete
+		has_country_flag = ireland_family_oligarchic
+		has_country_flag = ireland_postwar_producer_estates_rebalanced
+	}
+}
+
+ireland_family_postwar_identity_repair_recorded = {
+	AND = {
+		has_country_flag = ireland_family_conclusion_recovery_complete
+		has_country_flag = ireland_family_restoration
+		has_country_flag = ireland_postwar_crown_council_reconvened
+	}
+}
+
+ireland_postwar_foundation_ready = {
+	original_tag = IRE
+	has_country_flag = ireland_initialized
+	NOT = { has_country_flag = ireland_route_archived }
+	NOT = { has_country_flag = ireland_route_closed }
+	date > "1946.1.1"
+	OR = {
+		has_war = no
+		has_country_flag = ireland_major_war_ended
+	}
+	has_country_flag = ireland_action_review_the_emergency_declaration_complete
+	OR = {
+		has_country_flag = ireland_mission_end_wartime_rationing_safely_full_recorded
+		has_country_flag = ireland_mission_end_wartime_rationing_safely_partial_recorded
+	}
+	OR = {
+		has_country_flag = ireland_mission_settle_the_demobilised_forces_full_recorded
+		has_country_flag = ireland_mission_settle_the_demobilised_forces_partial_recorded
+	}
+	OR = {
+		has_country_flag = ireland_mission_complete_national_reconstruction_full_recorded
+		has_country_flag = ireland_mission_complete_national_reconstruction_partial_recorded
+	}
+	OR = {
+		has_country_flag = ireland_mission_bring_the_republic_settlement_into_force_full_recorded
+		has_country_flag = ireland_mission_bring_the_republic_settlement_into_force_partial_recorded
+	}
+	OR = {
+		OR = {
+			has_country_flag = ireland_mission_build_support_for_united_nations_admission_full_recorded
+			has_country_flag = ireland_mission_build_support_for_united_nations_admission_partial_recorded
+		}
+		AND = {
+			NOT = { ireland_un_admission_authority = yes }
+			has_country_flag = ireland_postwar_alternate_order_resolved
+		}
+	}
+	NOT = { ireland_has_active_route_review_critical_mission = yes }
+}
+
 # A channel is valid only while its named state actor exists and remains a
 # sovereign, non-capitulated partner. These triggers are shared by actions,
 # missions, map objectives, and the daily channel lifecycle helper.

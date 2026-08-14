@@ -49205,6 +49205,575 @@ ireland_postwar = {
 			}
 		}
 	}
+	# Record an alternate diplomatic order only when the established UN-admission
+	# authority is genuinely unavailable.
+	ireland_action_record_an_alternate_postwar_order = {
+		icon = GFX_decision_ireland_action_record_an_alternate_postwar_order
+		visible = {
+			original_tag = IRE
+			date > 1946.1.1
+			NOT = { has_country_flag = ireland_route_archived }
+			NOT = { has_country_flag = ireland_postwar_alternate_order_resolved }
+			NOT = { ireland_un_admission_authority = yes }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_action_record_an_alternate_postwar_order_requirements_tt
+				original_tag = IRE
+				date > 1946.1.1
+				NOT = { has_war = yes }
+				OR = {
+					has_country_flag = ireland_emergency_review
+					has_country_flag = ireland_postwar_transition
+					has_country_flag = ireland_major_war_ended
+				}
+				NOT = { ireland_un_admission_authority = yes }
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		fire_only_once = yes
+		days_remove = constant:ireland.postwar_family_recovery_days
+		modifier = { civilian_factory_use = constant:ireland.postwar_family_factory_use }
+		custom_cost_trigger = { num_of_civilian_factories_available_for_projects > 0 }
+		custom_cost_text = decision_cost_civ_factory_1
+		complete_effect = {
+			custom_effect_tooltip = ireland_action_record_an_alternate_postwar_order_effects_tt
+			set_country_flag = ireland_postwar_alternate_order_resolved
+		}
+		ai_will_do = {
+			base = 1
+			modifier = { add = constant:ireland.ai_critical_score NOT = { ireland_un_admission_authority = yes } }
+		}
+	}
+
+	# P0 family postwar settlements. These actions reserve a civilian factory for
+	# their full duration and record institutional closure; they do not grant
+	# factories, equipment, cores, or generic stability.
+	# Ratify the Postwar Republic — Dublin Metropolitan Region
+	ireland_action_ratify_the_postwar_republic = {
+		icon = GFX_decision_ireland_action_ratify_the_postwar_republic
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_family_democratic
+			NOT = { has_country_flag = ireland_route_archived }
+			OR = {
+				has_country_flag = ireland_constitutional_stewardship_complete
+				has_country_flag = ireland_de_valera_reconciliation_capstone_complete
+				has_country_flag = ireland_de_valera_emergency_capstone_complete
+				has_country_flag = ireland_lemass_developmental_capstone_complete
+				has_country_flag = ireland_cosgrave_capstone_complete
+				has_country_flag = ireland_mulcahy_capstone_complete
+				has_country_flag = ireland_costello_capstone_complete
+				has_country_flag = ireland_dillon_war_assent_complete
+				has_country_flag = ireland_norton_parliamentary_capstone_complete
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_postwar_family_settlement_requirements_tt
+				ireland_postwar_foundation_ready = yes
+			}
+		}
+		fire_only_once = yes
+		days_remove = constant:ireland.postwar_family_settlement_days
+		modifier = {
+			civilian_factory_use = constant:ireland.postwar_family_factory_use
+		}
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		custom_cost_text = decision_cost_civ_factory_1
+		complete_effect = {
+			custom_effect_tooltip = ireland_action_ratify_the_postwar_republic_effects_tt
+			set_country_flag = ireland_family_postwar_settlement_complete
+			set_country_flag = ireland_postwar_democratic_settlement_recorded
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = ireland_cosgrave_capstone_complete
+						has_country_flag = ireland_mulcahy_capstone_complete
+						has_country_flag = ireland_costello_capstone_complete
+						has_country_flag = ireland_dillon_war_assent_complete
+						has_country_flag = ireland_norton_parliamentary_capstone_complete
+					}
+				}
+				set_country_flag = ireland_postwar_coalition_constitutional_continuity_recorded
+			}
+			else = {
+				set_country_flag = ireland_postwar_fianna_fail_constitutional_continuity_recorded
+			}
+			if = {
+				limit = { has_country_flag = ireland_mission_bring_the_republic_settlement_into_force_full_recorded }
+				set_country_flag = ireland_postwar_republic_act_settled
+			}
+			else = {
+				set_country_flag = ireland_postwar_external_association_settled
+			}
+			ireland_begin_conclusion_review = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = constant:ireland.ai_critical_score
+				ireland_postwar_foundation_ready = yes
+			}
+		}
+	}
+
+	# Civilianise the Workers' Congress — Dublin Metropolitan Region
+	ireland_action_civilianise_the_workers_congress = {
+		icon = GFX_decision_ireland_action_civilianise_the_workers_congress
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_family_communist
+			NOT = { has_country_flag = ireland_route_archived }
+			OR = {
+				has_country_flag = ireland_congress_plural_capstone_complete
+				has_country_flag = ireland_congress_vanguard_capstone_complete
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_postwar_family_settlement_requirements_tt
+				ireland_postwar_foundation_ready = yes
+			}
+		}
+		fire_only_once = yes
+		days_remove = constant:ireland.postwar_family_settlement_days
+		modifier = {
+			civilian_factory_use = constant:ireland.postwar_family_factory_use
+		}
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		custom_cost_text = decision_cost_civ_factory_1
+		complete_effect = {
+			custom_effect_tooltip = ireland_action_civilianise_the_workers_congress_effects_tt
+			set_country_flag = ireland_family_postwar_settlement_complete
+			set_country_flag = ireland_postwar_congress_settlement_recorded
+			set_country_flag = ireland_postwar_civilian_congress_supremacy_recorded
+			set_country_flag = ireland_postwar_wartime_command_bodies_closed
+			ireland_begin_conclusion_review = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = constant:ireland.ai_critical_score
+				ireland_postwar_foundation_ready = yes
+			}
+		}
+	}
+
+	# Place the Directorate Under Statute — Dublin Metropolitan Region
+	ireland_action_place_the_directorate_under_statute = {
+		icon = GFX_decision_ireland_action_place_the_directorate_under_statute
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_family_fascist
+			NOT = { has_country_flag = ireland_route_archived }
+			OR = {
+				has_country_flag = ireland_oduffy_personal_capstone_complete
+				has_country_flag = ireland_oduffy_corporate_capstone_complete
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_postwar_family_settlement_requirements_tt
+				ireland_postwar_foundation_ready = yes
+			}
+		}
+		fire_only_once = yes
+		days_remove = constant:ireland.postwar_family_settlement_days
+		modifier = {
+			civilian_factory_use = constant:ireland.postwar_family_factory_use
+		}
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		custom_cost_text = decision_cost_civ_factory_1
+		complete_effect = {
+			custom_effect_tooltip = ireland_action_place_the_directorate_under_statute_effects_tt
+			set_country_flag = ireland_family_postwar_settlement_complete
+			set_country_flag = ireland_postwar_fascist_settlement_recorded
+			set_country_flag = ireland_postwar_temporary_mobilisation_authority_closed
+			if = {
+				limit = { has_country_flag = ireland_oduffy_personal_capstone_complete }
+				set_country_flag = ireland_postwar_statutory_directorate_recorded
+			}
+			else = {
+				set_country_flag = ireland_postwar_corporate_state_demobilised_recorded
+			}
+			ireland_begin_conclusion_review = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = constant:ireland.ai_critical_score
+				ireland_postwar_foundation_ready = yes
+			}
+		}
+	}
+
+	# Convert Contracts to Reconstruction Credit — Dublin Metropolitan Region
+	ireland_action_convert_contracts_to_reconstruction_credit = {
+		icon = GFX_decision_ireland_action_convert_contracts_to_reconstruction_credit
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_family_oligarchic
+			NOT = { has_country_flag = ireland_route_archived }
+			OR = {
+				has_country_flag = ireland_vocational_constitution_capstone_complete
+				has_country_flag = ireland_clerical_route_capstone_complete
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_postwar_family_settlement_requirements_tt
+				ireland_postwar_foundation_ready = yes
+			}
+		}
+		fire_only_once = yes
+		days_remove = constant:ireland.postwar_family_settlement_days
+		modifier = {
+			civilian_factory_use = constant:ireland.postwar_family_factory_use
+		}
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		custom_cost_text = decision_cost_civ_factory_1
+		complete_effect = {
+			custom_effect_tooltip = ireland_action_convert_contracts_to_reconstruction_credit_effects_tt
+			set_country_flag = ireland_family_postwar_settlement_complete
+			set_country_flag = ireland_postwar_producer_estate_settlement_recorded
+			set_country_flag = ireland_postwar_reconstruction_credit_ledger_recorded
+			set_country_flag = ireland_postwar_creditor_obligations_recorded
+			ireland_begin_conclusion_review = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = constant:ireland.ai_critical_score
+				ireland_postwar_foundation_ready = yes
+			}
+		}
+	}
+
+	# Define the Postwar Crown — Dublin Metropolitan Region
+	ireland_action_define_the_postwar_crown = {
+		icon = GFX_decision_ireland_action_define_the_postwar_crown
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_family_restoration
+			has_country_flag = ireland_high_king_capstone_complete
+			NOT = { has_country_flag = ireland_route_archived }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_postwar_family_settlement_requirements_tt
+				ireland_postwar_foundation_ready = yes
+			}
+		}
+		fire_only_once = yes
+		days_remove = constant:ireland.postwar_family_settlement_days
+		modifier = {
+			civilian_factory_use = constant:ireland.postwar_family_factory_use
+		}
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		custom_cost_text = decision_cost_civ_factory_1
+		complete_effect = {
+			custom_effect_tooltip = ireland_action_define_the_postwar_crown_effects_tt
+			set_country_flag = ireland_family_postwar_settlement_complete
+			set_country_flag = ireland_postwar_restoration_settlement_recorded
+			set_country_flag = ireland_postwar_crown_settlement_recorded
+			set_country_flag = ireland_postwar_temporary_crown_authority_closed
+			ireland_begin_conclusion_review = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = constant:ireland.ai_critical_score
+				ireland_postwar_foundation_ready = yes
+			}
+		}
+	}
+
+	# P0 family conclusion recovery. The evaluator and family report own reset of
+	# broader live-failure state; each action clears only its named surfaces.
+	# Reconstitute the Postwar Coalition — Dublin Metropolitan Region
+	ireland_action_reconstitute_the_postwar_coalition = {
+		icon = GFX_decision_ireland_action_reconstitute_the_postwar_coalition
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_conclusion_recovery_open
+			has_country_flag = ireland_family_democratic
+			NOT = { has_country_flag = ireland_route_archived }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_postwar_family_recovery_requirements_tt
+				has_country_flag = ireland_conclusion_recovery_open
+			}
+		}
+		days_remove = constant:ireland.postwar_family_recovery_days
+		modifier = {
+			civilian_factory_use = constant:ireland.postwar_family_factory_use
+		}
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		custom_cost_text = decision_cost_civ_factory_1
+		complete_effect = {
+			custom_effect_tooltip = ireland_action_reconstitute_the_postwar_coalition_effects_tt
+			set_country_flag = ireland_family_conclusion_recovery_complete
+			set_country_flag = ireland_postwar_coalition_reconstituted
+			clr_country_flag = ireland_route_conclusion_blocked_government
+			clr_country_flag = ireland_route_conclusion_blocked_law
+			clr_country_flag = ireland_conclusion_recovery_open
+			ireland_begin_conclusion_review = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = constant:ireland.ai_recovery_bonus
+				has_country_flag = ireland_conclusion_recovery_open
+			}
+		}
+	}
+
+	# Reconvene the Workers' Congress — Dublin Metropolitan Region
+	ireland_action_reconvene_the_workers_congress = {
+		icon = GFX_decision_ireland_action_reconvene_the_workers_congress
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_conclusion_recovery_open
+			has_country_flag = ireland_family_communist
+			NOT = { has_country_flag = ireland_route_archived }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_postwar_family_recovery_requirements_tt
+				has_country_flag = ireland_conclusion_recovery_open
+			}
+		}
+		days_remove = constant:ireland.postwar_family_recovery_days
+		modifier = {
+			civilian_factory_use = constant:ireland.postwar_family_factory_use
+		}
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		custom_cost_text = decision_cost_civ_factory_1
+		complete_effect = {
+			custom_effect_tooltip = ireland_action_reconvene_the_workers_congress_effects_tt
+			set_country_flag = ireland_family_conclusion_recovery_complete
+			set_country_flag = ireland_postwar_workers_congress_reconvened
+			clr_country_flag = ireland_route_conclusion_blocked_government
+			clr_country_flag = ireland_route_conclusion_blocked_defence
+			clr_country_flag = ireland_conclusion_recovery_open
+			ireland_begin_conclusion_review = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = constant:ireland.ai_recovery_bonus
+				has_country_flag = ireland_conclusion_recovery_open
+			}
+		}
+	}
+
+	# Demobilise the Failed Directorate — Dublin Metropolitan Region
+	ireland_action_demobilise_the_failed_directorate = {
+		icon = GFX_decision_ireland_action_demobilise_the_failed_directorate
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_conclusion_recovery_open
+			has_country_flag = ireland_family_fascist
+			NOT = { has_country_flag = ireland_route_archived }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_postwar_family_recovery_requirements_tt
+				has_country_flag = ireland_conclusion_recovery_open
+			}
+		}
+		days_remove = constant:ireland.postwar_family_recovery_days
+		modifier = {
+			civilian_factory_use = constant:ireland.postwar_family_factory_use
+		}
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		custom_cost_text = decision_cost_civ_factory_1
+		complete_effect = {
+			custom_effect_tooltip = ireland_action_demobilise_the_failed_directorate_effects_tt
+			set_country_flag = ireland_family_conclusion_recovery_complete
+			set_country_flag = ireland_postwar_failed_directorate_demobilised
+			clr_country_flag = ireland_route_conclusion_blocked_defence
+			clr_country_flag = ireland_conclusion_recovery_open
+			ireland_begin_conclusion_review = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = constant:ireland.ai_recovery_bonus
+				has_country_flag = ireland_conclusion_recovery_open
+			}
+		}
+	}
+
+	# Rebalance the Producer Estates — Dublin Metropolitan Region
+	ireland_action_rebalance_the_producer_estates = {
+		icon = GFX_decision_ireland_action_rebalance_the_producer_estates
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_conclusion_recovery_open
+			has_country_flag = ireland_family_oligarchic
+			NOT = { has_country_flag = ireland_route_archived }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_postwar_family_recovery_requirements_tt
+				has_country_flag = ireland_conclusion_recovery_open
+			}
+		}
+		days_remove = constant:ireland.postwar_family_recovery_days
+		modifier = {
+			civilian_factory_use = constant:ireland.postwar_family_factory_use
+		}
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		custom_cost_text = decision_cost_civ_factory_1
+		complete_effect = {
+			custom_effect_tooltip = ireland_action_rebalance_the_producer_estates_effects_tt
+			set_country_flag = ireland_family_conclusion_recovery_complete
+			set_country_flag = ireland_postwar_producer_estates_rebalanced
+			clr_country_flag = ireland_route_conclusion_blocked_economy
+			clr_country_flag = ireland_conclusion_recovery_open
+			ireland_begin_conclusion_review = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = constant:ireland.ai_recovery_bonus
+				has_country_flag = ireland_conclusion_recovery_open
+			}
+		}
+	}
+
+	# Reconvene the Crown Council — Dublin Metropolitan Region
+	ireland_action_reconvene_the_crown_council = {
+		icon = GFX_decision_ireland_action_reconvene_the_crown_council
+		visible = {
+			original_tag = IRE
+			has_country_flag = ireland_conclusion_recovery_open
+			has_country_flag = ireland_family_restoration
+			NOT = { has_country_flag = ireland_route_archived }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ireland_postwar_family_recovery_requirements_tt
+				has_country_flag = ireland_conclusion_recovery_open
+			}
+		}
+		days_remove = constant:ireland.postwar_family_recovery_days
+		modifier = {
+			civilian_factory_use = constant:ireland.postwar_family_factory_use
+		}
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		custom_cost_text = decision_cost_civ_factory_1
+		complete_effect = {
+			custom_effect_tooltip = ireland_action_reconvene_the_crown_council_effects_tt
+			set_country_flag = ireland_family_conclusion_recovery_complete
+			set_country_flag = ireland_postwar_crown_council_reconvened
+			clr_country_flag = ireland_route_conclusion_blocked_government
+			clr_country_flag = ireland_route_conclusion_blocked_identity
+			clr_country_flag = ireland_conclusion_recovery_open
+			ireland_begin_conclusion_review = yes
+		}
+		remove_trigger = {
+			OR = {
+				NOT = { original_tag = IRE }
+				has_country_flag = ireland_route_cleanup
+				has_country_flag = ireland_route_archived
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = constant:ireland.ai_recovery_bonus
+				has_country_flag = ireland_conclusion_recovery_open
+			}
+		}
+	}
+
 	# Complete the Route Conclusion Review — Dublin Metropolitan Region
 	ireland_action_complete_the_route_conclusion_review = {
 		icon = GFX_decision_ireland_complete_the_route_conclusion_review
@@ -49221,6 +49790,7 @@ ireland_postwar = {
 			original_tag = IRE
 			has_country_flag = ireland_conclusion_review_due
 			ireland_has_route_conclusion_capstone = yes
+			ireland_family_postwar_settlement_complete = yes
 			OR = { has_country_flag = ireland_emergency_review has_country_flag = ireland_postwar_transition has_country_flag = ireland_major_war_ended date > 1945.1.1 }
 			NOT = { has_country_flag = ireland_category_postwar_at_capacity }
 			NOT = { has_country_flag = ireland_action_complete_the_route_conclusion_review_active }
@@ -49272,7 +49842,6 @@ ireland_postwar = {
 			always = yes
 		}
 		custom_cost_text = ireland_action_cost_complete_the_route_conclusion_review
-		fire_only_once = yes
 		complete_effect = {
 			set_variable = {
 				ireland_action_burden = 3

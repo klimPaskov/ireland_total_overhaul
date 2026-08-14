@@ -466,4 +466,16 @@ spriteTypes = {
 	spriteType = { name = GFX_decision_ireland_claim_scottish_highlands texturefile = "gfx/interface/decisions/ireland/ireland_claim_scottish_highlands.dds" }
 	spriteType = { name = GFX_decision_ireland_claim_wales texturefile = "gfx/interface/decisions/ireland/ireland_claim_wales.dds" }
 	spriteType = { name = GFX_decision_ireland_claim_cornwall texturefile = "gfx/interface/decisions/ireland/ireland_claim_cornwall.dds" }
+
+	spriteType = { name = GFX_decision_ireland_action_ratify_the_postwar_republic texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_ratify_the_postwar_republic.dds" }
+	spriteType = { name = GFX_decision_ireland_action_civilianise_the_workers_congress texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_civilianise_the_workers_congress.dds" }
+	spriteType = { name = GFX_decision_ireland_action_place_the_directorate_under_statute texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_place_the_directorate_under_statute.dds" }
+	spriteType = { name = GFX_decision_ireland_action_convert_contracts_to_reconstruction_credit texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_convert_contracts_to_reconstruction_credit.dds" }
+	spriteType = { name = GFX_decision_ireland_action_define_the_postwar_crown texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_define_the_postwar_crown.dds" }
+	spriteType = { name = GFX_decision_ireland_action_reconstitute_the_postwar_coalition texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_reconstitute_the_postwar_coalition.dds" }
+	spriteType = { name = GFX_decision_ireland_action_reconvene_the_workers_congress texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_reconvene_the_workers_congress.dds" }
+	spriteType = { name = GFX_decision_ireland_action_demobilise_the_failed_directorate texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_demobilise_the_failed_directorate.dds" }
+	spriteType = { name = GFX_decision_ireland_action_rebalance_the_producer_estates texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_rebalance_the_producer_estates.dds" }
+	spriteType = { name = GFX_decision_ireland_action_reconvene_the_crown_council texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_reconvene_the_crown_council.dds" }
+	spriteType = { name = GFX_decision_ireland_action_record_an_alternate_postwar_order texturefile = "gfx/interface/decisions/ireland/actions/decision_ireland_record_an_alternate_postwar_order.dds" }
 }
