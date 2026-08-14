@@ -148,7 +148,31 @@ relaunch, workers' campaign reconstruction, Belfast Compact reopening, coercive
 withdrawal before a war goal, or a reconvened provincial assent convention.
 Recovery never refunds reserves or erases the first failure record.
 
+The P1 implementation records these recovery surfaces explicitly: democratic
+plebiscite relaunch, Congress Workers' Border Campaign rebuild, fascist border
+enforcement withdrawal, restoration Provincial Assent reconvening, and the
+existing producer-estate `ireland_territorial_reopen_belfast_compact`. The
+Congress route preserves full, partial, and failed mission records; Provincial
+Assent records assent only after all four live floors are met; and fascist
+withdrawal records a valid partial Northern outcome without refunding consumed
+enforcement reserves.
+
 ## Concrete focus payoffs
+
+Settlement and policy capability handoffs are concrete route outcomes even
+when they should not grant arbitrary equipment. `ireland_settlement_under_law`,
+`ireland_all_island_workers_republic`, `ireland_belfast_compact`, and
+`ireland_restore_ulsters_place` write durable settlement records consumed by
+their named territorial decisions, diplomatic events, and final Northern
+review. `ireland_atlantic_ambition` opens the family-specific Atlantic policy
+and postwar review surfaces. These five cards are accepted capability handoffs,
+not helper-only filler; their custom tooltips must name the operations and
+records they enable.
+
+Search filters follow direct-effect parity. Industry, annexation, character,
+Army XP, Navy XP, Air XP, and Research tags may appear only when the focus's
+completion reward contains the matching direct effect or explicit engine
+capability. A downstream thematic relationship alone is not sufficient.
 
 Territorial focuses visibly grant one of:
 

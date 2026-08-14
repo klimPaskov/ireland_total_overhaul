@@ -44,8 +44,12 @@ campaign ahead.
 
 ## Public family band
 
-All five gateways sit on one row directly below the Settlement and are pairwise
-exclusive. The family lock and downstream profile lock remain separate.
+All five gateways sit on one centered post-Settlement row and are pairwise
+exclusive. They are aligned at x `-24, -18, -12, -6, 0` on y `14`, with their
+profile corridors immediately below and their substantive programme roots on
+y `18`. The Settlement reveal flag and each gateway's explicit `available`
+requirements replace redundant long visual prerequisites. The family lock and
+downstream profile lock remain separate.
 
 ### Democratic republican government
 
@@ -180,6 +184,13 @@ restoration. All remain visible as locked choices after reveal, retain separate
 family and profile locks, and connect visibly to the public Settlement
 architecture. Their downstream programmes remain spatially centered on the
 chosen family rather than appearing as detached focus islands.
+
+Layout evidence boundary: the accepted coordinate-only reflow in
+`89ff719` implements the centered family-lane interpretation as five straight
+parallel lanes beneath the political tree. The completion handoff records the
+accepted roots, bounds, and zero-defect renderer inspection. The earlier
+gateway-only trial and two-row contingency language remain historical evidence
+and do not override the accepted five-lane result.
 
 Each family owns one 1946–1951 institutional settlement and one recovery project.
 A full or partial conclusion is archived only after its family report records the

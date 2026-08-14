@@ -4,6 +4,28 @@ Feature slug: `ireland_country_package`
 
 Status: implementation source of truth for the 2026-08-14 campaign-depth pass.
 
+Evidence boundary: gameplay after the final 2026-08-14 family-band correction
+is the current source baseline. It includes the accepted P0/P1/P2
+implementation tranches, the timed-decision lifecycle audit fixes, and the
+authored family-lane reflow. The current static focus source contains 218 focuses and 222
+connectors with exactly three opening trunks. The five family lanes now occupy
+the centered x `-26..21`, y `0..22` bounds; focus inspection reports zero
+crossings, node intersections, long connectors, duplicate coordinates, and
+same-row spacing defects. Nonblocking detour/staircase advisories remain only
+in concealed clerical and Otherworld evidence corridors.
+Five family settlement projects, five family recovery projects, four P1
+territorial recovery paths alongside the existing Belfast Compact reopening,
+seven industrial concerns plus two MIOs, five family report images, the
+Parliament enabled-button repair, and the paced/direct event cadence are
+implemented and documented by the dated handoffs under
+`docs/plans/ireland_country_package/`.
+
+The accepted family-lane reflow is recorded in
+`docs/plans/ireland_country_package/subagent_handoffs/ireland_country_package_family_lane_reflow_completion_2026-08-14.md`.
+The earlier gateway-only trial and reversible baseline are retained as
+superseded evidence. The parent-owned completion audit remains a separate
+gate; it must not reopen the accepted gameplay or layout contracts.
+
 ## Purpose
 
 This package reconciles the existing Ireland focus, Parliament, provision,
@@ -101,4 +123,3 @@ The package is complete only when the source implementation, current specs, AI,
 localisation, icons, report art, advisor/company assets, decision and event
 lifecycles, focus render, GUI states, and route-coverage audit agree. A working
 loader or a large focus count is not sufficient.
-

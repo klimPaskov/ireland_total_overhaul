@@ -4,20 +4,20 @@
 
 | Surface | Current evidence | Required repair |
 | --- | --- | --- |
-| opening tree | three roots, structurally clean | retain; straighten trunk centres and keep branch panning centred |
-| public politics | five families with substantial content | align gateways, make internal profiles unmistakable, verify conclusions and recovery |
-| expansion | 25-focus detached x9–21 island, flag reveal, no connector/shortcut | connect through National Question foreshadowing, move lane beside politics, improve labels/payoffs/navigation |
-| rewards | every focus has tooltip, but many outcomes are helper/institution flags | classify all cards; add tangible/operation/institution effect where player payoff is not immediate |
-| industry | seven concerns + Ford/H&W MIOs, nine contracts | integrate route reactions and postwar programmes; verify company dates and material inputs |
-| defence | army/air/navy/readiness lanes exist | preserve outer navy lane, add route doctrine conclusions and material operations |
-| Parliament | four scripted controls and mirrored decisions | retain shared executors; active green button, explicit gate text, non-empty starting category |
-| events | broad event package with paced dispatcher and report art | route-by-route clarity/cadence audit; no event spam or stale previews |
-| AI | full focus-ID references | prove route choice, operation safety, recovery, and territorial restraint by profile |
-| late game | postwar offices and settlement exist | ensure 1946–1951 reconstruction/republic/demobilisation is playable across families |
+| opening tree | 218 focuses, 222 connectors, exactly three opening trunks; accepted inspection has zero crossings, intersections, long connectors, duplicates, or spacing defects | preserve the final centered family-band reflow and its renderer artifacts |
+| public politics | five gateways share y `14`; route-specific programmes, five settlements, and five recoveries are implemented; the five family lanes are centered beneath the political tree | preserve the accepted family-lane coordinates, IDs, locks, availability requirements, and route descendants |
+| expansion | the National Question is a connected preparation chain with target-scoped Wales/Cornwall responses, per-holding outcomes, and P1 recovery paths | keep the source-to-source contract aligned and carry the final layout/audit evidence into the completion record |
+| rewards | P2 removed unrelated Atlantic filler rewards; current focuses expose named capabilities, operations, policy outcomes, or institutional records | retain route-level payoff and filter evidence; report any remaining shallow or unvalidated route in the final audit rather than adding filler |
+| industry | seven selectable concerns plus Ford Cork and Harland and Wolff MIOs; nine contracts reserve productive civilian-factory capacity for 35 days and deliver distinct outputs | preserve contract inputs/outcomes and verify the cross-surface company/MIO/asset ledger |
+| defence | army/air/navy/readiness lanes and material operations remain active, including route-specific territorial enforcement reserves | preserve the outer maritime lane and carry scenario/balance evidence into the final audit |
+| Parliament | four scripted controls share guarded executors and mirrored decisions; enabled state is green/brass and disabled state remains engine-darkened | retain the button-state repair and verify GUI state/readback evidence at the parent completion gate |
+| events | ordinary flavour uses the monthly Ireland pulse with a skip-after-dispatch cadence; foreign reactions use a paced 120-day broker; five family reports dispatch directly and use distinct art | retain exact effect/cadence/replay evidence and report any live-engine gap explicitly |
+| AI | historical non-coercion, family policy routing, and recovery priority are implemented across the current 218-focus roster | run the named route and blocked-recovery scenarios before final completion claims |
+| late game | postwar foundation gates five 180-day family settlements, five 120-day recoveries, 180-day review restart, and report-option-only archival | retain the exact lifecycle and confirm the final renderer-backed focus-band result |
 
 ## Implementation tranches
 
-### Tranche A — architecture and navigation
+### Tranche A — architecture and navigation (implemented; family-lane reflow accepted)
 
 - Add a visible `ireland_unfinished_national_question` foreshadowing focus after
   the National Settlement.
@@ -27,9 +27,13 @@
   centred, and the territorial campaign is visible as the political late game.
 - Retain exactly three opening roots and at most three navigation shortcuts.
 - Re-render and resolve all crossings, through-node connectors, long connectors,
-  duplicate positions, and branch-centering defects.
+  duplicate positions, and branch-centering defects. The connected National
+  Question chain and 218-focus family-lane reflow are implemented. The accepted
+  inspection reports zero structural defects and retains one nonblocking
+  clerical-failure linear detour because straightening it would cross the
+  adjacent Congress corridor.
 
-### Tranche B — payoff and route-depth audit
+### Tranche B — payoff and route-depth audit (implemented for the accepted P2 surface)
 
 - Classify every focus by the five reward classes.
 - For every helper-only card, add a named operation, visible institution stage, or
@@ -39,14 +43,14 @@
 - Ensure each public family has opening, commitment, internal split, economy,
   security, diplomacy, Northern method, failure/recovery, and conclusion.
 
-### Tranche C — active country systems
+### Tranche C — active country systems (implemented for the accepted tranche)
 
 - Deepen agriculture, power/peat, transport, companies, military exercises,
   neutrality incidents, shipping, and postwar reconstruction.
 - Use decisions/missions with material inputs and centralized capacity/cooldowns.
 - Connect route governments to shared support outputs.
 
-### Tranche D — territorial campaign
+### Tranche D — territorial campaign (implemented for the accepted P1 surface)
 
 - Reconcile the 25 existing focuses and territorial decisions with the connected
   architecture.
@@ -55,13 +59,13 @@
 - Verify target events, saved targets, cooldown, naval proof, per-holding outcome,
   and no-core rules.
 
-### Tranche E — identity, AI, assets, text
+### Tranche E — identity, AI, assets, text (implemented; parent audit evidence pending)
 
 - Reconcile leaders, advisors, companies/MIOs, offices, ideas, cosmetic states,
   flags, portraits, icons, report art, and localisation.
 - Validate historical and each ahistorical profile, including failure/recovery.
 
-### Tranche F — improvement loop and final audit
+### Tranche F — improvement loop and final audit (parent-owned)
 
 - Run the improvement-loop planner after A–E are materially implemented.
 - Promote accepted findings into this specification before coding them.
@@ -100,11 +104,16 @@
 
 ## Accepted post-tranche work
 
-The 2026-08-14 improvement loop is promoted into the source specifications.
-P0 is active: center the five-family commitment band, correct the Atlantic policy
-prerequisite, separate evaluation from archival, and implement five family
-settlements, five recovery projects, and five terminal reports. P1 then completes
-the four missing territorial recoveries while retaining Belfast Compact
-reopening. P2 removes unrelated Atlantic filler rewards and makes every payoff a
-named capability or outcome record. Completion remains blocked until all three
-passes and their audits are finished.
+The 2026-08-14 improvement loop is promoted into the source specifications with
+the following dispositions:
+
+| Work | Disposition | Evidence |
+| --- | --- | --- |
+| P0 Atlantic prerequisite, evaluation/archive split, five family settlements, five recoveries, five reports, and AI priority | implemented | `p0_family_postwar_conclusion_implementation_2026-08-14.md`, `ireland_country_package_p0_conclusion_architecture_handoff_2026-08-14.md`, `ireland_country_package_p0_ai_priority_handoff_2026-08-14.md` |
+| P1 territorial recovery | implemented, including democratic, Congress, fascist withdrawal, and restoration recovery paths; Belfast reopening retained | `ireland_p1_territorial_recovery_handoff_2026-08-14.md`, `decision_audit_fixes_handoff_2026-08-14.md` |
+| P2 capability payoffs | implemented for the accepted Atlantic focus set | `p0_atlantic_and_p2_payoff_implementation_2026-08-14.md` |
+| Family-lane reflow | implemented with the centered gateway row, aligned profile/programme lanes, and strict filter correction; concealed detour advisories are nonblocking | `ireland_country_package_family_lane_reflow_completion_2026-08-14.md`; earlier trial/baseline handoffs are superseded evidence |
+
+The accepted layout and gameplay contracts must not be reopened or counted as
+missing. The parent-owned completion audit and live/scenario evidence remain
+separate release gates.
