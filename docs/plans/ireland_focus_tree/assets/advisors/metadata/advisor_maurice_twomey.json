@@ -1,8 +1,8 @@
 {
   "workflow": "chaos-redux-advisor-dossier-v4",
   "source": {
-    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_maurice_twomey.dds",
-    "sha256": "04489f68122407375f6f47658e1e413c945578be303ccc38c03270eb15b8a08f",
+    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\assets\\ireland_user_portrait_replacements_2026-08-14\\source\\leader_maurice_twomey.dds",
+    "sha256": "1a28503cc607d1ac15374641ced8c2e2034730bb366344e11f06c2d6dbff0c61",
     "original_size": [
       156,
       210
@@ -118,19 +118,19 @@
   "outputs": {
     "preview": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\previews\\advisor_maurice_twomey.png",
-      "sha256": "66a941239e9e451384238697fbb8264640beb07cfad63136d1b0fe066031c520"
+      "sha256": "78a786b89a8aaa28a6462af71a1283bd0e8342e86e88b7d404cb8024af9219e7"
     },
     "runtime_dds": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\interface\\ideas\\ireland\\advisors\\advisor_maurice_twomey.dds",
-      "sha256": "a3016dc1a9fc6dd64b06c793dc70fffb679aac42ad28cf34d6ab7504999b3cf1"
+      "sha256": "e2f1a3a22f6761e3f35f3fa6d31deba80ae2c14f2056c9ed95d77dd37543a85f"
     },
     "alignment_preview": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\alignment_8x\\advisor_maurice_twomey_alignment_8x.png",
-      "sha256": "933048311d9ee7fed2b3a18849790dc3c5e7046b54a6d47589abbf07f3440480"
+      "sha256": "442d8b7cd3f584a7090df086d5b4d8375ddb2076f8c24c979fc977e07457007b"
     },
     "placement_study": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\placement_studies\\advisor_maurice_twomey_study.png",
-      "sha256": "a620ea7fc61bec98147d59db274498c3d0715a410fa2066d12879a8a089b1fd7"
+      "sha256": "49ae253f03381adfbd71b77f51a78f389fdb6d66cd936bbe31051b0d1c958c47"
     }
   }
 }

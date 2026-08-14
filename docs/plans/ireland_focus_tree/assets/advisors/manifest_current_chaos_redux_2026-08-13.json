@@ -31,7 +31,7 @@
     "stretch": false,
     "frame_clip": true,
     "zero_rotation_exception": false,
-    "approval_state": "approved by advisor_card_independent_approval_2026-08-13"
+    "approval_state": "All cards approved; three user-provided replacements independently approved on 2026-08-14"
   },
   "runtime_folder": "gfx/interface/ideas/ireland/advisors",
   "cards": [
@@ -62,43 +62,31 @@
     {
       "sprite_name": "GFX_ireland_advisor_sean_lemass",
       "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_sean_lemass.dds",
-      "approved_source_input": "docs/plans/ireland_focus_tree/assets/advisors/source_inputs/sean_lemass_fianna_fail_members_1932_crop.png",
-      "source_sha256": "5f68f3f4690d286ee91861b5d3697a06013dfb56caea53ef20abd1d799fc324d",
+      "approved_source_input": "C:\\Users\\klimp\\Downloads\\thumbnail\\batch\\dds\\portrait_sean_lemass_1932_00001.dds",
+      "source_package_copy": "docs/assets/ireland_user_portrait_replacements_2026-08-14/source/leader_sean_lemass.dds",
+      "source_sha256": "1e76a698acbf89b04f6cae012e1c4063610f7b886bbbfcf1f954383b34f026ab",
       "source_dimensions": [
-        760,
-        1023
+        156,
+        210
       ],
-      "source_parent_file": "docs/plans/ireland_focus_tree/assets/advisors/source_inputs/sean_lemass_fianna_fail_members_1932.jpg",
-      "source_parent_dimensions": [
-        6709,
-        5138
-      ],
-      "source_parent_sha256": "9472b5cdb28a6194cce77ff297657311080564f6cf3527b0b6563edd4f036333",
-      "source_crop_box_left_top_right_bottom": [
-        3700,
-        320,
-        4460,
-        1343
-      ],
-      "source_mode": "grounded_source_only / sourced real person",
+      "source_mode": "user_provided",
       "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_sean_lemass.png",
       "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_sean_lemass_4x.png",
       "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_sean_lemass_study.png",
       "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_sean_lemass_alignment_8x.png",
       "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_sean_lemass.json",
-      "runtime_dds_sha256": "35877563f7c5904b7bd9e25e5d8355e7717ad4feb496b1c1bae59959bdc9036f",
-      "processed_preview_sha256": "7aa374895bc89e0d9edc1dc7d85e48afb496af59e06653220f1e42c33f49974d",
+      "runtime_dds_sha256": "4118d824caa5de8fee5b9ea62b68c19eef9f1573d39cdd11d32c417aad45627f",
+      "processed_preview_sha256": "a314d59f597e9261276855fbaa994f69e3577732e43ebdaf5d92cd618ee5ff0a",
+      "review_4x_sha256": "25ae71c6da90b15e8d5e408e524605167a7afed5ffc44d35efac5139a41322dc",
+      "placement_study_sha256": "0ddec5675c5e3ed29949dcf1a03db5f2037b485b26d16963ed68cd59b78e0737",
+      "alignment_8x_sha256": "3b636c342159133cb705d684f49cef6cd776150425dd53329b3d39e8f6635f0d",
+      "metadata_sha256": "d48012fa4176c356daa730a5da77a2bc92de78e101ccf101dfb56d805700e78e",
       "alpha_coverage": {
         "opening_alpha_gap_pixels": 0,
         "inner_edge_alpha_gap_pixels": 0,
         "exterior_alpha_leak_pixels": 0
       },
-      "uncertainty": "Replacement sourced because the prior runtime leader DDS had transparent alpha in the full source canvas and failed current opening coverage; exact approved identity retained; source crop is documented and opaque",
-      "source_url": "https://commons.wikimedia.org/wiki/File:1932_Fianna_F%C3%A1il_members.jpg",
-      "source_archive": "National Library of Ireland catalogue record vtls000293270 via Wikimedia Commons",
-      "source_date": "1932-01-01",
-      "license": "Public domain; unknown-author Irish work, PD-Ireland record",
-      "era_fit": "1932 contemporary Fianna Fail group photograph; crop is the labeled Sean Lemass sitter, head-and-shoulders"
+      "uncertainty": "Stylized user-provided DDS; identity mapping supplied by the user; no external source or rights claim asserted; independently approved on 2026-08-14"
     },
     {
       "sprite_name": "GFX_ireland_advisor_oscar_traynor",
@@ -127,26 +115,31 @@
     {
       "sprite_name": "GFX_ireland_advisor_douglas_hyde",
       "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_douglas_hyde.dds",
-      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_douglas_hyde.dds",
-      "source_sha256": "a0e2766a389d2effd181de88140d44f28e3ce6f34356654fc82645599b3c1040",
+      "approved_source_input": "C:\\Users\\klimp\\Downloads\\thumbnail\\batch\\dds\\portrait_douglas_hyde_1903_00001.dds",
+      "source_package_copy": "docs/assets/ireland_user_portrait_replacements_2026-08-14/source/leader_douglas_hyde.dds",
+      "source_sha256": "2f46b1a8e757b2433a0ea0a469bdc0734bfaff26faa21c52fa04e207a57dd48d",
       "source_dimensions": [
         156,
         210
       ],
-      "source_mode": "grounded_source_only / sourced real person",
+      "source_mode": "user_provided",
       "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_douglas_hyde.png",
       "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_douglas_hyde_4x.png",
       "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_douglas_hyde_study.png",
       "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_douglas_hyde_alignment_8x.png",
       "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_douglas_hyde.json",
-      "runtime_dds_sha256": "074110b2c0e0abf5206d0d75124903aef084930a6f78900ddd990dcb8318b6f8",
-      "processed_preview_sha256": "e8565e95727f98d5b7f7ddaf4654494b0fd5122ee154592fc53b3f5a3ed50cd6",
+      "runtime_dds_sha256": "ca31b403efe30d7e3c50d5c9df830cbc45b00524659b2dc2c4bc96dc3f4cf463",
+      "processed_preview_sha256": "394751ccac0d5bc097d1e6b9603043c829a1d85fb8bf6540518dd235e8e517cb",
+      "review_4x_sha256": "080dc0be1bf7bf862e801562c601f003ea1635afbc7533e5df4f0c495cf2aaa2",
+      "placement_study_sha256": "0add340675631c2f3965cb12e1e511a2b7d774446f41dddd59a8b979d4f11406",
+      "alignment_8x_sha256": "63ccae799f5f4a54d43bc58b9e4dc990091691a3188b796591234264432dd6ca",
+      "metadata_sha256": "a257c5ff142627b22a73e39a41bd124ff79d274912090f7598bf9d60c8796e48",
       "alpha_coverage": {
         "opening_alpha_gap_pixels": 0,
         "inner_edge_alpha_gap_pixels": 0,
         "exterior_alpha_leak_pixels": 0
       },
-      "uncertainty": "Existing approved source input"
+      "uncertainty": "Stylized user-provided DDS; identity mapping supplied by the user; no external source or rights claim asserted; independently approved on 2026-08-14"
     },
     {
       "sprite_name": "GFX_ireland_advisor_sean_t_okelly",
@@ -583,26 +576,31 @@
     {
       "sprite_name": "GFX_ireland_advisor_maurice_twomey",
       "runtime_dds": "gfx/interface/ideas/ireland/advisors/advisor_maurice_twomey.dds",
-      "approved_source_input": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_maurice_twomey.dds",
-      "source_sha256": "04489f68122407375f6f47658e1e413c945578be303ccc38c03270eb15b8a08f",
+      "approved_source_input": "C:\\Users\\klimp\\Downloads\\thumbnail\\source_portrait_3_00004.dds",
+      "source_package_copy": "docs/assets/ireland_user_portrait_replacements_2026-08-14/source/leader_maurice_twomey.dds",
+      "source_sha256": "1a28503cc607d1ac15374641ced8c2e2034730bb366344e11f06c2d6dbff0c61",
       "source_dimensions": [
         156,
         210
       ],
-      "source_mode": "grounded_source_only / sourced real person",
+      "source_mode": "user_provided",
       "processed_preview": "docs/plans/ireland_focus_tree/assets/advisors/previews/advisor_maurice_twomey.png",
       "review_4x": "docs/plans/ireland_focus_tree/assets/advisors/review_4x/advisor_maurice_twomey_4x.png",
       "placement_study": "docs/plans/ireland_focus_tree/assets/advisors/placement_studies/advisor_maurice_twomey_study.png",
       "alignment_8x": "docs/plans/ireland_focus_tree/assets/advisors/alignment_8x/advisor_maurice_twomey_alignment_8x.png",
       "metadata": "docs/plans/ireland_focus_tree/assets/advisors/metadata/advisor_maurice_twomey.json",
-      "runtime_dds_sha256": "a3016dc1a9fc6dd64b06c793dc70fffb679aac42ad28cf34d6ab7504999b3cf1",
-      "processed_preview_sha256": "66a941239e9e451384238697fbb8264640beb07cfad63136d1b0fe066031c520",
+      "runtime_dds_sha256": "e2f1a3a22f6761e3f35f3fa6d31deba80ae2c14f2056c9ed95d77dd37543a85f",
+      "processed_preview_sha256": "78a786b89a8aaa28a6462af71a1283bd0e8342e86e88b7d404cb8024af9219e7",
+      "review_4x_sha256": "1c45930c824f8af8e98ee4443d73c81cc1045390ad495b8ebdf19b60241c23b0",
+      "placement_study_sha256": "49ae253f03381adfbd71b77f51a78f389fdb6d66cd936bbe31051b0d1c958c47",
+      "alignment_8x_sha256": "442d8b7cd3f584a7090df086d5b4d8375ddb2076f8c24c979fc977e07457007b",
+      "metadata_sha256": "52ad06167a04e7e56ec3d3c8c3f563b8af5694c013af579f06ffa1f8d19a9d72",
       "alpha_coverage": {
         "opening_alpha_gap_pixels": 0,
         "inner_edge_alpha_gap_pixels": 0,
         "exterior_alpha_leak_pixels": 0
       },
-      "uncertainty": "Existing approved source input"
+      "uncertainty": "Stylized user-provided DDS; identity mapping supplied by the user; no external source or rights claim asserted; independently approved on 2026-08-14"
     },
     {
       "sprite_name": "GFX_ireland_advisor_tom_barry",

@@ -1,8 +1,8 @@
 {
   "workflow": "chaos-redux-advisor-dossier-v4",
   "source": {
-    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\leaders\\ireland\\leader_douglas_hyde.dds",
-    "sha256": "a0e2766a389d2effd181de88140d44f28e3ce6f34356654fc82645599b3c1040",
+    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\assets\\ireland_user_portrait_replacements_2026-08-14\\source\\leader_douglas_hyde.dds",
+    "sha256": "2f46b1a8e757b2433a0ea0a469bdc0734bfaff26faa21c52fa04e207a57dd48d",
     "original_size": [
       156,
       210
@@ -118,19 +118,19 @@
   "outputs": {
     "preview": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\previews\\advisor_douglas_hyde.png",
-      "sha256": "e8565e95727f98d5b7f7ddaf4654494b0fd5122ee154592fc53b3f5a3ed50cd6"
+      "sha256": "394751ccac0d5bc097d1e6b9603043c829a1d85fb8bf6540518dd235e8e517cb"
     },
     "runtime_dds": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\interface\\ideas\\ireland\\advisors\\advisor_douglas_hyde.dds",
-      "sha256": "074110b2c0e0abf5206d0d75124903aef084930a6f78900ddd990dcb8318b6f8"
+      "sha256": "ca31b403efe30d7e3c50d5c9df830cbc45b00524659b2dc2c4bc96dc3f4cf463"
     },
     "alignment_preview": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\alignment_8x\\advisor_douglas_hyde_alignment_8x.png",
-      "sha256": "0bbdb14ed89cd7cf7995c5cf23f10be133a217851625fc1ac2888525f638c3b5"
+      "sha256": "63ccae799f5f4a54d43bc58b9e4dc990091691a3188b796591234264432dd6ca"
     },
     "placement_study": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\placement_studies\\advisor_douglas_hyde_study.png",
-      "sha256": "bac1fb7081600835f14c353e2570340c16f46361a1d248988d8435d40395b68d"
+      "sha256": "0add340675631c2f3965cb12e1e511a2b7d774446f41dddd59a8b979d4f11406"
     }
   }
 }

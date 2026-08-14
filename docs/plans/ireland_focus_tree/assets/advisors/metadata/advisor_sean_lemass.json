@@ -1,11 +1,11 @@
 {
   "workflow": "chaos-redux-advisor-dossier-v4",
   "source": {
-    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\source_inputs\\sean_lemass_fianna_fail_members_1932_crop.png",
-    "sha256": "5f68f3f4690d286ee91861b5d3697a06013dfb56caea53ef20abd1d799fc324d",
+    "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\assets\\ireland_user_portrait_replacements_2026-08-14\\source\\leader_sean_lemass.dds",
+    "sha256": "1e76a698acbf89b04f6cae012e1c4063610f7b886bbbfcf1f954383b34f026ab",
     "original_size": [
-      760,
-      1023
+      156,
+      210
     ],
     "native_output_canvas": [
       65,
@@ -73,8 +73,8 @@
     },
     "complete_image_resize": {
       "mode": "aspect_preserving_cover_with_under_frame_bleed",
-      "source_aspect": 0.742913,
-      "content_aspect": 0.742913,
+      "source_aspect": 0.742857,
+      "content_aspect": 0.742857,
       "opening_fill_size": [
         30.477406015014285,
         45.09450833210553
@@ -84,7 +84,7 @@
         51.09450833210553
       ],
       "covering_content_size": [
-        37.958774518475266,
+        37.95592047527839,
         51.09450833210553
       ],
       "covering_content_center": [
@@ -93,9 +93,9 @@
       ],
       "source_pre_crop": false,
       "frame_clip_pixels": [
-        0.7406842517304923,
+        0.7392572301320541,
         0.0,
-        0.7406842517304923,
+        0.7392572301320541,
         0.0
       ],
       "frame_clip": true,
@@ -118,19 +118,19 @@
   "outputs": {
     "preview": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\previews\\advisor_sean_lemass.png",
-      "sha256": "7aa374895bc89e0d9edc1dc7d85e48afb496af59e06653220f1e42c33f49974d"
+      "sha256": "a314d59f597e9261276855fbaa994f69e3577732e43ebdaf5d92cd618ee5ff0a"
     },
     "runtime_dds": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\gfx\\interface\\ideas\\ireland\\advisors\\advisor_sean_lemass.dds",
-      "sha256": "35877563f7c5904b7bd9e25e5d8355e7717ad4feb496b1c1bae59959bdc9036f"
+      "sha256": "4118d824caa5de8fee5b9ea62b68c19eef9f1573d39cdd11d32c417aad45627f"
     },
     "alignment_preview": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\alignment_8x\\advisor_sean_lemass_alignment_8x.png",
-      "sha256": "b781d9b506e95bd9e4117ce7816d765f8bd318b403839bc325571f599dcdef38"
+      "sha256": "3b636c342159133cb705d684f49cef6cd776150425dd53329b3d39e8f6635f0d"
     },
     "placement_study": {
       "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\ireland_total_overhaul\\docs\\plans\\ireland_focus_tree\\assets\\advisors\\placement_studies\\advisor_sean_lemass_study.png",
-      "sha256": "8d3ef743483461f1bc11e5b34b8085a5a216b0d9d0e7e550d7682dbb8b523621"
+      "sha256": "0ddec5675c5e3ed29949dcf1a03db5f2037b485b26d16963ed68cd59b78e0737"
     }
   }
 }
