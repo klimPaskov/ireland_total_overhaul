@@ -3,6 +3,10 @@
 # documented macro consumers and reject fixed-point script-constant tokens.
 @IRELAND_INDUSTRIAL_CONTRACT_PP_COST = 25
 @IRELAND_INDUSTRIAL_CONTRACT_DAYS = 35
+@IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_GATE = 0
+@IRELAND_INDUSTRIAL_CONTRACT_MAJOR_FACTORY_GATE = 1
+@IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_USE = 1
+@IRELAND_INDUSTRIAL_CONTRACT_MAJOR_FACTORY_USE = 2
 @IRELAND_TERRITORIAL_CLAIM_PP_COST = 50
 @IRELAND_TERRITORIAL_CLAIM_DAYS = 70
 @IRELAND_TERRITORIAL_WARGOAL_DAYS = 180
@@ -49,6 +53,7 @@ ireland_provision = {
 		visible = { has_country_flag = ireland_company_esb_unlocked }
 		available = {
 			has_political_power > 24
+			num_of_civilian_factories_available_for_projects > @IRELAND_INDUSTRIAL_CONTRACT_MAJOR_FACTORY_GATE
 			OR = {
 				has_country_flag = ireland_family_democratic
 				has_country_flag = ireland_family_oligarchic
@@ -57,6 +62,7 @@ ireland_provision = {
 		}
 		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
 		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		modifier = { civilian_factory_use = @IRELAND_INDUSTRIAL_CONTRACT_MAJOR_FACTORY_USE }
 		fire_only_once = yes
 		complete_effect = {
 			random_owned_controlled_state = {
@@ -72,6 +78,7 @@ ireland_provision = {
 		visible = { has_country_flag = ireland_company_railways_unlocked }
 		available = {
 			has_political_power > 24
+			num_of_civilian_factories_available_for_projects > @IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_GATE
 			OR = {
 				has_country_flag = ireland_family_democratic
 				has_country_flag = ireland_family_restoration
@@ -80,6 +87,7 @@ ireland_provision = {
 		}
 		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
 		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		modifier = { civilian_factory_use = @IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_USE }
 		fire_only_once = yes
 		complete_effect = {
 			add_equipment_to_stockpile = { type = motorized_equipment amount = @IRELAND_CONTRACT_MOTORISED }
@@ -91,9 +99,13 @@ ireland_provision = {
 	ireland_contract_merchant_tonnage = {
 		icon = GFX_decision_ireland_purchase_a_merchant_vessel
 		visible = { has_country_flag = ireland_company_shipping_unlocked }
-		available = { has_political_power > 24 }
+		available = {
+			has_political_power > 24
+			num_of_civilian_factories_available_for_projects > @IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_GATE
+		}
 		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
 		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		modifier = { civilian_factory_use = @IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_USE }
 		fire_only_once = yes
 		complete_effect = { add_equipment_to_stockpile = { type = convoy amount = @IRELAND_CONTRACT_CONVOYS } }
 		ai_will_do = { base = @IRELAND_CONTRACT_AI_STANDARD }
@@ -104,6 +116,7 @@ ireland_provision = {
 		visible = { has_country_flag = ireland_company_sugar_unlocked }
 		available = {
 			has_political_power > 24
+			num_of_civilian_factories_available_for_projects > @IRELAND_INDUSTRIAL_CONTRACT_MAJOR_FACTORY_GATE
 			OR = {
 				has_country_flag = ireland_family_communist
 				has_country_flag = ireland_family_oligarchic
@@ -112,6 +125,7 @@ ireland_provision = {
 		}
 		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
 		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		modifier = { civilian_factory_use = @IRELAND_INDUSTRIAL_CONTRACT_MAJOR_FACTORY_USE }
 		fire_only_once = yes
 		complete_effect = {
 			random_owned_controlled_state = {
@@ -128,6 +142,7 @@ ireland_provision = {
 		visible = { has_country_flag = ireland_company_ford_cork_unlocked }
 		available = {
 			has_political_power > 24
+			num_of_civilian_factories_available_for_projects > @IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_GATE
 			OR = {
 				has_country_flag = ireland_family_fascist
 				has_country_flag = ireland_family_democratic
@@ -136,6 +151,7 @@ ireland_provision = {
 		}
 		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
 		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		modifier = { civilian_factory_use = @IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_USE }
 		fire_only_once = yes
 		complete_effect = {
 			add_equipment_to_stockpile = { type = motorized_equipment amount = @IRELAND_CONTRACT_MOTORISED }
@@ -147,9 +163,13 @@ ireland_provision = {
 	ireland_contract_aer_lingus_transport = {
 		icon = GFX_decision_ireland_intercept_an_airspace_violation
 		visible = { has_country_flag = ireland_company_aer_lingus_unlocked }
-		available = { has_political_power > 24 }
+		available = {
+			has_political_power > 24
+			num_of_civilian_factories_available_for_projects > @IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_GATE
+		}
 		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
 		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		modifier = { civilian_factory_use = @IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_USE }
 		fire_only_once = yes
 		complete_effect = {
 			add_equipment_to_stockpile = { type = transport_plane_equipment_1 amount = @IRELAND_CONTRACT_TRANSPORT_PLANES }
@@ -161,9 +181,13 @@ ireland_provision = {
 	ireland_contract_turf_fuel_reserve = {
 		icon = GFX_decision_ireland_rebalance_fuel_allocation
 		visible = { has_country_flag = ireland_company_turf_unlocked }
-		available = { has_political_power > 24 }
+		available = {
+			has_political_power > 24
+			num_of_civilian_factories_available_for_projects > @IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_GATE
+		}
 		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
 		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		modifier = { civilian_factory_use = @IRELAND_INDUSTRIAL_CONTRACT_STANDARD_FACTORY_USE }
 		fire_only_once = yes
 		complete_effect = { add_fuel = @IRELAND_CONTRACT_FUEL }
 		ai_will_do = { base = @IRELAND_CONTRACT_AI_STANDARD }
@@ -172,9 +196,13 @@ ireland_provision = {
 	ireland_contract_steel_foundry = {
 		icon = GFX_decision_ireland_commission_a_developmental_plant
 		visible = { has_country_flag = ireland_company_steel_unlocked }
-		available = { has_political_power > 24 }
+		available = {
+			has_political_power > 24
+			num_of_civilian_factories_available_for_projects > @IRELAND_INDUSTRIAL_CONTRACT_MAJOR_FACTORY_GATE
+		}
 		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
 		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		modifier = { civilian_factory_use = @IRELAND_INDUSTRIAL_CONTRACT_MAJOR_FACTORY_USE }
 		fire_only_once = yes
 		complete_effect = {
 			random_owned_controlled_state = {
@@ -189,9 +217,14 @@ ireland_provision = {
 	ireland_contract_belfast_refit = {
 		icon = GFX_decision_ireland_purchase_a_merchant_vessel
 		visible = { has_country_flag = ireland_company_harland_wolff_unlocked }
-		available = { has_political_power > 24 119 = { is_owned_and_controlled_by = ROOT } }
+		available = {
+			has_political_power > 24
+			num_of_civilian_factories_available_for_projects > @IRELAND_INDUSTRIAL_CONTRACT_MAJOR_FACTORY_GATE
+			119 = { is_owned_and_controlled_by = ROOT }
+		}
 		cost = @IRELAND_INDUSTRIAL_CONTRACT_PP_COST
 		days_remove = @IRELAND_INDUSTRIAL_CONTRACT_DAYS
+		modifier = { civilian_factory_use = @IRELAND_INDUSTRIAL_CONTRACT_MAJOR_FACTORY_USE }
 		fire_only_once = yes
 		complete_effect = {
 			119 = {
