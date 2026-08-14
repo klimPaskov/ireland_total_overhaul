@@ -207,7 +207,7 @@ ireland_territorial_policy = {
 		visible = { has_country_flag = ireland_territorial_method_democratic NOT = { has_country_flag = ireland_territorial_plebiscite_opened } }
 		available = {
 			has_political_power > 24
-			is_at_war = no
+			has_war = no
 			NOT = { has_country_flag = ireland_mission_conduct_a_supervised_plebiscite_active }
 			119 = { NOT = { is_owned_by = ROOT } }
 		}
@@ -226,7 +226,7 @@ ireland_territorial_policy = {
 	ireland_territorial_workers_border_campaign = {
 		icon = GFX_decision_ireland_protect_northern_campaign_freedom
 		visible = { has_country_flag = ireland_territorial_method_communist NOT = { has_country_flag = ireland_territorial_workers_campaign_complete } }
-		available = { has_political_power > 24 is_at_war = no }
+		available = { has_political_power > 24 has_war = no }
 		cost = @IRELAND_TERRITORIAL_METHOD_PP_COST
 		days_remove = @IRELAND_TERRITORIAL_METHOD_DAYS
 		fire_only_once = yes
@@ -305,7 +305,7 @@ ireland_territorial_policy = {
 		available = {
 			custom_trigger_tooltip = { tooltip = ireland_territorial_diplomacy_cooldown_requirement_tt NOT = { has_country_flag = ireland_territorial_diplomacy_cooldown } }
 			has_political_power > 24
-			is_at_war = no
+			has_war = no
 			119 = {
 				NOT = { is_owned_by = ROOT }
 				NOT = { is_controlled_by = ROOT }
@@ -341,7 +341,7 @@ ireland_territorial_policy = {
 			has_country_flag = ireland_provincial_compact_open
 			NOT = { has_country_flag = ireland_territorial_provincial_assent_complete }
 		}
-		available = { has_political_power > 24 has_country_flag = ireland_high_king_evidence_verified is_at_war = no }
+		available = { has_political_power > 24 has_country_flag = ireland_high_king_evidence_verified has_war = no }
 		cost = @IRELAND_TERRITORIAL_METHOD_PP_COST
 		days_remove = @IRELAND_TERRITORIAL_METHOD_DAYS
 		fire_only_once = yes
@@ -801,7 +801,12 @@ ireland_territorial_policy = {
 		complete_effect = {
 			SCO = {
 				random_owned_controlled_state = {
-					limit = { free_building_slots > 0 }
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+						}
+					}
 					add_building_construction = { type = industrial_complex level = @IRELAND_CONTRACT_FACTORY_LEVEL instant_build = yes }
 				}
 			}
@@ -851,7 +856,12 @@ ireland_territorial_policy = {
 		complete_effect = {
 			WLS = {
 				random_owned_controlled_state = {
-					limit = { free_building_slots > 0 }
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+						}
+					}
 					add_building_construction = { type = industrial_complex level = @IRELAND_CONTRACT_FACTORY_LEVEL instant_build = yes }
 				}
 			}

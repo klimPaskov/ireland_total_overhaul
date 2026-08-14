@@ -31,11 +31,15 @@ Source mode: generated background plus project-owned mechanical derivatives
 ## Action-control derivative
 
 - Asset name: `parliament_step_button`.
-- Source: existing project-owned `gfx/interface/ireland/gui/shared/action_button.dds`.
+- Source: generated active-state treatment derived from the existing project-owned
+  action-button silhouette. The active face is bottle green with an antique-brass
+  rim so an enabled control is visually distinct from the engine-darkened disabled
+  state.
+- Source PNG: `docs/assets/ireland_parliament_panel/source_png/parliament_step_button_active_source.png`.
 - Processed PNG: `docs/assets/ireland_parliament_panel/processed_png/parliament_step_button_204x32.png`.
 - Final DDS: `gfx/interface/ireland/gui/parliament/parliament_step_button.dds` (204x32 RGBA).
 - Runtime sprite: `GFX_ireland_gui_parliament_step_button`.
-- Runtime use: four 204x32 click regions in a two-column, two-row grid. Each completion mark occupies its own 31px status column outside the click region, while the button natively centres its label.
+- Runtime use: four 204x32 click regions in a two-column, two-row grid. Each completion mark occupies its own 31px status column outside the click region, while the button natively centres its label. `buttonstate.lua` supplies hover, pressed, and disabled treatment; the source texture itself represents the enabled state.
 
 ## Action-state derivatives
 

@@ -4641,7 +4641,7 @@ ireland_territorial_cornwall_naval_access_proven = {
 # a government without a concluded readiness programme or fielded army from
 # manufacturing a timed war goal.
 ireland_atlantic_claim_enforcement_ready = {
-	is_at_war = no
+	has_war = no
 	has_country_flag = ireland_atlantic_claim_enforcement_open
 	has_country_flag = ireland_readiness_conclusion_ready
 	controls_state = 113

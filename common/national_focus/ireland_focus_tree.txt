@@ -4545,7 +4545,13 @@ focus_tree = {
 			custom_effect_tooltip = ireland_democratic_reconstruction_reward_tt
 			unlock_decision_tooltip = ireland_action_launch_a_reconstruction_portfolio
 			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT free_building_slots > 0 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+					}
+				}
 				add_building_construction = { type = industrial_complex level = @IRELAND_FOCUS_CIVILIAN_FACTORY_LEVEL instant_build = yes }
 			}
 			set_country_flag = ireland_democratic_reconstruction_open
@@ -4627,7 +4633,13 @@ focus_tree = {
 			custom_effect_tooltip = ireland_workers_reconstruction_board_reward_tt
 			unlock_decision_tooltip = ireland_action_launch_a_reconstruction_portfolio
 			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT free_building_slots > 0 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+					}
+				}
 				add_building_construction = { type = industrial_complex level = @IRELAND_FOCUS_CIVILIAN_FACTORY_LEVEL instant_build = yes }
 			}
 			set_country_flag = ireland_workers_reconstruction_open
@@ -4818,7 +4830,13 @@ focus_tree = {
 			custom_effect_tooltip = ireland_producer_directorate_reward_tt
 			set_country_flag = ireland_oligarchic_producer_directorate
 			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT free_building_slots > 0 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+					}
+				}
 				add_building_construction = { type = arms_factory level = @IRELAND_FOCUS_MILITARY_FACTORY_LEVEL instant_build = yes }
 			}
 		}
