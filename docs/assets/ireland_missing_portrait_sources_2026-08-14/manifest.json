@@ -1,0 +1,325 @@
+{
+  "schema_version": "ireland_portrait_source_research_manifest_v1",
+  "generated_at": "2026-08-14",
+  "feature_slug": "ireland_focus_tree",
+  "scope": "Fresh source and rights pass for canonical P-26, P-45, P-55 and route extension RC-PORTRAIT-02",
+  "result": "blocked_no_approved_sources",
+  "workflow": {
+    "source_mode": "real_archival_or_documented_photo_only",
+    "leader_target_size": [
+      156,
+      210
+    ],
+    "processed_mode": "RGBA",
+    "dds_converter": ".agents/skills/hoi4-feature-assets/tools/convert_to_dds.py",
+    "dds_command_template": "python -B .agents/skills/hoi4-feature-assets/tools/convert_to_dds.py --input <processed.png> --output <final.dds> --width 156 --height 210",
+    "suggested_gfx_file": "interface/ireland_sourced_assets.gfx",
+    "output_policy": "No source image was copied, cropped, processed, converted, or wired unless identity and reuse rights were both sufficiently established."
+  },
+  "clearance_summary": {
+    "P-26": "C1_blocked_identity_context_without_face_mapping_or_image_rights",
+    "P-45": "C1_blocked_exact_identity_references_without_reusable_portrait_rights",
+    "P-55": "C1_blocked_exact_identity_records_without_portrait_object",
+    "RC-PORTRAIT-02": "C1_blocked_exact_portrait_leads_without_reuse_rights"
+  },
+  "entries": [
+    {
+      "id": "P-26",
+      "canonical_name": "Patrick Cogan",
+      "intended_use": "Canonical roster real-person leader portrait",
+      "intended_sprite_name": "ireland_portrait_p_26",
+      "status": "blocked",
+      "clearance_state": "C1",
+      "identity_provenance": [
+        {
+          "title": "Patrick Cogan",
+          "url": "https://en.wikipedia.org/wiki/Patrick_Cogan",
+          "role": "identity cross-check only",
+          "note": "Identifies the Wicklow Clann na Talmhan TD and Senator; it is not a reusable image source."
+        },
+        {
+          "title": "Patrick Cogan / Oireachtas member record",
+          "url": "https://www.oireachtas.ie/en/members/member/Patrick-Cogan.D.1948-02-18/",
+          "role": "identity cross-check",
+          "note": "The official member record confirms the parliamentary identity; no exact portrait object was exposed in the reviewed record."
+        }
+      ],
+      "sources_reviewed": [
+        {
+          "title": "Clann na Talmhan: Ireland's last farmers' party?",
+          "url": "https://historyireland.com/clann-na-talmhan-irelands-last-farmers-party/",
+          "direct_image_urls": [
+            "https://historyireland.com/wp-content/uploads/2026/03/Screenshot-2026-03-10-125203.png",
+            "https://historyireland.com/wp-content/uploads/2026/03/Screenshot-2026-03-10-153204.png"
+          ],
+          "author_or_archive": "History Ireland / Wordwell Ltd; underlying photographer or holding institution not exposed",
+          "source_date_or_estimated_date_range": "Article page states Summer 1995; image dates and photographers are unstated; current media files were uploaded in 2026.",
+          "identity_mapping": "not_established",
+          "rights_status": "not_cleared",
+          "notes": "The article images are group/context photographs captioned as an early Clann na Talmhan gathering in Athenry and members of the parliamentary party. No face-level mapping identifies Patrick Cogan, and the underlying image owner is not exposed.",
+          "disposition": "rejected_no_exact_face_mapping_and_no_reuse_permission"
+        },
+        {
+          "title": "Irish Elections candidate record",
+          "url": "https://irelandelection.com/candidate.php?candid=2937",
+          "author_or_archive": "Irish Elections",
+          "source_date_or_estimated_date_range": "record date not stated",
+          "identity_mapping": "identity_record_only",
+          "rights_status": "not_applicable_no_portrait_bytes",
+          "notes": "The page exposes an image label in search context but the reviewed HTML contains no Patrick Cogan portrait asset.",
+          "disposition": "rejected_no_portrait_object"
+        }
+      ],
+      "source_url": "https://historyireland.com/clann-na-talmhan-irelands-last-farmers-party/",
+      "author_or_archive": "History Ireland / Wordwell Ltd; underlying photographer, archive and image owner unknown",
+      "license_or_public_domain_status": "No image licence or public-domain declaration found. History Ireland terms restrict publishing, distributing or reproducing content without permission.",
+      "source_date_or_estimated_date_range": "Historical group scenes; exact image dates unstated; article page is Summer 1995 and the current media copies are 2026 uploads.",
+      "era_fit_notes": "The group context is historically compatible with the subject, but an individual portrait crop would be an identity guess and is prohibited.",
+      "source_path": "not_created",
+      "processed_png_path": "not_created",
+      "final_dds_path": "not_created",
+      "target_size": [
+        156,
+        210
+      ],
+      "suggested_gfx_file": "interface/ireland_sourced_assets.gfx",
+      "uncertainty": "Patrick Cogan is not mapped to a face in any reviewed image; photographer, archive, exact date and reuse permission are unknown."
+    },
+    {
+      "id": "P-45",
+      "canonical_name": "Michael (Mick) Fitzpatrick",
+      "canonical_role": "IRA Chief of Staff; Clann na Poblachta TD",
+      "intended_use": "Canonical roster real-person leader portrait",
+      "intended_sprite_name": "ireland_portrait_p_45",
+      "status": "blocked",
+      "clearance_state": "C1",
+      "identity_provenance": [
+        {
+          "title": "Michael Fitzpatrick / Oireachtas member record",
+          "url": "https://www.oireachtas.ie/en/members/member/Michael-Fitzpatrick.D.1948-02-18/",
+          "role": "official identity record",
+          "note": "Confirms the 1893–1968 TD identity; the public record's generic avatar is not a portrait of Fitzpatrick."
+        },
+        {
+          "title": "Michael Fitzpatrick",
+          "url": "https://en.wikipedia.org/wiki/Michael_Fitzpatrick_(Irish_politician)",
+          "role": "identity cross-check only",
+          "note": "Cross-checks the IRA and Clann na Poblachta biography; it is not a reusable image source."
+        }
+      ],
+      "sources_reviewed": [
+        {
+          "title": "The IRA 1926–1936",
+          "url": "https://www.fourcourtspress.ie/books/archives/the-ira",
+          "secondary_reference_url": "https://dokumen.pub/the-ira-1926-1936-1nbsped-9781851827214.html",
+          "author_or_archive": "Brian Hanley / Four Courts Press; photograph credited in book to Maurice Twomey Jr.",
+          "source_date_or_estimated_date_range": "Book published 2002; cited photograph captions place images in April 1932 and the 1930s.",
+          "identity_mapping": "book_caption_identifies_Mick_Fitzpatrick_in_group_photographs",
+          "rights_status": "restricted_copyright_private_courtesy_no_redistribution_permission",
+          "notes": "The book text identifies Mick Fitzpatrick in group plates, including an Army Council photograph. The publisher and mirror carry copyright/all-rights-reserved notices, and the image credit is a private courtesy rather than a reusable licence. No image bytes with redistribution permission were obtained.",
+          "disposition": "rejected_no_reuse_rights_and_no_portrait_object"
+        },
+        {
+          "title": "Fitzpatrick Multimedia Full Catalogue",
+          "url": "https://fitzpatricksociety.com/wp-content/uploads/2021/10/Fitzpatrick-Multimedia-Full-Catalogue.pdf",
+          "author_or_archive": "Fitzpatrick Society catalogue",
+          "source_date_or_estimated_date_range": "catalogue dates vary; relevant item is a 1923 wedding photograph",
+          "identity_mapping": "wrong_family_or_not_established",
+          "rights_status": "private_possession_and_not_cleared",
+          "notes": "The reviewed item describes a different Laois Fitzpatrick family and is not an exact portrait of the canonical IRA figure.",
+          "disposition": "rejected_wrong_identity_and_rights_unclear"
+        },
+        {
+          "title": "Tipperary Historical Journal article",
+          "url": "https://tipperarystudies.ie/THS/Journals/1994/1994%2002%20%5Bpp%209-25%5D%20Neil%20Sharkey.pdf",
+          "author_or_archive": "County Tipperary Historical Society / Neil Sharkey",
+          "source_date_or_estimated_date_range": "journal issue 1994; group image context 1921",
+          "identity_mapping": "wrong_Michael_Fitzpatrick",
+          "rights_status": "not_cleared",
+          "notes": "The named Michael Fitzpatrick is identified as the brother of Sean in a different Tipperary family group, not the 1893 Kilkenny/Dublin IRA chief used by this roster.",
+          "disposition": "rejected_wrong_identity"
+        }
+      ],
+      "source_url": "https://www.fourcourtspress.ie/books/archives/the-ira",
+      "author_or_archive": "Brian Hanley / Four Courts Press; underlying photograph credited to Maurice Twomey Jr.",
+      "license_or_public_domain_status": "Copyrighted book and privately credited photograph; no licence or permission for mod redistribution established.",
+      "source_date_or_estimated_date_range": "1932–1930s group photographs referenced by the book; exact photographic object and file are not cleared.",
+      "era_fit_notes": "The cited group photographs are era-fit and identity-captioned, but the subject is not available as an individually mappable, reusable portrait.",
+      "source_path": "not_created",
+      "processed_png_path": "not_created",
+      "final_dds_path": "not_created",
+      "target_size": [
+        156,
+        210
+      ],
+      "suggested_gfx_file": "interface/ireland_sourced_assets.gfx",
+      "uncertainty": "Exact face and source image bytes are not available under a documented reuse permission; other search hits for Michael Fitzpatrick refer to different people."
+    },
+    {
+      "id": "P-55",
+      "canonical_name": "Liam D. Walsh",
+      "canonical_role": "Captain; Blueshirts / Irish Brigade / O'Duffy circle",
+      "intended_use": "Canonical roster real-person leader portrait",
+      "intended_sprite_name": "ireland_portrait_p_55",
+      "status": "blocked",
+      "clearance_state": "C1",
+      "identity_provenance": [
+        {
+          "title": "Eoin O'Duffy Papers collection",
+          "url": "https://catalogue.nli.ie/Collection/vtls000294632",
+          "role": "archival identity source",
+          "note": "The National Library of Ireland catalogue contains the exact Captain Liam D. Walsh correspondence/cuttings context; reviewed records do not expose a portrait object."
+        },
+        {
+          "title": "NLI exact-name search",
+          "url": "https://catalogue.nli.ie/Search/Results?lookfor=%22Walsh%2C+Liam+D.%22&type=AllFields",
+          "role": "archival search",
+          "note": "Returns manuscript and paper records, not an individual photograph."
+        }
+      ],
+      "sources_reviewed": [
+        {
+          "title": "Eoin O'Duffy Papers / NLI catalogue",
+          "url": "https://catalogue.nli.ie/Collection/vtls000294632",
+          "author_or_archive": "National Library of Ireland",
+          "source_date_or_estimated_date_range": "papers include 1940–1943 material; no portrait date",
+          "identity_mapping": "exact_identity_records_but_no_portrait_object",
+          "rights_status": "not_applicable_no_portrait_bytes",
+          "notes": "Letters, drafts and cuttings establish the historical identity but cannot be converted into a portrait.",
+          "disposition": "rejected_no_portrait_object"
+        },
+        {
+          "title": "Original photograph of Liam Walsh in IRA uniform (Saor Eire)",
+          "url": "https://www.southdublinauction.com/catalogue/lot/ad87b7305d481a90d880e385dedb078e/4a88e3eb2a50737af954046bbac54891/over-1200-lots-inc-contents-of-a-florist-clock-collect-lot-1247/",
+          "author_or_archive": "South Dublin Auction",
+          "source_date_or_estimated_date_range": "described as a 1953 joiner who died in 1970",
+          "identity_mapping": "wrong_Liam_Walsh",
+          "rights_status": "auction_listing_not_reuse_permission",
+          "notes": "The listing describes a South Dublin IRA member active from 1953 and killed in 1970, not the canonical Captain Liam D. Walsh associated with the 1930s Irish Brigade. It is also not a documented redistribution licence.",
+          "disposition": "rejected_wrong_identity_and_rights_unclear"
+        },
+        {
+          "title": "Irish Brigade Association correspondence",
+          "url": "https://www.ucc.ie/en/archives/collections/military/irish-brigade-association/",
+          "author_or_archive": "University College Cork Archives / ArchivUL reference material",
+          "source_date_or_estimated_date_range": "1937 correspondence context",
+          "identity_mapping": "name_context_only",
+          "rights_status": "not_applicable_no_portrait_object",
+          "notes": "The reviewed item is a letter signed by Liam Walsh, secretary of the Irish Brigade Association; it is not a portrait and does not establish a reusable image source.",
+          "disposition": "rejected_no_portrait_object"
+        }
+      ],
+      "source_url": "https://catalogue.nli.ie/Collection/vtls000294632",
+      "author_or_archive": "National Library of Ireland / Eoin O'Duffy Papers",
+      "license_or_public_domain_status": "No individual portrait object or image licence located.",
+      "source_date_or_estimated_date_range": "1930s–1940s identity context; exact portrait date unavailable.",
+      "era_fit_notes": "The exact archival record is era-fit, but it does not provide a face. Later South Dublin auction material is a demonstrably different person and must not be substituted.",
+      "source_path": "not_created",
+      "processed_png_path": "not_created",
+      "final_dds_path": "not_created",
+      "target_size": [
+        156,
+        210
+      ],
+      "suggested_gfx_file": "interface/ireland_sourced_assets.gfx",
+      "uncertainty": "No exact portrait object for the canonical Captain Liam D. Walsh was found; name-only and later-person hits are insufficient."
+    },
+    {
+      "id": "RC-PORTRAIT-02",
+      "canonical_name": "Father Edward Cahill",
+      "canonical_role": "Route-character portrait extension outside canonical P-01–P-60 budget",
+      "intended_use": "Optional route-character real-person portrait",
+      "intended_sprite_name": "ireland_portrait_father_edward_cahill",
+      "status": "blocked",
+      "clearance_state": "C1",
+      "identity_provenance": [
+        {
+          "title": "Edward Cahill (1868–1941), Jesuit priest",
+          "url": "https://jesuitarchives.ie/cahill-edward-1868-1941-jesuit-priest",
+          "role": "archival identity record",
+          "note": "Confirms the exact Jesuit identity and life dates."
+        },
+        {
+          "title": "Mungret College staff in 1897",
+          "url": "https://historyireland.com/ireland-edward-cahill-1868-1941-liberal-christian-state/",
+          "direct_image_url": "https://historyireland.com/wp-content/uploads/2016/12/6_MungretCollege_staff_1897.jpg",
+          "role": "identity context only",
+          "note": "History Ireland caption identifies Cahill as last on the right in the back row of a group image; it is not an individually mapped portrait."
+        }
+      ],
+      "sources_reviewed": [
+        {
+          "title": "Edward Cahill SJ portrait in History Ireland article",
+          "url": "https://historyireland.com/ireland-edward-cahill-1868-1941-liberal-christian-state/",
+          "direct_image_url": "https://historyireland.com/wp-content/uploads/2016/12/Cahill-photo.jpg",
+          "media_record_url": "https://historyireland.com/wp-json/wp/v2/media/24603",
+          "author_or_archive": "History Ireland / Wordwell Ltd; media record has no photographer, credit or copyright field",
+          "source_date_or_estimated_date_range": "Article published 2016-12-28; portrait date unstated; article describes Cahill in the 1920s–1930s context.",
+          "identity_mapping": "exact_individual_portrait_captioned_Edward_Cahill_SJ",
+          "rights_status": "not_cleared",
+          "notes": "The 300x349 image is an exact individual portrait, but the attachment record exposes no photographer, archive, or reuse licence. History Ireland terms state that content may not be published, distributed or reproduced without permission.",
+          "disposition": "rejected_pending_written_permission"
+        },
+        {
+          "title": "Padre Edward Cahill S.J. and Freemasonry and the Anti-Christian Movement",
+          "url": "https://www.centrosangiorgio.com/occultismo/massoneria/articoli/pagine_articoli/l_istruzione_permanente_dell_alta_vendita.htm",
+          "direct_image_url": "https://www.centrosangiorgio.com/occultismo/massoneria/immagini/edward_cahill.jpg",
+          "author_or_archive": "Centro San Giorgio website; underlying image source not stated",
+          "source_date_or_estimated_date_range": "image date unstated; article page date not established",
+          "identity_mapping": "exact_portrait_captioned_in_Italian",
+          "rights_status": "not_cleared",
+          "notes": "The 360x252 image is a second exact black-and-white portrait, but the page gives no photographer, archive, public-domain statement or redistribution licence.",
+          "disposition": "rejected_pending_provenance_and_permission"
+        },
+        {
+          "title": "The Framework of a Christian State product page",
+          "url": "https://www.virgosacrata.com/catholic/framework-of-christian-state",
+          "direct_image_url": "https://www.virgosacrata.com/wp/wp-content/uploads/2023/02/Fr-Edward-Cahill.jpg",
+          "author_or_archive": "Virgo Sacrata commercial bookseller; underlying image source not stated",
+          "source_date_or_estimated_date_range": "image date unstated",
+          "identity_mapping": "exact_portrait_captioned_Father_Edward_Cahill_SJ",
+          "rights_status": "not_cleared_commercial_page_no_image_licence",
+          "notes": "The page displays a small 402px-wide sepia/halftone portrait, but provides no photographer, archive, public-domain statement or reuse permission.",
+          "disposition": "rejected_pending_provenance_and_permission"
+        },
+        {
+          "title": "Crescent Volunteer Corps marching to Mungret",
+          "url": "https://jesuitarchives.ie/photographs?listLimit=100&listPage=2&onlyDirect=1&places=1632&sort=referenceCode&sortDir=asc",
+          "archive_reference": "IE IJA SC/CRES/3/165",
+          "author_or_archive": "Irish Jesuit Archives",
+          "source_date_or_estimated_date_range": "17 March 1915",
+          "identity_mapping": "group_caption_maps_Cahill_to_pavement",
+          "rights_status": "permission_required",
+          "notes": "This is a documented group photograph with an exact Cahill location, but not an individual portrait. Irish Jesuit Archives states that reproduction requires written permission.",
+          "disposition": "rejected_not_individual_portrait_and_permission_required"
+        }
+      ],
+      "source_url": "https://historyireland.com/ireland-edward-cahill-1868-1941-liberal-christian-state/",
+      "author_or_archive": "History Ireland / Wordwell Ltd for the exact individual portrait; Irish Jesuit Archives for identity records",
+      "license_or_public_domain_status": "No source licence or public-domain statement found. History Ireland terms prohibit publishing, distributing or reproducing content without permission; Jesuit Archives reproduction requires written permission.",
+      "source_date_or_estimated_date_range": "Portrait date unstated; article discusses Cahill in the 1920s–1930s; Cahill lived 1868–1941.",
+      "era_fit_notes": "The exact individual portrait leads are visually and historically era-fit, but rights and source provenance remain unresolved. The Jesuit Archives group image is identity-mapped but unsuitable for a face-level portrait crop.",
+      "source_path": "not_created",
+      "processed_png_path": "not_created",
+      "final_dds_path": "not_created",
+      "target_size": [
+        156,
+        210
+      ],
+      "suggested_gfx_file": "interface/ireland_sourced_assets.gfx",
+      "uncertainty": "Identity is strongly supported for the exact individual portrait leads, but photographer/archive provenance and reuse permission are absent. Written permission or a rights-cleared archival master is required."
+    }
+  ],
+  "output_inventory": {
+    "source_originals_created": 0,
+    "processed_png_previews_created": 0,
+    "final_dds_created": 0,
+    "contact_sheet_created": false,
+    "contact_sheet_reason": "No candidate image was retained in the repository because every exact or contextual lead remained rights-blocked, identity-incomplete, or both."
+  },
+  "handoff_requirements": {
+    "parent_must_obtain": "Written permission, an explicit public-domain/Creative Commons or otherwise documented mod-reuse grant, and face-level identity evidence for each requested portrait before processing.",
+    "parent_must_not_do": "Do not substitute group members, generic Oireachtas avatars, later people with the same name, book scans, auction listing images, or unlicensed web reproductions.",
+    "after_clearance": "Preserve the licensed source, create a 156x210 RGBA portrait crop, run the repository DDS converter, add source provenance and rights to the canonical manifest, then wire through the parent-owned GFX surface."
+  }
+}

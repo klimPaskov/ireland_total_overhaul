@@ -8054,6 +8054,25 @@
                                                                          906
                                                                      ]
                                       },
+    "latest_missing_portrait_source_research":  {
+                                             "date":  "2026-08-14",
+                                             "manifest":  "docs/assets/ireland_missing_portrait_sources_2026-08-14/manifest.json",
+                                             "handoff":  "docs/plans/ireland_focus_tree/subagent_handoffs/missing_portrait_sources_2026-08-14.md",
+                                             "gfx_handoff":  "docs/assets/ireland_missing_portrait_sources_2026-08-14/gfx_handoff.md",
+                                             "candidate_contact_sheet":  "docs/assets/ireland_missing_portrait_sources_2026-08-14/candidate_contact_sheet.md",
+                                             "scope":  [
+                                                         "P-26",
+                                                         "P-45",
+                                                         "P-55",
+                                                         "RC-PORTRAIT-02"
+                                                     ],
+                                             "result":  "blocked_no_approved_sources",
+                                             "source_originals_created":  0,
+                                             "processed_png_previews_created":  0,
+                                             "final_dds_created":  0,
+                                             "canonical_clearance_states_unchanged":  true,
+                                             "summary":  "Fresh exact-name archival and rights review found no source with both face-level identity evidence and documented reuse permission. No substitutions or generated likenesses were used."
+                                         },
     "portrait_source_preservation":  {
                                          "date":  "2026-08-03",
                                           "directory":  "docs/portraits/",
