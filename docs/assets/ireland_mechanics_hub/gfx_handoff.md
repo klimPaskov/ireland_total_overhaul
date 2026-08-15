@@ -11,7 +11,7 @@ Ready-to-copy sprite definition:
 spriteType = { name = GFX_ireland_mechanics_hub_inlay_background texturefile = "gfx/interface/ireland/gui/conditions/focus_inlay_background.dds" }
 ```
 
-The current inlay GUI reserves a 460x248 surface, a title/instruction band at the top, six status placements in the middle, and two action-button positions at the bottom. The art intentionally leaves those regions quiet; render all text, status sprites, and button states separately. No `.gfx` or `.gui` file was edited by this asset subagent.
+The current Cabinet Briefing reserves a 460x248 surface, a title band, four cabinet cards, one assessment line, and one optional action position. The art intentionally leaves those regions quiet; text, category emblems, and the optional button state are rendered separately. The briefing deliberately uses no overlaid status seals.
 
 ## National Situation Ledger category icon
 
@@ -19,7 +19,7 @@ The current inlay GUI reserves a 460x248 surface, a title/instruction band at th
 - Exact runtime sprite: `GFX_decision_category_ireland_national_situation`
 - Suggested target: `interface/ireland_icons.gfx`
 - Target size: `52x40` RGBA/DDS
-- Intended consumer: decision category `ireland_national_situation` and the National Situation Ledger tab identity in `interface/ireland_national_situation.gui`
+- Intended consumer: decision category `ireland_national_situation` for the Cabinet Briefing
 
 Ready-to-copy sprite definition:
 
@@ -30,6 +30,8 @@ spriteType = { name = GFX_decision_category_ireland_national_situation texturefi
 The emblem is a distinct open cream ledger with six colored register tabs/marks, deep Irish green leather/painted wood, and restrained brass. It is not a Parliament seal, flag, or settlement-government derivative. No `.gfx`, decision, GUI, or localisation file was edited by this asset subagent.
 
 ## Selected-tab marker
+
+Superseded: the Cabinet Briefing has no selectable tabs. The asset remains registered only for compatibility and historical source evidence.
 
 - Final DDS: `gfx/interface/ireland/gui/conditions/tab_selected.dds`
 - Exact runtime sprite: `GFX_ireland_mechanics_hub_tab_selected`
@@ -46,6 +48,8 @@ spriteType = { name = GFX_ireland_mechanics_hub_tab_selected texturefile = "gfx/
 This is a decorative brass selected-state underline with transparent corners; the GUI owns its placement and visibility.
 
 ## Selected-row marker
+
+Superseded: the Cabinet Briefing has no selectable rows. The asset remains registered only for compatibility and historical source evidence.
 
 - Final DDS: `gfx/interface/ireland/gui/conditions/row_selected.dds`
 - Exact runtime sprite: `GFX_ireland_mechanics_hub_row_selected`

@@ -1,4 +1,4 @@
-# Compact national-mechanics summary shown inside the Ireland focus tree.
+# Compact Ireland Cabinet Briefing shown in the national-focus view.
 guiTypes = {
 	containerWindowType = {
 		name = "ireland_national_situation_inlay_window"
@@ -7,25 +7,25 @@ guiTypes = {
 		size = { width = 460 height = 248 }
 		clipping = no
 
-		background = { name = "ireland_focus_inlay_background" quadTextureSprite = "GFX_ireland_mechanics_hub_inlay_background" alwaystransparent = yes }
-		instantTextBoxType = { name = "ireland_focus_inlay_title" position = { x = 12 y = 8 } text = "ireland_focus_inlay_title" font = "hoi_24header" format = center maxWidth = 436 maxHeight = 28 }
-		instantTextBoxType = { name = "ireland_focus_inlay_instruction" position = { x = 20 y = 38 } text = "ireland_focus_inlay_instruction" font = "hoi_16mbs" format = center maxWidth = 420 maxHeight = 20 }
+		background = { name = "ireland_focus_briefing_background" quadTextureSprite = "GFX_ireland_mechanics_hub_inlay_background" alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_briefing_title" position = { x = 12 y = 8 } text = "ireland_briefing_title" font = "hoi_24header" format = center maxWidth = 436 maxHeight = 28 }
+		instantTextBoxType = { name = "ireland_focus_briefing_subtitle" position = { x = 20 y = 38 } text = "ireland_briefing_inlay_subtitle" font = "hoi_16mbs" format = center maxWidth = 420 maxHeight = 20 }
 
-		iconType = { name = "ireland_focus_inlay_state_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 20 y = 66 } pdx_tooltip = "ireland_focus_inlay_state_tt" }
-		iconType = { name = "ireland_focus_inlay_provision_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 236 y = 66 } pdx_tooltip = "ireland_focus_inlay_provision_tt" }
-		iconType = { name = "ireland_focus_inlay_readiness_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 20 y = 105 } pdx_tooltip = "ireland_focus_inlay_readiness_tt" }
-		iconType = { name = "ireland_focus_inlay_neutrality_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 236 y = 105 } pdx_tooltip = "ireland_focus_inlay_neutrality_tt" }
-		iconType = { name = "ireland_focus_inlay_northern_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 20 y = 144 } pdx_tooltip = "ireland_focus_inlay_northern_tt" }
-		iconType = { name = "ireland_focus_inlay_culture_status" spriteType = "GFX_ireland_gui_status_locked" position = { x = 236 y = 144 } pdx_tooltip = "ireland_focus_inlay_culture_tt" }
+		iconType = { name = "ireland_focus_briefing_government_icon" spriteType = "GFX_decision_category_ireland_settlement_government" position = { x = 34 y = 62 } pdx_tooltip = "ireland_briefing_government_tt" }
+		iconType = { name = "ireland_focus_briefing_supply_icon" spriteType = "GFX_decision_category_ireland_provision" position = { x = 139 y = 62 } pdx_tooltip = "ireland_briefing_supply_tt" }
+		iconType = { name = "ireland_focus_briefing_defence_icon" spriteType = "GFX_decision_category_ireland_readiness" position = { x = 244 y = 62 } pdx_tooltip = "ireland_briefing_defence_tt" }
+		iconType = { name = "ireland_focus_briefing_northern_icon" spriteType = "GFX_decision_category_ireland_northern" position = { x = 349 y = 62 } pdx_tooltip = "ireland_briefing_northern_tt" }
 
-		instantTextBoxType = { name = "ireland_focus_inlay_state_text" position = { x = 58 y = 71 } text = "ireland_focus_inlay_state" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
-		instantTextBoxType = { name = "ireland_focus_inlay_provision_text" position = { x = 274 y = 71 } text = "ireland_focus_inlay_provision" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
-		instantTextBoxType = { name = "ireland_focus_inlay_readiness_text" position = { x = 58 y = 110 } text = "ireland_focus_inlay_readiness" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
-		instantTextBoxType = { name = "ireland_focus_inlay_neutrality_text" position = { x = 274 y = 110 } text = "ireland_focus_inlay_neutrality" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
-		instantTextBoxType = { name = "ireland_focus_inlay_northern_text" position = { x = 58 y = 149 } text = "ireland_focus_inlay_northern" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
-		instantTextBoxType = { name = "ireland_focus_inlay_culture_text" position = { x = 274 y = 149 } text = "ireland_focus_inlay_culture" font = "hoi_16mbs" format = left maxWidth = 160 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_briefing_government_label" position = { x = 7 y = 105 } text = "ireland_briefing_government" font = "hoi_16mbs" format = center maxWidth = 105 maxHeight = 18 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_briefing_supply_label" position = { x = 112 y = 105 } text = "ireland_briefing_supply" font = "hoi_16mbs" format = center maxWidth = 105 maxHeight = 18 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_briefing_defence_label" position = { x = 217 y = 105 } text = "ireland_briefing_defence" font = "hoi_16mbs" format = center maxWidth = 105 maxHeight = 18 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_briefing_northern_label" position = { x = 322 y = 105 } text = "ireland_briefing_northern" font = "hoi_16mbs" format = center maxWidth = 105 maxHeight = 18 alwaystransparent = yes }
 
-		buttonType = { name = "ireland_focus_inlay_refresh_button" quadTextureSprite = "GFX_ireland_gui_parliament_step_button" position = { x = 20 y = 198 } buttonFont = "hoi_16mbs" buttonText = "ireland_mechanics_hub_refresh_action" format = center clicksound = click_default pdx_tooltip = "ireland_mechanics_hub_refresh_action_tt" }
-		buttonType = { name = "ireland_focus_inlay_state_action_button" quadTextureSprite = "GFX_ireland_gui_parliament_step_button" position = { x = 236 y = 198 } buttonFont = "hoi_16mbs" buttonText = "ireland_focus_inlay_state_action" format = center clicksound = click_default pdx_tooltip = "ireland_focus_inlay_state_action_tt" }
+		instantTextBoxType = { name = "ireland_focus_briefing_government_value" position = { x = 7 y = 126 } context_aware_text = [GetIrelandCabinetGovernmentStatus] font = "hoi_16mbs" format = center maxWidth = 105 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_briefing_supply_value" position = { x = 112 y = 126 } context_aware_text = [GetIrelandCabinetSupplyStatus] font = "hoi_16mbs" format = center maxWidth = 105 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_briefing_defence_value" position = { x = 217 y = 126 } context_aware_text = [GetIrelandCabinetDefenceStatus] font = "hoi_16mbs" format = center maxWidth = 105 maxHeight = 20 alwaystransparent = yes }
+		instantTextBoxType = { name = "ireland_focus_briefing_northern_value" position = { x = 322 y = 126 } context_aware_text = [GetIrelandCabinetNorthernStatus] font = "hoi_16mbs" format = center maxWidth = 105 maxHeight = 20 alwaystransparent = yes }
+
+		instantTextBoxType = { name = "ireland_focus_briefing_assessment" position = { x = 24 y = 164 } context_aware_text = [GetIrelandCabinetAssessment] font = "hoi_16mbs" format = center maxWidth = 412 maxHeight = 48 alwaystransparent = yes }
 	}
 }

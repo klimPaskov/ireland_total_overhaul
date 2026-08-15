@@ -1,5 +1,6 @@
-# National Situation Ledger triggers. The hub reads canonical Ireland ledgers,
-# reveal gates, and action availability. It never creates a second balance layer.
+# Cabinet Briefing trigger contract.
+# The four public cards are projections of the canonical Ireland ledgers. They
+# do not create another balance layer, cache, selection state, or action gate.
 
 ireland_mechanics_hub_initialized = {
 	original_tag = IRE
@@ -11,47 +12,12 @@ ireland_mechanics_hub_open = {
 	NOT = { has_country_flag = ireland_route_archived }
 }
 
-# Tab visibility deliberately follows the existing reveal predicates. State and
-# Neutrality remain readable for the whole initialized Ireland campaign; the
-# other tabs retain their authored institutional reveal gates.
+# Government is the public constitutional settlement and parliamentary
+# programme card. It remains readable for the whole initialized Ireland route.
 ireland_mechanics_hub_state_visible = {
 	ireland_mechanics_hub_initialized = yes
 }
 
-ireland_mechanics_hub_provision_visible = {
-	ireland_mechanics_hub_initialized = yes
-	ireland_reveal_category_provision = yes
-}
-
-ireland_mechanics_hub_readiness_visible = {
-	ireland_mechanics_hub_initialized = yes
-	ireland_reveal_category_readiness = yes
-}
-
-ireland_mechanics_hub_foreign_visible = {
-	ireland_mechanics_hub_initialized = yes
-	ireland_reveal_category_foreign = yes
-}
-
-ireland_mechanics_hub_northern_visible = {
-	ireland_mechanics_hub_initialized = yes
-	ireland_reveal_category_northern = yes
-	has_completed_focus = ireland_northern_settlement_ledger
-}
-
-ireland_mechanics_hub_culture_visible = {
-	ireland_mechanics_hub_initialized = yes
-	ireland_reveal_category_culture = yes
-}
-
-ireland_mechanics_hub_culture_evidence_visible = {
-	ireland_mechanics_hub_culture_visible = yes
-	has_country_flag = ireland_concealed_evidence_revealed
-}
-
-# State summary. Settlement stage thresholds are the existing authored public
-# bands. Active constitutional or dual-authority crises remain critical even if
-# the balance itself has not crossed the lower stage boundary.
 ireland_mechanics_hub_state_critical = {
 	ireland_mechanics_hub_state_visible = yes
 	OR = {
@@ -81,8 +47,14 @@ ireland_mechanics_hub_state_warning = {
 	NOT = { ireland_mechanics_hub_state_ready = yes }
 }
 
-# Provision summary. A named shortage or bottleneck keeps a high average from
-# appearing ready. The component values remain the source of the warning.
+# National Supply is the existing Provision aggregate. Component shortages and
+# bottleneck caps remain the authoritative reasons for a warning or critical
+# state; the briefing never selects a component for the player.
+ireland_mechanics_hub_provision_visible = {
+	ireland_mechanics_hub_initialized = yes
+	ireland_reveal_category_provision = yes
+}
+
 ireland_mechanics_hub_provision_critical = {
 	ireland_mechanics_hub_provision_visible = yes
 	OR = {
@@ -113,9 +85,13 @@ ireland_mechanics_hub_provision_warning = {
 	NOT = { ireland_mechanics_hub_provision_ready = yes }
 }
 
-# Readiness summary. Equipment and Supply bottlenecks are active material gates
-# and therefore remain critical even if the derived display is above its lower
-# public band. Other named component bottlenecks are warning signals.
+# Defence Readiness is the existing seven-component aggregate. Equipment and
+# supply failures remain material critical gates even when the average is high.
+ireland_mechanics_hub_readiness_visible = {
+	ireland_mechanics_hub_initialized = yes
+	ireland_reveal_category_readiness = yes
+}
+
 ireland_mechanics_hub_readiness_critical = {
 	ireland_mechanics_hub_readiness_visible = yes
 	OR = {
@@ -146,37 +122,14 @@ ireland_mechanics_hub_readiness_warning = {
 	NOT = { ireland_mechanics_hub_readiness_ready = yes }
 }
 
-# Neutrality remains a directional integrity score. An active incident makes a
-# normally safe score warning without treating the bilateral leverage values as
-# inherently good or bad.
-ireland_mechanics_hub_neutrality_critical = {
-	ireland_mechanics_hub_state_visible = yes
-	check_variable = {
-		var = ireland_neutrality_integrity
-		value = constant:ireland.gui_neutrality_critical_threshold
-		compare = less_than
-	}
+# Compatibility predicates for the existing scripted-localisation database.
+# They are not bound to the Cabinet Briefing GUI; the parent localisation pass
+# may retire the old tab-and-row text once its replacement strings are wired.
+ireland_mechanics_hub_foreign_visible = {
+	ireland_mechanics_hub_initialized = yes
+	ireland_reveal_category_foreign = yes
 }
 
-ireland_mechanics_hub_neutrality_ready = {
-	ireland_mechanics_hub_state_visible = yes
-	NOT = { ireland_mechanics_hub_neutrality_critical = yes }
-	NOT = { ireland_has_active_neutrality_incident = yes }
-	check_variable = {
-		var = ireland_neutrality_integrity
-		value = constant:ireland.gui_neutrality_ready_threshold
-		compare = greater_than_or_equals
-	}
-}
-
-ireland_mechanics_hub_neutrality_warning = {
-	ireland_mechanics_hub_state_visible = yes
-	NOT = { ireland_mechanics_hub_neutrality_critical = yes }
-	NOT = { ireland_mechanics_hub_neutrality_ready = yes }
-}
-
-# Foreign Exposure and Sponsor Dependence are risk summaries. Bilateral
-# leverage remains informational and is not colour-coded by this helper.
 ireland_mechanics_hub_foreign_critical = {
 	ireland_mechanics_hub_foreign_visible = yes
 	OR = {
@@ -220,7 +173,64 @@ ireland_mechanics_hub_foreign_warning = {
 	NOT = { ireland_mechanics_hub_foreign_ready = yes }
 }
 
-# Northern status mirrors the dedicated ledger's authored readiness bands.
+ireland_mechanics_hub_culture_visible = {
+	ireland_mechanics_hub_initialized = yes
+	ireland_reveal_category_culture = yes
+}
+
+ireland_mechanics_hub_culture_evidence_visible = {
+	ireland_mechanics_hub_culture_visible = yes
+	has_country_flag = ireland_concealed_evidence_revealed
+}
+
+ireland_mechanics_hub_culture_locked = {
+	ireland_mechanics_hub_initialized = yes
+	NOT = { ireland_mechanics_hub_culture_visible = yes }
+}
+
+ireland_mechanics_hub_culture_critical = {
+	ireland_mechanics_hub_culture_visible = yes
+	OR = {
+		check_variable = {
+			var = ireland_cultural_capacity
+			value = constant:ireland.cultural_restoration_partial_evidence_floor
+			compare = less_than
+		}
+		AND = {
+			has_country_flag = ireland_concealed_evidence_revealed
+			check_variable = {
+				var = ireland_concealed_evidence_disqualifier_count
+				value = constant:ireland.zero
+				compare = greater_than
+			}
+		}
+	}
+}
+
+ireland_mechanics_hub_culture_ready = {
+	ireland_mechanics_hub_culture_visible = yes
+	NOT = { ireland_mechanics_hub_culture_critical = yes }
+	check_variable = {
+		var = ireland_cultural_capacity
+		value = constant:ireland.evidence_gui_ready_public_threshold
+		compare = greater_than_or_equals
+	}
+}
+
+ireland_mechanics_hub_culture_warning = {
+	ireland_mechanics_hub_culture_visible = yes
+	NOT = { ireland_mechanics_hub_culture_critical = yes }
+	NOT = { ireland_mechanics_hub_culture_ready = yes }
+}
+
+# National Question remains conditional on the authored Northern settlement
+# reveal. Its status mirrors the dedicated ledger without exposing its rows.
+ireland_mechanics_hub_northern_visible = {
+	ireland_mechanics_hub_initialized = yes
+	ireland_reveal_category_northern = yes
+	has_completed_focus = ireland_northern_settlement_ledger
+}
+
 ireland_mechanics_hub_northern_locked = {
 	ireland_mechanics_hub_initialized = yes
 	NOT = { ireland_mechanics_hub_northern_visible = yes }
@@ -267,300 +277,9 @@ ireland_mechanics_hub_northern_warning = {
 	NOT = { ireland_mechanics_hub_northern_ready = yes }
 }
 
-# Culture status remains on public Cultural Capacity until the concealed
-# evidence ledger is explicitly revealed. Once revealed, a public disqualifier
-# is a critical route condition rather than a hidden preview value.
-ireland_mechanics_hub_culture_locked = {
-	ireland_mechanics_hub_initialized = yes
-	NOT = { ireland_mechanics_hub_culture_visible = yes }
-}
-
-ireland_mechanics_hub_culture_critical = {
-	ireland_mechanics_hub_culture_visible = yes
-	OR = {
-		check_variable = {
-			var = ireland_cultural_capacity
-			value = constant:ireland.cultural_restoration_partial_evidence_floor
-			compare = less_than
-		}
-		AND = {
-			has_country_flag = ireland_concealed_evidence_revealed
-			check_variable = {
-				var = ireland_concealed_evidence_disqualifier_count
-				value = constant:ireland.zero
-				compare = greater_than
-			}
-		}
-	}
-}
-
-ireland_mechanics_hub_culture_ready = {
-	ireland_mechanics_hub_culture_visible = yes
-	NOT = { ireland_mechanics_hub_culture_critical = yes }
-	check_variable = {
-		var = ireland_cultural_capacity
-		value = constant:ireland.evidence_gui_ready_public_threshold
-		compare = greater_than_or_equals
-	}
-}
-
-ireland_mechanics_hub_culture_warning = {
-	ireland_mechanics_hub_culture_visible = yes
-	NOT = { ireland_mechanics_hub_culture_critical = yes }
-	NOT = { ireland_mechanics_hub_culture_ready = yes }
-}
-
-# The selected-row checks intentionally mirror the dedicated Northern and
-# Evidence ledgers. A hub review cannot bypass their row-selection contract.
-ireland_mechanics_hub_northern_review_available = {
-	ireland_mechanics_hub_northern_visible = yes
-	check_variable = {
-		var = ireland_mechanics_hub_selected_row
-		value = constant:ireland_mechanics_hub.row_none
-		compare = greater_than
-	}
-}
-
-ireland_mechanics_hub_evidence_review_available = {
-	ireland_mechanics_hub_culture_evidence_visible = yes
-	check_variable = {
-		var = ireland_mechanics_hub_selected_row
-		value = constant:ireland_mechanics_hub.row_six
-		compare = equals
-	}
-}
-
-# Generic hub rows must preserve the dedicated Northern ledger's progressive
-# reveal contract. Other families use their fixed public row counts.
-ireland_mechanics_hub_row_one_visible = {
-	ireland_mechanics_hub_initialized = yes
-	OR = {
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_provision compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals }
-		AND = {
-			ireland_mechanics_hub_northern_visible = yes
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals }
-			has_completed_focus = ireland_northern_settlement_ledger
-		}
-	}
-}
-
-ireland_mechanics_hub_row_two_visible = {
-	ireland_mechanics_hub_row_one_visible = yes
-}
-
-ireland_mechanics_hub_row_three_visible = {
-	ireland_mechanics_hub_initialized = yes
-	OR = {
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_provision compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals }
-		AND = {
-			ireland_mechanics_hub_northern_visible = yes
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals }
-			has_completed_focus = ireland_northern_labour_social_bridge
-		}
-	}
-}
-
-ireland_mechanics_hub_row_four_visible = {
-	ireland_mechanics_hub_initialized = yes
-	OR = {
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_provision compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals }
-		AND = {
-			ireland_mechanics_hub_northern_visible = yes
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals }
-			has_completed_focus = ireland_northern_trade_corridor
-		}
-	}
-}
-
-ireland_mechanics_hub_row_five_visible = {
-	ireland_mechanics_hub_initialized = yes
-	OR = {
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals }
-		AND = {
-			ireland_mechanics_hub_northern_visible = yes
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals }
-			has_completed_focus = ireland_northern_local_authorities
-		}
-	}
-}
-
-ireland_mechanics_hub_row_six_visible = {
-	ireland_mechanics_hub_initialized = yes
-	OR = {
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals }
-		check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals }
-		AND = {
-			ireland_mechanics_hub_northern_visible = yes
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals }
-			OR = {
-				has_completed_focus = ireland_northern_federal_preparation
-				has_completed_focus = ireland_northern_unitary_preparation
-			}
-		}
-	}
-}
-
-ireland_mechanics_hub_row_seven_visible = {
-	ireland_mechanics_hub_initialized = yes
-	check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-}
-
-# Overall panel status dispatches to the selected tab. Unknown or unrevealed
-# tab values resolve to the grey lock state rather than a false green result.
-ireland_mechanics_hub_status_locked = {
-	ireland_mechanics_hub_initialized = yes
-	OR = {
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state compare = equals }
-			NOT = { ireland_mechanics_hub_state_visible = yes }
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_provision compare = equals }
-			NOT = { ireland_mechanics_hub_provision_visible = yes }
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-			NOT = { ireland_mechanics_hub_readiness_visible = yes }
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals }
-			NOT = { ireland_mechanics_hub_foreign_visible = yes }
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals }
-			NOT = { ireland_mechanics_hub_northern_visible = yes }
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals }
-			NOT = { ireland_mechanics_hub_culture_visible = yes }
-		}
-		NOT = {
-			OR = {
-				check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state compare = equals }
-				check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_provision compare = equals }
-				check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-				check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals }
-				check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals }
-				check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals }
-			}
-		}
-	}
-}
-
-ireland_mechanics_hub_status_critical = {
-	ireland_mechanics_hub_initialized = yes
-	NOT = { ireland_mechanics_hub_status_locked = yes }
-	OR = {
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state compare = equals }
-			ireland_mechanics_hub_state_critical = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_provision compare = equals }
-			ireland_mechanics_hub_provision_critical = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-			ireland_mechanics_hub_readiness_critical = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals }
-			ireland_mechanics_hub_foreign_critical = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals }
-			ireland_mechanics_hub_northern_critical = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals }
-			ireland_mechanics_hub_culture_critical = yes
-		}
-	}
-}
-
-ireland_mechanics_hub_status_ready = {
-	ireland_mechanics_hub_initialized = yes
-	NOT = { ireland_mechanics_hub_status_locked = yes }
-	NOT = { ireland_mechanics_hub_status_critical = yes }
-	OR = {
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state compare = equals }
-			ireland_mechanics_hub_state_ready = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_provision compare = equals }
-			ireland_mechanics_hub_provision_ready = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-			ireland_mechanics_hub_readiness_ready = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals }
-			ireland_mechanics_hub_foreign_ready = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals }
-			ireland_mechanics_hub_northern_ready = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals }
-			ireland_mechanics_hub_culture_ready = yes
-		}
-	}
-}
-
-ireland_mechanics_hub_status_warning = {
-	ireland_mechanics_hub_initialized = yes
-	NOT = { ireland_mechanics_hub_status_locked = yes }
-	NOT = { ireland_mechanics_hub_status_critical = yes }
-	NOT = { ireland_mechanics_hub_status_ready = yes }
-	OR = {
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state compare = equals }
-			ireland_mechanics_hub_state_warning = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_provision compare = equals }
-			ireland_mechanics_hub_provision_warning = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-			ireland_mechanics_hub_readiness_warning = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals }
-			ireland_mechanics_hub_foreign_warning = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals }
-			ireland_mechanics_hub_northern_warning = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals }
-			ireland_mechanics_hub_culture_warning = yes
-		}
-	}
-}
-
-# Parliament availability is intentionally independent of selected tab so the
-# compact focus inlay can expose the next state step without opening the hub.
+# The single briefing action always delegates to the next guarded Parliament
+# programme step. It is unavailable after archival and never falls back to a
+# refresh, component selection, or Northern review request.
 ireland_next_state_action_available = {
 	ireland_mechanics_hub_open = yes
 	OR = {
@@ -571,38 +290,12 @@ ireland_next_state_action_available = {
 	}
 }
 
-ireland_mechanics_hub_context_action_available = {
-	ireland_mechanics_hub_open = yes
-	OR = {
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_state compare = equals }
-			ireland_next_state_action_available = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_provision compare = equals }
-			ireland_mechanics_hub_provision_visible = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_readiness compare = equals }
-			ireland_mechanics_hub_readiness_visible = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_foreign compare = equals }
-			ireland_mechanics_hub_foreign_visible = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_northern compare = equals }
-			ireland_mechanics_hub_northern_review_available = yes
-		}
-		AND = {
-			check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals }
-			ireland_mechanics_hub_culture_visible = yes
-		}
-	}
+ireland_briefing_context_action_available = {
+	ireland_next_state_action_available = yes
 }
 
-# True only when the selected Provision row is the same deterministic minimum
-# that the weakest-component action would select. Earlier display rows win ties.
+# Compatibility-only selection predicates for the old scripted-localisation
+# entries. No active Cabinet Briefing element can select a tab or row.
 ireland_mechanics_hub_selected_provision_is_lowest = {
 	OR = {
 		AND = {
@@ -632,8 +325,6 @@ ireland_mechanics_hub_selected_provision_is_lowest = {
 	}
 }
 
-# True only for the deterministic seven-row Readiness minimum. Display order
-# resolves ties exactly as ireland_select_weakest_readiness_component does.
 ireland_mechanics_hub_selected_readiness_is_lowest = {
 	OR = {
 		AND = {
@@ -702,7 +393,6 @@ ireland_mechanics_hub_selected_readiness_is_lowest = {
 	}
 }
 
-# Exposure wins a tie, matching the informational Foreign action.
 ireland_mechanics_hub_selected_foreign_is_greater_risk = {
 	OR = {
 		AND = {
@@ -716,8 +406,6 @@ ireland_mechanics_hub_selected_foreign_is_greater_risk = {
 	}
 }
 
-# Public Culture rows use the same deterministic minimum as the contextual
-# action. The sealed/revealed Evidence row is handled separately.
 ireland_mechanics_hub_selected_culture_is_lowest = {
 	OR = {
 		AND = {

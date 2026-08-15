@@ -1403,5 +1403,5 @@ auditable and prevents a date-only shortcut.
 - Scope: Ireland country effect.
 - Purpose: the single idempotent refresh for route initialization, mandate legality, conclusion recognition, existing profile/spirit refresh, same-slot exceptional forms, and cosmetic identity.
 - Inputs/outputs: route values, flags, and focus history; outputs clamped values, conclusion flags, a valid three-spirit trio, and any materially distinct cosmetic identity.
-- Defaults and side effects: no global on-action, core, state, war, unit, stockpile, or resource effect.
-- Usage: call after every exceptional focus, action, event option, and mission outcome.
+- Defaults and side effects: no global on-action, core, state, war, unit, stockpile, or resource effect. It can replace the active route-spirit trio or exceptional cosmetic tag. The public helper wraps `ireland_refresh_exceptional_route_state_internal` in `hidden_effect`, so callers expose only their own authored outcome text instead of the internal mass-reconciliation list.
+- Usage: call after every exceptional focus, action, event option, and mission outcome. Player-facing callers must provide a concise custom outcome tooltip.

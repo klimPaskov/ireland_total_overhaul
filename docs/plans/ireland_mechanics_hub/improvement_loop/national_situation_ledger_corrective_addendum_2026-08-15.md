@@ -1,7 +1,9 @@
 # National Situation Ledger Corrective Addendum
 
+> Superseded on 2026-08-15 by `natural_cabinet_briefing_correction_2026-08-15.md` after player review rejected the six-tab and selectable-row presentation.
+
 Date: 2026-08-15
-Status: Implemented on 2026-08-15; durable rules promoted
+Status: historical and superseded
 Feature: Ireland National Situation Ledger and focus-tree inlay
 Source specification: `docs/specs/ireland_mechanics_hub/`
 

@@ -1,175 +1,65 @@
-# Ireland National Situation Ledger specification
+# Ireland Cabinet Briefing specification
 
-Status: implemented on 2026-08-15. The durable presentation, access, archive, progressive-reveal, and canonical-action rules below are promoted from the corrective addendum; current evidence is recorded in the mechanics-hub documentation reconciliation handoff.
+Status: accepted correction implemented and independently audited complete.
 
-## 1. Purpose
+## Player experience
 
-Ireland has several connected systems, but their presentation currently forces the player to remember individual values across focuses, decisions, event options, and tooltips. The National Situation Ledger turns those systems into a single readable control surface.
+The Cabinet Briefing is a compact decision-category summary and national-focus inlay. It gives the player a cabinet-level reading of four matters without exposing every internal ledger variable:
 
-Every displayed value must answer four questions:
+1. Government: a qualitative judgement of the parliamentary programme and governing authority.
+2. National Supply: the existing Provision aggregate.
+3. Defence: the existing Readiness aggregate.
+4. National Question: a qualitative judgement or the active Northern settlement stage.
 
-1. What does this measure?
-2. What does a high or low result change?
-3. What improves or damages it?
-4. What can the player do next?
+Foreign leverage, culture, evidence, exceptional-route obligations, event previews, dispatch cursors, temporary calculations, dirty counters, and component caches remain in their existing focuses, decisions, events, and dedicated ledgers. They are not permanent dashboard rows.
 
-If a value cannot answer those questions, it must remain internal or be retired from gameplay rather than displayed as decorative arithmetic.
+## Presentation contract
 
-## 2. Player-facing information architecture
+- The interface is a 460 by 248 cabinet paper with four distinct category emblems.
+- Each card has one short colour-coded state and a compact tooltip written as ordinary policy language.
+- Only National Supply and Defence show public aggregate numbers.
+- There are no tabs, row selectors, purpose/consequence headings, manual refresh controls, or diagnostic language.
+- The panel has one short assessment line that identifies the cabinet's immediate concern.
+- The informational focus inlay uses the same four-card vocabulary and occupies an empty authored corridor.
 
-The hub has six tabs. The tab count is fixed so the player can build a stable mental model.
+## Action contract
 
-| Tab | Summary | Components | Primary consequence |
-| --- | --- | --- | --- |
-| State | National Settlement | Social Consent, Neutrality Integrity, Administrative Reach, Dáil Mandate | Government legitimacy, institutional actions, route and conclusion gates |
-| Provision | National Provision | Food, Energy, Transport, Maritime Access | Civilian projects, crisis resilience, supply and route-conclusion capacity |
-| Readiness | National Readiness | Command, Equipment, Mobilisation, Supply, Warning, Maritime Protection, Intelligence | Security missions, military projects, coercive instruments and wartime resilience |
-| Foreign | Foreign Exposure | British, American, German and Vatican Leverage; Sponsor Dependence | Diplomatic options, neutrality pressure, sponsor risk and foreign-response outcomes |
-| National Question | Northern settlement state | Unionist Consent, Nationalist Consent, Labour Cooperation, British Flexibility, Security Stability, Integration Capacity | Lawful settlement, territorial instruments, integration and recovery |
-| Culture | Cultural Capacity | Language Service, Archival Record, Regional Participation, Site Stewardship, Evidence Status | Cultural programmes, public knowledge and exceptional-route proof |
+At most one button is shown. It delegates to the next existing guarded Parliament executor in canonical order: Dáil, Seanad, Confidence Pact, then Joint Budget. The executor repeats every normal requirement and cost. If no programme step is presently available, the button is absent instead of being displayed as a decorative disabled control.
 
-The dashboard always shows the tab names. Locked systems explain the exact focus or institutional milestone that opens them. Values do not vanish merely because they are currently weak.
+The briefing never grants a ledger value, route step, focus completion, resource, or alternate AI path. AI continues to use native decisions and focus plans.
 
-## 3. Full dashboard
+## State and lifecycle
 
-### 3.1 Entry point
+- Government, Supply, and Defence are represented after Ireland's normal initialization, with locked wording until their authored records open.
+- The National Question is `Unopened` until its existing Northern route becomes public.
+- Active states use restrained colour in their ordinary state text; the briefing does not add a second layer of status seals.
+- Route archival leaves an informational record and removes the contextual action.
+- Dirty refreshes come from the systems that already mutate the underlying state; there is no player-facing refresh action.
 
-A new decision category, `ireland_national_situation`, is visible after `ireland_initialized`. It has `visible_when_empty = yes`, high priority, and owns `ireland_national_situation_scripted_gui`.
+## Tooltip contract
 
-The GUI window is `ireland_national_situation_window`, sized for the existing 510 by 590 conditions background. It uses `context_type = decision_category`, `dirty = ireland_conditions_gui_dirty`, and disables AI GUI clicks. Native decisions and shared executors remain the AI surface.
+Tooltips state the present condition, the policy area affected, and the existing decision or focus family that can improve it. They must not describe implementation concepts such as consumers, cached projections, selected rows, internal values, or binding-gate plumbing.
 
-### 3.2 Layout
+Internal exceptional-route profile synchronization is wrapped in `hidden_effect`. Focus cards expose their authored reward tooltip and material public effects, not the complete list of every removable route spirit.
 
-The 510 by 590 window contains:
+## Assets
 
-- a title, concise instruction, and current overall warning marker;
-- six persistent tab buttons;
-- a summary card with the current tab's governing value and status;
-- up to seven clickable rows, enough for the Readiness family without scrolling;
-- a selected-value explanation panel;
-- an exact “purpose” line naming the decisions, missions, routes, or gates affected;
-- a guarded context action;
-- a refresh action that recomputes derived displays and ledgers without granting a reward.
+- Decision category: `GFX_decision_category_ireland_national_situation`.
+- Background: `GFX_ireland_mechanics_hub_inlay_background`.
+- Card emblems: the existing Government, Provision, Readiness, and Northern decision-category sprites.
+- Existing project status seals remain available to other interfaces but are not part of the Cabinet Briefing.
+- Action: `GFX_ireland_gui_parliament_step_button`.
 
-Rows are selection controls, not disabled reward buttons. Their normal visual state must remain legible. Locked mechanics use a separate lock marker and explanatory text rather than a grey label with no reason.
+The former selected-tab and selected-row assets are retained only as superseded source evidence. They are not active interface elements.
 
-### 3.3 Colour language
+## Acceptance
 
-The visual vocabulary is consistent across the dashboard, focus inlay, Parliament, Northern ledger, and Evidence ledger:
-
-- green: the current gate is satisfied or the value is safely above its operational threshold;
-- amber: the value is usable but is the current bottleneck or is close to a gate;
-- red: an active gate fails, a process is blocked, or a route disqualifier is present;
-- grey lock: the mechanic has not been institutionally revealed and the tooltip names the reveal condition;
-- white/cream: descriptive text and values that are directional rather than inherently good or bad, especially individual foreign leverage scores.
-
-Foreign leverage is not coloured green merely because it is high. The summary uses Foreign Exposure and Sponsor Dependence to express risk; the four bilateral values remain neutral and explain which actions they enable or constrain.
-
-### 3.4 Selected-value explanation
-
-Each row selection provides:
-
-- definition in plain language;
-- current value and important threshold bands;
-- direct consumers, expressed as named player-facing focuses, decisions, missions, or conclusions;
-- common positive sources;
-- common negative sources;
-- a dynamic consequence line naming the current operational state, binding public gate, and next canonical focus, decision, mission, or review.
-
-The explanation must describe current gameplay, never implementation history or internal variable names.
-
-Exactly one tab carries a persistent brass underline and at most one visible row carries a persistent brass selector. Northern rows use the same progressive focus reveals for visibility and click eligibility as the dedicated ledger; an unrevealed value never appears as a live number in this surface.
-
-## 4. Interactive actions
-
-The hub exposes two action slots.
-
-### 4.1 Refresh national report
-
-`ireland_refresh_national_situation` recomputes Provision, Readiness, operational state, and the opened Northern and cultural projections through existing shared helpers. It has no reward, no cost, and no hidden state advance, and it is unavailable after route archival.
-
-### 4.2 Context action
-
-The context action changes by tab and is always backed by an existing canonical trigger/executor:
-
-- State: perform the next available parliamentary programme step through the same four guarded Parliament executors. If none is available, the button is disabled and the tooltip states the missing focus, majority, PP, ownership, or prior step.
-- Provision: refresh the capacity report and select the weakest Provision component. It does not add points.
-- Readiness: refresh the capacity report and select the weakest Readiness component. It does not add points.
-- Foreign: select the greater current value of Foreign Exposure and Sponsor Dependence; this is informational and does not create diplomatic leverage.
-- National Question: call the same Northern review helper used by the dedicated ledger, only when its canonical review trigger passes.
-- Culture: call the same Evidence inspection helper when revealed; otherwise review ordinary cultural capacity without exposing concealed evidence.
-
-Shared scripted effects own the actions. The dashboard and focus inlay never duplicate rewards, costs, or route logic.
-
-## 5. National-focus inlay
-
-### 5.1 Engine surface
-
-The focus tree declares `ireland_national_situation_inlay` through the vanilla `focus_inlay_windows` system. The definition lives in `common/focus_inlay_windows/ireland_national_situation_inlay.txt`; the rendered window lives in `interface/ireland_national_situation_inlay.gui`.
-
-It is `internal = yes`, visible for the original Ireland tag after initialization, and never conceals focus branches.
-
-### 5.2 Placement
-
-The inlay occupies the deliberately empty upper gap between the opening political trunk and the economic/defence trunks. It must not cover a focus node, connector, shortcut, or the initial camera target. Its final pixel position is accepted only after focus render and raster review.
-
-### 5.3 Information and actions
-
-The compact inlay shows six colour-coded summaries:
-
-- Settlement;
-- Provision;
-- Readiness;
-- Neutrality;
-- Northern settlement;
-- Cultural capacity/evidence.
-
-The National Question uses a locked or integration-stage phrase rather than presenting Integration Capacity as a complete settlement aggregate. Culture displays public capacity and a sealed or revealed evidence marker rather than allowing a lone capacity value to explain an evidence-driven status.
-
-It has two scripted buttons:
-
-- Refresh report, calling the same idempotent refresh helper as the full hub;
-- Next state action, calling the same next-parliament-step helper and available only when a canonical parliamentary action is available.
-
-Every summary has a tooltip naming its purpose and directing the player to the National Situation decision category for component detail.
-
-## 6. State and lifecycle
-
-The feature adds only presentation state:
-
-- `ireland_mechanics_hub_selected_tab`;
-- `ireland_mechanics_hub_selected_row`;
-- optional cached row/status frames if required by the GUI renderer.
-
-The first tab is selected during campaign initialization. Existing `ireland_conditions_gui_dirty` is the shared dirty counter. Every effect that changes a displayed value must already or newly dirty this counter. Cleanup removes selection-only state when Ireland is archived or no longer valid, without clearing gameplay ledgers.
-
-## 7. AI contract
-
-The dashboard and inlay use `ai_enabled = no` or the inlay equivalent. AI continues to use native decisions, focus plans, and canonical executors. A human-facing action is acceptable only if an AI-accessible native path already exists or the action is a pure refresh with no gameplay benefit.
-
-## 8. Localisation contract
-
-All visible labels, values, lock reasons, status explanations, action requirements, and tooltips are localised in English with UTF-8 BOM. The hub uses scripted localisation for tab/row-specific detail and status text. It does not expose internal flag or variable identifiers.
-
-## 9. Asset contract
-
-The implementation reuses the existing 510 by 590 National Conditions background and the shared value-row, compact-row, action-button, lock, warning, critical, and ready sprites. A distinct open-ledger category icon prevents National Situation from being confused with Parliament, while small brass tab and row markers provide persistent selection without changing the status-colour vocabulary.
-
-The focus inlay uses vanilla tiled panel framing plus the registered Ireland status sprites. Static state is always readable; animation is optional and may only communicate a real warning or completed-state transition. Transform-only animation is forbidden.
-
-## 10. Acceptance scenarios
-
-1. Opening: State is readable immediately; unrevealed tabs remain present with exact unlock explanations.
-2. Weak Provision: the aggregate and active bottleneck are amber/red, the detail explains the bottleneck cap and affected actions, and refresh does not grant points.
-3. Weak Readiness: the rounded aggregate, active bottleneck cap, and failed military gates are named.
-4. Foreign imbalance: bilateral leverage remains neutral while exposure/dependence carries risk colour.
-5. Northern opening: the summary activates, its six rows match the dedicated ledger, and review uses the same helper.
-6. Evidence concealed: the Culture tab shows ordinary cultural capacity and a locked evidence row without leaking hidden content.
-7. Evidence revealed: the evidence summary and inspection action match the dedicated ledger.
-8. Parliament: the inlay and dashboard next-step button enable under the same trigger as the Parliament button and call the same executor.
-9. Archived route: no direct action remains available; values remain readable when the country remains Ireland.
-10. Focus layout: the inlay covers no node or connector at normal UI scale and does not change focus prerequisites, rewards, filters, or AI.
-
-## 11. Completion boundary
-
-Completion requires the decision category, scripted GUI, focus inlay, shared triggers/effects, dynamic localisation, asset wiring, focus declaration, initialization, cleanup, AI-equivalent paths, GUI inspection at 1920x1080 and 2560x1440, focus render/raster review, documentation, and independent audits. No placeholder art or unexplained displayed value is accepted.
+- four cards and no additional permanent values;
+- only two public numeric aggregates;
+- no tabs, row selection, or refresh;
+- no dead or bypassing action;
+- no oversized internal-cleanup focus tooltip;
+- no focus orphan, crossing, connector-through-node, or long connector;
+- focus inlay does not cover a focus or connector and contains no permanently grey control;
+- player-facing text resolves and remains natural policy prose;
+- no placeholder or fallback art.

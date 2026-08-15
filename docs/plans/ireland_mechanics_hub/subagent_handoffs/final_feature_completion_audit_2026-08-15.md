@@ -1,5 +1,7 @@
 # Ireland National Situation Ledger: final feature-completion audit
 
+> Historical audit only. Its six-tab/34-record scope was rejected by player review and superseded by the compact Cabinet Briefing correction and its successor completion evidence.
+
 Date: 2026-08-15
 Feature slug: `ireland_mechanics_hub`
 Audit mode: read-only source, plan, asset, documentation, and frozen-evidence comparison

@@ -1,8 +1,8 @@
 # Overview: Ireland Total Overhaul's evolving decision categories. Visibility follows
 # constitutional, material, security, foreign, Northern, regional, and postwar lifecycle gates.
 
-# Persistent control surface for the six public mechanic families. It remains
-# visible when empty because the scripted GUI is itself the player-facing content.
+# Compact cabinet summary for four strategic national conditions. It remains
+# visible when empty because the briefing itself is player-facing content.
 ireland_national_situation = {
 	icon = GFX_decision_category_ireland_national_situation
 	scripted_gui = ireland_national_situation_scripted_gui

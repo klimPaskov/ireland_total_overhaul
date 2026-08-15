@@ -6,7 +6,7 @@ Feature slug: `ireland_mechanics_hub`
 
 - Asset name: Ireland National Situation focus-tree inlay background
 - Asset type: static scripted-GUI / focus-tree inlay background panel
-- Intended use: 460x248 compact summary sheet shown beside the Ireland focus branches
+- Intended use: 460x248 four-card Cabinet Briefing shown in the decision view and beside the Ireland focus branches
 - Source mode: `$imagegen`
 - Generation rationale: This is bespoke fictional/symbolic UI art for the Ireland mechanics hub. The existing conditions dashboard background establishes the family style but does not provide the compact inlay canvas or its title/row/button negative-space layout.
 - Generation prompt: [focus_inlay_background_prompt.md](prompts/focus_inlay_background_prompt.md)
@@ -19,15 +19,15 @@ Feature slug: `ireland_mechanics_hub`
 - Related GUI consumer: `interface/ireland_national_situation_inlay.gui`, background element `ireland_focus_inlay_background`
 - Animation: none; static is sufficient because motion would not communicate additional state
 - Contact sheet: not needed; this package contains one final variant. See [contact-sheet record](contact_sheets/NOT_NEEDED.md).
-- Visual notes: Deep green leather/painted-wood frame, aged cream ledger field, restrained brass rules and fasteners, quiet title band, six-row-capable central negative space, and quiet bottom band for two separately rendered buttons. No baked text, flags, portraits, status colours, icons, button states, or click-region ornament.
-- Status: `complete` and wired through `interface/ireland_gui_assets.gfx` and `interface/ireland_national_situation_inlay.gui`.
+- Visual notes: Deep green leather/painted-wood frame, aged cream paper, restrained brass rules and fasteners, quiet title band, four-card negative space, and a quiet bottom band for one optional action. No baked text, flags, portraits, status colours, icons, button states, or click-region ornament.
+- Status: `complete` and wired through `interface/ireland_gui_assets.gfx`, `interface/ireland_national_situation.gui`, and `interface/ireland_national_situation_inlay.gui`.
 
 ## `national_situation`
 
 - Asset name: Ireland National Situation Ledger decision-category icon
 - Related feature slug: `ireland_mechanics_hub`
 - Asset type: static decision-category icon
-- Intended in-game use: category button and scripted-GUI tab identity for the Ireland National Situation Ledger
+- Intended in-game use: decision-category button for the Ireland Cabinet Briefing
 - Source mode: `$imagegen`
 - Generation rationale: A bespoke fictional/symbolic category emblem was required; the canonical decision-category references establish the compact transparent HOI4 silhouette, while the mechanics-hub prompt requires a distinct ledger/dashboard subject.
 - Generation prompt: [national_situation_prompt.md](prompts/national_situation_prompt.md)
@@ -38,7 +38,7 @@ Feature slug: `ireland_mechanics_hub`
 - Sprite name: `GFX_decision_category_ireland_national_situation`
 - Suggested `.gfx` file: `interface/ireland_icons.gfx`
 - Related decision category: `ireland_national_situation`
-- Related GUI surface: `interface/ireland_national_situation.gui`
+- Related GUI surface: `interface/ireland_national_situation.gui`; the small coloured register marks are decorative document dividers and do not correspond to tabs or extra player-facing values
 - Visual notes: Open cream ledger with six distinct colored register tabs/marks, deep Irish green leather/painted wood, restrained brass, dark outline and subtle shadow. No text, people, flag, Parliament seal, or reused settlement-government emblem.
 - Contact sheet: `docs/assets/ireland_mechanics_hub/contact_sheets/contact_sheet.png`
 - Status: `complete` and wired through `interface/ireland_icons.gfx`, `common/decisions/categories/ireland_categories.txt`, and `interface/ireland_national_situation.gui`.
@@ -60,7 +60,7 @@ Feature slug: `ireland_mechanics_hub`
 - Related GUI elements: `ireland_mechanics_hub_state_selected`, `ireland_mechanics_hub_provision_selected`, `ireland_mechanics_hub_readiness_selected`, `ireland_mechanics_hub_foreign_selected`, `ireland_mechanics_hub_northern_selected`, `ireland_mechanics_hub_culture_selected`
 - Visual notes: One thin aged-brass horizontal rule with dark bronze edge and transparent corners; decorative selected-state marker, not a click region.
 - Contact sheet: `docs/assets/ireland_mechanics_hub/contact_sheets/contact_sheet.png`
-- Status: `complete` and wired through `interface/ireland_gui_assets.gfx`, `interface/ireland_national_situation.gui`, and the selected-tab visibility bindings.
+- Status: `superseded presentation asset`; retained as source evidence and registered for compatibility, but not consumed by the Cabinet Briefing.
 
 ## `row_selected`
 
@@ -79,4 +79,4 @@ Feature slug: `ireland_mechanics_hub`
 - Related GUI elements: `ireland_mechanics_hub_row_1_selected` through `ireland_mechanics_hub_row_7_selected`
 - Visual notes: One small aged-brass diamond with a right-pointing notch, dark bronze outline, and transparent corners; decorative selected-state marker, not a click region.
 - Contact sheet: `docs/assets/ireland_mechanics_hub/contact_sheets/contact_sheet.png`
-- Status: `complete` and wired through `interface/ireland_gui_assets.gfx`, `interface/ireland_national_situation.gui`, and the selected-row visibility bindings.
+- Status: `superseded presentation asset`; retained as source evidence and registered for compatibility, but not consumed by the Cabinet Briefing.

@@ -96,7 +96,7 @@ ireland_close_exceptional_route_decisions = {
 	clr_country_flag = ireland_exceptional_extraction_benefit_active
 }
 
-ireland_refresh_exceptional_route_state = {
+ireland_refresh_exceptional_route_state_internal = {
 	ireland_initialize_high_kingship_values = yes
 	ireland_initialize_five_provinces_values = yes
 	ireland_initialize_otherworld_obligations = yes
@@ -141,4 +141,13 @@ ireland_refresh_exceptional_route_state = {
 	if = { limit = { has_country_flag = ireland_conclusion_high_king_two_irelands } set_cosmetic_tag = IRE_IRELAND_HIGH_KING_TWO_IRELANDS }
 	if = { limit = { has_country_flag = ireland_conclusion_five_courts_otherworld } set_cosmetic_tag = IRE_IRELAND_FIVE_COURTS_OTHERWORLD }
 	ireland_rebuild_mission_counters = yes
+}
+
+# Public call surface. Route focuses, decisions, missions, and events already
+# provide their own authored outcome text; the profile/spirit reconciliation is
+# implementation work and must not expand into a several-screen effect tooltip.
+ireland_refresh_exceptional_route_state = {
+	hidden_effect = {
+		ireland_refresh_exceptional_route_state_internal = yes
+	}
 }

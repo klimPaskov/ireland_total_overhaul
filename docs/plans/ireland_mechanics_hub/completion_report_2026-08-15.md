@@ -1,59 +1,89 @@
-# Ireland National Situation Ledger completion report
+# Ireland Cabinet Briefing and focus-presentation completion report
 
 Date: 2026-08-15
 Feature slug: `ireland_mechanics_hub`
-Status: implemented
+Status: audited complete
 
 ## Outcome
 
-Ireland now has one player-facing National Situation Ledger in the decision view and one compact National Situation inlay in the focus view. They explain the existing State, Provision, Readiness, Foreign Pressure, National Question, and Culture and Evidence systems without adding another balance layer.
+The rejected six-tab National Situation Ledger has been replaced by a compact Cabinet Briefing in the decision view and a matching informational inlay in the focus view. The surface presents four ordinary strategic conditions:
 
-The full ledger presents 34 purposeful public records. Every row has a live value or accountable state, a selected-row explanation, a separate family-purpose line, a current consequence or binding gate, a next canonical action, and colour-coded ready, warning, critical, or locked status. Event cursors, preview variables, dirty counters, AI caches, frame indices, and other implementation-only values remain hidden.
+- Government;
+- National Supply;
+- Defence;
+- National Question.
 
-## Interaction and authority
+Only National Supply and Defence expose numbers, each as one canonical aggregate out of 100. Government and the National Question use short qualitative states. There are no tabs, row selectors, internal record lists, diagnostic questions, manual refresh controls, overlaid status seals, or duplicated mechanic values.
 
-- State actions delegate to the guarded Parliament executors.
-- Provision and Readiness refresh their canonical aggregates and select the weakest component; they grant no value.
-- Foreign Pressure selects the greater autonomy risk between Foreign Exposure and Sponsor Dependence.
-- National Question delegates to the existing Northern review request and synchronizer. Its six rows retain their authored progressive focus reveal.
-- Culture selects the weakest public capacity; a revealed Evidence row delegates to the existing evidence review.
-- Refresh recomputes public projections through existing helpers and grants no reward or route progress.
-- The focus inlay provides the same summaries plus guarded Refresh and next-Parliament-step actions.
-- Route archival disables the action and refresh controls. AI continues to use native focuses, decisions, missions, and executors and never clicks the GUI.
+The decision-view briefing has one optional `Advance Programme` button. It is visible and clickable only when the next canonical Parliament step is currently legal, and delegates to the guarded Dáil, Seanad, confidence, or budget executor. The focus inlay is informational only, so it cannot show a grey or dead action.
 
-## Presentation and assets
+## Natural gameplay contract
 
-The full ledger is a 510 by 590 decision-category panel with persistent tab and row selection, distinct family icons, consequence text, exact requirement tooltips, and active/archive states. The 460 by 248 focus inlay is placed at `x = -600, y = 10`, inside the empty upper corridor between the cultural and economic lanes and above focus row two.
+- The briefing reads existing authoritative variables and flags; it does not create a new progression layer.
+- The four card tooltips explain the practical policy consequence and direct the player to the existing decision category that owns detailed action.
+- The one contextual action cannot bypass Political Power costs, stage order, settlement gates, or canonical executor checks.
+- When no action is legal, the button is absent rather than grey.
+- Route archival leaves a readable historical summary and exposes no dead controls.
+- AI continues to use native focuses, decisions, missions, and shared executors; it never clicks the GUI.
 
-The category icon, inlay background, selected-tab marker, and selected-row marker have final DDS files, registered sprites, source/processed PNGs, prompt records, contact sheets, and manifests under `docs/assets/ireland_mechanics_hub/`. No placeholder or fallback asset is used.
+## Presentation cleanup
+
+The full panel and inlay both use a 460 by 248 paper surface, four distinct category emblems, one line of state text per card, and one short cabinet assessment. Redundant ready/warning/critical/locked badge overlays were removed. The focus inlay remains at `x = -600, y = 10` in the empty upper corridor and contains no interactive button.
+
+The exceptionally long focus-effect disclosure was also removed. `ireland_refresh_exceptional_route_state` is now a public hidden wrapper around `ireland_refresh_exceptional_route_state_internal`, so internal idea replacement, clamp, counter, and cosmetic synchronization no longer floods the player tooltip. Every focus retains its authored concise reward tooltip.
+
+## Focus-tree correction
+
+The foreign-policy, Northern, Five Provinces, and Otherworld bands were reflowed into compact local trees. Previously detached available-only conclusions now have visible prerequisites that duplicate their existing availability requirements. The Five Provinces and Otherworld capstones use one visible OR prerequisite block over their real terminal outcomes instead of a misleading long connector from an early setup focus.
+
+Current focus inspection revision `638d0ab4e98afd31` reports:
+
+- 256 focuses and 262 connectors;
+- exactly three true opening roots;
+- all 28 authored `allow_branch` blocks visible with `always = yes`;
+- zero connector crossings;
+- zero connectors through unrelated focuses;
+- zero long connectors;
+- zero cramped same-row pairs, with minimum spacing two columns;
+- zero isolated-focus diagnostics.
+
+Strict Army, Navy, and Air experience filter parity is exact. Territorial and Northern-reclamation focuses use `FOCUS_FILTER_ANNEXATION`, including the Northern ledger, Northern policy sequence, national-question dossier, five reunification methods and resolutions, Atlantic expansion choices, enforcement, and postwar settlement sequence.
+
+## Supplied error cleanup
+
+The supplied Ireland-owned error signatures were checked against current source. The invalid `is_at_war` trigger, malformed dynamic Fianna cost tokens, malformed postwar factory-use constant token, invalid `localisation_key` spelling, nonreciprocal focus exclusions, and malformed building-slot form are absent. The three `KOM_democratic` flags are valid uncompressed 32-bit true-colour TGA files at the required sizes. The supplied IRQ, GER, and CHL lines are base-game sources outside this Ireland mod and were not overridden.
 
 ## Files and systems
 
-- Feature source of truth: `docs/specs/ireland_mechanics_hub/`
-- Player and maintainer guide: `docs/ireland_national_situation_ledger.md`
+- Source design: `docs/specs/ireland_mechanics_hub/`
+- Accepted correction: `docs/plans/ireland_mechanics_hub/improvement_loop/natural_cabinet_briefing_correction_2026-08-15.md`
+- Maintainer/player guide: `docs/ireland_national_situation_ledger.md`
 - Decision category: `common/decisions/categories/ireland_categories.txt`
-- Scripted GUI binding: `common/scripted_guis/ireland_scripted_guis.txt`
+- Scripted GUI: `common/scripted_guis/ireland_scripted_guis.txt`
 - Focus inlay declaration: `common/focus_inlay_windows/ireland_national_situation_inlay.txt`
-- Shared tuning, triggers, and effects: `common/script_constants/ireland_mechanics_hub.txt`, `common/scripted_triggers/ireland_mechanics_hub.txt`, and `common/scripted_effects/ireland_mechanics_hub.txt`
+- Triggers/effects: `common/scripted_triggers/ireland_mechanics_hub.txt` and `common/scripted_effects/ireland_mechanics_hub.txt`
 - Dynamic text: `common/scripted_localisation/ireland_localisation.txt`
 - Layouts: `interface/ireland_national_situation.gui` and `interface/ireland_national_situation_inlay.gui`
-- Sprites and English text: `interface/ireland_gui_assets.gfx`, `interface/ireland_icons.gfx`, and `localisation/english/ireland_l_english.yml`
+- Focus source: `common/national_focus/ireland_focus_tree.txt`
+- Hidden exceptional refresh: `common/scripted_effects/ireland_exceptional_routes.txt`
+- English text: `localisation/english/ireland_l_english.yml`
 
 ## Meaningful validation evidence
 
-- Focus inspection revision `90beeec44304c287`: 256 focuses and 234 connectors, with zero connector crossings, node intersections, long connectors, or cramped same-row pairs. The inlay footprint contains no focus anchor and ends before row two.
-- Dashboard inspection revision `f8fc5fbe5ea0d72c`: six value-driven family scenarios plus the archived state linked the source graph with no blockers. The only overlap notices are the intentional shared status slot and click-transparent selected-tab overlays; the header, tabs, values, prose, and controls do not collide. A final source audit also confirms the neutral no-row-selected fallback before any bottleneck comparison is printed.
-- Inlay inspection revision `33f76c15e0ae8ae6`: source graph linked with no blockers or visible-overlap defect.
-- Active and archived scenarios were reviewed at 1920x1080 and 2560x1440 across normal, hover, selected, locked, disabled, warning, active, completed, empty/full-list, minimum/maximum-value, long-text, and missing-localisation states.
-- Scripted localisation resolves every mechanics-hub output key. The offline renderer cannot execute two defined-text projections and engine text-sprite state code; their source triggers and localisation branches were checked directly.
+- Focus inspect: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/0f9c6eaa50630511890205c6c21e52729f3fca2c7012ef274bf738ac7f9d407a/892766070ec309c1746fb02a3ec04ced7066e9645c94de1d62e2cca582f80d0b/focus-inspect.638d0ab4e98afd31f5f4b3604991d1daae276ba639385e9a2c1748f6c74eb6a8.json`
+- Focus render: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/a76f351b1892d1d1293ac79059fa3e26381ba9299f7986c6295a5f4c42b368a4/90a6fdc9c807747674e514f4a780d5cc04e5a1c94568afc99fab5174a00aead8/ireland_focus_tree.focus.svg`
+- Decision-view inspect: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/2c802d972eb3b2d371c4ebc6141432ce6baea63f649506c5a329472def08c699/bd96e3ee2fe9ecf384c71ec726adccbb6c07cfa7747908cf2e4648444782a37f/gui-inspect.2811d298d429cf40.json`
+- Decision-view render: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/8191898455a6580379351eb74ab6999851c49454071e522e1d228231b3900239/69076433219f9710888abf50fe4af574c6848ba23abc2adb86293b48f81f9878/ireland_national_situation_window-full.svg`
+- Focus-inlay inspect: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/24e9c8adfd2ec18f449dec242db108b9e3aa01523dc6e597f5d4675c1718620d/64d84bf365dcb643b065dc276ed0b263b4405090f4965912d8c871ae2a0772cc/gui-inspect.c01f45039e081dc5.json`
+- Focus-inlay render: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/c46930f95b8ecef27c8ae312dd6177b6b08aac971604c091b64bba0306001dd6/7686524cae7aef80303b4287a5efcca87e4aa6de80588ac9cb0a170c1d13125c/ireland_national_situation_inlay_window-full.svg`
 
-Current artifacts:
-
-- Dashboard inspect: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/2a7fb0bdc67faddfa4f26d7094b4efdaeba2fbdd0a7f674ba25dfae7e6bd7455/0531066c8f2c19074e69199ddd6c6c8db748496cc26131e886884a9e9e69744d/gui-inspect.f8fc5fbe5ea0d72c.json`
-- Dashboard render: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/8dd465e12d245fa8690535233c9c8d1e34972b5aea4f1eb74e7bf382605f907e/5903631abedac6364165f2b1b2ce31066b87355b302a3baf63d0f5573127b64b/ireland_national_situation_window-full.svg`
-- Inlay inspect: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/21971c03a44004835faf0800bda8ce7df13f47ba4eb0201f08c4fc8519f2cd62/c68c93f749b8d82905445e9821274e9c07bf106ce640b5299b3f31fba249c93b/gui-inspect.33f76c15e0ae8ae6.json`
-- Inlay state matrix: `hoi4-agent://workspace/mod_ireland_total_overhaul_aaca88216c92/artifact/5d211a9b8cef6d836d52bc11167a64043d6e7be0f7757becdc9ea963361cc2da/e70c67b075f460c6167c8c75eb2aa6cfa2c2f562d77ac94176d9e7f4e1c7a2b6/ireland_national_situation_inlay_window-state-matrix.png`
+Both GUI source graphs link without blockers and report no visible-overlap defects. The offline renderer cannot measure `context_aware_text`, execute `defined_text`, or execute engine text-sprite/button-state code; those source bindings and localisation branches are audited directly.
 
 ## Simplifications, omissions, and blockers
 
-No simplifications, omissions, fallback assets, duplicate mechanics, or feature blockers remain in the accepted National Situation Ledger scope. The optional cross-category navigation experiment `NSL-Q-01` remains deliberately queued rather than accepted; the implemented contextual actions already route through the canonical systems.
+No fallback art, duplicate mechanic, accepted gap, omission, or Cabinet Briefing simplification remains. Independent closure is recorded in:
+
+- `docs/plans/ireland_focus_tree/subagent_handoffs/final_focus_layout_filter_audit_2026-08-15.md`;
+- `docs/plans/ireland_mechanics_hub/subagent_handoffs/final_compact_localisation_audit_2026-08-15.md`;
+- `docs/plans/ireland_mechanics_hub/subagent_handoffs/final_compact_feature_completion_audit_2026-08-15.md`;
+- `docs/plans/ireland_country_package/subagent_handoffs/supplied_error_cleanup_2026-08-15.md`.

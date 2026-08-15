@@ -1,5 +1,7 @@
 # Mechanics-hub documentation reconciliation handoff — 2026-08-15
 
+> Historical reconciliation only. The six-tab ledger it documented was superseded by the compact Cabinet Briefing correction later on 2026-08-15.
+
 Feature: Ireland National Situation Ledger and focus-tree inlay
 Role: `hoi4_documentation_curator`
 Scope: documentation surfaces only; no gameplay, localisation, assets, spreadsheets, or `thumbnail.png` edits

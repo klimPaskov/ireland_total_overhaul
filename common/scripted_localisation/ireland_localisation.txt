@@ -1143,3 +1143,51 @@ defined_text = {
 	text = { trigger = { check_variable = { var = ireland_mechanics_hub_selected_tab value = constant:ireland_mechanics_hub.tab_culture compare = equals } check_variable = { var = ireland_mechanics_hub_selected_row value = constant:ireland_mechanics_hub.row_six compare = equals } } localization_key = ireland_mechanics_hub_detail_culture_evidence }
 	text = { localization_key = ireland_mechanics_hub_selection_none }
 }
+
+# Cabinet Briefing: four strategic conditions, expressed as cabinet judgements
+# rather than the retired tab-and-row diagnostic ledger.
+defined_text = {
+	name = GetIrelandCabinetGovernmentStatus
+	text = { trigger = { has_country_flag = ireland_route_archived } localization_key = ireland_briefing_government_settled }
+	text = { trigger = { ireland_mechanics_hub_state_critical = yes } localization_key = ireland_briefing_government_critical }
+	text = { trigger = { ireland_mechanics_hub_state_ready = yes } localization_key = ireland_briefing_government_ready }
+	text = { localization_key = ireland_briefing_government_warning }
+}
+
+defined_text = {
+	name = GetIrelandCabinetSupplyStatus
+	text = { trigger = { NOT = { ireland_mechanics_hub_provision_visible = yes } } localization_key = ireland_briefing_supply_locked }
+	text = { trigger = { ireland_mechanics_hub_provision_critical = yes } localization_key = ireland_briefing_supply_critical }
+	text = { trigger = { ireland_mechanics_hub_provision_ready = yes } localization_key = ireland_briefing_supply_ready }
+	text = { localization_key = ireland_briefing_supply_warning }
+}
+
+defined_text = {
+	name = GetIrelandCabinetDefenceStatus
+	text = { trigger = { NOT = { ireland_mechanics_hub_readiness_visible = yes } } localization_key = ireland_briefing_defence_locked }
+	text = { trigger = { ireland_mechanics_hub_readiness_critical = yes } localization_key = ireland_briefing_defence_critical }
+	text = { trigger = { ireland_mechanics_hub_readiness_ready = yes } localization_key = ireland_briefing_defence_ready }
+	text = { localization_key = ireland_briefing_defence_warning }
+}
+
+defined_text = {
+	name = GetIrelandCabinetNorthernStatus
+	text = { trigger = { has_country_flag = ireland_route_archived } localization_key = ireland_briefing_northern_closed }
+	text = { trigger = { ireland_mechanics_hub_northern_locked = yes } localization_key = ireland_briefing_northern_locked }
+	text = { trigger = { OR = { has_country_flag = ireland_northern_settlement_failure has_country_flag = ireland_northern_occupation_failure } } localization_key = ireland_briefing_northern_recovery }
+	text = { trigger = { ireland_mechanics_hub_northern_critical = yes } localization_key = ireland_briefing_northern_critical }
+	text = { trigger = { ireland_mechanics_hub_northern_ready = yes } localization_key = ireland_briefing_northern_ready }
+	text = { localization_key = ireland_briefing_northern_warning }
+}
+
+defined_text = {
+	name = GetIrelandCabinetAssessment
+	text = { trigger = { has_country_flag = ireland_route_archived } localization_key = ireland_briefing_assessment_archived }
+	text = { trigger = { OR = { has_country_flag = ireland_northern_settlement_failure has_country_flag = ireland_northern_occupation_failure } } localization_key = ireland_briefing_assessment_northern_recovery }
+	text = { trigger = { ireland_mechanics_hub_state_critical = yes } localization_key = ireland_briefing_assessment_government }
+	text = { trigger = { ireland_mechanics_hub_provision_critical = yes } localization_key = ireland_briefing_assessment_supply }
+	text = { trigger = { ireland_mechanics_hub_readiness_critical = yes } localization_key = ireland_briefing_assessment_defence }
+	text = { trigger = { ireland_next_state_action_available = yes } localization_key = ireland_briefing_assessment_parliament }
+	text = { trigger = { AND = { ireland_mechanics_hub_state_ready = yes ireland_mechanics_hub_provision_ready = yes ireland_mechanics_hub_readiness_ready = yes } } localization_key = ireland_briefing_assessment_secure }
+	text = { localization_key = ireland_briefing_assessment_watch }
+}
