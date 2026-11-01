@@ -75,10 +75,13 @@ A closure handoff should not claim implementation completion on its own. It tell
 
 Use the system skill that owns the surface being improved.
 
+When an addendum affects any supported focus, event-chain, technology/doctrine, weighted-logic, scripted-GUI, or map surface, require the matching MCP baseline and post-change evidence under its owner skill. Weighted audit-patch-compare evidence must route through `hoi4_ai_probability_auditor`. Exact unavailable routes remain blockers or unresolved evidence, and source-only review is not equivalent.
+
 - `hoi4-feature-planning` is the standard for expansion spec quality. The addendum should be idea-first, detailed, and implementation-ready, but not forced into a rigid template.
 - `hoi4-events` owns event chains, event details, escalation variants, optional mod-specific logging surfaces when event work uses them, docs, and documentation alignment.
 - `hoi4-focus-trees` owns route depth, branch interaction, focus rewards, route AI, focus icons, and focus documentation.
-- `hoi4-decisions-missions` owns decisions, missions, costs, objectives, scripted GUI decision surfaces, hidden decision visibility, tooltips, AI actions, and cleanup.
+- `hoi4-decisions-missions` owns decisions, missions, costs, objectives, gameplay-changing GUI actions, hidden decision visibility, tooltips, AI actions, and cleanup.
+- `hoi4-scripted-gui` owns scripted GUI reference mapping, layout and content budgets, iterative MCP preview and comparison, click-region and state review, and visual acceptance.
 - `hoi4-feature-assets` owns visual assets, animated sprites, animated portraits, source rules, DDS outputs, manifests, contact sheets, and sprite handoffs.
 - `hoi4-text-audio-research` owns sourced quotes, cultural remarks, slogans, title-like references, audio source checks, license checks, attribution notes, and copyright-risk notes. The owning implementation skill handles wiring and alignment with any explicitly scoped repository surfaces.
 - `hoi4-subagents` explains when to use a planner subagent, a patch-capable system subagent, an asset worker, a read-only auditor, or other subagents.
@@ -115,9 +118,9 @@ Improvement addenda, audit follow-up plans, subagent handoffs, and implementatio
 docs/plans/<feature_slug>/
 ```
 
-The plans folder is where subagents add working handoffs. The specs folder is where accepted source-of-truth feature specs live.
+The plans folder holds working handoffs. A spec path, status label, old handoff, or implementation evidence does not establish design approval. Record the explicit user decision or parent acceptance within existing authorization that supports each accepted claim. Preserve unsupported or conflicting claims as unresolved.
 
-If an improvement addendum is accepted as source design, the main agent should either implement it or fold the design into the relevant spec file under `docs/specs/<feature_slug>/`. Do not let accepted design live only as a loose plan if the final spec is meant to be complete.
+If an improvement addendum is accepted as source design, fold it into the relevant spec under `docs/specs/<feature_slug>/` or record it as accepted and queued with its acceptance basis and reason. Record implementation evidence separately. Do not let accepted design live only as an unclassified loose plan.
 
 ## The improvement question
 
@@ -150,7 +153,7 @@ Use prose, route maps, state diagrams, package tables, UI descriptions, event fa
 
 Do not write vague lines such as `add more flavor`, `make decisions deeper`, `add a hidden formable`, `improve AI`, or `add animations`. Name the route, action, state group, cost type, reveal condition, failure consequence, asset family, and AI behavior where they matter.
 
-When the weakness is weighted AI, timing, or random selection, turn the intended improvement into named scenarios and measurable ordering, timing, dominance, or starvation expectations. Require `hoi4.probability_inspect` before analysis, then select `hoi4.probability_evaluate`, `hoi4.probability_sweep`, `hoi4.probability_simulate`, `hoi4.probability_sequence`, `hoi4.probability_compare`, or `hoi4.probability_render` according to the evidence needed. Do not ask the implementation agent to prove an exact probability from an incomplete candidate pool or undeclared external state.
+When the weakness is weighted AI, timing, or random selection, turn the intended improvement into named scenarios and measurable ordering, timing, dominance, or starvation expectations. Route the mandatory read-only pass through `hoi4_ai_probability_auditor`: establish the baseline with `hoi4.probability_inspect`, select evaluation, sweep, simulation, sequence, comparison, or render evidence according to the declared scenario, let the owner apply any bounded patch, and require `hoi4.probability_analyze` with `analysis: "compare"` against the same scenarios afterward. The auditor does not choose balance targets or patch source. If the required MCP route is unavailable, record the exact blocker and leave the improvement unvalidated; source-only review is not equivalent. Do not ask the implementation agent to prove an exact probability from an incomplete candidate pool or undeclared external state.
 
 ## Design moves that matter
 
@@ -212,7 +215,11 @@ Do not grant every core for free unless the story and balance justify it. Prefer
 
 A scripted GUI is useful when the player needs to manage a living system visually. It is not useful when a normal decision category would be clearer.
 
+Apply the decision skill's category-picture eligibility gate before proposing static or animated pictures. Basic value tables and ordinary decisions can remain simple, while meters, extra custom controls, rich panels, interactive state puzzles, and other animations exclude an additional picture. Choose animation for useful state feedback rather than as a depth requirement.
+
 A GUI addendum should describe what the player sees, what values matter, what buttons can be clicked, what costs they use, what tooltips explain, what states or targets are locked, what warning states appear, what animation communicates, and how the UI closes or changes when the mechanic ends.
+
+Follow [hoi4-scripted-gui](../hoi4-scripted-gui/SKILL.md): choose or create a reference before implementation, map it to native controls and background regions, define coherent review scenarios and supported resolutions, and require live MCP previews throughout construction rather than only a final screenshot.
 
 Good scripted GUI use cases include congress vote boards, patron influence networks, formable progress panels, crisis meters, corruption webs, occult pressure seals, expedition logistics boards, faction cohesion screens, target cards, and reform panels with competing factions.
 
@@ -226,7 +233,7 @@ A country package is weak if it only has a tag, flag, leader, and generic tree. 
 
 A country addendum can define why the country exists, what states it can receive, what states are claims only, how it avoids invalid map states, starting leader, ruling party, advisors, ideas, units, technology, industry, supply, focus or overlay route, decisions, missions, survival tools, formables, claims, integration routes, diplomatic ambitions, asset needs, historical source needs, AI behavior, and cleanup.
 
-If the improvement changes a technology or doctrine tree, require `hoi4.tech_inspect` evidence for prerequisites, placement, exclusivity, unlocks, grants, bonuses, references, and missing assets; use `hoi4.tech_render` for the affected folder or branch and `hoi4.tech_compare` for the implemented change.
+If the improvement changes a technology or doctrine tree, require `hoi4.tech_inspect` evidence for prerequisites, placement, exclusivity, unlocks, grants, bonuses, references, and missing assets; use `hoi4.tech_render` for the affected folder or branch and `hoi4.tech_inspect` with `mode: "compare"` for the implemented change.
 
 If a shared tag can appear through more than one event, define origin logic. The same tag can use different mechanics depending on release origin, formation origin, or route origin.
 
@@ -234,11 +241,23 @@ If a shared tag can appear through more than one event, define origin logic. The
 
 Visual improvement should support mechanic clarity. It should not become decoration detached from gameplay.
 
+When an improvement changes a unit, building, creature, vehicle, aircraft, naval object, or map entity, include a 3D model review instead of treating the model as a final-render detail. Check whether the feature needs a static prop, a calibrated humanoid unit, a domain-specific mesh, or a building entity, then name the vanilla mesh/entity precedent, source-height/entity-scale crosswalk, one-image Meshy input rule, PDX material mapping, required skeletal actions, `.mesh`/`.anim` exports, reimport evidence, runtime hashes, valid map placement, and live consumer.
+
+Route bounded production to `hoi4_3d_model_pipeline` without inherited conversation context. Require the designed-source/rights gate, a substantially original source-informed refinement with a source-to-refinement comparison, explicit approval before any source-free fallback, native alpha where needed, the profile's generation model (currently Meshy 7), the route chosen under the 3D production guide's Route selection, and a `credit_budget` the user approves once. Require substantive multi-phase motion, complete required components, Internet-sourced-only unit audio, and bespoke vanilla-green counters backed by exact installed-vanilla inspection. Keep provider source, Blender checkpoints, processed textures, counter and sound handoffs, and runtime evidence separate from the parent-owned `.asset`, entity, `.gfx`, gameplay wiring, and in-game proof.
+
 An asset addendum can define route-specific report images, decision icons, idea icons, focus icon families, flags, portraits, faction emblems, scripted GUI panels, animated sprites, animated portrait variants, progression states, and contact sheets.
 
 For animated assets, define the state. The asset worker needs to know what frame set means inactive, active, dangerous, locked, completed, corrupted, hidden, or formed. The main agent needs static fallbacks and sprite names. The docs need manifest data to prove the asset was sourced or generated correctly.
 
 Use source-based assets for real people, real flags, real symbols, and real historical images. Use generated assets for fictional, symbolic, supernatural, or impossible content. If an asset cannot be sourced or generated safely, mark it blocked instead of substituting a weak image.
+
+Use `docs/assets/<feature_slug>/` only as a temporary feature-scoped evidence and working folder for source files, previews, contact sheets, manifests, animation plans, and handoffs. Keep it while implementation or review is active, blocked, or incomplete. Before the feature is fully complete, promote durable provenance, coverage, review, and runtime-wiring facts into permanent feature or plan documentation, verify that no runtime reference points into `docs/assets/`, and delete the complete workspace. A closure handoff should treat the absent workspace as expected, not as a missing asset. Never delete skill-local reference assets or another feature's workspace.
+
+## Super-event improvement
+
+A super-event addendum should explain why the moment is larger than a normal popup. Define the campaign threshold first: first reveal, faction formation, global escalation, defeat aftermath, campaign-ending threshold, hidden route reveal, final formable reveal, or regional order change.
+
+A good super-event addendum includes trigger meaning, title direction, description direction, button tone, quote direction, image direction, sourced-audio direction, documentation, and catalog alignment where the repository maintains one. It should not choose a dramatic quote, image, or sound without a campaign threshold that justifies it. Formables deserve super-events only when they materially alter a region, revive a major identity, complete a hidden route, or announce a new bloc.
 
 ## Text and audio research improvement
 
@@ -270,7 +289,7 @@ Patch-capable subagents are active by default for small, file-specific improveme
 
 ## Parent agent responsibility
 
-The main agent decides what to do with the addendum. It can implement it now, queue it, reject it with a reason, or ask for a narrower pass.
+The main agent decides what to do with the addendum. It can implement it now, queue it, reject it with a reason, or ask for a narrower pass. When the user takes part, present the proposals as one round answered with Adopt, Adapt, Defer or Reject, and record each answer in the feature's `decisions.md` with the mapping in `hoi4-feature-planning/references/consultation-questions.md`.
 
 Do not claim a major feature is complete while an accepted expansion addendum is unimplemented and unreported. If the addendum is queued, say where it is queued and why it was not included in the current implementation.
 

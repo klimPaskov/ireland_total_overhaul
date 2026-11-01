@@ -21,6 +21,7 @@ Environment variables:
 from __future__ import annotations
 
 import argparse
+import json
 import struct
 import os
 import platform
@@ -52,6 +53,7 @@ def run_command(command: list[str], cwd: Path | None = None) -> subprocess.Compl
     result = subprocess.run(
         command,
         cwd=str(cwd) if cwd else None,
+        stdin=subprocess.DEVNULL,
         text=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -74,6 +76,7 @@ def run_binary_command(command: list[str], cwd: Path | None = None) -> subproces
     result = subprocess.run(
         command,
         cwd=str(cwd) if cwd else None,
+        stdin=subprocess.DEVNULL,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
@@ -285,7 +288,7 @@ def run_ffmpeg_bgra_fallback(
             "Set one of these:\n"
             "- TEXCONV_PATH=/path/to/texconv\n"
             "- TEXCONV_EXE=/path/to/texconv.exe\n"
-            "- TEXCONV_DOCKER_IMAGE=chaos-texconv"
+            f"- TEXCONV_DOCKER_IMAGE={project_setting('texconv_docker_image')}"
         )
 
     source_width, source_height = probe_image_size(input_file)
@@ -294,6 +297,7 @@ def run_ffmpeg_bgra_fallback(
     vf = f"scale={target_width}:{target_height}:flags=lanczos,format=bgra"
     command = [
         str(ffmpeg),
+        "-nostdin",
         "-v",
         "error",
         "-i",
@@ -328,7 +332,7 @@ def convert_to_dds(
         run_ffmpeg_bgra_fallback(input_path, output_path, width, height)
         return output_path
 
-    with tempfile.TemporaryDirectory(prefix="chaos_dds_") as temp_dir_str:
+    with tempfile.TemporaryDirectory(prefix="hoi4_dds_") as temp_dir_str:
         temp_dir = Path(temp_dir_str)
         input_dir = temp_dir / "in"
         output_dir = temp_dir / "out"
@@ -364,6 +368,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--width", type=int, default=None, help="Target width in pixels.")
     parser.add_argument("--height", type=int, default=None, help="Target height in pixels.")
     return parser.parse_args()
+
+
+def project_setting(name: str) -> str:
+    """Return one project value from project_settings.json beside this tool (shared-tool contract)."""
+    settings = json.loads(Path(__file__).with_name("project_settings.json").read_text(encoding="utf-8"))
+    return str(settings[name])
 
 
 def main() -> int:

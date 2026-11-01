@@ -39,36 +39,59 @@ Treat every event as a contract across some or all of these surfaces:
 If a task seems to need custom one-off plumbing, first check whether the behavior should become a reusable helper for future events. Repeated target selection, weighted random actor choice, cleanup, event target storage, scripted localisation selectors, variable formatting, dynamic costs, and common option effects usually belong in scripted helpers.
 
 
+### Shared unit-family provider integration
+
+Apply this section only when the destination repository already has a shared, extensible unit-family registry or provider API.
+
+When an event or owning system integrates with that API, declare whether the new land sub-unit or equipment-backed family is a standalone provider, a support attachment under an existing provider, or intentionally parent-owned because the engine cannot expose it independently.
+A standalone family must use the repository's idempotent owner-registration contract and implement only the callbacks the verified shared consumer exposes, such as eligibility, template construction, sustainment, equipment-token publication, presentation, management, derivatives, removal, and cleanup.
+A support attachment remains in the provider-owned transaction or template; a parent-owned disposition records the engine constraint and retains unlock, equipment, sustainment, presentation, and cleanup behavior in the parent package.
+
+Audit every in-scope family and support definition against the repository's actual provider, token, presentation, localisation, and cleanup contracts.
+Do not extend a central consumer-maintained switch when the verified owner-provider API can supply the same data; a missing provider row is an integration failure, not permission to add an undocumented fallback.
+
+
 ## Relationship with other skills
 
 Use this skill with:
 
 - `hoi4-feature-planning` when the user asks for event design or a deeper event specification before implementation
 - `hoi4-feature-assets` when the event needs event pictures, report images, news images, icons, flags, portraits, or final DDS assets
+- `hoi4-3d-model-pipeline` when the event creates or changes a visible 3D unit, building, creature, vehicle, aircraft, naval object, or map entity
 - `hoi4-frame-animation` when event presentation needs animated sprites, animated portraits, animated UI pieces, frame sheets, or GIF previews for review
 - `hoi4-text-audio-research` when an event needs sourced quotes, cultural references, title-like references, slogans, or music and audio research
 - `hoi4-focus-trees` when the event creates, unlocks, modifies, or depends on focus trees
 - `hoi4-decisions-missions` when the event creates or depends on decisions, missions, timed objectives, formables, or decision-driven mechanics
-- `hoi4-subagents` when bounded research, asset production, small patches, or completion audits should be delegated
+- `hoi4-scripted-gui` when the event owns or opens a scripted GUI; that skill owns reference-image mapping, layout, iterative MCP previews, and visual acceptance while this event skill retains gameplay and lifecycle ownership
+- `hoi4-subagents` when bounded research, asset production, event-owned UI layout work, small patches, or completion audits should be delegated
+- `hoi4_3d_model_pipeline` for bounded model geometry, textures, rigs, skeletal actions, sourced custom-unit audio research and synchronization design, `.mesh`/`.anim` exports, reimport proof, and runtime handoff when the event owns a 3D unit or building surface
 - `hoi4-improvement-loop` when an implemented event works but is still shallow, generic, disconnected, or underdeveloped
-- MCP event tools to inspect, trace, render, compare, and lint event chains without replacing the source-editing workflow
+- the installed `hoi4-agent-tools` MCP route for mandatory event-chain inspection, rendering, comparison, and lint-mode diagnostics without replacing the source-editing workflow
 
 The parent agent remains responsible for final integration, final validation, and completion claims. Subagents and helper skills provide evidence, patches, assets, or plans. They do not replace parent review.
 
 
 ## MCP event-chain pass
 
-Use the event viewer for unfamiliar, large, or cross-file chains and whenever a change can affect callers, descendants, state flow, targets, timing, or scope.
+For every event-chain surface supported by the installed MCP server, use the event tools as mandatory evidence before and after source edits. If the required route is unavailable, record the exact blocker and do not treat source-only review as equivalent engine evidence.
 
 1. Before any parent or subagent source write, call `hoi4.event_inspect` in `scan` or `roots` mode and record the returned revision as the comparison baseline.
 2. Use a narrow selector with `trace`, `explain_path`, `state_flow`, or `impact`.
 3. Read linked JSON only when the compact result lacks necessary evidence.
 4. Edit the event and connected mod files through the normal source workflow.
-5. Run `hoi4.event_compare` with the baseline revision as `before`, then run `hoi4.event_inspect` in `lint` mode and the most relevant `hoi4.event_render` view.
+5. Run `hoi4.event_inspect` with `mode: "compare"` with the baseline revision as `before`, then run `hoi4.event_inspect` in `lint` mode and the most relevant `hoi4.event_render` view.
 
 The event tools are read-only. Comparison refreshes edited source by default. Use bounded depth and node limits so MCP remains one small part of the larger skills, subagent, and repository workflow.
 
-For event-option `ai_chance`, event MTTH, direct random chance, and `random_list` logic, use `hoi4.probability_inspect` before choosing scenarios, then use `hoi4.probability_evaluate`, `hoi4.probability_sweep`, `hoi4.probability_simulate`, or `hoi4.probability_compare` only for the surface being reviewed. Use `hoi4.probability_sequence` only when a complete custom-pool manifest explicitly declares cadence, recovery, caps, cooldowns, removals, resets, timer changes, and terminal states. Use `hoi4.probability_render` for timing, matrix, sensitivity, sequence, comparison, or unresolved views when they make the result easier to audit. Provide complete option or list pools when normalization applies, and provide scheduled state changes for timing questions. Treat exact, bounded, sampled, score-only, and unresolved results as different evidence; the analyzer does not choose balance targets or edit event source.
+### MCP evidence gate
+
+Before treating an event inspection or render as lifecycle evidence, read its `analysisMode`, `complete`, indexed helper count, files-scanned or source-hash inventory, unresolved entries, and diagnostics. In the installed event service, `trace` and `explain_path` use focused analysis, and `scan`, `roots`, `lint`, or `event_render` use focused analysis when a selector is supplied. Focused analysis reads only the bounded event and on-action sources, disables workspace-wide helper projections and lifecycle passes, and keeps the focused-boundary blocker even when helper expansion is requested. `state_flow` and `impact` request full analysis even when narrowed, while selector-free `scan` requests full analysis. Use a full route when helper or lifecycle coverage is required, and do not treat a focused trace or zero helper count as proof that a chain has no helpers.
+
+`event_inspect` with `mode: "compare"` accepts cached revisions, validated event-graph artifacts, or proposed source overlays. Report-only trace artifacts and render or manifest artifacts may fail artifact graph validation because they do not contain an event-graph payload. Use a graph-bearing artifact or another supported compare input when available. If none is available, preserve the exact blocker and do not invent a conversion or comparison result.
+
+For every event-option `ai_chance`, event MTTH, direct random chance, or `random_list` surface, route the read-only probability pass through `hoi4_ai_probability_auditor`. Establish named baseline scenarios with `hoi4.probability_inspect`, let the owning agent apply any bounded patch, then run mandatory `hoi4.probability_analyze` with `analysis: "compare"` against the same scenarios. Use `hoi4.probability_inspect`, `hoi4.probability_analyze` with `analysis: "sweep"`, `hoi4.probability_analyze` with `analysis: "simulate"`, `hoi4.probability_analyze` with `analysis: "sequence"`, and `hoi4.probability_analyze` with `analysis: "render"` only when their declared evidence conditions apply. Provide complete option or list pools when normalization applies, and provide scheduled state changes for timing questions. Treat exact, bounded, sampled, score-only, and unresolved results as different evidence. For `hoi4.probability_analyze` with `analysis: "compare"`, pass both `before` and `after` as probability-source objects with a source identifier or path, inline Clausewitz, or virtual patch, or pass before and after manifests under an identical scenario set. Do not put a cached `analysisId` in a source identifier; it belongs only to rendering. The auditor does not choose balance targets or edit event source. If the probability route is unavailable, record the exact blocker and leave the conclusion unresolved.
+
+For event-option audits, qualify a reused option identifier with its parent event identifier and include every option in that event's local candidate pool. Verify the installed server version and live route schema before building scenarios; use top-level scenario dates, explicit controller maps, and typed scope bindings only when that schema accepts them. Inspect returned `poolComplete` and `unresolved` fields before interpreting a normalized share. Treat `candidateOverrides` as declared assumptions, not proof of live eligibility. An option share conditional on an event firing does not include the event's firing chance.
 
 Give patch-capable subagents disjoint file ownership. Serialize overlapping edits and run the final comparison only after their handoffs are integrated.
 
@@ -163,38 +186,7 @@ Every subagent edit must produce a handoff under `docs/plans/<feature_slug>/suba
 
 ## Major-event defeat aftermath
 
-Some major events should also have a structured aftermath when the threat is beaten.
-
-Use a defeat aftermath package when all of these are true:
-
-- the defeated threat was global or near-global in reach
-- the campaign lasted long enough to feel like a world crisis
-- the cost in casualties, destruction, or political disruption was high enough that the world should not simply snap back to normal
-
-Typical aftermath content:
-
-- a sourced defeat quote, cultural remark, or audio cue when the feature needs one
-- postwar treaties, compacts, or new world orders
-- recurring remembrance, reconstruction, or vigilance events
-- lasting ideas, tech-sharing groups, or diplomatic rules that exist because the world learned from the crisis
-
-Do not add a treaty/new world order after every contained or short-lived disaster. Those only make sense when the event genuinely reshaped the campaign.
-
-
-### 7. Duration fields and constants
-
-Use `script_constants` for shared tuning, but remember that some duration fields reject both `constant:` and variable tokens.
-
-Known sensitive fields:
-
-- `set_country_flag = { days = ... }`
-- `set_global_flag = { days = ... }`
-- any other timed field that throws `Malformed token` for either `constant:category.key` or a variable token
-
-For those fields, use a file-scoped `@NAME = literal` constant in the same script file and pass `days = @NAME`. Keep the value mirrored with the matching `common/script_constants/` tuning entry, and update both in the same change.
-
-Do not work around this by setting a temp variable and passing `days = temp_name`. those fields can reject variable tokens too. In which case, a `meta_effect` must be used if possible.
-
+Read [`references/major-event-aftermath.md`](references/major-event-aftermath.md) whenever a major event can be defeated, contained, or end with an aftermath state. It contains the complete standard for this section and its subsections.
 
 ## Documentation rules
 
@@ -234,6 +226,13 @@ Do not leave the doc describing:
 - removed assets
 - outdated external record or deck expectations
 
+### Retiring unused helpers
+
+- Before deleting a scripted effect, trigger, or `defined_text`, search every placeholder constructor (`[ID]`-style `meta_effect` or `meta_trigger` text, `@` token pasting, and dynamically suffixed effect names) and the GUI, `.gfx`, localisation, and docs for the name; a zero literal token count alone does not prove the code is dead.
+- Delete the comment header attached directly above the removed block, or it will describe the next definition.
+- After each removal pass, rescan for helpers, localisation keys, and script-constant keys whose only consumer was the removed code, and repeat until nothing new appears.
+- Repository files can mix CRLF and LF line endings; edit them line by line with their own endings instead of splitting on one newline style.
+
 
 ## Formable nations as event surfaces
 
@@ -257,27 +256,24 @@ Use scripted helpers for formation effects. Do not duplicate formation logic in 
 
 Hidden formables should still have implementation coverage. They need reveal events, hidden flags, visibility triggers, localisation, assets, AI rules, and cleanup.
 
+When exact state control is the formation proof, use the manifest-driven state-puzzle workflow under `.claude/skills/hoi4-decisions-missions/templates/formable_state_puzzle/`. Keep generated state pieces, the shared territory helper, formation decision, AI path, and every in-scope decision category synchronized. Complete `category_attachment_audit.md`; under a strict family policy every category metadata block must attach the generated `context_type = decision_category` scripted GUI. A category picture or text-only description does not replace that attachment.
+
 
 ## Scripted GUI and animated event presentation
 
-Major event mechanics can use scripted GUI windows, decision-category interfaces, animated category art, animated leader portraits, or custom buttons when they make the system easier to play. Treat that UI as part of the event contract, not as decoration added later.
+Read [`references/event-presentation.md`](references/event-presentation.md) whenever an event adds a scripted GUI, an animated presentation, or a custom popup. It contains the complete standard for this section and its subsections.
 
-When an event uses a custom interface, align these surfaces:
+## 3D model and entity integration
 
-- decision category or entry button
-- scripted GUI definition
-- scripted triggers and effects
-- costs and tooltips
-- animated and static sprites
-- localisation and scripted localisation
-- AI fallback behavior
-- cleanup and invalidation rules
-- documentation and asset manifest
+When an event creates or changes a 3D unit or building, treat the model as a runtime contract across the event, unit or building definition, entity, `.asset`, `.gfx`, materials, textures, actions, and live map consumer.
 
-Every player-clickable GUI button that changes gameplay must validate the same requirements as a normal decision. It must show costs and missing requirements clearly. It must call scripted effects that can also be used by AI, decisions, focuses, and cleanup systems.
+The event implementation must use the `hoi4-3d-model-pipeline` handoff instead of trying to produce geometry or animations inside event work. The model handoff must include the exact runtime identifiers, processed texture paths, `.mesh`/`.anim` paths, action names, scale crosswalk, provider and Blender evidence, reimport proof, and final hashes.
 
-Animated leader portraits, animated route emblems, glow effects, particles, and float effects should be used for major reveals, extreme-route escalation, hidden formables, supernatural leaders, or final transformations. Each animated asset needs a static fallback and manifest entry.
+For a spawned unit, validate that `create_unit` is executed in a country or other supported scope, that the unit template and sub-unit are registered, that every emitted `unit_<id>_icon_small` text icon exists when required, and that movement uses a real exported action rather than a static substitute.
 
+For a building or map entity, validate that the building has an entity, the entity key resolves in the `.gfx`/`.asset` chain, the province belongs to the specified state, the building command has the correct argument count, and the test province is visible at the intended zoom without an existing building hiding it.
+
+The main event agent owns the gameplay and runtime source wiring, final runtime copy synchronization, province/state placement, live consumer, and in-game evidence. The 3D worker owns the bounded model package and must not claim event or in-game completion.
 
 ## Generated asset handling
 
@@ -285,7 +281,7 @@ Use the `hoi4-feature-assets` skill whenever an event task requires generated or
 
 For every generated asset:
 
-1. Create the base artwork by following the official `$imagegen` skill workflow through `hoi4-feature-assets`.
+1. Create the base artwork by following the image generator's workflow through `hoi4-feature-assets`.
 2. Save the original generated image as a source PNG.
 3. Create a processed PNG preview at the correct HOI4 target size.
 4. Convert the processed PNG to DDS 32 bit unsigned BGRB 8.8.8.8.
@@ -313,6 +309,8 @@ Do not leave generated assets only in a temporary folder. If the event uses them
 
 ## Final event checklist
 
+After editing report or news text, audit every colour-bearing key drawn on a light parchment consumer, including scripted localisation output, and resolve each hit; use the repository's report-colour audit tool when one exists.
+
 Before closing an event task, verify the surfaces that actually exist for the feature:
 
 1. Event script files are updated, ids are stable, and namespaces are unique.
@@ -321,7 +319,7 @@ Before closing an event task, verify the surfaces that actually exist for the fe
 4. Shared effects, triggers, script constants, and event targets are updated when needed.
 5. Localisation exists for titles, descriptions, options, tooltips, news/report text, and dynamic values.
 6. News events, report events, and researched text or audio packages are wired only when they are real surfaces in the design.
-7. Supporting decisions, missions, ideas, focuses, AI, country setup, or scripted GUI surfaces are aligned when relevant.
+7. Supporting decisions, missions, ideas, focuses, AI, country setup, or scripted GUI surfaces are aligned when relevant. Every event-owned scripted GUI has a reviewed `hoi4_event_ui_worker` handoff with intermediate MCP preview evidence, corrected defects, and matched before-and-after layout evidence under `hoi4-scripted-gui`; shared UIs remain outside that worker's scope.
 8. Event pictures, report images, news images, icons, flags, portraits, animated sprites, and fallbacks exist when required.
 9. Generated or sourced assets are resized, converted, moved into correct folders, wired in `.gfx`, and recorded in manifests when they are part of the task.
 10. Documentation, specs, plans, manifests, and any explicitly scoped external records are updated only when the repository actually uses those surfaces.
@@ -329,7 +327,8 @@ Before closing an event task, verify the surfaces that actually exist for the fe
 12. Dynamic values, concrete costs, mechanic visibility, decision filtering, cleanup, AI behavior, and effect strength are checked where the spec calls for them.
 13. Focus trees preserve route structure, focus filters, varied rewards, idea lifecycles, route-specific AI, and visible branch payoffs where relevant.
 14. New fighting countries have dynamic starting forces, template assumptions, equipment and manpower handling, and reinforcement pathways.
-15. No fallback, placeholder, missing localisation, missing asset, missing AI behavior, or shallow substitute is hidden in the completion report.
+15. When the repository has a shared unit-family provider API, every in-scope family has an explicit standalone-provider, support-attachment, or parent-owned disposition, idempotent owner registration or documented engine constraint, and concrete token and presentation coverage.
+16. No fallback, placeholder, missing localisation, missing asset, missing AI behavior, or shallow substitute is hidden in the completion report.
 
 
 ## Event anatomy
@@ -349,6 +348,12 @@ Common event pieces:
 - **campaign-ending event**: a terminal or campaign-ending presentation only when the mod deliberately supports that kind of branch. Do not invent such a branch for ordinary events.
 
 Keep ids stable when updating existing chains. If an event already exists in a namespace, do not renumber it for cosmetic tidiness.
+
+- Leader events (`unit_leader_event`, `operative_leader_event`) must set `is_triggered_only = yes`, as the engine message and 40 of 40 vanilla leader events show. [vanilla-confirmed 1.19.4.1]
+- A non-integer event id suffix is not dead in vanilla, since `common/decisions/ITA.txt` fires `BBA_italy_missiolinis.02_north` and 3 more. Prefer integer suffixes anyway. [vanilla-confirmed 1.19.4.1]
+- Public news events normally set `major = yes`, as 596 of 677 vanilla news events do. [vanilla-confirmed 1.19.4.1]
+- The delay arguments of `country_event` include `days`, `hours`, `months`, `random_days` and `random_hours`, and the upper bounds of the `random_*` ones are exclusive. [docs]
+- No script effect disables or cancels an event. [docs]
 
 ### Baseline stages and escalation variants
 
@@ -434,6 +439,29 @@ Touch the relevant systems in the same implementation pass:
 
 If new reusable dynamic scripted effects or triggers are added, document them in the matching markdown file or repository helper documentation in the same change.
 
+#### Native special-project output overrides
+
+Do not assume duplicate native project IDs safely replace or partially merge definitions across filenames.
+For approved vanilla project output changes, use a complete replacement at the same relative vanilla file path unless the relevant engine merge behavior is proven.
+Repeating full definitions in a distinct mod filename can duplicate enable-equipment or module list entries.
+
+- Check installed native documentation, current vanilla source, and every existing mod owner of the file and project IDs before editing.
+- Retain original tuning, availability, rewards, and file-scoped constants, including other projects in the replaced file, while adding only approved owned output hooks.
+- Record vanilla source paths and SHA-256 hashes, then remove only the owned hooks from a comparison copy and verify exact remaining content against those sources.
+- Check effective source-ID uniqueness after same-path masking, including other mod files that still declare the IDs.
+
+Source equality establishes preservation only and must not be described as engine validation.
+
+#### Event-created country packages
+
+When auditing event-created country packages, verify the whole playable-country surface, not only the release effect: country files, custom-tag history, additive startup grants for existing countries, tag registration, base and ideology-specific cosmetic localisation with `_DEF` and `_ADJ` variants, flags, decision, focus, and idea icons, focus loading, AI strategy, docs, and manifests. For existing-country variants, set the event-created flag only on the release path and gate every `load_focus_tree` path by that flag. Do not copy vanilla country, state, or unit history only to add the mod's technologies, equipment, facilities, traits, or other additive setup; put that setup in a startup helper called from `on_startup`.
+
+Static named characters that need persistent script tokens must be recruited in history. Do not use runtime `recruit_character` or attempt a character-scope transfer of an unrecruited identity. For dated identities, a bounded `history/general` recruitment pool on a dedicated dormant holder is valid; the holder must have no owned states or gameplay route and must not reuse an event-owned playable holder or a test harness. Check date eligibility and original ownership before transferring from the original owner's country scope with `set_nationality = { target_country = <destination> character = <static_token> }`, and preserve availability dates, roles, identity flags, and retirement gates. Use `generate_scientist_character` only when a generated unnamed identity without a persistent character token is intended; never silently replace approved static identities with generated substitutes. Validate native execution separately from source proof.
+
+Every registered country tag, including stateless dormant or internal history holders, needs valid default and ideology flag lookup coverage in `gfx/flags/` (`82x52`), `gfx/flags/medium/` (`41x26`), and `gfx/flags/small/` (`10x7`), because native flag consumers remain active without territory or a playable route.
+Use the `hoi4-feature-assets` flag workflow for this minimum native consumer package, limit asset authorization to that package, and document intentionally shared institutional designs across aliases in the manifest.
+Validate actual 32-bit uncompressed bottom-left TGA headers and decoded orientation against installed and repository examples, correcting flag files directly without UI or dynamic-routing workarounds.
+
 ### 5. Use scopes deliberately
 
 Event bugs often come from scope drift.
@@ -449,6 +477,31 @@ Before writing an effect, identify the expected scope:
 - global scope only for intentionally shared values
 
 If an effect chain needs a scope later, save it as an event target. Use regular event targets for short chains and global event targets only when persistence is required. Clean global event targets when the system ends.
+
+For country activation, deferred setup, player transfer, or coalesced refreshes, read [country-activation.md](references/country-activation.md) before implementing the receiver chain. For variables, arrays, loops and script math, read [variables-and-math.md](references/variables-and-math.md).
+
+When inlining a multi-condition scripted trigger inside `NOT`, retain an explicit `AND` around its conditions because sibling conditions in `NOT` use NOR semantics. Preserve rejection when either a shared precondition or native legality check fails. State-scoped diagnostics must check country flags through the intended country scope.
+
+Stored state pointers refer to persistent map objects, so do not use COUNTRY-only `exists = yes` inside a STATE scope.
+Validate the intended state with an appropriate documented native STATE predicate or a registered state marker such as `has_state_flag`, together with its expected state ID using the documented identity semantics.
+`scope_exists` is always true for variable scopes and does not validate the stored pointer.
+Retain `exists = yes` checks in actual COUNTRY scopes, including a state's owner, controller, or stored country pointer.
+
+Native callbacks keep their own ROOT and FROM contracts, and participant iterators, targeted decisions, and nested transactions do not rebind ROOT. The callback scope table, participant capture pattern, frozen transaction inputs, receipt nonces, and state-owned cadence rules live in [country-activation.md](references/country-activation.md); read them before changing a callback-to-helper scope chain or a receipt read.
+
+### Helper output lifetime
+
+Temporary variables first created inside a scripted effect or trigger may disappear after return, while caller-preinitialized storage retains the helper's modifications (offline `paradox_wiki/data_structures.md`, Variable types section).
+
+- Before each helper call, ensure every temporary scalar and temporary-array output consumed afterwards has caller-owned storage, including calls inside `if.limit` and scripted-localisation `text.trigger`. Initialize new output storage to zero or its documented invalid sentinel without resetting existing input or cursor values.
+- Apply this at every nested call boundary: each caller initializes the outputs it consumes, and outer callers also initialize forwarded outputs needed after return.
+- Helpers reset public outputs at entry and clear one-shot input envelopes separately on success and rejection, without erasing published results before the caller consumes them.
+- Public helper API docs must list caller-owned output storage and its required initial values.
+- Actual-source tests must model conservative call-frame cleanup by discarding temporary scalars and arrays first created in the returning helper, retaining modifications to caller-preinitialized storage, and keeping scoped regular saved state separate from temporary storage instead of using one flat global temporary dictionary.
+
+When a source audit or fixture cannot model this call-frame lifetime, report it as unmodelled and separately check caller preinitialization before consuming helper outputs.
+For shared dispatchers, locate the matching authorization gate and recursively inspect its body and invoked helpers for actual dispatch and accounting, including package-specific nested branches.
+A flat block-shape assertion or literal marker match does not establish that execution coverage.
 
 ### 6. Put real effects in the right place
 
@@ -498,6 +551,10 @@ AI chance should consider:
 
 When AI behavior is complex, centralize it in scripted triggers, scripted values, or helper effects rather than scattering repeated conditions across many options.
 
+For deterministic max-score selectors, track explicit first-valid-candidate presence and accept that first candidate regardless of its score.
+A numeric best-score sentinel must not reject an otherwise valid negative score.
+After the first candidate, retain the exact score comparison and existing ID tie-break without changing weights or eligibility.
+
 ### 9. News and report events
 
 Use news or report presentation when the event is public enough or visually specific enough to need it.
@@ -509,6 +566,8 @@ Do not use a news event for every ordinary result. Use it for public shifts, war
 ### 10. on_action integration
 
 Use `on_actions` when an event should react to engine events such as war, capitulation, annexation, peace, state control changes, focus completion, monthly pulses, or other supported hooks.
+
+An `on_actions` block holds only `effect` and `random_events`. [vanilla-confirmed 1.19.4.1]
 
 Do not use whole-world daily or weekly scans unless the repository rules allow that and the feature truly needs it. Prefer narrower hooks, targeted pulses, country flags, scripted triggers, and cleanup events.
 
@@ -537,6 +596,8 @@ If the event uses sourced quotes, cultural remarks, slogans, allusions, custom a
 Use `hoi4-text-audio-research` for quote, cultural remark, slogan, allusion, audio source documentation, attribution checks, and license checks. Use the owning implementation skill for event-side wiring.
 
 Do not leave default, placeholder, mismatched, undocumented, or wrong-format audio in a completed package.
+
+During active asset work, retain sources, processed previews, manifests, crosswalks, and handoffs under the temporary `docs/assets/<feature_slug>/` workspace. Before declaring the event fully complete, promote durable provenance, licensing, attribution, coverage, review, and wiring facts into permanent event, plan, spec, super-event, or system documentation; verify that no runtime reference points into `docs/assets/`; and delete the complete feature-scoped workspace. Keep it when work is blocked or incomplete. Its absence is expected after full completion.
 
 ### 12. Completion cleanup
 
@@ -576,10 +637,30 @@ Localisation must describe the in-world situation and visible consequences. It m
 
 Dynamic values often display decimal places unless formatted. If a value is conceptually an integer, use an integer formatter such as `|0` or an equivalent scripted-localisation helper. Use fractional precision only when the fraction changes player decisions.
 
+For numeric `defined_text` output, put the formatted variable in a real `.yml` localisation value, such as `numeric_value_display: "[?temp_value|0]"`, and use the key's literal name in the corresponding `text` block: `localization_key = numeric_value_display`.
+An inline formatted variable string such as `localization_key = "[?temp_value|0]"` is tokenized as a dynamic key and may fail with dynamic-token errors.
+Temporary variables assigned in the same `text.trigger` remain visible to the selected localisation key, so calculate the display value there.
+Retain constant-backed temporary getters where the installed documentation supports the assignment, and do not introduce persistent globals solely for formatting.
+A scripted localisation `random_list` needs `seed = <scoped variable>`, or it repeats the same result. [vanilla-confirmed 1.19.3]
+The triggers of a scripted localisation entry must be valid for the scope the key is called in. [vanilla-confirmed 1.19.3]
+`§[ScriptedLocName]` yields a computed colour letter. [vanilla-confirmed 1.19.4.1]
+The checksum covers only `common`, `events`, `history` and `map`, so a localisation-only mod keeps the checksum. [vanilla-confirmed 1.19.3] `checksum_manifest.txt`
+
+Report and event descriptions drawn on a light parchment or paper background must use plain text for names and values, without `§` colour formatting, including strings returned by scripted localisation.
+Keep colours only in consumers with a supported dark background, such as options, tooltips, decisions, or GUI text; use separate plain and coloured localisation variants when a shared helper feeds both.
+Audit the whole owned description family and its dynamic substitutions for contrast in the actual consumer, including at 1080p.
+
+Native PowerShell stdin can replace non-ASCII program text before Python receives it, even when Python writes a UTF-8 BOM correctly.
+For localisation writes through that route, use ASCII program text with Unicode escapes or `chr()` for the `U+00A3` texticon and `U+00A7` formatting glyphs, or read the intended text from an explicitly UTF-8 file.
+Re-read the affected values as UTF-8 and verify their actual glyphs after writing.
+When normalizing physical line endings, preserve authored `\n` escapes inside localisation values rather than rewriting them as literal `\r\n` escapes.
+
 When text mirrors a docs field or a parent-provided external record, the in-game localisation is the source of truth. Do not paraphrase mirror fields unless the field is explicitly a summary field.
 
 
 ## Validation checks
+
+Before review, run `python -B .tools/check.py quick` on the changed files and fix every error it lists; it covers localisation and GFX wiring, the script syntax rules and MCP script validation, and proves only those properties (`AGENTS.md` section 4a).
 
 Use task-specific validation that can realistically catch mistakes.
 
@@ -603,3 +684,11 @@ Common useful checks:
 - docs and manifests match final ids and assets
 
 Do not fill the final report with boilerplate checks that only restate repo-wide rules. Report validation when it affected confidence, found a problem, or directly proves a task-specific surface is wired.
+
+<!-- HOI4_MOD_SETUP_SUPER_EVENTS_START -->
+## Super Events integration
+
+When the installed `hoi4-super-events` workflow is selected, treat the owning gameplay transition and its presentation registration as one feature. Read `hoi4-super-events`, establish the announced state before showing the presentation, reserve one stable unused registration ID, add every required title, description, quote, response, image, and optional audio branch, call the project-scoped show effect from one reachable owner, suppress duplicate callers, and clear visibility, registration, and playback state through the installed close path.
+
+Validate the live caller, state ordering, registration uniqueness, sprite and texture resolution, localisation coverage, duplicate suppression, cleanup, permanent documentation, and one named in-game scenario. Never invent helpers, commands, sound conventions, or project-specific paths. Optional audio must not break the visual package; audio marked required by the accepted project plan remains a completion blocker until its source, rights, sound ID, definition, playback, and documentation agree.
+<!-- HOI4_MOD_SETUP_SUPER_EVENTS_END -->

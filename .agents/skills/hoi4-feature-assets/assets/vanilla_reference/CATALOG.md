@@ -4,6 +4,9 @@ Generated from installed vanilla HOI4 assets. Review PNGs are lossless local ref
 They are not runtime mod assets and must not be wired, traced, recolored, or copied into final art.
 Every tracked type has a local `contact_sheet.png`; common icon families target 15 references and other families target at least 5.
 
+The checksum- and frame-level provenance for the 2026-08-04 synchronized expansion is recorded in
+`REFERENCE_MANIFEST.md`.
+
 ## Coverage
 
 | Asset type | References | Minimum | Contact sheet |
@@ -14,36 +17,71 @@ Every tracked type has a local `contact_sheet.png`; common icon families target 
 | `icons/achievements` | 15 | 15 | `icons/achievements/contact_sheet.png` |
 | `icons/balance_of_power` | 12 | 5 | `icons/balance_of_power/contact_sheet.png` |
 | `icons/buildings` | 5 | 5 | `icons/buildings/contact_sheet.png` |
-| `icons/commander_traits` | 5 | 5 | `icons/commander_traits/contact_sheet.png` |
+| `icons/commander_traits` | 15 | 15 | `icons/commander_traits/contact_sheet.png` |
 | `icons/decision_categories` | 15 | 15 | `icons/decision_categories/contact_sheet.png` |
+| `icons/decision_categories/pictures` | 13 | 13 | `icons/decision_categories/pictures/contact_sheet.png` |
 | `icons/decisions` | 15 | 15 | `icons/decisions/contact_sheet.png` |
 | `icons/factions` | 5 | 5 | `icons/factions/contact_sheet.png` |
 | `icons/ideas` | 15 | 15 | `icons/ideas/contact_sheet.png` |
-| `icons/intelligence_agency` | 5 | 5 | `icons/intelligence_agency/contact_sheet.png` |
-| `icons/intelligence_operations` | 5 | 5 | `icons/intelligence_operations/contact_sheet.png` |
-| `icons/medals` | 5 | 5 | `icons/medals/contact_sheet.png` |
-| `icons/military_industrial_organizations` | 5 | 5 | `icons/military_industrial_organizations/contact_sheet.png` |
-| `icons/military_raids` | 5 | 5 | `icons/military_raids/contact_sheet.png` |
+| `icons/intelligence_agency` | 15 | 15 | `icons/intelligence_agency/contact_sheet.png` |
+| `icons/intelligence_operations` | 15 | 15 | `icons/intelligence_operations/contact_sheet.png` |
+| `icons/medals` | 15 | 15 | `icons/medals/contact_sheet.png` |
+| `icons/military_industrial_organizations` | 15 | 15 | `icons/military_industrial_organizations/contact_sheet.png` |
+| `icons/military_raids` | 15 | 15 | `icons/military_raids/contact_sheet.png` |
 | `icons/missions` | 5 | 5 | `icons/missions/contact_sheet.png` |
 | `icons/modifiers` | 5 | 5 | `icons/modifiers/contact_sheet.png` |
 | `icons/national_focus` | 16 | 15 | `icons/national_focus/contact_sheet.png` |
-| `icons/officer_corps_spirits` | 5 | 5 | `icons/officer_corps_spirits/contact_sheet.png` |
-| `icons/special_projects` | 6 | 5 | `icons/special_projects/contact_sheet.png` |
-| `icons/state_modifiers` | 5 | 5 | `icons/state_modifiers/contact_sheet.png` |
+| `icons/officer_corps_spirits` | 15 | 15 | `icons/officer_corps_spirits/contact_sheet.png` |
+| `icons/special_projects` | 15 | 15 | `icons/special_projects/contact_sheet.png` |
+| `icons/state_modifiers` | 15 | 15 | `icons/state_modifiers/contact_sheet.png` |
 | `icons/technologies` | 2 | 15 | `icons/technologies/contact_sheet.png` |
-| `portraits/advisors` | 6 | 5 | `portraits/advisors/contact_sheet.png` |
+| `portraits/advisors` | 15 | 5 | `portraits/advisors/contact_sheet.png` |
 | `portraits/commanders` | 5 | 5 | `portraits/commanders/contact_sheet.png` |
 | `portraits/leaders` | 5 | 5 | `portraits/leaders/contact_sheet.png` |
-| `portraits/operatives` | 5 | 5 | `portraits/operatives/contact_sheet.png` |
-| `units/air/map_counters` | 5 | 5 | `units/air/map_counters/contact_sheet.png` |
-| `units/equipment/technology_art` | 5 | 5 | `units/equipment/technology_art/contact_sheet.png` |
+| `portraits/operatives` | 15 | 5 | `portraits/operatives/contact_sheet.png` |
+| `units/air/map_counters` | 15 | 5 | `units/air/map_counters/contact_sheet.png` |
+| `units/equipment/technology_art` | 17 | 5 | `units/equipment/technology_art/contact_sheet.png` |
 | `units/land/counters_large` | 6 | 5 | `units/land/counters_large/contact_sheet.png` |
-| `units/land/division_template_emblems` | 5 | 5 | `units/land/division_template_emblems/contact_sheet.png` |
+| `units/land/division_template_emblems` | 15 | 5 | `units/land/division_template_emblems/contact_sheet.png` |
 | `units/land/map_counters` | 5 | 5 | `units/land/map_counters/contact_sheet.png` |
 | `units/models_3d/air_materials` | 5 | 5 | `units/models_3d/air_materials/contact_sheet.png` |
 | `units/models_3d/land_materials` | 5 | 5 | `units/models_3d/land_materials/contact_sheet.png` |
 | `units/models_3d/naval_materials` | 5 | 5 | `units/models_3d/naval_materials/contact_sheet.png` |
-| `units/naval/map_counters` | 5 | 5 | `units/naval/map_counters/contact_sheet.png` |
+| `units/naval/map_counters` | 15 | 5 | `units/naval/map_counters/contact_sheet.png` |
+
+## Achievement workflow inputs (excluded from coverage and contact sheets)
+
+These exact 64x64 PNGs are processor inputs rather than vanilla reference art. They are stored separately under `icons/achievements/template/`, excluded from the `icons/achievements` count and contact sheet, and preserved byte-for-byte.
+
+| Role | Workflow PNG | Source kind | SHA-256 (PNG) |
+| --- | --- | --- | --- |
+| Completed background | `icons/achievements/template/achievement_template.png` | Reusable workflow input | `248DB006611EB3942550C43DF83802AA6FB24761035FC928B5D34586C0C4C5BA` |
+| Grey and not-eligible background | `icons/achievements/template/achievement_template_grey.png` | Reusable workflow input | `70E073694C1A7D9FE40C63B1EB2E987A8A45B3FFD15CCF789EEAA5B843B90022` |
+| Not-eligible red-cross overlay | `icons/achievements/template/overlay.png` | Unchanged reusable workflow input | `89BC80C6AC975BF6F1FF000FF3070B20C337BFB8B8AE966AE35A5540C004D6DD` |
+
+## Decision category pictures
+
+This is the canonical review-only family for larger decision-category pictures, separate from the small `icons/decision_categories/` category-icon family and from scripted-GUI or full mechanic-window backgrounds. The owning surface is a decision category's `picture = GFX_decision_cat_*` field, with the installed vanilla consumer defined in `interface/decisions.gfx` and the relevant `common/decisions/categories/*.txt` file.
+
+All 13 entries below are user-provided vanilla reference material. The PNGs are lossless RGBA `114x101` review copies. Their decoded pixels were checked against the matching installed source DDS after BGRA-to-RGBA channel decoding; the SHA-256 values below preserve the exact supplied PNG bytes. Source identity is recorded as vanilla HOI4 only where the installed DDS, `.gfx` sprite, and decision-category consumer can be matched. No runtime redistribution licence is inferred, and neither these PNGs nor the contact sheet may be wired, recoloured, traced, or shipped as project runtime art.
+
+The contact sheet is `icons/decision_categories/pictures/contact_sheet.png`. It labels every filename and native dimension and is a review aid only.
+
+| Category | Review PNG | Size | Source kind | Installed vanilla source DDS | Contact sheet | Related definition and consumer | SHA-256 (PNG) |
+| --- | --- | ---: | --- | --- | --- | --- | --- |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_generic_commonwealth.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_generic_commonwealth.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_generic_commonwealth`; `form_commonwealth_category` in `common/decisions/categories/00_formable_categories.txt` | `65018f9482a410e39548747adb924b6bc93e96fdb69a57b0189938dfceda123f` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_generic_ottoman_empire.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_generic_ottoman_empire.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_generic_ottoman_empire`; `form_ottoman_empire_category` in `common/decisions/categories/00_formable_categories.txt` | `abad89aead3c82138cecb57a4027d9303426d4fc54491070a29d99c80ed5a25f` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_generic_persian_empire.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_generic_persian_empire.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_generic_persian_empire`; `form_persian_empire_category` and `AFG_turko_persian_heritage_category` in `common/decisions/categories/00_formable_categories.txt` and `AFG_decision_categories.txt` | `5c1d3c18be0d6ff31da9166c515df3aa49d6e2f9ce7c5015d58feb16ed4b265f` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_generic_roman_empire.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_generic_roman_empire.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_generic_roman_empire`; `form_roman_empire_category` in `common/decisions/categories/00_formable_categories.txt` | `c6341f0af3b2a93e3604f3466ed301f39cf41d1d09c814481ff651e8a1425d43` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_naval_treaty.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_naval_treaty.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_picture_naval_treaties`; `MTG_naval_treaties` and `generic_purchase_old_ships_category` in `common/decisions/categories/00_decision_categories.txt` | `61ea5bf29641c8932b9240acad1a1fd714401098612d2dc7dc5e9cf61735c52d` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_picture_1936_election.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_picture_1936_election.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_picture_1936_election`; `GRE_1936_election_category` in `common/decisions/categories/GRE_decision_categories.txt` | `dd4e36f92b4e5a14df4c83ff65b3202c4724ca82856d83d275513de37fb61643` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_picture_AST_union_control_1.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_picture_AST_union_control_1.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_picture_AST_union_control_1`; `AST_union_control_1_cat` in `common/decisions/categories/AST_decision_categories.txt` | `072df13127a022b4e6484b8117268384e5112feee56f4d431087109226d8a8dd` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_picture_CHL_nacista_insurgency.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_picture_CHL_nacista_insurgency.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_picture_CHL_nacista_insurgency`; `CHL_nacista_insurgency_decisions` and `CHL_nacista_decisions` in `common/decisions/categories/CHL_decision_categories.txt` | `c7dbb2624cca1a9cd57b45e3832d5914b6598e339fe65bd2fd940a53445b8252` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_picture_faction_management_bulgaria.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_picture_faction_management_bulgaria.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_picture_faction_management_bulgaria`; `BUL_internal_factions` in `common/decisions/categories/BUL_decision_categories.txt` | `f9f87ff0b490eda03926d748372da1d18a47763c5483b288ed4e7664ea485308` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_picture_JAP_greater_east_asia_co_prosperity_sphere.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_picture_JAP_greater_east_asia_co_prosperity_sphere.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_picture_JAP_greater_east_asia_co_prosperity_sphere`; `JAP_southern_expansion`, `JAP_pacific_guardian`, and `JAP_the_co_prosperity_sphere_decisions` in `common/decisions/categories/JAP_decision_categories.txt` | `67677718d63bbf78e98d44131b68ec80d6bc38b9cab27cb7b11428192f9455fe` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_picture_JAP_kokutai.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_picture_JAP_kokutai.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_picture_JAP_kokutai`; `JAP_spiritual_mobilization_decisions` in `common/decisions/categories/JAP_decision_categories.txt` | `2dd7284440777cf59e54e0274515bff62dfe2be383d48998a1d5a443b672fedb` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_picture_NOR_monarchism.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_picture_NOR_monarchism.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_picture_NOR_monarchism`; `NOR_monarchist_preparation_decisions_category` in `common/decisions/categories/NOR_decision_categories.txt` | `18a477af44ae50bbe0c6a25b0399732919bf11a48c2d0ac111dbe20d3d3b7ca3` |
+| Decision category picture | `icons/decision_categories/pictures/decision_cat_picture_PHI_american_intervention.png` | 114x101 | User-provided vanilla reference | `gfx/interface/decisions/decision_cat_picture_PHI_american_intervention.dds` | `icons/decision_categories/pictures/contact_sheet.png` | `GFX_decision_cat_picture_PHI_american_intervention`; `PHI_american_intervention_category` in `common/decisions/categories/PHI_decision_categories.txt` | `0431b96039724d47aac5c9471118260d38a7185e798bb7a212a49bfc7fedca57` |
 
 ## Portraits and flags
 
@@ -73,9 +111,12 @@ Every tracked type has a local `contact_sheet.png`; common icon families target 
 | Army-small dossier | `portraits/advisors/army_small_ger_erwin_rommel.png` | 65x67 | Vanilla HOI4 | `gfx/interface/ideas/idea_erwin_rommel.dds` | `portraits/advisors/contact_sheet.png` | `interface/ideas.gfx; common/characters/GER.txt` |
 | Army-small dossier | `portraits/advisors/army_small_ger_friedrich_paulus.png` | 65x67 | Vanilla HOI4 | `gfx/interface/ideas/idea_GER_friedrich_paulus.dds` | `portraits/advisors/contact_sheet.png` | `interface/_leader_portraits.gfx; common/characters/GER.txt` |
 | Army-small dossier | `portraits/advisors/army_small_ger_gunther_von_kluge.png` | 65x67 | Vanilla HOI4 | `gfx/interface/ideas/idea_GER_gunther_von_kluge.dds` | `portraits/advisors/contact_sheet.png` | `interface/_leader_portraits.gfx; common/characters/GER.txt` |
+| Advisor dossier | `portraits/advisors/generic_africa_1.png` | 65x67 | Vanilla HOI4 | `gfx/interface/ideas/idea_generic_political_advisor_africa_1.dds` | `portraits/advisors/contact_sheet.png` | — |
 | Advisor dossier | `portraits/advisors/generic_asia_1.png` | 65x67 | Vanilla HOI4 | `gfx/interface/ideas/idea_generic_political_advisor_asia_1.dds` | `portraits/advisors/contact_sheet.png` | — |
 | Advisor dossier | `portraits/advisors/generic_europe_1.png` | 65x67 | Vanilla HOI4 | `gfx/interface/ideas/idea_generic_political_advisor_europe_1.dds` | `portraits/advisors/contact_sheet.png` | — |
+| Advisor dossier | `portraits/advisors/generic_europe_6.png` | 65x67 | Vanilla HOI4 | `gfx/interface/ideas/idea_generic_political_advisor_europe_6.dds` | `portraits/advisors/contact_sheet.png` | — |
 | Advisor dossier | `portraits/advisors/generic_female_europe.png` | 65x67 | Vanilla HOI4 | `gfx/interface/ideas/idea_generic_political_advisor_female_europe.dds` | `portraits/advisors/contact_sheet.png` | — |
+| Advisor dossier | `portraits/advisors/high_command_fevzi_cakmak.png` | 65x67 | Vanilla HOI4 | `gfx/interface/ideas/idea_tur_fevzi_cakmak_high_command.dds` | `portraits/advisors/contact_sheet.png` | — |
 | Land commander portrait | `portraits/commanders/generic_africa_land_1.png` | 156x210 | Vanilla HOI4 | `gfx/leaders/Africa/Portrait_Africa_Generic_land_1.dds` | `portraits/commanders/contact_sheet.png` | `interface/_random_portraits.gfx` |
 | Land commander portrait | `portraits/commanders/generic_africa_land_2.png` | 156x210 | Vanilla HOI4 | `gfx/leaders/Africa/Portrait_Africa_Generic_land_2.dds` | `portraits/commanders/contact_sheet.png` | `interface/_random_portraits.gfx` |
 | Land commander portrait | `portraits/commanders/generic_africa_land_3.png` | 156x210 | Vanilla HOI4 | `gfx/leaders/Africa/Portrait_Africa_Generic_land_3.dds` | `portraits/commanders/contact_sheet.png` | `interface/_random_portraits.gfx` |

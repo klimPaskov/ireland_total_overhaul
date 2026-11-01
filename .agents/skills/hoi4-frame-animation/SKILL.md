@@ -52,9 +52,19 @@ Use this skill with `hoi4-feature-assets`.
 
 `hoi4-feature-assets` owns source mode, reference folders, DDS conversion, manifests, final asset placement, and sprite handoffs. This skill owns frame planning, per-frame generation discipline, anchor normalization, sheet construction, GIF previews, contact sheets, and HOI4 animation QA.
 
-Use `$imagegen` for generated frame art. If `$imagegen` is unavailable, stop and report the blocker. Do not invent another image generation route.
+Use the image generator for generated frame art. If the image generator is unavailable, stop and report the blocker. Do not invent another image generation route.
+
+Read [generated source art and review](../hoi4-feature-assets/references/generation-and-review.md) before seed or frame production. Use its model preference only when the actual tool exposes selection. After accepting a seed, use that seed or a neighbouring accepted frame as each edit target, name the exact motion-state delta, and preserve subject, camera, palette, canvas, anchor, and alpha. Record each frame's input candidate and repair lineage. Compare every accepted frame with the seed to detect accumulated drift and loop discontinuity. Each frame still needs its own real visual state.
+
+For every alpha-backed animation family, request a genuine transparent background in the initial image-generation call for every generated source frame and preserve the alpha through normalization, sheet assembly, preview creation, and DDS conversion. Do not generate opaque or chroma-backed frames as the normal route. Use the fallback background-removal workflow in `hoi4-feature-assets` only when native transparency fails or an inherited, sourced, or user-provided frame begins with an unwanted opaque backdrop.
 
 Use `hoi4-focus-trees`, `hoi4-decisions-missions`, `hoi4-events`, or the relevant repository-specific implementation skill for the gameplay surface that uses the animation.
+
+When the animation belongs to a scripted GUI, also use `hoi4-scripted-gui` for the accepted reference mapping, native placement, iterative MCP render review, state and resolution coverage, click-region safety, and final visual acceptance. This animation skill owns the frame package, not the enclosing GUI layout.
+
+Use the owning surface's mandatory MCP evidence whenever frame assets change an in-scope focus, event-chain, technology/doctrine, GUI, or map consumer. Preserve matching baseline and post-change evidence, report the exact unavailable route, and keep the affected surface unresolved if required evidence is missing. Source-only checks or a GIF do not replace that pass.
+
+3D skeletal `.anim` actions are not frame-sheet assets. Route model rigs, retargeting, baked actions, root-motion policy, `.anim` export, reimport proof, and unit or entity runtime binding to `hoi4-3d-model-pipeline`; do not manufacture a skeletal action by moving or filtering one still image, and do not replace a requested action with a 2D frame sheet.
 
 ## 4. Required HOI4 references before wiring
 
@@ -62,10 +72,10 @@ Before wiring an animated asset into the game, inspect the local sources that ap
 
 Required references:
 
-- `paradox_wiki/Graphical asset modding - Hearts of Iron 4 Wiki.md`
-- `paradox_wiki/Interface modding - Hearts of Iron 4 Wiki.md` when the animation appears in GUI
-- `paradox_wiki/Scripted GUI Modding - Hearts of Iron 4 Wiki.md` when the animation appears in scripted GUI
-- `paradox_wiki/Character modding - Hearts of Iron 4 Wiki.md` when the animation is a portrait
+- `paradox_wiki/graphical_asset_modding.md`
+- `paradox_wiki/interface_modding.md` when the animation appears in GUI
+- `paradox_wiki/scripted_gui_modding.md` when the animation appears in scripted GUI
+- `paradox_wiki/character_modding.md` when the animation is a portrait
 - relevant vanilla `.gfx` and `.gui` files under `<HOI4_INSTALL_DIR>/`
 - existing repository `.gfx`, `.gui`, portrait, focus, decision, and scripted GUI examples when available
 
@@ -73,7 +83,7 @@ The agent must record which local example was used.
 
 If the wiki and vanilla examples disagree, prefer vanilla and document the difference.
 
-If the surface has no clear vanilla or mod animated precedent, report a blocker or ask for permission to run a narrow exploration pass.
+If the surface has no clear vanilla or mod animated precedent, report a blocker or ask for permission to run a narrow exploration pass, in the upfront consultation when the spec already shows the gap.
 
 ## 5. When to use this skill
 
@@ -92,7 +102,7 @@ Use this skill for:
 
 A valid source frame can be:
 
-- a separate `$imagegen` output created from the frame plan
+- a separate image-generator output created from the frame plan
 - an edit of the approved seed frame where the frame prompt asks for a specific visual state
 - a sourced historical image frame when the animation is based on real material
 - a user-provided frame
@@ -129,6 +139,7 @@ The brief must include:
 - `play_on_show` expectation when relevant
 - anchor point, usually center or bottom-center
 - source mode for each frame
+- background mode for the family and every exception: `native_transparent`, `consumer_opaque`, or `fallback_removed`
 - whether the subject is real, fictional, symbolic, supernatural, UI-only, or route-state art
 - reference folder or existing repo example inspected
 - final DDS, PNG, sheet, and preview paths
@@ -137,7 +148,7 @@ The brief must include:
 
 ## 8. Frame plan
 
-Create a frame plan before calling `$imagegen`.
+Create a frame plan before calling the image generator.
 
 Recommended frame plan table:
 
@@ -164,9 +175,12 @@ For generated frames:
 2. Keep one subject, one camera angle, one palette, and one composition across all frames.
 3. Use the same target framing and anchor language in every frame prompt.
 4. Vary only the planned motion state, light state, expression, particle state, or route-state element.
-5. Do not ask for text in generated frames.
-6. Save every source frame before processing.
-7. Reject frames with drifted silhouettes, wrong subject identity, wrong palette, opaque background when transparency is required, visible generated text, or broken loop behavior.
+5. For an alpha-backed family, request real transparency in the first image-generation call for every frame and retain the native-alpha source. Do not plan routine background removal.
+6. Do not ask for text in generated frames.
+7. Save every source frame before processing.
+8. Reject frames with drifted silhouettes, wrong subject identity, wrong palette, opaque background for an alpha-backed family, fake checkerboards, halos, matte pixels, alpha drift, visible generated text, or broken loop behavior.
+
+If a frame fails native-transparency validation, use the `hoi4-feature-assets` fallback order: targeted a built-in edit-to-transparency request to the image generator first, then an actually available verified local removal process only if necessary. Preserve the untouched source, record the fallback and settings, and reject clipped silhouettes, coloured spill, internal holes, or edge drift. Never allow one repaired frame to use materially different alpha bounds from the rest of the family without an explicit motion reason.
 
 For real people, do not generate fake motion that implies real footage, speech, or new real-world behavior. Use sourced stills and subtle symbolic layers only when the parent scope allows it. Keep the result clearly an in-game portrait or UI asset.
 
@@ -199,7 +213,7 @@ For the common `frameAnimatedSpriteType` pattern, build a one-row horizontal she
 Rules:
 
 - every processed frame must have identical dimensions
-- each frame must use the same transparent or opaque background rule as the target asset type
+- each frame must use the target asset type's background rule; alpha-backed families default to native image-generator transparency, while deliberately painted full-canvas families remain opaque only when their inspected consumer requires it
 - frame order is left to right
 - sheet width must be `frame_width * noOfFrames`
 - sheet height must be `frame_height`
@@ -207,6 +221,8 @@ Rules:
 - do not duplicate frame 000 at the end of the final sheet unless the intended loop truly needs that extra frame and `noOfFrames` includes it
 - keep the GIF preview separate from the final sheet
 - convert the sheet PNG to the final sheet DDS
+
+No texture side may exceed 16384 pixels, the DirectX 11 texture limit. When `frame_width * noOfFrames` would exceed it, first reduce the frame count or frame size. If neither is acceptable, split every frame into the same vertical strips of width `S`, where `S` divides the frame width and `S * noOfFrames` is at most 16384. Register one `frameAnimatedSpriteType` per strip with identical `noOfFrames`, `animation_rate_fps`, `looping`, `play_on_show`, and `pause_on_loop`, and show one GUI child per strip at contiguous x positions with no gaps or overlap. When a child uses `Orientation = center` and `Origo = center`, its position is the strip centre, so strip `i` of a frame `W` pixels wide sits at `x = -W/2 + S/2 + i * S`.
 
 A sheet path should describe that it is a sheet:
 
@@ -249,6 +265,8 @@ docs/assets/<feature_slug>/animations/<asset_slug>/
 ```
 
 Final in-game DDS files must still move into the correct mod asset folders. Do not leave final game assets under `docs/assets/`.
+
+The feature-scoped `docs/assets/<feature_slug>/animations/<asset_slug>/` tree is temporary evidence and working material. Keep it while the animation is active, blocked, awaiting review, or undergoing acceptance scenarios. Before declaring the feature fully complete, promote durable frame metadata, provenance, review results, coverage, and sprite handoff facts into permanent feature or plan documentation, verify that no runtime reference points into `docs/assets/`, and delete the complete feature-scoped workspace. An absent workspace is expected after full completion. Never delete the skill-local reference library or another feature's workspace.
 
 ## 13. Naming rules
 
@@ -445,7 +463,7 @@ Before marking an animation complete, verify:
 
 - every frame has a source PNG
 - every processed frame has the same exact dimensions
-- transparent assets have real transparent unused pixels
+- alpha-backed assets retain real native transparent unused pixels, or contain a documented and edge-validated fallback repair
 - subject identity, silhouette, palette, camera, and scale stay consistent
 - the anchor is stable across frames
 - the loop returns cleanly to the starting state
@@ -463,6 +481,7 @@ Before marking an animation complete, verify:
 - final DDS files exist in the correct location
 - the manifest records source mode, frame count, timing, frame size, sheet size, paths, and status
 - `gfx_handoff.md` names the static and animated sprites
+- before full completion, durable sprite and frame facts from the temporary handoff are copied into permanent feature or plan documentation and the feature-scoped workspace is deleted
 - scripted GUI leader overlays parent to a valid loaded window, not an unverified nested `*_instance`
 - leader overlay handoffs record the vanilla file, portrait element, parent window, context type, position, scale, and any summed offsets
 - no fake transform-only animation is being presented as final art
@@ -471,7 +490,8 @@ Before marking an animation complete, verify:
 
 Stop and report a blocker when:
 
-- `$imagegen` is unavailable for generated frame art
+- the image generator is unavailable for generated frame art
+- required native transparency cannot be obtained or fallback removal damages the subject, silhouette, or frame-to-frame alpha bounds
 - required source frames for a sourced animation cannot be found
 - the offline HOI4 wiki page, vanilla file, or existing repository example needed for wiring cannot be inspected
 - the repo has no safe known pattern for the requested animated sprite type and the parent did not authorize exploration

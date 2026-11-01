@@ -7,13 +7,15 @@ description: Use when creating, sourcing, processing, converting, organizing, wi
 
 Use this skill when a HOI4 modding task requires final visual assets.
 
+Asset coverage follows accepted spec rows, manifest requirements, or explicit user instructions. Do not infer optional advisor, high-command, officer-corps, dossier-card, portrait, emblem, or animation families merely because a character or gameplay consumer exists. Record the required family before production.
+
 This includes event pictures, UI assets, focus tree assets, country assets, achievement assets, generated icons, sourced feature art, generated icon art, animated sprites, animated portraits, sprite sheets, GIF previews, and any asset package that must be wired into the mod.
 
 ## Canonical reference root
 
 All active HOI4 asset skills and agents use this one reference folder:
 
-`C:\Users\klimp\OneDrive\Documents\Paradox Interactive\Hearts of Iron IV\mod\chaos_redux\.agents\skills\chaos-redux-event-assets\assets\vanilla_reference`
+`.claude/skills/hoi4-feature-assets/assets/vanilla_reference/`
 
 All category paths in this skill are relative to that exact folder. Do not use
 a project-local copy, another skill-local copy, a compatibility pack, or a
@@ -46,6 +48,7 @@ Use this skill for:
 - custom feature images
 - decision icons
 - decision category icons
+- static and animated decision category pictures
 - idea icons
 - national spirit icons
 - officer corps spirit icons
@@ -77,9 +80,10 @@ The main agent decides which subagent to spawn, gives it a bounded asset prompt,
 
 Use:
 
-- `hoi4_asset_source_researcher` for real or archival image sourcing, real leader portraits, historical flags, historically attested symbols, user-provided source photos, and report, news, or custom feature images that must depict a real photographed person, place, object, or historical document
-- `hoi4_generated_feature_art` for generated non-icon feature art, including fictional or alternate-history report images, news images, custom feature images, fictional portraits, fictional flags, faction emblems, UI panels, and progression-state base art
-- `hoi4_icon_artist` for focus icons, idea icons, national spirit icons, officer corps spirit icons, decision icons, decision category icons, achievement icons, and tech icons
+- `hoi4_asset_source_researcher` for non-portrait real or archival image sourcing, historical flag-design research, historically attested symbols, user-provided source photos, archival decision category pictures, and report, news, or custom feature images that must depict real photographed material
+- `hoi4_portrait_creator` for every character portrait: grounded source research, durable archival storage, explicit source placeholders, fictional image-generator production, user-supplied styled-result validation, processing, DDS conversion, portrait-specific wiring, manifests, and handoffs
+- `hoi4_generated_feature_art` for generated non-icon feature art, including fictional or alternate-history report images, news images, large presentation images, generated decision category pictures, flat fictional flag designs, faction emblems, UI panels, and progression-state base art; it does not own final character portraits
+- `hoi4_icon_artist` for focus icons, idea icons, national spirit icons, officer corps spirit icons, decision icons, decision category icons, achievement icons, tech icons, custom-unit counters, and exact state-piece graphics derived from verified map geometry
 
 For animated work, route by asset type first. Then require the chosen asset subagent to follow `hoi4-frame-animation` for frame plans, per-frame source art, normalization, contact sheets, preview GIFs, frame sheets, static fallbacks, and animation handoffs.
 
@@ -90,11 +94,12 @@ Asset subagents may create:
 - final DDS files
 - contact sheets
 - manifests
+- <!-- HOI4_MOD_SETUP_PORTRAITS_START --> durable sourced portraits under `docs/assets/portraits/` <!-- HOI4_MOD_SETUP_PORTRAITS_END -->
 - `docs/assets/<feature_slug>/gfx_handoff.md`
 
-Asset subagents must not edit `.gfx`, localisation, GUI, event, focus, idea, decision, scripted effect, scripted trigger, on_action, history, country, external tabular data files, or workbooks unless the parent explicitly grants that scope.
+Asset subagents must not edit `.gfx`, localisation, GUI, event, focus, idea, decision, scripted effect, scripted trigger, on_action, history, country, external tabular data files, or workbooks unless the parent explicitly grants that scope. The portrait worker has a standing narrow exception for portrait-specific `.gfx` entries and existing character portrait references.
 
-The main agent owns final `.gfx` sprite definitions, gameplay references, docs alignment, and validation.
+The main agent owns final non-portrait `.gfx` sprite definitions, gameplay references, docs alignment, and validation. The portrait worker owns portrait-specific `.gfx` and existing character portrait references.
 
 A good parent prompt to an asset subagent includes the feature slug, asset list, asset type, target size, source mode, final DDS folder, sprite name if already registered, reference folder, visual direction, source constraints, and anything the subagent must mark blocked instead of substituting.
 
@@ -124,169 +129,61 @@ When moving or adding an asset, update every `.gfx`, `.gui`, event, idea, decisi
 
 Researched presentation audio belongs to `hoi4-text-audio-research`. Use feature-scoped music and sound paths only when the repository already uses that convention or the parent prompt asks for it. Preserve source downloads under a documented source-audio path instead of burying them among final game files.
 
+## 2.3 Temporary feature-workspace lifecycle
+
+Treat project-root `docs/assets/<feature_slug>/` as temporary evidence and working material, except for explicitly durable archives such as the portrait source archive described below. Keep source files, previews, contact sheets, manifests, provenance, research notes, and handoffs while work is active, blocked, awaiting review, or undergoing acceptance scenarios.
+
+Before declaring the feature fully complete:
+
+1. Promote durable provenance, licensing, attribution, requirement-to-runtime crosswalks, review results, accepted handoff facts, and blocker or exception notes into permanent feature, plan, spec, super-event, or system documentation.
+2. Move final runtime assets into engine-facing folders and verify every `.gfx`, `.gui`, audio, or gameplay reference.
+3. Verify that no runtime reference points into `docs/assets/`.
+4. Delete the complete feature-scoped temporary workspace, including empty subfolders, and verify that it is absent. Never delete a separately designated durable archive as part of this cleanup.
+
+An absent temporary workspace is expected after a fully complete goal. If the feature is incomplete or blocked, retain it and report the blocker. Never delete skill-local reference libraries or another feature's workspace.
+
+## 2.4 Asset repository preflight and Git LFS hydration
+
+Before processing a large asset set, classify paths by role: `.gfx` files are text registries, while `.png`, `.dds`, `.wav`, and other artwork or audio paths are binary candidates, and modified files outside the requested scope must remain untouched.
+
+- Detect Git LFS pointer stubs from the exact pointer signature, not byte size: the first line is exactly `version https://git-lfs.github.com/spec/v1`, followed by `oid sha256:<hex>` and `size <integer>` lines.
+- File size alone is not validity evidence; legitimate tiny images such as 10x7 flags may be under 1 KB.
+- If the required objects are present in `.git/lfs/objects`, run a scoped `git lfs checkout <paths>` first, limited to the requested binary paths; `git lfs checkout` preserves modified files.
+- Use `git lfs fetch` or `git pull` only when objects are missing and the task explicitly authorizes network or repository updates; never broaden the scope or discard local edits.
+- For every expected LFS path, compare the working file's SHA-256 to its index OID from `git lfs ls-files -l`, then confirm zero remaining pointer stubs.
+- If checkout reports an index-refresh warning after writing real content, retain the content/OID verification as authoritative and record the warning in the handoff.
+- After hydration, validate image and audio containers with format-aware decoders or parsers, such as DDS header and pixel checks or WAV metadata checks, rather than size heuristics.
+
+<!-- HOI4_MOD_SETUP_PORTRAITS_START -->
+## 2.5 Sourced portrait handoff
+
+`hoi4_portrait_creator` researches each grounded source, archives it under `docs/assets/portraits/<feature_slug>/`, wires an explicit pending source placeholder at the final runtime path, and keeps the basename stable. The user runs the selected Cloud, Local, or RunPod styled-replacement workflow and supplies the final result; the portrait worker validates and installs it. Agents never open, configure, queue, monitor, or otherwise operate RunPod. For fictional or impossible subjects the portrait worker invokes the image generator and completes processing and wiring itself.
+
+Resolve the stable runtime basename first:
+
+```text
+portrait_<tag>_<character_key>
+```
+
+Use that exact basename for the runtime DDS and archived source:
+
+```text
+<runtime_portrait_path>/portrait_<tag>_<character_key>.dds
+docs/assets/portraits/<feature_slug>/portrait_<tag>_<character_key>.png
+```
+
+`<tag>` is the owning country or cosmetic tag. `<character_key>` is the stable scripted character or institutional subject key. Save the highest-resolution source and record provenance plus `source_placeholder`, `replacement_pending`, or `styled_final`.
+
+The durable archive is not runtime storage. No `.gfx`, character, GUI, event, focus, idea, or decision reference may point into `docs/assets/portraits/`. Never delete it during temporary feature-workspace cleanup unless the user explicitly asks.
+<!-- HOI4_MOD_SETUP_PORTRAITS_END -->
+
 ## 3. Asset source rules
 
-Choose the source mode based on asset type.
-
-### Scene-first and mood-first selection rule
-
-Do not default feature art to maps, cartographic overlays, arrows, staff tables, conference rooms, or generic war-room compositions unless that is the strongest visual for the specific asset.
-
-For a feature, many visuals should focus on the actor, force, symbol, ritual, creature, crowd, machine, government, army, leader, or strange condition behind the event. The image should usually make the event feel active and dangerous, not merely show that territory changed.
-
-Prefer visuals that show:
-
-- a country, movement, army, cult, council, machine, plague, or supernatural force as the subject
-- people, banners, ruins, storms, fires, shadows, masks, relics, halls, crowds, weapons, monuments, or rituals
-- obsession, wrath, zeal, panic, corruption, transformation, prophecy, dread, awe, or other feature-specific mood
-- fantasy, surreal, mythic, occult, symbolic, or unexplained elements when the event concept supports them
-- a clear subject and strong atmosphere over neutral geography
-
-Avoid making the main visual read like:
-
-- a map has changed
-- borders have shifted
-- officers are discussing an expansion route
-- the art is mainly a strategic diagram with decoration
-- the scene is a generic command table without a strong feature identity
-
-Maps may still appear as secondary props when useful, but they should rarely be the main visual idea for fictional, alternate-history, extreme-route, supernatural, symbolic, or strange event assets.
-
-### Use `$imagegen` for generated symbolic or fictional assets
-
-Use Codex's official `$imagegen` skill by default for:
-
-- idea icons
-- focus icons
-- decision icons
-- decision category icons
-- achievement icons
-- fictional flags
-- faction emblems
-- fictional leader portraits
-- UI panels
-- progression-state base art
-- other symbolic or fictional static assets
-
-When creating generated assets, follow the `$imagegen` skill workflow. Do not define a separate image generation route in this skill.
-
-For transparent icons, ask `$imagegen` for the required transparent output and follow the `$imagegen` skill's transparent image workflow. The final PNG must have real transparency, no fake checkerboard, no white halo, no white outline, and no opaque square background unless the asset type explicitly uses a painted backdrop.
-
-If `$imagegen` is unavailable, report that clearly and stop before using an alternate route.
-
-For generated animated assets, use `$imagegen` through `hoi4-frame-animation`. Each animation frame must be generated or edited as its own source frame according to a frame plan. Do not use local filters, transforms, glow pulses, or offsets as the source of final motion.
-
-### Choose source mode for event photo assets
-
-Report images, news images, and custom feature images may be either internet-sourced or generated.
-
-Use internet-sourced imagery when the asset must show a real photographed person, specific real battle, real place, real object, real newspaper, real poster, real map, real archive item, or other verifiable historical material.
-
-Use `$imagegen` when the event is fictional, alternate-history, symbolic, supernatural, extreme-route, or when a unique scene is more important than matching an existing archive image. Generated event-photo assets should be prompted as period-authentic documentary material, not modern cinematic concept art.
-
-For generated Second World War-era report, news, or custom feature images:
-
-- prompt for 1936-1945 photographic technology, period composition, period clothing, period vehicles, period architecture, and documentary realism
-- avoid modern streets, uniforms, props, weapons, vehicles, signage, UI overlays, cinematic color grading, and readable generated text
-- keep the source PNG, processed preview, final DDS, prompt, and manifest entry
-- record the source mode as generated and explain why generation fit better than sourcing
-- never use generated images for real leader portraits or to fabricate a real person's likeness
-
-Follow the repository web research rules from `AGENTS.md` when searching for source images.
-
-For internet-sourced event photo assets that are meant to represent the Second World War era, search for period-matching source imagery from roughly 1936 to 1945 unless the feature spec gives a narrower date range. Prefer contemporary photographs, war correspondents' photographs, press agency images, propaganda posters, maps, newspapers, official records, government or military archive images, museum scans, library scans, and period illustrations. Do not use modern photographs, reenactment images, film stills, AI-looking reconstructions, postwar uniforms, streets, weapons, vehicles, buildings, colorized tourist photos, reenactments, or modern props when they do not fit the era. If no suitable period source can be found, either generate a period-authentic fictional/documentary image when the asset does not require a real source, or mark the asset as blocked or `needs_user_review`.
-
-Record the image source, source link, author or archive if available, license or public domain status if available, estimated date or date range, why the image fits the Second World War era, and any uncertainty in the manifest.
-
-### Real leader portraits
-
-Do not generate a leader portrait for a real person.
-
-For real people, use a real source image from the internet or a user-provided image, then crop, resize, process, convert, and document it. Use the repository web research tools when a source image is needed, and prefer public domain, archival, official, or clearly licensed images. If the person belongs to the Second World War setting, prefer contemporary portraits, wartime photographs, news photographs, official portraits, military archive images, passport or identity photos, or archival illustrations. Do not use modern actors, reenactors, statues, cosplay, later fictional depictions, postwar images, or modern images that do not fit the era unless the user explicitly approves them as placeholders.
-
-Real leader portraits should be processed toward the HOI4 portrait style rather than left as raw photos: bust or upper-torso crop, face readable, subdued contrast, mild painterly or period texture, HOI4-like color grading, no modern UI artifacts, no hard white cutout halo, and no over-smoothed face. Do not change the person's identity or generate missing facial features.
-
-Record the source link, author or archive if available, license or public domain status if available, source image path, processed PNG path, final DDS path, and sprite name
-
-For generated or sourced one-person leader portraits, the asset handoff must identify the portrait's gender presentation and any matching leader-name pool requirement. Female-presenting portraits must not be paired with male names and should require `female = yes` where a country leader is created directly. Male-presenting portraits must not be paired with female names or `female = yes`. Council, board, office, crowd, and symbolic-institution portraits should keep institutional leader names instead of personal random-name pools.
-
-
-### Fictional leader portraits
-
-Fictional leaders, invented councils, collective bodies, supernatural leaders, and symbolic regime portraits must use `$imagegen`.
-
-Generated leader portraits should follow HOI4 leader portrait conventions: 156x210 final DDS unless an existing sprite uses another size, bust or upper-torso framing, strong face or governing-body focal point, subdued painterly finish, period-appropriate uniform or civilian clothing, transparent or HOI4-compatible portrait background as required by the existing asset pattern, and no text, labels, watermarks, modern UI, or meme-like exaggeration.
-
-For generated one-person leader portraits, record the portrait's apparent gender presentation in the manifest and handoff. Female-presenting portraits require female leader-name pools and female leader metadata where the implementation surface supports it. Male-presenting portraits require male leader-name pools and must not be paired with female metadata. Never hand off a portrait in a way that lets implementation randomly assign names from the opposite gender pool. Council, committee, junta, crowd, office, or symbolic-body portraits should be marked as institutional leaders and use institutional names instead of personal random-name pools.
-
-For council or collective leaders, use one clear symbolic council portrait rather than a cluttered crowd. Keep the subject readable at leader portrait size and document that the leader is fictional or collective.
-
-### User-provided assets
-
-If the user provides an image, treat it as a source asset.
-
-Record that the image was user-provided in the manifest.
-
-Still crop, resize, convert, place, wire, and document it like any other source asset.
+Read [`references/asset-source-rules.md`](references/asset-source-rules.md) before choosing whether an asset is sourced, generated, or user-provided. It contains the complete standard for this section and its subsections.
 
 ## 4. Reference asset examples
 
-This skill uses the shared canonical vanilla HOI4 visual-reference library. Read
-the library rules and catalog before generating, sourcing, processing, or wiring
-an asset.
-
-Start with:
-
-- `README.md`
-- `CATALOG.md`
-
-Every semantic reference directory contains a labeled `contact_sheet.png`.
-There is no shared `contact_sheets/` directory.
-Contact sheets are review aids, not final assets. Common icon families target 15 references; other tracked families target at least 5.
-
-Canonical portrait paths:
-
-- country leaders: `portraits/leaders/`
-- army and navy commanders: `portraits/commanders/`
-- operatives: `portraits/operatives/`
-
-Canonical flag and event-art paths:
-
-- flat flags: `flags/normal/`, `flags/medium/`, and `flags/small/`
-- report-event art: `event_art/report/`
-- news-event art: `event_art/news/`
-- super-event art: `event_art/super_event/`
-
-Canonical gameplay-icon paths:
-
-- national focus: `icons/national_focus/`
-- ideas and national spirits: `icons/ideas/`
-- decisions: `icons/decisions/`
-- missions: `icons/missions/`
-- decision categories: `icons/decision_categories/`
-- achievement state triplets: `icons/achievements/`
-- officer corps spirits: `icons/officer_corps_spirits/`
-- technologies: `icons/technologies/`
-- special projects: `icons/special_projects/`
-- balance of power: `icons/balance_of_power/`
-- intelligence agencies and operations: `icons/intelligence_agency/` and `icons/intelligence_operations/`
-- commander traits, medals, and military raids: their separate folders under `icons/`
-- state modifiers, military industrial organizations, factions, buildings, and modifiers: their separate folders under `icons/`
-
-Canonical unit-visual paths:
-
-- equipment and technology art: `units/equipment/technology_art/`
-- large land-unit counters: `units/land/counters_large/`
-- land map counters: `units/land/map_counters/`
-- division-template emblems: `units/land/division_template_emblems/`
-- air map counters: `units/air/map_counters/`
-- naval map counters: `units/naval/map_counters/`
-- land, air, and naval model materials: their separate folders under `units/models_3d/`
-
-These families are not interchangeable. Follow the cataloged native canvas, transparency, frame order, and owning `.gfx`, `.gui`, `.asset`, or `.mesh` definition. Reference PNGs are never final assets: do not copy, wire, recolor, or trace them. The only reusable achievement overlay is `icons/achievements/overlay.png` within the canonical root.
-
-If no category matches, inspect the closest canonical category plus direct
-vanilla or established repository precedents before choosing a style.
+Read [`references/reference-asset-examples.md`](references/reference-asset-examples.md) before producing any asset family, to find its matching reference examples. It contains the complete standard for this section and its subsections.
 
 ## 5. Generated artwork rules
 
@@ -294,7 +191,7 @@ Do not create core artwork from simple shapes, placeholders, contact sheets, lay
 
 For custom feature images, this rule is strict: final art must be a real scene, archival image, painted illustration, or generated documentary-style image. Do not use symbolic diagrams, flat icons, abstract geometry, title cards, or UI-like compositions as the final custom feature image unless the user explicitly requests that exact visual approach and the exception is documented.
 
-Use `$imagegen` for generated artwork and follow the `$imagegen` skill workflow for the source image.
+Use the selected image-generation route for generated artwork. HOI4 Mod Setup fills in the provider details from the manifest section below.
 
 Generated artwork must be real source art that can be processed into the final game asset. Final assets must be clean: must not have sticking artifacts, an icon is centered in the image, etc. Do not use contact sheets, review boards, or layout drafts as final source art.
 
@@ -308,11 +205,20 @@ Small gameplay icons must be readable at their final in-game size.
 - Avoid tiny interior detail that disappears at 45x45 or 64x64. Favor one clear subject, strong value contrast, and a centered silhouette.
 - Avoid fake checkerboard pixels, white halos, white outlines, oversized medallion fills, and square opaque backdrops.
 
-For every generated icon, follow the `$imagegen` skill's transparent image workflow. Preserve the original generated image, create a processed PNG preview, convert to DDS, and validate the final appearance over a checker background before treating the icon as complete.
+For every generated icon, follow the selected route's transparent-background instructions. Preserve the original generated image, create a processed PNG preview, convert to DDS, and validate the final appearance over a checker background before treating the icon as complete.
+
+### Codex image generation
+- Tools: generate: `image_gen`
+- Tool inputs: prompt: `prompt`, output_path: not supported by this tool, reference_images: `referenced_image_paths`, quality: not supported by this tool, size: not supported by this tool, transparent_background: `transparent_background`
+- References: Pass the reference files to the native Codex image tool.
+- Size: This route uses the model's default image size; limits can vary by model.
+- Transparent backgrounds: Request transparency and verify the saved PNG alpha. If unavailable: Use a selected background-removal route and verify alpha; if none is configured, ask the maintainer for another route.
+- Reference edits: supported on compatible models. If unavailable: Make a new image from the reference if that fits, or choose another configured provider for an edit.
+- Make one image per call. For a transparent image, check that the saved PNG has at least one pixel with alpha below 255; an alpha channel alone does not prove that pixels are transparent.
 
 The final icon should have transparent unused canvas, no fake checker or matte pixels, no transparent holes inside the painted subject, a slight black outline, a subtle drop shadow, and a centered subject that remains readable at final size.
 
-Generated icon packages must keep visible `$imagegen` source evidence: save the source atlas or source PNGs, record the prompt and source mode in the manifest, process to real transparent backgrounds, and include a contact sheet that shows final alignment, dimensions, transparency, and absence of white matte or opaque square backgrounds. Do not mark a generated icon complete if the final art is a primitive local drawing, a resized unrelated icon, or a locally assembled shape substitute instead of imagegen or sourced artwork.
+Generated icon packages must keep visible image-generation source evidence: save the source atlas or source PNGs, record the prompt and source mode in the manifest, process to real transparent backgrounds, and include a contact sheet that shows final alignment, dimensions, transparency, and absence of white matte or opaque square backgrounds. Do not mark a generated icon complete if the final art is a primitive local drawing, a resized unrelated icon, or a locally assembled shape substitute instead of generated or sourced artwork.
 
 ## 5.2 Icon type separation rules
 
@@ -334,7 +240,7 @@ Shared visual themes are allowed only when every icon is still designed for its 
 - achievement icons should follow achievement presentation rules and variant rules
 - intelligence-agency and intelligence-operation icons must follow their own agency or operation UI precedent rather than a generic decision treatment
 - commander traits, medals, military raids, state modifiers, MIOs, factions, buildings, and modifier icons must follow the matching canonical folder and owning vanilla definition; do not force these families onto a blanket 32x32 or 64x64 canvas
-- frame strips, indexed building sprites, and multi-state modifier art must retain their frame order and frame count rather than being treated as a single standalone icon
+- frame strips, indexed building sprites, and multi-state modifier art must retain their frame order and frame count rather than being treated as a single standalone icon; `python -B .tools/gfx/gfx.py sprites --paths <the .gfx file>` warns when a strip's width does not divide by its `noOfFrames`
 
 If a mechanic needs matching focus, idea, and decision visuals, build them as a coordinated icon family. A coordinated family can share subject matter, symbols, colors, and lore cues, but each member still needs separate source art or a separate generated output designed for its target size and UI role.
 
@@ -354,11 +260,11 @@ For every asset package:
 8. Identify the intended in-game use.
 9. Inspect the matching reference folder from section 4 before generating, sourcing, processing, or wiring the asset.
 10. Decide the source mode for each asset:
-  - `$imagegen`
+  - the image generator
   - internet source image
   - user-provided source image
 11. If the asset is animated, follow `hoi4-frame-animation` before ordinary static processing. Write the animation brief and frame plan, create or approve the static fallback, generate or source every frame, then normalize the frame sequence.
-12. For `$imagegen` assets, write a specific image generation prompt and create the base artwork by following the official `$imagegen` skill.
+12. For image-generator assets, write a specific image generation prompt and create the base artwork by following the image generator's workflow.
 13. For internet-sourced assets, find a suitable source image and record its source link, author or archive if available, and license or public domain status if available.
 14. For user-provided assets, record that the image was provided by the user.
 15. Save the original generated, sourced, or provided image as a source PNG.
@@ -378,6 +284,8 @@ Do not mark assets complete until the DDS files exist, the manifest is written, 
 When an improvement addendum asks for richer presentation, the asset handoff should name the visual states instead of asking for generic polish. A good asset request says what the player sees before activation, while active, when locked, when dangerous, when complete, and when the route has failed.
 
 For scripted GUI, plan asset families. A panel usually needs a background, header, button states, value icons, warning indicators, progress frames, locked overlays, selected overlays, hover states, and any animated glow, particle, float, or pulse layers. The main agent owns `.gui` and `.gfx` wiring, but the asset package must provide clear sprite names, sizes, frame counts, static fallbacks, and contact sheets.
+
+Use [hoi4-scripted-gui](../hoi4-scripted-gui/SKILL.md) for the accepted reference-to-native mapping, background-region contract, iterative MCP live previews, click-region inspection, state and resolution coverage, and final visual acceptance. Asset production alone does not prove a GUI layout complete.
 
 ## 7. Asset package structure
 
@@ -418,8 +326,8 @@ Each asset entry should include:
 - related event id only when the asset is tied to a real HOI4 event
 - asset type
 - intended in-game use
-- source mode: `$imagegen`, internet source image, or user-provided source image
-- image generation prompt if generated with `$imagegen`
+- source mode: image generator, internet source image, or user-provided source image
+- image generation prompt if generated with the image generator
 - source link if internet-sourced
 - source author, archive, or collection if available
 - source date or estimated date range if internet-sourced
@@ -453,6 +361,10 @@ Before any asset completion claim, create or refresh a row-level coverage crossw
 - the state or visibility binding when the asset is conditional or state-driven
 - the current audit record path, evidence, and row status
 
+Before changing asset or portrait wiring or completion counts, audit the full current required logical slot -> registered alias -> actual runtime path matrix, including conditional or regional variants and aliases sharing a path. Preserve the audited requirement, registry, and consumer source revisions or hashes, runtime file hashes, and declared coverage bounds in the audit record before making the change. A partial receipt or historical count must never stand in for the current consumer inventory.
+
+Report file inventory, registered aliases and actual consumption, source provenance and archive packages, and accepted final coverage separately. Count unique consumed runtime paths, unique whole-file hashes, and unique decoded-pixel hashes as separate measures. File presence or alias consumption does not prove source provenance or final acceptance.
+
 For every animation family, also record the purpose and the direction or state semantics that distinguish the family, together with its frame, timing, and loop evidence. Frame totals, live animation-family totals, and registered sprite totals are not coverage proof.
 
 Audit exact rows, not counts. An extra asset or animation cannot satisfy an absent accepted row unless an explicit accepted design amendment identifies that row and names the replacement; link that amendment in the crosswalk. Any missing source package, runtime registration, live consumer, required state or visibility binding, or current audit record leaves the row incomplete.
@@ -461,40 +373,30 @@ After a late user correction or accepted spec, manifest-plan, or animation-plan 
 
 ## 9. Standard HOI4 asset sizes
 
-Use these sizes unless the feature spec or an existing repo pattern gives a better project-specific requirement.
+Use these sizes unless the feature spec or an existing repo pattern gives a better project-specific requirement. The vanilla evidence for the report, news, category-icon and counter canvases is in `.tools/gfx/profiles.json`; `python -B .tools/gfx/gfx.py size --profile <name>` checks a file against it, and `python -B .tools/check.py quick` runs the GFX conformance checks on changed art.
 
-- report event images: 210x176
-- news event images: 397x153, black and white
+- report event images: 210x176 (532 of 884 vanilla event pictures)
+- news event images: 397x153 (233 vanilla event pictures), black and white
 - country-leader portraits: 156x210
 - commander portraits: 156x210 full portrait textures
 - operative portraits: 156x210 full portrait textures
-- flags small: 10x7
-- flags medium: 41x26
-- flags normal: 82x52
+- flags: 82x52 normal, 41x26 medium, 10x7 small (2,202 of 2,203 vanilla files per folder; `gfx.py flags`)
 - tech icons small: 64x64
 - tech icons medium: 132x52
-- achievements: 64x64
+- achievements: 64x64 (882 of 882 vanilla files)
+- decision category icons: 52x40 (94 vanilla files); category pictures: 114x101 (`assets/vanilla_reference/CATALOG.md`)
 - custom feature images: match the target GUI surface or documented repository pattern
 - decision icons: 32x32
 - idea and national spirit icons: 64x64
 - focus icons: 94x86
 
+The decision, idea and focus canvases are package conventions; vanilla mostly uses 33x32 decision icons, 65x67 or 60x68 idea pictures and 100x88 focus icons. Record the canvases the mod settles in a `profiles.json` row with its source so `gfx.py families` checks them.
+
 Use other sizes when the feature UI or asset type requires it.
 
 ## 9.1 Unit visual references
 
-Treat every unit visual as a domain-and-surface-specific pipeline. Inspect the matching catalog entry, contact sheet, and owning vanilla definition before deciding what the task needs.
-
-- `units/equipment/technology_art/` contains flat 2D equipment illustrations used by equipment and technology sprites. Native canvases vary; follow the owning `interface/*.gfx` sprite.
-- `units/land/counters_large/` contains large frame-aware land-unit strips. Preserve the cataloged `noOfFrames`, frame order, per-frame footprint, and transparent bounds.
-- `units/land/map_counters/` contains land map-counter art. It is not a large division-designer strip.
-- `units/land/division_template_emblems/` contains division-template identity emblems. It is not equipment art or map-counter art.
-- `units/air/map_counters/` and `units/naval/map_counters/` contain domain-specific map-counter art. Do not substitute land counters or resized equipment art.
-- `units/models_3d/land_materials/`, `units/models_3d/air_materials/`, and `units/models_3d/naval_materials/` contain UV model materials paired with cataloged `.mesh`, `.asset`, and entity definitions. They are not 2D icons, finished renders, or concept sheets.
-
-Classify the requested deliverable before creating art: equipment/technology illustration, large land counter, land/air/naval map counter, division-template emblem, or land/air/naval 3D model package. Give each class its own brief, source art, native canvas or UV layout, frame metadata, final path, and handoff. A 3D task must keep model geometry, materials, entity wiring, and any separately produced concept reference distinct. Do not derive one unit pipeline by resizing, relabeling, or recoloring another.
-
-When unsure, inspect the existing repository pattern and vanilla HOI4 assets before choosing.
+Read [`references/unit-visuals-and-3d-handoff.md`](references/unit-visuals-and-3d-handoff.md) whenever a task touches unit visuals, unit counters, or a 3D model package. It contains the complete standard for this section and its subsections.
 
 ## 10. Naming rules
 
@@ -518,7 +420,7 @@ For feature-specific assets, include the feature slug where useful. For example,
 
 ## 11. Image generation prompt rules
 
-Every `$imagegen` prompt should be specific enough to produce usable game art.
+Every image-generation prompt should be specific enough to produce usable game art.
 
 A good prompt should include:
 
@@ -555,57 +457,7 @@ For public-facing or uncertain assets, keep the manifest honest about the source
 
 ## 13. Report event images
 
-Report event images may use internet-sourced imagery or generated period-documentary imagery. Prefer generated report images when the event needs a unique fictional or alternate-history scene, staged document, invented location, or more specific visual than archive search can reliably provide. Use real sources when the image must depict a real person, real historical scene, or real archival document.
-
-Report event images should look like documentary-style photographs, field documentation, or period documentary material.
-
-For Second World War-era subjects, prefer contemporary photographs, war correspondents' photographs, press agency images, propaganda posters, newspapers, maps, official records, military archive images, museum or library scans, or period illustrations. Do not use modern reenactment photos or modern documentary photos that visually belong to a later era.
-
-Use:
-
-- realistic or period-authentic source imagery
-- black-and-white treatment with sepia applied
-- Second World War-era visual fit when the feature belongs to that era
-- period-appropriate framing where possible
-- strong subject clarity
-- natural composition
-- no modern UI overlays
-- no modern clothing, streets, weapons, vehicles, buildings, or props unless they are intentionally part of the event
-- no generated text
-
-Target size:
-
-```text
-210x176
-```
-
-Report event images must be black and white with sepia applied. Do not leave report event images in full colour unless the user explicitly requests a colour exception, and record that exception in the manifest.
-
-### Report-event card treatment
-
-Report-event images use a finished `210x176` RGBA canvas. The source photograph is processed as a slightly tilted documentary card with transparent edge space and a soft drop shadow. The transparent corners are part of the style.
-
-Do not ask `$imagegen` to create the tilted card. Generate or source the documentary photograph first, then apply the card treatment locally. This keeps the tilt, shadow, and margins consistent.
-
-```bash
-python -B .agents/skills/hoi4-feature-assets/tools/process_report_event_image.py source.png processed_report_event.png
-python -B .agents/skills/hoi4-feature-assets/tools/process_report_event_image.py source_folder processed_folder
-```
-
-The script performs cover crop, black-and-white conversion, sepia application, grain, paper border, deterministic tilt, transparent canvas margin, and soft shadow. It writes RGBA PNG output. Convert the processed PNG to DDS through the normal repo workflow.
-
-Validation:
-
-- processed PNG is exactly `210x176`
-- final DDS is exactly `210x176`
-- corner pixels are transparent
-- no hard photo pixels are clipped
-- tilt is visible but subtle
-- shadow is soft and not a thick border
-- edge space is transparent, not black padding
-- source remains readable after crop, tilt, shadow, and DDS conversion
-
-Generated report images must still receive this local report-card treatment.
+Read [`references/event-images-and-flags.md`](references/event-images-and-flags.md) whenever a task creates report or news event images or flags. It contains the complete standard for this section and its subsections.
 
 ## 14. News event images
 
@@ -697,9 +549,9 @@ These icons usually do not need the full focus icon frame.
 
 Do not derive idea or national spirit icons from focus icons. They must be designed as 64x64 spirit-style icons from their own prompt or source art, even when they share a theme with a focus.
 
-Use `$imagegen` for the base artwork unless the user provides or requests a specific source image.
+Use the image generator for the base artwork unless the user provides or requests a specific source image.
 
-Follow the `$imagegen` skill's transparent image workflow when the icon should have a transparent background.
+Follow the selected provider section for transparent icons: use native alpha when supported or its listed removal fallback, then verify the saved alpha.
 
 Inspect `icons/ideas/` and the matching row in `CATALOG.md` before generating or processing idea icons.
 
@@ -731,9 +583,9 @@ Do not create a focus icon as the master artwork for idea icons, decision icons,
 
 Every focus icon should support the focus tree's story, ideology, or gameplay purpose.
 
-Use `$imagegen` for the base artwork unless the user provides or requests a specific source image.
+Use the image generator for the base artwork unless the user provides or requests a specific source image.
 
-Follow the `$imagegen` skill's transparent image workflow when the icon should have a transparent background.
+Follow the selected provider section for transparent icons: use native alpha when supported or its listed removal fallback, then verify the saved alpha.
 
 Inspect `icons/national_focus/` and the matching row in `CATALOG.md` before generating or processing focus icons. Do not force every focus source onto an older nominal canvas when the owning sprite and current vanilla precedent use a different native canvas.
 
@@ -765,11 +617,15 @@ Decision category icons may use:
 decision_category_
 ```
 
-Use `$imagegen` for the base artwork unless the user provides or requests a specific source image.
+Use the image generator for the base artwork unless the user provides or requests a specific source image.
 
-Follow the `$imagegen` skill's transparent image workflow when the icon should have a transparent background.
+Follow the selected provider section for transparent icons: use native alpha when supported or its listed removal fallback, then verify the saved alpha.
 
 Inspect `icons/decisions/`, `icons/missions/`, or `icons/decision_categories/` as appropriate before generating or processing decision-system icons. Missions use the decision icon pipeline but still need mission-specific semantic readability.
+
+## 18.1 Decision category pictures
+
+Read [`references/icon-and-ui-families.md`](references/icon-and-ui-families.md) whenever a task creates decision category pictures or advisor and high-command portrait icons. It contains the complete standard for this section and its subsections.
 
 ## Additional gameplay icon families
 
@@ -785,95 +641,46 @@ Read the matching canonical catalog entries and inspect the owning `.gfx`, `.gui
 
 ## 19. Achievement icons
 
-Achievement icons should be compact and readable at 64x64.
-
-Generate the completed achievement icon first with `$imagegen`.
-
-Then create:
-
-- grey variant (simply black and white)
-- not-eligible variant by copying the grey variant and compositing `icons/achievements/overlay.png` on top
-
-The variants may be created after the completed icon exists.
-
-Do not create not-eligible achievement icons by red-tinting, filtering, darkening, recoloring, or manually redrawing the grey icon. If the overlay file is missing or cannot be applied cleanly, stop and report the asset as blocked instead of substituting another treatment.
-
-Target size:
-
-```text
-64x64
-```
-
-Use an `achievement_` prefix for source or intermediate art when it helps distinguish the asset type.
-
-For final files, achievements are a root-only exception. Put completed, grey, and not-eligible DDS files directly under `gfx/achievements/`, and name them after the exact achievement id registered in `common/achievements/`:
-
-```text
-gfx/achievements/<achievement_id>.dds
-gfx/achievements/<achievement_id>_grey.dds
-gfx/achievements/<achievement_id>_not_eligible.dds
-```
-
-When renaming or adding achievement ids, update `common/achievements/`, `localisation/english/<mod_namespace>_achievements_l_english.yml`, `interface/<mod_namespace>_achievements.gfx`, the three DDS variants in `gfx/achievements/`, and any docs or manifests that list the final DDS paths. If the achievement registry owns a single `unique_id`, keep it as one root-level registry file and group feature-owned achievements by feature section inside the file instead of splitting it into per-feature achievement files.
-
-Inspect `icons/achievements/` before generating or processing achievement icons.
+Read [`references/achievement-icons.md`](references/achievement-icons.md) whenever a task creates or changes achievement icons. It contains the complete standard for this section and its subsections.
 
 ## 20. Flags
 
-Flags should use clean symbolic designs that look like intentional flag art, not simple-shape placeholders, palette swaps, ugly filters, or flipped/recolored variants.
+Read [`references/event-images-and-flags.md`](references/event-images-and-flags.md) whenever a task creates report or news event images or flags. It contains the complete standard for this section and its subsections.
 
-They must remain readable at HOI4 sizes.
+## 21. Country-leader, commander, operative, and officeholder portraits
 
-Required flag sizes:
-
-- small: 10x7
-- medium: 41x26
-- normal: 82x52
-
-HOI4 flag TGAs must use the same origin/header convention as vanilla flags. Validate with `file`; completed flag TGAs should read as Targa image data at the correct size and must not end with `- top`. If a flag displays upside down in-game while the artwork looks correct in an image viewer, fix the TGA encoding/origin on the flag files themselves. Do not add custom UI sprites, scripted-localisation routing, DDS display copies, or other workarounds for flag orientation.
-
-Avoid overly detailed symbols.
-
-Avoid generated text unless the design absolutely requires it and the final output is manually checked.
-
-Always use `$imagegen` for fictional flags and user-provided or internet source images for historical or real-world flags.
-
-For existing countries that already have game-provided or repository-approved base flags, do not replace the no-suffix base flag as part of an ideology pass. Keep the base flag unchanged, or restore it from the approved prior asset if an asset pass damaged it, unless the user explicitly asks for that base flag to be redone or the country receives a deliberate focus/event/cosmetic-tag transformation. Ideology variants should be separate assets for `_communism`, `_democratic`, `_fascism`, and `_neutrality`, not mutations of the base flag with one small shape, a palette swap, a color filter, a vertical flip, or a copied emblem.
-
-For focus-tree or event route flag changes, use explicit cosmetic tags or route-specific flag files and document the trigger/focus that changes the flag. Do not create default flag overrides or new base flags for vanilla-supported or already-existing countries just because they participate in an event.
-
-Historical or historically grounded flags must use sourced motifs, documented heraldry, period symbols, or clearly explained alternate-history synthesis. If no directly attested flag exists, state that in the manifest and produce a historically grounded design from relevant motifs instead of inventing unrelated symbols.
-
-Generated fictional or alternate-history flag variants must come from generated/source artwork and then be processed into final flag sizes. Do not hand-draw final flags from basic rectangles, circles, stars, arrows, or random emblems unless those shapes are part of a researched or generated source design.
-
-Before marking any flag complete, verify normal, medium, and small TGA files:
-
-- normal: 82x52
-- medium: 41x26
-- small: 10x7
-- correct visual orientation in a contact sheet
-- TGA origin/header convention consistent with vanilla HOI4 flags; `file` output must not show `- top`
-- no byte-identical ideology variants unless the design is intentionally shared and documented
-- no upside-down copies
-- no accidental no-suffix base-flag replacement for countries that were only meant to receive ideology variants
-
-## 21. Country-leader, commander, and operative portraits
-
-For real people, do not generate portraits with `$imagegen`.
-
-Choose the canonical reference family by role before starting:
+Choose the canonical reference family before production:
 
 - country leader: `portraits/leaders/`
 - army or navy commander: `portraits/commanders/`
 - operative: `portraits/operatives/`
+- advisor, theorist, high command, officer corps, or army-small:
+  `portraits/advisors/`
 
-Use an attributed real source image from the internet or a user-provided image. Select and record an explicit head-and-shoulders crop, then apply an identity-preserving HOI4 painted finish while retaining recognisable source details. A raw photograph, simple resize, generic oil-paint filter, face replacement, or weak likeness is not a finished portrait.
+Grounded real, historical, restored, separatist, regional, indigenous, dynastic,
+or otherwise plausibly historical identities use an attributed real-person
+source. One-person generated portraits are reserved for wholly fictional,
+impossible, or supernatural identities. Missing or contradictory identity
+classification fails closed.
 
-Record the source link, author or archive, license or public-domain status when available, original image path, processed PNG path, final DDS path, and sprite name.
+For a real person, `hoi4_portrait_creator` preserves the unchanged archival master and runs `.claude/skills/hoi4-feature-assets/tools/extract_portrait_source_crop.py`. Automatic mode uses the bundled YuNet detector and fails closed unless exactly one subject is detected; it writes the unchanged source copy, lossless crop, deterministic `156x210` PNG, exact-pixel JSON evidence, and a co-located provenance contract. Use the explicit `--crop` recovery path only for an independently reviewed boundary or detector miss. The detector is a framing aid, never identity approval. Retain the source placeholder and require independent likeness, style, identity, and provenance review before DDS conversion or wiring. The user alone supplies the HOI4-style final; when supplied, `hoi4_portrait_creator` validates, installs, and updates portrait-specific wiring.
 
-For fictional people, non-human beings, supernatural entities, aliens, zombies, monsters, symbolic leaders, or other invented characters, `$imagegen` may be used to create the base portrait. Give the matching canonical references as style inputs and request a restrained HOI4 painted treatment with no text or modern concept-art finish.
+Record source URL, author or archive, rights status when available, source and
+candidate hashes, crop coordinates, review evidence, processed PNG, final DDS,
+runtime sprite, and the durable source archive from section 2.4.
 
-Country-leader, commander, and operative portrait textures are `156x210`. Never manufacture or document a smaller commander source texture merely because a UI view displays it at a smaller apparent size.
+For fictional people and impossible or supernatural entities, `hoi4_portrait_creator` uses native
+the image generator after the identity gate permits it.
+Reject generic, modern, meme, gore, stereotyped, text-bearing, or
+interchangeable output. If the image generator is unavailable, mark the portrait blocked.
+
+Full country-leader, commander, and operative textures are `156x210`. Never
+manufacture a smaller commander source merely because one UI view displays it
+at a smaller apparent size.
+
+## 21.1 Advisor and high-command portrait icons
+
+Read [`references/icon-and-ui-families.md`](references/icon-and-ui-families.md) whenever a task creates decision category pictures or advisor and high-command portrait icons. It contains the complete standard for this section and its subsections.
 
 ## Animated leader portraits
 
@@ -894,7 +701,7 @@ Animated leader portrait packages must include:
 
 For UI panels, investigation windows, ledgers, and similar assets, separate artwork from functional UI.
 
-Use `$imagegen` for:
+Use the image generator for:
 
 - illustrated background panels
 - thematic decorations
@@ -919,7 +726,7 @@ The implementation must still follow HOI4 UI rules and existing repo patterns.
 
 For a decision category with a scripted GUI or mechanic window, the asset handoff should cover the full interface state set.
 
-When the asset package belongs to a focus-tree or scripted-GUI change, use the corresponding MCP inspect and render tools after placement to verify references and produce a deterministic review artifact. For technology or doctrine icons, use `hoi4.tech_inspect` in `explain` or `lint` mode to verify sprite and texture references, then use the `assets` or affected folder view in `hoi4.tech_render`. This skill still owns source art, processing, DDS conversion, placement, manifests, and `.gfx`/`.gui` handoff.
+When the asset package belongs to a focus-tree or scripted-GUI change, the corresponding MCP inspect and render evidence is mandatory before and after placement. For technology or doctrine icons, mandatory evidence uses `hoi4.tech_inspect` in `explain` or `lint` mode to verify sprite and texture references, then the `assets` or affected folder view in `hoi4.tech_render`, followed by `hoi4.tech_inspect` with `mode: "compare"` after source edits. If a required route is unavailable, record the exact blocker and leave the linked asset surface unresolved; source-only review is not equivalent. This skill still owns source art, processing, DDS conversion, placement, manifests, and `.gfx`/`.gui` handoff.
 
 Useful assets include:
 
@@ -962,6 +769,16 @@ Progression-state variants may include:
 
 Progression-state variants should use the same target size as the base asset.
 
+## Formable state-puzzle visual assets
+
+When a formable uses the reusable state-puzzle presentation from `hoi4-decisions-missions`, preserve exact state geometry and one shared geographic projection.
+
+Each package must include a manifest with formable id, state ids and names, alternate requirement groups, counting rules, source map data, projection bounds, anchors, and proposed sprite names; one exact mask or sprite region per required state; grey unmet and green qualifying states with a second non-colour cue; a composed geographic preview; hover-region notes; and final runtime, `.gfx`, and GUI ownership.
+
+Derive shapes from the installed map's state and province geometry. Do not trace screenshots by hand, generate borders with the image generator, simplify the pieces into generic tiles, or substitute a modern political map. Keep one projection, scale, origin, edge treatment, and border width so neighbouring states meet cleanly.
+
+Copy and adapt `.claude/skills/hoi4-decisions-missions/templates/formable_state_puzzle/`. The asset handoff must match its manifest and naming rules. Skill-local templates are reference scaffolding and must never become runtime consumers. The static category-picture alternative also requires the simple-category eligibility gate and cannot accompany the interactive puzzle.
+
 ## Formable nation asset coverage
 
 Every formable nation needs visible identity assets.
@@ -987,7 +804,11 @@ Historical or culturally attested formable symbols need source review. Fictional
 
 Use `hoi4-frame-animation` for every final animated visual asset. Some mod mechanics should have animated visual layers when motion improves readability, atmosphere, or feedback. Examples include floating seals, glowing route emblems, particle drift, meter pulses, warning frames, active-button glows, occult pressure effects, sponsor influence networks, and final formable proclamations.
 
-Animated leader portraits should be handled as major identity assets. Real people require sourced base images. Fictional or impossible leaders can be generated. The asset handoff must say whether the animation is subtle, such as breathing light or smoke, or symbolic, such as eye glow, map shadow, glitch, or spectral overlay. The portrait should still read clearly at in-game size.
+Animated leader portraits should be handled as major identity assets by
+`hoi4_portrait_creator` plus `hoi4-frame-animation`. The portrait worker owns sourced real base images and image-generator fictional or impossible base portraits. The asset handoff must say whether the animation is subtle,
+such as breathing light or smoke, or symbolic, such as eye glow, map shadow,
+glitch, or spectral overlay. The portrait should still read clearly at in-game
+size.
 
 Final animated assets must be built from planned source frames. Do not create final animation by taking one still image and shifting, scaling, rotating, warping, blurring, recoloring, brightening, or pulsing it with a script. Local scripts may normalize, align, crop, resize, assemble sheets, create previews, and convert frames after the real frames exist.
 
@@ -998,7 +819,7 @@ Final PNG assets must be converted to DDS using the repository's standard DDS co
 Use the bundled deterministic converter:
 
 ```powershell
-python -B .agents/skills/hoi4-feature-assets/tools/convert_to_dds.py --input <processed.png> --output <final.dds> [--width <pixels> --height <pixels>]
+python -B .claude/skills/hoi4-feature-assets/tools/convert_to_dds.py --input <processed.png> --output <final.dds> [--width <pixels> --height <pixels>]
 ```
 
 The output must be compatible with the mod's expected 32-bit BGRA or B8G8R8A8-style DDS workflow.
@@ -1097,14 +918,14 @@ Record:
 - what is needed from the user
 - whether implementation can continue without it
 
-Do not invent a substitute asset unless the user explicitly approves it.
+Do not invent a substitute asset unless the user explicitly approves it. A "substitute and report" answer to the fallback question of the upfront consultation is that approval.
 
 ## 29. Final checklist
 
 Before finishing, confirm:
 
 1. Every required asset from the feature spec is accounted for.
-2. Every asset uses the correct source mode: `$imagegen` for generated symbolic, fictional, alternate-history, or unique report, news, or large feature presentation assets. internet or user-provided source images for real historical materials. and real source images for real leader portraits.
+2. Every asset uses the correct source mode: `hoi4_portrait_creator` owns attributed sources and user-supplied styled replacements for grounded portraits and the image generator for fictional or impossible portraits.
 3. The matching reference folder from section 4 was inspected before generation, sourcing, processing, or wiring.
 4. Every generated, sourced, or provided asset has a source PNG.
 5. Every final asset has a processed PNG preview.
@@ -1114,9 +935,23 @@ Before finishing, confirm:
 9. A `gfx_handoff.md` exists for every asset that needs a sprite definition, and the main agent has enough information to wire it.
 10. The asset manifest exists.
 11. Internet-sourced assets record source links, source date or estimated date range, license or public domain status if available, and era-fit notes for Second World War-era assets.
-12. Fictional or non-human portraits generated with `$imagegen` are clearly marked as fictional or generated in the manifest.
-13. Docs are updated where relevant.
-14. The feature implementation or parent handoff knows which sprite names to use.
-15. No final asset remains only in a temporary folder.
-16. Focus, idea, national spirit, officer corps spirit, decision, decision category, achievement, and tech icons were treated as separate asset types. No idea or decision icon is only a resized, cropped, recolored, padded, or lightly edited focus icon.
-17. Every animated asset used `hoi4-frame-animation`, has real source frames, has a static fallback, and has no transform-only final motion.
+12. Fictional or non-human portraits produced through the image generator are clearly marked as fictional or generated in the manifest.
+13. Decision category pictures are classified separately from small category icons, scripted GUI backgrounds, and full mechanic-window assets; their canonical reference folder and labeled contact sheet were inspected.
+14. Simple categories were not expanded into full scripted GUI asset packs when a static or animated category picture was sufficient.
+15. Every formable state-puzzle asset uses exact installed-map state geometry, one shared projection, grey and green qualification states with non-colour cues, clean neighbouring edges, and a manifest aligned with the reusable template.
+16. Docs are updated where relevant.
+17. The feature implementation or parent handoff knows which sprite names to use.
+18. No final asset remains only in a temporary folder.
+19. Focus, idea, national spirit, officer corps spirit, decision, decision category, achievement, and tech icons were treated as separate asset types. No idea or decision icon is only a resized, cropped, recolored, padded, or lightly edited focus icon.
+20. Every animated asset used `hoi4-frame-animation`, has real source frames, has a static fallback, and has no transform-only final motion.
+21. Every unit visual is classified by domain and surface as equipment/technology art, a large land counter, a land/air/naval map counter, a division-template emblem, or a land/air/naval 3D model package; one pipeline was not resized or relabeled to substitute for another. A 3D package also proves the one-image Meshy input rule, provider lineage, vanilla scale calibration, PDX material mapping, topology repair, required skeletal actions, `.mesh`/`.anim` reimport, hash-aware runtime synchronization, parent-owned wiring, and a live consumer.
+22. Every advisor, theorist, high-command, officer-corps, or army-small card uses the native `65x67` advisor workflow, the exact accepted template, retained transforms and hashes, and independent native/4x review; it is not a shrunken leader texture.
+23. Every sourced portrait has a durable source under `docs/assets/portraits/<feature_slug>/`, a stable runtime basename, an explicit pending source-placeholder or validated final state, and no runtime reference into the archive.
+
+<!-- HOI4_MOD_SETUP_SUPER_EVENTS_START -->
+## Super Events images
+
+When the installed `hoi4-super-events` workflow is selected, read its runtime templates and use the declared `457x328` presentation image size. Define the exact role, subject, tone, focal hierarchy, symbolism, source mode, safe text area, prohibited content, final DDS path, and sprite purpose before production. Use sourced archival material for real people, events, places, documents, or objects; use approved generation for fictional, alternate-history, symbolic, or supernatural scenes that do not claim to be historical photographs.
+
+Keep source material, processed previews, provenance, licenses, uncertainty, final DDS output, and GFX handoff together. Review the image at runtime size in the complete popup, then let the main agent wire the sprite, localisation branches, caller, and registration. The examples bundled with `hoi4-super-events` are composition references only and must not be registered as project art.
+<!-- HOI4_MOD_SETUP_SUPER_EVENTS_END -->

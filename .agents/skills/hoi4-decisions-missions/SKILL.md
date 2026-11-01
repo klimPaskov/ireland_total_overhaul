@@ -7,28 +7,23 @@ description: Use when designing, implementing, auditing, or fixing Hearts of Iro
 
 Use this skill when a task touches decisions, missions, timed objectives, decision categories, mission UI, costs, trigger tooltips, scripted localisation, AI decision behavior, or balance around decision-driven systems.
 
-This skill is for implementation and cleanup. For broader event wiring, use `hoi4-events`. For focus trees, use `hoi4-focus-trees`. For visual assets, use `hoi4-feature-assets`.
+This skill is for implementation and cleanup. For broader event wiring, use `hoi4-events`. For focus trees, use `hoi4-focus-trees`. For visual assets, use `hoi4-feature-assets`. For scripted GUI composition, layout, and visual evidence, use [hoi4-scripted-gui](../hoi4-scripted-gui/SKILL.md).
 
-For large or reworked decision systems, spawn `hoi4_decision_mission_auditor` after implementation and before completion. The subagent is patch-capable by default inside the current task scope. It should audit objective quality, costs, tooltips, AI validity, cleanup, duplicate missions, route integration, fairy-dust rewards, exploit risk, localisation, and balance evidence. It may directly patch small decision, mission, tooltip, dynamic localisation, AI, cleanup, cooldown, visibility, and existing formable requirement issues when the fix is local and clearly safer.
+For large or reworked decision systems, spawn `hoi4_decision_mission_auditor` after implementation and before completion. The subagent is patch-capable by default inside the current task scope. It should audit objective quality, costs, tooltips, AI validity, cleanup, duplicate missions, route integration, fairy-dust rewards, exploit risk, localisation, and balance evidence. Route every in-scope decision or mission weight to `hoi4_ai_probability_auditor` for the mandatory MCP probability pass. The probability auditor remains read-only. The decision auditor may directly patch small decision, mission, tooltip, dynamic localisation, AI, cleanup, cooldown, visibility, and existing formable requirement issues when the fix is local and clearly safer.
 
 ## 1. Required reading
 
 Before editing decisions or missions, read:
 
 - `AGENTS.md`
-- relevant offline Paradox wiki pages from `paradox_wiki/`
- - Decision modding
- - Triggers
- - Effects
- - Localisation
- - Modifiers
- - Scopes
- - Data structures
-- vanilla decision files from `<HOI4_INSTALL_DIR>/`
-- vanilla documentation in `<HOI4_INSTALL_DIR>/documentation`
+- relevant cited sections found through the live schemas of `hoi4.reference_context`, `hoi4.reference_search`, and `hoi4.reference_read`: Decision modding and whichever trigger, effect, localisation, modifier, scope, or data-structure rule the task uses. Keep paths, lines, and revisions. Resolve any live `omittedSources` by raising the context limit or targeted search/read before claiming source coverage; `missing` denotes absent files. Use `hoi4.source_lookup` for exact definitions and usages. If a route is unavailable, read the pertinent local sections directly and record the exact gap.
+- vanilla decision files from `C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV/`
+- vanilla documentation in `C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV/documentation`
 - existing repository decision categories and scripted effects that do similar work
+- `.claude/skills/hoi4-decisions-missions/templates/formable_state_puzzle/README.md` and its category-attachment audit when exact state control is the formation proof
 
 Do not rely on memory when syntax or UI behavior is documented.
+Installed vanilla documentation remains the primary syntax authority; inspect an exact vanilla precedent. Reference retrieval does not replace decision scenarios, weighted-logic comparisons, or required UI evidence.
 
 ## 2. Core design rule
 
@@ -69,7 +64,7 @@ Timed missions are good for:
 
 Use goal-style missions when the player should not click again after doing the work.
 
-If the objective is “place divisions here,” “hold this capital,” “secure this rail hub,” or “reach this influence threshold,” it should auto-complete when conditions are met.
+If the objective is "place divisions here," "hold this capital," "secure this rail hub," or "reach this influence threshold," it should auto-complete when conditions are met.
 
 Do not make the player pay a second click after already satisfying the goal.
 
@@ -103,7 +98,7 @@ Useful factors:
 - faction membership
 - previous failures
 - previous successes
-- escalation tier or event pressure
+- chaos tier or event pressure
 - AI strategy situation
 
 Do not copy the same cost or duration across every country unless the story and balance justify it.
@@ -120,11 +115,11 @@ A decision or mission reward should usually do at least one meaningful thing:
 - change the map, production, logistics, diplomacy, army behavior, intelligence behavior, or internal politics in a visible way
 - create a real tradeoff, risk, deadline, escalation, partial success, or failure state
 - transform an existing idea, national spirit, or mechanic stage into a stronger or weaker form
-- connect to later events, focus routes, achievements, text and audio packages, or country identity changes
+- connect to later events, focus routes, super-events, or country identity changes
 
 Tiny modifiers are allowed only when they belong to a visible stacking system, frequent tick, temporary crisis push, dynamic scaling formula, or larger effect package. They should never be the whole reward for an important decision, mission, GUI button, formable step, route unlock, or crisis response.
 
-If a decision family has many small rewards, combine them into fewer stronger actions, convert them into staged idea upgrades, make them change a visible mechanic value, or replace them with missions, map objectives, units, advisors, buildings, route access, or diplomatic consequences. Do not scatter small bonuses across a category to create the appearance of progress.
+If a decision family has many small rewards, combine them into fewer stronger actions, convert them into staged idea upgrades, make them change a visible mechanic value. Do not scatter small bonuses across a category to create the appearance of progress.
 
 Starting penalties and negative mission outcomes must also matter. A failed objective, broken authority value, bad crisis decision, or starting debuff should create pressure the player must answer. Harmless negative modifiers that can be ignored are not valid crisis design.
 
@@ -150,7 +145,7 @@ Use varied costs that fit the action:
 - aircraft
 - ships
 - tanks
-- fuel
+- fuel (don't use conservative values)
 - manpower
 - stability
 - war support
@@ -180,7 +175,11 @@ A mobilisation decision may require manpower, equipment, training time, supply, 
 
 ## 6. Cost localisation
 
-Cost localisation should be short, readable, and icon-first.
+An action may spend at most four distinct resource types. Non-consumed conditions such as holding a state or route remain requirements. Do not conceal a fifth payment in a tooltip, effect, confirmation, or secondary panel. Redesign the action instead.
+
+Inline cost/status text shows at most three values, each paired with its correct texticon, and at most four ordinary words when text is necessary. Do not repeat a payment already drawn by the native row or expand resource names beside icons. Separate texticon names from following formatting codes with whitespace, or use closed syntax verified in installed vanilla. Amount-first and icon-first entries are both allowed when the native render proves fit and icon separation.
+
+Keep every payment and reserved resource explicit in the full tooltip. Verify the longest available and blocked strings beside the actual decision title using the matching native MCP render. Record the exact unavailable route or scenario blocker if this evidence cannot be obtained, and do not substitute source-only review.
 
 Do not prefix every blocked cost line with words like `Requires` or `Needed`. In most cases, show only the value and the matching text icon.
 
@@ -203,12 +202,45 @@ Do not use:
 
 If the country does not meet a requirement, show the missing or unmet cost in red. If the country meets the requirement, show it normally.
 
-If a decision has more than three or four simultaneous costs or requirements, do not show all of them inline. Use a short scripted localisation summary:
+For numerous non-cost requirements, use a short scripted localisation summary:
 
 - met: `Requirements met`
 - not met: `§RRequirements not met§!`
 
-Then put the full requirement list in a tooltip. The tooltip should still use short icon-first entries. Missing requirements should be red, while satisfied requirements should display normally.
+Then put the full requirement list in a tooltip. Missing requirements should be red, while satisfied requirements display normally. This summary never conceals extra spendable costs. A custom spendable resource needs a wired texticon before appearing in cost text.
+
+### Custom-cost affordability and payment
+
+Every native `custom_cost_text = <base>` needs localisation for `<base>`, `<base>_blocked`, and `<base>_tooltip`; the engine selects the row key through `custom_cost_trigger` and shows the tooltip key on hover (offline Decision modding, custom cost section).
+Per-resource scripted colour selectors do not replace these parent native keys.
+When the base already renders each resource's ready or blocked colour independently, exact `$base$` aliases for the suffixed keys can reuse that quote without duplicating amounts or adding fees.
+Trace actual decision consumers, scripted getters, and texticon definitions; missing source-key coverage establishes a contract gap, not proof that a native row displayed a raw key.
+
+Custom-cost display is not sufficient evidence that a decision is selectable. Define one shared, inclusive affordability predicate and invoke it from both `available` and `custom_cost_trigger`; manually debit the custom payment once in `complete_effect`, and set the fixed `ai_hint_pp_cost` amount when political power is included. If the cost row already fully explains payment, the duplicate `available` check may use `hidden_trigger` to keep raw requirements out of the visible block. Keep display, affordability gate, and debit aligned, and document engine uncertainty instead of inferring behavior.
+Each resource's cost colour or display selector must call the same authoritative inclusive affordability component used by that shared gate, with the same payer, quote, units, and equipment token.
+Do not copy strict, deprecated, or inexact reserve or equipment predicates into display logic.
+Check agreement just below, exactly at, and just above the quoted cost.
+
+For fractional dynamic costs, show enough decimal places in every cost row and tooltip to communicate the actual debit. Keep display caches separate from fresh affordability and payment calculations so a rounded or stale quote cannot govern selection or payment.
+
+When accepted design requires an emergency resolution to remain available while every other recovery is unaffordable, do not gate it on full nominal reserves. Bound each actual fee by its nominal fee and the nonnegative current reserve, show the actual quote with matching texticons, recompute all fees together before any debit, then charge that coherent quote once. Avoid hidden partial payments and threshold fee-waiver cliffs.
+For variable-fee emergency actions, use an `ai_hint_pp_cost` matching the actual quote only if that input form is verified as supported; otherwise omit the fixed nominal hint so a zero quote remains available to AI at zero political power. Never assume `ai_hint_pp_cost` accepts dynamic values.
+Verify exact numeric reader tokens in the installed dynamic-variable documentation rather than assuming a display or stat name: `has_political_power`, `has_stability`, and `has_war_support` are documented readers, while raw `war_support` is not a documented built-in reader. This does not forbid a custom normal variable with that name.
+Make final resolution and cleanup idempotent with a closed-state guard, and require queued work and late timed callbacks to match the active context before invoking cleanup. Preserve earned finite aftermath until its intended expiry and retain achievement receipts when removing active-crisis state.
+
+### Refundable purchases and separate credit receipts
+
+When a refundable decision both charges a currency and grants separate credit, such as progress toward an achievement or a sale-period counter, keep the two receipts apart.
+Store the exact paid quote in an owner normal variable for the currency refund; never infer credit from the price, an active sale, or another display value.
+
+- Clear the previous owner receipt before crediting, preinitialize every helper output temp in the caller chain, and invoke the shared credit helper exactly once after payment.
+- Persist a positive credited result as an owner country flag and its credit sequence or period identifier as an owner normal variable. Use separate pairs for decisions whose timers can overlap.
+- On cancellation, load the saved flag and sequence into the helper inputs and withdraw credit only when the receipt sequence matches both the current credit period and the payer's retained credit record.
+- Refund the recorded paid quote once and clear the persistent receipt pair and paid marker, so repeated cancellation cannot refund currency twice or withdraw another purchase's credit.
+- Successful completion clears the receipt and paid marker without withdrawing earned credit.
+- Do not invent a historical credit ledger, reverse an older purchase through a newer index, or revoke an awarded achievement.
+
+Verify same-period refunds, purchases made outside a credit period, older-period refunds after a newer purchase, excluded credit eligibility, repeated cancellation, and successful completion through the actual helper chain.
 
 ## 7. Trigger and requirement clarity
 
@@ -242,6 +274,19 @@ Good:
 If the list is dynamic, scripted localisation must print the current targets or explain the named region.
 
 Every named region should have a tooltip or documentation entry explaining which states belong to it.
+
+### Trigger evaluation cost
+
+The installed vanilla `common/decisions/_documentation.md` defines how often each block runs. `allowed` runs once at game start or save load, so permanent filters such as `original_tag` belong there. `visible` and `available` run every frame while the decision interface refreshes, so keep them cheap and move expensive or world-scanning checks elsewhere. For targeted decisions, put acting-country prechecks in `target_root_trigger` and per-target selection in `target_trigger`, which run once per day, and narrow the candidates with `targets`, `target_array` (vanilla `AST.txt` uses `target_array = AST.core_states`), or a `state_target` value such as `any_controlled_state` instead of checking every state or country. Vanilla writes `state_target` (209 `state_target = yes`, 34 `state_target = any_controlled_state`) and never the documentation's `state_trigger`. [vanilla-confirmed 1.19.4.1]
+
+### Engine facts for decision keys
+
+- In a targeted decision `ROOT` is the taker and `FROM` the current target. [vanilla-confirmed 1.19.4.1]
+- `activate_targeted_decision` works on decisions that are not missions (44 of 63 vanilla targets). [vanilla-confirmed 1.19.4.1]
+- The `highlight_color_*` values index the 15-entry define `BORDER_COLOR_CUSTOM_HIGHLIGHTS`, not 0 to 3. [vanilla-confirmed 1.19.4.1]
+- `visible_when_empty` is used in 45 vanilla files but is undocumented. [vanilla-confirmed 1.19.4.1]
+- The wiki example name `has_command_power` does not exist, because the trigger is `command_power`. [docs] [vanilla-confirmed 1.19.4.1]
+- A `cost` on a mission that is not selectable logs "Cost for normal missions not implemented", and all 3 vanilla costed missions are selectable. [unverified]
 
 ## 8. Mission quality
 
@@ -290,6 +335,19 @@ Recommended bands:
 Emergency missions can be shorter only when the event story clearly justifies immediate danger.
 
 Do not give every mission the same timer.
+
+For every decision-level `modifier = { ... }`, define `days_remove` even when `days_mission_timeout` is present; the modifier applies during the active post-selection removal timer, not the mission timeout.
+A `modifier` nested inside `ai_will_do` adjusts AI weight and is not a decision effect.
+Audit the entire owned decision and mission family by block scope, preserving completion, removal, timeout, cancellation, and cleanup behavior.
+Derive `days_remove` from the intended active duration and existing tuning; do not invent deadlines or change mission deadlines only to satisfy this requirement.
+
+### Synchronizing native mission timers
+
+`activate_mission` initializes the native `days_mission_timeout` from the static mission definition; changing a separately stored deadline does not update it.
+Immediately after activation and after every accepted deadline extension, synchronize in the mission owner's country scope, guarded by the active contract, an existing deadline, and `has_active_mission`.
+Compute remaining days as `deadline - global.num_days`, then pass the signed difference `remaining_days - days_mission_timeout@mission_id` to `add_days_mission_timeout = { mission = mission_id days = var:timeout_delta }`; this can shorten or extend the native timer and is idempotent.
+Partial payments must leave the running mission and deadline intact rather than removing and reactivating the mission.
+If the deadline has already expired, use the guarded timeout resolver; the native timeout callback and any owner recovery pass must share an active-contract guard and clear it on resolution so failure cannot resolve twice.
 
 ## 10. Success, failure, and partial success
 
@@ -512,7 +570,7 @@ Political decision families should interact with leaders, advisors, parties, law
 
 Advisor, leader, and council decisions should match the route that unlocked them. Do not unlock generic advisors unrelated to the route identity.
 
-Decision families can include achievement tracking when they support difficult route completions, rare combinations, expansion victories, internal reform, or survival under extreme-route conditions.
+Decision families can include achievement tracking when they support difficult route completions, rare combinations, expansion victories, internal reform, or survival under high-chaos conditions.
 
 
 ## 15.3 Decision pacing, tradeoffs, and visible effects
@@ -521,7 +579,7 @@ Decision categories unlocked by focuses should progress over time.
 
 - Early decisions should be limited, urgent, and tied to survival or first institutions.
 - Middle decisions should add stronger tools, new targets, route mechanics, influence actions, military actions, and construction options.
-- Late decisions should support route payoffs, expansion, integration, faction leadership, League leadership, postwar settlement, or extreme-route end states.
+- Late decisions should support route payoffs, expansion, integration, faction leadership, League leadership, postwar settlement, or high-chaos end states.
 
 Decision families should have tradeoffs. A powerful decision should cost or risk something that fits the action: equipment, manpower, stability, war support, consumer goods burden, foreign dependency, legitimacy, faction cohesion, unit commitment, fuel, convoys, or crisis pressure.
 
@@ -550,6 +608,8 @@ Good examples:
 - a league vote increases faction cohesion or member confidence
 - a failed border mission lowers authority and raises enemy momentum
 
+Use as few player-facing values as the mechanic can support without losing meaningful choices. Prefer one primary value and up to three supporting values. More values need distinct causes, consequences, thresholds, and player actions. Internal calculations can remain hidden or be summarized into a total when the player does not need to manage each component directly.
+
 If a mechanic has a total value made from several components, the UI should show a readable breakdown through scripted localisation or tooltips. Each important component should be named and use a consistent colour identity.
 
 Examples of colour identities:
@@ -561,28 +621,34 @@ Examples of colour identities:
 - old movement pressure in orange
 - faction cohesion in yellow
 
-Use project-appropriate colours, but keep each value consistent across decisions, missions, events, tooltips, and UI summaries.
+Use project-appropriate colours, but keep each value consistent across decisions, missions, events, tooltips, and UI summaries. Pair colour with a label, icon, frame, meter shape, or another non-colour cue. Do not present a plain changing number with no explained range, threshold, or gameplay meaning.
+
+A visible value has failed when the player cannot answer what changes it, why it matters, and what action responds to it. Remove, merge, summarize, or redesign such values.
 
 Balance-of-power or equivalent internal struggle mechanics should be considered when a country has competing power centers. Decisions and missions should push the balance, create risks, unlock branch content, and affect leaders, laws, advisors, events, or crises.
 
 When a decision system creates or manages a faction, league, bloc, coalition, compact, or alliance, define its goals and rules. Include membership conditions, joining logic, refusal logic, expulsion or removal logic where relevant, shared decisions, war goals, AI behavior, victory conditions, and failure conditions.
 
-Important feature-created factions should usually have a mechanic such as cohesion, shared command, war council support, joint reserves, recognition, member confidence, sponsor pressure, or strategic goals. Decisions and missions should interact with that mechanic.
+Important event-created factions should usually have a mechanic such as cohesion, shared command, war council support, joint reserves, recognition, member confidence, sponsor pressure, or strategic goals. Decisions and missions should interact with that mechanic.
 
 A faction should not form just because one country exists. Use minimum membership, crisis pressure, ideological compatibility, war state, diplomatic preparation, or regional logic.
 
 
 ## 15.5 Mechanic presentation, value clarity, and faction outcomes
 
-Special mechanic values must be visible somewhere the player can understand them. A decision category can show values in its header, a custom scripted GUI, a progress meter, a scripted localisation tooltip, or national spirit tooltips
+Special mechanic values must be visible somewhere the player can understand them. A decision category can show values in its header, a custom scripted GUI, a progress meter, a scripted localisation tooltip, or national spirit tooltips.
 
-When a mechanic uses a scripted GUI, consider whether it needs visual state changes. Useful presentation can include progress bars, meter fill variants, status icons, warning frames, selected and locked frames, animated frames, or frame-by-frame changes. Use visual motion or variants only when they clarify the mechanic.
+Apply the [content and interaction budget](../hoi4-scripted-gui/SKILL.md#content-and-interaction-budget) to every decision mechanic surface, including ordinary categories, attached displays, and full windows. Keep internal calculations hidden or summarized unless they change an immediate player decision or explain an important consequence. Merge or remove weak values and duplicate actions; moving clutter into another category, tab, tooltip, or popup does not resolve it.
 
-Special mechanics can hide future surprises, but should not hide basic cause and effect. If a visible value rises or falls, the player should understand the public reason and the broad response available.
+The three-to-six primary-action budget guides usable action presentation; it is a design and readability limit, not a hard HOI4 engine row limit.
+Counts alone establish neither engine capacity nor clipping; engine or visual claims require relevant documentation or actual consumer and render evidence, and source or scenario decision inspection is not visual proof.
+Preserve accepted gameplay and navigation scope; do not require deletions or extra categories solely from a count.
+
+Special mechanics may hide future surprises, but public cause and effect must remain clear: what changed a visible value, its consequence, and the broad response available.
 
 Faction, league, bloc, or coalition goals need rewards and failure states. A successful faction goal can unlock shared decisions, war goals, legitimacy, cohesion, member rewards, postwar settlements, or new faction leadership. A failed goal can reduce cohesion, trigger member exits, invite foreign pressure, start leadership contests, weaken shared defenses, or open emergency missions.
 
-AI strategy must respect route and decision validity. AI should not take decisions that require missing states, dead sponsors, non-existent factions, unavailable ideologies, disabled escalation variants, impossible borders, absent enemies, invalid targets, or closed routes. Invalid actions should be hidden, bypassed, or weighted to zero.
+AI strategy must respect route and decision validity. AI should not take decisions that require missing states, dead sponsors, non-existent factions, unavailable ideologies, disabled evolutions, impossible borders, absent enemies, invalid targets, or closed routes. Invalid actions should be hidden, bypassed, or weighted to zero.
 
 Decision systems for shared trees or shared mechanics must still feel country-specific. Use scripted localisation, country-specific targets, country-specific AI weights, local leaders, regional decisions, and route-specific rewards to prevent every country from playing the same.
 
@@ -624,7 +690,9 @@ Large decision systems should not show every possible decision at once.
 
 Use phases, caps, priorities, regional pools, route locks, mechanic thresholds, or crisis-state filters so the player sees decisions that matter in the current situation.
 
-A decision category should feel curated by current state, not like a debug menu.
+A decision category should feel curated by current state, not like a debug menu. Apply the [content and interaction budget](../hoi4-scripted-gui/SKILL.md#content-and-interaction-budget) to each ordinary decision phase as well as scripted GUI surfaces. If the system exceeds its action or mission budget, first merge weak or duplicate actions, then use state-based replacement, target selection, route gates, or phased visibility.
+
+Too many decisions often means the system contains duplicate actions, weak actions, obsolete actions, or several buttons that should be one staged action. Merge or remove them before adding UI layers.
 
 Good clutter-control patterns:
 
@@ -654,28 +722,13 @@ The reusable selected-target pattern is:
 
 Do not leave stale, invalid, or irrelevant decisions visible simply because their scripted trigger is easy to write.
 
+## Decision category presentation hierarchy
+
+Read [`references/scripted-gui-decision-surfaces.md`](references/scripted-gui-decision-surfaces.md) whenever a decision system uses a scripted GUI category, a mechanic window, or a category presentation choice. It contains the complete standard for this section and its subsections.
+
 ## Formable nation decisions
 
-Use decisions for formable nations when the player should prove control over land, complete a political route, or spend resources before changing the country identity. A formable decision should feel like a proclamation, settlement, congress, coronation, constitutional act, annexation settlement, liberation charter, or administrative project. It should not be only a hidden tag switch.
-
-A formable decision must define:
-
-- visible name and hidden debug name
-- decision category and visibility timing
-- required owned and controlled states
-- required subjects, allies, faction members, puppets, occupied territories, cores, claims, or compliance thresholds
-- required focus, event flag, route flag, ideology, leader, legitimacy, escalation tier, or hidden reveal state
-- whether the decision is visible before requirements are met, hidden until unlocked, or fully secret until an event reveals it
-- political, military, economic, legitimacy, stability, war support, command power, XP, equipment, fuel, convoy, train, manpower, or factory costs
-- what happens to the tag, cosmetic tag, country name, adjective, flag, leader, portrait, ruling party, advisors, national spirits, cores, claims, puppets, factions, wars, and guarantees
-- whether claims become cores instantly, gradually through decisions, or only after compliance and local support work
-- follow-up missions, border integration projects, legitimacy projects, resistance suppression, diplomatic reactions, and achievement hooks
-- AI willingness, AI blockers, AI timing, and AI target safety
-- cleanup for obsolete formation decisions after the formable is created
-
-State requirements must be readable. Use named state groups and custom trigger tooltips. Do not expose raw state id lists to the player unless the existing UI pattern already does that cleanly. If several alternate maps can qualify, create clear requirement groups.
-
-Hidden formables need extra care. A hidden formable can be locked behind an event, secret focus, rare ideology, high escalation, special leader, historical artifact, quote, remark, audio, achievement route, or scripted GUI investigation. Hidden does not mean undocumented. The implementation handoff must still define all triggers, effects, assets, and cleanup.
+Read [`references/formable-nation-decisions.md`](references/formable-nation-decisions.md) whenever a decision system forms, unifies, or restores a nation. It contains the complete standard for this section and its subsections.
 
 ## Formation missions and integration projects
 
@@ -698,46 +751,24 @@ Formation systems should support partial success and failure. A country can form
 
 ## Scripted GUI decision categories and mechanic windows
 
-When a decision category controls a major mechanic, consider attaching a scripted GUI or opening a custom mechanic window from a category button. This is appropriate when the player needs to manage values, targets, meters, factions, sponsors, province groups, formable requirements, investment tracks, or competing internal blocs.
-
-When the category or mission package is connected to a focus tree, scripted GUI, or map change, use the corresponding MCP inspect, render, and rewrite tools. Keep the decision costs, triggers, AI, localisation, cleanup, and balance rules in this skill.
-
-Use `hoi4.gui_inspect` to map linked layout, states, resolutions, click regions, localisation, sprites, fonts, and animation, then call `hoi4.gui_render` for deterministic normal, cropped, annotated, state, resolution, click-region, hierarchy, and comparison views. MCP diagnostics expose bad alignment, uneven spacing, overlapping controls, clipping, overflow, broken click regions, state mismatches, resolution drift, missing assets, and other layout defects. Use `hoi4.gui_rewrite` for an in-scope GUI change after reviewing those diagnostics and the render fidelity report.
-
-A scripted GUI or custom window must have a gameplay reason. It should expose useful choices, not merely decorate a category.
-
-Interactive GUI design should define:
-
-- entry point from the decision category
-- visible tabs, panels, cards, meters, bars, or target lists
-- button costs and requirements
-- what each button changes
-- locked, available, selected, active, completed, warning, and disabled states
-- hover and tooltip text
-- scripted localisation for dynamic values
-- scripted effects for button outcomes
-- scripted triggers for button availability
-- AI equivalents for every meaningful button
-- cleanup and fallback behavior
-
-When buttons spend resources, show the cost clearly. Use icon-first cost localisation. If the GUI button has more than a few requirements, show a short requirement summary and put details in a tooltip.
-
-Do not use GUI buttons to bypass decision balance. GUI buttons should call the same scripted effect families, cost logic, validation triggers, logging, and cleanup that the normal decision system would use.
+Read [`references/scripted-gui-decision-surfaces.md`](references/scripted-gui-decision-surfaces.md) whenever a decision system uses a scripted GUI category, a mechanic window, or a category presentation choice. It contains the complete standard for this section and its subsections.
 
 ## Animated decision category presentation
+
+Apply the same picture eligibility gate to static and animated category pictures. The GUI animation examples below apply to their own controls and panels, and do not authorize adding a picture alongside them.
 
 Decision categories and mechanic windows can use animated sprites when motion improves readability or atmosphere. Suitable uses include:
 
 - soft glow around an available formation seal
 - warning pulse when pressure is near a threshold
 - slow float on an occult, diplomatic, or propaganda emblem
-- particle drift behind a extreme-route category header
+- particle drift behind a high-chaos category header
 - meter shimmer when a value changes
 - selected-card glow for the active sponsor, faction, or route
 - animated border for crisis mode
 - animated leader or council portrait inside a special mechanic window
 
-Use static fallback sprites for every animated element. Keep animations subtle unless the route is deliberately supernatural or extreme-route. Do not animate every icon in a category. Too much movement makes the UI harder to read.
+Use static fallback sprites for every animated element. Keep animations subtle unless the route is deliberately supernatural or high-chaos. Do not animate every icon in a category. Too much movement makes the UI harder to read.
 
 The decision implementation handoff should list animated sprite names, static fallback names, target sizes, frame counts if known, loop behavior, file paths, source mode, and whether the animation is purely decorative or tied to a mechanic state.
 
@@ -761,7 +792,7 @@ AI should understand:
 
 Avoid flat `ai_will_do` when campaign state matters.
 
-For complex decision or mission weights, use `hoi4.probability_inspect` to find required inputs, `hoi4.probability_evaluate` for named campaign states, `hoi4.probability_sweep` for thresholds and rank reversals, and `hoi4.probability_compare` after a source change. Use `hoi4.probability_simulate` only for explicitly declared uncertain inputs, and use `hoi4.probability_render` when the ranking, matrix, sensitivity, comparison, or unresolved view improves review. Decision and mission `ai_will_do` results are willingness scores, so do not present them as click probabilities. Include availability, target, cost, cooldown, and route state where relevant, and retain unresolved engine state in the result.
+For every in-scope decision or mission weight, route the analysis through `hoi4_ai_probability_auditor`. Establish named baseline campaign scenarios before any patch with `hoi4.probability_inspect`, and `hoi4.probability_analyze` with `analysis: "sweep"` as appropriate. The gameplay owner chooses targets and applies the patch; the auditor remains read-only. After the source change, require `hoi4.probability_analyze` with `analysis: "compare"` against the same named scenarios so the before-and-after evidence is directly comparable. Use `hoi4.probability_analyze` with `analysis: "simulate"` only for explicitly declared uncertain inputs, and use `hoi4.probability_analyze` with `analysis: "render"` when the ranking, matrix, sensitivity, comparison, or unresolved view improves review. Decision and mission `ai_will_do` results are willingness scores, so do not present them as click probabilities. Include availability, target, cost, cooldown, and route state where relevant, and retain unresolved engine state in the result. If the probability route is unavailable, record the exact blocker and do not substitute source-only analysis.
 
 AI should not take suicidal or nonsensical decisions just because they are available.
 
@@ -832,7 +863,15 @@ Review:
 - edge cases
 - cleanup behavior
 
-Document test scenarios or observations. Do not only say “balanced.”
+Document test scenarios or observations. Do not only say `balanced`.
+
+### Production action contract tests
+
+When source contract tests cover a paid action, execute the real selector, action mapper, debit, refund, receipt, and cooldown helpers that belong to the tested path.
+Restrict mocks to native primitives or explicitly out-of-scope consumers, and record those boundaries in the evidence.
+Assert the actual native flag identifier, requested cooldown duration, and write count on success, rejection, refund, and repeated invocation where applicable; a mocked success counter does not prove that the production mapper has the required branch.
+Do not replace a required production helper with a no-op solely to pass a loader error; fix the test loader or report the uncovered path.
+These source tests do not establish native engine execution or timed expiry.
 
 ## Improvement addenda for decisions and mechanic windows
 
@@ -840,7 +879,7 @@ When an improvement addendum proposes decision depth, scripted GUI, or mechanic 
 
 Use scripted GUI when the player needs to read or manage values that would otherwise be buried in tooltips. Good uses include influence boards, federation congresses, formable progress, patron leverage, resource routing, public fear, occult pressure, faction cohesion, reform votes, target cards, and timed crisis panels.
 
-A GUI button should be treated like a decision. It needs cost logic, requirement logic, tooltips, scripted effects, AI equivalents, state cleanup, and a visible result. Animated buttons, glowing meters, floating seals, and warning pulses should clarify state changes. Do not use animation to hide the cost or make a weak action look important.
+The addendum must choose the presentation layer before requesting art or controls and explain why it is the clearest option. For a justified GUI, use the [reference-image workflow](../hoi4-scripted-gui/SKILL.md#reference-image-before-implementation), [content and interaction budget](../hoi4-scripted-gui/SKILL.md#content-and-interaction-budget), and [background mapping](../hoi4-scripted-gui/references/visual-review.md#background-and-reference-coverage). Do not respond to a shallow mechanic by adding meters, decisions, text, or decorative controls. Every gameplay-changing button must satisfy GUI action integrity; animation must not obscure costs or compensate for weak effects.
 
 For formables, the decision should verify the map state. Focuses may reveal claims, prepare institutions, or reduce costs, but the formation decision should prove control, legitimacy, recognition, or integration when those are central to the idea.
 
@@ -848,11 +887,13 @@ For formables, the decision should verify the map state. Focuses may reveal clai
 
 Decision and mission subagents are active small-patch agents by default inside the current task scope. They can patch varied costs, clearer dynamic localisation, custom trigger tooltips, AI target checks, cleanup hooks, visibility checks, cooldown fixes, scripted GUI button text, narrow helper call sites, and existing formable requirement fixes without waiting for a separate permission prompt.
 
-They should not expand a whole decision system, create a new mechanic window, add a new event chain, or invent a formable suite. When the gap is broad, they should write an improvement plan under `docs/plans/<feature_slug>/` and leave implementation to the main agent.
+They should not expand a whole decision system, create a new mechanic window, add a new event chain, or invent a formable suite. When the gap is broad, they should write an improvement plan under `docs/plans/<event_id>_<event_slug>_plans/` and leave implementation to the main agent.
 
 Every patch must write a handoff with changed files, changed decision or mission ids, localisation keys, behavior before and after, meaningful validation, skipped task-specific validation, and remaining design risks.
 
 ## 20. Completion report
+
+Before the completion audit, run `python -B .tools/check.py quick` on the changed files and fix every error it lists; it checks localisation keys, decision icons and sprite wiring, script syntax and MCP script validation, not costs, balance or AI behaviour.
 
 A decision or mission task is complete only when:
 
@@ -868,7 +909,9 @@ A decision or mission task is complete only when:
 - balance-of-power or equivalent internal struggle decisions exist when appropriate
 - faction, league, bloc, or coalition decisions include goals, membership rules, AI behavior, rewards, and success or failure states
 - special mechanics have visible UI or tooltip presentation
-- scripted GUI mechanics use progress meters, variants, frames, or frame animations when useful
+- every mechanic surface meets the [content and interaction budget](../hoi4-scripted-gui/SKILL.md#content-and-interaction-budget), including ordinary categories and attached displays
+- scripted GUI work meets the [active MCP preview and comparison workflow](../hoi4-scripted-gui/SKILL.md#required-mcp-visual-review-and-optional-rewrite) and [visual and usability review](../hoi4-scripted-gui/references/visual-review.md), including intermediate preview evidence
+- gameplay-changing GUI controls have action-integrity evidence from the decision owner
 - visible values explain basic cause and effect without revealing hidden future surprises
 - AI decisions respect route validity and avoid impossible actions
 - shared decision systems are adapted per country where needed
@@ -881,6 +924,7 @@ A decision or mission task is complete only when:
 - missions behave correctly
 - costs are dynamic where needed
 - cost localisation is readable
+- inline native cost text meets its display budget without concealing any payment, and category pictures pass the simple-category gate
 - long triggers are hidden or summarized
 - named states, capitals, depots, borders, and regions are clear
 - success and failure effects are distinct

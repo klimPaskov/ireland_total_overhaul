@@ -45,7 +45,7 @@ Use the narrow research subagents when actual research work is large enough to s
 | Need | Spawn |
 | --- | --- |
 | Quote candidates, exact wording checks, attribution confidence, public-domain text, cultural remarks, slogans, allusions, and short references | `hoi4_quote_remark_researcher` |
-| Music or audio candidates, license checks, legitimate downloads, conversion notes, and audio handoff notes | `hoi4_audio_researcher` |
+| Music or audio candidates, including presentation cues, license checks, legitimate downloads, conversion notes, and audio handoff notes | `hoi4_audio_researcher` |
 
 The main agent owns final localisation, final sound wiring, final `.gfx` or `.gui` wiring, final documentation integration, and completion claims. Research subagents return evidence and recommendations. They do not make final implementation claims.
 
@@ -228,7 +228,7 @@ If the user requests a long copyrighted passage, do not provide it. Provide a sh
 
 ## 10. Audio research purpose
 
-Audio research is needed when a mod feature requires a final music track, cue, loop, sound wrapper, menu track, custom event cue, custom GUI sound, loading music, victory cue, defeat cue, route reveal cue, or other audio asset.
+Audio research is needed when a mod feature requires a final music track, cue, loop, sound wrapper, menu track, custom event cue, presentation reveal or aftermath cue, custom GUI sound, loading music, victory cue, defeat cue, route reveal cue, or other audio asset.
 
 The goal is not to find something that sounds vaguely dramatic. The goal is to find legally usable audio that fits the exact feature role and can be documented.
 
@@ -292,6 +292,7 @@ Common shapes:
 - short UI cue: a few seconds
 - button or alert sound: under a few seconds
 - event or presentation cue: roughly 30 seconds to 2 minutes
+- major presentation cue: usually 30 seconds to 2 minutes and unique to that moment
 - menu or loading music: longer tracks or loops
 - ambient custom GUI loop: short loop only if the user or repository accepts ambience for that role
 - victory or defeat cue: often 30 seconds to 2 minutes
@@ -305,6 +306,7 @@ Choose audio by role:
 - country formation: proclamation, ceremony, regional identity, or state-building
 - custom GUI ambience: quiet enough not to annoy repeated play
 - main menu or loading: broad identity of the mod, not one isolated feature
+- major presentation: the exact reveal, escalation, victory, defeat, collapse, or campaign-ending role; do not choose a track only because it sounds generally dramatic
 
 Avoid tracks that sound generally dramatic but do not fit the requested role.
 
@@ -354,6 +356,12 @@ Possible editing notes:
 Do not make destructive edits without preserving the source file.
 
 For HOI4 audio, final `.ogg` files commonly need stable sample rate and format. Use repository and vanilla precedents for exact format expectations. When a repository has an existing audio conversion workflow, follow it. If no workflow exists, provide a clear conversion recommendation and mark any uncertainty.
+
+Vanilla precedents for the handoff:
+
+- Vanilla `.wav` files are PCM at 44.1 kHz, 16-bit (959 files) or 24-bit (23), never 32-bit float. [vanilla-confirmed 1.19.3]
+- Every `sound` path must point at an existing `.wav` (9 vanilla paths are broken, so vanilla is no proof a path works), and every `play_song` name needs a matching song definition. [vanilla-confirmed 1.19.3]
+- Radio music uses a `music.asset` plus a `_songs.txt` with `music_station = "base_music"` and per-song chance blocks. [vanilla-confirmed 1.19.3]
 
 ## 15. Audio implementation handoff
 
@@ -455,3 +463,11 @@ Sourced quote, remark, or audio research task is complete when the main agent re
 - explicit blockers and uncertainty
 
 Do not treat an unverified quote, uncertain audio license, placeholder track, unsourced cultural reference, or missing attribution as complete.
+
+<!-- HOI4_MOD_SETUP_SUPER_EVENTS_START -->
+## Super Events text and audio
+
+When the installed `hoi4-super-events` workflow is selected, bind every research handoff to the stable registration ID, presentation role, owning caller, accepted tone, and permanent research note. Compare several quote and response candidates, verify exact wording and attribution, keep modern copyrighted excerpts short, record uncertainty, and reject dramatic language that does not fit the exact reveal, victory, defeat, aftermath, or ending.
+
+Audio remains optional unless the accepted project design explicitly requires it. A required cue needs verified composition and recording rights, a legitimate source, conversion through the project's established workflow, a unique project-scoped sound ID unless reuse was approved, playback and close behavior, and durable documentation. Never invent a format, duration, helper, path, command, license, placeholder cue, generated test tone, or primitive waveform substitute.
+<!-- HOI4_MOD_SETUP_SUPER_EVENTS_END -->
