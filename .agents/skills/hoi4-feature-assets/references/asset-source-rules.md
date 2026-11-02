@@ -32,16 +32,11 @@ Maps may still appear as secondary props when useful, but they should rarely be 
 
 ### Use the image generator for generated symbolic or fictional assets
 
-The image generator is the image-generation route selected for this project. HOI4 Mod Setup fills in the provider-specific details below from the manifest table. If no route is configured, stop and report the blocker instead of building a substitute pipeline.
+The image generator is `hoi4-imagegen`, the project's image route. HOI4 Mod Setup may replace the default below with the details of the provider selected for the project. If no route is configured, stop and report the blocker instead of building a substitute pipeline.
 
-### Codex image generation
-- Tools: generate: `image_gen`
-- Tool inputs: prompt: `prompt`, output_path: not supported by this tool, reference_images: `referenced_image_paths`, quality: not supported by this tool, size: not supported by this tool, transparent_background: `transparent_background`
-- References: Pass the reference files to the native Codex image tool.
-- Size: This route uses the model's default image size; limits can vary by model.
-- Transparent backgrounds: Request transparency and verify the saved PNG alpha. If unavailable: Use a selected background-removal route and verify alpha; if none is configured, ask the maintainer for another route.
-- Reference edits: supported on compatible models. If unavailable: Make a new image from the reference if that fits, or choose another configured provider for an edit.
-- Make one image per call. For a transparent image, check that the saved PNG has at least one pixel with alpha below 255; an alpha channel alone does not prove that pixels are transparent.
+<!-- HOI4_MOD_SETUP:IMAGE_GENERATION_PROVIDER:START -->
+Default route: `hoi4-imagegen` (MCP server `hoi4_imagegen`, tools `hoi4.image_*`). Pick the asset's family (`hoi4.image_families`), then use the group tool of its group with a required `family` (`hoi4.image_icon`, `hoi4.image_picture`, `hoi4.image_portrait`, `hoi4.image_flag`, `hoi4.image_unit` or `hoi4.image_interface`). The loop and its refusals are in the `hoi4-imagegen` skill and `generation-and-review.md`. A family's asset is never derived from another family's.
+<!-- HOI4_MOD_SETUP:IMAGE_GENERATION_PROVIDER:END -->
 
 Use the image generator by default for:
 

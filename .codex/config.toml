@@ -17,6 +17,16 @@ default_tools_approval_mode = "auto"
 # Codex keeps a server per subagent connected after the subagent finishes; an idle server exits.
 env = { HOI4_AGENT_STDIO_IDLE_EXIT_MINUTES = "30" }
 
+# hoi4-imagegen: HOI4 asset families, processing and install (tools hoi4.image_*). Release binary under
+# .tools/image_generation/hoi4-imagegen/, installed the way HOI4 Mod Setup installs it.
+[mcp_servers.hoi4_imagegen]
+command = ".tools/image_generation/hoi4-imagegen/0.2.1/hoi4-imagegen-mcp.exe"
+args = ["--project-root", "."]
+cwd = "."
+startup_timeout_sec = 60
+tool_timeout_sec = 900
+default_tools_approval_mode = "auto"
+
 [agents.hoi4_3d_model_pipeline]
 description = "Creates, rigs, animates, processes, exports, audits, and documents bounded HOI4 3D model packages from one approved source-informed input per geometry task using the profile's generation model (currently Meshy 7), Meshy MCP, the Blender HOI4 adapter, and io_pdx_mesh. Provider-eligible bipeds, including firearm-body rebuilds, get one supported Meshy rig/action attempt before Blender recovery; firearm units use separate body and firearm geometry tasks, then Blender fitting, attachment, and contact correction. Non-bipedal anatomy and existing non-firearm repairs use Blender directly. For custom units, it researches legally usable Internet-sourced sound files and prepares bespoke vanilla-green counter handoffs. Does not perform final gameplay, GFX, or sound-definition wiring or claim in-game completion."
 config_file = "agents/hoi4_3d_model_pipeline.toml"

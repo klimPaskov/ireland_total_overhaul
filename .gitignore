@@ -14,3 +14,6 @@ Thumbs.db
 /docs/plans/ireland_focus_tree/assets/source_research_handoffs/
 /docs/plans/ireland_focus_tree/assets/retired_icon_candidates/
 /docs/plans/ireland_focus_tree/assets/__pycache__/
+
+# hoi4-imagegen release binaries, installed per machine the way HOI4 Mod Setup installs them.
+/.tools/image_generation/hoi4-imagegen/

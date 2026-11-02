@@ -5,6 +5,13 @@
       "command": "hoi4-agent-tools.cmd",
       "args": [],
       "env": {}
+    },
+    "hoi4_imagegen": {
+      "type": "stdio",
+      "command": ".tools/image_generation/hoi4-imagegen/0.2.1/hoi4-imagegen-mcp.exe",
+      "args": ["--project-root", "."],
+      "cwd": ".",
+      "env": {}
     }
   }
 }

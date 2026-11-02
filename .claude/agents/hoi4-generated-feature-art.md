@@ -21,16 +21,11 @@ Required inputs:
 
 If the parent prompt does not provide feature slug, asset names, target sizes, final DDS paths or folder, source mode, and handoff path, report the missing inputs instead of exploring the repo.
 
-Use this agent for generated non-icon visual assets that are fictional, symbolic, supernatural, invented, alternate-history, documentary-staged, or UI/decorative. Use the selected image-generation route. If no route is configured, stop and report the blocker. Do not create a substitute pipeline.
+Use this agent for generated non-icon visual assets that are fictional, symbolic, supernatural, invented, alternate-history, documentary-staged, or UI/decorative. Use `hoi4-imagegen` (MCP tools `hoi4.image_*`) and read its skill first. If no provider is configured, stop and report the blocker. Do not create a substitute pipeline.
 
-### Codex image generation
-- Tools: generate: `image_gen`
-- Tool inputs: prompt: `prompt`, output_path: not supported by this tool, reference_images: `referenced_image_paths`, quality: not supported by this tool, size: not supported by this tool, transparent_background: `transparent_background`
-- References: Pass the reference files to the native Codex image tool.
-- Size: This route uses the model's default image size; limits can vary by model.
-- Transparent backgrounds: Request transparency and verify the saved PNG alpha. If unavailable: Use a selected background-removal route and verify alpha; if none is configured, ask the maintainer for another route.
-- Reference edits: supported on compatible models. If unavailable: Make a new image from the reference if that fits, or choose another configured provider for an edit.
-- Make one image per call. For a transparent image, check that the saved PNG has at least one pixel with alpha below 255; an alpha channel alone does not prove that pixels are transparent.
+<!-- HOI4_MOD_SETUP:IMAGE_GENERATION_PROVIDER:START -->
+Default route: `hoi4-imagegen`. Look up the family with `hoi4.image_families { family }` (`report_event`, `news_event`, `decision_category_picture`, `operation_picture`, `flag`, `faction_logo`, `gui_texture`, `super_event` and the other non-icon families), then call the group tool with that `family`: `hoi4.image_picture`, `hoi4.image_flag`, `hoi4.image_unit` or `hoi4.image_interface`. Without `approve` it returns a free plan with the cost; with `approve: true` and an `idempotency_key` it generates one asset. The tool applies the report-card shadow, the flag ladder and the frame strips itself. Then `hoi4.image_process`, `hoi4.image_validate`, `hoi4.image_preview`, `hoi4.image_review` and `hoi4.image_install`.
+<!-- HOI4_MOD_SETUP:IMAGE_GENERATION_PROVIDER:END -->
 
 Own this scope:
 - Fictional, symbolic, supernatural, extreme-route, emotionally specific, alternate-history, or fully invented custom feature images.

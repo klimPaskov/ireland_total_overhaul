@@ -60,6 +60,7 @@ Use repo skills as required implementation guidance, not as optional notes.
 - Use `hoi4-events` for ordinary HOI4 event implementation, event chains, news events, report events, localisation, on_actions, documentation, and validation.
 - Use `hoi4-feature-planning` when designing or expanding feature ideas, feature mechanics, country packages, focus-tree route plans, decision plans, achievements, AI behavior, asset needs, text and audio research gates, and implementation-ready specifications before coding.
 - Use `hoi4-feature-assets` when a task needs visual assets, icons, flags, portraits, native advisor or high-command cards, UI art, report images, news images, achievement icons, final DDS files, asset manifests, or sprite handoff notes; route 3D geometry, materials, skeletal actions, `.mesh`/`.anim` exports, and reimport evidence to `hoi4-3d-model-pipeline`.
+- Use `hoi4-imagegen` to make or import any 2D asset of the 40 families (free plan, generation, process, validate, review, install); `hoi4-feature-assets` keeps the sources, naming and handoff rules.
 - Use `hoi4-feature-planning` to plan 3D unit and building profiles, exact-one-image Meshy inputs, vanilla scale calibration, action roles, entity consumers, map placement, and runtime acceptance evidence whenever a feature needs a model.
 - Use `hoi4-3d-model-pipeline` for every custom HOI4 3D model: sourced and refined inputs, generation with the profile's model (currently Meshy 7), Blender component, rig, weight, and action work, PDX textures, sourced custom-unit sound, bespoke vanilla-green counters, `.mesh`/`.anim` export, reimport proof, and runtime handoffs. The skill defines the routes and the per-job credit budget that the user approves once.
 - Use `hoi4-frame-animation` when a task needs animated sprites, frame sequences, sprite sheets, GIF previews, animated UI pieces, animated portraits, hover loops, pulse loops, route emblems, or frame-by-frame visual packages. This skill forbids final animation made only by moving, scaling, rotating, warping, blurring, recoloring, or filtering one still image.
@@ -394,16 +395,11 @@ Before claiming focus-tree completion, use the appropriate audit route from `hoi
 
 For final visual assets, use `hoi4-feature-assets`. That skill is the detailed source of truth for image generation rules, 2D asset classification, and the handoff boundary for 3D model packages.
 
-Use the project’s selected image-generation route for generated artwork. HOI4 Mod Setup fills in this section from the selected provider details in the source manifest. Follow its tool names, reference-image rules, supported image sizes, and transparency or edit options. Make one image per call. Check the saved file’s alpha channel before processing it. If the route cannot make transparent images or edit a reference, use only a fallback listed here or ask the maintainer for another route.
+Use `hoi4-imagegen` (MCP tools `hoi4.image_*`) for generated artwork. HOI4 Mod Setup may replace the default below with the selected provider’s details. Make one image per call. The tool proves transparency from the saved pixels. If no provider is configured, ask the maintainer for a route.
 
-### Codex image generation
-- Tools: generate: `image_gen`
-- Tool inputs: prompt: `prompt`, output_path: not supported by this tool, reference_images: `referenced_image_paths`, quality: not supported by this tool, size: not supported by this tool, transparent_background: `transparent_background`
-- References: Pass the reference files to the native Codex image tool.
-- Size: This route uses the model's default image size; limits can vary by model.
-- Transparent backgrounds: Request transparency and verify the saved PNG alpha. If unavailable: Use a selected background-removal route and verify alpha; if none is configured, ask the maintainer for another route.
-- Reference edits: supported on compatible models. If unavailable: Make a new image from the reference if that fits, or choose another configured provider for an edit.
-- Make one image per call. For a transparent image, check that the saved PNG has at least one pixel with alpha below 255; an alpha channel alone does not prove that pixels are transparent.
+<!-- HOI4_MOD_SETUP:IMAGE_GENERATION_PROVIDER:START -->
+Default route: `hoi4-imagegen`. Start with `hoi4.image_families { family }`, then the group tool with a required `family`. The `hoi4-imagegen` skill has the loop.
+<!-- HOI4_MOD_SETUP:IMAGE_GENERATION_PROVIDER:END -->
 
 For animated visual assets, use `hoi4-frame-animation` in addition to `hoi4-feature-assets` for frame-sheet animation. Use `hoi4-3d-model-pipeline` for skeletal unit or entity actions. Final animation assets must be built from real planned frames or real exported skeletal actions and must not be transform-only mockups.
 
