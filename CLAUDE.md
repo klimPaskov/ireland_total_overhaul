@@ -445,3 +445,5 @@ Use a clear commit message that describes what was implemented.
 Do not commit broken, unrelated, or half-finished work. If the goal cannot be completed cleanly, report the blocker instead of creating a misleading commit.
 
 When the working tree or index also contains other agents' staged or unstaged work, commit only the owned paths and hunks through `hoi4-shared-git-commit`. Never use `git add -A`, a broad pathspec, a normal commit against the shared index, or `git reset --hard` in a shared checkout.
+
+Merge pull requests and push without asking the maintainer once the required checks pass (maintainer decision D-23, 2026-11-06). Never force push, never reset or clean in a way that loses work, and never delete a branch with unmerged work.
